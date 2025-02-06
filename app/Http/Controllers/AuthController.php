@@ -24,7 +24,7 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')->with('success', 'Welcome to AdminPanel.');
+            return redirect()->route('dashboard.index')->with('success', 'Welcome to AdminPanel.');
         }
 
         return back()->withInput()->withErrors([

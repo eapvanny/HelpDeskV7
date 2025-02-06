@@ -6,13 +6,13 @@
 @endphp
 <header class="main-header shadow-sm">
     <!-- Logo -->
-    <a href="{{ URL::route('dashboard') }}" class="logo hidden-xs logo-hitech">
+    <a href="{{ URL::route('dashboard.index') }}" class="logo hidden-xs logo-hitech">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
-            <img src="{{ asset('images/Background1.jpg') }}" alt="logo-mini">
+            <img src="{{ asset('images/Background1.jpg') }}" alt="logo-mini" style="border-radius: 50%; margin-top: 14px">
         </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">
+        <span class="logo-lg" style="width: 60%; height:100%; margin: auto">
             <img src="{{ asset('images/Hi-Tech_Water_Logo.png') }}" alt="logo-md">
         </span>
     </a>

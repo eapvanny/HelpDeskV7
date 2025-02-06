@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,19 +18,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.login');
 });
-Route::get('/login', function(){
+Route::get('/login', function () {
     return view('backend.login');
 })->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', function(){
-        return view('backend.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard/ticket-data', [DashboardController::class, 'getTicketData'])->name('dashboard.ticket-data');
 
-}); 
+    //Department
+    Route::get('/department', [DepartmentController::class,'index'])->name('department.index');
+    Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
+    Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store');
+    Route::get('/department/{id}/edit', [DepartmentController::class, 'edit'])->name('department.edit');
+    Route::post('/department/update', [DepartmentController::class, 'update'])->name('department.update');
+    Route::delete('/department/{id}/delete', [DepartmentController::class, 'destroy'])->name('department.delete');
+
+    //Ticket
+    Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
+    Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+    Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
+    Route::get('/ticket/{id}/edit', [TicketController::class, 'edit'])->name('ticket.edit');
+    Route::post('/ticket/{id}/update', [TicketController::class, 'update'])->name('ticket.update');
+    Route::delete('/ticket/{id}/delete', [TicketController::class, 'destroy'])->name('ticket.delete');
+});

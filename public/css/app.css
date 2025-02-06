@@ -70,15 +70,13 @@
 }
 
 .main-header .logo .logo-lg img {
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 
 .main-header .logo .logo-mini img {
   width: 50%;
   height: 50%;
-  border-radius: 50%;
-  margin-top: 14px;
 }
 
 .skin-blue .main-sidebar {
