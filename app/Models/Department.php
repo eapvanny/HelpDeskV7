@@ -16,4 +16,9 @@ class Department extends Model
       'name_in_latin',
       'abbreviation'
     ];
+
+    public function department()
+    {
+      return $this->hasMany(Ticket::class);
+    }
 }

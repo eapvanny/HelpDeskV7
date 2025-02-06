@@ -2,7 +2,7 @@
 @extends('backend.layouts.master')
 
 <!-- Page title -->
-@section('pageTitle') Departments @endsection
+@section('pageTitle') Tickets @endsection
 <!-- End block -->
 
 <!-- Page body extra class -->
@@ -15,8 +15,7 @@
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li> {{ __('Master Data') }} </li>
-            <li class="active"> {{ __('Departments') }} </li>
+            <li class="active"> {{ __('Status') }} </li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -26,34 +25,36 @@
             <div class="col-md-12">
             <div class="wrap-outter-header-title">
                 <h1>
-                    {{ __('Departments') }}
+                    {{ __('Status') }}
                     <small> {{ __('List') }} </small>
                 </h1>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('department.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                    <a class="btn btn-info text-white" href="{{ URL::route('status.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
                 </div>
             </div>
 
             <div class="wrap-outter-box">
                 <div class="box box-info">
+                    <!-- /.box-header -->
                     <div class="box-body margin-top-20">
-                        <div class="table-responsive">
-                            <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap" width="100%">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th> {{ __('Code') }} </th>
-                                    <th> {{ __('Name') }} </th>
-                                    <th> {{ __('Name in Latin') }} </th>
-                                    <th> {{ __('Abbreviation') }} </th>
-                                    <th class="notexport"> {{ __('Action') }} </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
+                        <div class="table-responsive mt-4">
+                        <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap datatable-server" width="100%">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th > {{ __('Status') }} </th>
+                                {{-- <th > {{ __('Subject') }} </th>
+                                <th > {{ __('Status') }} </th>
+                                <th > {{ __('Priority') }} </th> --}}
+                                <th class="notexport" > {{ __('Action') }} </th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                            </table>
-                        </div>
+                            </tbody>
+
+                        </table>
+                    </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="btn-group">
@@ -63,14 +64,11 @@
                         </form>
                     </div>
                 </div>
-
             </div>
             </div>
         </div>
-        <!-- Modal -->
     </section>
 
-   
     <!-- /.content -->
 @endsection
 <!-- END PAGE CONTENT-->
@@ -89,7 +87,7 @@
                 serverSide: true,
                 bLengthChange: false,
                 ajax: {
-                    url: "{!! route('department.index', request()->all()) !!}",
+                    url: "{!! route('status.index', request()->all()) !!}",
                 },
                 pageLength: 10,
                 columns: [
@@ -98,20 +96,8 @@
                         name: 'id'
                     },
                     {
-                        data: 'code',
-                        name: 'code'
-                    },
-                    {
                         data: 'name',
                         name: 'name'
-                    },
-                    {
-                        data: 'name_in_latin',
-                        name: 'name_in_latin'
-                    },
-                    {
-                        data: 'abbreviation',
-                        name: 'abbreviation'
                     },
                     {
                         data: 'action',

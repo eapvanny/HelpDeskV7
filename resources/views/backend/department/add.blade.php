@@ -24,8 +24,6 @@
 
     <!-- Main content -->
     <section class="content">
-        
-                
         <form  id="entryForm" action="@if($department) {{URL::Route('department.update', $department->id)}} @else {{URL::Route('department.store')}} @endif" method="post" enctype="multipart/form-data" autocomplete="off">
             <div class="row">
                 <div class="col-md-12">
@@ -49,7 +47,7 @@
 
             @csrf
             @if($department)
-                <input type="hidden" name="_method" value="PUT">
+                @method('PUT')
             @endif
             <div class="wrap-outter-box">
                 <div class="box box-info">

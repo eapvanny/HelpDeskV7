@@ -19,12 +19,12 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="text-decoration-none">
+                <a href="{{ URL::route('status.index') }}" class="text-decoration-none">
                     <i class="fa fa-sliders"></i> <span>{{ __('Statuses') }}</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="text-decoration-none">
+                <a href="{{ URL::route('priority.index') }}" class="text-decoration-none">
                     <i class="fa fa-font-awesome"></i> <span>{{ __('Priorities') }}</span>
                 </a>
             </li>

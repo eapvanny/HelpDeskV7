@@ -14,9 +14,8 @@ class DepartmentController extends Controller
     public $indexof = 1;
     public function index(Request $request)
     {
-        $departments = Department::all();
-
         if ($request->ajax()) {
+            $departments = Department::query();
             return DataTables::of($departments)
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
@@ -34,16 +33,15 @@ class DepartmentController extends Controller
                     return __($data->abbreviation);
                 })
                 ->addColumn('action', function ($data) {
-                    $button = '<div class="change-action-item">';
-                    $button.='<a title="Edit"  href="'.route('department.edit',$data->id).'"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button.='<a  href="'.route('department.delete',$data->id).'"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
-                    $button.='</div>';
-                    return $button;
+                    return '<div class="change-action-item">
+                        <a title="Edit" href="' . route('department.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                        <a href="' . route('department.delete', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                    </div>';
                 })
-                ->rawColumns(['photo', 'status', 'action'])
+                ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.department.list', compact('departments'));
+        return view('backend.department.list');
     }
     public function create()
     {
@@ -99,7 +97,6 @@ class DepartmentController extends Controller
     public function update(Request $request, $id)
     {
         $department = Department::find($id);
-        $this->checkDepartmentOwnership($department);
         $rules = [
             'code' => [Rule::unique('departments')->where(function (Builder $query) use ($request, $id) {
                 $query->where('deleted_at', null);
@@ -132,4 +129,6 @@ class DepartmentController extends Controller
         $department->delete();
         return redirect()->back()->with('success', "Department has been deleted!");
     }
+    
+    
 }

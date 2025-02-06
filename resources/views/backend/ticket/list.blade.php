@@ -41,11 +41,11 @@
                         <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap datatable-server" width="100%">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th > {{ __('Department') }} </th>
-                                <th > {{ __('Grade Level Name in Latin') }} </th>
-                                <th > {{ __('Major') }} </th>
-                                <th > {{ __('Department') }} </th>
-                                <th > {{ __('Academic Degree') }} </th>
+                                <th > {{ __('Subject') }} </th>
+                                <th > {{ __('Status') }} </th>
+                                <th > {{ __('Priority') }} </th>
                                 <th class="notexport" > {{ __('Action') }} </th>
                             </tr>
                             </thead>
@@ -92,24 +92,25 @@
                 pageLength: 10,
                 columns: [
                     {
-                        data: 'name',
-                        name: 'name'
-                    },
-                    {
-                        data: 'name_in_latin',
-                        name: 'name_in_latin'
-                    },
-                    {
-                        data: 'major',
-                        name: 'major'
+                        data: 'id',
+                        name: 'id'
                     },
                     {
                         data: 'department',
                         name: 'department'
                     },
                     {
-                        data: 'academic_degree',
-                        name: 'academic_degree'
+                        data: 'subject',
+                        name: 'subject'
+                    },
+                    
+                    {
+                        data: 'status',
+                        name: 'status'
+                    },
+                    {
+                        data: 'priority',
+                        name: 'priority'
                     },
                     {
                         data: 'action',
