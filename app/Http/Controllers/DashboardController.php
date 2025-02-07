@@ -47,7 +47,7 @@ class DashboardController extends Controller
             'pending' => Ticket::where('status', 'pending')->count(),
             'solved' => Ticket::where('status', 'solved')->count(),
             'unassigned' => Ticket::whereNull('agent_id')->count(),
-            'monthly' => array_fill(0, 12, 0) // Default 12 months
+            'monthly' => array_fill(0, 12, 0) 
         ];
 
         foreach ($monthlyTickets as $month => $count) {
