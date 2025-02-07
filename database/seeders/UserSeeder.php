@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             $user->password = Hash::make('admin123');
             $user->photo = '123.jpg';
             $user->status = 1;
+            $user->role_id = 1;
             $user->department_id = 1;
             $user->phone_no = '0987876567';
             $user->save();

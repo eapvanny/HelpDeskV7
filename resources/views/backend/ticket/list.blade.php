@@ -43,7 +43,9 @@
                             <tr>
                                 <th>#</th>
                                 <th > {{ __('Department') }} </th>
+                                <th > {{ __('UserName') }} </th>
                                 <th > {{ __('Subject') }} </th>
+                                <th > {{ __('Description') }} </th>
                                 <th > {{ __('Status') }} </th>
                                 <th > {{ __('Priority') }} </th>
                                 <th class="notexport" > {{ __('Action') }} </th>
@@ -100,10 +102,17 @@
                         name: 'department'
                     },
                     {
+                        data: 'username',
+                        name: 'username'
+                    },
+                    {
                         data: 'subject',
                         name: 'subject'
                     },
-                    
+                    {
+                        data: 'description',
+                        name: 'description'
+                    },
                     {
                         data: 'status',
                         name: 'status'

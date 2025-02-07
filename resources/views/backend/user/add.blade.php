@@ -61,7 +61,7 @@
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
+            <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
             <li> {{ __('Administrator') }} </li>
             <li><a href="{{URL::route('user.index')}}"> {{ __('User') }} </a></li>
             <li class="active">@if($user) Update @else {{ __('Add') }} @endif</li>
@@ -96,17 +96,24 @@
             </div>
             <div class="box-body">
                 @csrf
-                @if($user)  {{ method_field('PATCH') }} @endif
+                @if($user)  @method('PUT') @endif
 
                 <!-- End organization -->
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
+                    <div class="col-md-3 col-xl-3"> 
                         <div class="form-group has-feedback">
-                            <label for="status"> {{ __('Status') }} <span class="text-danger">*</span></label>
-                            <select name="status" class="form-select bg-light" id="status">
-                                <option value="1" {{ old('status', optional($user)->status) == 1 || is_null($user) ? 'selected' : '' }}> {{ __('Active') }} </option>
-                                <option value="0" {{ old('status', optional($user)->status) == 0 && !is_null($user) ? 'selected' : '' }}> {{ __('Inactive') }} </option>
-                            </select>
+                            <label for="department_id"> {{ __('Department') }} <span class="text-danger">*</span>
+                                <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="Select Department"></i>
+                            </label>
+                            {!! Form::select('department_id', $departments, old('department_id', optional($user)->department_id), [
+                                'placeholder' => __('Pick a department'),
+                                'id' => 'department_id',
+                                'name' => 'department_id',
+                                'class' => 'form-control select2',
+                                'required' => true
+                            ]) !!}
+                            <span class="form-control-feedback"></span>
+                            <span class="text-danger">{{ $errors->first('department_id') }}</span>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -119,35 +126,44 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group has-feedback">
-                            <label for="email"> {{ __('Email') }} <span class="text-danger">*</span></label>
-                            <input  type="email" class="form-control" name="email"  placeholder="email address" value="@if($user){{$user->email}}@else{{old('email')}}@endif" maxlength="100" required autocomplete="new-password">
-                            <span class="fa fa-envelope form-control-feedback"></span>
-                            <span class="text-danger">{{ $errors->first('email') }}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group has-feedback">
                             <label for="phone_no"> {{ __('Phone/Mobile No') }}.</label>
                             <input  type="text" class="form-control" name="phone_no" placeholder="phone or mobile number" value="@if($user){{$user->phone_no}}@else{{old('phone_no')}}@endif" maxlength="15">
                             <span class="fa fa-phone form-control-feedback"></span>
                             <span class="text-danger">{{ $errors->first('phone_no') }}</span>
                         </div>
                     </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="form-group has-feedback">
+                            <label for="status"> {{ __('Status') }} <span class="text-danger">*</span></label>
+                            <select name="status" class="form-select bg-light select2" id="status">
+                                <option value="1" {{ old('status', optional($user)->status) == 1 || is_null($user) ? 'selected' : '' }}> {{ __('Active') }} </option>
+                                <option value="0" {{ old('status', optional($user)->status) == 0 && !is_null($user) ? 'selected' : '' }}> {{ __('Inactive') }} </option>
+                            </select>
+                        </div>
+                    </div>
+                    
                     <div class="col-md-3">
                         <div class="form-group has-feedback">
-                            <label for="role_id"> {{ __('User Role') }}
+                            <label for="id"> {{ __('User Role') }}
                                 <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Set a user role"></i>
                                 <span class="text-danger">*</span>
                             </label>
-                            {!! Form::select('role_id', $roles, $role_id , ['class' => 'form-control select2', 'required' => 'true',$role_id ? 'readonly' : '']) !!}
-                            <span class="form-control-feedback"></span>
-                            <span class="text-danger">{{ $errors->first('role_id') }}</span>
+                           {!! Form::select('role_id', $roles, old('role_id'), [
+                                'placeholder' => __('Pick a role'),
+                                'id' => 'role_id',
+                                'class' => 'form-control select2',
+                            ]) !!}
                         </div>
                     </div>
-                </div>
-            {{-- @if(!$user) --}}
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <div class="form-group has-feedback">
+                            <label for="email"> {{ __('Email') }} <span class=""></span></label>
+                            <input  type="email" class="form-control" name="email"  placeholder="email address" value="@if($user){{$user->email}}@else{{old('email')}}@endif" maxlength="100">
+                            {{-- <span class="fa fa-envelope form-control-feedback"></span>
+                            <span class="text-danger">{{ $errors->first('email') }}</span> --}}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="form-group has-feedback">
                             <label for="username"> {{ __('Username') }} <span class="text-danger">*</span></label>
                             <input  type="text" class="form-control" value="@if($user){{$user->username}}@else{{old('username')}}@endif" name="username" required minlength="5" maxlength="255" autocomplete="new-password">
@@ -155,7 +171,17 @@
                             <span class="text-danger">{{ $errors->first('username') }}</span>
                         </div>
                     </div>
-
+                    @if(!$user)
+                        <div class="col-md-3">
+                            <div class="form-group has-feedback">
+                                <label for="password"> {{ __('Password') }} <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="50" autocomplete="new-password">
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group has-feedback">
@@ -163,102 +189,19 @@
                                     <div class="col-md-6">
                                         <label for="photo"> {{ __('Photo') }} <br/><span class="text-muted fst-italic">(Files: jpeg, jpg, or png, min dimension: 50 x 50 pixel, 2Mb max size)</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="photo" placeholder="{{ __('Photo image') }}">
-                                        <span class="glyphicon glyphicon-open-file form-control-feedback" style="top:45px;"></span>
+                                        <span class="glyphicon glyphicon-open-file form-control-feedback" style="top:35px;"></span>
                                         <span class="text-danger">{{ $errors->first('photo') }}</span>
                                     </div>
                                     <div class="col-md-2">
                                         @if($user && isset($user->photo))
-                                            <img src="{{ Storage::url($user->photo) }}" alt="Current Photo" style="max-height: 50px; margin-top: 40px">
+                                            <img src="{{($user->photo ? asset('storage/' . $user->photo) : asset('images/avatar.jpg'))}}" alt="Current Photo" style="max-height: 50px; margin-top: 40px">
                                             <input type="hidden" name="oldPhoto" value="{{$user->photo}}">
                                         @endif
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-            @if(!$user)
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <label for="password"> {{ __('Password') }} <span class="text-danger">*</span></label>
-                            <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="50" autocomplete="new-password">
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            <span class="text-danger">{{ $errors->first('password') }}</span>
-                        </div>
-                    </div>
-                </div>
-            @endif
-                @if ($ref_id && $ref_id !== AppHelper::USER_STUDENT && $ref_id !== AppHelper::USER_PARENTS)
-                    @if ($user && count($organizations) > 1)
-                    <div class="col-md-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading"><i class="fa fa-info-circle"></i> &nbsp;&nbsp;&nbsp;{{ __('Detail') }} </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group has-feedback">
-                                                <label for="teacher_id"> {{ __('Organizations Name') }}
-                                                    <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Set organizations"></i>
-                                                </label>
-                                                {!! Form::select('organizations_id', $organizations, null, ['id' => 'sl-organizations','placeholder' => 'Pick a organizations...','class' => 'form-control select2']) !!}
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 mt-5">
-                                            <a id="btn_add_detail" class="btn btn-outline-secondary btn-sm"><i class="fa fa-plus"></i> &nbsp;&nbsp;&nbsp;{{ __('Add Detail') }} </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-10"></div>
-
-                                    </div>
-                                    <div class="row" style="padding-top : 10px;">
-                                        {{-- <input type="hidden" id="strDetail" @if($user_org) value="{{json_encode($user_org)}}" @else value="{{json_encode([])}}"  @endif> --}}
-                                        <div class="col-md-12">
-                                            <div class="table-responsive">
-                                                <table id="listDataTableOrgDetail" class="table table-bordered table-striped list_view_table display responsive no-wrap" width="100%">
-                                                    <thead>
-                                                    <tr>
-                                                        <th width="5%">#</th>
-                                                        <th width="25%"> {{ __('Organizations') }} </th>
-                                                        <th class="notexport" width="10%"> {{ __('Action') }} </th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <input type="hidden" id="strDetail" @if(count($user_org) > 0) value="{{json_encode($user_org)}}" @else value="{{json_encode([])}}"  @endif>
-                                                        @if(count($user_org) > 0)
-                                                            {{-- @dd($user_org); --}}
-                                                            @foreach ($user_org as $organization)
-                                                                <tr>
-                                                                    <td>
-                                                                        {{$organization->organizations_id}}
-                                                                    </td>
-                                                                    <td>{{ $organization->organizations_name}}</td>
-                                                                    <td>
-                                                                        <div class="btn-group">
-                                                                            <a id="btnDelete" data-organization="{{$organization->organizations_name}}" class="btn btn-danger btn-sm" title="Delete">
-                                                                                <i class="fa fa-fw fa-trash"></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            @endforeach
-                                                        @endif
-                                                    </tbody>
-                                                    {{-- <tfoot>
-                                                        <tr>
-                                                            <th width="5%">#</th>
-                                                            <th width="25%"> {{ __('Organizations') }} </th>
-                                                            <th class="notexport" width="10%"> {{ __('Action') }} </th>
-                                                        </tr>
-                                                    </tfoot> --}}
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                    @endif
                 </div>
             </div>
         </form>
@@ -272,115 +215,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             Generic.initCommonPageJS();
-
-            @if ($ref_id !== AppHelper::USER_STUDENT && $ref_id !== AppHelper::USER_PARENTS)
-
-                @if ($user && count($organizations) > 1)
-                    // Globle variable
-                    var $body = $("body"),$data_organizations_detail = [],$index = 0,$key = 0;
-                    // *** SET OLD SUJECT DETAIL ***
-
-                    var $old_organizations_detail = JSON.parse($("#strDetail").val());
-                    console.log($old_organizations_detail);
-                    if( ! $.isEmptyObject($old_organizations_detail)){
-                        console.log('old organizations detail : ',$old_organizations_detail);
-                            if($old_organizations_detail.length > 0){
-                            var  $count = $old_organizations_detail.length;
-                                for (let i = 0; i < $count; i++) {
-                                    $data_organizations_detail.push({
-                                        organization : $old_organizations_detail[i].organizations_name ,
-                                        organizationID : $old_organizations_detail[i].organizations_id,
-                                    });
-                                }
-                            }
-                    } else {
-                        console.log("No old data organizations detail");
-                    }
-
-                    console.log('old data organizations detail : ',$data_organizations_detail);
-                    var $table = $('#listDataTableOrgDetail').DataTable( {
-                        pageLength: 25,
-                        lengthChange: false,
-                        orderCellsTop: true,
-                        responsive: true,
-                        "columnDefs": [ {
-                            "searchable": false,
-                            "orderable": false,
-                            "targets": 0
-                        } ],
-                        "order": [[ 1, 'asc' ]]
-                    } );
-
-                    $body.on("click","#btn_add_detail",function(){
-                        var $flag = false, $tr = "",
-                            $organization = $('select[name="organizations_id"]').find(":selected");
-
-                        if($.trim($organization.text()).toLocaleLowerCase() == "pick a organizations...")
-                        {
-                            swal("error", "Select organizations before add :)", "error");
-                            return false;
-                        }
-
-                        if($data_organizations_detail){
-                            $.each($data_organizations_detail,function(i,$sub){
-                                if($sub.organization == $organization.text()){
-                                    swal("error", "Existing :)", "error");
-                                    $flag = true;
-                                    return false;
-                                }
-                            });
-                        }
-                        if($flag){
-                            return false;
-                        }
-
-                        $data_organizations_detail.push({
-                            organization : $organization.text(),
-                            organizationID : $organization.val()
-                        });
-                        var $action = `<div class="btn-group">
-                                            <a id="btnDelete" data-organization="${$organization.text()}" class="btn btn-danger btn-sm" title="Delete">
-                                                <i class="fa fa-fw fa-trash"></i>
-                                            </a>
-                                        </div>`;
-
-                        $table.row.add([ $organization.val(),$organization.text(),$action]).draw();
-                        // $table.on( 'order.dt search.dt', function () {
-                        //     $table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                        //         cell.innerHTML = i+1;
-                        //     } );
-                        // } ).draw();
-                    });
-
-                    $body.on("click","#btnDelete",function(){
-                        var $organization = $(this).data("organization");
-
-                        if($data_organizations_detail){
-                            $.each($data_organizations_detail,function(i,$sub){
-                                if($sub.organization == $organization){
-                                    $data_organizations_detail.splice(i,1);
-                                    return false;
-                                }
-                            });
-                        }
-                        $table.row( $(this).parents('tr') ).remove().draw();
-                    });
-
-                    $('#listDataTableSubDetail tbody').on( 'click', 'tr', function () {
-                        $index = $table.row( this ).index();
-                    } );
-
-                    $body.on("submit","form",function(){
-                        if($.isEmptyObject($data_organizations_detail)){
-                            swal("error","Please, Add detail minimum 1 item.","error");
-                            return false;
-                        }
-                        $("#org_detail").val(JSON.stringify($data_organizations_detail));
-                    });
-                @endif
-            @endif
-
-
         });
     </script>
 @endsection

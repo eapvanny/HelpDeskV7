@@ -36,7 +36,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/ticket-data', [DashboardController::class, 'getTicketData'])->name('dashboard.ticket-data');
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     // Route::post('/profile', [UserController::class, 'profile'])->name('profile');
-
+    //User
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+    Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
     Route::post('/users/{id}/update-profile-photo', [UserController::class, 'updateProfilePhoto'])
             ->name('users.updateProfilePhoto');
 

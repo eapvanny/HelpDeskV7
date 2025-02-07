@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Helpers\AppHelper;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
 class TicketController extends Controller
@@ -13,7 +14,7 @@ class TicketController extends Controller
     public $indexof = 1;
     public function index(Request $request) 
     {
-        $tickets = Ticket::whereHas('department')->get();
+        $tickets = Ticket::with(['department','user'])->get();
 
         if ($request->ajax()) {
             return DataTables::of($tickets)
@@ -25,6 +26,12 @@ class TicketController extends Controller
                 })
                 ->addColumn('department', function ($data) {
                     return __($data->department->name);
+                })
+                ->addColumn('username', function ($data) {
+                    return $data->user ? __($data->user->name) : 'Unknown';
+                })
+                ->addColumn('description', function ($data) {
+                    return __($data->description);
                 })
                 ->addColumn('status', function ($data) {
                     return AppHelper::STATUS[$data->status_id] ?? 'Unknown';
@@ -62,6 +69,7 @@ class TicketController extends Controller
         $this->validate($request, $rules);
 
         Ticket::create([
+            'user_id' => auth()->id(),
             'department_id' => $request->department_id,
             'subject' => $request->subject,
             'status_id' => $request->status_id,

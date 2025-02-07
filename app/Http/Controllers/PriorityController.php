@@ -22,7 +22,7 @@ class PriorityController extends Controller
                     return $data->name;
                 })
                 ->addColumn('action', function ($data) {
-                    $button = '<div class="change-action-item">';
+                    $button = '<div class="change-action-item d-none">';
                     $button.='<a title="Edit"  href="'.route('priority.edit',$data->id).'"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                     // $button.='<a  href="'.route('ticket.delete',$data->id).'"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $button.='</div>';

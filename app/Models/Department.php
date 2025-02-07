@@ -17,8 +17,13 @@ class Department extends Model
       'abbreviation'
     ];
 
-    public function department()
+    public function ticket()
     {
       return $this->hasMany(Ticket::class);
     }
+    public function user()
+    {
+      return $this->hasMany(User::class);
+    }
+    
 }

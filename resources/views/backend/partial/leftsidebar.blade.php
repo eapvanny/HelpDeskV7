@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="text-decoration-none">
+                <a href="{{URL::route('user.index')}}" class="text-decoration-none">
                     <i class="fa fa-users"></i> <span>{{ __('Users') }}</span>
                 </a>
             </li>

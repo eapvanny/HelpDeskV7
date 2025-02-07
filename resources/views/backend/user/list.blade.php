@@ -14,7 +14,7 @@
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }}</a></li>
+            <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }}</a></li>
             <li> {{ __('Administrator') }} </li>
             <li class="active">{{ __('User') }}</li>
         </ol>
@@ -30,18 +30,16 @@
                         <small> {{ __('List') }} </small>
                     </h1>
                     <div class="box-tools pull-right">
-                        @if(auth()->user()->newRole->role_id != AppHelper::USER_ADMIN)
+                        {{-- @if(auth()->user()->newRole->role_id != AppHelper::USER_ADMIN)
 
                             <a class="btn btn-info text-white" href="{{ URL::route('user.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }}</a>
 
-                        @endif
+                        @endif --}}
+                        <a class="btn btn-info text-white" href="{{ URL::route('user.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }}</a>
                     </div>
                 </div>
                 <div class="wrap-outter-box">
                     <div class="box box-info">
-                        <div class="box-header d-none">
-                            {!! AppHelper::selectOrgOfUser($seleted_org) !!}
-                        </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table-responsive">
@@ -50,6 +48,7 @@
                                     <tr>
                                         <th width="5%">#</th>
                                         <th width="10%">{{ __('Photo') }}</th>
+                                        <th width="20%">{{ __('Department') }}</th>
                                         <th width="15%">{{ __('Name') }}</th>
                                         <th width="12%">{{ __('Username') }}</th>
                                         <th width="20%">{{ __('Email') }}</th>
@@ -89,8 +88,6 @@
 @section('extraScript')
     <script type="text/javascript">
         $(document).ready(function () {
-            window.postUrl = '{{URL::Route("user.status", 0)}}';
-            window.changeExportColumnIndex = 6;
             Generic.initCommonPageJS();
             Generic.initDeleteDialog();
             window.filter_org = 1;
@@ -114,17 +111,10 @@
                     {
                         data: 'photo',
                         name: 'photo',
-                        orderable: false,
-                        render: function (data, type, full, meta) {
-                            var imagePath = data ? '{{ Storage::url('') }}' + data : null;
-                            var defaultImage = '{{ asset("images/avatar.jpg") }}';
-
-                            if (imagePath) {
-                                return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" src="' + imagePath + '" >';
-                            } else {
-                                return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" src="' + defaultImage + '" >';
-                            }
-                        }
+                    },
+                    {
+                        data: 'department',
+                        name: 'department',
                     },
                     {
                         data: 'name',
