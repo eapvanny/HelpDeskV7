@@ -48,7 +48,7 @@ class TicketController extends Controller
     {
 
         $departments = Department::pluck('name','id');
-        $ticket = Ticket::query();
+        $ticket = null;
         return view('backend.ticket.add', compact('departments','ticket'));
 
     }

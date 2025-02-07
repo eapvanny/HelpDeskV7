@@ -22,29 +22,7 @@
         <a href="#" class="sidebar-toggle text-decoration-none fas " data-toggle="push-menu" role="button">
 
         </a>
-        {{-- @if ( $showOrgTop )
-            @if ( isset($organizations_filter_list) )
-                <div class="col-md-4">
-                    <select class="form-control select_org_filter organization_filter" required="false" name="organization_filter">
 
-                        @foreach ($organizations_filter_list as $org_filter)
-
-                            <option value="{{$org_filter->id}}" @if(isset($organizations_filter_selected_id) && $org_filter->id==$organizations_filter_selected_id) {{ 'selected="selected"' }} @endif>
-                                @if (app()->currentLocale()=="kh")
-                                    {{optional($org_filter)->name}}
-                                @else
-                                    {{optional($org_filter)->name_in_latin}}
-                                @endif
-                                @if ($org_filter->short_name!="")
-                                    ({{optional($org_filter)->short_name}})
-                                @endif
-                            </option>
-
-                        @endforeach
-                    </select>
-                </div>
-            @endif
-        @endif --}}
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Site Start -->
@@ -198,7 +176,8 @@
                             id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa-bell-o fa-regular fa-bell"><small class="notification_badge"></small></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end notifications position-absolute mt-2 p-2 "aria-labelledby="navbarDropdownMenuLink">
+                        <ul
+                            class="dropdown-menu dropdown-menu-end notifications position-absolute mt-2 p-2 "aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a class="dropdown-item notificaton_header" href="#">
                                 </a>
@@ -224,42 +203,31 @@
                         <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-dropdow-xs"
                             href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false"
                             data-bs-toggle="dropdown">
-                            <img style="border: 1.5px solid #6c6c6c" class="bg-dark bg-opacity-10 object-fit-cover rounded-circle" 
-                            width="40px" height="40px" alt="user" loading="lazy"
-                            src="{{ $photoPath }}">
-                       
-                       <span class="hidden-xs mx-3">
-                           {{ $authUser->username ?? 'Guest' }}
-                           <br>
-                           <small>{{ __('Admin') }}</small>
-                       </span>
-                   
+                            <img style="border: 1.5px solid #6c6c6c"
+                                class="bg-dark bg-opacity-10 object-fit-cover rounded-circle" width="40px"
+                                height="40px" alt="user" loading="lazy" src="{{ $photoPath }}">
+
+                            <span class="hidden-xs mx-3">
+                                {{ $authUser->username ?? 'Guest' }}
+                                <br>
+                                <small>{{ __('Admin') }}</small>
+                            </span>
+
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end position-absolute mt-2 p-2"
-                        aria-labelledby="navbarDropdownMenuAvatar">
+                            aria-labelledby="navbarDropdownMenuAvatar">
 
                             <li>
-                                {{-- @role('Teacher') --}}
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-solid fa-user"></i>
+                                <a class="dropdown-item" href="{{ URL::route('profile') }}">
+                                    <i class="fa fa-solid fa-user"></i>
                                     {{ __('My profile') }}
-                                    </a>
-                                {{-- @elseif(auth()->user()->hasRole('Student'))
-                                    <a class="dropdown-item" href="{{URL::route('student.profile')}}">
-                                        <i class="fa fa-solid fa-user"></i>
-                                    {{ __('My profile') }}
-                                    </a>
-                                @else --}}
-                                    {{-- <a class="dropdown-item" href="#">
-                                        <i class="fa fa-solid fa-user"></i>
-                                    {{ __('My profile') }}
-                                    </a> --}}
-                                {{-- @endrole --}}
+                                </a>
                             </li>
+
                             <li>
                                 <a class="dropdown-item" href="#">
                                     <i class="fa fa-solid fa-lock"></i>
-                                   {{ __('Password') }}
+                                    {{ __('Password') }}
                                 </a>
                             </li>
                             <li>
@@ -270,7 +238,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a class="dropdown-item text-danger" href="{{route('logout')}}">
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}">
                                     <i class="fa fa-solid fa-right-from-bracket"></i>
                                     {{ __('Logout') }}
                                 </a>

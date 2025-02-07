@@ -99,13 +99,13 @@
                         x: {
                             title: {
                                 display: true,
-                                text: 'Months'
+                                //text: 'Months
                             }
                         },
                         y: {
                             title: {
                                 display: true,
-                                text: 'Tickets Opened'
+                                //text: 'Tickets Opened'
                             },
                             beginAtZero: true
                         }

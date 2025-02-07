@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/ticket-data', [DashboardController::class, 'getTicketData'])->name('dashboard.ticket-data');
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    // Route::post('/profile', [UserController::class, 'profile'])->name('profile');
+
+    Route::post('/users/{id}/update-profile-photo', [UserController::class, 'updateProfilePhoto'])
+            ->name('users.updateProfilePhoto');
 
     //Department
     Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
