@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tickets', function (Blueprint $table) {
-            $table->string('description',500)->after('user_id');
+        Schema::create('role_permissions', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->unsignedBigInteger('permission_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tickets', function (Blueprint $table) {
-            $table->dropColumn('description');
-        });
+        Schema::dropIfExists('roles_permissions');
     }
 };

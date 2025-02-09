@@ -3,10 +3,13 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
+use App\Models\Permission;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +49,22 @@ Route::middleware('auth')->group(function () {
     Route::post('/users/{id}/update-profile-photo', [UserController::class, 'updateProfilePhoto'])
             ->name('users.updateProfilePhoto');
 
+    //role
+    Route::get('/role', [RoleController::class, 'index'])->name('role.index');
+    Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
+    Route::post('/role/store', [RoleController::class, 'store'])->name('role.store');
+    Route::get('/role/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
+    Route::put('/role/update/{id}', [RoleController::class, 'update'])->name('role.update');
+    Route::delete('/role/delete/{id}', [RoleController::class, 'destroy'])->name('role.delete');
+
+    //permission
+    Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
+    Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
+    Route::post('/permission/store', [PermissionController::class, 'store'])->name('permission.store');
+    Route::get('/permission/{id}/edit', [PermissionController::class, 'edit'])->name('permission.edit');
+    Route::put('/permission/update/{id}', [PermissionController::class, 'update'])->name('permission.update');
+    Route::delete('/permission/delete/{id}', [PermissionController::class, 'destroy'])->name('permission.delete');
+
     //Department
     Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
     Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
@@ -57,6 +76,7 @@ Route::middleware('auth')->group(function () {
     //Ticket
     Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
     Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+    Route::get('/ticket/{id}/show', [TicketController::class, 'show'])->name('ticket.show');
     Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
     Route::get('/ticket/{id}/edit', [TicketController::class, 'edit'])->name('ticket.edit');
     Route::put('/ticket/update/{id}', [TicketController::class, 'update'])->name('ticket.update');

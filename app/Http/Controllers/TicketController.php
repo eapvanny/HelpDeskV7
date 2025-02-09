@@ -9,12 +9,13 @@ use App\Http\Helpers\AppHelper;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
+
 class TicketController extends Controller
 {
     public $indexof = 1;
-    public function index(Request $request) 
+    public function index(Request $request)
     {
-        $tickets = Ticket::with(['department','user'])->get();
+        $tickets = Ticket::with(['department', 'user'])->get();
 
         if ($request->ajax()) {
             return DataTables::of($tickets)
@@ -41,24 +42,42 @@ class TicketController extends Controller
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
-                    $button.='<a title="Edit"  href="'.route('ticket.edit',$data->id).'"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button.='<a  href="'.route('ticket.delete',$data->id).'"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
-                    $button.='</div>';
+                    $button .= '<span class="change-action-item"><a href="javascript:void(0);" class="btn btn-primary btn-sm show-ticket" data-id="' . $data->id . '" title="Show" data-bs-toggle="modal"><i class="fa fa-fw fa-eye"></i></a></span>';
+                    $button .= '<a title="Edit" href="' . route('ticket.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
+                    $button .= '<a href="' . route('ticket.delete', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    $button .= '</div>';
                     return $button;
                 })
+
                 ->rawColumns(['photo', 'status', 'action'])
                 ->make(true);
         }
         return view('backend.ticket.list');
     }
-    public function create() 
+    public function create()
     {
 
-        $departments = Department::pluck('name','id');
+        $departments = Department::pluck('name', 'id');
         $ticket = null;
-        return view('backend.ticket.add', compact('departments','ticket'));
-
+        return view('backend.ticket.add', compact('departments', 'ticket'));
     }
+
+    public function show($id)
+    {
+        // Try to find the ticket
+        $ticket = Ticket::with(['department', 'user'])->find($id);
+
+        // If ticket doesn't exist, return a 404 response
+        if (!$ticket) {
+            return response()->json(['error' => 'Ticket not found'], 404);
+        }
+
+        // Return the ticket details as HTML for the modal
+        $details = view('backend.ticket.modal.ticket_detail', compact('ticket'))->render();
+
+        return response()->json(['details' => $details]);
+    }
+
     public function store(Request $request)
     {
         $rules = [
@@ -82,7 +101,7 @@ class TicketController extends Controller
     public function edit($id)
     {
         $ticket = Ticket::find($id);
-        $departments = Department::pluck('name','id');
+        $departments = Department::pluck('name', 'id');
         if (!$ticket) {
             return redirect()->route('ticket.index');
         }
@@ -113,11 +132,10 @@ class TicketController extends Controller
         ]);
         return redirect()->route('ticket.index')->with('success', "Department has been updated!");
     }
-    public function destroy($id) 
-    {   
+    public function destroy($id)
+    {
         $ticket = Ticket::find($id);
         $ticket->delete();
         return redirect()->back()->with('success', "Ticket has been deleted!");
-
     }
 }

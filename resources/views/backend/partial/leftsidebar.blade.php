@@ -34,8 +34,13 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="text-decoration-none">
+                <a href="{{URL::route('role.index')}}" class="text-decoration-none">
                     <i class="fa fa-users"></i> <span>{{ __('User roles') }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{URL::route('permission.index')}}" class="text-decoration-none">
+                    <i class="fa fa-snowflake"></i> <span>{{ __('Permission') }}</span>
                 </a>
             </li>
             <li class="treeview">

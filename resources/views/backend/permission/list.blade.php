@@ -26,11 +26,11 @@
             <div class="col-md-12">
             <div class="wrap-outter-header-title">
                 <h1>
-                    {{ __('Role') }}
+                    {{ __('Permission') }}
                     <small> {{ __('List') }} </small>
                 </h1>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('role.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                    <a class="btn btn-info text-white" href="{{ URL::route('permission.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
                 </div>
             </div>
             <div class="wrap-outter-box">
@@ -80,7 +80,7 @@
                 serverSide: true,
                 bLengthChange: false,
                 ajax: {
-                    url: "{!! route('role.index', request()->all()) !!}",
+                    url: "{!! route('permission.index', request()->all()) !!}",
                 },
                 pageLength: 10,
                 columns: [

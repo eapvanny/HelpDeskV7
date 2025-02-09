@@ -17,9 +17,19 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // app/Models/User.php
     protected $fillable = [
-        'department_id', 'name', 'username', 'email', 'phone_no', 'password', 'photo','status',' role_id'
+        'department_id',
+        'name',
+        'username',
+        'email',
+        'phone_no',
+        'password',
+        'photo',
+        'status',
+        'role_id'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -48,5 +58,9 @@ class User extends Authenticatable
     public function ticket()
     {
         return $this->hasMany(Ticket::class);
+    }
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
     }
 }

@@ -2,11 +2,14 @@
 @extends('backend.layouts.master')
 
 <!-- Page title -->
-@section('pageTitle') Tickets @endsection
+@section('pageTitle')
+    Tickets
+@endsection
 <!-- End block -->
 
 <!-- Page body extra class -->
-@section('bodyCssClass') @endsection
+@section('bodyCssClass')
+@endsection
 <!-- End block -->
 
 <!-- BEGIN PAGE CONTENT-->
@@ -14,7 +17,7 @@
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
+            <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
             <li class="active"> {{ __('Tickets') }} </li>
         </ol>
     </section>
@@ -23,53 +26,92 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-            <div class="wrap-outter-header-title">
-                <h1>
-                    {{ __('Tickets') }}
-                    <small> {{ __('List') }} </small>
-                </h1>
-                <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('ticket.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
-                </div>
-            </div>
-
-            <div class="wrap-outter-box">
-                <div class="box box-info">
-                    <!-- /.box-header -->
-                    <div class="box-body margin-top-20">
-                        <div class="table-responsive mt-4">
-                        <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap datatable-server" width="100%">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th > {{ __('Department') }} </th>
-                                <th > {{ __('UserName') }} </th>
-                                <th > {{ __('Subject') }} </th>
-                                <th > {{ __('Description') }} </th>
-                                <th > {{ __('Status') }} </th>
-                                <th > {{ __('Priority') }} </th>
-                                <th class="notexport" > {{ __('Action') }} </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                    </div>
-                    <!-- /.box-body -->
-                    <div class="btn-group">
-                        <form id="myAction" method="POST">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-                        </form>
+                <div class="wrap-outter-header-title">
+                    <h1>
+                        {{ __('Tickets') }}
+                        <small> {{ __('List') }} </small>
+                    </h1>
+                    <div class="box-tools pull-right">
+                        <a class="btn btn-info text-white" href="{{ URL::route('ticket.create') }}"><i
+                                class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
                     </div>
                 </div>
-            </div>
+
+                <div class="wrap-outter-box">
+                    <div class="box box-info">
+                        <!-- /.box-header -->
+                        <div class="box-body margin-top-20">
+                            <div class="table-responsive mt-4">
+                                <table id="datatabble"
+                                    class="table table-bordered table-striped list_view_table display responsive no-wrap datatable-server"
+                                    width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th> {{ __('Department') }} </th>
+                                            <th> {{ __('UserName') }} </th>
+                                            <th> {{ __('Subject') }} </th>
+                                            <th> {{ __('Description') }} </th>
+                                            <th> {{ __('Status') }} </th>
+                                            <th> {{ __('Priority') }} </th>
+                                            <th class="notexport"> {{ __('Action') }} </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="btn-group">
+                            <form id="myAction" method="POST">
+                                @csrf
+                                <input name="_method" type="hidden" value="DELETE">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <!-- Modal -->
+    {{-- <div class="modal fade" id="showTicketModal" tabindex="-1" role="dialog" aria-labelledby="showTicketModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="showTicketModalLabel">Ticket Details</h5>
+                </div>
+                <div class="modal-body" id="ticketDetails">
+                    <!-- Ticket details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-close"
+                        data-dismiss="modal">{{ __('Close') }}</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <div class="modal modal-lg fade" id="showTicketModal" tabindex="-1" role="dialog"
+        aria-labelledby="showTicketModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content rounded overflow-y-scroll">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="showTicketModalLabel">Ticket Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="ticketDetails">
+                    <!-- Content dynamically loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-close"
+                        data-dismiss="modal">{{ __('Close') }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- /.content -->
 @endsection
@@ -78,7 +120,7 @@
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -92,8 +134,7 @@
                     url: "{!! route('ticket.index', request()->all()) !!}",
                 },
                 pageLength: 10,
-                columns: [
-                    {
+                columns: [{
                         data: 'id',
                         name: 'id'
                     },
@@ -127,6 +168,30 @@
                         orderable: false
                     }
                 ],
+            });
+
+            $(document).on('click', '.show-ticket', function() {
+                var ticketId = $(this).data('id'); // Get the ticket ID from the button's data-id attribute
+
+                // Make an AJAX call to fetch the ticket details
+                $.ajax({
+                    url: "{!! route('ticket.show', ':id') !!}".replace(':id',
+                        ticketId), // Dynamically replace :id with the ticket ID
+                    method: 'GET',
+                    success: function(response) {
+                        // Populate the modal with the ticket details
+                        $('#ticketDetails').html(response.details);
+
+                        // Show the modal
+                        $('#showTicketModal').modal('show');
+                    },
+                    error: function() {
+                        alert('Failed to load ticket details.');
+                    }
+                });
+            });
+            $(document).on('click', '#btn-close', function() {
+                $('#showTicketModal').modal('hide'); // This hides the modal manually
             });
 
             //delete grade_level

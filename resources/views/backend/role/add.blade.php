@@ -2,172 +2,260 @@
 @extends('backend.layouts.master')
 
 <!-- Page title -->
-@section('pageTitle') Role @endsection
+@section('pageTitle')
+    Tickets
+@endsection
 <!-- End block -->
 
+<!-- Page body extra class -->
+@section('bodyCssClass')
+@endsection
+<!-- End block -->
+@section('extraStyle')
+    <style>
+        fieldset .form-group {
+            margin-bottom: 0px;
+        }
 
+        fieldset .iradio .error,
+        fieldset .icheck .error {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .display-flex {
+                display: inline-flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .display-flex {
+                display: inline-flex;
+            }
+        }
+
+        .checkbox,
+        .radio {
+            display: inline-block;
+        }
+
+        .checkbox {
+            margin-left: 10px;
+        }
+
+        legend {
+            margin: 0;
+            width: unset;
+            font-weight: 700;
+            font-size: 14px;
+            color: #0059a1;
+            display: block;
+            padding-inline-start: 2px;
+            padding-inline-end: 2px;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+        }
+
+        fieldset {
+            padding: 1em 0.625em 1em;
+            border: 1px solid #9a9a9a;
+            margin: 2px 2px;
+            padding: .35em .625em .75em;
+            margin-top: 4px;
+        }
+    </style>
+@endsection
+@php
+    use App\Http\Helpers\AppHelper;
+@endphp
 <!-- BEGIN PAGE CONTENT-->
 @section('pageContent')
     <!-- Section header -->
     <section class="content-header">
-
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li> {{ __('Administrator') }} </li>
-            <li><a href="{{URL::route('user.role_index')}}"> {{ __('Role') }} </a></li>
-            <li class="active">@if($role) Update @else {{ __('Add') }} @endif</li>
+            <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
+            <li><a href="{{ URL::route('role.index') }}"> {{ __('Ticket') }} </a></li>
+            <li class="active">
+                @if ($role)
+                    Update
+                @else
+                    {{ __('Add') }}
+                @endif
+            </li>
         </ol>
     </section>
     <!-- ./Section header -->
     <!-- Main content -->
     <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrap-outter-header-title">
-                    <h1>
-                        {{ __('Role') }} @if($role) {{$role->name}} @endif
-                        <small> @if($role) Update @else {{ __('Add New') }} @endif</small>
-                    </h1>
+
+        <form novalidate id="entryForm"
+            action="@if ($role) {{ URL::Route('role.update', $role->id) }} @else {{ URL::Route('role.store') }} @endif"
+            method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrap-outter-header-title">
+                        <h1>
+                            {{ __('Role') }}
+                            <small>
+                                @if ($role)
+                                    Update
+                                @else
+                                    {{ __('Add New') }}
+                                @endif
+                            </small>
+                        </h1>
+
+                        <div class="box-tools pull-right">
+                            <a href="{{ URL::route('role.index') }}" class="btn btn-default">Cancel</a>
+                            <button type="submit" class="btn btn-info pull-right text-white"><i
+                                    class="fa @if ($role) fa-refresh @else fa-plus-circle @endif"></i>
+                                @if ($role)
+                                    Update
+                                @else
+                                    Add
+                                @endif
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="wrap-outter-box">
-                <div class="box box-info">
-                    <form novalidate id="entryForm" action="@if($role) {{URL::Route('user.role_update', $role->id)}} @else {{URL::Route('user.role_store')}} @endif" method="post" enctype="multipart/form-data" autocomplete="off">
-                        <div class="box-body">
-                            @csrf
-                            @if(!$role)
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group has-feedback">
-                                        <label for="name"> {{ __('Role Name') }} <span class="text-danger">*</span></label>
-                                        <input autofocus type="text" class="form-control" name="name" placeholder="{{ __('name') }}" value="{{old('name')}}" required minlength="4" maxlength="255">
-                                        <span class="fa fa-info form-control-feedback"></span>
-                                        <span class="text-danger">{{ $errors->first('name') }}</span>
+            </div>
+            <div class="wrap-outter-box">
+                <input id="org_detail" type="hidden" name="org_detail" value="">
+                <div class="box-body">
+                    @csrf
+                    @if ($role)
+                        @method('PUT')
+                    @endif
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group has-feedback">
+                                <label for="name"> {{ __('Name') }} <span class="text-danger">*</span></label>
+                                <input autofocus type="text" class="form-control" name="name" placeholder="name"
+                                    value="@if ($role) {{ $role->name }}@else{{ old('name') }} @endif"
+                                    required minlength="2" maxlength="25">
+                                <span class="fa fa-info form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="dashboard-access" class="fw-bold">{{ __('Dashboard access') }}</label>
+                                <div class="form-check">
+                                    <!-- Ensure that if the checkbox is unchecked, a default value of '0' is sent -->
+                                    <input class="form-check-input" type="checkbox" id="dashboard-access"
+                                        name="dashboard_access" value="1"
+                                        @if (old('dashboard_access') == 1 || (isset($role) && $role->dashboard_access == 1)) checked @endif>
+                                    <label class="form-check-label" for="dashboard-access" id="dashboard-access-label">
+                                        Users will not have access to the dashboard unless enabled.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <hr>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="fw-bold">{{ __('Manage Permissions') }}</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="all-dashboard">
+                                            <label class="form-check-label" for="all-dashboard">Manage All dashboard</label>
+                                        </div>
                                     </div>
-                                </div>
+                                    <hr>
+                                    @php
+                                        $chunkedPermissions =
+                                            $permissions->count() > 0
+                                                ? $permissions->chunk(ceil($permissions->count() / 2))
+                                                : collect([]);
+                                    @endphp
 
-                            </div>
-                            @endif
-                            <h4> {{ __('Permissions') }} </h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @if (isset($chunkedPermissions[0]))
+                                                @foreach ($chunkedPermissions[0] as $permission)
+                                                    <div class="form-check">
+                                                        <input class="form-check-input permission-checkbox" type="checkbox"
+                                                            id="permission-{{ $permission->id }}" name="permissions[]"
+                                                            value="{{ $permission->id }}"
+                                                            @if (in_array($permission->id, $rolePermissionIds)) checked @endif>
+                                                        <label class="form-check-label"
+                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
 
-                            @foreach($permissionList as $group => $modules)
-                            <div class="box-header with-border">
-                                <h3 class="box-title">{{$group}}:</h3>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <table class="table table-bordered table-striped table-hover table-responsive">
-                                        <thead>
-                                        <tr>
-                                            <th>
-                                                <input type="checkbox" class="checkbox tableCheckedAll">
-                                            </th>
-                                            <th width="30%"> {{ __('Module Name') }} </th>
-                                            <th> {{ __('Create') }} </th>
-                                            <th> {{ __('Edit') }} </th>
-                                            <th> {{ __('View') }} </th>
-                                            <th> {{ __('Delete') }} </th>
-                                            <th> {{ __('Share Data') }} </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($modules as $module => $verbs)
-                                            @php $rowCheckedAll = AppHelper::setUpPermissionParentId($group.$module); @endphp 
-                                            <tr class="perms-row" data-check-all-id="{{$rowCheckedAll}}">
-                                                <td>
-                                                    <input type="checkbox" class="checkbox rowCheckedAll" id="{{$rowCheckedAll}}">
-                                                </td>
-                                                <td>
-                                                    {{$module}}
-                                                </td>
-                                                <td>
-                                                    @if(isset($verbs['Create']))
-                                                    <input type="checkbox" class="checkbox perm-checkbox" name="permissions[]" value="{{ implode(',',$verbs['Create']['ids'])}}" @if($verbs['Create']['checked']) checked @endif>
-                                                        @endif
-                                                </td>
-                                                <td>
-                                                    @if(isset($verbs['Edit']))
-                                                    <input type="checkbox" class="checkbox perm-checkbox" name="permissions[]" value="{{ implode(',',$verbs['Edit']['ids'])}}" @if($verbs['Edit']['checked']) checked @endif>
-                                                    @endif
+                                        <div class="col-md-6">
+                                            @if (isset($chunkedPermissions[1]))
+                                                @foreach ($chunkedPermissions[1] as $permission)
+                                                    <div class="form-check">
+                                                        <input class="form-check-input permission-checkbox" type="checkbox"
+                                                            id="permission-{{ $permission->id }}" name="permissions[]"
+                                                            value="{{ $permission->id }}"
+                                                            @if (in_array($permission->id, $rolePermissionIds)) checked @endif>
+                                                        <label class="form-check-label"
+                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
 
-                                                </td>
-                                                <td>
-                                                    @if(isset($verbs['View']))
-                                                    <input type="checkbox" class="checkbox perm-checkbox" name="permissions[]" value="{{ implode(',',$verbs['View']['ids'])}}" @if($verbs['View']['checked']) checked @endif>
-                                                    @endif
 
-                                                </td>
-                                                <td>
-                                                    @if(isset($verbs['Delete']))
-                                                    <input type="checkbox" class="checkbox perm-checkbox" name="permissions[]" value="{{ implode(',',$verbs['Delete']['ids'])}}" @if($verbs['Delete']['checked']) checked @endif>
-                                                    @endif
-
-                                                </td>
-                                                <td>
-                                                    @if(isset($verbs['Share_Data']))
-                                                        <input type="checkbox" class="checkbox perm-checkbox" data-parent="{{$rowCheckedAll}}" name="permissions[]" value="{{ implode(',',$verbs['Share_Data']['ids'])}}" @if($verbs['Share_Data']['checked']) checked @endif>
-                                                    @endif
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
 
                                 </div>
                             </div>
-                            @endforeach
-
                         </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            <a href="{{URL::route('user.role_index')}}" class="btn btn-default"> {{ __('Cancel') }} </a>
-                            <button type="submit" class="btn btn-info pull-right text-white"><i class="fa @if($role) fa-refresh @else fa-plus-circle @endif"></i> @if($role) {{__('Update')}} @else {{ __('Add') }} @endif</button>
-
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-            </div>
-        </div>
+        </form>
     </section>
-    <!-- /.content -->
 @endsection
 <!-- END PAGE CONTENT-->
 
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
     <script type="text/javascript">
-        $(document).ready(function () {
-            Generic.initCommonPageJS();
-
-            $('input.tableCheckedAll').on('ifToggled', function (event) {
-                var chkToggle;
-                $(this).is(':checked') ? chkToggle = "check" : chkToggle = "uncheck";
-                var table = $(event.target).closest('table');
-                $('td input:checkbox:not(.tableCheckedAll)',table).iCheck(chkToggle);
-            });
-            $('input.rowCheckedAll').on('ifToggled', function (event) {
-                var chkToggle;
-                $(this).is(':checked') ? chkToggle = "check" : chkToggle = "uncheck";
-                var row = $(event.target).closest('tr');
-                $('td input:checkbox:not(.rowCheckedAll)',row).iCheck(chkToggle);
-            });
-
-            // auto set checkAll to checked if all are checked
-            $('.perms-row').each(function () {
-                let checkAllId = $(this).data('check-all-id');
-
-                let all_are_checkes = true;
-                let perms_checkboxes = $(this).find('input.perm-checkbox');
-                perms_checkboxes.each(function () {
-                    if (!$(this).is(':checked')) {
-                        all_are_checkes = false;
-                        return;
-                    }
-                });
-                if(all_are_checkes){
-                    $('#'+checkAllId).iCheck('check');
+        $(document).ready(function() {
+            Generic.initDeleteDialog();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
+            });
+
+            function updateLabelText() {
+                if ($('#dashboard-access').prop('checked')) {
+                    $('#dashboard-access-label').text('User can access the dashboard.');
+                } else {
+                    $('#dashboard-access-label').text(
+                        'Users will not have access to the dashboard unless enabled.');
+                }
+            }
+
+            // Run the function once on page load
+            updateLabelText();
+
+            // Add event listener to the checkbox for change event
+            $('#dashboard-access').change(function() {
+                updateLabelText();
+            });
+
+            $('#all-dashboard').change(function() {
+                let isChecked = $(this).is(':checked');
+                $('.permission-checkbox').prop('checked', isChecked).trigger('change');
+            });
+
+            $('.permission-checkbox').change(function() {
+                let allChecked = $('.permission-checkbox').length === $('.permission-checkbox:checked')
+                    .length;
+                $('#all-dashboard').prop('checked', allChecked);
             });
         });
     </script>

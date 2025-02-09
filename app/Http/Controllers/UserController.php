@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $users = User::with('department')->get();
+            $users = User::with('department', 'role')->get();
             return DataTables::of($users)
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
@@ -43,7 +43,7 @@ class UserController extends Controller
                     return __($data->phone_no);
                 })
                 ->addColumn('role', function ($data) {
-                    return __($data->role_id);
+                    return $data->role ? __($data->role->name) : __('N/A');
                 })
                 ->addColumn('status', function ($data) {
                     if ($data->status == 1) {
@@ -82,24 +82,20 @@ class UserController extends Controller
             'username' => 'required|min:5|max:255|unique:users,username',
             'password' => 'required|min:6|max:50',
             'phone_no' => 'nullable|max:15',
-            // 'role_id' => 'required|numeric',
+            'role_id' => 'required',
 
         ];
-
-
         $this->validate($request, $rules);
-
         $userData = [
             'name' => $request->name,
             'department_id' => $request->department_id,
-            'role_id' => 1,
+            'role_id' => $request->role_id,
             'username' => $request->get('username'),
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
             'password' => bcrypt($request->get('password')),
         ];
-
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
@@ -110,11 +106,10 @@ class UserController extends Controller
             $userData['photo'] = $filePath;
         }
         $user = User::create($userData);
-        //now assign the user to role
         UserRole::create(
             [
                 'user_id' => $user->id,
-                'role_id' => '1',
+                'role_id' => $request->role_id,
             ]
         );
         return redirect()->route('user.index')->with('success', 'User added!');
@@ -152,6 +147,7 @@ class UserController extends Controller
             'username' => 'required|min:5|max:255|unique:users,username,' . $id,
             'password' => 'nullable|min:6|max:50',
             'phone_no' => 'nullable|max:15',
+            'role_id' => 'required',
         ];
 
         $this->validate($request, $rules);
@@ -160,7 +156,7 @@ class UserController extends Controller
         $userData = [
             'name' => $request->name,
             'department_id' => $request->department_id,
-            'role_id' => 1, // You may want to get this dynamically
+            'role_id' => $request->role_id, // You may want to get this dynamically
             'username' => $request->username,
             'email' => $request->email,
             'phone_no' => $request->phone_no,
@@ -193,7 +189,7 @@ class UserController extends Controller
         // Assign the user to role only if it doesn’t exist
         UserRole::updateOrCreate(
             ['user_id' => $user->id],
-            ['role_id' => 1]
+            ['role_id' => $request->role_id]
         );
 
         return redirect()->route('user.index')->with('success', 'User updated successfully!');
