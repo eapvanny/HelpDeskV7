@@ -79,6 +79,9 @@
 @section('extraScript')
     <script type="text/javascript">
         $(document).ready(function () {
+            Generic.initCommonPageJS();
+            Generic.initDeleteDialog();
+            Generic.initFilter();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

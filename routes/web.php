@@ -8,6 +8,7 @@ use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TranslationController;
 use App\Http\Controllers\UserController;
 use App\Models\Permission;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
     Route::post('/users/{id}/update-profile-photo', [UserController::class, 'updateProfilePhoto'])
-            ->name('users.updateProfilePhoto');
+        ->name('users.updateProfilePhoto');
+
+    // Route for switching languages
+    Route::get('/set-lang/{lang}', [UserController::class, 'setLanguage'])->name('user.set_lang');
+
 
     //role
     Route::get('/role', [RoleController::class, 'index'])->name('role.index');
@@ -82,6 +87,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/ticket/update/{id}', [TicketController::class, 'update'])->name('ticket.update');
     Route::delete('/ticket/{id}/delete', [TicketController::class, 'destroy'])->name('ticket.delete');
 
+    //chat message
+    Route::get('/chat/messages/{ticket_id}', [TicketController::class, 'getMessages'])->name('get.messages');
+    Route::post('/chat/send', [TicketController::class, 'sendMessage'])->name('send.message');
+
+
     //Status
     Route::get('/status', [StatusController::class, 'index'])->name('status.index');
     Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
@@ -92,4 +102,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/priority/create', [PriorityController::class, 'create'])->name('priority.create');
     Route::get('/priority/{id}/edit', [PriorityController::class, 'edit'])->name('priority.edit');
 
+
+    // Translation Routes
+    Route::prefix('translations')->name('translation.')->group(function () {
+        // List all translations
+        Route::get('/', [TranslationController::class, 'index'])->name('index');
+
+        // Store translation
+        Route::post('/store', [TranslationController::class, 'store'])->name('store');
+
+        // Update translation
+        Route::put('/{id}', [TranslationController::class, 'update'])->name('update');
+
+        // Delete translation
+        Route::delete('/{id}', [TranslationController::class, 'destroy'])->name('destroy');
+
+        // Import translations
+        Route::post('/import', [TranslationController::class, 'import'])->name('import');
+    });
 });

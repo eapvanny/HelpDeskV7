@@ -2,6 +2,12 @@
 namespace App\Http\Helpers;
 
 class AppHelper {
+
+    const USER_ADMIN = 1;
+    const USER_STAFF = 2;
+
+    const LANGUAGES = ['en', 'kh'];
+
     const STATUS_OPEN = 1;
     const STATUS_PENDING = 2;
     const STATUS_RESOLVED = 3;
@@ -26,4 +32,6 @@ class AppHelper {
         self::PRIORITY_URGENT => 'Urgent',
     ];
 }
+
+
 

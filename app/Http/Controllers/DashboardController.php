@@ -10,14 +10,22 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $query = Ticket::query();
+
+        // Check if the authenticated user is an admin
+        if (auth()->user()->role_id !== AppHelper::USER_ADMIN) {
+            $query->where('user_id', auth()->id());
+        }
+
         // Count tickets based on status
-        $openTickets = Ticket::where('status_id', AppHelper::STATUS_OPEN)->count();
-        $pendingTickets = Ticket::where('status_id', AppHelper::STATUS_PENDING)->count();
-        $resolvedTickets = Ticket::where('status_id', AppHelper::STATUS_RESOLVED)->count();
-        $closedTickets = Ticket::where('status_id', AppHelper::STATUS_CLOSED)->count();
+        $openTickets = (clone $query)->where('status_id', AppHelper::STATUS_OPEN)->count();
+        $pendingTickets = (clone $query)->where('status_id', AppHelper::STATUS_PENDING)->count();
+        $resolvedTickets = (clone $query)->where('status_id', AppHelper::STATUS_RESOLVED)->count();
+        $closedTickets = (clone $query)->where('status_id', AppHelper::STATUS_CLOSED)->count();
 
         // Fetch the count of tickets opened per month
-        $monthlyTickets = Ticket::selectRaw('EXTRACT(MONTH FROM created_at) as month, COUNT(id) as count')
+        $monthlyTickets = (clone $query)
+            ->selectRaw('EXTRACT(MONTH FROM created_at) as month, COUNT(id) as count')
             ->whereYear('created_at', date('Y')) // Filter for the current year
             ->groupBy('month')
             ->orderBy('month')
@@ -34,6 +42,7 @@ class DashboardController extends Controller
     }
 
 
+
     public function getTicketData()
     {
         $monthlyTickets = Ticket::selectRaw('MONTH(created_at) as month, COUNT(*) as count')
@@ -47,7 +56,7 @@ class DashboardController extends Controller
             'pending' => Ticket::where('status', 'pending')->count(),
             'solved' => Ticket::where('status', 'solved')->count(),
             'unassigned' => Ticket::whereNull('agent_id')->count(),
-            'monthly' => array_fill(0, 12, 0) 
+            'monthly' => array_fill(0, 12, 0)
         ];
 
         foreach ($monthlyTickets as $month => $count) {

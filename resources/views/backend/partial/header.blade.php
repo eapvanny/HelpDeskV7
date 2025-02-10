@@ -126,35 +126,38 @@
 
                     <!-- Languages -->
                     <div class="dropdown mx-3 language">
-
                         <div data-mdb-dropdown-init class="main-language text-reset dropdown-toggle hidden-dropdow-xs"
                             data-bs-toggle="dropdown" href="#" id="navbarDropdownMenuLink" role="button"
                             aria-expanded="false">
                             <a href="javascript:void(0);">
                                 <span class="icon-language">
-                                    <img src="{{ asset('./images/en.png') }}" alt="English" loading="lazy" />
+                                    <img src="{{ asset('./images/' . session('user_lang', 'en') . '.png') }}"
+                                        alt="{{ session('user_lang', 'en') == 'en' ? 'English' : 'Khmer' }}"
+                                        loading="lazy" />
                                 </span>
                                 <span class="label-language">
-                                    <small class="">EN</small>
+                                    <small>{{ session('user_lang', 'en') == 'en' ? 'EN' : 'KH' }}</small>
                                 </span>
                             </a>
                         </div>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end position-absolute"aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menu-end position-absolute"
+                            aria-labelledby="navbarDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item">
+                                <a class="dropdown-item" href="{{ route('user.set_lang', 'en') }}">
                                     <img src="{{ asset('./images/en.png') }}" alt="English" loading="lazy" />
                                     English
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item">
-                                    <img src="{{ asset('./images/kh.png') }}" alt="English" loading="lazy" />
+                                <a class="dropdown-item" href="{{ route('user.set_lang', 'kh') }}">
+                                    <img src="{{ asset('./images/kh.png') }}" alt="Khmer" loading="lazy" />
                                     ភាសាខ្មែរ
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+
                     <div class="sepa-menu-header"></div>
                     <!-- Messages -->
                     <div class="dropdown mx-2">

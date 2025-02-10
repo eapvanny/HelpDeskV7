@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Helpers\AppHelper;
+use App\Models\ChatMessage;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
@@ -15,7 +16,13 @@ class TicketController extends Controller
     public $indexof = 1;
     public function index(Request $request)
     {
-        $tickets = Ticket::with(['department', 'user'])->get();
+        $query = Ticket::with(['department', 'user']);
+
+        if (auth()->user()->role_id !== AppHelper::USER_ADMIN) {
+            $query->where('user_id', auth()->id());
+        }
+
+        $tickets = $query->get();
 
         if ($request->ajax()) {
             return DataTables::of($tickets)
@@ -48,12 +55,13 @@ class TicketController extends Controller
                     $button .= '</div>';
                     return $button;
                 })
-
                 ->rawColumns(['photo', 'status', 'action'])
                 ->make(true);
         }
+
         return view('backend.ticket.list');
     }
+
     public function create()
     {
 
@@ -64,19 +72,49 @@ class TicketController extends Controller
 
     public function show($id)
     {
-        // Try to find the ticket
-        $ticket = Ticket::with(['department', 'user'])->find($id);
+        $ticket = Ticket::find($id);
 
-        // If ticket doesn't exist, return a 404 response
         if (!$ticket) {
             return response()->json(['error' => 'Ticket not found'], 404);
         }
 
-        // Return the ticket details as HTML for the modal
-        $details = view('backend.ticket.modal.ticket_detail', compact('ticket'))->render();
-
-        return response()->json(['details' => $details]);
+        return response()->json(['ticket' => $ticket]);
     }
+
+
+    public function getMessages($ticket_id)
+    {
+        // Get the last message ID from the request
+        $lastMessageId = request('lastMessageId', 0); // Default to 0 if not provided
+
+        // Fetch messages greater than the lastMessageId
+        $messages = ChatMessage::where('ticket_id', $ticket_id)
+            ->where('id', '>', $lastMessageId)  // Only fetch newer messages
+            ->with('user') // Assuming you want user data with the message
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        return response()->json($messages);
+    }
+
+
+    public function sendMessage(Request $request)
+    {
+        $request->validate([
+            'ticket_id' => 'required|exists:tickets,id',
+            'message' => 'required|string',
+        ]);
+
+        $message = ChatMessage::create([
+            'ticket_id' => $request->ticket_id,
+            'user_id' => Auth::id(),
+            'message' => $request->message,
+        ]);
+
+        return response()->json($message);
+    }
+
+
 
     public function store(Request $request)
     {

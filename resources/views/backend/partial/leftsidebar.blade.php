@@ -52,7 +52,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#" class="text-decoration-none">
+                        <a href="{{URL::route('translation.index')}}" class="text-decoration-none">
                             <i class="fa fa-solid fa-person-dots-from-line"></i><span>{{ __('Translations') }}</span>
                         </a>
                     </li>

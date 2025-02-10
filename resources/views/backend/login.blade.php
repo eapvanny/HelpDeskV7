@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 {{-- <link rel="icon" type="image/png" href="{{asset('portal/Login_v2/images/icons/favicon.ico')}}"/>	 --}}
-<link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}"/>
+<link rel="icon" type="image/png" href="{{asset('images/Hi-Tech_Water_Logo.png')}}"/>
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="{{asset('portal/Login_v2/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->

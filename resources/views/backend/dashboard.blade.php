@@ -21,25 +21,25 @@
             </div>
             <div class="col-md-3">
                 <div class="card" style="color: grey">
-                    <h5>Open tickets</h5>
-                    <h3 id="open-tickets">{{ $openTickets }}</h3>
+                     <h5>{{ __('Problem Tickets') }}</h5>
+                    <h3 id="problem-tickets">{{ __($openTickets) }}</h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="color: grey">
-                    <h5>Pending tickets</h5>
+                    <h5>{{__('Pending Tickets')}}</h5>
                     <h3 id="pending-tickets">{{ $pendingTickets }}</h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="color: grey">
-                    <h5>Resolved tickets</h5>
+                    <h5>{{__('Resolved Tickets')}}</h5>
                     <h3 id="solved-tickets">{{ $resolvedTickets }}</h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card" style="color: grey">
-                    <h5>Closed tickets</h5>
+                    <h5>{{__('Closed Tickets')}}</h5>
                     <h3 id="closed-tickets">{{ $closedTickets }}</h3>
                 </div>
             </div>
@@ -47,7 +47,7 @@
 
         <div class="card mt-3">
             <div class="chart-container">
-                <span style="font-weight: bold">Opened tickets this year</span>
+                <span style="font-weight: bold">{{__('Opened tickets this year')}}</span>
                 <canvas id="lineChart"></canvas>
             </div>
         </div>

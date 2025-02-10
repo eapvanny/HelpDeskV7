@@ -7,6 +7,42 @@
 @endsection
 <!-- End block -->
 
+@section('extraStyle')
+    <style>
+        .modal-fullscreen .modal-dialog {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            margin: 0;
+        }
+
+        .modal-fullscreen .modal-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .chat-input-container {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            padding: 10px;
+        }
+    </style>
+@endsection
+
 <!-- Page body extra class -->
 @section('bodyCssClass')
 @endsection
@@ -76,38 +112,36 @@
             </div>
         </div>
     </section>
-    <!-- Modal -->
-    {{-- <div class="modal fade" id="showTicketModal" tabindex="-1" role="dialog" aria-labelledby="showTicketModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="showTicketModalLabel">Ticket Details</h5>
-                </div>
-                <div class="modal-body" id="ticketDetails">
-                    <!-- Ticket details will be loaded here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btn-close"
-                        data-dismiss="modal">{{ __('Close') }}</button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div class="modal modal-lg fade" id="showTicketModal" tabindex="-1" role="dialog"
         aria-labelledby="showTicketModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content rounded overflow-y-scroll">
+            <div class="modal-content rounded-0">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="showTicketModalLabel">Ticket Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="showTicketModalLabel">{{__('Ticket Details')}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose"
+                        aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="ticketDetails">
-                    <!-- Content dynamically loaded here -->
+
+                <div class="modal-body d-flex flex-column">
+                    <!-- Chat Messages (Scrollable) -->
+                    <div class="chat-container flex-grow-1 overflow-auto p-3" id="chat-box">
+                        <!-- Messages will be dynamically loaded here -->
+                    </div>
+
+                    <!-- Fixed Input for New Message -->
+                    <div class="chat-input-container border-top p-3 bg-white">
+                        <input type="hidden" id="ticket_id">
+                        <div class="d-flex align-items-center">
+                            <textarea id="chatMessage" class="form-control me-2" rows="1" placeholder="Type a message"></textarea>
+                            <button type="button" class="btn btn-primary" id="sendMessage">{{__('Send')}}</button>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btn-close"
-                        data-dismiss="modal">{{ __('Close') }}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close">
+                        {{__('Close')}}
+                    </button>
                 </div>
             </div>
         </div>
@@ -171,27 +205,109 @@
             });
 
             $(document).on('click', '.show-ticket', function() {
-                var ticketId = $(this).data('id'); // Get the ticket ID from the button's data-id attribute
+                var ticketId = $(this).data('id');
 
-                // Make an AJAX call to fetch the ticket details
+                // Clear old ticket data before fetching new one
+                $('#ticket_id').val('');
+                $('#chat-box').html('');
+                $("#chatMessage").val('');
+
+                // Fetch Ticket Details
                 $.ajax({
-                    url: "{!! route('ticket.show', ':id') !!}".replace(':id',
-                        ticketId), // Dynamically replace :id with the ticket ID
+                    url: "{!! route('ticket.show', ':id') !!}".replace(':id', ticketId),
                     method: 'GET',
                     success: function(response) {
-                        // Populate the modal with the ticket details
-                        $('#ticketDetails').html(response.details);
+                        $('#ticket_id').val(ticketId);
 
-                        // Show the modal
-                        $('#showTicketModal').modal('show');
+                        let lastMessageId = 0; // Store the ID of the last message
+
+                        function fetchMessages() {
+                            $.ajax({
+                                url: `/chat/messages/${ticketId}`,
+                                method: "GET",
+                                data: {
+                                    lastMessageId: lastMessageId, // Send the last message ID to the server
+                                },
+                                success: function(response) {
+                                    if (response.length > 0) {
+                                        // Loop through new messages and append them
+                                        response.forEach(msg => {
+                                            let isCurrentUser = msg
+                                                .user_id ===
+                                                {{ auth()->id() }};
+                                            let alignmentClass =
+                                                isCurrentUser ?
+                                                'd-flex justify-content-end' :
+                                                'd-flex justify-content-start';
+                                            let bgColor = isCurrentUser ?
+                                                'bg-primary text-white' :
+                                                'bg-dark text-white';
+
+                                            // Append new messages to chat box
+                                            $("#chat-box").append(`
+                                    <div class="message ${alignmentClass} my-2">
+                                        <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
+                                            ${msg.message}
+                                        </div>
+                                    </div>
+                                `);
+                                        });
+
+                                        // Update last message ID to ensure we don't fetch the same messages
+                                        lastMessageId = response[response.length -
+                                            1].id;
+                                    }
+                                }
+                            });
+                        }
+
+                        // Initial fetch of messages
+                        fetchMessages();
+
+                        // Send a new message
+                        $("#sendMessage").off("click").on("click", function() {
+                            let message = $("#chatMessage").val().trim();
+                            if (message === "") return;
+
+                            $.ajax({
+                                url: "{{ route('send.message') }}",
+                                method: "POST",
+                                data: {
+                                    ticket_id: ticketId,
+                                    message: message,
+                                    _token: "{{ csrf_token() }}"
+                                },
+                                success: function(response) {
+                                    $("#chatMessage").val(
+                                    ""); // Clear input field
+                                    $("#chat-box").append(`
+                            <div class="message text-right">
+                                <div class="p-2 rounded bg-primary text-white" style="max-width: 60%; display: inline-block;">
+                                    ${response.message}
+                                </div>
+                            </div>
+                        `);
+                                }
+                            });
+                        });
+
+                        setInterval(fetchMessages,
+                        3000); 
+
+                        $('#showTicketModal').modal('show'); 
                     },
                     error: function() {
                         alert('Failed to load ticket details.');
                     }
                 });
             });
-            $(document).on('click', '#btn-close', function() {
-                $('#showTicketModal').modal('hide'); // This hides the modal manually
+
+            // Clear modal content on close
+            $(document).on('click', '#btn-close, #btnClose', function() {
+                $('#showTicketModal').modal('hide'); 
+                $('#chat-box').html(''); 
+                $('#ticket_id').val(''); 
+                $("#chatMessage").val("");
             });
 
             //delete grade_level

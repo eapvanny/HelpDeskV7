@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\AppHelper;
 use App\Models\Department;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
@@ -257,5 +261,26 @@ class UserController extends Controller
             }
         }
         return redirect()->back()->with('success', 'Profile Photo updated!');
+    }
+
+    public function setLanguage($lang)
+    {
+        if (in_array($lang, ['en', 'kh'])) {
+            // Update the user's language preference (if logged in)
+            if (auth()->check()) {
+                auth()->user()->update(['user_lang' => $lang]);
+            }
+
+            // Store language in session
+            session(['user_lang' => $lang]);
+
+            // Set the application's locale
+            app()->setLocale($lang);
+
+            // Redirect back
+            return redirect()->back();
+        }
+
+        return redirect()->route('/dashboard');
     }
 }
