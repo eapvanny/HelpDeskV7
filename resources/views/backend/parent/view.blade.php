@@ -400,7 +400,6 @@
                 var t = $('#datatable-student').DataTable({
                     processing: true,
                     serverSide: true,
-                    bLengthChange: false,
                     ajax:{
                         url: "{!!  route('parent.students',$parent->id, Request::query()) !!}",
                         data: {'parent_id' : parentId },

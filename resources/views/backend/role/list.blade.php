@@ -2,11 +2,14 @@
 @extends('backend.layouts.master')
 
 <!-- Page title -->
-@section('pageTitle') Role @endsection
+@section('pageTitle')
+    Role
+@endsection
 <!-- End block -->
 
 <!-- Page body extra class -->
-@section('bodyCssClass') @endsection
+@section('bodyCssClass')
+@endsection
 <!-- End block -->
 
 <!-- BEGIN PAGE CONTENT-->
@@ -14,7 +17,7 @@
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
+            <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
             <li> {{ __('Administrator') }} </li>
             <li class="active"> {{ __('User') }} </li>
         </ol>
@@ -24,38 +27,47 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-            <div class="wrap-outter-header-title">
-                <h1>
-                    {{ __('Role') }}
-                    <small> {{ __('List') }} </small>
-                </h1>
-                <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('role.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                <div class="wrap-outter-header-title">
+                    <h1>
+                        {{ __('Role') }}
+                        <small> {{ __('List') }} </small>
+                    </h1>
+                    <div class="box-tools pull-right">
+                        <a class="btn btn-info text-white" href="{{ URL::route('role.create') }}"><i
+                                class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                    </div>
                 </div>
-            </div>
-            <div class="wrap-outter-box">
-            <div class="box box-info">
-                    <!-- /.box-header -->
-                    <div class="box-body margin-top-20">
-                        <div class="table-responsive mt-3">
-                            <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap" width="100%">
-                                <thead>
-                                <tr>
-                                    <th width="10%">#</th>
-                                    <th width="60%"> {{ __('Name') }} </th>
-                                    <th class="notexport" width="30%"> {{ __('Action') }} </th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                <div class="wrap-outter-box">
+                    <div class="box box-info">
+                        <!-- /.box-header -->
+                        <div class="box-body margin-top-20">
+                            <div class="table-responsive mt-3">
+                                <table id="datatabble"
+                                    class="table table-bordered table-striped list_view_table display responsive no-wrap"
+                                    width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">#</th>
+                                            <th width="60%"> {{ __('Name') }} </th>
+                                            <th class="notexport" width="30%"> {{ __('Action') }} </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                </tbody>
+                                    </tbody>
 
-                            </table>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="btn-group">
+                            <form id="myAction" method="POST">
+                                @csrf
+                                <input name="_method" type="hidden" value="DELETE">
+                            </form>
                         </div>
                     </div>
-                    <!-- /.box-body -->
                 </div>
-            </div>
             </div>
         </div>
 
@@ -67,7 +79,7 @@
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             Generic.initCommonPageJS();
             Generic.initDeleteDialog();
             $.ajaxSetup({
@@ -78,13 +90,11 @@
             t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax: {
                     url: "{!! route('role.index', request()->all()) !!}",
                 },
                 pageLength: 10,
-                columns: [
-                    {
+                columns: [{
                         data: 'id',
                         name: 'id'
                     },

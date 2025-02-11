@@ -90,7 +90,6 @@
             t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax: {
                     url: "{!! route('department.index', request()->all()) !!}",
                 },

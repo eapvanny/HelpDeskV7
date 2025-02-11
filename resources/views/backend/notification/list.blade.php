@@ -99,7 +99,6 @@
             var t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax:{
                     url: "{!! route('notification.index',Request::query()) !!}",
                 },

@@ -29,7 +29,7 @@
                     <small> {{ __('List') }} </small>
                 </h1>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('status.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                    <a class="btn btn-info text-white" href="#"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
                 </div>
             </div>
 
@@ -85,7 +85,6 @@
             t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax: {
                     url: "{!! route('status.index', request()->all()) !!}",
                 },

@@ -107,7 +107,6 @@
         var t = $('#datatabble').DataTable({
             processing: false,
             serverSide: true,
-            bLengthChange: false,
             ajax:{
                 url: "{!!  route('saleitem.product.index',request()->all()) !!}",
             },

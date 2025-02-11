@@ -85,7 +85,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th> {{ __('Department') }} </th>
-                                            <th> {{ __('UserName') }} </th>
+                                            <th> {{ __('Username') }} </th>
                                             <th> {{ __('Subject') }} </th>
                                             <th> {{ __('Description') }} </th>
                                             <th> {{ __('Status') }} </th>
@@ -163,7 +163,6 @@
             t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax: {
                     url: "{!! route('ticket.index', request()->all()) !!}",
                 },

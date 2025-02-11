@@ -46,7 +46,8 @@ class RoleController extends Controller
     {
         $role = null;
         $permissions = Permission::all();
-        return view('backend.role.add', compact('role', 'permissions'));
+        $rolePermissionIds = [];
+        return view('backend.role.add', compact('role', 'permissions','rolePermissionIds'));
     }
 
 
@@ -130,6 +131,6 @@ class RoleController extends Controller
     {
         $ticket = Role::find($id);
         $ticket->delete();
-        return redirect()->back()->with('success', "Ticket has been deleted!");
+        return redirect()->back()->with('success', "Role has been deleted!");
     }
 }

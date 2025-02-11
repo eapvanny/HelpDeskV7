@@ -154,7 +154,7 @@
                         <div class="col-md-3">
                             <div class="form-group has-feedback">
                                 <label for="name"> {{ __('Name') }} <span class="text-danger">*</span></label>
-                                <input autofocus type="text" class="form-control" name="name" placeholder="name"
+                                <input type="text" class="form-control" name="name" placeholder="name"
                                     value="@if ($user) {{ $user->name }}@else{{ old('name') }} @endif"
                                     required minlength="2" maxlength="255">
                                 <span class="fa fa-info form-control-feedback"></span>
@@ -163,7 +163,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group has-feedback">
-                                <label for="phone_no"> {{ __('Phone/Mobile No') }}.</label>
+                                <label for="phone_no"> {{ __('Phone No.') }}</label>
                                 <input type="text" class="form-control" name="phone_no"
                                     placeholder="phone or mobile number"
                                     value="@if ($user) {{ $user->phone_no }}@else{{ old('phone_no') }} @endif"
@@ -244,8 +244,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="photo"> {{ __('Photo') }} <br /><span
-                                                class="text-muted fst-italic">(Files: jpeg, jpg, or png, min dimension: 50
-                                                x 50 pixel, 2Mb max size)</span></label>
+                                                class="text-muted fst-italic">{{__('(Files: jpeg, jpg, or png, min dimension: 50
+                                                x 50 pixel, 2Mb max size)')}}</span></label>
                                         <input type="file" class="form-control" accept=".jpeg, .jpg, .png"
                                             name="photo" placeholder="{{ __('Photo image') }}">
                                         <span class="glyphicon glyphicon-open-file form-control-feedback"

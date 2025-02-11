@@ -130,13 +130,13 @@
                                 </div>
                                 <div class="form-group has-feedback item-container">
                                     <label for="item">{{ __('Text') }} <span class="text-danger">*</span></label>
-                                    <input type="text" name="item" class="form-control" id="item" placeholder="classroom" value="" minlength="1" maxlength="255" required />
+                                    <input type="text" name="item" class="form-control" id="item" placeholder="English" value="" minlength="1" maxlength="255" required />
                                     <span class="fa fa-info form-control-feedback"></span>
                                     <span class="text-danger">{{ $errors->first('item') }}</span>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <label for="text">{{ __('Translate As') }} <span class="text-danger">*</span></label>
-                                    <textarea name="text" class="form-control" id="text" placeholder="ថ្នាក់រៀន" value="" rows="3" required></textarea>
+                                    <textarea name="text" class="form-control" id="text" placeholder="ខ្មែរ" value="" rows="3" required></textarea>
                                     <span class="fa fa-info form-control-feedback"></span>
                                     <span class="text-danger">{{ $errors->first('text') }}</span>
                                 </div>

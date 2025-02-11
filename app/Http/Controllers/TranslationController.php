@@ -25,7 +25,7 @@ class TranslationController extends Controller
         //available locales
         $locales = $this->locales;
 
-        $locale = 'en';
+        $locale = 'kh';
         if ($request->has('locale')) {
             $locale = $request->locale;
         }
@@ -81,12 +81,16 @@ class TranslationController extends Controller
         // If it doesn't exist, create it, otherwise, update the existing translation.
         if ($translation) {
             $translation->update(['text' => $validated['text']]);
+            $this->applyTranslation($validated['locale']);
+            return redirect()->back()->with('success', 'Translation updated successfully!');
+
         } else {
             Translation::create($validated);
+            $this->applyTranslation($validated['locale']);
+            return redirect()->back()->with('success', 'Translation Created successfully!');
         }
 
         // Rebuild the language file to apply the changes.
-        $this->applyTranslation($validated['locale']);
 
         return redirect()->back()->with('success', 'Translation updated successfully!');
     }

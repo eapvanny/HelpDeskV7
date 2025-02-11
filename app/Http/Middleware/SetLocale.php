@@ -19,7 +19,7 @@ class SetLocale
         if (auth()->check() && auth()->user()->user_lang) {
             app()->setLocale(auth()->user()->user_lang); // Set the language
         } else {
-            app()->setLocale('en');  // Default language if not set
+            app()->setLocale('kh');  // Default language if not set
         }
 
         return $next($request);

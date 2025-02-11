@@ -209,7 +209,6 @@
                 var t = $('#datatabble').DataTable({
                     processing: true,
                     serverSide: true,
-                    bLengthChange: false,
                     ajax:{
                         url: window.cateUrl,
                     },

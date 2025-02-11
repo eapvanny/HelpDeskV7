@@ -283,7 +283,6 @@
             var t = $('#datatabble').DataTable({
                 processing: true,
                 serverSide: true,
-                bLengthChange: false,
                 paging: false,
                 ajax:{
                     url: "{!! route('pos.order.show',['datatable'=>true,'id'=>$order->id])!!}"

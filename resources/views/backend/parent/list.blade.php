@@ -171,7 +171,6 @@
             var t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
-                bLengthChange: false,
                 ajax:{
                     url: "{!! route('parents.index',Request::query()) !!}",
                 },
