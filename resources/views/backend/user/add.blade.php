@@ -193,12 +193,11 @@
                                         title="" data-original-title="Set a user role"></i>
                                     <span class="text-danger">*</span>
                                 </label>
-                                <select name="role_id" required class="select2">
-                                    <option value="">{{__('Select Role')}}</option>
-                                    @foreach ($roles as $id => $name)
-                                        <option value="{{ $id }}">{{ $name }}</option>
-                                    @endforeach
-                                </select>
+                                {!! Form::select('role_id', $roles, old('role_id', optional($user)->role_id), [
+                                    'placeholder' => __('Select Role'),
+                                    'class' => 'form-control select2',
+                                    'required' => true,
+                                ]) !!}
 
 
                                 <span class="form-control-feedback"></span>
@@ -244,8 +243,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="photo"> {{ __('Photo') }} <br /><span
-                                                class="text-muted fst-italic">{{__('(Files: jpeg, jpg, or png, min dimension: 50
-                                                x 50 pixel, 2Mb max size)')}}</span></label>
+                                                class="text-muted fst-italic">{{ __('(Files: jpeg, jpg, or png, min dimension: 50
+                                                                                                x 50 pixel, 2Mb max size)') }}</span></label>
                                         <input type="file" class="form-control" accept=".jpeg, .jpg, .png"
                                             name="photo" placeholder="{{ __('Photo image') }}">
                                         <span class="glyphicon glyphicon-open-file form-control-feedback"

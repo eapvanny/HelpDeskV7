@@ -11,6 +11,13 @@ use Illuminate\Database\Query\Builder;
 
 class DepartmentController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('permission:view department', ['only' => ['index']]);
+    //     $this->middleware('permission:create department', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission:edit department', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission:delete department', ['only' => ['destroy']]);
+    // }
     public $indexof = 1;
     public function index(Request $request)
     {

@@ -77,7 +77,7 @@
                             <i class="fa-solid fa-file-import"></i> {{__('Import')}}
                         </button>
 
-                            <a class="btn btn-primary btn-sm" href="#"><i class="fa-solid fa-download"></i> {{__('Export')}}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('translation.export') }}"><i class="fa-solid fa-download"></i> {{__('Export')}}</a>
                         </div>
                     </div>
                     <div class="table-responsive">

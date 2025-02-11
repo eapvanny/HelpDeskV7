@@ -131,27 +131,27 @@
                             aria-expanded="false">
                             <a href="javascript:void(0);">
                                 <span class="icon-language">
-                                    <img src="{{ asset('./images/' . session('user_lang', 'en') . '.png') }}"
-                                        alt="{{ session('user_lang', 'en') == 'en' ? 'English' : 'Khmer' }}"
+                                    <img src="{{ asset('./images/' . session('user_lang', 'kh') . '.png') }}"
+                                        alt="{{ session('user_lang', 'kh') == 'kh' ? 'Khmer' : 'English' }}"
                                         loading="lazy" />
                                 </span>
                                 <span class="label-language">
-                                    <small>{{ session('user_lang', 'en') == 'en' ? 'EN' : 'KH' }}</small>
+                                    <small>{{ session('user_lang', 'kh') == 'kh' ? 'KH' : 'EN' }}</small>
                                 </span>
                             </a>
                         </div>
                         <ul class="dropdown-menu dropdown-menu-end position-absolute"
                             aria-labelledby="navbarDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item" href="{{ route('user.set_lang', 'en') }}">
-                                    <img src="{{ asset('./images/en.png') }}" alt="English" loading="lazy" />
-                                    English
-                                </a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item" href="{{ route('user.set_lang', 'kh') }}">
                                     <img src="{{ asset('./images/kh.png') }}" alt="Khmer" loading="lazy" />
                                     ភាសាខ្មែរ
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('user.set_lang', 'en') }}">
+                                    <img src="{{ asset('./images/en.png') }}" alt="English" loading="lazy" />
+                                    English
                                 </a>
                             </li>
                         </ul>
@@ -213,7 +213,7 @@
                             <span class="hidden-xs mx-3">
                                 {{ $authUser->username ?? 'Guest' }}
                                 <br>
-                                <small>{{ __('Admin') }}</small>
+                                <small>{{ $authUser->role->name ?? 'Guest' }}</small>
                             </span>
 
                         </a>
@@ -223,7 +223,7 @@
                             <li>
                                 <a class="dropdown-item" href="{{ URL::route('profile') }}">
                                     <i class="fa fa-solid fa-user"></i>
-                                    {{ __('My profile') }}
+                                    {{ __('My Profile') }}
                                 </a>
                             </li>
 

@@ -6,10 +6,18 @@ use App\Models\Permission;
 use App\Models\Role;
 use App\Models\RolePermission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
 class RoleController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('permission:view role', ['only' => ['index']]);
+    //     $this->middleware('permission:create role', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission:edit role', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission:delete role', ['only' => ['destroy']]);
+    // }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -22,12 +30,8 @@ class RoleController extends Controller
                 ->addColumn('name', function ($data) {
                     return $data->name;
                 })
-                ->addColumn('AccessDashboard', function ($data) {
-                    if ($data->dashboard_access == 1) {
-                        return __('Can Access Dasboard');
-                    } else {
-                        return __('Can not Access Dashboard');
-                    }
+                ->addColumn('permission', function ($data) {
+                    return $data->permissions->pluck('name')->implode(', '); // Get permission names as a comma-separated string
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
@@ -46,56 +50,50 @@ class RoleController extends Controller
     {
         $role = null;
         $permissions = Permission::all();
-        $rolePermissionIds = [];
-        return view('backend.role.add', compact('role', 'permissions','rolePermissionIds'));
+        $hasPermission = [];
+        return view('backend.role.add', compact('role', 'permissions', 'hasPermission'));
     }
 
 
     public function store(Request $request)
     {
         // Validate the incoming request
-        $rules = [
-            'name' => 'required|min:2|max:25|unique:roles,name', // Ensure the name is unique
-            'dashboard_access' => 'nullable|boolean',
-            'permissions' => 'array', // Ensure permissions are sent as an array
-            'permissions.*' => 'exists:permissions,id'
-        ];
-        $this->validate($request, $rules);
-
-        $dashboardAccess = $request->has('dashboard_access') ? 1 : 0;
-
-        $role = Role::create([
-            'name' => $request->name,
-            'dashboard_access' => $dashboardAccess,
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|unique:roles|min:3',
+            'permissions' => 'array', // Ensure permissions is an array
+            'permissions.*' => 'exists:permissions,id', // Validate each permission ID exists
         ]);
 
-        if ($request->has('permissions')) {
-            foreach ($request->permissions as $permissionId) {
-                RolePermission::create([
-                    'role_id' => $role->id,
-                    'permission_id' => $permissionId,
-                ]);
-            }
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        return redirect()->route('role.index')->with('success', 'Role Created Successfully');
+        // Create the role
+        $role = Role::create(['name' => $request->name]);
+
+        // Attach permissions if provided
+        if ($request->has('permissions')) {
+            $role->permissions()->sync($request->permissions);
+        }
+
+        return redirect()->route('role.index')->with('success', "Role has been created!");
     }
+
 
     public function edit($id)
     {
         $role = Role::find($id);
-        $permissions = Permission::all();
-        $role_permissions = RolePermission::where('role_id', $role->id)->get();
-
-        // Retrieve the permission IDs already assigned to the role
-        $rolePermissionIds = $role_permissions->pluck('permission_id')->toArray();
 
         if (!$role) {
             return redirect()->route('ticket.index');
         }
 
-        return view('backend.role.add', compact('role', 'permissions', 'rolePermissionIds'));
+        $hasPermission = $role->permissions->pluck('name')->toArray();
+        $permissions = Permission::all(); // Fetch full permission objects
+
+        return view('backend.role.add', compact('role', 'permissions', 'hasPermission'));
     }
+
 
     public function update(Request $request, $id)
     {
@@ -107,17 +105,14 @@ class RoleController extends Controller
 
         $rules = [
             'name' => 'required|min:2|max:25|unique:roles,name,' . $role->id, // Ensure the name is unique except for the current role
-            'dashboard_access' => 'nullable|boolean',
             'permissions' => 'array', // Ensure permissions are sent as an array
             'permissions.*' => 'exists:permissions,id'
         ];
         $this->validate($request, $rules);
 
-        $dashboardAccess = $request->has('dashboard_access') ? 1 : 0;
 
         $role->update([
             'name' => $request->name,
-            'dashboard_access' => $dashboardAccess,
         ]);
 
         // Remove existing role permissions and add the new ones

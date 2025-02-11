@@ -12,7 +12,9 @@
         "backend-development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.backend.mix.js",
         "backend-watch": "npm run backend-development -- --watch",
         "backend-prod": "npm run backend-production",
-        "backend-production": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.backend.mix.js"
+        "backend-production": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.backend.mix.js",
+        "build": "webpack --mode production"
+
     },
     "devDependencies": {
         "axios": "^1.7.9",

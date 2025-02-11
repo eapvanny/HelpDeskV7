@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TranslationsExport;
+use App\Http\Helpers\ImportHelper;
+use App\Imports\TranslationsImport;
 use App\Models\Translation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -30,8 +33,8 @@ class TranslationController extends Controller
             $locale = $request->locale;
         }
 
-        if($request->ajax()){
-        $translations = Translation::where('locale', $locale)->get();
+        if ($request->ajax()) {
+            $translations = Translation::where('locale', $locale)->get();
 
             return DataTables::of($translations)
                 ->addColumn('item', function ($data) {
@@ -42,7 +45,7 @@ class TranslationController extends Controller
                 })
                 ->addColumn('action', function ($data) {
                     return '<div class="change-action-item">
-                        <a title="Edit" href="#" data-item="'.$data->item.'" data-text="'.$data->text.'" class="btn btn-primary btn-sm btn-edit-translate" data-bs-toggle="modal" data-bs-target="#editTranslateModal"><i class="fa fa-edit"></i></a>
+                        <a title="Edit" href="#" data-item="' . $data->item . '" data-text="' . $data->text . '" class="btn btn-primary btn-sm btn-edit-translate" data-bs-toggle="modal" data-bs-target="#editTranslateModal"><i class="fa fa-edit"></i></a>
                         <a href="' . route('translation.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                     </div>';
                 })
@@ -75,15 +78,14 @@ class TranslationController extends Controller
 
         // Check if translation item already exists for the selected locale.
         $translation = Translation::where('locale', $validated['locale'])
-                                   ->where('item', $validated['item'])
-                                   ->first();
+            ->where('item', $validated['item'])
+            ->first();
 
         // If it doesn't exist, create it, otherwise, update the existing translation.
         if ($translation) {
             $translation->update(['text' => $validated['text']]);
             $this->applyTranslation($validated['locale']);
             return redirect()->back()->with('success', 'Translation updated successfully!');
-
         } else {
             Translation::create($validated);
             $this->applyTranslation($validated['locale']);
@@ -136,37 +138,32 @@ class TranslationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function import(Request $request)
-    // {
-    //     try {
-    //         // Validate the file upload.
-    //         $request->validate([
-    //             'import_file' => ['required', 'file', 'mimes:xlsx,xls', 'max:2048'],
-    //         ]);
+    public function import(Request $request)
+    {
+        try {
+                $request->validate([
+                    'import_file' => ['required', 'file', new \App\Rules\ExcelFileValidation(20)],
+                ]);
+                \Maatwebsite\Excel\Facades\Excel::import(new TranslationsImport(), $request->file('import_file'));
+                foreach ($this->locales as $locale) {
+                    $this->applyTranslation($locale);
+                }
+                return redirect(route('translation.index'))->with('success', 'Data imported!');
 
-    //         // Import the translations.
-    //         Excel::import(new TranslationsImport(), $request->file('import_file'));
+        } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
+            $message = ImportHelper::getErrorText($e);
+            return redirect(route('translation.index'))->with('error', $message);
+        }
+    }
 
-    //         // Reapply translations for each supported locale.
-    //         foreach ($this->locales as $locale) {
-    //             $this->applyTranslation($locale);
-    //         }
-
-    //         return redirect(route('translation.index'))->with('success', 'Data imported successfully!');
-    //     } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
-    //         // Handle import validation errors.
-    //         return redirect(route('translation.index'))->with('error', 'Import failed: ' . $e->getMessage());
-    //     }
-    // }
 
     /**
      * Export translations to an Excel file.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function export()
-    // {
-    //     // Return an Excel export of translations.
-    //     return Excel::download(new TranslationsExport(), 'translations_' . now()->format('Y_m_d_His') . '.xlsx');
-    // }
+    public function export()
+    {
+        return Excel::download(new TranslationsExport(), 'translations_' . now()->format('Y_m_d_His') . '.xlsx');
+    }
 }

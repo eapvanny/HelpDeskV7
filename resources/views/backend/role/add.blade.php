@@ -139,24 +139,7 @@
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="dashboard-access" class="fw-bold">{{ __('Dashboard access') }}</label>
-                                <div class="form-check">
-                                    <!-- Ensure that if the checkbox is unchecked, a default value of '0' is sent -->
-                                    <input class="form-check-input" type="checkbox" id="dashboard-access"
-                                        name="dashboard_access" value="1"
-                                        @if (old('dashboard_access') == 1 || (isset($role) && $role->dashboard_access == 1)) checked @endif>
-                                    <label class="form-check-label" for="dashboard-access" id="dashboard-access-label">
-                                        Users will not have access to the dashboard unless enabled.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-
                         <hr>
-
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="fw-bold">{{ __('Manage Permissions') }}</label>
@@ -168,46 +151,26 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    @php
-                                        $chunkedPermissions =
-                                            $permissions->count() > 0
-                                                ? $permissions->chunk(ceil($permissions->count() / 2))
-                                                : collect([]);
-                                    @endphp
-
                                     <div class="row">
                                         <div class="col-md-6">
-                                            @if (isset($chunkedPermissions[0]))
-                                                @foreach ($chunkedPermissions[0] as $permission)
+                                            @if ($permissions->count() > 0)
+                                                @foreach ($permissions as $permission)
                                                     <div class="form-check">
-                                                        <input class="form-check-input permission-checkbox" type="checkbox"
+                                                        <input
+                                                            {{ in_array($permission->name, $hasPermission) ? 'checked' : '' }}
+                                                            class="form-check-input permission-checkbox" type="checkbox"
                                                             id="permission-{{ $permission->id }}" name="permissions[]"
-                                                            value="{{ $permission->id }}"
-                                                            @if (in_array($permission->id, $rolePermissionIds)) checked @endif>
-                                                        <label class="form-check-label"
-                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-                                        </div>
+                                                            value="{{ $permission->id }}">
 
-                                        <div class="col-md-6">
-                                            @if (isset($chunkedPermissions[1]))
-                                                @foreach ($chunkedPermissions[1] as $permission)
-                                                    <div class="form-check">
-                                                        <input class="form-check-input permission-checkbox" type="checkbox"
-                                                            id="permission-{{ $permission->id }}" name="permissions[]"
-                                                            value="{{ $permission->id }}"
-                                                            @if (in_array($permission->id, $rolePermissionIds)) checked @endif>
                                                         <label class="form-check-label"
-                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>
+                                                            for="permission-{{ $permission->id }}">
+                                                            {{ $permission->name }}
+                                                        </label>
                                                     </div>
                                                 @endforeach
                                             @endif
                                         </div>
                                     </div>
-
-
 
                                 </div>
                             </div>

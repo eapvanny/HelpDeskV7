@@ -18,6 +18,13 @@ use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('permission:view user', ['only' => ['index']]);
+    //     $this->middleware('permission:create user', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission:edit user', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission:delete user', ['only' => ['destroy']]);
+    // }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -89,35 +96,42 @@ class UserController extends Controller
             'role_id' => 'required',
 
         ];
+
         $this->validate($request, $rules);
+
         $userData = [
             'name' => $request->name,
             'department_id' => $request->department_id,
             'role_id' => $request->role_id,
-            'username' => $request->get('username'),
+            'username' => $request->username,
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
-            'password' => bcrypt($request->get('password')),
+            'password' => bcrypt($request->password),
         ];
+
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
-            // $urlPath = Storage::url($filePath);
-
             $userData['photo'] = $filePath;
         }
+
         $user = User::create($userData);
-        UserRole::create(
-            [
-                'user_id' => $user->id,
-                'role_id' => $request->role_id,
-            ]
-        );
+
+        // Fetch the role name before assigning it
+        $role = Role::findOrFail($request->role_id);
+        $user->syncRoles($role->name); // Assign role using name
+
+        UserRole::create([
+            'user_id' => $user->id,
+            'role_id' => $request->role_id,
+        ]);
+
         return redirect()->route('user.index')->with('success', 'User added!');
     }
+
 
     public function edit($id)
     {

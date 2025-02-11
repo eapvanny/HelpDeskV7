@@ -11,7 +11,6 @@ class Role extends Model
 
     public $fillable = [
         'name',
-        'dashboard_access',
     ];
 
     public function user()
@@ -20,6 +19,6 @@ class Role extends Model
     }
     public function permissions()
     {
-        return $this->belongsToMany(Permission::class, 'role_permissions', 'role_id', 'permission_id');
+        return $this->belongsToMany(Permission::class, 'role_has_permissions');
     }
 }

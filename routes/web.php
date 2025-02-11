@@ -119,5 +119,8 @@ Route::middleware('auth')->group(function () {
 
         // Import translations
         Route::post('/import', [TranslationController::class, 'import'])->name('import');
+
+         //Setting Import
+         Route::get('/export', [TranslationController::class, 'export'])->name('export');
     });
 });
