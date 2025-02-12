@@ -140,19 +140,21 @@ class TranslationController extends Controller
      */
     public function import(Request $request)
     {
-        try {
-                $request->validate([
-                    'import_file' => ['required', 'file', new \App\Rules\ExcelFileValidation(20)],
-                ]);
-                \Maatwebsite\Excel\Facades\Excel::import(new TranslationsImport(), $request->file('import_file'));
-                foreach ($this->locales as $locale) {
-                    $this->applyTranslation($locale);
-                }
-                return redirect(route('translation.index'))->with('success', 'Data imported!');
+        $request->validate([
+            'import_file' => 'required|mimes:xlsx,xls'
+        ]);
 
-        } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
-            $message = ImportHelper::getErrorText($e);
-            return redirect(route('translation.index'))->with('error', $message);
+        try {
+            Excel::import(new TranslationsImport, $request->file('import_file'));
+
+            // Rebuild language files after import
+            foreach ($this->locales as $locale) {
+                $this->applyTranslation($locale);
+            }
+
+            return redirect()->back()->with('success', 'Translations imported successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Import failed: ' . $e->getMessage());
         }
     }
 
