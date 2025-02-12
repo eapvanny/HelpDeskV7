@@ -234,7 +234,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{URL::route('lockscreen')}}">
                                     <i class="fa fa-solid fa-sharp fa-eye-slash"></i>
                                     {{ __('Lock Screen') }}
                                 </a>

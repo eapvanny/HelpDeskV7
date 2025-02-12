@@ -327,4 +327,12 @@ class UserController extends Controller
 
         return redirect()->route('dashboard.index')->with('success', 'Password updated successfully.');
     }
+    public function lock()
+    {
+        $username = auth()->user()->username;
+        $name = auth()->user()->name;
+        $photo = auth()->user()->photo;
+        Auth::logout();
+        return view('backend.user.lock', compact('username', 'name','photo'));
+    }
 }

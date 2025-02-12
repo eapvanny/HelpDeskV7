@@ -61,7 +61,7 @@
                             </div>
 
                             <br>
-                            <a href="{{ route('dashboard.index') }}" class="btn btn-default btnCancel">Cancel</a>
+                            <a href="{{ route('dashboard.index') }}" class="btn btn-default btnCancel">{{__('Cancel')}}</a>
                             <button type="submit" class="btn btn-info pull-right text-white">
                                 <i class="fa fa-refresh"></i> {{ __('Update') }}
                             </button>

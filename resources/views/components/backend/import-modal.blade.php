@@ -13,7 +13,7 @@
                             <span class="fw-bold">{{ __('Note') }}:</span><br/>
                             - {{ __('File size must not exceed :number MB.', ['number' => 20]) }}<br/>
                             - {{ __('File extension must be excel document(.xlsx).') }}<br/>
-                            - {{ __('To download sample file,') }} <a href="{{ $sampleFileUrl }}" class="btn btn-light btn-sm"><i class="fa-solid fa-download"></i> {{ __('Click here') }}</a>
+                            {{-- - {{ __('To download sample file,') }} <a href="{{ $sampleFileUrl }}" class="btn btn-light btn-sm"><i class="fa-solid fa-download"></i> {{ __('Click here') }}</a> --}}
                         </div>
                     </div>
                     <div class="row">
