@@ -203,7 +203,8 @@ class UserController extends Controller
 
         // Update user record
         $user->update($userData);
-
+        $role = Role::findOrFail($request->role_id);
+        $user->syncRoles($role->name); // Assign role using name
         // Assign the user to role only if it doesn’t exist
         UserRole::updateOrCreate(
             ['user_id' => $user->id],
