@@ -5147,7 +5147,9 @@ div.dataTables_wrapper div.dataTables_filter input {
   box-shadow: 0 2px 5px rgba(231, 231, 231, 0.919);
   margin: 20px;
 }
-
+.ticket-chat {
+  height: 470px;
+}
 .chart-container {
   position: relative;
   height: 390px;
