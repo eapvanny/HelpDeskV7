@@ -34,19 +34,23 @@ Route::get('/login', function () {
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth','isAdmin')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/ticket-data', [DashboardController::class, 'getTicketData'])->name('dashboard.ticket-data');
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     // Route::post('/profile', [UserController::class, 'profile'])->name('profile');
+
     //User
-    Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
-    Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-    Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
+    Route::resource('user', UserController::class);
+    Route::get('change-password', [UserController::class, 'showChangePasswordForm'])->name('change_password');
+    Route::post('change-password', [UserController::class, 'changePassword'])->name('update_password');
+    // Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    // Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    // Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+    // Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    // Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+    // Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
     Route::post('/users/{id}/update-profile-photo', [UserController::class, 'updateProfilePhoto'])
         ->name('users.updateProfilePhoto');
 
@@ -71,21 +75,25 @@ Route::middleware('auth')->group(function () {
     Route::delete('/permission/delete/{id}', [PermissionController::class, 'destroy'])->name('permission.delete');
 
     //Department
-    Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
-    Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
-    Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store');
-    Route::get('/department/{id}/edit', [DepartmentController::class, 'edit'])->name('department.edit');
-    Route::put('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
-    Route::delete('/department/{id}/delete', [DepartmentController::class, 'destroy'])->name('department.delete');
+    Route::resource('department', DepartmentController::class);
+    // Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
+    // Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
+    // Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store');
+    // Route::get('/department/{id}/edit', [DepartmentController::class, 'edit'])->name('department.edit');
+    // Route::put('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
+    // Route::delete('/department/{id}/delete', [DepartmentController::class, 'destroy'])->name('department.delete');
 
     //Ticket
-    Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
-    Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
-    Route::get('/ticket/{id}/show', [TicketController::class, 'show'])->name('ticket.show');
-    Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
-    Route::get('/ticket/{id}/edit', [TicketController::class, 'edit'])->name('ticket.edit');
-    Route::put('/ticket/update/{id}', [TicketController::class, 'update'])->name('ticket.update');
-    Route::delete('/ticket/{id}/delete', [TicketController::class, 'destroy'])->name('ticket.delete');
+
+    Route::resource('ticket', TicketController::class);
+
+    // Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
+    // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+    // Route::get('/ticket/{id}/show', [TicketController::class, 'show'])->name('ticket.show');
+    // Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
+    // Route::get('/ticket/{id}/edit', [TicketController::class, 'edit'])->name('ticket.edit');
+    // Route::put('/ticket/update/{id}', [TicketController::class, 'update'])->name('ticket.update');
+    // Route::delete('/ticket/{id}/delete', [TicketController::class, 'destroy'])->name('ticket.delete');
 
     //chat message
     Route::get('/chat/messages/{ticket_id}', [TicketController::class, 'getMessages'])->name('get.messages');
@@ -120,7 +128,7 @@ Route::middleware('auth')->group(function () {
         // Import translations
         Route::post('/import', [TranslationController::class, 'import'])->name('import');
 
-         //Setting Import
-         Route::get('/export', [TranslationController::class, 'export'])->name('export');
+        //Setting Import
+        Route::get('/export', [TranslationController::class, 'export'])->name('export');
     });
 });

@@ -228,7 +228,7 @@
                             </li>
 
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{URL::route('change_password')}}">
                                     <i class="fa fa-solid fa-lock"></i>
                                     {{ __('Password') }}
                                 </a>

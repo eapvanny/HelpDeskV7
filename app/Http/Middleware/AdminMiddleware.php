@@ -19,7 +19,7 @@ class AdminMiddleware
         if (Auth::check()) {
             /** @var App\Models\User */
             $user = Auth::user();
-            if ($user->role('Admin')) {
+            if ($user->hasAnyRole('Admin','Staff')) {
                 return $next($request);
             }
 

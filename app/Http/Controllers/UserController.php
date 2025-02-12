@@ -10,6 +10,8 @@ use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -66,7 +68,7 @@ class UserController extends Controller
                 ->addColumn('action', function ($data) {
                     return '<div class="change-action-item">
                         <a title="Edit" href="' . route('user.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                        <a href="' . route('user.delete', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                        <a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                     </div>';
                 })
                 ->rawColumns(['action', 'photo', 'status'])
@@ -297,5 +299,32 @@ class UserController extends Controller
         }
 
         return redirect()->route('/dashboard');
+    }
+
+    public function showChangePasswordForm()
+    {
+        return view('backend.user.change_password');
+    }
+
+    // Handle Change Password Form Submission
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => ['required', 'min:6', 'max:50'],
+            'password' => ['required', 'min:6', 'max:50', 'confirmed'], 
+        ]);
+
+        if (!Hash::check($request->old_password, Auth::user()->password)) {
+            throw ValidationException::withMessages([
+                'old_password' => ['The old password does not match.'],
+            ]);
+        }
+
+        // Update the user's password
+        $user = Auth::user();
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->route('dashboard.index')->with('success', 'Password updated successfully.');
     }
 }

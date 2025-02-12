@@ -11,13 +11,13 @@ use Illuminate\Database\Query\Builder;
 
 class DepartmentController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view department', ['only' => ['index']]);
-    //     $this->middleware('permission:create department', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission:edit department', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission:delete department', ['only' => ['destroy']]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view department', ['only' => ['index']]);
+        $this->middleware('permission:create department', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit department', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete department', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -42,7 +42,7 @@ class DepartmentController extends Controller
                 ->addColumn('action', function ($data) {
                     return '<div class="change-action-item">
                         <a title="Edit" href="' . route('department.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                        <a href="' . route('department.delete', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                        <a href="' . route('department.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                     </div>';
                 })
                 ->rawColumns(['action'])

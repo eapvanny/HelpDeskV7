@@ -13,6 +13,13 @@ use Illuminate\Support\Str;
 
 class TicketController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view ticket', ['only' => ['index']]);
+        $this->middleware('permission:create ticket', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit ticket', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete ticket', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -51,7 +58,7 @@ class TicketController extends Controller
                     $button = '<div class="change-action-item">';
                     $button .= '<span class="change-action-item"><a href="javascript:void(0);" class="btn btn-primary btn-sm show-ticket" data-id="' . $data->id . '" title="Show" data-bs-toggle="modal"><i class="fa fa-fw fa-eye"></i></a></span>';
                     $button .= '<a title="Edit" href="' . route('ticket.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button .= '<a href="' . route('ticket.delete', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    $button .= '<a href="' . route('ticket.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $button .= '</div>';
                     return $button;
                 })

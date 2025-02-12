@@ -152,26 +152,29 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            @if ($permissions->count() > 0)
-                                                @foreach ($permissions as $permission)
-                                                    <div class="form-check">
-                                                        <input
-                                                            {{ in_array($permission->name, $hasPermission) ? 'checked' : '' }}
-                                                            class="form-check-input permission-checkbox" type="checkbox"
-                                                            id="permission-{{ $permission->id }}" name="permissions[]"
-                                                            value="{{ $permission->id }}">
-
-                                                        <label class="form-check-label"
-                                                            for="permission-{{ $permission->id }}">
-                                                            {{ $permission->name }}
-                                                        </label>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-                                        </div>
+                                        @if ($permissions->count() > 0)
+                                            @php $counter = 0; @endphp
+                                            @foreach ($permissions as $permission)
+                                                @if ($counter % 4 == 0 && $counter > 0)
                                     </div>
+                                    <div class="row">
+                                        @endif
+                                        <div class="col-md-3">
+                                            <div class="form-check">
+                                                <input {{ in_array($permission->name, $hasPermission) ? 'checked' : '' }}
+                                                    class="form-check-input permission-checkbox" type="checkbox"
+                                                    id="permission-{{ $permission->id }}" name="permissions[]"
+                                                    value="{{ $permission->id }}">
 
+                                                <label class="form-check-label" for="permission-{{ $permission->id }}">
+                                                    {{ $permission->name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        @php $counter++; @endphp
+                                        @endforeach
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +208,6 @@
             // Run the function once on page load
             updateLabelText();
 
-            // Add event listener to the checkbox for change event
             $('#dashboard-access').change(function() {
                 updateLabelText();
             });
@@ -216,6 +218,12 @@
             });
 
             $('.permission-checkbox').change(function() {
+                let allChecked = $('.permission-checkbox').length === $('.permission-checkbox:checked')
+                    .length;
+                $('#all-dashboard').prop('checked', allChecked);
+            });
+
+            $(document).ready(function() {
                 let allChecked = $('.permission-checkbox').length === $('.permission-checkbox:checked')
                     .length;
                 $('#all-dashboard').prop('checked', allChecked);
