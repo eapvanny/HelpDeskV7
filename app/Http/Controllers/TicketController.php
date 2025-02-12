@@ -81,7 +81,6 @@ class TicketController extends Controller
         return response()->json(['ticket' => $ticket]);
     }
 
-
     public function getMessages($ticket_id)
     {
         // Get the last message ID from the request
@@ -96,7 +95,6 @@ class TicketController extends Controller
 
         return response()->json($messages);
     }
-
 
     public function sendMessage(Request $request)
     {
@@ -113,6 +111,7 @@ class TicketController extends Controller
 
         return response()->json($message);
     }
+
 
 
 

@@ -117,7 +117,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content rounded-0">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="showTicketModalLabel">{{__('Ticket Details')}}</h5>
+                    <h5 class="modal-title" id="showTicketModalLabel">{{ __('Ticket Details') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose"
                         aria-label="Close"></button>
                 </div>
@@ -133,14 +133,14 @@
                         <input type="hidden" id="ticket_id">
                         <div class="d-flex align-items-center">
                             <textarea id="chatMessage" class="form-control me-2" rows="1" placeholder="Type a message"></textarea>
-                            <button type="button" class="btn btn-primary" id="sendMessage">{{__('Send')}}</button>
+                            <button type="button" class="btn btn-primary" id="sendMessage">{{ __('Send') }}</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close">
-                        {{__('Close')}}
+                        {{ __('Close') }}
                     </button>
                 </div>
             </div>
@@ -229,40 +229,43 @@
                                 },
                                 success: function(response) {
                                     if (response.length > 0) {
-                                        // Loop through new messages and append them
                                         response.forEach(msg => {
-                                            let isCurrentUser = msg
-                                                .user_id ===
-                                                {{ auth()->id() }};
-                                            let alignmentClass =
-                                                isCurrentUser ?
-                                                'd-flex justify-content-end' :
-                                                'd-flex justify-content-start';
-                                            let bgColor = isCurrentUser ?
-                                                'bg-primary text-white' :
-                                                'bg-dark text-white';
+                                            if (msg.id >
+                                                lastMessageId) { // Only append truly new messages
+                                                let isCurrentUser = msg
+                                                    .user_id ===
+                                                    {{ auth()->id() }};
 
-                                            // Append new messages to chat box
-                                            $("#chat-box").append(`
-                                    <div class="message ${alignmentClass} my-2">
-                                        <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
-                                            ${msg.message}
+                                                let alignmentClass =
+                                                    isCurrentUser ?
+                                                    'd-flex justify-content-end' // Sent messages (Right)
+                                                    :
+                                                    'd-flex justify-content-start'; // Received messages (Left)
+
+                                                let bgColor =
+                                                    isCurrentUser ?
+                                                    'bg-primary text-white' // Blue for sender (Current user)
+                                                    :
+                                                    'bg-secondary text-white'; // Black for receiver (Other user)
+
+                                                $("#chat-box").append(`
+                                        <div class="message ${alignmentClass} my-2">
+                                            <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
+                                                ${msg.message}
+                                            </div>
                                         </div>
-                                    </div>
-                                `);
-                                        });
+                                    `);
 
-                                        // Update last message ID to ensure we don't fetch the same messages
-                                        lastMessageId = response[response.length -
-                                            1].id;
+                                                lastMessageId = msg
+                                                .id; // Update lastMessageId after adding new messages
+                                            }
+                                        });
                                     }
                                 }
                             });
                         }
-
                         // Initial fetch of messages
                         fetchMessages();
-
                         // Send a new message
                         $("#sendMessage").off("click").on("click", function() {
                             let message = $("#chatMessage").val().trim();
@@ -279,33 +282,45 @@
                                 success: function(response) {
                                     $("#chatMessage").val(
                                     ""); // Clear input field
+
+                                    // Append message only once after sending
+                                    let isCurrentUser = response.user_id ===
+                                        {{ auth()->id() }};
+                                    let alignmentClass = isCurrentUser ?
+                                        'd-flex justify-content-end' :
+                                        'd-flex justify-content-start';
+
+                                    let bgColor = isCurrentUser ?
+                                        'bg-primary text-white' :
+                                        'bg-secondary text-white';
+
                                     $("#chat-box").append(`
-                            <div class="message text-right">
-                                <div class="p-2 rounded bg-primary text-white" style="max-width: 60%; display: inline-block;">
+                            <div class="message ${alignmentClass} my-2">
+                                <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
                                     ${response.message}
                                 </div>
                             </div>
                         `);
+                                    lastMessageId = response
+                                    .id; // Ensure lastMessageId is updated immediately
                                 }
                             });
                         });
+                        // Refresh chat messages every 3 seconds
+                        setInterval(fetchMessages, 3000);
 
-                        setInterval(fetchMessages,
-                        3000); 
-
-                        $('#showTicketModal').modal('show'); 
+                        $('#showTicketModal').modal('show');
                     },
                     error: function() {
                         alert('Failed to load ticket details.');
                     }
                 });
             });
-
             // Clear modal content on close
             $(document).on('click', '#btn-close, #btnClose', function() {
-                $('#showTicketModal').modal('hide'); 
-                $('#chat-box').html(''); 
-                $('#ticket_id').val(''); 
+                $('#showTicketModal').modal('hide');
+                $('#chat-box').html('');
+                $('#ticket_id').val('');
                 $("#chatMessage").val("");
             });
 
