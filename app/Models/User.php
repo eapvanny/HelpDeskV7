@@ -28,7 +28,9 @@ class User extends Authenticatable
         'photo',
         'status',
         'role_id',
-        'user_lang'
+        'user_lang',
+        'gender',
+        'id_card'
     ];
 
 

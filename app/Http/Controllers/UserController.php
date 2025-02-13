@@ -43,15 +43,15 @@ class UserController extends Controller
             $users = $query->get();
 
             return DataTables::of($users)
-                ->addColumn('id', function ($data) {
-                    return $this->indexof++;
-                })
                 ->addColumn('photo', function ($data) {
                     return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" 
                 src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
                 })
                 ->addColumn('department', function ($data) {
                     return $data->department ? __($data->department->name) : __('N/A');
+                })
+                ->addColumn('id_card', function ($data) {
+                    return $data->id_card ? __($data->id_card) : __('N/A');
                 })
                 ->addColumn('name', function ($data) {
                     return __($data->name);
@@ -67,6 +67,9 @@ class UserController extends Controller
                 })
                 ->addColumn('role', function ($data) {
                     return $data->role ? __($data->role->name) : __('N/A');
+                })
+                ->addColumn('gender', function ($data) {
+                    return AppHelper::GENDER[$data->gender] ?? __('N/A');
                 })
                 ->addColumn('status', function ($data) {
                     return $data->status == 1 ? __('Active') : __('Inactive');
@@ -116,6 +119,8 @@ class UserController extends Controller
             'password' => 'required|min:6|max:50',
             'phone_no' => 'nullable|max:15',
             'role_id' => 'required',
+            'id_card' => 'required|min:3|max:10',
+            'gender' => 'required',
 
         ];
 
@@ -125,6 +130,8 @@ class UserController extends Controller
             'name' => $request->name,
             'department_id' => $request->department_id,
             'role_id' => $request->role_id,
+            'gender' => $request->gender,
+            'id_card' => $request->id_card,
             'username' => $request->username,
             'email' => $request->email,
             'phone_no' => $request->phone_no,
@@ -188,6 +195,8 @@ class UserController extends Controller
             'password' => 'nullable|min:6|max:50',
             'phone_no' => 'nullable|max:15',
             'role_id' => 'required',
+            'id_card' => 'required|min:3|max:10',
+            'gender' => 'required',
         ];
 
         $this->validate($request, $rules);
@@ -197,6 +206,8 @@ class UserController extends Controller
             'name' => $request->name,
             'department_id' => $request->department_id,
             'role_id' => $request->role_id, // You may want to get this dynamically
+            'gender' => $request->gender,
+            'id_card' => $request->id_card,
             'username' => $request->username,
             'email' => $request->email,
             'phone_no' => $request->phone_no,

@@ -5,7 +5,12 @@ class AppHelper {
 
     const USER_ADMIN = 1;
     const USER_STAFF = 2;
-
+    const GENDER = [
+        1 => 'Male',
+        2 => 'Female'
+    ];
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 2;
     const LANGUAGES = ['en', 'kh'];
 
     const STATUS_OPEN = 1;

@@ -98,7 +98,7 @@
                                 data-sitekey="{{ config('services.recaptcha.site_key') }}"
                                 data-callback='onSubmit'
                                 data-action='submit'>
-								{{ __('Login') }}
+								Login
 							</button>
 						</div>
 					</div>

@@ -54,16 +54,17 @@
                                     width="100%">
                                     <thead>
                                         <tr>
-                                            <th width="5%">#</th>
-                                            <th width="10%">{{ __('Photo') }}</th>
-                                            <th width="20%">{{ __('Department') }}</th>
-                                            <th width="15%">{{ __('Name') }}</th>
-                                            <th width="12%">{{ __('Username') }}</th>
-                                            <th width="20%">{{ __('Email') }}</th>
-                                            <th width="12%">{{ __('Phone No.') }}</th>
-                                            <th width="12%">{{ __('Role') }}</th>
-                                            <th width="12%">{{ __('Status') }}</th>
-                                            <th class="notexport" style="min-width: 128px;">{{ __('Action') }}</th>
+                                            <th>{{ __('Photo') }}</th>
+                                            <th style="min-width: 65px;">{{ __('Department') }}</th>
+                                            <th>{{ __('ID No.') }}</th>
+                                            <th>{{ __('Name') }}</th>
+                                            <th>{{ __('Username') }}</th>
+                                            <th>{{ __('Email') }}</th>
+                                            <th>{{ __('Phone No.') }}</th>
+                                            <th>{{ __('Role') }}</th>
+                                            <th>{{ __('Gender') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th class="notexport" style="min-width: 65px;">{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -111,10 +112,7 @@
                 ajax: {
                     url: "{!! route('user.index', Request::query()) !!}",
                 },
-                columns: [{
-                        data: 'id',
-                        name: 'id',
-                    },
+                columns: [
                     {
                         data: 'photo',
                         name: 'photo',
@@ -122,6 +120,10 @@
                     {
                         data: 'department',
                         name: 'department',
+                    },
+                    {
+                        data: 'id_card',
+                        name: 'id_card',
                     },
                     {
                         data: 'name',
@@ -142,6 +144,10 @@
                     {
                         data: 'role',
                         name: 'role',
+                    },
+                    {
+                        data: 'gender',
+                        name: 'gender',
                     },
                     {
                         data: 'status',

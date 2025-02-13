@@ -76,10 +76,10 @@
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li><a href="{{ URL::route('role.index') }}"> {{ __('Ticket') }} </a></li>
+            <li><a href="{{ URL::route('role.index') }}"> {{ __('Role') }} </a></li>
             <li class="active">
                 @if ($role)
-                    Update
+                    {{__('Update')}}
                 @else
                     {{ __('Add') }}
                 @endif

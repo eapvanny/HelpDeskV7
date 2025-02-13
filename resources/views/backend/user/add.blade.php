@@ -67,17 +67,20 @@
         }
     </style>
 @endsection
+@php
+    use App\Http\Helpers\AppHelper;
+@endphp
 <!-- BEGIN PAGE CONTENT-->
 @section('pageContent')
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li> {{ __('Administrator') }} </li>
+            {{-- <li> {{ __('Administrator') }} </li> --}}
             <li><a href="{{ URL::route('user.index') }}"> {{ __('User') }} </a></li>
             <li class="active">
                 @if ($user)
-                    Update
+                    {{__('Update')}}
                 @else
                     {{ __('Add') }}
                 @endif
@@ -98,7 +101,7 @@
                             {{ __('User') }}
                             <small>
                                 @if ($user)
-                                    Update
+                                    {{__('Update')}}
                                 @else
                                     {{ __('Add New') }}
                                 @endif
@@ -110,9 +113,9 @@
                             <button type="submit" class="btn btn-info pull-right text-white"><i
                                     class="fa @if ($user) fa-refresh @else fa-plus-circle @endif"></i>
                                 @if ($user)
-                                    Update
+                                    {{__('Update')}}
                                 @else
-                                    Add
+                                    {{__('Add')}}
                                 @endif
                             </button>
                         </div>
@@ -153,6 +156,16 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group has-feedback">
+                                <label for="id_card"> {{ __('ID No.') }} <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="id_card" placeholder="id_card"
+                                    value="@if ($user) {{ $user->id_card }}@else{{ old('id_card') }} @endif"
+                                    required minlength="3" maxlength="10">
+                                <span class="fa fa-info form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('id_card') }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group has-feedback">
                                 <label for="name"> {{ __('Name') }} <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="name" placeholder="name"
                                     value="@if ($user) {{ $user->name }}@else{{ old('name') }} @endif"
@@ -172,21 +185,7 @@
                                 <span class="text-danger">{{ $errors->first('phone_no') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="form-group has-feedback">
-                                <label for="status"> {{ __('Status') }} <span class="text-danger">*</span></label>
-                                <select name="status" class="form-select bg-light select2" id="status">
-                                    <option value="1"
-                                        {{ old('status', optional($user)->status) == 1 || is_null($user) ? 'selected' : '' }}>
-                                        {{ __('Active') }} </option>
-                                    <option value="0"
-                                        {{ old('status', optional($user)->status) == 0 && !is_null($user) ? 'selected' : '' }}>
-                                        {{ __('Inactive') }} </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group has-feedback">
                                 <label for="id"> {{ __('User Role') }}
                                     <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom"
@@ -204,7 +203,43 @@
                                 <span class="text-danger">{{ $errors->first('role_id') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group has-feedback">
+                                <label for="status"> {{ __('Status') }} <span class="text-danger">*</span></label>
+                                <select name="status" class="form-select bg-light select2" id="status">
+                                    <option value="1"
+                                        {{ old('status', optional($user)->status) == 1 || is_null($user) ? 'selected' : '' }}>
+                                        {{ __('Active') }} </option>
+                                    <option value="0"
+                                        {{ old('status', optional($user)->status) == 0 && !is_null($user) ? 'selected' : '' }}>
+                                        {{ __('Inactive') }} </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-xl-4">
+                            <div class="form-group has-feedback">
+                                <label for="gender"> {{ __('Gender') }} <span class="text-danger">*</span></label>
+                                @php
+                                    $genderKey = $user ? $user->gender : null;
+                                @endphp
+                                {!! Form::select('gender', 
+                                [
+                                    AppHelper::GENDER_MALE => __(AppHelper::GENDER[AppHelper::GENDER_MALE]),
+                                    AppHelper::GENDER_FEMALE => __(AppHelper::GENDER[AppHelper::GENDER_FEMALE]),
+                                ],
+                                old('gender',$genderKey), 
+                                [
+                                    'class' => 'form-control select2',
+                                    'required' => 'true',
+                                    'placeholder' => __('Select Gender'),
+                                    'id' => 'gender',
+                                    'name' => 'gender' 
+                                ]) !!}
+                            </div>
+                        </div>  
+
+                        <div class="col-md-4">
                             <div class="form-group has-feedback">
                                 <label for="email"> {{ __('Email') }} <span class=""></span></label>
                                 <input type="email" class="form-control" name="email" placeholder="email address"
@@ -214,7 +249,7 @@
                             <span class="text-danger">{{ $errors->first('email') }}</span> --}}
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group has-feedback">
                                 <label for="username"> {{ __('Username') }} <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control"
@@ -225,7 +260,7 @@
                             </div>
                         </div>
                         @if (!$user)
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group has-feedback">
                                     <label for="password"> {{ __('Password') }} <span
                                             class="text-danger">*</span></label>

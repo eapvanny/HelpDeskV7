@@ -158,7 +158,7 @@
             // Set current date for date inputs
             var currentDate = new Date().toISOString().split('T')[0];
             $('input[type="date"]').val(currentDate);
-
+            var ticketLabel = "{{ __('Tickets') }}";
             // Data from Laravel passed as JSON
             var monthlyTicketData = @json($monthlyData);
 
@@ -166,7 +166,7 @@
             var monthlyData = {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
-                    label: 'Tickets',
+                    label: ticketLabel,
                     borderColor: '#4299e1',
                     backgroundColor: 'rgba(30, 143, 255, 0.46)',
                     data: monthlyTicketData,
@@ -305,18 +305,19 @@
                 }
             });
         }
+        var monthNames = [
+            "{{ __('January') }}", "{{ __('February') }}", "{{ __('March') }}", "{{ __('April') }}",
+            "{{ __('May') }}", "{{ __('June') }}",
+            "{{ __('July') }}", "{{ __('August') }}", "{{ __('September') }}", "{{ __('October') }}",
+            "{{ __('November') }}", "{{ __('December') }}"
+        ];
 
-        // Update the Month and Year in the header
         function updateMonthYear(calendar) {
             const currentDate = calendar.getDate();
             const year = currentDate.getFullYear();
             const month = currentDate.getMonth();
 
-            const monthNames = [
-                "January", "February", "March", "April", "May", "June", "July", "August",
-                "September", "October", "November", "December"
-            ];
-            const monthName = monthNames[month];
+            const monthName = monthNames[month]; // Use translated month name
 
             $('#year-month').text(`${monthName} ${year}`);
         }
