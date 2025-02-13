@@ -2,29 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
+// use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
 use Yajra\DataTables\Facades\DataTables;
 
 class PermissionController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:create permission', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    //     $this->middleware('permission:view dashboard', ['only' => ['index','getTicketData']]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view permission', ['only' => ['index']]);
+        $this->middleware('permission:create permission', ['only' => ['create', 'store']]);
+        $this->middleware('permission:update permission', ['only' => ['update', 'edit']]);
+        $this->middleware('permission:delete permission', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $priority = Permission::query();
-            return DataTables::of($priority)
+            $permission = Permission::query();
+            return DataTables::of($permission)
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
                 })
@@ -34,7 +32,7 @@ class PermissionController extends Controller
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
                     $button .= '<a title="Edit"  href="' . route('permission.edit', $data->id) . '"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button .= '<a  href="' . route('permission.delete', $data->id) . '"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    $button .= '<a  href="' . route('permission.destroy', $data->id) . '"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $button .= '</div>';
                     return $button;
                 })
@@ -59,9 +57,14 @@ class PermissionController extends Controller
         if ($validator->passes()) {
             Permission::create([
                 'name' => $request->name,
-                'guard_name' => 'web', // Explicitly set 'web' as the guard_name
             ]);
-            return redirect()->route('permission.index')->with('success', "Permission has been created!");
+            $permission = Permission::latest()->first()->id;
+
+            if ($request->has('saveandcontinue')) {
+                return redirect()->route('permission.create', $permission)->with('success', 'Permission added successfully!');
+            } else {
+                return redirect()->route('permission.index')->with('success', "Permission has been created!");
+            }
         } else {
             return redirect()->route('permission.create')->withInput()->withErrors($validator);
         }

@@ -4,9 +4,11 @@ namespace Database\Seeders;
 
 use App\Models\Status;
 use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -15,18 +17,34 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        if (User::count() === 0) {
-            $user = new User();
-            $user->name = 'Admin';
-            $user->username = 'Vanny_Admin';
-            $user->email = 'admin@gmail.com';
-            $user->password = Hash::make('admin123');
-            $user->photo = '123.jpg';
-            $user->status = 1;
-            $user->role_id = 1;
-            $user->department_id = 1;
-            $user->phone_no = '0987876567';
-            $user->save();
+        // Ensure the role exists before assigning it
+        if (Role::where('name', 'Admin')->doesntExist()) {
+            $adminRole = Role::create(['name' => 'Admin']);
+        } else {
+            $adminRole = Role::where('name', 'Admin')->first();
+        }
+
+        if (User::where('email', 'admin@gmail.com')->doesntExist()) {
+            $user = User::create([
+                'name' => 'Admin',
+                'username' => 'Vanny_Admin',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('admin123'),
+                'photo' => '123.jpg',
+                'status' => 1,
+                'role_id' => 1,
+                'department_id' => 1,
+                'phone_no' => '0987876567',
+            ]);
+
+            // Assign role using Spatie
+            $user->syncRoles($adminRole->name);
+
+            // Ensure the user role record is created
+            UserRole::create([
+                'user_id' => $user->id,
+                'role_id' => $adminRole->id,
+            ]);
         }
     }
 }

@@ -8,6 +8,13 @@ use Yajra\DataTables\Facades\DataTables;
 
 class PriorityController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view priority', ['only' => ['index']]);
+        // $this->middleware('permission:create priority', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:update priority', ['only' => ['update', 'edit']]);
+        // $this->middleware('permission:delete priority', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request) 
     {
@@ -24,7 +31,7 @@ class PriorityController extends Controller
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item d-none">';
                     $button.='<a title="Edit"  href="'.route('priority.edit',$data->id).'"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    // $button.='<a  href="'.route('ticket.delete',$data->id).'"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    // $button.='<a  href="'.route('ticket.destroy',$data->id).'"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $button.='</div>';
                     return $button;
                 })

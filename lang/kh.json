@@ -1,5 +1,4 @@
 {
-    "Departments": "នាយកដ្ឋាន",
     "Priorities": "អាទិភាព",
     "Tickets": "សំបុត្រ",
     "Statuses": "ស្ថានភាព",
@@ -47,14 +46,7 @@
     "Lock Screen": "ចាក់សោអេក្រង់",
     "Logout": "ចាកចេញ",
     "Login": "ចូល",
-    "Old Password": "ពាក្យសម្ងាត់ចាស់",
-    "New Password": "ពាក្យសម្ងាត់ថ្មី",
-    "Confirm Password": "បញ្ជាក់ពាក្យសម្ងាត់",
-    "Change Password": "ផ្លាស់ប្តូរពាក្យសម្ងាត់",
-    "Import": "បញ្ជូល",
-    "Export": "ទាញយក",
-    "Khmer": "ខ្មែរ",
-    "All tickets in this year": "សមបុត្រទាំងអស់ក្នុងឆ្នាំនេះ",
+    "Open": "បើក",
     "Calendar": "ប្រតិទិន",
     "Today": "ថ្ងៃនេះ"
 }

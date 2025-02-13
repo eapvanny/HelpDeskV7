@@ -100,7 +100,7 @@
                             {{ __('Role') }}
                             <small>
                                 @if ($role)
-                                    Update
+                                    {{__('Update')}}
                                 @else
                                     {{ __('Add New') }}
                                 @endif
@@ -108,13 +108,13 @@
                         </h1>
 
                         <div class="box-tools pull-right">
-                            <a href="{{ URL::route('role.index') }}" class="btn btn-default">Cancel</a>
+                            <a href="{{ URL::route('role.index') }}" class="btn btn-default">{{__('Cancel')}}</a>
                             <button type="submit" class="btn btn-info pull-right text-white"><i
                                     class="fa @if ($role) fa-refresh @else fa-plus-circle @endif"></i>
                                 @if ($role)
-                                    Update
+                                    {{__('Update')}}
                                 @else
-                                    Add
+                                    {{__('Add')}}
                                 @endif
                             </button>
                         </div>
@@ -147,7 +147,7 @@
                                     <div class="col-md-12">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="all-dashboard">
-                                            <label class="form-check-label" for="all-dashboard">Manage All dashboard</label>
+                                            <label class="form-check-label" for="all-dashboard">{{__('Manage All dashboard')}}</label>
                                         </div>
                                     </div>
                                     <hr>

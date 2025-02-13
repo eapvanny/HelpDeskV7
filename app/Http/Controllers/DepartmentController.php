@@ -15,7 +15,7 @@ class DepartmentController extends Controller
     {
         $this->middleware('permission:view department', ['only' => ['index']]);
         $this->middleware('permission:create department', ['only' => ['create', 'store']]);
-        $this->middleware('permission:edit department', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:update department', ['only' => ['update', 'edit']]);
         $this->middleware('permission:delete department', ['only' => ['destroy']]);
     }
     public $indexof = 1;

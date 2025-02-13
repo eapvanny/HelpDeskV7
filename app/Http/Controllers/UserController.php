@@ -20,13 +20,13 @@ use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view user', ['only' => ['index']]);
-    //     $this->middleware('permission:create user', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission:edit user', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission:delete user', ['only' => ['destroy']]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view user', ['only' => ['index']]);
+        $this->middleware('permission:create user', ['only' => ['create', 'store']]);
+        $this->middleware('permission:update user', ['only' => ['update', 'edit']]);
+        $this->middleware('permission:delete user', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -38,7 +38,7 @@ class UserController extends Controller
                 })
                 ->addColumn('photo', function ($data) {
                     return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" 
-                    src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.jpg')) . '" >';
+                    src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
                 })
                 ->addColumn('department', function ($data) {
                     return $data->department ? __($data->department->name) : __('N/A');

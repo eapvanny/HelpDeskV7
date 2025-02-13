@@ -19,11 +19,11 @@ class AdminMiddleware
         if (Auth::check()) {
             /** @var App\Models\User */
             $user = Auth::user();
-            if ($user->hasAnyRole('Admin','Staff')) {
+            if ($user->hasRole(['Admin','Staff'])) {
                 return $next($request);
             }
 
-            abort(403);
+            abort(403, "User doesn't have corect ROLE");
         }
         abort(401);
     }

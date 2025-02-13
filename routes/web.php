@@ -34,9 +34,10 @@ Route::get('/login', function () {
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware('auth','isAdmin')->group(function () {
+Route::group(['middleware' => ['isAdmin']], function() {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::resource('dashboard', DashboardController::class);
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/ticket-data', [DashboardController::class, 'getTicketData'])->name('dashboard.ticket-data');
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     // Route::post('/profile', [UserController::class, 'profile'])->name('profile');
@@ -61,20 +62,24 @@ Route::middleware('auth','isAdmin')->group(function () {
 
 
     //role
-    Route::get('/role', [RoleController::class, 'index'])->name('role.index');
-    Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
-    Route::post('/role/store', [RoleController::class, 'store'])->name('role.store');
-    Route::get('/role/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
-    Route::put('/role/update/{id}', [RoleController::class, 'update'])->name('role.update');
-    Route::delete('/role/delete/{id}', [RoleController::class, 'destroy'])->name('role.delete');
+    Route::resource('role', RoleController::class);
+
+    // Route::get('/role', [RoleController::class, 'index'])->name('role.index');
+    // Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
+    // Route::post('/role/store', [RoleController::class, 'store'])->name('role.store');
+    // Route::get('/role/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
+    // Route::put('/role/update/{id}', [RoleController::class, 'update'])->name('role.update');
+    // Route::delete('/role/delete/{id}', [RoleController::class, 'destroy'])->name('role.delete');
 
     //permission
-    Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
-    Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
-    Route::post('/permission/store', [PermissionController::class, 'store'])->name('permission.store');
-    Route::get('/permission/{id}/edit', [PermissionController::class, 'edit'])->name('permission.edit');
-    Route::put('/permission/update/{id}', [PermissionController::class, 'update'])->name('permission.update');
-    Route::delete('/permission/delete/{id}', [PermissionController::class, 'destroy'])->name('permission.delete');
+    Route::resource('permission', PermissionController::class);
+    
+    // Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
+    // Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
+    // Route::post('/permission/store', [PermissionController::class, 'store'])->name('permission.store');
+    // Route::get('/permission/{id}/edit', [PermissionController::class, 'edit'])->name('permission.edit');
+    // Route::put('/permission/update/{id}', [PermissionController::class, 'update'])->name('permission.update');
+    // Route::delete('/permission/delete/{id}', [PermissionController::class, 'destroy'])->name('permission.delete');
 
     //Department
     Route::resource('department', DepartmentController::class);
@@ -103,14 +108,18 @@ Route::middleware('auth','isAdmin')->group(function () {
 
 
     //Status
-    Route::get('/status', [StatusController::class, 'index'])->name('status.index');
-    Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
-    Route::get('/status/{id}/edit', [StatusController::class, 'edit'])->name('status.edit');
+    Route::resource('status', StatusController::class);
+
+    // Route::get('/status', [StatusController::class, 'index'])->name('status.index');
+    // Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
+    // Route::get('/status/{id}/edit', [StatusController::class, 'edit'])->name('status.edit');
 
     //Priority
-    Route::get('/priority', [PriorityController::class, 'index'])->name('priority.index');
-    Route::get('/priority/create', [PriorityController::class, 'create'])->name('priority.create');
-    Route::get('/priority/{id}/edit', [PriorityController::class, 'edit'])->name('priority.edit');
+    Route::resource('priority', PriorityController::class);
+
+    // Route::get('/priority', [PriorityController::class, 'index'])->name('priority.index');
+    // Route::get('/priority/create', [PriorityController::class, 'create'])->name('priority.create');
+    // Route::get('/priority/{id}/edit', [PriorityController::class, 'edit'])->name('priority.edit');
 
 
     // Translation Routes

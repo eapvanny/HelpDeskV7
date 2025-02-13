@@ -79,7 +79,7 @@
             <li><a href="{{ URL::route('permission.index') }}"> {{ __('Permission') }} </a></li>
             <li class="active">
                 @if ($permission)
-                    Update
+                    {{__('Update')}}
                 @else
                     {{ __('Add') }}
                 @endif
@@ -100,7 +100,7 @@
                             {{ __('Permission') }}
                             <small>
                                 @if ($permission)
-                                    Update
+                                    {{__('Update')}}
                                 @else
                                     {{ __('Add New') }}
                                 @endif
@@ -108,15 +108,21 @@
                         </h1>
 
                         <div class="box-tools pull-right">
-                            <a href="{{ URL::route('permission.index') }}" class="btn btn-default">Cancel</a>
+                            <a href="{{ URL::route('permission.index') }}" class="btn btn-default">{{__('Cancel')}}</a>
                             <button type="submit" class="btn btn-info pull-right text-white"><i
                                     class="fa @if ($permission) fa-refresh @else fa-plus-circle @endif"></i>
                                 @if ($permission)
-                                    Update
+                                    {{__('Update')}}
                                 @else
-                                    Add
+                                    {{__('Add')}}
                                 @endif
                             </button>
+                            @if(!$permission)
+                                <button type="submit" class="submitClick submitAndContinue btn btn-success text-white">
+                                <i class="fa fa-plus-circle"></i> {{ __('Save & Add New') }}
+                                </button>
+                                <div class="boxfooter"></div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -184,6 +190,18 @@
                 let allChecked = $('.permission-checkbox').length === $('.permission-checkbox:checked')
                     .length;
                 $('#all-dashboard').prop('checked', allChecked);
+            });
+
+            $(".submitClick").on('click', function(){
+                event.preventDefault();
+                if ($(this).hasClass('submitAndContinue')) {
+                    $(".boxfooter").append('<input type="hidden" name="saveandcontinue" value="1" />');
+                }else {
+                    $("input[name='saveandcontinue']").each(function(){
+                        $(this).remove();
+                    });
+                }
+                $("#entryForm").submit();
             });
         });
     </script>

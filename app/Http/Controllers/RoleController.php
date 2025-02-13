@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
-use App\Models\Role;
+// use App\Models\Permission;
+// use App\Models\Role;
 use App\Models\RolePermission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\Facades\DataTables;
 
 class RoleController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view role', ['only' => ['index']]);
-    //     $this->middleware('permission:create role', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission:edit role', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission:delete role', ['only' => ['destroy']]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view role', ['only' => ['index']]);
+        $this->middleware('permission:create role', ['only' => ['create', 'store']]);
+        $this->middleware('permission:update role', ['only' => ['update', 'edit']]);
+        $this->middleware('permission:delete role', ['only' => ['destroy']]);
+    }
     public $indexof = 1;
     public function index(Request $request)
     {
@@ -36,7 +38,7 @@ class RoleController extends Controller
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
                     $button .= '<a title="Edit"  href="' . route('role.edit', $data->id) . '"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button .= '<a  href="' . route('role.delete', $data->id) . '"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    $button .= '<a  href="' . route('role.destroy', $data->id) . '"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $button .= '</div>';
                     return $button;
                 })
@@ -49,7 +51,7 @@ class RoleController extends Controller
     public function create()
     {
         $role = null;
-        $permissions = Permission::all();
+        $permissions = Permission::get();
         $hasPermission = [];
         return view('backend.role.add', compact('role', 'permissions', 'hasPermission'));
     }
@@ -73,11 +75,21 @@ class RoleController extends Controller
 
         // Attach permissions if provided
         if ($request->has('permissions')) {
-            $role->permissions()->sync($request->permissions);
+            $permissions = Permission::whereIn('id', $request->permissions)->get();
+
+            // Ensure permissions belong to the 'web' guard
+            foreach ($permissions as $permission) {
+                if ($permission->guard_name !== 'web') {
+                    return redirect()->back()->withErrors(['permissions' => 'Some permissions are not valid for the "web" guard.']);
+                }
+            }
+
+            $role->syncPermissions($permissions);
         }
 
         return redirect()->route('role.index')->with('success', "Role has been created!");
     }
+
 
 
     public function edit($id)
@@ -89,7 +101,7 @@ class RoleController extends Controller
         }
 
         $hasPermission = $role->permissions->pluck('name')->toArray();
-        $permissions = Permission::all(); // Fetch full permission objects
+        $permissions = Permission::get(); // Fetch full permission objects
 
         return view('backend.role.add', compact('role', 'permissions', 'hasPermission'));
     }

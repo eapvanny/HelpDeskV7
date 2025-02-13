@@ -83,8 +83,8 @@
                         </h1>
 
                         <div class="box-tools pull-right">
-                            <a href="{{URL::route('ticket.index')}}" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right text-white"><i class="fa @if($ticket) fa-refresh @else fa-plus-circle @endif"></i> @if($ticket) Update @else Add @endif</button>
+                            <a href="{{URL::route('ticket.index')}}" class="btn btn-default">{{__('Cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right text-white"><i class="fa @if($ticket) fa-refresh @else fa-plus-circle @endif"></i> @if($ticket) {{__('Update')}} @else {{__('Add')}} @endif</button>
                         </div>
                     </div>
                 </div>

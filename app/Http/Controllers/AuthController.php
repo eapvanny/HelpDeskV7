@@ -13,9 +13,9 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|string', 
+            'username' => 'required|string',
             'password' => 'required',
-        ]);        
+        ]);
 
         if ($validator->fails()) {
             return back()->withInput()->withErrors($validator);
@@ -24,7 +24,7 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard.index')->with('success', 'Welcome to AdminPanel.');
+            return redirect()->route('dashboard.index')->with('success', 'Welcome to AdminPanel.')->with('show_popup', true);
         }
 
         return back()->withInput()->withErrors([
@@ -32,7 +32,8 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout() 
+
+    public function logout()
     {
         Auth::logout();
 
