@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="RUPP">
+    <meta name="description" content="HiTECH">
     <meta name="keywords" content="school,college,management,result,exam,attendace,hostel,admission,events">
     <meta name="author" content="H.R.Shadhin">
     <title>@yield('pageTitle')</title>

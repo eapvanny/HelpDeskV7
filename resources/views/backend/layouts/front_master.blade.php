@@ -2,14 +2,14 @@
 <html lang="{{ app()->getLocale() }}">
     @php
 
-        /*@if(isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name)){{auth()->user()->organization->short_name}} @else RUPP @endif*/
-        $title = (isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name))?auth()->user()->organization->short_name : 'RUPP';
+        /*@if(isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name)){{auth()->user()->organization->short_name}} @else HiTECH @endif*/
+        $title = (isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name))?auth()->user()->organization->short_name : 'HiTECH';
         //dd($title);
     @endphp
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="@if(isset(auth()->user()->organization->name) && !empty(auth()->user()->organization->name)){{auth()->user()->organization->name}}@else RUPP @endif">
+    <meta name="description" content="@if(isset(auth()->user()->organization->name) && !empty(auth()->user()->organization->name)){{auth()->user()->organization->name}}@else HiTECH @endif">
     <meta name="keywords" content="school,college,management,result,exam,attendace,hostel,admission,events">
     <meta name="author" content="H.R.Shadhin">
     <title>{{$title}} | @yield('pageTitle')</title>
@@ -17,7 +17,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon png -->
-    <link rel="icon" href="@if(isset(auth()->user()->organization->favicon) && !empty(auth()->user()->organization->favicon)){{asset('storage/logo/'.auth()->user()->organization->favicon)}} @else{{ asset('images/favicon.png') }}@endif" type="image/png">
+    <link rel="icon" href="@if(isset(auth()->user()->organization->favicon) && !empty(auth()->user()->organization->favicon)){{asset('storage/logo/'.auth()->user()->organization->favicon)}} @else{{ asset('images/kh.png') }}@endif" type="image/png">
     <!-- Pace loading -->
     <script src="{{ asset(mix('/js/pace.js')) }}"></script>
     <link href="{{ asset(mix('/css/pace.css')) }}" rel="stylesheet" type="text/css">

@@ -2,14 +2,14 @@
 <html lang="{{ app()->getLocale() }}">
 @php
 
-    /*@if(isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name)){{auth()->user()->organization->short_name}} @else RUPP @endif*/
+    /*@if(isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name)){{auth()->user()->organization->short_name}} @else HiTech @endif*/
     $title = (isset(auth()->user()->organization->short_name) && !empty(auth()->user()->organization->short_name))?auth()->user()->organization->short_name : 'HiTech';
     //dd($title);
 @endphp
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="@if(isset(auth()->user()->organization->name) && !empty(auth()->user()->organization->name)){{auth()->user()->organization->name}}@else RUPP @endif">
+    <meta name="description" content="@if(isset(auth()->user()->organization->name) && !empty(auth()->user()->organization->name)){{auth()->user()->organization->name}}@else HiTech @endif">
     <meta name="keywords" content="school,college,management,result,exam,attendace,hostel,admission,events">
     <meta name="author" content="H.R.Shadhin">
     <title>{{$title}} | @yield('pageTitle')</title>
