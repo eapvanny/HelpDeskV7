@@ -2,11 +2,14 @@
 @extends('backend.layouts.master')
 
 <!-- Page title -->
-@section('pageTitle') Departments @endsection
+@section('pageTitle')
+    Departments
+@endsection
 <!-- End block -->
 
 <!-- Page body extra class -->
-@section('bodyCssClass') @endsection
+@section('bodyCssClass')
+@endsection
 <!-- End block -->
 
 <!-- BEGIN PAGE CONTENT-->
@@ -14,7 +17,7 @@
     <!-- Section header -->
     <section class="content-header">
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
+            <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
             <li> {{ __('Master Data') }} </li>
             <li class="active"> {{ __('Departments') }} </li>
         </ol>
@@ -24,53 +27,58 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-            <div class="wrap-outter-header-title">
-                <h1>
-                    {{ __('Departments') }}
-                    <small> {{ __('List') }} </small>
-                </h1>
-                <div class="box-tools pull-right">
-                    <a class="btn btn-info text-white" href="{{ URL::route('department.create') }}"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                <div class="wrap-outter-header-title">
+                    <h1>
+                        {{ __('Departments') }}
+                        <small> {{ __('List') }} </small>
+                    </h1>
+                    @can('create department')
+                        <div class="box-tools pull-right">
+                            <a class="btn btn-info text-white" href="{{ URL::route('department.create') }}"><i
+                                    class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                        </div>
+                    @endcan
                 </div>
-            </div>
 
-            <div class="wrap-outter-box">
-                <div class="box box-info">
-                    <div class="box-body margin-top-20">
-                        <div class="table-responsive">
-                            <table id="datatabble" class="table table-bordered table-striped list_view_table display responsive no-wrap" width="100%">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th> {{ __('Code') }} </th>
-                                    <th> {{ __('Name') }} </th>
-                                    <th> {{ __('Name in Latin') }} </th>
-                                    <th> {{ __('Abbreviation') }} </th>
-                                    <th class="notexport"> {{ __('Action') }} </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
+                <div class="wrap-outter-box">
+                    <div class="box box-info">
+                        <div class="box-body margin-top-20">
+                            <div class="table-responsive">
+                                <table id="datatabble"
+                                    class="table table-bordered table-striped list_view_table display responsive no-wrap"
+                                    width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th> {{ __('Code') }} </th>
+                                            <th> {{ __('Name') }} </th>
+                                            <th> {{ __('Name in Latin') }} </th>
+                                            <th> {{ __('Abbreviation') }} </th>
+                                            <th class="notexport"> {{ __('Action') }} </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
 
-                            </table>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="btn-group">
+                            <form id="myAction" method="POST">
+                                @csrf
+                                <input name="_method" type="hidden" value="DELETE">
+                            </form>
                         </div>
                     </div>
-                    <!-- /.box-body -->
-                    <div class="btn-group">
-                        <form id="myAction" method="POST">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-                        </form>
-                    </div>
-                </div>
 
-            </div>
+                </div>
             </div>
         </div>
         <!-- Modal -->
     </section>
 
-   
+
     <!-- /.content -->
 @endsection
 <!-- END PAGE CONTENT-->
@@ -78,7 +86,7 @@
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             Generic.initCommonPageJS();
             Generic.initDeleteDialog();
             Generic.initFilter();
@@ -94,8 +102,7 @@
                     url: "{!! route('department.index', request()->all()) !!}",
                 },
                 pageLength: 10,
-                columns: [
-                    {
+                columns: [{
                         data: 'id',
                         name: 'id'
                     },

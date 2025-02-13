@@ -40,10 +40,21 @@ class DepartmentController extends Controller
                     return __($data->abbreviation);
                 })
                 ->addColumn('action', function ($data) {
-                    return '<div class="change-action-item">
-                        <a title="Edit" href="' . route('department.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                        <a href="' . route('department.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
-                    </div>';
+                    $button = '<div class="change-action-item">';
+                    $actions = false;
+                    if (auth()->user()->can('update department')) {
+                        $button .= '<a title="Edit" href="' . route('department.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
+                        $actions = true;
+                    }
+                    if (auth()->user()->can('delete department')) {
+                        $button .= '<a href="' . route('department.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                        $actions = true;
+                    }
+                    if (!$actions) {
+                        $button .= '<span style="font-weight:bold; color:red;">No Action</span>';
+                    }
+                    $button .= '</div>';
+                    return $button;
                 })
                 ->rawColumns(['action'])
                 ->make(true);

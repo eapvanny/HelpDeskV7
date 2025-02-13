@@ -11,7 +11,7 @@
 
     <ol class="breadcrumb">
         <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-        <li><a href="{{URL::route('translation.index')}}">{{ __('Translations') }} </a></li>
+        <li><a href="{{URL::route('translation.index')}}">{{ __('Settings') }} </a></li>
         <li class="active">@if($translations) {{ __('Update') }} @else {{ __('Add') }} @endif</li>
     </ol>
 </section>

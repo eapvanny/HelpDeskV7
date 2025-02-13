@@ -18,7 +18,6 @@
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li> {{ __('Administrator') }} </li>
             <li class="active"> {{ __('User') }} </li>
         </ol>
     </section>

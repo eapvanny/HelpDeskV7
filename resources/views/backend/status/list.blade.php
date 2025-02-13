@@ -28,9 +28,9 @@
                     {{ __('Status') }}
                     <small> {{ __('List') }} </small>
                 </h1>
-                <div class="box-tools pull-right">
+                {{-- <div class="box-tools pull-right">
                     <a class="btn btn-info text-white" href="#"><i class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
-                </div>
+                </div> --}}
             </div>
 
             <div class="wrap-outter-box">
@@ -46,7 +46,7 @@
                                 {{-- <th > {{ __('Subject') }} </th>
                                 <th > {{ __('Status') }} </th>
                                 <th > {{ __('Priority') }} </th> --}}
-                                <th class="notexport" > {{ __('Action') }} </th>
+                                {{-- <th class="notexport" > {{ __('Action') }} </th> --}}
                             </tr>
                             </thead>
                             <tbody>
@@ -77,6 +77,9 @@
 @section('extraScript')
     <script type="text/javascript">
         $(document).ready(function () {
+            Generic.initCommonPageJS();
+            Generic.initDeleteDialog();
+            Generic.initFilter();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -98,11 +101,11 @@
                         data: 'name',
                         name: 'name'
                     },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false
-                    }
+                    // {
+                    //     data: 'action',
+                    //     name: 'action',
+                    //     orderable: false
+                    // }
                 ],
             });
 

@@ -31,14 +31,24 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $users = User::with('department', 'role')->get();
+            $query = User::with('department', 'role');
+
+            // Check if the logged-in user is not an admin
+            if (auth()->user()->role_id != AppHelper::USER_ADMIN) {
+                // If the user is not an admin, filter by the logged-in user ID
+                $query->where('id', auth()->user()->id);
+            }
+
+            // Retrieve the users based on the modified query
+            $users = $query->get();
+
             return DataTables::of($users)
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
                 })
                 ->addColumn('photo', function ($data) {
                     return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" 
-                    src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
+                src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
                 })
                 ->addColumn('department', function ($data) {
                     return $data->department ? __($data->department->name) : __('N/A');
@@ -59,23 +69,33 @@ class UserController extends Controller
                     return $data->role ? __($data->role->name) : __('N/A');
                 })
                 ->addColumn('status', function ($data) {
-                    if ($data->status == 1) {
-                        return __('Active');
-                    } else {
-                        return __('Inactive');
-                    }
+                    return $data->status == 1 ? __('Active') : __('Inactive');
                 })
                 ->addColumn('action', function ($data) {
-                    return '<div class="change-action-item">
-                        <a title="Edit" href="' . route('user.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                        <a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
-                    </div>';
+                    $button = '<div class="change-action-item">';
+                    $actions = false;
+                    if (auth()->user()->can('update user')) {
+                        $button .= '<a title="Edit" href="' . route('user.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
+                        $actions = true;
+                    }
+                    if (auth()->user()->can('delete user')) {
+                        $button .= '<a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                        $actions = true;
+                    }
+                    if (!$actions) {
+                        $button .= '<span style="font-weight:bold; color:red;">No Action</span>';
+                    }
+                    $button .= '</div>';
+                    return $button;
                 })
+
                 ->rawColumns(['action', 'photo', 'status'])
                 ->make(true);
         }
+
         return view('backend.user.list');
     }
+
 
     public function create()
     {
@@ -311,7 +331,7 @@ class UserController extends Controller
     {
         $request->validate([
             'old_password' => ['required', 'min:6', 'max:50'],
-            'password' => ['required', 'min:6', 'max:50', 'confirmed'], 
+            'password' => ['required', 'min:6', 'max:50', 'confirmed'],
         ]);
 
         if (!Hash::check($request->old_password, Auth::user()->password)) {
@@ -333,6 +353,6 @@ class UserController extends Controller
         $name = auth()->user()->name;
         $photo = auth()->user()->photo;
         Auth::logout();
-        return view('backend.user.lock', compact('username', 'name','photo'));
+        return view('backend.user.lock', compact('username', 'name', 'photo'));
     }
 }
