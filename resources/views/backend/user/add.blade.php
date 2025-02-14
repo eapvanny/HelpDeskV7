@@ -137,7 +137,7 @@
 
                     <!-- End organization -->
                     <div class="row">
-                        <div class="col-md-3 col-xl-3">
+                        <div class="col-md-4 col-xl-4">
                             <div class="form-group has-feedback">
                                 <label for="department_id"> {{ __('Department') }} <span class="text-danger">*</span>
                                     <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom"
@@ -154,17 +154,7 @@
                                 <span class="text-danger">{{ $errors->first('department_id') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group has-feedback">
-                                <label for="id_card"> {{ __('ID No.') }} <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="id_card" placeholder="id_card"
-                                    value="@if ($user) {{ $user->id_card }}@else{{ old('id_card') }} @endif"
-                                    required minlength="3" maxlength="10">
-                                <span class="fa fa-info form-control-feedback"></span>
-                                <span class="text-danger">{{ $errors->first('id_card') }}</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group has-feedback">
                                 <label for="name"> {{ __('Name') }} <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="name" placeholder="name"
@@ -174,7 +164,7 @@
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group has-feedback">
                                 <label for="phone_no"> {{ __('Phone No.') }}</label>
                                 <input type="text" class="form-control" name="phone_no"

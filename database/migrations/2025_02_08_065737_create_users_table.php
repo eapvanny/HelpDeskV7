@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->string('photo')->nullable();
             $table->boolean('status')->default(1);
             $table->unsignedBigInteger('role_id');
+            $table->tinyInteger('gender')->nullable();
+            $table->string('user_lang', '2')->default('kh');
             $table->timestamps();
         });
     }

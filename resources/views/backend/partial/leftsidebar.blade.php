@@ -70,7 +70,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    @if(auth()->user() && auth()->user()->role_id == AppHelper::USER_ADMIN)
+                    @if(auth()->user() && auth()->user()->role_id == AppHelper::USER_SUPER_ADMIN)
                         <li>
                             <a href="{{ URL::route('forget.password') }}" class="text-decoration-none">
                                 <i class="fa fa-eye"></i><span>{{ __('Reset Password') }}</span>

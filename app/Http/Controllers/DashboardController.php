@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $query = Ticket::query();
 
         // Check if the authenticated user is an admin
-        if (auth()->user()->role_id !== AppHelper::USER_ADMIN) {
+        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
             $query->where('user_id', auth()->id());
         }
 

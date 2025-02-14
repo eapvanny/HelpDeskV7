@@ -8,6 +8,7 @@ use App\Models\Priority;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             Status::class,
             Priority::class,
             Role::class,
+            Permission::class,
         ]);
     }
 }

@@ -56,7 +56,6 @@
                                         <tr>
                                             <th>{{ __('Photo') }}</th>
                                             <th style="min-width: 65px;">{{ __('Department') }}</th>
-                                            <th>{{ __('ID No.') }}</th>
                                             <th>{{ __('Name') }}</th>
                                             <th>{{ __('Username') }}</th>
                                             <th>{{ __('Email') }}</th>
@@ -113,17 +112,13 @@
                     url: "{!! route('user.index', Request::query()) !!}",
                 },
                 columns: [
-                    {
+                    {   
                         data: 'photo',
                         name: 'photo',
                     },
                     {
                         data: 'department',
                         name: 'department',
-                    },
-                    {
-                        data: 'id_card',
-                        name: 'id_card',
                     },
                     {
                         data: 'name',
