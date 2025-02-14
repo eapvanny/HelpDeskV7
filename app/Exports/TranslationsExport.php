@@ -3,15 +3,20 @@
 namespace App\Exports;
 
 use App\Models\Translation;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\WithCustomStartCell;
 
-class TranslationsExport implements FromCollection
+class TranslationsExport implements FromView
 {
     /**
-     * @return \Illuminate\Support\Collection
-     */
-    public function collection()
+    * @return \Illuminate\Support\Collection
+    */
+    public function view(): View
     {
-        return Translation::all();  // You can adjust this as needed.
+        return view('exports.translations', [
+            'rows' => Translation::all()
+        ]);
     }
+
 }

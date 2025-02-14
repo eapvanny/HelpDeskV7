@@ -15,7 +15,6 @@
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{URL::route('dashboard.index')}}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li> {{ __('Master Data') }} </li>
             <li><a href="{{URL::route('department.index')}}"> {{ __('Department') }} </a></li>
             <li class="active">@if($department) Update @else {{ __('Add') }} @endif</li>
         </ol>
