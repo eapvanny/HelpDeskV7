@@ -1,4 +1,7 @@
 <!-- Left side column. contains the sidebar -->
+@php
+    use App\Http\Helpers\AppHelper;
+@endphp
 <aside class="main-sidebar shadow">
     <section class="sidebar">
         <!-- sidebar menu -->
@@ -67,12 +70,20 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    @if(auth()->user() && auth()->user()->role_id == AppHelper::USER_ADMIN)
+                        <li>
+                            <a href="{{ URL::route('forget.password') }}" class="text-decoration-none">
+                                <i class="fa fa-eye"></i><span>{{ __('Reset Password') }}</span>
+                            </a>
+                        </li>
+                    @endif
                     <li>
                         <a href="{{ URL::route('translation.index') }}" class="text-decoration-none">
                             <i class="fa fa-solid fa-person-dots-from-line"></i><span>{{ __('Translations') }}</span>
                         </a>
                     </li>
                 </ul>
+                
             </li>
         </ul>
     </section>

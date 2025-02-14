@@ -37,7 +37,7 @@
         </div>
         <div class="login-box-body">
             <p class="login-box-msg text-danger"> {{ __('Fill up the form correctly') }} </p>
-            <form novalidate id="resetForm" action="{{URL::Route('reset', $token)}}" method="post" enctype="multipart/form-data">
+            <form novalidate id="resetForm" action="{{ route('password.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="token" value="{{$token}}">
                 <div class="form-group has-feedback">
