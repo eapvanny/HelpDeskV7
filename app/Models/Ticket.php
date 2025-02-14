@@ -16,7 +16,9 @@ class Ticket extends Model
         'priority_id',
         'description',
         'agent_id',
-        'user_id'
+        'user_id',
+        'employee_name',
+        'id_card',
     ];
 
     public function department()

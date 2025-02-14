@@ -114,6 +114,26 @@
                         </div>
                     </div>
                     
+                    <div class="col-md-4">
+                        <div class="form-group has-feedback">
+                            <label for="id_card"> {{ __('ID No.') }} <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="id_card" placeholder="id_card"
+                                value="@if ($ticket) {{ $ticket->id_card }}@else{{ old('id_card') }} @endif"
+                                required minlength="3" maxlength="10">
+                            <span class="fa fa-info form-control-feedback"></span>
+                            <span class="text-danger">{{ $errors->first('id_card') }}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group has-feedback">
+                            <label for="employee_name"> {{ __('Employee Name') }} <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="employee_name" placeholder="name"
+                                value="@if ($ticket) {{ $ticket->employee_name }}@else{{ old('employee_name') }} @endif"
+                                required>
+                            <span class="fa fa-info form-control-feedback"></span>
+                            <span class="text-danger">{{ $errors->first('employee_name') }}</span>
+                        </div>
+                    </div>
                     <div class="col-md-4 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="status_id"> {{ __('Status') }} <span class="text-danger">*</span></label>
@@ -158,6 +178,8 @@
                             ]) !!}
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="form-group has-feedback">
                             <label for="subject"> {{ __('Subject') }} <span class="text-danger">*</span></label>

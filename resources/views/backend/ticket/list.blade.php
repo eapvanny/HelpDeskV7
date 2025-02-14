@@ -85,7 +85,8 @@
                                         <tr>
                                             <th>#</th>
                                             <th> {{ __('Department') }} </th>
-                                            <th> {{ __('Username') }} </th>
+                                            <th> {{ __('ID No.') }} </th>
+                                            <th> {{ __('Employee Name') }} </th>
                                             <th> {{ __('Subject') }} </th>
                                             <th> {{ __('Description') }} </th>
                                             <th> {{ __('Status') }} </th>
@@ -176,8 +177,12 @@
                         name: 'department'
                     },
                     {
-                        data: 'username',
-                        name: 'username'
+                        data: 'id_card',
+                        name: 'id_card'
+                    },
+                    {
+                        data: 'employee_name',
+                        name: 'employee_name'
                     },
                     {
                         data: 'subject',

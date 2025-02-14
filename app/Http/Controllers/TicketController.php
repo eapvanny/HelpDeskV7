@@ -25,7 +25,7 @@ class TicketController extends Controller
     {
         $query = Ticket::with(['department', 'user']);
 
-        if (auth()->user()->role_id !== AppHelper::USER_ADMIN) {
+        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
             $query->where('user_id', auth()->id());
         }
 
@@ -42,8 +42,11 @@ class TicketController extends Controller
                 ->addColumn('department', function ($data) {
                     return __($data->department->name);
                 })
-                ->addColumn('username', function ($data) {
-                    return $data->user ? __($data->user->name) : 'Unknown';
+                ->addColumn('id_card', function ($data) {
+                    return __($data->id_card);
+                })
+                ->addColumn('employee_name', function ($data) {
+                    return __($data->employee_name);
                 })
                 ->addColumn('description', function ($data) {
                     return __($data->description);
@@ -141,12 +144,16 @@ class TicketController extends Controller
             'department_id' => 'required',
             'subject' => 'required|min:2',
             'description' => 'required',
+            'id_card' => 'required|min:3',
+            'employee_name' => 'required',
         ];
         $this->validate($request, $rules);
 
         Ticket::create([
             'user_id' => auth()->id(),
             'department_id' => $request->department_id,
+            'id_card' => $request->id_card,
+            'employee_name' => $request->employee_name,
             'subject' => $request->subject,
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
@@ -177,11 +184,15 @@ class TicketController extends Controller
             'department_id' => 'required',
             'subject' => 'required|min:2',
             'description' => 'required',
+            'id_card' => 'required|min:3',
+            'employee_name' => 'required',
         ];
         $this->validate($request, $rules);
 
         $ticket->update([
             'department_id' => $request->department_id,
+            'id_card' => $request->id_card,
+            'employee_name' => $request->employee_name,
             'subject' => $request->subject,
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
