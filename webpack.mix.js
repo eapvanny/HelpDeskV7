@@ -1,9 +1,6 @@
-let mix = require('laravel-mix');
-if (process.env.npm_config_mixfile === 'webpack.backend.mix.js') {
-    require('./webpack.backend.mix.js');
-} else {
-    require('./webpack.frontend.mix.js');
-}
+const mix = require('laravel-mix');
+const webpack = require('webpack');  // Make sure this line is included
+
 
 
 /*
