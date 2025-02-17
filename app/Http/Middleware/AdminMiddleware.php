@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use Spatie\Permission\Models\Role;
 
 class AdminMiddleware
 {
@@ -17,14 +18,19 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            /** @var App\Models\User */
+            /** @var \App\Models\User $user */
             $user = Auth::user();
-            if ($user->hasRole(['Super Admin','Admin','Staff'])) {
+
+            // Get allowed roles dynamically from the database
+            $allowedRoles = Role::pluck('name')->toArray();
+
+            // Check if the user has any of the allowed roles
+            if ($user->hasAnyRole($allowedRoles)) {
                 return $next($request);
             }
 
-            abort(403, "User doesn't have corect ROLE");
-        }
+            abort(403, "User doesn't have a correct role");
+        }   
         abort(401);
     }
 }

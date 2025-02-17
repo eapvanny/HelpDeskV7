@@ -59,36 +59,29 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the incoming request
+        // Validate request
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:roles|min:3',
-            'permissions' => 'array', // Ensure permissions is an array
-            'permissions.*' => 'exists:permissions,id', // Validate each permission ID exists
+            'permissions' => 'array',
+            'permissions.*' => 'exists:permissions,id',
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        // Create the role
+        // Create role
         $role = Role::create(['name' => $request->name]);
 
-        // Attach permissions if provided
+        // Attach permissions
         if ($request->has('permissions')) {
             $permissions = Permission::whereIn('id', $request->permissions)->get();
-
-            // Ensure permissions belong to the 'web' guard
-            foreach ($permissions as $permission) {
-                if ($permission->guard_name !== 'web') {
-                    return redirect()->back()->withErrors(['permissions' => 'Some permissions are not valid for the "web" guard.']);
-                }
-            }
-
             $role->syncPermissions($permissions);
         }
 
         return redirect()->route('role.index')->with('success', "Role has been created!");
     }
+
 
 
 

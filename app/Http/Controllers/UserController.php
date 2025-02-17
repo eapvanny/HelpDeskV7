@@ -34,7 +34,7 @@ class UserController extends Controller
             $query = User::with('department', 'role');
 
             // Check if the logged-in user is not an admin
-            if (auth()->user()->role_id != AppHelper::USER_ADMIN) {
+            if (auth()->user()->role_id != AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
                 // If the user is not an admin, filter by the logged-in user ID
                 $query->where('id', auth()->user()->id);
             }
@@ -185,7 +185,7 @@ class UserController extends Controller
             'photo' => 'nullable|mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'name' => 'required|min:2|max:255',
             'department_id' => 'required',
-            // 'email' => 'required|email|max:255|unique:users,email,' . $id,
+            'email' => 'required|email|max:255|unique:users,email,' . $id,
             'username' => 'required|min:5|max:255|unique:users,username,' . $id,
             'password' => 'nullable|min:6|max:50',
             'phone_no' => 'nullable|max:15',
@@ -199,23 +199,24 @@ class UserController extends Controller
         $userData = [
             'name' => $request->name,
             'department_id' => $request->department_id,
-            'role_id' => $request->role_id, // You may want to get this dynamically
+            'role_id' => $request->role_id,
             'gender' => $request->gender,
             'username' => $request->username,
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
+            'photo' => $user->photo, // Keep existing photo by default
         ];
 
         // Handle password update only if provided
-        // if ($request->filled('password')) {
-        //     $userData['password'] = bcrypt($request->password);
-        // }
+        if ($request->filled('password')) {
+            $userData['password'] = bcrypt($request->password);
+        }
 
         // Handle photo upload
         if ($request->hasFile('photo')) {
             // Delete old photo if exists
-            if ($user->photo) {
+            if ($user->photo && Storage::exists($user->photo)) {
                 Storage::delete($user->photo);
             }
 
@@ -224,7 +225,7 @@ class UserController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
 
-            $userData['photo'] = $filePath;
+            $userData['photo'] = $filePath; // Update with new photo
         }
 
         // Update user record

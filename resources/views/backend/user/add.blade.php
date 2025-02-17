@@ -80,7 +80,7 @@
             <li><a href="{{ URL::route('user.index') }}"> {{ __('User') }} </a></li>
             <li class="active">
                 @if ($user)
-                    {{__('Update')}}
+                    {{ __('Update') }}
                 @else
                     {{ __('Add') }}
                 @endif
@@ -101,7 +101,7 @@
                             {{ __('User') }}
                             <small>
                                 @if ($user)
-                                    {{__('Update')}}
+                                    {{ __('Update') }}
                                 @else
                                     {{ __('Add New') }}
                                 @endif
@@ -109,13 +109,13 @@
                         </h1>
 
                         <div class="box-tools pull-right">
-                            <a href="{{ URL::route('user.index') }}" class="btn btn-default">Cancel</a>
+                            <a href="{{ URL::route('user.index') }}" class="btn btn-default">{{__('Cancel')}}</a>
                             <button type="submit" class="btn btn-info pull-right text-white"><i
                                     class="fa @if ($user) fa-refresh @else fa-plus-circle @endif"></i>
                                 @if ($user)
-                                    {{__('Update')}}
+                                    {{ __('Update') }}
                                 @else
-                                    {{__('Add')}}
+                                    {{ __('Add') }}
                                 @endif
                             </button>
                         </div>
@@ -213,21 +213,23 @@
                                 @php
                                     $genderKey = $user ? $user->gender : null;
                                 @endphp
-                                {!! Form::select('gender', 
-                                [
-                                    AppHelper::GENDER_MALE => __(AppHelper::GENDER[AppHelper::GENDER_MALE]),
-                                    AppHelper::GENDER_FEMALE => __(AppHelper::GENDER[AppHelper::GENDER_FEMALE]),
-                                ],
-                                old('gender',$genderKey), 
-                                [
-                                    'class' => 'form-control select2',
-                                    'required' => 'true',
-                                    'placeholder' => __('Select Gender'),
-                                    'id' => 'gender',
-                                    'name' => 'gender' 
-                                ]) !!}
+                                {!! Form::select(
+                                    'gender',
+                                    [
+                                        AppHelper::GENDER_MALE => __(AppHelper::GENDER[AppHelper::GENDER_MALE]),
+                                        AppHelper::GENDER_FEMALE => __(AppHelper::GENDER[AppHelper::GENDER_FEMALE]),
+                                    ],
+                                    old('gender', $genderKey),
+                                    [
+                                        'class' => 'form-control select2',
+                                        'required' => 'true',
+                                        'placeholder' => __('Select Gender'),
+                                        'id' => 'gender',
+                                        'name' => 'gender',
+                                    ],
+                                ) !!}
                             </div>
-                        </div>  
+                        </div>
 
                         <div class="col-md-4">
                             <div class="form-group has-feedback">
@@ -235,8 +237,8 @@
                                 <input type="email" class="form-control" name="email" placeholder="email address"
                                     value="@if ($user) {{ $user->email }}@else{{ old('email') }} @endif"
                                     maxlength="100">
-                                {{-- <span class="fa fa-envelope form-control-feedback"></span>
-                            <span class="text-danger">{{ $errors->first('email') }}</span> --}}
+                                <span class="fa fa-envelope form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -269,7 +271,7 @@
                                     <div class="col-md-6">
                                         <label for="photo"> {{ __('Photo') }} <br /><span
                                                 class="text-muted fst-italic">{{ __('(Files: jpeg, jpg, or png, min dimension: 50
-                                                                                                x 50 pixel, 2Mb max size)') }}</span></label>
+                                                                                                                                                x 50 pixel, 2Mb max size)') }}</span></label>
                                         <input type="file" class="form-control" accept=".jpeg, .jpg, .png"
                                             name="photo" placeholder="{{ __('Photo image') }}">
                                         <span class="glyphicon glyphicon-open-file form-control-feedback"

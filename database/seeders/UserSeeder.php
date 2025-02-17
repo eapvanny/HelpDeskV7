@@ -30,8 +30,8 @@ class UserSeeder extends Seeder
         if (User::where('email', 'admin@gmail.com')->doesntExist()) {
             $user = User::create([
                 'name' => 'Mr. Admin',
-                'username' => 'admin',
-                'email' => 'admin@gmail.com',
+                'username' => 'superadmin',
+                'email' => 'superadmin@gmail.com',
                 'password' => Hash::make('demo123'),
                 'photo' => '123.jpg',
                 'status' => AppHelper::STATUS_OPEN,
