@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helpers\AppHelper;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 
@@ -64,5 +65,12 @@ class DashboardController extends Controller
         }
 
         return response()->json($ticketData);
+    }
+
+    public function getSupportUser()
+    {
+        $contacts = Contact::all();
+
+        return view('backend.partial.modal_contact_user.contact_support', compact('contacts'));
     }
 }

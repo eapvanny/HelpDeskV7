@@ -55,7 +55,7 @@
         }
 
         .calendar-move-today.active {
-            background-color: #135de6;
+            background-color: #4299e1;
             color: white;
         }
     </style>
@@ -77,25 +77,25 @@
                     <input class="select2" type="date">
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Problem Tickets') }}</h5>
                     <h3 id="problem-tickets">{{ __($openTickets) }}</h3>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Pending Tickets') }}</h5>
                     <h3 id="pending-tickets">{{ $pendingTickets }}</h3>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Resolved Tickets') }}</h5>
                     <h3 id="solved-tickets">{{ $resolvedTickets }}</h3>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Closed Tickets') }}</h5>
                     <h3 id="closed-tickets">{{ $closedTickets }}</h3>
@@ -105,7 +105,7 @@
     </section>
     <section>
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12">
                 <div class="card mt-3">
                     <div class="media  d-flex justify-content-between ">
                         <div class="media-body">
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-12">
                 <div class="card mt-3 ticket-chat">
                     <div class="chart-container">
                         <span style="font-weight: bold">{{ __('All tickets in this year') }}</span>
@@ -228,44 +228,9 @@
                         return `<span><i class="fa-solid fa-flag"></i> ${event.title}</span>`;
                     },
                 },
-                calendars: [{
-                        id: 'school_event',
-                        name: 'School Event',
-                        backgroundColor: '#33bcff',
-                        color: '#ffffff',
-                    },
-                    {
-                        id: 'holiday',
-                        name: 'Holiday',
-                        backgroundColor: '#FF0000',
-                        color: '#ffffff',
-                    },
-                    {
-                        id: 'examination',
-                        name: 'Examination',
-                        backgroundColor: '#FFA500',
-                        color: '#ffffff',
-                    },
-                ],
             });
 
             calendar.render();
-            loadAcademicCalendar(function(response_data) {
-                var event_arr = [];
-                $.each(response_data, function(i, value) {
-                    event_arr.push({
-                        id: 'event_' + value.id,
-                        calendarId: value.event_type,
-                        title: value.title,
-                        body: value.description,
-                        isAllday: true,
-                        start: value.date_from,
-                        end: value.date_upto,
-                        category: 'allday',
-                    });
-                });
-                calendar.createEvents(event_arr);
-            });
 
             $('#btn-left').on('click', function() {
                 calendar.prev();
@@ -286,25 +251,6 @@
             updateMonthYear(calendar);
         });
 
-        // Load Academic Calendar function
-        function loadAcademicCalendar(callback) {
-            $.ajax({
-                type: "GET",
-                url: "/ajax/academic_calendar/search",
-                data: {},
-                dataType: 'json',
-                async: true,
-                success: function(response) {
-                    if (response.status === true) {
-                        if (callback !== undefined) {
-                            callback(response.data);
-                        }
-                    } else {
-                        alert('Something Went Wrong!');
-                    }
-                }
-            });
-        }
         var monthNames = [
             "{{ __('January') }}", "{{ __('February') }}", "{{ __('March') }}", "{{ __('April') }}",
             "{{ __('May') }}", "{{ __('June') }}",

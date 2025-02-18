@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Facades\Storage;
-
+    use Illuminate\Support\Facades\Auth;
     $authUser = Auth::user();
     $photoPath = $authUser->photo ? asset('storage/' . $authUser->photo) : asset('images/avatar.png');
 @endphp
@@ -22,6 +22,10 @@
         <a href="#" class="sidebar-toggle text-decoration-none fas " data-toggle="push-menu" role="button">
 
         </a>
+        <button id="contact-user" class="btn btn-contact" data-url="{{ route('get.support') }}" data-bs-toggle="modal"
+            data-bs-target="#showContact">
+            {{ __('Contact Us') }}
+        </button>
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
@@ -228,13 +232,13 @@
                             </li>
 
                             <li>
-                                <a class="dropdown-item" href="{{URL::route('change_password')}}">
+                                <a class="dropdown-item" href="{{ URL::route('change_password') }}">
                                     <i class="fa fa-solid fa-lock"></i>
                                     {{ __('Password') }}
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{URL::route('lockscreen')}}">
+                                <a class="dropdown-item" href="{{ URL::route('lockscreen') }}">
                                     <i class="fa fa-solid fa-sharp fa-eye-slash"></i>
                                     {{ __('Lock Screen') }}
                                 </a>
@@ -254,3 +258,51 @@
         </div>
     </nav>
 </header>
+<div class="modal modal-lg fade" id="showContact" tabindex="-1" role="dialog" aria-labelledby="showContactLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="showContactLabel">{{ __('Contact Details') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body d-flex justify-content-center gap-3 flex-wrap" id="modal-body-content">
+                <!-- Contacts will be loaded dynamically -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    {{ __('Close') }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#contact-user').on('click', function() {
+                let url = $(this).data('url'); 
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    beforeSend: function() {
+                        $('#modal-body-content').html(
+                            '<p>Loading contacts...</p>'); 
+                    },
+                    success: function(response) {
+                        $('#modal-body-content').html(response); 
+                    },
+                    error: function() {
+                        $('#modal-body-content').html(
+                            '<p class="text-danger">Failed to load contacts.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

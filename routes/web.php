@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PermissionController;
@@ -121,6 +122,9 @@ Route::group(['middleware' => ['auth','isAdmin']], function() {
 
     //Priority
     Route::resource('priority', PriorityController::class);
+    Route::resource('contact', ContactController::class);
+
+    Route::get('support',[DashboardController::class, 'getSupportUser'])->name('get.support');
 
     // Route::get('/priority', [PriorityController::class, 'index'])->name('priority.index');
     // Route::get('/priority/create', [PriorityController::class, 'create'])->name('priority.create');
