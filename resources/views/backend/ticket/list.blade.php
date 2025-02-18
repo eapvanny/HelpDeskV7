@@ -211,19 +211,17 @@
             $(document).on('click', '.show-ticket', function() {
                 var ticketId = $(this).data('id');
 
-                // Clear old ticket data before fetching new one
                 $('#ticket_id').val('');
                 $('#chat-box').html('');
                 $("#chatMessage").val('');
 
-                // Fetch Ticket Details
                 $.ajax({
                     url: "{!! route('ticket.show', ':id') !!}".replace(':id', ticketId),
                     method: 'GET',
                     success: function(response) {
                         $('#ticket_id').val(ticketId);
 
-                        let lastMessageId = 0; // Store the ID of the last message
+                        let lastMessageId = 0;
 
                         function fetchMessages() {
                             $.ajax({
@@ -240,27 +238,51 @@
                                                 let isCurrentUser = msg
                                                     .user_id ===
                                                     {{ auth()->id() }};
-
                                                 let alignmentClass =
                                                     isCurrentUser ?
-                                                    'd-flex justify-content-end' // Sent messages (Right)
-                                                    :
-                                                    'd-flex justify-content-start'; // Received messages (Left)
-
+                                                    'd-flex justify-content-end' :
+                                                    'd-flex justify-content-start';
                                                 let bgColor =
                                                     isCurrentUser ?
-                                                    'bg-primary text-white' // Blue for sender (Current user)
-                                                    :
-                                                    'bg-secondary text-white'; // Black for receiver (Other user)
+                                                    'bg-primary text-white' :
+                                                    'bg-secondary text-white';
+
+                                                // Add user photo only for received messages (bg-secondary)
+                                                let photoHtml = !
+                                                    isCurrentUser ?
+                                                    `<img src="${msg.user_photo_url}" class="rounded-circle" style="width: 20px; height: 20px; margin-right: 10px;">` :
+                                                    '';
+
+                                                // Check if chat-box exists, if not create it with proper styling
+                                                if ($("#chat-box")
+                                                    .length === 0) {
+                                                    $("#modal-body").append(
+                                                        `<div id="chat-box" style="height: 50%; overflow-y: auto;"></div>`
+                                                        );
+                                                }
+
+                                                // Determine if the message is long or short
+                                                let messageLength = msg
+                                                    .message.length;
+                                                let messageStyle = (
+                                                        messageLength > 70 ?
+                                                        'max-width: 50%; word-wrap: break-word;' :
+                                                        '') +
+                                                    (isCurrentUser ?
+                                                        ' margin-left: auto;' :
+                                                        ' margin-right: auto;'
+                                                        );
 
                                                 $("#chat-box").append(`
-                                        <div class="message ${alignmentClass} my-2">
-                                            <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
-                                                ${msg.message}
-                                            </div>
-                                        </div>
-                                    `);
-
+                            <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
+                                <div class="d-flex align-items-start">
+                                    ${photoHtml} <!-- Show the photo only for received messages -->
+                                    <div class="p-2 rounded ${bgColor}" style="${messageStyle}">
+                                        ${msg.message}
+                                    </div>
+                                </div>
+                            </div>
+                        `);
                                                 lastMessageId = msg
                                                 .id; // Update lastMessageId after adding new messages
                                             }
@@ -269,6 +291,8 @@
                                 }
                             });
                         }
+
+
                         // Initial fetch of messages
                         fetchMessages();
                         // Send a new message
@@ -286,7 +310,7 @@
                                 },
                                 success: function(response) {
                                     $("#chatMessage").val(
-                                    ""); // Clear input field
+                                        ""); // Clear input field
 
                                     // Append message only once after sending
                                     let isCurrentUser = response.user_id ===

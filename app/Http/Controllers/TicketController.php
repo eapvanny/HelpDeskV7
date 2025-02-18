@@ -116,6 +116,11 @@ class TicketController extends Controller
             ->orderBy('created_at', 'asc')
             ->get();
 
+        $messages->map(function ($message) {
+            $message->user_photo_url = $message->user->photo_url; // Assuming you have a `photo_url` attribute in the User model
+            return $message;
+        });
+
         return response()->json($messages);
     }
 

@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         $token = Str::random(16);
 
-        DB::table('password_resets')->insert([
+        DB::table('password_reset_tokens')->insert([
             'email' => $request->email,
             'token' => $token,
             'created_at' => Carbon::now(),
@@ -76,7 +76,7 @@ class AuthController extends Controller
         ]);
         
 
-        $updatePassword = DB::table('password_resets')
+        $updatePassword = DB::table('password_reset_tokens')
             ->where([
                 'email' => $request->email,
                 'token' => $request->token,
@@ -89,7 +89,7 @@ class AuthController extends Controller
         User::where('email', $request->email)
             ->update(['password'=> Hash::make($request->password)]);
 
-        DB::table('password_resets')
+        DB::table('password_reset_tokens')
             ->where(['email' => $request->email])
             ->delete();
 
