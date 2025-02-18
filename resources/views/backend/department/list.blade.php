@@ -94,17 +94,16 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            t = $('#datatabble').DataTable({
-                processing: false,
+            let table = $('#datatabble').DataTable({
+                processing: true,
                 serverSide: true,
-                ajax: {
-                    url: "{!! route('department.index', request()->all()) !!}",
-                },
-                pageLength: 10,
+                ajax: "{{ route('department.index') }}",
                 columns: [{
-                        data: 'id',
-                        name: 'id'
-                    },
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false
+                    }, // Auto index
                     {
                         data: 'code',
                         name: 'code'
@@ -124,15 +123,14 @@
                     {
                         data: 'action',
                         name: 'action',
-                        orderable: false
+                        orderable: false,
+                        searchable: false
                     }
-                ],
+                ]
             });
 
-            //delete grade_level
-            $('#datatabble').delegate('.delete', 'click', function(e) {
+            $('#datatabble').on('click', '.delete', function(e) {
                 let action = $(this).attr('href');
-                console.log()
                 $('#myAction').attr('action', action);
                 e.preventDefault();
                 swal({

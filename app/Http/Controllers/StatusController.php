@@ -19,15 +19,16 @@ class StatusController extends Controller
     public $indexof = 1;
     public function index(Request $request) 
     {
-
+        $status = Status::query();
         if ($request->ajax()) {
-            $status = Status::query();
             return DataTables::of($status)
-                ->addColumn('id', function ($data) {
-                    return $this->indexof++;
-                })
-                ->addColumn('name', function ($data) {
-                    return $data->name;
+            ->addIndexColumn() // This automatically adds DT_RowIndex
+                ->filter(function ($query) use ($request) {
+                    if ($search = $request->input('search.value')) {
+                        $query->where(function ($q) use ($search) {
+                            $q->where('name', 'LIKE', "%{$search}%");
+                        });
+                    }
                 })
                 // ->addColumn('action', function ($data) {
                 //     $button = '<div class="change-action-item">';

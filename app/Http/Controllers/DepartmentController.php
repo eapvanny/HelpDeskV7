@@ -21,23 +21,19 @@ class DepartmentController extends Controller
     public $indexof = 1;
     public function index(Request $request)
     {
+        $departments = Department::query();
         if ($request->ajax()) {
-            $departments = Department::query();
             return DataTables::of($departments)
-                ->addColumn('id', function ($data) {
-                    return $this->indexof++;
-                })
-                ->addColumn('code', function ($data) {
-                    return $data->code;
-                })
-                ->addColumn('name', function ($data) {
-                    return __($data->name);
-                })
-                ->addColumn('name_in_latin', function ($data) {
-                    return __($data->name_in_latin);
-                })
-                ->addColumn('abbreviation', function ($data) {
-                    return __($data->abbreviation);
+                ->addIndexColumn() // This automatically adds DT_RowIndex
+                ->filter(function ($query) use ($request) {
+                    if ($search = $request->input('search.value')) {
+                        $query->where(function ($q) use ($search) {
+                            $q->where('code', 'LIKE', "%{$search}%")
+                                ->orWhere('name', 'LIKE', "%{$search}%")
+                                ->orWhere('name_in_latin', 'LIKE', "%{$search}%")
+                                ->orWhere('abbreviation', 'LIKE', "%{$search}%");
+                        });
+                    }
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';

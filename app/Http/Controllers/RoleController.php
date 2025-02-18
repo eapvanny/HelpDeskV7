@@ -26,11 +26,13 @@ class RoleController extends Controller
         if ($request->ajax()) {
             $roles = Role::query();
             return DataTables::of($roles)
-                ->addColumn('id', function ($data) {
-                    return $this->indexof++;
-                })
-                ->addColumn('name', function ($data) {
-                    return $data->name;
+            ->addIndexColumn() // This automatically adds DT_RowIndex
+                ->filter(function ($query) use ($request) {
+                    if ($search = $request->input('search.value')) {
+                        $query->where(function ($q) use ($search) {
+                            $q->where('name', 'LIKE', "%{$search}%");
+                        });
+                    }
                 })
                 ->addColumn('permission', function ($data) {
                     return $data->permissions->pluck('name')->implode(', '); // Get permission names as a comma-separated string

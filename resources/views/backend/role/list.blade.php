@@ -95,24 +95,26 @@
                     url: "{!! route('role.index', request()->all()) !!}",
                 },
                 pageLength: 10,
-                columns: [{
-                        data: 'id',
-                        name: 'id'
-                    },
-                    {
-                        data: 'name',
-                        name: 'name'
-                    },
-                    {
-                        data: 'permission',
-                        name: 'permission'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false
-                    }
-                ],
+                    columns: [{
+                            data: 'DT_RowIndex',
+                            name: 'DT_RowIndex',
+                            // orderable: false,
+                            // searchable: false
+                        },
+                        {
+                            data: 'name',
+                            name: 'name'
+                        },
+                        {
+                            data: 'permission',
+                            name: 'permission'
+                        },
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false
+                        }
+                    ],
             });
 
             //delete grade_level

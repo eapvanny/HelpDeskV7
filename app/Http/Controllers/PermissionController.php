@@ -20,14 +20,16 @@ class PermissionController extends Controller
     public $indexof = 1;
     public function index(Request $request)
     {
+        $permission = Permission::query();
         if ($request->ajax()) {
-            $permission = Permission::query();
             return DataTables::of($permission)
-                ->addColumn('id', function ($data) {
-                    return $this->indexof++;
-                })
-                ->addColumn('name', function ($data) {
-                    return $data->name;
+            ->addIndexColumn()
+                ->filter(function ($query) use ($request) {
+                    if ($search = $request->input('search.value')) {
+                        $query->where(function ($q) use ($search) {
+                            $q->where('name', 'LIKE', "%{$search}%");
+                        });
+                    }
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
