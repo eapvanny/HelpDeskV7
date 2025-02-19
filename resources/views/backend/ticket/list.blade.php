@@ -9,7 +9,7 @@
 
 @section('extraStyle')
     <style>
-        .modal-fullscreen .modal-dialog {
+        /* .modal-fullscreen .modal-dialog {
             width: 100%;
             max-width: none;
             height: 100%;
@@ -26,7 +26,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-        }
+        } */
 
         .chat-container {
             flex-grow: 1;
