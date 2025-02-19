@@ -106,18 +106,16 @@ class TicketController extends Controller
 
     public function getMessages($ticket_id)
     {
-        // Get the last message ID from the request
-        $lastMessageId = request('lastMessageId', 0); // Default to 0 if not provided
+        $lastMessageId = request('lastMessageId', 0);
 
-        // Fetch messages greater than the lastMessageId
         $messages = ChatMessage::where('ticket_id', $ticket_id)
-            ->where('id', '>', $lastMessageId)  // Only fetch newer messages
-            ->with('user') // Assuming you want user data with the message
+            ->where('id', '>', $lastMessageId) 
+            ->with('user')
             ->orderBy('created_at', 'asc')
             ->get();
 
         $messages->map(function ($message) {
-            $message->user_photo_url = $message->user->photo_url; // Assuming you have a `photo_url` attribute in the User model
+            $message->user_photo_url = $message->user->photo_url;
             return $message;
         });
 

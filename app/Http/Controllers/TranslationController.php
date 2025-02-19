@@ -25,7 +25,6 @@ class TranslationController extends Controller
     {
         $translations = [];
 
-        //available locales
         $locales = $this->locales;
 
         $locale = 'kh';
@@ -64,14 +63,12 @@ class TranslationController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate incoming request data.
         $validated = $request->validate([
-            'item' => 'required|string|max:255', // Translation key.
-            'text' => 'required|string|max:255', // Translation text.
-            'locale' => 'required|in:en,kh',    // Validating locale.
+            'item' => 'required|string|max:255',
+            'text' => 'required|string|max:255',
+            'locale' => 'required|in:en,kh',    
         ]);
 
-        // Ensure that the locale is supported.
         if (!in_array($validated['locale'], $this->locales)) {
             return redirect()->back()->with('error', 'Invalid language selected!');
         }
@@ -80,8 +77,6 @@ class TranslationController extends Controller
         $translation = Translation::where('locale', $validated['locale'])
             ->where('item', $validated['item'])
             ->first();
-
-        // If it doesn't exist, create it, otherwise, update the existing translation.
         if ($translation) {
             $translation->update(['text' => $validated['text']]);
             $this->applyTranslation($validated['locale']);
@@ -91,8 +86,6 @@ class TranslationController extends Controller
             $this->applyTranslation($validated['locale']);
             return redirect()->back()->with('success', 'Translation Created successfully!');
         }
-
-        // Rebuild the language file to apply the changes.
 
         return redirect()->back()->with('success', 'Translation updated successfully!');
     }
@@ -121,11 +114,8 @@ class TranslationController extends Controller
      */
     public function destroy($id)
     {
-        // Find and delete the translation by ID.
         $translation = Translation::findOrFail($id);
         $locale = $translation->locale;
-
-        // Delete the translation and reapply the language file.
         $translation->delete();
         $this->applyTranslation($locale);
 

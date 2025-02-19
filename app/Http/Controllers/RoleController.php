@@ -26,7 +26,7 @@ class RoleController extends Controller
         if ($request->ajax()) {
             $roles = Role::query();
             return DataTables::of($roles)
-            ->addIndexColumn() // This automatically adds DT_RowIndex
+            ->addIndexColumn()
                 ->filter(function ($query) use ($request) {
                     if ($search = $request->input('search.value')) {
                         $query->where(function ($q) use ($search) {
@@ -35,7 +35,7 @@ class RoleController extends Controller
                     }
                 })
                 ->addColumn('permission', function ($data) {
-                    return $data->permissions->pluck('name')->implode(', '); // Get permission names as a comma-separated string
+                    return $data->permissions->pluck('name')->implode(', ');
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
@@ -61,7 +61,6 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        // Validate request
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:roles|min:3',
             'permissions' => 'array',
@@ -72,10 +71,8 @@ class RoleController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        // Create role
         $role = Role::create(['name' => $request->name]);
 
-        // Attach permissions
         if ($request->has('permissions')) {
             $permissions = Permission::whereIn('id', $request->permissions)->get();
             $role->syncPermissions($permissions);

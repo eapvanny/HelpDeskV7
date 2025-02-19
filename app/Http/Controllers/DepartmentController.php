@@ -24,7 +24,7 @@ class DepartmentController extends Controller
         $departments = Department::query();
         if ($request->ajax()) {
             return DataTables::of($departments)
-                ->addIndexColumn() // This automatically adds DT_RowIndex
+                ->addIndexColumn() 
                 ->filter(function ($query) use ($request) {
                     if ($search = $request->input('search.value')) {
                         $query->where(function ($q) use ($search) {

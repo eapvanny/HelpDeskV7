@@ -33,13 +33,10 @@ class UserController extends Controller
         if ($request->ajax()) {
             $query = User::with('department', 'role');
 
-            // Check if the logged-in user is not an admin
             if (auth()->user()->role_id != AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
-                // If the user is not an admin, filter by the logged-in user ID
                 $query->where('id', auth()->user()->id);
             }
 
-            // Retrieve the users based on the modified query
             $users = $query->get();
 
             return DataTables::of($users)
@@ -178,9 +175,8 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id); // Ensure user exists
+        $user = User::findOrFail($id);
 
-        // Validation rules
         $rules = [
             'photo' => 'nullable|mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'name' => 'required|min:2|max:255',
@@ -194,8 +190,6 @@ class UserController extends Controller
         ];
 
         $this->validate($request, $rules);
-
-        // Prepare user data for update
         $userData = [
             'name' => $request->name,
             'department_id' => $request->department_id,
@@ -205,7 +199,7 @@ class UserController extends Controller
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
-            'photo' => $user->photo, // Keep existing photo by default
+            'photo' => $user->photo,
         ];
 
         // Handle password update only if provided
@@ -213,9 +207,7 @@ class UserController extends Controller
             $userData['password'] = bcrypt($request->password);
         }
 
-        // Handle photo upload
         if ($request->hasFile('photo')) {
-            // Delete old photo if exists
             if ($user->photo && Storage::exists($user->photo)) {
                 Storage::delete($user->photo);
             }
@@ -225,14 +217,12 @@ class UserController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
 
-            $userData['photo'] = $filePath; // Update with new photo
+            $userData['photo'] = $filePath;
         }
 
-        // Update user record
         $user->update($userData);
         $role = Role::findOrFail($request->role_id);
         $user->syncRoles($role->name); // Assign role using name
-        // Assign the user to role only if it doesn’t exist
         UserRole::updateOrCreate(
             ['user_id' => $user->id],
             ['role_id' => $request->role_id]
@@ -302,7 +292,7 @@ class UserController extends Controller
                 return redirect()->back()->with('error', 'Failed to update profile photo in the database.')->withInput();
             }
         }
-        return redirect()->back()->with('success', 'Profile Photo updated!');
+        return redirect()->back()->with('error', 'Profile Fail updated!');
     }
 
     public function setLanguage($lang)
