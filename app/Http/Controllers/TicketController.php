@@ -17,7 +17,7 @@ class TicketController extends Controller
     {
         $this->middleware('permission:view ticket', ['only' => ['index']]);
         $this->middleware('permission:create ticket', ['only' => ['create', 'store']]);
-        $this->middleware('permission:edit ticket', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:update ticket', ['only' => ['update', 'edit']]);
         $this->middleware('permission:delete ticket', ['only' => ['destroy']]);
     }
     public $indexof = 1;
@@ -40,7 +40,11 @@ class TicketController extends Controller
                     return $data->subject;
                 })
                 ->addColumn('department', function ($data) {
-                    return __($data->department->name);
+                    $language = session('user_lang', 'kh');
+                    if ($language == 'en') {
+                        return $data->department->name_in_latin;
+                    }
+                    return $data->department->name;
                 })
                 ->addColumn('id_card', function ($data) {
                     return __($data->id_card);

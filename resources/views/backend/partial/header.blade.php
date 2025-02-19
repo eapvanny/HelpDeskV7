@@ -263,7 +263,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded-0">
             <div class="modal-header">
-                <h5 class="modal-title" id="showContactLabel">{{ __('Contact Details') }}</h5>
+                <h5 class="modal-title" id="showContactLabel">{{ __('Supporter') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose"
                     aria-label="Close"></button>
             </div>

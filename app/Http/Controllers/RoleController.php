@@ -39,8 +39,19 @@ class RoleController extends Controller
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
-                    $button .= '<a title="Edit"  href="' . route('role.edit', $data->id) . '"  class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
-                    $button .= '<a  href="' . route('role.destroy', $data->id) . '"  class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    $actions = false;
+                    
+                    if (auth()->user()->can('update role')) {
+                        $button .= '<a title="Edit" href="' . route('role.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
+                        $actions = true;
+                    }
+                    if (auth()->user()->can('delete role')) {
+                        $button .= '<a href="' . route('role.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                        $actions = true;
+                    }
+                    if (!$actions) {
+                        $button .= '<span style="font-weight:bold; color:red;">No Action</span>';
+                    }
                     $button .= '</div>';
                     return $button;
                 })

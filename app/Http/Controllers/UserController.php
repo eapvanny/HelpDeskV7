@@ -45,6 +45,10 @@ class UserController extends Controller
                 src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
                 })
                 ->addColumn('department', function ($data) {
+                    $language = session('user_lang', 'kh');
+                    if ($language == 'en') {
+                        return $data->department ? __($data->department->name_in_latin) : __('N/A');
+                    }
                     return $data->department ? __($data->department->name) : __('N/A');
                 })
                 ->addColumn('name', function ($data) {

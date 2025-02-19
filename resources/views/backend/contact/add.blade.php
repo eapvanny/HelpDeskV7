@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 @section('pageTitle')
-    Support Contacts
+    Support
 @endsection
 <!-- End block -->
 
@@ -46,7 +46,7 @@
                 <div class="col-md-12">
                     <div class="wrap-outter-header-title">
                         <h1>
-                            {{ __('Support Contact') }}
+                            {{ __('Support') }}
                             <small>
                                 @if ($contact)
                                     {{ __('Update') }}

@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 @section('pageTitle')
-    Support Contacts
+    Support
 @endsection
 <!-- End block -->
 
