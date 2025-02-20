@@ -10,23 +10,23 @@
 @section('extraStyle')
     <style>
         /* .modal-fullscreen .modal-dialog {
-            width: 100%;
-            max-width: none;
-            height: 100%;
-            margin: 0;
-        }
+                width: 100%;
+                max-width: none;
+                height: 100%;
+                margin: 0;
+            }
 
-        .modal-fullscreen .modal-content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+            .modal-fullscreen .modal-content {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
 
-        .modal-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        } */
+            .modal-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            } */
 
         .chat-container {
             flex-grow: 1;
@@ -47,7 +47,9 @@
 @section('bodyCssClass')
 @endsection
 <!-- End block -->
-
+@php
+    use App\Http\Helpers\AppHelper;
+@endphp
 <!-- BEGIN PAGE CONTENT-->
 @section('pageContent')
     <!-- Section header -->
@@ -68,6 +70,10 @@
                         <small> {{ __('List') }} </small>
                     </h1>
                     <div class="box-tools pull-right">
+                        <button id="filters" class="btn btn-outline-secondary" data-bs-toggle="collapse"
+                            data-bs-target="#filterContainer">
+                            <i class="fa-solid fa-filter"></i> {{ __('Filter') }}
+                        </button>
                         <a class="btn btn-info text-white" href="{{ URL::route('ticket.create') }}"><i
                                 class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
                     </div>
@@ -75,6 +81,79 @@
 
                 <div class="wrap-outter-box">
                     <div class="box box-info">
+                        <div class="box-header">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <form action="{{ route('ticket.index') }}" method="GET" id="filterForm">
+                                        <div class="wrap_filter_form @if (!$is_filter) collapse @endif"
+                                            id="filterContainer">
+                                            <a id="close_filter" class="btn btn-outline-secondary btn-sm">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </a>
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="Department">{{ __('Department') }}</label>
+                                                        {!! Form::select('department_id', $departments, request('department_id'), [
+                                                            'placeholder' => __('Select a department'),
+                                                            'class' => 'form-control select2',
+                                                            'id' => 'department_id',
+                                                        ]) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="status_id">{{ __('Status') }} <span
+                                                                class="text-danger">*</span></label>
+                                                        {!! Form::select(
+                                                            'status_id',
+                                                            [
+                                                                AppHelper::STATUS_OPEN => __(AppHelper::STATUS[AppHelper::STATUS_OPEN]),
+                                                                AppHelper::STATUS_PENDING => __(AppHelper::STATUS[AppHelper::STATUS_PENDING]),
+                                                                AppHelper::STATUS_RESOLVED => __(AppHelper::STATUS[AppHelper::STATUS_RESOLVED]),
+                                                                AppHelper::STATUS_CLOSED => __(AppHelper::STATUS[AppHelper::STATUS_CLOSED]),
+                                                            ],
+                                                            request('status_id'),
+                                                            ['class' => 'form-control select2', 'id' => 'status_id', 'placeholder' => __('Select a status')],
+                                                        ) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="priority_id">{{ __('Priority') }} <span
+                                                                class="text-danger">*</span></label>
+                                                        {!! Form::select(
+                                                            'priority_id',
+                                                            [
+                                                                AppHelper::PRIORITY_LOW => __(AppHelper::PRIORITY[AppHelper::PRIORITY_LOW]),
+                                                                AppHelper::PRIORITY_MEDIUM => __(AppHelper::PRIORITY[AppHelper::PRIORITY_MEDIUM]),
+                                                                AppHelper::PRIORITY_HIGH => __(AppHelper::PRIORITY[AppHelper::PRIORITY_HIGH]),
+                                                                AppHelper::PRIORITY_URGENT => __(AppHelper::PRIORITY[AppHelper::PRIORITY_URGENT]),
+                                                            ],
+                                                            request('priority_id'),
+                                                            ['class' => 'form-control select2', 'id' => 'priority_id', 'placeholder' => __('Select a priority')],
+                                                        ) !!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 mt-2">
+                                                    <button id="apply_filter"
+                                                        class="btn btn-outline-secondary btn-sm float-end" type="submit">
+                                                        <i class="fa-solid fa-magnifying-glass"></i> {{ __('Apply') }}
+                                                    </button>
+                                                    <a href="{{ route('ticket.index') }}"
+                                                        class="btn btn-outline-secondary btn-sm float-end me-1">
+                                                        <i class="fa-solid fa-xmark"></i> {{ __('Cancel') }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
                         <!-- /.box-header -->
                         <div class="box-body margin-top-20">
                             <div class="table-responsive mt-4">
@@ -234,7 +313,8 @@
                                     if (response.length > 0) {
                                         response.forEach(msg => {
                                             if (msg.id >
-                                                lastMessageId) { // Only append truly new messages
+                                                lastMessageId
+                                                ) { // Only append truly new messages
                                                 let isCurrentUser = msg
                                                     .user_id ===
                                                     {{ auth()->id() }};
@@ -258,7 +338,7 @@
                                                     .length === 0) {
                                                     $("#modal-body").append(
                                                         `<div id="chat-box" style="height: 50%; overflow-y: auto;"></div>`
-                                                        );
+                                                    );
                                                 }
 
                                                 // Determine if the message is long or short
@@ -271,7 +351,7 @@
                                                     (isCurrentUser ?
                                                         ' margin-left: auto;' :
                                                         ' margin-right: auto;'
-                                                        );
+                                                    );
 
                                                 $("#chat-box").append(`
                             <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
@@ -284,7 +364,7 @@
                             </div>
                         `);
                                                 lastMessageId = msg
-                                                .id; // Update lastMessageId after adding new messages
+                                                    .id; // Update lastMessageId after adding new messages
                                             }
                                         });
                                     }
@@ -331,7 +411,7 @@
                             </div>
                         `);
                                     lastMessageId = response
-                                    .id; // Ensure lastMessageId is updated immediately
+                                        .id; // Ensure lastMessageId is updated immediately
                                 }
                             });
                         });
@@ -351,6 +431,10 @@
                 $('#chat-box').html('');
                 $('#ticket_id').val('');
                 $("#chatMessage").val("");
+            });
+
+            $('#close_filter').click(function(){
+                $("#filters").trigger('click');
             });
 
             //delete grade_level

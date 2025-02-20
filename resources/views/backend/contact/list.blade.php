@@ -58,6 +58,7 @@
                                             <th> {{ __('ID No.') }} </th>
                                             <th> {{ __('Name') }} </th>
                                             <th> {{ __('Name in Latin') }} </th>
+                                            <th>{{ __('Phone No.') }}</th>
                                             <th class="notexport"> {{ __('Action') }} </th>
                                         </tr>
                                     </thead>
@@ -119,6 +120,10 @@
                     {
                         data: 'name_in_latin',
                         name: 'name_in_latin'
+                    },
+                    {
+                        data: 'phone_no',
+                        name: 'phone_no'
                     },
                     {
                         data: 'action',

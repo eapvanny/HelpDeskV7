@@ -14,6 +14,7 @@ class Contact extends Model
         'name_in_latin',
         'photo',
         'id_card',
-        'link_telegram'
+        'link_telegram',
+        'phone_no',
     ];
 }

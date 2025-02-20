@@ -54,7 +54,8 @@ class UserSeeder extends Seeder
             'create user', 'view user', 'update user', 'delete user',
             'create role', 'view role', 'update role', 'delete role',
             'create permission', 'view permission', 'update permission', 'delete permission',
-            'update status', 'update priority', 'show ticket'
+            'update status', 'update priority', 'show ticket','view contact',
+            'create contact','update contact', 'delete contact'
         ];
 
         foreach ($permissions as $permission) {

@@ -24,14 +24,28 @@ class TicketController extends Controller
     public function index(Request $request)
     {
         $query = Ticket::with(['department', 'user']);
-
-        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
+        $is_filter = false;
+        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && auth()->user()->role_id !== AppHelper::USER_ADMIN) {
             $query->where('user_id', auth()->id());
         }
 
-        $tickets = $query->get();
+        if ($request->has('department_id') && $request->department_id != '') {
+            $is_filter = true;
+            $query->where('department_id', $request->department_id);
+        }
 
+        if ($request->has('status_id') && $request->status_id != '') {
+            $is_filter = true;
+            $query->where('status_id', $request->status_id);
+        }
+
+        if ($request->has('priority_id') && $request->priority_id != '') {
+            $is_filter = true;
+            $query->where('priority_id', $request->priority_id);
+        }
         if ($request->ajax()) {
+            $tickets = $query->get();
+
             return DataTables::of($tickets)
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
@@ -41,10 +55,7 @@ class TicketController extends Controller
                 })
                 ->addColumn('department', function ($data) {
                     $language = session('user_lang', 'kh');
-                    if ($language == 'en') {
-                        return $data->department->name_in_latin;
-                    }
-                    return $data->department->name;
+                    return $language == 'en' ? $data->department->name_in_latin : $data->department->name;
                 })
                 ->addColumn('id_card', function ($data) {
                     return __($data->id_card);
@@ -86,7 +97,9 @@ class TicketController extends Controller
                 ->make(true);
         }
 
-        return view('backend.ticket.list');
+        $departments = Department::pluck('name', 'id')->toArray();
+
+        return view('backend.ticket.list', compact('is_filter', 'departments'));
     }
 
     public function create()
@@ -113,7 +126,7 @@ class TicketController extends Controller
         $lastMessageId = request('lastMessageId', 0);
 
         $messages = ChatMessage::where('ticket_id', $ticket_id)
-            ->where('id', '>', $lastMessageId) 
+            ->where('id', '>', $lastMessageId)
             ->with('user')
             ->orderBy('created_at', 'asc')
             ->get();

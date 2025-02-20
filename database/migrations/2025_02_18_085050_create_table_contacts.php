@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('name_in_latin')->nullable();
             $table->string('id_card')->nullable();
+            $table->string('phone_no')->nullable();
             $table->string('photo')->nullable();
             $table->string('link_telegram')->nullable();
             $table->timestamps();

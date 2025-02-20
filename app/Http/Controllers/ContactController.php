@@ -28,7 +28,8 @@ class ContactController extends Controller
                 if ($search = $request->input('search.value')) {
                     $query->where(function ($q) use ($search) {
                         $q->where('name', 'LIKE', "%{$search}%")
-                          ->orWhere('name_in_latin', 'LIKE', "%{$search}%");
+                          ->orWhere('name_in_latin', 'LIKE', "%{$search}%")
+                          ->orWhere('phone_no', 'LIKE', "%{$search}%");
                     });
                 }
             })
@@ -78,6 +79,7 @@ class ContactController extends Controller
             'name_in_latin' => 'required|max:50',
             'id_card' => 'required|min:4|max:20',
             'link_telegram' => 'required',
+            'phone_no' => 'required|min:9|max:15',
             'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
         ];
         $this->validate($request, $rules);
@@ -86,6 +88,7 @@ class ContactController extends Controller
             'name' => $request->name,
             'name_in_latin' => $request->name_in_latin,
             'id_card' => $request->id_card,
+            'phone_no' => $request->phone_no,
             'link_telegram' => $request->link_telegram,
         ];
 
@@ -122,6 +125,7 @@ class ContactController extends Controller
             'name_in_latin' => 'required|max:50',
             'id_card' => 'required|min:4|max:20',
             'link_telegram' => 'required',
+            'phone_no' => 'required|min:9|max:15',
             'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
         ];
         $this->validate($request, $rules);
@@ -129,6 +133,7 @@ class ContactController extends Controller
             'name' => $request->name,
             'name_in_latin' => $request->name_in_latin,
             'id_card' => $request->id_card,
+            'phone_no' => $request->phone_no,
             'link_telegram' => $request->link_telegram,
         ];
         if ($request->hasFile('photo')) {

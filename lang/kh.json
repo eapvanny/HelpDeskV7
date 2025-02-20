@@ -81,5 +81,10 @@
     "Import": "បញ្ជូល",
     "Export": "ទាញយក",
     "Code": "លេខកូដ",
-    "Support": "ជំនួយការ"
+    "Support": "ជំនួយការ",
+    "Contact": "ទំនាក់ទំនង",
+    "Select a department": "ជ្រើសរើសនាយកដ្ឋាន",
+    "Select a status": "ជ្រើសរើសស្ថានភាព",
+    "Select a priority": "ជ្រើសរើសអាទិភាព",
+    "Filter": "តម្រង់"
 }

@@ -4,7 +4,7 @@
             <img src="{{ $contact->photo ? asset('storage/' . $contact->photo) : asset('images/avatar.png') }}" 
                 alt="Image" width="100">
             
-            <div class="support-name mt-2">{{ $contact->name_in_latin }}</div>
+            <div class="support-name mt-2"> {{ session('user_lang', 'kh') == 'en' ? $contact->name_in_latin : $contact->name }}</div>
             
             <div class="footer-icons d-flex justify-content-center gap-2 mt-2">
                 @if($contact->link_telegram)

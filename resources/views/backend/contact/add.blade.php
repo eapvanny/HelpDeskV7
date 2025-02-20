@@ -25,7 +25,7 @@
     <section class="content-header">
         <ol class="breadcrumb">
             <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }} </a></li>
-            <li><a href="{{ URL::route('contact.index') }}"> {{ __('Contact') }} </a></li>
+            <li><a href="{{ URL::route('contact.index') }}"> {{ __('Support') }} </a></li>
             <li class="active">
                 @if ($contact)
                     {{ __('Update') }}
@@ -89,12 +89,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group has-feedback">
-                                <label for="link_telegram"> {{ __('Link Telegram') }} <span class="text-danger">*</span></label>
-                                <input autofocus type="text" class="form-control" name="link_telegram" placeholder="link_telegram"
-                                    value="@if ($contact) {{ $contact->subject }}@else{{ old('subject') }} @endif"
-                                    required minlength="2" maxlength="255">
-                                <span class="fa fa-info form-control-feedback"></span>
-                                <span class="text-danger">{{ $errors->first('link_telegram') }}</span>
+                                <label for="phone_no"> {{ __('Phone No.') }}</label>
+                                <input type="text" class="form-control" name="phone_no"
+                                    placeholder="phone or mobile number"
+                                    value="@if ($contact) {{ $contact->phone_no }}@else{{ old('phone_no') }} @endif"
+                                    maxlength="15">
+                                <span class="fa fa-phone form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('phone_no') }}</span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -116,6 +117,16 @@
                                     minlength="1" maxlength="50" required />
                                 <span class="fa fa-info form-control-feedback"></span>
                                 <span class="text-danger">{{ $errors->first('name_in_latin') }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-feedback">
+                                <label for="link_telegram"> {{ __('Link Telegram') }} <span class="text-danger">*</span></label>
+                                <input autofocus type="text" class="form-control" name="link_telegram" placeholder="link_telegram"
+                                    value="@if ($contact) {{ $contact->link_telegram }}@else{{ old('link_telegram') }} @endif"
+                                    required minlength="2" maxlength="255">
+                                <span class="fa fa-info form-control-feedback"></span>
+                                <span class="text-danger">{{ $errors->first('link_telegram') }}</span>
                             </div>
                         </div>
                     </div>
