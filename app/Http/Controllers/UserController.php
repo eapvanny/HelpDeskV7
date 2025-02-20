@@ -33,7 +33,7 @@ class UserController extends Controller
         if ($request->ajax()) {
             $query = User::with('department', 'role');
 
-            if (auth()->user()->role_id != AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
+            if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN])) {
                 $query->where('id', auth()->user()->id);
             }
 
@@ -301,7 +301,7 @@ class UserController extends Controller
 
     public function setLanguage($lang)
     {
-        if (in_array($lang, ['en', 'kh'])) {
+        if (in_array($lang, ['kh', 'en'])) {
             // Update the user's language preference (if logged in)
             if (auth()->check()) {
                 auth()->user()->update(['user_lang' => $lang]);

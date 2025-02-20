@@ -12,11 +12,9 @@ class DashboardController extends Controller
     public function index()
     {
         $query = Ticket::query();
-
-        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && AppHelper::USER_ADMIN) {
-            $query->where('user_id', auth()->id());
+        if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN])) {
+            $query->where('user_id', auth()->user()->id);
         }
-
         $openTickets = (clone $query)->where('status_id', AppHelper::STATUS_OPEN)->count();
         $pendingTickets = (clone $query)->where('status_id', AppHelper::STATUS_PENDING)->count();
         $resolvedTickets = (clone $query)->where('status_id', AppHelper::STATUS_RESOLVED)->count();

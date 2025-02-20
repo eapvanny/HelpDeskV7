@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('backend.login');
-});
+})->middleware('auth');
 Route::get('/login', function () {
     return view('backend.login');
 })->name('login');
