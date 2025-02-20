@@ -103,7 +103,7 @@
                                 <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="Select Department"></i>
                             </label>
                             {!! Form::select('department_id', $departments, old('department_id', optional($ticket)->department_id), [
-                                'placeholder' => __('Pick a department'),
+                                'placeholder' => __('Select a department'),
                                 'id' => 'department_id',
                                 'name' => 'department_id',
                                 'class' => 'form-control select2',

@@ -46,7 +46,6 @@
     "Lock Screen": "ចាក់សោអេក្រង់",
     "Logout": "ចាកចេញ",
     "Login": "ចូល",
-    "Open": "បើក",
     "Calendar": "ប្រតិទិន",
     "Today": "ថ្ងៃនេះ",
     "Reset Password": "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
@@ -86,5 +85,11 @@
     "Select a department": "ជ្រើសរើសនាយកដ្ឋាន",
     "Select a status": "ជ្រើសរើសស្ថានភាព",
     "Select a priority": "ជ្រើសរើសអាទិភាព",
-    "Filter": "តម្រង់"
+    "Filter": "តម្រង់",
+    "Select Role": "ជ្រើសរើសតួនាទី",
+    "Select Gender": "ជ្រើសរើសភេទ",
+    "Male": "ប្រុស",
+    "Female": "ស្រី",
+    "Active": "សកម្ម",
+    "Inactive": "អសកម្ម"
 }

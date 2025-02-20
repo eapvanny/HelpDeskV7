@@ -97,13 +97,13 @@
                     @method('PUT')
                 @endif
                 <div class="row">
-                    <div class="col-md-4 col-xl-4"> 
+                    <div class="col-lg-4 col-md-6 col-xl-4"> 
                         <div class="form-group has-feedback">
                             <label for="department_id"> {{ __('Department') }} <span class="text-danger">*</span>
                                 <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="Select Department"></i>
                             </label>
                             {!! Form::select('department_id', $departments, old('department_id', optional($ticket)->department_id), [
-                                'placeholder' => __('Pick a department'),
+                                'placeholder' => __('Select a department'),
                                 'id' => 'department_id',
                                 'name' => 'department_id',
                                 'class' => 'form-control select2',
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="id_card"> {{ __('ID No.') }} <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="id_card" placeholder="id_card"
@@ -124,7 +124,7 @@
                             <span class="text-danger">{{ $errors->first('id_card') }}</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="employee_name"> {{ __('Employee Name') }} <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="employee_name" placeholder="name"
@@ -134,7 +134,7 @@
                             <span class="text-danger">{{ $errors->first('employee_name') }}</span>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xl-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="status_id"> {{ __('Status') }} <span class="text-danger">*</span></label>
                             @php
@@ -156,7 +156,7 @@
                             ]) !!}
                         </div>
                     </div>                    
-                    <div class="col-md-4 col-xl-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="priority_id"> {{ __('Priority') }} <span class="text-danger">*</span></label>
                             @php
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="subject"> {{ __('Subject') }} <span class="text-danger">*</span></label>
                             <input autofocus type="text" class="form-control" name="subject" placeholder="subject" value="@if($ticket){{ $ticket->subject }}@else{{old('subject')}}@endif" required minlength="2" maxlength="255">
@@ -188,7 +188,7 @@
                             <span class="text-danger">{{ $errors->first('subject') }}</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-6 col-xl-4">
                         <div class="form-group has-feedback">
                             <label for="description"> {{ __('Description') }} <span class="text-danger">*</span></label>
                             <textarea name="description" class="form-control" placeholder="" rows="1" maxlength="500" required>@if($ticket){{old('description')??$ticket->description}}@else{{old('description')}}@endif</textarea>

@@ -144,7 +144,7 @@
                                         title="Select Department"></i>
                                 </label>
                                 {!! Form::select('department_id', $departments, old('department_id', optional($user)->department_id), [
-                                    'placeholder' => __('Pick a department'),
+                                    'placeholder' => __('Select a department'),
                                     'id' => 'department_id',
                                     'name' => 'department_id',
                                     'class' => 'form-control select2',
