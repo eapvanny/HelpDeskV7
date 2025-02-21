@@ -1,2 +1,22596 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{4:function(e,t,n){e.exports=n("Q9Tg")},"6SMW":function(e,t,n){"use strict";n.d(t,"a",(function(){return Cc}));var i,r,o,a,s,l,c=n("A2ba"),u=Object.defineProperty,d=Object.defineProperties,h=Object.getOwnPropertyDescriptors,p=Object.getOwnPropertySymbols,f=Object.prototype.hasOwnProperty,m=Object.prototype.propertyIsEnumerable,g=(e,t,n)=>t in e?u(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,_=(e,t)=>{for(var n in t||(t={}))f.call(t,n)&&g(e,n,t[n]);if(p)for(var n of p(t))m.call(t,n)&&g(e,n,t[n]);return e},v=(e,t)=>d(e,h(t)),y=(e,t)=>{var n={};for(var i in e)f.call(e,i)&&t.indexOf(i)<0&&(n[i]=e[i]);if(null!=e&&p)for(var i of p(e))t.indexOf(i)<0&&m.call(e,i)&&(n[i]=e[i]);return n},w={},b=[],D=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function k(e,t){for(var n in t)e[n]=t[n];return e}function x(e){var t=e.parentNode;t&&t.removeChild(e)}function E(e,t,n){var r,o,a,s={};for(a in t)"key"==a?r=t[a]:"ref"==a?o=t[a]:s[a]=t[a];if(arguments.length>2&&(s.children=arguments.length>3?i.call(arguments,2):n),"function"==typeof e&&null!=e.defaultProps)for(a in e.defaultProps)void 0===s[a]&&(s[a]=e.defaultProps[a]);return T(e,s,r,o,null)}function T(e,t,n,i,a){var s={type:e,props:t,key:n,ref:i,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==a?++o:a};return null==a&&null!=r.vnode&&r.vnode(s),s}function S(e){return e.children}function C(e,t){this.props=e,this.context=t}function M(e,t){if(null==t)return e.__?M(e.__,e.__.__k.indexOf(e)+1):null;for(var n;t<e.__k.length;t++)if(null!=(n=e.__k[t])&&null!=n.__e)return n.__e;return"function"==typeof e.type?M(e):null}function I(e){var t,n;if(null!=(e=e.__)&&null!=e.__c){for(e.__e=e.__c.base=null,t=0;t<e.__k.length;t++)if(null!=(n=e.__k[t])&&null!=n.__e){e.__e=e.__c.base=n.__e;break}return I(e)}}function N(e){(!e.__d&&(e.__d=!0)&&a.push(e)&&!A.__r++||s!==r.debounceRendering)&&((s=r.debounceRendering)||setTimeout)(A)}function A(){for(var e;A.__r=a.length;)e=a.sort((function(e,t){return e.__v.__b-t.__v.__b})),a=[],e.some((function(e){var t,n,i,r,o,a;e.__d&&(o=(r=(t=e).__v).__e,(a=t.__P)&&(n=[],(i=k({},r)).__v=r.__v+1,B(a,r,i,t.__n,void 0!==a.ownerSVGElement,null!=r.__h?[o]:null,n,null==o?M(r):o,r.__h),z(n,r),r.__e!=o&&I(r)))}))}function P(e,t,n,i,r,o,a,s,l,c){var u,d,h,p,f,m,g,_=i&&i.__k||b,v=_.length;for(n.__k=[],u=0;u<t.length;u++)if(null!=(p=n.__k[u]=null==(p=t[u])||"boolean"==typeof p?null:"string"==typeof p||"number"==typeof p||"bigint"==typeof p?T(null,p,null,null,p):Array.isArray(p)?T(S,{children:p},null,null,null):p.__b>0?T(p.type,p.props,p.key,null,p.__v):p)){if(p.__=n,p.__b=n.__b+1,null===(h=_[u])||h&&p.key==h.key&&p.type===h.type)_[u]=void 0;else for(d=0;d<v;d++){if((h=_[d])&&p.key==h.key&&p.type===h.type){_[d]=void 0;break}h=null}B(e,p,h=h||w,r,o,a,s,l,c),f=p.__e,(d=p.ref)&&h.ref!=d&&(g||(g=[]),h.ref&&g.push(h.ref,null,p),g.push(d,p.__c||f,p)),null!=f?(null==m&&(m=f),"function"==typeof p.type&&p.__k===h.__k?p.__d=l=O(p,l,e):l=L(e,p,h,_,f,l),"function"==typeof n.type&&(n.__d=l)):l&&h.__e==l&&l.parentNode!=e&&(l=M(h))}for(n.__e=m,u=v;u--;)null!=_[u]&&("function"==typeof n.type&&null!=_[u].__e&&_[u].__e==n.__d&&(n.__d=M(i,u+1)),G(_[u],_[u]));if(g)for(u=0;u<g.length;u++)U(g[u],g[++u],g[++u])}function O(e,t,n){for(var i,r=e.__k,o=0;r&&o<r.length;o++)(i=r[o])&&(i.__=e,t="function"==typeof i.type?O(i,t,n):L(n,i,i,r,i.__e,t));return t}function R(e,t){return t=t||[],null==e||"boolean"==typeof e||(Array.isArray(e)?e.some((function(e){R(e,t)})):t.push(e)),t}function L(e,t,n,i,r,o){var a,s,l;if(void 0!==t.__d)a=t.__d,t.__d=void 0;else if(null==n||r!=o||null==r.parentNode)e:if(null==o||o.parentNode!==e)e.appendChild(r),a=null;else{for(s=o,l=0;(s=s.nextSibling)&&l<i.length;l+=2)if(s==r)break e;e.insertBefore(r,o),a=o}return void 0!==a?a:r.nextSibling}function H(e,t,n){"-"===t[0]?e.setProperty(t,n):e[t]=null==n?"":"number"!=typeof n||D.test(t)?n:n+"px"}function F(e,t,n,i,r){var o;e:if("style"===t)if("string"==typeof n)e.style.cssText=n;else{if("string"==typeof i&&(e.style.cssText=i=""),i)for(t in i)n&&t in n||H(e.style,t,"");if(n)for(t in n)i&&n[t]===i[t]||H(e.style,t,n[t])}else if("o"===t[0]&&"n"===t[1])o=t!==(t=t.replace(/Capture$/,"")),t=t.toLowerCase()in e?t.toLowerCase().slice(2):t.slice(2),e.l||(e.l={}),e.l[t+o]=n,n?i||e.addEventListener(t,o?W:Y,o):e.removeEventListener(t,o?W:Y,o);else if("dangerouslySetInnerHTML"!==t){if(r)t=t.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if("href"!==t&&"list"!==t&&"form"!==t&&"tabIndex"!==t&&"download"!==t&&t in e)try{e[t]=null==n?"":n;break e}catch(e){}"function"==typeof n||(null!=n&&(!1!==n||"a"===t[0]&&"r"===t[1])?e.setAttribute(t,n):e.removeAttribute(t))}}function Y(e){this.l[e.type+!1](r.event?r.event(e):e)}function W(e){this.l[e.type+!0](r.event?r.event(e):e)}function B(e,t,n,o,a,s,l,c,u){var d,h,p,f,m,g,_,v,y,b,D,E,T,I=t.type;if(void 0!==t.constructor)return null;null!=n.__h&&(u=n.__h,c=t.__e=n.__e,t.__h=null,s=[c]),(d=r.__b)&&d(t);try{e:if("function"==typeof I){if(v=t.props,y=(d=I.contextType)&&o[d.__c],b=d?y?y.props.value:d.__:o,n.__c?_=(h=t.__c=n.__c).__=h.__E:("prototype"in I&&I.prototype.render?t.__c=h=new I(v,b):(t.__c=h=new C(v,b),h.constructor=I,h.render=V),y&&y.sub(h),h.props=v,h.state||(h.state={}),h.context=b,h.__n=o,p=h.__d=!0,h.__h=[]),null==h.__s&&(h.__s=h.state),null!=I.getDerivedStateFromProps&&(h.__s==h.state&&(h.__s=k({},h.__s)),k(h.__s,I.getDerivedStateFromProps(v,h.__s))),f=h.props,m=h.state,p)null==I.getDerivedStateFromProps&&null!=h.componentWillMount&&h.componentWillMount(),null!=h.componentDidMount&&h.__h.push(h.componentDidMount);else{if(null==I.getDerivedStateFromProps&&v!==f&&null!=h.componentWillReceiveProps&&h.componentWillReceiveProps(v,b),!h.__e&&null!=h.shouldComponentUpdate&&!1===h.shouldComponentUpdate(v,h.__s,b)||t.__v===n.__v){h.props=v,h.state=h.__s,t.__v!==n.__v&&(h.__d=!1),h.__v=t,t.__e=n.__e,t.__k=n.__k,t.__k.forEach((function(e){e&&(e.__=t)})),h.__h.length&&l.push(h);break e}null!=h.componentWillUpdate&&h.componentWillUpdate(v,h.__s,b),null!=h.componentDidUpdate&&h.__h.push((function(){h.componentDidUpdate(f,m,g)}))}if(h.context=b,h.props=v,h.__v=t,h.__P=e,D=r.__r,E=0,"prototype"in I&&I.prototype.render)h.state=h.__s,h.__d=!1,D&&D(t),d=h.render(h.props,h.state,h.context);else do{h.__d=!1,D&&D(t),d=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&&++E<25);h.state=h.__s,null!=h.getChildContext&&(o=k(k({},o),h.getChildContext())),p||null==h.getSnapshotBeforeUpdate||(g=h.getSnapshotBeforeUpdate(f,m)),T=null!=d&&d.type===S&&null==d.key?d.props.children:d,P(e,Array.isArray(T)?T:[T],t,n,o,a,s,l,c,u),h.base=t.__e,t.__h=null,h.__h.length&&l.push(h),_&&(h.__E=h.__=null),h.__e=!1}else null==s&&t.__v===n.__v?(t.__k=n.__k,t.__e=n.__e):t.__e=function(e,t,n,r,o,a,s,l){var c,u,d,h=n.props,p=t.props,f=t.type,m=0;if("svg"===f&&(o=!0),null!=a)for(;m<a.length;m++)if((c=a[m])&&"setAttribute"in c==!!f&&(f?c.localName===f:3===c.nodeType)){e=c,a[m]=null;break}if(null==e){if(null===f)return document.createTextNode(p);e=o?document.createElementNS("http://www.w3.org/2000/svg",f):document.createElement(f,p.is&&p),a=null,l=!1}if(null===f)h===p||l&&e.data===p||(e.data=p);else{if(a=a&&i.call(e.childNodes),u=(h=n.props||w).dangerouslySetInnerHTML,d=p.dangerouslySetInnerHTML,!l){if(null!=a)for(h={},m=0;m<e.attributes.length;m++)h[e.attributes[m].name]=e.attributes[m].value;(d||u)&&(d&&(u&&d.__html==u.__html||d.__html===e.innerHTML)||(e.innerHTML=d&&d.__html||""))}if(function(e,t,n,i,r){var o;for(o in n)"children"===o||"key"===o||o in t||F(e,o,null,n[o],i);for(o in t)r&&"function"!=typeof t[o]||"children"===o||"key"===o||"value"===o||"checked"===o||n[o]===t[o]||F(e,o,t[o],n[o],i)}(e,p,h,o,l),d)t.__k=[];else if(m=t.props.children,P(e,Array.isArray(m)?m:[m],t,n,r,o&&"foreignObject"!==f,a,s,a?a[0]:n.__k&&M(n,0),l),null!=a)for(m=a.length;m--;)null!=a[m]&&x(a[m]);l||("value"in p&&void 0!==(m=p.value)&&(m!==e.value||"progress"===f&&!m||"option"===f&&m!==h.value)&&F(e,"value",m,h.value,!1),"checked"in p&&void 0!==(m=p.checked)&&m!==e.checked&&F(e,"checked",m,h.checked,!1))}return e}(n.__e,t,n,o,a,s,l,u);(d=r.diffed)&&d(t)}catch(e){t.__v=null,(u||null!=s)&&(t.__e=c,t.__h=!!u,s[s.indexOf(c)]=null),r.__e(e,t,n)}}function z(e,t){r.__c&&r.__c(t,e),e.some((function(t){try{e=t.__h,t.__h=[],e.some((function(e){e.call(t)}))}catch(e){r.__e(e,t.__v)}}))}function U(e,t,n){try{"function"==typeof e?e(t):e.current=t}catch(e){r.__e(e,n)}}function G(e,t,n){var i,o;if(r.unmount&&r.unmount(e),(i=e.ref)&&(i.current&&i.current!==e.__e||U(i,null,t)),null!=(i=e.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(e){r.__e(e,t)}i.base=i.__P=null}if(i=e.__k)for(o=0;o<i.length;o++)i[o]&&G(i[o],t,"function"!=typeof e.type);n||null==e.__e||x(e.__e),e.__e=e.__d=void 0}function V(e,t,n){return this.constructor(e,n)}function j(e,t,n){var o,a,s;r.__&&r.__(e,t),a=(o="function"==typeof n)?null:n&&n.__k||t.__k,s=[],B(t,e=(!o&&n||t).__k=E(S,null,[e]),a||w,w,void 0!==t.ownerSVGElement,!o&&n?[n]:a?null:t.firstChild?i.call(t.childNodes):null,s,!o&&n?n:a?a.__e:t.firstChild,o),z(s,e)}function $(e,t){var n={__c:t="__cC"+l++,__:e,Consumer:function(e,t){return e.children(t)},Provider:function(e){var n,i;return this.getChildContext||(n=[],(i={})[t]=this,this.getChildContext=function(){return i},this.shouldComponentUpdate=function(e){this.props.value!==e.value&&n.some(N)},this.sub=function(e){n.push(e);var t=e.componentWillUnmount;e.componentWillUnmount=function(){n.splice(n.indexOf(e),1),t&&t.call(e)}}),e.children}};return n.Provider.__=n.Consumer.contextType=n}i=b.slice,r={__e:function(e,t,n,i){for(var r,o,a;t=t.__;)if((r=t.__c)&&!r.__)try{if((o=r.constructor)&&null!=o.getDerivedStateFromError&&(r.setState(o.getDerivedStateFromError(e)),a=r.__d),null!=r.componentDidCatch&&(r.componentDidCatch(e,i||{}),a=r.__d),a)return r.__E=r}catch(t){e=t}throw e}},o=0,C.prototype.setState=function(e,t){var n;n=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=k({},this.state),"function"==typeof e&&(e=e(k({},n),this.props)),e&&k(n,e),null!=e&&this.__v&&(t&&this.__h.push(t),N(this))},C.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),N(this))},C.prototype.render=S,a=[],A.__r=0,l=0;var q,X,K,J,Z=0,Q=[],ee=[],te=r.__b,ne=r.__r,ie=r.diffed,re=r.__c,oe=r.unmount;function ae(e,t){r.__h&&r.__h(X,e,Z||t),Z=0;var n=X.__H||(X.__H={__:[],__h:[]});return e>=n.__.length&&n.__.push({__V:ee}),n.__[e]}function se(e){return Z=1,le(we,e)}function le(e,t,n){var i=ae(q++,2);return i.t=e,i.__c||(i.__=[n?n(t):we(void 0,t),function(e){var t=i.t(i.__[0],e);i.__[0]!==t&&(i.__=[t,i.__[1]],i.__c.setState({}))}],i.__c=X),i.__}function ce(e,t){var n=ae(q++,3);!r.__s&&ye(n.__H,t)&&(n.__=e,n.u=t,X.__H.__h.push(n))}function ue(e,t){var n=ae(q++,4);!r.__s&&ye(n.__H,t)&&(n.__=e,n.u=t,X.__h.push(n))}function de(e){return Z=5,he((function(){return{current:e}}),[])}function he(e,t){var n=ae(q++,7);return ye(n.__H,t)?(n.__V=e(),n.u=t,n.__h=e,n.__V):n.__}function pe(e,t){return Z=8,he((function(){return e}),t)}function fe(e){var t=X.context[e.__c],n=ae(q++,9);return n.c=e,t?(null==n.__&&(n.__=!0,t.sub(X)),t.props.value):e.__}function me(){for(var e;e=Q.shift();)if(e.__P)try{e.__H.__h.forEach(_e),e.__H.__h.forEach(ve),e.__H.__h=[]}catch(t){e.__H.__h=[],r.__e(t,e.__v)}}r.__b=function(e){X=null,te&&te(e)},r.__r=function(e){ne&&ne(e),q=0;var t=(X=e.__c).__H;t&&(K===X?(t.__h=[],X.__h=[],t.__.forEach((function(e){e.__V=ee,e.u=void 0}))):(t.__h.forEach(_e),t.__h.forEach(ve),t.__h=[])),K=X},r.diffed=function(e){ie&&ie(e);var t=e.__c;t&&t.__H&&(t.__H.__h.length&&(1!==Q.push(t)&&J===r.requestAnimationFrame||((J=r.requestAnimationFrame)||function(e){var t,n=function(){clearTimeout(i),ge&&cancelAnimationFrame(t),setTimeout(e)},i=setTimeout(n,100);ge&&(t=requestAnimationFrame(n))})(me)),t.__H.__.forEach((function(e){e.u&&(e.__H=e.u),e.__V!==ee&&(e.__=e.__V),e.u=void 0,e.__V=ee}))),K=X=null},r.__c=function(e,t){t.some((function(e){try{e.__h.forEach(_e),e.__h=e.__h.filter((function(e){return!e.__||ve(e)}))}catch(n){t.some((function(e){e.__h&&(e.__h=[])})),t=[],r.__e(n,e.__v)}})),re&&re(e,t)},r.unmount=function(e){oe&&oe(e);var t,n=e.__c;n&&n.__H&&(n.__H.__.forEach((function(e){try{_e(e)}catch(e){t=e}})),t&&r.__e(t,n.__v))};var ge="function"==typeof requestAnimationFrame;function _e(e){var t=X,n=e.__c;"function"==typeof n&&(e.__c=void 0,n()),X=t}function ve(e){var t=X;e.__c=e.__(),X=t}function ye(e,t){return!e||e.length!==t.length||t.some((function(t,n){return t!==e[n]}))}function we(e,t){return"function"==typeof t?t(e):t}function be(e){for(var t=arguments.length,n=Array(t>1?t-1:0),i=1;i<t;i++)n[i-1]=arguments[i];throw Error("[Immer] minified error nr: "+e+(n.length?" "+n.map((function(e){return"'"+e+"'"})).join(","):"")+". Find the full error at: https://bit.ly/3cXEKWf")}function De(e){return!!e&&!!e[st]}function ke(e){return!!e&&(function(e){if(!e||"object"!=typeof e)return!1;var t=Object.getPrototypeOf(e);if(null===t)return!0;var n=Object.hasOwnProperty.call(t,"constructor")&&t.constructor;return n===Object||"function"==typeof n&&Function.toString.call(n)===lt}(e)||Array.isArray(e)||!!e[at]||!!e.constructor[at]||Ce(e)||Me(e))}function xe(e,t,n){void 0===n&&(n=!1),0===Ee(e)?(n?Object.keys:ct)(e).forEach((function(i){n&&"symbol"==typeof i||t(i,e[i],e)})):e.forEach((function(n,i){return t(i,n,e)}))}function Ee(e){var t=e[st];return t?t.i>3?t.i-4:t.i:Array.isArray(e)?1:Ce(e)?2:Me(e)?3:0}function Te(e,t){return 2===Ee(e)?e.has(t):Object.prototype.hasOwnProperty.call(e,t)}function Se(e,t,n){var i=Ee(e);2===i?e.set(t,n):3===i?(e.delete(t),e.add(n)):e[t]=n}function Ce(e){return nt&&e instanceof Map}function Me(e){return it&&e instanceof Set}function Ie(e){return e.o||e.t}function Ne(e){if(Array.isArray(e))return Array.prototype.slice.call(e);var t=ut(e);delete t[st];for(var n=ct(t),i=0;i<n.length;i++){var r=n[i],o=t[r];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(t[r]={configurable:!0,writable:!0,enumerable:o.enumerable,value:e[r]})}return Object.create(Object.getPrototypeOf(e),t)}function Ae(e,t){return void 0===t&&(t=!1),Oe(e)||De(e)||!ke(e)||(Ee(e)>1&&(e.set=e.add=e.clear=e.delete=Pe),Object.freeze(e),t&&xe(e,(function(e,t){return Ae(t,!0)}),!0)),e}function Pe(){be(2)}function Oe(e){return null==e||"object"!=typeof e||Object.isFrozen(e)}function Re(e){var t=dt[e];return t||be(18,e),t}function Le(){return et}function He(e,t){t&&(Re("Patches"),e.u=[],e.s=[],e.v=t)}function Fe(e){Ye(e),e.p.forEach(Be),e.p=null}function Ye(e){e===et&&(et=e.l)}function We(e){return et={p:[],l:et,h:e,m:!0,_:0}}function Be(e){var t=e[st];0===t.i||1===t.i?t.j():t.O=!0}function ze(e,t){t._=t.p.length;var n=t.p[0],i=void 0!==e&&e!==n;return t.h.g||Re("ES5").S(t,e,i),i?(n[st].P&&(Fe(t),be(4)),ke(e)&&(e=Ue(t,e),t.l||Ve(t,e)),t.u&&Re("Patches").M(n[st].t,e,t.u,t.s)):e=Ue(t,n,[]),Fe(t),t.u&&t.v(t.u,t.s),e!==ot?e:void 0}function Ue(e,t,n){if(Oe(t))return t;var i=t[st];if(!i)return xe(t,(function(r,o){return Ge(e,i,t,r,o,n)}),!0),t;if(i.A!==e)return t;if(!i.P)return Ve(e,i.t,!0),i.t;if(!i.I){i.I=!0,i.A._--;var r=4===i.i||5===i.i?i.o=Ne(i.k):i.o;xe(3===i.i?new Set(r):r,(function(t,o){return Ge(e,i,r,t,o,n)})),Ve(e,r,!1),n&&e.u&&Re("Patches").R(i,n,e.u,e.s)}return i.o}function Ge(e,t,n,i,r,o){if(De(r)){var a=Ue(e,r,o&&t&&3!==t.i&&!Te(t.D,i)?o.concat(i):void 0);if(Se(n,i,a),!De(a))return;e.m=!1}if(ke(r)&&!Oe(r)){if(!e.h.F&&e._<1)return;Ue(e,r),t&&t.A.l||Ve(e,r)}}function Ve(e,t,n){void 0===n&&(n=!1),e.h.F&&e.m&&Ae(t,n)}function je(e,t){var n=e[st];return(n?Ie(n):e)[t]}function $e(e,t){if(t in e)for(var n=Object.getPrototypeOf(e);n;){var i=Object.getOwnPropertyDescriptor(n,t);if(i)return i;n=Object.getPrototypeOf(n)}}function qe(e){e.P||(e.P=!0,e.l&&qe(e.l))}function Xe(e){e.o||(e.o=Ne(e.t))}function Ke(e,t,n){var i=Ce(t)?Re("MapSet").N(t,n):Me(t)?Re("MapSet").T(t,n):e.g?function(e,t){var n=Array.isArray(e),i={i:n?1:0,A:t?t.A:Le(),P:!1,I:!1,D:{},l:t,t:e,k:null,o:null,j:null,C:!1},r=i,o=ht;n&&(r=[i],o=pt);var a=Proxy.revocable(r,o),s=a.revoke,l=a.proxy;return i.k=l,i.j=s,l}(t,n):Re("ES5").J(t,n);return(n?n.A:Le()).p.push(i),i}function Je(e){return De(e)||be(22,e),function e(t){if(!ke(t))return t;var n,i=t[st],r=Ee(t);if(i){if(!i.P&&(i.i<4||!Re("ES5").K(i)))return i.t;i.I=!0,n=Ze(t,r),i.I=!1}else n=Ze(t,r);return xe(n,(function(t,r){i&&function(e,t){return 2===Ee(e)?e.get(t):e[t]}(i.t,t)===r||Se(n,t,e(r))})),3===r?new Set(n):n}(e)}function Ze(e,t){switch(t){case 2:return new Map(e);case 3:return Array.from(e)}return Ne(e)}var Qe,et,tt="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),nt="undefined"!=typeof Map,it="undefined"!=typeof Set,rt="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,ot=tt?Symbol.for("immer-nothing"):((Qe={})["immer-nothing"]=!0,Qe),at=tt?Symbol.for("immer-draftable"):"__$immer_draftable",st=tt?Symbol.for("immer-state"):"__$immer_state",lt=""+Object.prototype.constructor,ct="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(e){return Object.getOwnPropertyNames(e).concat(Object.getOwnPropertySymbols(e))}:Object.getOwnPropertyNames,ut=Object.getOwnPropertyDescriptors||function(e){var t={};return ct(e).forEach((function(n){t[n]=Object.getOwnPropertyDescriptor(e,n)})),t},dt={},ht={get:function(e,t){if(t===st)return e;var n,i,r,o=Ie(e);if(!Te(o,t))return n=e,(r=$e(o,t))?"value"in r?r.value:null===(i=r.get)||void 0===i?void 0:i.call(n.k):void 0;var a=o[t];return e.I||!ke(a)?a:a===je(e.t,t)?(Xe(e),e.o[t]=Ke(e.A.h,a,e)):a},has:function(e,t){return t in Ie(e)},ownKeys:function(e){return Reflect.ownKeys(Ie(e))},set:function(e,t,n){var i=$e(Ie(e),t);if(null==i?void 0:i.set)return i.set.call(e.k,n),!0;if(!e.P){var r=je(Ie(e),t),o=null==r?void 0:r[st];if(o&&o.t===n)return e.o[t]=n,e.D[t]=!1,!0;if(function(e,t){return e===t?0!==e||1/e==1/t:e!=e&&t!=t}(n,r)&&(void 0!==n||Te(e.t,t)))return!0;Xe(e),qe(e)}return e.o[t]===n&&"number"!=typeof n&&(void 0!==n||t in e.o)||(e.o[t]=n,e.D[t]=!0,!0)},deleteProperty:function(e,t){return void 0!==je(e.t,t)||t in e.t?(e.D[t]=!1,Xe(e),qe(e)):delete e.D[t],e.o&&delete e.o[t],!0},getOwnPropertyDescriptor:function(e,t){var n=Ie(e),i=Reflect.getOwnPropertyDescriptor(n,t);return i?{writable:!0,configurable:1!==e.i||"length"!==t,enumerable:i.enumerable,value:n[t]}:i},defineProperty:function(){be(11)},getPrototypeOf:function(e){return Object.getPrototypeOf(e.t)},setPrototypeOf:function(){be(12)}},pt={};xe(ht,(function(e,t){pt[e]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)}})),pt.deleteProperty=function(e,t){return pt.set.call(this,e,t,void 0)},pt.set=function(e,t,n){return ht.set.call(this,e[0],t,n,e[0])};var ft=new(function(){function e(e){var t=this;this.g=rt,this.F=!0,this.produce=function(e,n,i){if("function"==typeof e&&"function"!=typeof n){var r=n;n=e;var o=t;return function(e){var t=this;void 0===e&&(e=r);for(var i=arguments.length,a=Array(i>1?i-1:0),s=1;s<i;s++)a[s-1]=arguments[s];return o.produce(e,(function(e){var i;return(i=n).call.apply(i,[t,e].concat(a))}))}}var a;if("function"!=typeof n&&be(6),void 0!==i&&"function"!=typeof i&&be(7),ke(e)){var s=We(t),l=Ke(t,e,void 0),c=!0;try{a=n(l),c=!1}finally{c?Fe(s):Ye(s)}return"undefined"!=typeof Promise&&a instanceof Promise?a.then((function(e){return He(s,i),ze(e,s)}),(function(e){throw Fe(s),e})):(He(s,i),ze(a,s))}if(!e||"object"!=typeof e){if(void 0===(a=n(e))&&(a=e),a===ot&&(a=void 0),t.F&&Ae(a,!0),i){var u=[],d=[];Re("Patches").M(e,a,u,d),i(u,d)}return a}be(21,e)},this.produceWithPatches=function(e,n){if("function"==typeof e)return function(n){for(var i=arguments.length,r=Array(i>1?i-1:0),o=1;o<i;o++)r[o-1]=arguments[o];return t.produceWithPatches(n,(function(t){return e.apply(void 0,[t].concat(r))}))};var i,r,o=t.produce(e,n,(function(e,t){i=e,r=t}));return"undefined"!=typeof Promise&&o instanceof Promise?o.then((function(e){return[e,i,r]})):[o,i,r]},"boolean"==typeof(null==e?void 0:e.useProxies)&&this.setUseProxies(e.useProxies),"boolean"==typeof(null==e?void 0:e.autoFreeze)&&this.setAutoFreeze(e.autoFreeze)}var t=e.prototype;return t.createDraft=function(e){ke(e)||be(8),De(e)&&(e=Je(e));var t=We(this),n=Ke(this,e,void 0);return n[st].C=!0,Ye(t),n},t.finishDraft=function(e,t){var n=(e&&e[st]).A;return He(n,t),ze(void 0,n)},t.setAutoFreeze=function(e){this.F=e},t.setUseProxies=function(e){e&&!rt&&be(20),this.g=e},t.applyPatches=function(e,t){var n;for(n=t.length-1;n>=0;n--){var i=t[n];if(0===i.path.length&&"replace"===i.op){e=i.value;break}}n>-1&&(t=t.slice(n+1));var r=Re("Patches").$;return De(e)?r(e,t):this.produce(e,(function(e){return r(e,t)}))},e}()),mt=ft.produce;ft.produceWithPatches.bind(ft),ft.setAutoFreeze.bind(ft),ft.setUseProxies.bind(ft),ft.applyPatches.bind(ft),ft.createDraft.bind(ft),ft.finishDraft.bind(ft);var gt=mt;"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;var _t=function(e){return void 0===e},vt=_t;var yt=function(e,t,n){var i,r=[];for(vt(t)&&(t=e||0,e=0),t*=i=(n=n||1)<0?-1:1;e*i<t;e+=n)r.push(e);return r};const wt={color:"#000",backgroundColor:"#a1b56c",dragBackgroundColor:"#a1b56c",borderColor:"#000"};var bt=function(e){return"boolean"==typeof e||e instanceof Boolean};var Dt=function(e){return"number"==typeof e||e instanceof Number};var kt=function(e){return e===Object(e)};var xt=function(e){return"string"==typeof e||e instanceof String};function Et(e){return _t(e)||null===e}function Tt(e){return!Et(e)}function St(e){return"function"==typeof e}function Ct(...e){const t=[];return e.forEach(e=>{e&&(xt(e)?t.push(e):Object.keys(e).forEach(n=>{e[n]&&t.push(n)}))}),t.map(e=>"toastui-calendar-"+e).join(" ")}function Mt(e){return e+"%"}function It(e){return e+"px"}function Nt(e){const t=e.match(/(\d+)%/),n=e.match(/(-?)\s?(\d+)px/);return{percent:t?parseInt(t[1],10):0,px:n?parseInt(`${n[1]}${n[2]}`,10):0}}function At(e,t){const n=e.model.getColors();return Object.keys(wt).reduce((e,i)=>{var r,o;const a=i;return e[a]=null!=(o=null!=(r=n[a])?r:t[a])?o:wt[a],e},{})}const Pt=/^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.)?([0-9]+)?([+-]\d\d(?::?\d\d)?|\s*Z)?$/;function Ot(){throw new Error("This operation is not supported.")}function Rt(e){const t=function(e){const t=Pt.exec(e);if(t){const[,e,n,i,r,o,a,,s,l]=t;return{y:Number(e),M:Number(n)-1,d:Number(i),h:Number(r),m:Number(o),s:Number(a),ms:Number(s)||0,zoneInfo:l}}return null}(e);if(t&&!t.zoneInfo){const{y:e,M:n,d:i,h:r,m:o,s:a,ms:s}=t;return new Date(e,n,i,r,o,a,s)}return null}class Lt{constructor(...e){const[t]=e;t instanceof Date?this.d=new Date(t.getTime()):xt(t)&&1===e.length&&(this.d=Rt(t)),this.d||(this.d=new Date(...e))}setTimezoneOffset(){Ot()}setTimezoneName(){Ot()}clone(){return new Lt(this.d)}toDate(){return new Date(this.d.getTime())}toString(){return this.d.toString()}}["getTime","getTimezoneOffset","getFullYear","getMonth","getDate","getHours","getMinutes","getSeconds","getMilliseconds","getDay"].forEach(e=>{Lt.prototype[e]=function(...t){return this.d[e](...t)}}),["setTime","setFullYear","setMonth","setDate","setHours","setMinutes","setSeconds","setMilliseconds"].forEach(e=>{Lt.prototype[e]=function(...t){return this.d[e](...t)}});class Ht extends Lt{clone(){return new Ht(this.d)}getTimezoneOffset(){return 0}}["FullYear","Month","Date","Hours","Minutes","Seconds","Milliseconds","Day"].forEach(e=>{const t="get"+e;Ht.prototype[t]=function(...t){return this.d["getUTC"+e](...t)}}),["FullYear","Month","Date","Hours","Minutes","Seconds","Milliseconds"].forEach(e=>{const t="set"+e;Ht.prototype[t]=function(...t){return this.d["setUTC"+e](...t)}});const Ft="@toast-ui/calendar: ";class Yt extends Error{constructor(e){super(`${Ft}Invalid IANA Timezone Name - ${e}`),this.name="InvalidTimezoneNameError"}}class Wt extends Error{constructor(e){super(`${Ft}Invalid DateTime Format - ${e}`),this.name="InvalidDateTimeFormatError"}}class Bt extends Error{constructor(e){super(`${Ft}Invalid View Type - ${e}`),this.name="InvalidViewTypeError"}}const zt=(e,...t)=>{console.warn(`${Ft}${e}`,...t)};let Ut=Lt;function Gt(...e){return new Ut(...e)}function Vt(e,t=new Zt){if(!St(null==(i=null==(n=null==Intl?void 0:Intl.DateTimeFormat)?void 0:n.prototype)?void 0:i.formatToParts))return zt("Intl.DateTimeFormat is not fully supported. So It will return the local timezone offset only.\nYou can use a polyfill to fix this issue."),-t.toDate().getTimezoneOffset();var n,i;Xt(e);const r=function(e){const[t,n,i,r,o,a]=e,s=n-1;return new Date(Date.UTC(t,s,i,r%24,o,a))}(function(e,t){const n=function(e){if($t[e])return $t[e];const t=new Intl.DateTimeFormat("en-US",{timeZone:e,hourCycle:"h23",hour12:!1,year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"});return $t[e]=t,t}(t);return n.formatToParts(e.toDate()).reduce((e,t)=>{const n=Kt[t.type];return Tt(n)&&(e[n]=parseInt(t.value,10)),e},[])}(t,e));return Math.round((r.getTime()-t.getTime())/60/1e3)}function jt(e,t){t&&Xt(t);const n=new Zt(e.getFullYear(),0,1),i=new Zt(e.getFullYear(),6,1);return t?Math.max(-Vt(t,n),-Vt(t,i))!==-Vt(t,e):Math.max(n.getTimezoneOffset(),i.getTimezoneOffset())!==e.toDate().getTimezoneOffset()}const $t={},qt={};function Xt(e){if(qt[e])return!0;try{return Intl.DateTimeFormat("en-US",{timeZone:e}),qt[e]=!0,!0}catch(t){throw new Yt(e)}}const Kt={year:0,month:1,day:2,hour:3,minute:4,second:5};function Jt(e){return(-(new Date).getTimezoneOffset()-e)*mn}class Zt{constructor(...e){this.tzOffset=null,e[0]instanceof Zt?this.d=Gt(e[0].getTime()):this.d=Gt(...e)}toString(){return this.d.toString()}addFullYear(e){return this.setFullYear(this.getFullYear()+e),this}addMonth(e){return this.setMonth(this.getMonth()+e),this}addDate(e){return this.setDate(this.getDate()+e),this}addHours(e){return this.setHours(this.getHours()+e),this}addMinutes(e){return this.setMinutes(this.getMinutes()+e),this}addSeconds(e){return this.setSeconds(this.getSeconds()+e),this}addMilliseconds(e){return this.setMilliseconds(this.getMilliseconds()+e),this}setWithRaw(e,t,n,i,r,o,a){return this.setFullYear(e,t,n),this.setHours(i,r,o,a),this}toDate(){return this.d.toDate()}valueOf(){return this.getTime()}getTimezoneOffset(){var e;return null!=(e=this.tzOffset)?e:this.d.getTimezoneOffset()}getTime(){return this.d.getTime()}getFullYear(){return this.d.getFullYear()}getMonth(){return this.d.getMonth()}getDate(){return this.d.getDate()}getHours(){return this.d.getHours()}getMinutes(){return this.d.getMinutes()}getSeconds(){return this.d.getSeconds()}getMilliseconds(){return this.d.getMilliseconds()}getDay(){return this.d.getDay()}setTime(e){return this.d.setTime(e)}setFullYear(e,t=this.getMonth(),n=this.getDate()){return this.d.setFullYear(e,t,n)}setMonth(e,t=this.getDate()){return this.d.setMonth(e,t)}setDate(e){return this.d.setDate(e)}setHours(e,t=this.getMinutes(),n=this.getSeconds(),i=this.getMilliseconds()){return this.d.setHours(e,t,n,i)}setMinutes(e,t=this.getSeconds(),n=this.getMilliseconds()){return this.d.setMinutes(e,t,n)}setSeconds(e,t=this.getMilliseconds()){return this.d.setSeconds(e,t)}setMilliseconds(e){return this.d.setMilliseconds(e)}tz(e){if("Local"===e)return new Zt(this.getTime());const t=xt(e)?Vt(e,this):e,n=new Zt(this.getTime()-Jt(t));return n.tzOffset=t,n}local(e){if(Tt(e)){const t=xt(e)?Vt(e,this):e;return new Zt(this.getTime()+Jt(t))}return new Zt(this.getTime()+(Tt(this.tzOffset)?Jt(this.tzOffset):0))}}function Qt(e,t={}){return kt(t)?(Object.keys(t).forEach(n=>{const i=n,r=n;Array.isArray(t[r])||!kt(e[i])||!kt(t[r])||t[r]instanceof Zt?e[i]=t[r]:e[i]=Qt(e[i],t[r])}),e):e}const en=["top","left","width","height","exceedLeft","exceedRight","croppedStart","croppedEnd","goingDurationHeight","modelDurationHeight","comingDurationHeight","duplicateEvents","duplicateEventIndex","duplicateStarts","duplicateEnds","duplicateLeft","duplicateWidth","collapse","isMain"];class tn{constructor(e){this.top=0,this.left=0,this.width=0,this.height=0,this.exceedLeft=!1,this.exceedRight=!1,this.croppedStart=!1,this.croppedEnd=!1,this.goingDurationHeight=0,this.modelDurationHeight=100,this.comingDurationHeight=0,this.duplicateEvents=[],this.duplicateEventIndex=-1,this.duplicateLeft="",this.duplicateWidth="",this.collapse=!1,this.isMain=!1,this.model=e}getUIProps(){return function(e,...t){return t.reduce((t,n)=>(e.hasOwnProperty(n)&&(t[n]=e[n]),t),{})}(this,...en)}setUIProps(e){Object.assign(this,e)}getStarts(){return this.renderStarts?this.renderStarts:this.model.getStarts()}getEnds(){return this.renderEnds?this.renderEnds:this.model.getEnds()}cid(){return this.model.cid()}valueOf(){return this.model}duration(){return this.model.duration()}collidesWith(e,t=!0){const n=[];[this,e].forEach(e=>{e instanceof tn&&e.duplicateEvents.length>0?n.push({start:e.duplicateStarts,end:e.duplicateEnds,goingDuration:0,comingDuration:0}):n.push({start:e.getStarts(),end:e.getEnds(),goingDuration:e.valueOf().goingDuration,comingDuration:e.valueOf().comingDuration})});const[i,r]=n;return Fn({start:i.start.getTime(),end:i.end.getTime(),targetStart:r.start.getTime(),targetEnd:r.end.getTime(),goingDuration:i.goingDuration,comingDuration:i.comingDuration,targetGoingDuration:r.goingDuration,targetComingDuration:r.comingDuration,usingTravelTime:t})}clone(){const e=this.getUIProps(),t=new tn(this.model);return t.setUIProps(e),this.renderStarts&&(t.renderStarts=new Zt(this.renderStarts)),this.renderEnds&&(t.renderEnds=new Zt(this.renderEnds)),t}}var nn={event:{asc:function(e,t){const n=e instanceof tn?e.model:e,i=t instanceof tn?t.model:t,r=function(e,t){return e!==t?e?-1:1:0}(n.isAllday||n.hasMultiDates,i.isAllday||i.hasMultiDates);if(r)return r;const o=Dn(e.getStarts(),t.getStarts());if(o)return o;const a=e.duration(),s=t.duration();return a<s?1:a>s?-1:n.cid()-i.cid()}},num:{asc:function(e,t){return Number(e)-Number(t)}}};function rn(e){return e[0]}function on(e){return e[e.length-1]}function an(e,t){for(let n=e.length-1;n>=0;n-=1)if(t(e[n]))return n;return-1}function sn(e,t){return e>0?Array.from({length:e},()=>Array.isArray(t)?t.slice():t):[]}var ln=(e=>(e[e.SUN=0]="SUN",e[e.MON=1]="MON",e[e.TUE=2]="TUE",e[e.WED=3]="WED",e[e.THU=4]="THU",e[e.FRI=5]="FRI",e[e.SAT=6]="SAT",e))(ln||{});const cn=/^(\d{4}[-|/]*\d{2}[-|/]*\d{2})\s?(\d{2}:\d{2}:\d{2})?$/,un={},dn=[24,60,60,1e3];function hn(e,t){let n="",i=0;if(String(e).length>t)return String(e);for(;i<t-1;i+=1)n+="0";return(n+e).slice(-1*t)}function pn(e){let t=e.getHours();return 0===t&&(t=12),t>12&&(t%=12),t}const fn={YYYYMMDD:e=>[e.getFullYear(),hn(e.getMonth()+1,2),hn(e.getDate(),2)].join(""),YYYY:e=>String(e.getFullYear()),MM:e=>hn(e.getMonth()+1,2),DD:e=>hn(e.getDate(),2),"HH:mm":function(e){const t=e.getHours(),n=e.getMinutes();return`${hn(t,2)}:${hn(n,2)}`},"hh:mm":function(e){const t=pn(e),n=e.getMinutes();return`${hn(t,2)}:${hn(n,2)}`},hh(e){const t=pn(e);return String(t)},tt:e=>e.getHours()<12?"am":"pm"},mn=6e4,gn=20*mn;function _n(e,t){let n=t;return Object.entries(fn).forEach(([t,i])=>{n=n.replace(t,i(e))}),n}function vn(e,t){const n=un,i=e+t;if(n[i])return n[i];const r=function(e,t,n){const i={date:0,hour:1,minute:2,second:3};return!(e in i)||isNaN(t)?0:[t].concat(dn.slice(i[e])).reduce(n)}(e,t,(e,t)=>e*t);return r?(n[i]=r,n[i]):0}function yn(e){const t=e?new Zt(e):new Zt;return t.setHours(0,0,0,0),t}function wn(e,t,n){const i=e.getTime(),r=t.getTime(),o=new Zt(e),a=[];let s=i;for(;s<=r&&r>=o.getTime();)a.push(new Zt(o)),s+=n,o.addMilliseconds(n);return a}function bn(e){return new Zt(e)}function Dn(e,t){const n=e.getTime(),i=t.getTime();return n<i?-1:n>i?1:0}function kn(e,t){return function(e,t){return function(e,t){return e.getFullYear()===t.getFullYear()}(e,t)&&e.getMonth()===t.getMonth()}(e,t)&&e.getDate()===t.getDate()}function xn(e,t){return 1===Dn(e,t)?e:t}function En(e,t){return-1===Dn(e,t)?e:t}function Tn(e,t=-1){const n=e.match(cn);let i,r,o;if(!n)throw new Wt(e);if(e.length>8){i=~e.indexOf("/")?"/":"-";const t=n.splice(1);r=t[0].split(i),o=t[1]?t[1].split(":"):[0,0,0]}else{const[e]=n;r=[e.substr(0,4),e.substr(4,2),e.substr(6,2)],o=[0,0,0]}return(new Zt).setWithRaw(Number(r[0]),Number(r[1])+t,Number(r[2]),Number(o[0]),Number(o[1]),Number(o[2]),0)}function Sn(e){const t=e?new Zt(e):new Zt;return t.setHours(23,59,59,999),t}function Cn(e){return 0===e||6===e}function Mn(e){return 0===e}function In(e){return 6===e}function Nn(e){const t=new Zt(e);return t.setDate(1),t.setHours(0,0,0,0),t}function An(e,t,n,i){const r=100/e,o=e>5?100/(e-1):r;let a=0;const s=yt(n,7).concat(yt(e)).slice(0,7);t=!i&&t;const l=s.map(n=>{let i=t?o:r;e>5&&t&&Cn(n)&&(i=o/2);const s={width:i,left:a};return a+=i,s}),{length:c}=l,u=sn(c,sn(c,0));return l.forEach(({width:e},t)=>{for(let n=0;n<=t;n+=1)for(let i=t;i<c;i+=1)u[n][i]+=e}),u[0][c-1]=100,{rowStyleInfo:l,cellWidthMap:u.map(e=>e.map(Mt))}}function Pn(e,t){const n=bn(e);return n.setMilliseconds(e.getMilliseconds()+t),n}function On(e,t){const n=bn(e);return n.setMinutes(e.getMinutes()+t),n}function Rn(e,t){const n=bn(e);return n.setHours(...t.split(":").map(Number)),n}function Ln(e,t){const n=bn(e);return n.setDate(e.getDate()+t),n}function Hn(e,t){const n=new Zt(e.getFullYear(),e.getMonth(),e.getDate()).getTime(),i=new Zt(t.getFullYear(),t.getMonth(),t.getDate()).getTime();return Math.round((n-i)/864e5)}function Fn({start:e,end:t,targetStart:n,targetEnd:i,goingDuration:r,comingDuration:o,targetGoingDuration:a,targetComingDuration:s,usingTravelTime:l}){return Math.abs(t-e)<gn&&(t+=gn),Math.abs(t-e)<gn&&(t+=gn),l&&(e-=vn("minute",r),t+=vn("minute",o),n-=vn("minute",a),i+=vn("minute",s)),function(e,t,n,i){return n>e&&n<t||i>e&&i<t||n<=e&&i>=t}(e,t,n,i)}const Yn=function(){const e=function(){let e=0;return{next:()=>(e+=1,e)}}();return()=>e.next()}();function Wn(e){return e.__fe_id||(e.__fe_id=Yn()),e.__fe_id}class Bn{constructor(e={}){this.id="",this.calendarId="",this.title="",this.body="",this.isAllday=!1,this.start=new Zt,this.end=new Zt,this.goingDuration=0,this.comingDuration=0,this.location="",this.attendees=[],this.category="time",this.dueDateClass="",this.recurrenceRule="",this.state="Busy",this.isVisible=!0,this.isPending=!1,this.isFocused=!1,this.isReadOnly=!1,this.isPrivate=!1,this.customStyle={},this.raw=null,this.hasMultiDates=!1,Wn(this),this.init(e)}init({id:e="",calendarId:t="",title:n="",body:i="",isAllday:r=!1,start:o=new Zt,end:a=new Zt,goingDuration:s=0,comingDuration:l=0,location:c="",attendees:u=[],category:d="time",dueDateClass:h="",recurrenceRule:p="",state:f="Busy",isVisible:m=!0,isPending:g=!1,isFocused:_=!1,isReadOnly:v=!1,isPrivate:y=!1,color:w,backgroundColor:b,dragBackgroundColor:D,borderColor:k,customStyle:x={},raw:E=null}={}){this.id=e,this.calendarId=t,this.title=n,this.body=i,this.isAllday="allday"===d||r,this.goingDuration=s,this.comingDuration=l,this.location=c,this.attendees=u,this.category=d,this.dueDateClass=h,this.recurrenceRule=p,this.state=f,this.isVisible=m,this.isPending=g,this.isFocused=_,this.isReadOnly=v,this.isPrivate=y,this.color=w,this.backgroundColor=b,this.dragBackgroundColor=D,this.borderColor=k,this.customStyle=x,this.raw=E,this.isAllday?this.setAlldayPeriod(o,a):this.setTimePeriod(o,a),"milestone"!==d&&"task"!==d||(this.start=new Zt(this.end))}setAlldayPeriod(e,t){let n,i;n=xt(e)?Tn(e.substring(0,10)):new Zt(e||Date.now()),i=xt(t)?Tn(t.substring(0,10)):new Zt(t||this.start),this.start=n,this.start.setHours(0,0,0),this.end=i||new Zt(this.start),this.end.setHours(23,59,59)}setTimePeriod(e,t){this.start=new Zt(e||Date.now()),this.end=new Zt(t||this.start),t||this.end.setMinutes(this.end.getMinutes()+30),this.hasMultiDates=this.end.getTime()-this.start.getTime()>864e5}getStarts(){return this.start}getEnds(){return this.end}cid(){return Wn(this)}equals(e){return this.id===e.id&&(this.title===e.title&&(this.body===e.body&&(this.isAllday===e.isAllday&&(0===Dn(this.getStarts(),e.getStarts())&&(0===Dn(this.getEnds(),e.getEnds())&&(this.color===e.color&&(this.backgroundColor===e.backgroundColor&&(this.dragBackgroundColor===e.dragBackgroundColor&&this.borderColor===e.borderColor))))))))}duration(){const e=Number(this.getStarts()),t=Number(this.getEnds());let n;return n=this.isAllday?Number(Sn(t))-Number(yn(e)):t-e,n}valueOf(){return this}collidesWith(e,t=!0){return e=e instanceof tn?e.model:e,Fn({start:Number(this.getStarts()),end:Number(this.getEnds()),targetStart:Number(e.getStarts()),targetEnd:Number(e.getEnds()),goingDuration:this.goingDuration,comingDuration:this.comingDuration,targetGoingDuration:e.goingDuration,targetComingDuration:e.comingDuration,usingTravelTime:t})}toEventObject(){return{id:this.id,calendarId:this.calendarId,__cid:this.cid(),title:this.title,body:this.body,isAllday:this.isAllday,start:this.start,end:this.end,goingDuration:this.goingDuration,comingDuration:this.comingDuration,location:this.location,attendees:this.attendees,category:this.category,dueDateClass:this.dueDateClass,recurrenceRule:this.recurrenceRule,state:this.state,isVisible:this.isVisible,isPending:this.isPending,isFocused:this.isFocused,isReadOnly:this.isReadOnly,isPrivate:this.isPrivate,color:this.color,backgroundColor:this.backgroundColor,dragBackgroundColor:this.dragBackgroundColor,borderColor:this.borderColor,customStyle:this.customStyle,raw:this.raw}}getColors(){return{color:this.color,backgroundColor:this.backgroundColor,dragBackgroundColor:this.dragBackgroundColor,borderColor:this.borderColor}}}function zn({model:e}){const{category:t,isAllday:n,hasMultiDates:i}=e;return"time"===t&&!n&&!i}Bn.schema={required:["title"],dateRange:["start","end"]};class Un{constructor(e){this.internalMap=new Map,St(e)&&(this.getItemID=e)}static and(...e){const{length:t}=e;return n=>{for(let i=0;i<t;i+=1)if(!e[i].call(null,n))return!1;return!0}}static or(...e){const{length:t}=e;return t?n=>{let i=e[0].call(null,n);for(let r=1;r<t;r+=1)i=i||e[r].call(null,n);return i}:()=>!1}getItemID(e){var t;return null!=(t=null==e?void 0:e._id)?t:""}getFirstItem(){return this.internalMap.values().next().value}add(...e){return e.forEach(e=>{const t=this.getItemID(e);this.internalMap.set(t,e)}),this}remove(...e){const t=[];return e.forEach(e=>{const n=xt(e)||Dt(e)?e:this.getItemID(e);this.internalMap.has(n)&&(t.push(this.internalMap.get(n)),this.internalMap.delete(n))}),1===t.length?t[0]:t}has(e){const t=xt(e)||Dt(e)?e:this.getItemID(e);return this.internalMap.has(t)}get(e){var t;const n=xt(e)||Dt(e)?e:this.getItemID(e);return null!=(t=this.internalMap.get(n))?t:null}doWhenHas(e,t){const n=this.internalMap.get(e);Et(n)||t(n)}filter(e){const t=new Un;return this.hasOwnProperty("getItemID")&&(t.getItemID=this.getItemID),this.internalMap.forEach(n=>{!0===e(n)&&t.add(n)}),t}groupBy(e){const t={};return this.internalMap.forEach(n=>{let i=St(e)?e(n):n[e];St(i)&&(i=i.call(n)),null!=t[i]||(t[i]=new Un(this.getItemID)),t[i].add(n)}),t}find(e){let t=null;const n=this.internalMap.values();let i=n.next();for(;!1===i.done;){if(e(i.value)){t=i.value;break}i=n.next()}return t}sort(e){return this.toArray().sort(e)}each(e){const t=this.internalMap.entries();let n=t.next();for(;!1===n.done;){const[i,r]=n.value;if(!1===e(r,i))break;n=t.next()}}clear(){this.internalMap.clear()}toArray(){return Array.from(this.internalMap.values())}get size(){return this.internalMap.size}}function Gn(...e){const t=new Un(e=>e.cid());return e.length&&t.add(...e),t}function Vn(e,t){return wn(yn(e),Sn(t),864e5)}function jn(e){const{model:t}=e;return(n=t).isAllday||"time"===n.category&&Number(n.end)-Number(n.start)>864e5?"allday":t.category;var n}function $n(e,t){Vn(t.getStarts(),t.getEnds()).forEach(n=>{const i=_n(n,"YYYYMMDD");(e[i]=e[i]||[]).push(t.cid())})}function qn(e,t){const n=t.cid();Object.values(e).forEach(e=>{const t=e.indexOf(n);~t&&e.splice(t,1)})}function Xn(e,t){return function(e,t){return e.events.add(t),$n(e.idsOfDay,t),t}(e,new Bn(t))}function Kn(e){return{createEvents:t=>e(gt(e=>{!function(e,t=[]){t.map(t=>Xn(e,t))}(e.calendar,t)})),updateEvent:({event:t,eventData:n})=>e(gt(e=>{!function(e,t,n,i){const{idsOfDay:r}=e,o=e.events.find(e=>function(e,t,n){return e.id===t&&e.calendarId===n}(e,t,n));!!o&&(o.init(_(_({},o),i)),qn(r,o),$n(r,o))}(e.calendar,t.id,t.calendarId,n)})),deleteEvent:t=>e(gt(e=>{!function(e,t){qn(e.idsOfDay,t),e.events.remove(t)}(e.calendar,t)})),clearEvents:()=>e(gt(e=>{var t;(t=e.calendar).idsOfDay={},t.events.clear()})),setCalendars:t=>e(gt(e=>{e.calendar.calendars=t})),setCalendarColor:(t,n)=>e(gt(e=>{const i=e.calendar.calendars.map(e=>e.id===t?_(_({},e),n):e),r=Gn(...e.calendar.events.toArray().map(e=>{var i,r,o,a;return e.calendarId===t&&(e.color=null!=(i=n.color)?i:e.color,e.backgroundColor=null!=(r=n.backgroundColor)?r:e.backgroundColor,e.borderColor=null!=(o=n.borderColor)?o:e.borderColor,e.dragBackgroundColor=null!=(a=n.dragBackgroundColor)?a:e.dragBackgroundColor),e}));e.calendar.calendars=i,e.calendar.events=r})),setCalendarVisibility:(t,n)=>e(gt(e=>{const i=e.calendar.events.toArray();e.calendar.events=Gn(...i.map(e=>(t.includes(e.calendarId)&&(e.isVisible=n),e)))}))}}var Jn=(e=>(e[e.IDLE=0]="IDLE",e[e.INIT=1]="INIT",e[e.DRAGGING=2]="DRAGGING",e[e.CANCELED=3]="CANCELED",e))(Jn||{});function Zn(e){return{initDrag:t=>{e(gt(e=>{e.dnd=v(_(_({},e.dnd),t),{draggingState:1})}))},setDragging:t=>{e(gt(e=>{e.dnd=v(_(_({},e.dnd),t),{draggingState:2})}))},cancelDrag:()=>{e(gt(e=>{e.dnd={draggingItemType:null,draggingState:0,initX:null,initY:null,x:null,y:null,draggingEventUIModel:null},e.dnd.draggingState=3}))},reset:()=>{e(gt(e=>{e.dnd={draggingItemType:null,draggingState:0,initX:null,initY:null,x:null,y:null,draggingEventUIModel:null}}))},setDraggingEventUIModel:t=>{e(gt(e=>{var n;e.dnd.draggingEventUIModel=null!=(n=null==t?void 0:t.clone())?n:null}))}}}function Qn(e){return{setGridSelection:(t,n)=>{e(gt(e=>{e.gridSelection[t]=n}))},addGridSelection:(t,n)=>{e(gt(e=>{"dayGridMonth"===t&&n&&(e.gridSelection.accumulated[t]=[...e.gridSelection.accumulated[t],n],e.gridSelection.dayGridMonth=null)}))},clearAll:()=>e(gt(e=>{e.gridSelection={dayGridMonth:null,dayGridWeek:null,timeGrid:null,accumulated:{dayGridMonth:[]}}}))}}function ei(e,t,n){return Object.keys(e).reduce((n,i)=>i===t?n:n-e[i].height-3,n)}function ti(e){return{setLastPanelType:t=>{e(gt(e=>{e.weekViewLayout.lastPanelType=t,t&&(e.weekViewLayout.dayGridRows[t].height=ei(e.weekViewLayout.dayGridRows,t,e.layout))}))},updateLayoutHeight:t=>e(gt(e=>{const{lastPanelType:n}=e.weekViewLayout;e.layout=t,n&&(e.weekViewLayout.dayGridRows[n].height=ei(e.weekViewLayout.dayGridRows,n,t))})),updateDayGridRowHeight:({rowName:t,height:n})=>e(gt(e=>{const{lastPanelType:i}=e.weekViewLayout;e.weekViewLayout.dayGridRows[t]={height:n},i&&(e.weekViewLayout.dayGridRows[i].height=ei(e.weekViewLayout.dayGridRows,i,e.layout))})),updateDayGridRowHeightByDiff:({rowName:t,diff:n})=>e(gt(e=>{var i,r,o;const{lastPanelType:a}=e.weekViewLayout,s=null!=(o=null==(r=null==(i=e.weekViewLayout.dayGridRows)?void 0:i[t])?void 0:r.height)?o:72;e.weekViewLayout.dayGridRows[t]={height:s+n},a&&(e.weekViewLayout.dayGridRows[a].height=ei(e.weekViewLayout.dayGridRows,a,e.layout))})),setSelectedDuplicateEventCid:t=>e(gt(e=>{e.weekViewLayout.selectedDuplicateEventCid=null!=t?t:-1}))}}function ni(e){return e.charAt(0).toUpperCase()+e.slice(1)}const ii=["sun","mon","tue","wed","thu","fri","sat"],ri=e=>ii[e];function oi(e,t){return e.map(e=>{const n=e.getDay(),i=t.length>0?t[n]:ni(ri(n));return{date:e.getDate(),day:e.getDay(),dayName:i,isToday:!0,renderDate:"date",dateInstance:e}})}function ai(e){if(!e)return!1;const t={getDuplicateEvents:(e,t)=>t.filter(t=>t.title===e.title&&0===Dn(t.start,e.start)&&0===Dn(t.end,e.end)).sort((e,t)=>e.calendarId>t.calendarId?1:-1),getMainEvent:e=>on(e)};return bt(e)?t:_(_({},t),e)}function si(e={}){const t=_({startDayOfWeek:ln.SUN,dayNames:[],narrowWeekend:!1,workweek:!1,showNowIndicator:!0,showTimezoneCollapseButton:!1,timezonesCollapsed:!1,hourStart:0,hourEnd:24,eventView:!0,taskView:!0,collapseDuplicateEvents:!1},e);return t.collapseDuplicateEvents=ai(t.collapseDuplicateEvents),t}function li(e={}){return _({zones:[]},e)}function ci(e={}){const t=_({dayNames:[],visibleWeeksCount:0,workweek:!1,narrowWeekend:!1,startDayOfWeek:ln.SUN,isAlways6Weeks:!0,visibleEventCount:6},e);return 0===t.dayNames.length&&(t.dayNames=ii.slice()),t}function ui(e){return bt(e)?{enableDblClick:e,enableClick:e}:_({enableDblClick:!0,enableClick:!0},e)}const di=e=>!!e.isVisible;function hi(e){return{setOptions:(t={})=>e(gt(e=>{var n;t.gridSelection&&(t.gridSelection=ui(t.gridSelection)),(null==(n=t.week)?void 0:n.collapseDuplicateEvents)&&(t.week.collapseDuplicateEvents=ai(t.week.collapseDuplicateEvents)),Qt(e.options,t)}))}}var pi=(e=>(e.SeeMore="seeMore",e.Form="form",e.Detail="detail",e))(pi||{});function fi(e){return{showSeeMorePopup:t=>e(gt(e=>{e.popup.seeMore=t,e.popup.form=null,e.popup.detail=null})),showFormPopup:t=>e(gt(e=>{e.popup.form=t,e.popup.seeMore=null,e.popup.detail=null})),showDetailPopup:(t,n)=>e(gt(e=>{e.popup.detail=t,e.popup.form=null,n||(e.popup.seeMore=null)})),hideSeeMorePopup:()=>e(gt(e=>{e.popup.seeMore=null})),hideFormPopup:()=>e(gt(e=>{e.popup.form=null})),hideDetailPopup:()=>e(gt(e=>{e.popup.detail=null})),hideAllPopup:()=>e(gt(e=>{e.popup.seeMore=null,e.popup.form=null,e.popup.detail=null}))}}const mi=()=>{},gi=/^auto$|^$|%/;function _i(e,t){let n=e.style[t];if((!n||"auto"===n)&&document.defaultView){const i=document.defaultView.getComputedStyle(e,null);n=i?i[t]:null}return"auto"===n?null:n}function vi(e){return xt(e)?gi.test(e):null===e}function yi(e){const t=_i(e,"width"),n=_i(e,"height");if((vi(t)||vi(n))&&e.getBoundingClientRect){const{width:t,height:n}=e.getBoundingClientRect();return{width:t||e.offsetWidth,height:n||e.offsetHeight}}return{width:parseFloat(null!=t?t:"0"),height:parseFloat(null!=n?n:"0")}}const wi=("undefined"==typeof Element?mi:Element).prototype;function bi(e){return e.replace(/<([^>]+)>/gi,"")}wi.matches||wi.webkitMatchesSelector||wi.msMatchesSelector;const Di={milestone:e=>E(S,null,E("span",{className:Ct("icon","ic-milestone")}),E("span",{style:{backgroundColor:e.backgroundColor}},bi(e.title))),milestoneTitle:()=>E("span",{className:Ct("left-content")},"Milestone"),task:e=>"#"+e.title,taskTitle:()=>E("span",{className:Ct("left-content")},"Task"),alldayTitle:()=>E("span",{className:Ct("left-content")},"All Day"),allday:e=>bi(e.title),time(e){const{start:t,title:n}=e;return t?E("span",null,E("strong",null,_n(t,"HH:mm"))," ",E("span",null,bi(n))):bi(n)},goingDuration(e){const{goingDuration:t}=e,n=t%60;return`GoingTime ${hn(Math.floor(t/60),2)}:${hn(n,2)}`},comingDuration(e){const{comingDuration:t}=e,n=t%60;return`ComingTime ${hn(Math.floor(t/60),2)}:${hn(n,2)}`},monthMoreTitleDate(e){const{date:t,day:n}=e,i=Ct("more-title-date"),r=Ct("more-title-day"),o=ni(ri(n));return E(S,null,E("span",{className:i},t),E("span",{className:r},o))},monthMoreClose:()=>"",monthGridHeader(e){const t=parseInt(e.date.split("-")[2],10);return E("span",{className:Ct("weekday-grid-date",{"weekday-grid-date-decorator":e.isToday})},t)},monthGridHeaderExceed:e=>E("span",{className:Ct("weekday-grid-more-events")},e," more"),monthGridFooter:e=>"",monthGridFooterExceed:e=>"",monthDayName:e=>e.label,weekDayName(e){const t=Ct("day-name__date"),n=Ct("day-name__name");return E(S,null,E("span",{className:t},e.date),"  ",E("span",{className:n},e.dayName))},weekGridFooterExceed:e=>"+"+e,collapseBtnTitle:()=>E("span",{className:Ct("collapse-btn-icon")}),timezoneDisplayLabel({displayLabel:e,timezoneOffset:t}){if(Et(e)&&Tt(t)){const e=t<0?"-":"+",n=Math.abs(t/60),i=Math.abs(t%60);return`GMT${e}${hn(n,2)}:${hn(i,2)}`}return e},timegridDisplayPrimaryTime(e){const{time:t}=e;return _n(t,"hh tt")},timegridDisplayTime(e){const{time:t}=e;return _n(t,"HH:mm")},timegridNowIndicatorLabel(e){const{time:t,format:n="HH:mm"}=e;return _n(t,n)},popupIsAllday:()=>"All day",popupStateFree:()=>"Free",popupStateBusy:()=>"Busy",titlePlaceholder:()=>"Subject",locationPlaceholder:()=>"Location",startDatePlaceholder:()=>"Start date",endDatePlaceholder:()=>"End date",popupSave:()=>"Save",popupUpdate:()=>"Update",popupEdit:()=>"Edit",popupDelete:()=>"Delete",popupDetailTitle:({title:e})=>e,popupDetailDate({isAllday:e,start:t,end:n}){const i=_n(t,e?"YYYY.MM.DD":"hh:mm tt"),r=kn(t,n)?"hh:mm tt":"YYYY.MM.DD hh:mm tt";return e?`${i}${kn(t,n)?"":" - "+_n(n,"YYYY.MM.DD")}`:`${_n(t,"YYYY.MM.DD hh:mm tt")} - ${_n(n,r)}`},popupDetailLocation:({location:e})=>e,popupDetailAttendees:({attendees:e=[]})=>e.join(", "),popupDetailState:({state:e})=>e||"Busy",popupDetailRecurrenceRule:({recurrenceRule:e})=>e,popupDetailBody:({body:e})=>e};function ki(e){return{setTemplate:t=>e(gt(e=>{e.template=_(_({},e.template),t)}))}}function xi(e){return{changeView:t=>e(gt(e=>{e.view.currentView=t})),setRenderDate:t=>e(gt(e=>{e.view.renderDate=yn(t)}))}}const Ei=_t(window)||!window.navigator?ce:ue;function Ti(){const e=$(null);return{StoreProvider:function({children:t,store:n}){return E(e.Provider,{value:n,children:t})},useStore:(t,n=Object.is)=>{const i=fe(e);if(Et(i))throw new Error("StoreProvider is not found");const[,r]=le(e=>e+1,0),o=i.getState(),a=de(o),s=de(t),l=de(n),c=de(!1),u=de();let d;_t(u.current)&&(u.current=t(o));let h=!1;(a.current!==o||s.current!==t||l.current!==n||c.current)&&(d=t(o),h=!n(u.current,d)),Ei(()=>{h&&(u.current=d),a.current=o,s.current=t,l.current=n,c.current=!1});const p=de(o);return Ei(()=>{const e=()=>{try{const e=i.getState(),t=s.current(e);!l.current(u.current,t)&&(a.current=e,u.current=d,r())}catch(e){console.error("[toastui-calendar] failed to update state",null==e?void 0:e.message),c.current=!0,r()}},t=i.subscribe(e);return i.getState()!==p.current&&e(),t},[]),h?d:u.current},useInternalStore:()=>{const t=fe(e);if(Et(t))throw new Error("StoreProvider is not found");return he(()=>t,[t])}}}function Si(e){let t;const n=new Set,i=e=>{const i=e(t);if(i!==t){const e=t;t=_(_({},t),i),n.forEach(n=>n(t,e))}},r=()=>t,o={setState:i,getState:r,subscribe:(e,i,r)=>{let o=e;if(i){let n=i(t);const a=null!=r?r:Object.is;o=()=>{const r=i(t);if(!a(n,r)){const t=n;n=r,e(n,t)}}}return n.add(o),()=>n.delete(o)},clearListeners:()=>n.clear()};return t=e(i,r,o),o}const Ci=e=>t=>v(_(_(_(_(_(_(_(_({},function(e={}){var t,n,i,r,o,a;return{options:{defaultView:null!=(t=e.defaultView)?t:"week",useFormPopup:null!=(n=e.useFormPopup)&&n,useDetailPopup:null!=(i=e.useDetailPopup)&&i,isReadOnly:null!=(r=e.isReadOnly)&&r,week:si(e.week),month:ci(e.month),gridSelection:ui(e.gridSelection),usageStatistics:null==(o=e.usageStatistics)||o,eventFilter:null!=(a=e.eventFilter)?a:di,timezone:li(e.timezone)}}}(e)),function(e={}){return{template:_(_({},Di),e)}}(e.template)),{popup:{seeMore:null,form:null,detail:null}}),{layout:500,weekViewLayout:{lastPanelType:null,dayGridRows:{},selectedDuplicateEventCid:-1}}),function(e=[]){return{calendar:{calendars:e,events:Gn(),idsOfDay:{}}}}(e.calendars)),function(e="week"){const t=new Zt;return t.setHours(0,0,0,0),{view:{currentView:e,renderDate:t}}}(e.defaultView)),{dnd:{draggingItemType:null,draggingState:0,initX:null,initY:null,x:null,y:null,draggingEventUIModel:null}}),{gridSelection:{dayGridMonth:null,dayGridWeek:null,timeGrid:null,accumulated:{dayGridMonth:[]}}}),{dispatch:{options:hi(t),popup:fi(t),weekViewLayout:ti(t),calendar:Kn(t),view:xi(t),dnd:Zn(t),gridSelection:Qn(t),template:ki(t)}}),{StoreProvider:Mi,useStore:Ii,useInternalStore:Ni}=Ti();function Ai(e){return Ii(pe(t=>e?t.dispatch[e]:t.dispatch,[e]))}function Pi(e){return t=>t[e]}const Oi=Pi("calendar"),Ri=Pi("weekViewLayout"),Li=Pi("template"),Hi=Pi("view"),Fi=Pi("options"),Yi=Pi("dnd");var Wi={exports:{}};Wi.exports=function(){function e(t){return(e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(t)}function t(e,n){return(t=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,n)}function n(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}function i(e,r,o){return(i=n()?Reflect.construct:function(e,n,i){var r=[null];r.push.apply(r,n);var o=new(Function.bind.apply(e,r));return i&&t(o,i.prototype),o}).apply(null,arguments)}function r(e){return function(e){if(Array.isArray(e))return o(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(e){if("string"==typeof e)return o(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?o(e,t):void 0}}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function o(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,i=new Array(t);n<t;n++)i[n]=e[n];return i}var a=Object.hasOwnProperty,s=Object.setPrototypeOf,l=Object.isFrozen,c=Object.getPrototypeOf,u=Object.getOwnPropertyDescriptor,d=Object.freeze,h=Object.seal,p=Object.create,f="undefined"!=typeof Reflect&&Reflect,m=f.apply,g=f.construct;m||(m=function(e,t,n){return e.apply(t,n)}),d||(d=function(e){return e}),h||(h=function(e){return e}),g||(g=function(e,t){return i(e,r(t))});var _,v=C(Array.prototype.forEach),y=C(Array.prototype.pop),w=C(Array.prototype.push),b=C(String.prototype.toLowerCase),D=C(String.prototype.match),k=C(String.prototype.replace),x=C(String.prototype.indexOf),E=C(String.prototype.trim),T=C(RegExp.prototype.test),S=(_=TypeError,function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];return g(_,t)});function C(e){return function(t){for(var n=arguments.length,i=new Array(n>1?n-1:0),r=1;r<n;r++)i[r-1]=arguments[r];return m(e,t,i)}}function M(e,t){s&&s(e,null);for(var n=t.length;n--;){var i=t[n];if("string"==typeof i){var r=b(i);r!==i&&(l(t)||(t[n]=r),i=r)}e[i]=!0}return e}function I(e){var t,n=p(null);for(t in e)m(a,e,[t])&&(n[t]=e[t]);return n}function N(e,t){for(;null!==e;){var n=u(e,t);if(n){if(n.get)return C(n.get);if("function"==typeof n.value)return C(n.value)}e=c(e)}return function(e){return console.warn("fallback value for",e),null}}var A=d(["a","abbr","acronym","address","area","article","aside","audio","b","bdi","bdo","big","blink","blockquote","body","br","button","canvas","caption","center","cite","code","col","colgroup","content","data","datalist","dd","decorator","del","details","dfn","dialog","dir","div","dl","dt","element","em","fieldset","figcaption","figure","font","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","img","input","ins","kbd","label","legend","li","main","map","mark","marquee","menu","menuitem","meter","nav","nobr","ol","optgroup","option","output","p","picture","pre","progress","q","rp","rt","ruby","s","samp","section","select","shadow","small","source","spacer","span","strike","strong","style","sub","summary","sup","table","tbody","td","template","textarea","tfoot","th","thead","time","tr","track","tt","u","ul","var","video","wbr"]),P=d(["svg","a","altglyph","altglyphdef","altglyphitem","animatecolor","animatemotion","animatetransform","circle","clippath","defs","desc","ellipse","filter","font","g","glyph","glyphref","hkern","image","line","lineargradient","marker","mask","metadata","mpath","path","pattern","polygon","polyline","radialgradient","rect","stop","style","switch","symbol","text","textpath","title","tref","tspan","view","vkern"]),O=d(["feBlend","feColorMatrix","feComponentTransfer","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMerge","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence"]),R=d(["animate","color-profile","cursor","discard","fedropshadow","font-face","font-face-format","font-face-name","font-face-src","font-face-uri","foreignobject","hatch","hatchpath","mesh","meshgradient","meshpatch","meshrow","missing-glyph","script","set","solidcolor","unknown","use"]),L=d(["math","menclose","merror","mfenced","mfrac","mglyph","mi","mlabeledtr","mmultiscripts","mn","mo","mover","mpadded","mphantom","mroot","mrow","ms","mspace","msqrt","mstyle","msub","msup","msubsup","mtable","mtd","mtext","mtr","munder","munderover"]),H=d(["maction","maligngroup","malignmark","mlongdiv","mscarries","mscarry","msgroup","mstack","msline","msrow","semantics","annotation","annotation-xml","mprescripts","none"]),F=d(["#text"]),Y=d(["accept","action","align","alt","autocapitalize","autocomplete","autopictureinpicture","autoplay","background","bgcolor","border","capture","cellpadding","cellspacing","checked","cite","class","clear","color","cols","colspan","controls","controlslist","coords","crossorigin","datetime","decoding","default","dir","disabled","disablepictureinpicture","disableremoteplayback","download","draggable","enctype","enterkeyhint","face","for","headers","height","hidden","high","href","hreflang","id","inputmode","integrity","ismap","kind","label","lang","list","loading","loop","low","max","maxlength","media","method","min","minlength","multiple","muted","name","nonce","noshade","novalidate","nowrap","open","optimum","pattern","placeholder","playsinline","poster","preload","pubdate","radiogroup","readonly","rel","required","rev","reversed","role","rows","rowspan","spellcheck","scope","selected","shape","size","sizes","span","srclang","start","src","srcset","step","style","summary","tabindex","title","translate","type","usemap","valign","value","width","xmlns","slot"]),W=d(["accent-height","accumulate","additive","alignment-baseline","ascent","attributename","attributetype","azimuth","basefrequency","baseline-shift","begin","bias","by","class","clip","clippathunits","clip-path","clip-rule","color","color-interpolation","color-interpolation-filters","color-profile","color-rendering","cx","cy","d","dx","dy","diffuseconstant","direction","display","divisor","dur","edgemode","elevation","end","fill","fill-opacity","fill-rule","filter","filterunits","flood-color","flood-opacity","font-family","font-size","font-size-adjust","font-stretch","font-style","font-variant","font-weight","fx","fy","g1","g2","glyph-name","glyphref","gradientunits","gradienttransform","height","href","id","image-rendering","in","in2","k","k1","k2","k3","k4","kerning","keypoints","keysplines","keytimes","lang","lengthadjust","letter-spacing","kernelmatrix","kernelunitlength","lighting-color","local","marker-end","marker-mid","marker-start","markerheight","markerunits","markerwidth","maskcontentunits","maskunits","max","mask","media","method","mode","min","name","numoctaves","offset","operator","opacity","order","orient","orientation","origin","overflow","paint-order","path","pathlength","patterncontentunits","patterntransform","patternunits","points","preservealpha","preserveaspectratio","primitiveunits","r","rx","ry","radius","refx","refy","repeatcount","repeatdur","restart","result","rotate","scale","seed","shape-rendering","specularconstant","specularexponent","spreadmethod","startoffset","stddeviation","stitchtiles","stop-color","stop-opacity","stroke-dasharray","stroke-dashoffset","stroke-linecap","stroke-linejoin","stroke-miterlimit","stroke-opacity","stroke","stroke-width","style","surfacescale","systemlanguage","tabindex","targetx","targety","transform","transform-origin","text-anchor","text-decoration","text-rendering","textlength","type","u1","u2","unicode","values","viewbox","visibility","version","vert-adv-y","vert-origin-x","vert-origin-y","width","word-spacing","wrap","writing-mode","xchannelselector","ychannelselector","x","x1","x2","xmlns","y","y1","y2","z","zoomandpan"]),B=d(["accent","accentunder","align","bevelled","close","columnsalign","columnlines","columnspan","denomalign","depth","dir","display","displaystyle","encoding","fence","frame","height","href","id","largeop","length","linethickness","lspace","lquote","mathbackground","mathcolor","mathsize","mathvariant","maxsize","minsize","movablelimits","notation","numalign","open","rowalign","rowlines","rowspacing","rowspan","rspace","rquote","scriptlevel","scriptminsize","scriptsizemultiplier","selection","separator","separators","stretchy","subscriptshift","supscriptshift","symmetric","voffset","width","xmlns"]),z=d(["xlink:href","xml:id","xlink:title","xml:space","xmlns:xlink"]),U=h(/\{\{[\w\W]*|[\w\W]*\}\}/gm),G=h(/<%[\w\W]*|[\w\W]*%>/gm),V=h(/^data-[\-\w.\u00B7-\uFFFF]/),j=h(/^aria-[\-\w]+$/),$=h(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i),q=h(/^(?:\w+script|data):/i),X=h(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),K=h(/^html$/i),J=function(){return"undefined"==typeof window?null:window},Z=function(t,n){if("object"!==e(t)||"function"!=typeof t.createPolicy)return null;var i=null;n.currentScript&&n.currentScript.hasAttribute("data-tt-policy-suffix")&&(i=n.currentScript.getAttribute("data-tt-policy-suffix"));var r="dompurify"+(i?"#"+i:"");try{return t.createPolicy(r,{createHTML:function(e){return e}})}catch(e){return console.warn("TrustedTypes policy "+r+" could not be created."),null}};return function t(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:J(),i=function(e){return t(e)};if(i.version="2.3.8",i.removed=[],!n||!n.document||9!==n.document.nodeType)return i.isSupported=!1,i;var o=n.document,a=n.document,s=n.DocumentFragment,l=n.HTMLTemplateElement,c=n.Node,u=n.Element,h=n.NodeFilter,p=n.NamedNodeMap,f=void 0===p?n.NamedNodeMap||n.MozNamedAttrMap:p,m=n.HTMLFormElement,g=n.DOMParser,_=n.trustedTypes,C=u.prototype,Q=N(C,"cloneNode"),ee=N(C,"nextSibling"),te=N(C,"childNodes"),ne=N(C,"parentNode");if("function"==typeof l){var ie=a.createElement("template");ie.content&&ie.content.ownerDocument&&(a=ie.content.ownerDocument)}var re=Z(_,o),oe=re?re.createHTML(""):"",ae=a,se=ae.implementation,le=ae.createNodeIterator,ce=ae.createDocumentFragment,ue=ae.getElementsByTagName,de=o.importNode,he={};try{he=I(a).documentMode?a.documentMode:{}}catch(e){}var pe={};i.isSupported="function"==typeof ne&&se&&void 0!==se.createHTMLDocument&&9!==he;var fe,me,ge=U,_e=G,ve=V,ye=j,we=q,be=X,De=$,ke=null,xe=M({},[].concat(r(A),r(P),r(O),r(L),r(F))),Ee=null,Te=M({},[].concat(r(Y),r(W),r(B),r(z))),Se=Object.seal(Object.create(null,{tagNameCheck:{writable:!0,configurable:!1,enumerable:!0,value:null},attributeNameCheck:{writable:!0,configurable:!1,enumerable:!0,value:null},allowCustomizedBuiltInElements:{writable:!0,configurable:!1,enumerable:!0,value:!1}})),Ce=null,Me=null,Ie=!0,Ne=!0,Ae=!1,Pe=!1,Oe=!1,Re=!1,Le=!1,He=!1,Fe=!1,Ye=!1,We=!0,Be=!0,ze=!1,Ue={},Ge=null,Ve=M({},["annotation-xml","audio","colgroup","desc","foreignobject","head","iframe","math","mi","mn","mo","ms","mtext","noembed","noframes","noscript","plaintext","script","style","svg","template","thead","title","video","xmp"]),je=null,$e=M({},["audio","video","img","source","image","track"]),qe=null,Xe=M({},["alt","class","for","id","label","name","pattern","placeholder","role","summary","title","value","style","xmlns"]),Ke="http://www.w3.org/1998/Math/MathML",Je="http://www.w3.org/2000/svg",Ze="http://www.w3.org/1999/xhtml",Qe=Ze,et=!1,tt=["application/xhtml+xml","text/html"],nt="text/html",it=null,rt=a.createElement("form"),ot=function(e){return e instanceof RegExp||e instanceof Function},at=function(t){it&&it===t||(t&&"object"===e(t)||(t={}),t=I(t),ke="ALLOWED_TAGS"in t?M({},t.ALLOWED_TAGS):xe,Ee="ALLOWED_ATTR"in t?M({},t.ALLOWED_ATTR):Te,qe="ADD_URI_SAFE_ATTR"in t?M(I(Xe),t.ADD_URI_SAFE_ATTR):Xe,je="ADD_DATA_URI_TAGS"in t?M(I($e),t.ADD_DATA_URI_TAGS):$e,Ge="FORBID_CONTENTS"in t?M({},t.FORBID_CONTENTS):Ve,Ce="FORBID_TAGS"in t?M({},t.FORBID_TAGS):{},Me="FORBID_ATTR"in t?M({},t.FORBID_ATTR):{},Ue="USE_PROFILES"in t&&t.USE_PROFILES,Ie=!1!==t.ALLOW_ARIA_ATTR,Ne=!1!==t.ALLOW_DATA_ATTR,Ae=t.ALLOW_UNKNOWN_PROTOCOLS||!1,Pe=t.SAFE_FOR_TEMPLATES||!1,Oe=t.WHOLE_DOCUMENT||!1,He=t.RETURN_DOM||!1,Fe=t.RETURN_DOM_FRAGMENT||!1,Ye=t.RETURN_TRUSTED_TYPE||!1,Le=t.FORCE_BODY||!1,We=!1!==t.SANITIZE_DOM,Be=!1!==t.KEEP_CONTENT,ze=t.IN_PLACE||!1,De=t.ALLOWED_URI_REGEXP||De,Qe=t.NAMESPACE||Ze,t.CUSTOM_ELEMENT_HANDLING&&ot(t.CUSTOM_ELEMENT_HANDLING.tagNameCheck)&&(Se.tagNameCheck=t.CUSTOM_ELEMENT_HANDLING.tagNameCheck),t.CUSTOM_ELEMENT_HANDLING&&ot(t.CUSTOM_ELEMENT_HANDLING.attributeNameCheck)&&(Se.attributeNameCheck=t.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),t.CUSTOM_ELEMENT_HANDLING&&"boolean"==typeof t.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements&&(Se.allowCustomizedBuiltInElements=t.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),fe=fe=-1===tt.indexOf(t.PARSER_MEDIA_TYPE)?nt:t.PARSER_MEDIA_TYPE,me="application/xhtml+xml"===fe?function(e){return e}:b,Pe&&(Ne=!1),Fe&&(He=!0),Ue&&(ke=M({},r(F)),Ee=[],!0===Ue.html&&(M(ke,A),M(Ee,Y)),!0===Ue.svg&&(M(ke,P),M(Ee,W),M(Ee,z)),!0===Ue.svgFilters&&(M(ke,O),M(Ee,W),M(Ee,z)),!0===Ue.mathMl&&(M(ke,L),M(Ee,B),M(Ee,z))),t.ADD_TAGS&&(ke===xe&&(ke=I(ke)),M(ke,t.ADD_TAGS)),t.ADD_ATTR&&(Ee===Te&&(Ee=I(Ee)),M(Ee,t.ADD_ATTR)),t.ADD_URI_SAFE_ATTR&&M(qe,t.ADD_URI_SAFE_ATTR),t.FORBID_CONTENTS&&(Ge===Ve&&(Ge=I(Ge)),M(Ge,t.FORBID_CONTENTS)),Be&&(ke["#text"]=!0),Oe&&M(ke,["html","head","body"]),ke.table&&(M(ke,["tbody"]),delete Ce.tbody),d&&d(t),it=t)},st=M({},["mi","mo","mn","ms","mtext"]),lt=M({},["foreignobject","desc","title","annotation-xml"]),ct=M({},["title","style","font","a","script"]),ut=M({},P);M(ut,O),M(ut,R);var dt=M({},L);M(dt,H);var ht=function(e){var t=ne(e);t&&t.tagName||(t={namespaceURI:Ze,tagName:"template"});var n=b(e.tagName),i=b(t.tagName);return e.namespaceURI===Je?t.namespaceURI===Ze?"svg"===n:t.namespaceURI===Ke?"svg"===n&&("annotation-xml"===i||st[i]):Boolean(ut[n]):e.namespaceURI===Ke?t.namespaceURI===Ze?"math"===n:t.namespaceURI===Je?"math"===n&&lt[i]:Boolean(dt[n]):e.namespaceURI===Ze&&!(t.namespaceURI===Je&&!lt[i])&&!(t.namespaceURI===Ke&&!st[i])&&!dt[n]&&(ct[n]||!ut[n])},pt=function(e){w(i.removed,{element:e});try{e.parentNode.removeChild(e)}catch(t){try{e.outerHTML=oe}catch(t){e.remove()}}},ft=function(e,t){try{w(i.removed,{attribute:t.getAttributeNode(e),from:t})}catch(e){w(i.removed,{attribute:null,from:t})}if(t.removeAttribute(e),"is"===e&&!Ee[e])if(He||Fe)try{pt(t)}catch(e){}else try{t.setAttribute(e,"")}catch(e){}},mt=function(e){var t,n;if(Le)e="<remove></remove>"+e;else{var i=D(e,/^[\r\n\t ]+/);n=i&&i[0]}"application/xhtml+xml"===fe&&(e='<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>'+e+"</body></html>");var r=re?re.createHTML(e):e;if(Qe===Ze)try{t=(new g).parseFromString(r,fe)}catch(e){}if(!t||!t.documentElement){t=se.createDocument(Qe,"template",null);try{t.documentElement.innerHTML=et?"":r}catch(e){}}var o=t.body||t.documentElement;return e&&n&&o.insertBefore(a.createTextNode(n),o.childNodes[0]||null),Qe===Ze?ue.call(t,Oe?"html":"body")[0]:Oe?t.documentElement:o},gt=function(e){return le.call(e.ownerDocument||e,e,h.SHOW_ELEMENT|h.SHOW_COMMENT|h.SHOW_TEXT,null,!1)},_t=function(e){return e instanceof m&&("string"!=typeof e.nodeName||"string"!=typeof e.textContent||"function"!=typeof e.removeChild||!(e.attributes instanceof f)||"function"!=typeof e.removeAttribute||"function"!=typeof e.setAttribute||"string"!=typeof e.namespaceURI||"function"!=typeof e.insertBefore)},vt=function(t){return"object"===e(c)?t instanceof c:t&&"object"===e(t)&&"number"==typeof t.nodeType&&"string"==typeof t.nodeName},yt=function(e,t,n){pe[e]&&v(pe[e],(function(e){e.call(i,t,n,it)}))},wt=function(e){var t;if(yt("beforeSanitizeElements",e,null),_t(e))return pt(e),!0;if(T(/[\u0080-\uFFFF]/,e.nodeName))return pt(e),!0;var n=me(e.nodeName);if(yt("uponSanitizeElement",e,{tagName:n,allowedTags:ke}),e.hasChildNodes()&&!vt(e.firstElementChild)&&(!vt(e.content)||!vt(e.content.firstElementChild))&&T(/<[/\w]/g,e.innerHTML)&&T(/<[/\w]/g,e.textContent))return pt(e),!0;if("select"===n&&T(/<template/i,e.innerHTML))return pt(e),!0;if(!ke[n]||Ce[n]){if(!Ce[n]&&Dt(n)){if(Se.tagNameCheck instanceof RegExp&&T(Se.tagNameCheck,n))return!1;if(Se.tagNameCheck instanceof Function&&Se.tagNameCheck(n))return!1}if(Be&&!Ge[n]){var r=ne(e)||e.parentNode,o=te(e)||e.childNodes;if(o&&r)for(var a=o.length-1;a>=0;--a)r.insertBefore(Q(o[a],!0),ee(e))}return pt(e),!0}return e instanceof u&&!ht(e)?(pt(e),!0):"noscript"!==n&&"noembed"!==n||!T(/<\/no(script|embed)/i,e.innerHTML)?(Pe&&3===e.nodeType&&(t=e.textContent,t=k(t,ge," "),t=k(t,_e," "),e.textContent!==t&&(w(i.removed,{element:e.cloneNode()}),e.textContent=t)),yt("afterSanitizeElements",e,null),!1):(pt(e),!0)},bt=function(e,t,n){if(We&&("id"===t||"name"===t)&&(n in a||n in rt))return!1;if(Ne&&!Me[t]&&T(ve,t));else if(Ie&&T(ye,t));else if(!Ee[t]||Me[t]){if(!(Dt(e)&&(Se.tagNameCheck instanceof RegExp&&T(Se.tagNameCheck,e)||Se.tagNameCheck instanceof Function&&Se.tagNameCheck(e))&&(Se.attributeNameCheck instanceof RegExp&&T(Se.attributeNameCheck,t)||Se.attributeNameCheck instanceof Function&&Se.attributeNameCheck(t))||"is"===t&&Se.allowCustomizedBuiltInElements&&(Se.tagNameCheck instanceof RegExp&&T(Se.tagNameCheck,n)||Se.tagNameCheck instanceof Function&&Se.tagNameCheck(n))))return!1}else if(qe[t]);else if(T(De,k(n,be,"")));else if("src"!==t&&"xlink:href"!==t&&"href"!==t||"script"===e||0!==x(n,"data:")||!je[e])if(Ae&&!T(we,k(n,be,"")));else if(n)return!1;return!0},Dt=function(e){return e.indexOf("-")>0},kt=function(e){var t,n,r,o;yt("beforeSanitizeAttributes",e,null);var a=e.attributes;if(a){var s={attrName:"",attrValue:"",keepAttr:!0,allowedAttributes:Ee};for(o=a.length;o--;){var l=t=a[o],c=l.name,u=l.namespaceURI;if(n="value"===c?t.value:E(t.value),r=me(c),s.attrName=r,s.attrValue=n,s.keepAttr=!0,s.forceKeepAttr=void 0,yt("uponSanitizeAttribute",e,s),n=s.attrValue,!s.forceKeepAttr&&(ft(c,e),s.keepAttr))if(T(/\/>/i,n))ft(c,e);else{Pe&&(n=k(n,ge," "),n=k(n,_e," "));var d=me(e.nodeName);if(bt(d,r,n))try{u?e.setAttributeNS(u,c,n):e.setAttribute(c,n),y(i.removed)}catch(e){}}}yt("afterSanitizeAttributes",e,null)}},xt=function e(t){var n,i=gt(t);for(yt("beforeSanitizeShadowDOM",t,null);n=i.nextNode();)yt("uponSanitizeShadowNode",n,null),wt(n)||(n.content instanceof s&&e(n.content),kt(n));yt("afterSanitizeShadowDOM",t,null)};return i.sanitize=function(t,r){var a,l,u,d,h;if((et=!t)&&(t="\x3c!--\x3e"),"string"!=typeof t&&!vt(t)){if("function"!=typeof t.toString)throw S("toString is not a function");if("string"!=typeof(t=t.toString()))throw S("dirty is not a string, aborting")}if(!i.isSupported){if("object"===e(n.toStaticHTML)||"function"==typeof n.toStaticHTML){if("string"==typeof t)return n.toStaticHTML(t);if(vt(t))return n.toStaticHTML(t.outerHTML)}return t}if(Re||at(r),i.removed=[],"string"==typeof t&&(ze=!1),ze){if(t.nodeName){var p=me(t.nodeName);if(!ke[p]||Ce[p])throw S("root node is forbidden and cannot be sanitized in-place")}}else if(t instanceof c)1===(l=(a=mt("\x3c!----\x3e")).ownerDocument.importNode(t,!0)).nodeType&&"BODY"===l.nodeName||"HTML"===l.nodeName?a=l:a.appendChild(l);else{if(!He&&!Pe&&!Oe&&-1===t.indexOf("<"))return re&&Ye?re.createHTML(t):t;if(!(a=mt(t)))return He?null:Ye?oe:""}a&&Le&&pt(a.firstChild);for(var f=gt(ze?t:a);u=f.nextNode();)3===u.nodeType&&u===d||wt(u)||(u.content instanceof s&&xt(u.content),kt(u),d=u);if(d=null,ze)return t;if(He){if(Fe)for(h=ce.call(a.ownerDocument);a.firstChild;)h.appendChild(a.firstChild);else h=a;return Ee.shadowroot&&(h=de.call(o,h,!0)),h}var m=Oe?a.outerHTML:a.innerHTML;return Oe&&ke["!doctype"]&&a.ownerDocument&&a.ownerDocument.doctype&&a.ownerDocument.doctype.name&&T(K,a.ownerDocument.doctype.name)&&(m="<!DOCTYPE "+a.ownerDocument.doctype.name+">\n"+m),Pe&&(m=k(m,ge," "),m=k(m,_e," ")),re&&Ye?re.createHTML(m):m},i.setConfig=function(e){at(e),Re=!0},i.clearConfig=function(){it=null,Re=!1},i.isValidAttribute=function(e,t,n){it||at({});var i=me(e),r=me(t);return bt(i,r,n)},i.addHook=function(e,t){"function"==typeof t&&(pe[e]=pe[e]||[],w(pe[e],t))},i.removeHook=function(e){if(pe[e])return y(pe[e])},i.removeHooks=function(e){pe[e]&&(pe[e]=[])},i.removeAllHooks=function(){pe={}},i}()}();var Bi=window.DOMPurify||(window.DOMPurify=Wi.exports.default||Wi.exports);function zi({template:e,param:t,as:n="div"}){var r;const o=Ii(Li)[e];if(Et(o))return null;const a=o(t);return xt(a)?E(n,{className:Ct("template-"+e),dangerouslySetInnerHTML:{__html:(s=a,Bi.sanitize(s))}}):function(e,t,n){var r,o,a,s=k({},e.props);for(a in t)"key"==a?r=t[a]:"ref"==a?o=t[a]:s[a]=t[a];return arguments.length>2&&(s.children=arguments.length>3?i.call(arguments,2):n),T(e.type,s,r||e.key,o||e.ref,null)}(a,{className:`${null!=(r=a.props.className)?r:""} ${Ct("template-"+e)}`});var s}const Ui=$(null),Gi=Ui.Provider,Vi=()=>{const e=fe(Ui);if(!e)throw new Error("useEventBus must be used within a EventBusProvider");return e},ji=e=>{var t,n,i,r,o;return null!=(o=null==(r=null==(i=null==(n=null==(t=e.options)?void 0:t.timezone)?void 0:n.zones)?void 0:i[0])?void 0:r.timezoneName)?o:"Local"},$i=e=>{var t,n;return null==(n=null==(t=e.options)?void 0:t.timezone)?void 0:n.customOffsetCalculator},qi=e=>{var t;return null!=(t=e.options.timezone.zones)?t:[]};function Xi(){const e=Ii($i),t=Tt(e);return pe((n,i=new Zt)=>i.tz(t?e(n,i.getTime()):n),[e,t])}function Ki(){const e=Ii(ji),t=Xi(),n=pe(()=>t(e),[e,t]);return[e,n]}function Ji({dayName:e,style:t,type:n,theme:i}){const r=Vi(),[,o]=Ki(),a=o(),{day:s}=e,l="week"===n?function({dayName:e,theme:t,today:n}){var i,r;const{day:o,dateInstance:a}=e,s=kn(n,a),l=!s&&a<n;return Mn(o)?t.common.holiday.color:l?null==(i=t.week)?void 0:i.pastDay.color:In(o)?t.common.saturday.color:s?null==(r=t.week)?void 0:r.today.color:t.common.dayName.color}({dayName:e,theme:i,today:a}):function({dayName:e,theme:t}){const{day:n}=e;return Mn(n)?t.common.holiday.color:In(n)?t.common.saturday.color:t.common.dayName.color}({dayName:e,theme:i}),c=n+"DayName";return E("div",{className:Ct("day-name-item",n),style:t},E("span",{className:Ct({["holiday-"+ri(s)]:Cn(s)}),style:{color:l},onClick:()=>{(function(e,t){return"week"===e})(n)&&r.fire("clickDayName",{date:_n(e.dateInstance,"YYYY-MM-DD")})},"data-testid":`dayName-${n}-${ri(s)}`},E(zi,{template:c,param:e})))}const Zi=Pi("common"),Qi=Pi("month"),er=e=>e.week.dayGridLeft,tr=e=>e.week.timeGridLeft,nr=e=>e.month.moreView,ir=e=>e.month.gridCell,rr={border:"1px solid #e5e5e5",backgroundColor:"white",holiday:{color:"#ff4040"},saturday:{color:"#333"},dayName:{color:"#333"},today:{color:"#fff"},gridSelection:{backgroundColor:"rgba(81, 92, 230, 0.05)",border:"1px solid #515ce6"}},or={dayName:{borderLeft:"none",borderTop:"1px solid #e5e5e5",borderBottom:"1px solid #e5e5e5",backgroundColor:"inherit"},weekend:{backgroundColor:"inherit"},today:{color:"inherit",backgroundColor:"rgba(81, 92, 230, 0.05)"},pastDay:{color:"#bbb"},panelResizer:{border:"1px solid #e5e5e5"},dayGrid:{borderRight:"1px solid #e5e5e5",backgroundColor:"inherit"},dayGridLeft:{borderRight:"1px solid #e5e5e5",backgroundColor:"inherit",width:"72px"},timeGrid:{borderRight:"1px solid #e5e5e5"},timeGridLeft:{backgroundColor:"inherit",borderRight:"1px solid #e5e5e5",width:"72px"},timeGridLeftAdditionalTimezone:{backgroundColor:"white"},timeGridHalfHourLine:{borderBottom:"none"},timeGridHourLine:{borderBottom:"1px solid #e5e5e5"},nowIndicatorLabel:{color:"#515ce6"},nowIndicatorPast:{border:"1px dashed #515ce6"},nowIndicatorBullet:{backgroundColor:"#515ce6"},nowIndicatorToday:{border:"1px solid #515ce6"},nowIndicatorFuture:{border:"none"},pastTime:{color:"#bbb"},futureTime:{color:"#333"},gridSelection:{color:"#515ce6"}},ar={dayName:{borderLeft:"none",backgroundColor:"inherit"},holidayExceptThisMonth:{color:"rgba(255, 64, 64, 0.4)"},dayExceptThisMonth:{color:"rgba(51, 51, 51, 0.4)"},weekend:{backgroundColor:"inherit"},moreView:{border:"1px solid #d5d5d5",boxShadow:"0 2px 6px 0 rgba(0, 0, 0, 0.1)",backgroundColor:"white",width:null,height:null},gridCell:{headerHeight:31,footerHeight:null},moreViewTitle:{backgroundColor:"inherit"}};function sr(e){return{setTheme:t=>{e(gt(e=>{e.common=Qt(e.common,t.common),e.week=Qt(e.week,t.week),e.month=Qt(e.month,t.month)}))},setCommonTheme:t=>{e(gt(e=>{e.common=Qt(e.common,t)}))},setWeekTheme:t=>{e(gt(e=>{e.week=Qt(e.week,t)}))},setMonthTheme:t=>{e(gt(e=>{e.month=Qt(e.month,t)}))}}}const lr=(e={})=>t=>v(_(_(_({},function(e={}){return{common:Qt(rr,e)}}(null==e?void 0:e.common)),function(e={}){return{week:Qt(or,e)}}(null==e?void 0:e.week)),function(e={}){return{month:Qt(ar,e)}}(null==e?void 0:e.month)),{dispatch:_({},sr(t))}),{StoreProvider:cr,useInternalStore:ur,useStore:dr}=Ti();function hr(){return dr(Qi)}function pr(e){return{common:{saturday:e.common.saturday,holiday:e.common.holiday,today:e.common.today,dayName:e.common.dayName},week:{pastDay:e.week.pastDay,today:e.week.today,dayName:e.week.dayName}}}function fr(e){return{common:{saturday:e.common.saturday,holiday:e.common.holiday,today:e.common.today,dayName:e.common.dayName},month:{dayName:e.month.dayName}}}function mr({dayNames:e,marginLeft:t="0",rowStyleInfo:n,type:i="month"}){var r,o;const a=dr("month"===i?fr:pr),s=null!=(o=null==(r=a[i])?void 0:r.dayName)?o:{},{backgroundColor:l="white",borderLeft:c=null}=s,u=y(s,["backgroundColor","borderLeft"]),{borderTop:d=null,borderBottom:h=null}=u;return E("div",{"data-testid":"grid-header-"+i,className:Ct("day-names",i),style:{backgroundColor:l,borderTop:d,borderBottom:h}},E("div",{className:Ct("day-name-container"),style:{marginLeft:t}},e.map((e,t)=>E(Ji,{type:i,key:"dayNames-"+e.day,dayName:e,style:{width:Mt(n[t].width),left:Mt(n[t].left),borderLeft:c},theme:a}))))}var gr=(e=>(e.header="header",e.footer="footer",e))(gr||{});function _r(e,t=!0){const n=[];let i;return e.length?(n[0]=[e[0].cid()],e.slice(1).forEach((r,o)=>{i=e.slice(0,o+1).reverse();const a=i.find(e=>r.collidesWith(e,t));a?n.slice().reverse().some(e=>!!~e.indexOf(a.cid())&&(e.push(r.cid()),!0)):n.push([r.cid()])}),n):n}function vr(e,t){let{length:n}=e;for(;n>0;)if(n-=1,!_t(e[n][t]))return n;return-1}function yr(e,t,n=!0){const i=[];return t.forEach(t=>{const r=[[]];t.forEach(t=>{const i=e.get(t);let o,a,s=0,l=!1;for(;!l;)a=vr(r,s),-1===a?(r[0].push(i),l=!0):i.collidesWith(r[a][s],n)||(o=a+1,_t(r[o])&&(r[o]=[]),r[o][s]=i,l=!0),s+=1}),i.push(r)}),i}function wr(e,t){return n=>{const i=n.getStarts();return!(n.getEnds()<e||i>t)}}function br(e,t,n,i){const r=wn(e,t,864e5).map(e=>_n(e,"YYYYMMDD"));n.forEach(e=>{e.forEach(e=>{e.forEach((e,t)=>{if(!e)return;const n=_n(e.getStarts(),"YYYYMMDD"),o=wn(yn(e.getStarts()),Sn(e.getEnds()),864e5).length;e.top=t,e.left=r.indexOf(n),e.width=o,null==i||i(e)})})})}function Dr(e,t,n){return n.getStarts()<e&&(n.exceedLeft=!0,n.renderStarts=new Zt(e)),n.getEnds()>t&&(n.exceedRight=!0,n.renderEnds=new Zt(t)),n}function kr(e,t,n){return n instanceof Un?(n.each(n=>(Dr(e,t,n),!0)),null):Dr(e,t,n)}function xr(e){const t=new Un(e=>e.cid());return e.each((function(e){t.add(new tn(e))})),t}function Er({model:e}){return e.isAllday||e.hasMultiDates}function Tr(e){return!Er(e)}function Sr(e){e.top=e.top||0,e.top+=1}function Cr(e,t){const n=t.filter(Er),i=t.filter(Tr).sort(nn.event.asc),r={};i.forEach(t=>{const i=_n(t.getStarts(),"YYYYMMDD");let o=r[i];_t(o)&&(o=r[i]=function(e,t,n){const i=[];return e[t].forEach(e=>{n.doWhenHas(e,e=>{i.push(e.top)})}),i.length>0?Math.max(...i):0}(e,i,n)),r[i]=t.top=o+1})}function Mr(e,t){const{start:n,end:i,andFilters:r=[],alldayFirstMode:o=!1}=t,{events:a,idsOfDay:s}=e,l=Un.and(...[wr(n,i)].concat(r)),c=xr(a.filter(l));!function(e){e.each(e=>{const{model:t}=e,n=t.getStarts(),i=t.getEnds();t.hasMultiDates=!kn(n,i),!t.isAllday&&t.hasMultiDates&&(e.renderStarts=yn(n),e.renderEnds=Sn(i))})}(c),function(e,t,n){n.each(n=>{(n.model.isAllday||n.model.hasMultiDates)&&kr(yn(e),Sn(t),n)})}(n,i,c);const u=c.sort(nn.event.asc),d=yr(c,_r(u,!1),!1);return br(n,i,d,Sr),o?Cr(s,c):function(e,t){const n=t.filter(Er),i=t.filter(Tr).sort(nn.event.asc),r={};i.forEach(t=>{const i=_n(t.getStarts(),"YYYYMMDD");let o=r[i];if(_t(o)&&(o=r[i]=[],e[i].forEach(e=>{n.doWhenHas(e,e=>{o.push(e.top)})})),o.indexOf(t.top)>=0){const e=Math.max(...o)+1;for(let n=1;n<=e&&(t.top=n,!(o.indexOf(t.top)<0));n+=1);}o.push(t.top)})}(s,c),d}function Ir(e,t){return 0===e&&24===t?e=>e.sort(nn.event.asc):n=>{return n.filter((i=e,r=t,e=>{const t=e.getStarts(),n=e.getEnds(),o=t.getTime(),a=n.getTime(),s=t.getFullYear(),l=t.getMonth(),c=t.getDate(),u=new Zt(s,l,c).setHours(i),d=new Zt(s,l,c).setHours(r);return o>=u&&o<d||a>u&&a<=d||o<u&&a>u||a>d&&o<d})).sort(nn.event.asc);var i,r}}function Nr(e,t){const{start:n,end:i,uiModelTimeColl:r,hourStart:o,hourEnd:a}=t,s=function(e,t,n,i){const r={};return Vn(t,n).forEach(t=>{const n=_n(t,"YYYYMMDD"),o=e[n],a=r[n]=new Un(e=>e.cid());o&&o.length&&o.forEach(e=>{i.doWhenHas(e,e=>{a.add(e)})})},{}),r}(e,n,i,r),l={},c=Ir(o,a);return Object.entries(s).forEach(([e,t])=>{const n=yr(t,_r(c(t),!0),!0);l[e]=n}),l}function Ar(e,t,n){if(!n||!n.size)return[];!function(e){e.each(e=>{const{model:t}=e;t.hasMultiDates=!0,e.renderStarts=yn(t.getStarts()),e.renderEnds=Sn(t.getEnds())})}(n),kr(e,t,n);const i=n.sort(nn.event.asc),r=yr(n,_r(i,!0),!0);return br(e,t,r),r}function Pr(e,t,n){const i=Math.max(e,...t);return Math.min(i,...n)}function Or(e,t,n){return t*n/e}function Rr(e,t,n){return t<=e&&e<=n}function Lr(e,t){e.forEach(e=>{e.forEach(e=>{e.forEach((e,n)=>{t(e,n)})})})}function Hr(e,t){return({top:n})=>e>=n*t}function Fr(e,t,n){return e.filter(function(e,t){return({top:n})=>e<n*t}(t,n)).length}function Yr(e,t,n){const i=(e=>e.filter(e=>Cn(e.getDay())).length)(e),r=e.length,o=i===r,a=n/(t&&!o?2*r-i:r),s=e.map(e=>{const n=e.getDay();return!t||o||Cn(n)?a:2*a}),l=s.reduce((e,t,n)=>n?[...e,e[n-1]+s[n-1]]:[0],[]);return{widthList:s,leftList:l}}function Wr(e,t,n){return e.reduce((e,i,r)=>t<=r&&r<=n?e+i:e,0)}function Br(e,t){return t.findIndex(t=>e>=yn(t)&&e<=Sn(t))}const zr=(e,t,n,i)=>{const{widthList:r}=Yr(n,i,100);let o=0,a=n.length-1;return n.forEach((n,i)=>{n<=e&&(o=i),n<=t&&(a=i)}),{width:Wr(r,o,a),left:o?Wr(r,0,o-1):0}};function Ur(e,t,n){const{idsOfDay:i}=t,r=Mr(t,{start:e[0],end:Sn(e[e.length-1])}),o=[];Lr(r,t=>{const i=t.model.cid();o[i]=function(e,t,n=!1){const i=e.getStarts(),r=e.getEnds(),{width:o,left:a}=zr(i,r,t,n);return e.width=o,e.left=a,e}(t,e,n)});const a=Object.keys(i).reduce((e,t)=>{const n=i[t];return e[t]=n.map(e=>o[e]).filter(e=>!!e),e},{});return{uiModels:Object.values(o),gridDateEventModelMap:a}}const Gr=(e,t,n=!1)=>(Lr(e,e=>{const i=e.getStarts(),r=e.getEnds(),{width:o,left:a}=zr(i,r,t,n);e.width=o,e.left=a,e.top+=1}),Vr(e));function Vr(e){return e.flatMap(e=>e.flatMap(e=>(e=>e.filter(e=>!!e))(e)))}const jr=(e,t,{narrowWeekend:n,hourStart:i,hourEnd:r,weekStartDate:o,weekEndDate:a})=>{const s=function(e,t){var n,i;const{start:r,end:o,panels:a,andFilters:s=[],options:l}=t,{events:c,idsOfDay:u}=e,d=null!=(n=null==l?void 0:l.hourStart)?n:0,h=null!=(i=null==l?void 0:l.hourEnd)?i:24,p=Un.and(...[wr(r,o)].concat(s)),f=xr(c.filter(p)).groupBy(jn);return a.reduce((e,t)=>{const{name:n,type:i}=t;return Et(f[n])?e:v(_({},e),{[n]:"daygrid"===i?Ar(r,o,f[n]):Nr(u,{start:r,end:o,uiModelTimeColl:f[n],hourStart:d,hourEnd:h})})},{milestone:[],task:[],allday:[],time:{}})}(t,{start:o,end:a,panels:[{name:"milestone",type:"daygrid",show:!0},{name:"task",type:"daygrid",show:!0},{name:"allday",type:"daygrid",show:!0},{name:"time",type:"timegrid",show:!0}],andFilters:[],options:{hourStart:i,hourEnd:r}});return Object.keys(s).reduce((t,i)=>{const r=s[i];return v(_({},t),{[i]:Array.isArray(r)?Gr(r,e,n):(o=r,Array.from(new Set(Object.values(o).reduce((e,t)=>e.concat(...Vr(t)),[]))))});var o},{milestone:[],allday:[],task:[],time:[]})};function $r(e,{workweek:t=!1,visibleWeeksCount:n=0,startDayOfWeek:i=0,isAlways6Weeks:r=!0}){const o=new Zt(e),a=n>0,s=a?o:Nn(o),l=function(e,t){const n=bn(e);return n.setDate(e.getDate()-t),n}(s,s.getDay()-i+(s.getDay()<i?7:0)),c=l.getDay(),u=function(e){const t=Nn(e);return t.setMonth(t.getMonth()+1),t.setDate(t.getDate()-1),t.setHours(23,59,59,999),t}(o).getDate(),d=Hn(l,s),h=u+Math.abs(d);let p=6;return a?p=n:!1===r&&(p=Math.ceil(h/7)),yt(0,p).map(e=>yt(0,7).reduce((n,i)=>{const r=7*e+i;if(!t||t&&!Cn((r+c)%7)){const e=Ln(l,r);n.push(e)}return n},[]))}function qr(e,{startDayOfWeek:t=ln.SUN,workweek:n}){const i=yn(e),r=i.getDay()-t;return(r>=0?yt(-r,7-r):yt(-7-r,-r)).reduce((e,t)=>{const r=Ln(i,t);return n&&Cn(r.getDay())||e.push(r),e},[])}function Xr(e,t){var n;const i=function(e,t=!1){const n=e.length,i=n>5&&t,r=i?100/(n-1):100/n;return e.map(e=>{const t=i&&Cn(e.getDay())?r/2:r;return{date:e,width:t}}).reduce((e,t,n)=>{const i=e[n-1];return e.push(v(_({},t),{left:0===n?0:i.left+i.width})),e},[])}(e,null!=(n=t.narrowWeekend)&&n),r=2*(t.hourEnd-t.hourStart),o=100/r;return{columns:i,rows:yt(r).map((e,n)=>{const i=n%2==1,r=t.hourStart+Math.floor(e/2),a=`${r}:${i?"30":"00"}`.padStart(5,"0"),s=(i?r+1+":00":r+":30").padStart(5,"0");return{top:o*n,height:o,startTime:a,endTime:s}})}}function Kr({rowsCount:e,columnsCount:t,container:n,narrowWeekend:i=!1,startDayOfWeek:r=ln.SUN}){if(Et(n))return()=>null;const o=yt(r,r+t).map(e=>e%7),a=i?o.filter(e=>Cn(e)).length:0;return function(r){const{left:s,top:l,width:c,height:u}=n.getBoundingClientRect(),[d,h]=function({clientX:e,clientY:t},{left:n,top:i,clientLeft:r,clientTop:o}){return[e-n-r,t-i-o]}(r,{left:s,top:l,clientLeft:n.clientLeft,clientTop:n.clientTop});if(d<0||h<0||d>c||h>u)return null;const p=i?c/(t-a+1):c/t,f=o.map(e=>i&&Cn(e)?p/2:p),m=[];f.forEach((e,t)=>{0===t?m.push(0):m.push(m[t-1]+f[t-1])});return{columnIndex:an(m,e=>d>=e),rowIndex:(g=e,_=u,v=h,Pr(Math.floor(Or(_,g,v)),[0],[g-1]))};var g,_,v}}function Jr(e){return e.common.gridSelection}function Zr({type:e,gridSelectionData:t,weekDates:n,narrowWeekend:i}){const{backgroundColor:r,border:o}=dr(Jr),{startCellIndex:a,endCellIndex:s}=t,{left:l,width:c}=((e,t,n,i)=>{const{widthList:r}=Yr(n,i,100);return{left:e?Wr(r,0,e-1):0,width:Wr(r,null!=e?e:0,t<0?n.length-1:t)}})(Math.min(a,s),Math.max(a,s),n,i),u={left:Mt(l),width:Mt(c),height:Mt(100),backgroundColor:r,border:o};return c>0?E("div",{className:Ct(e,"grid-selection"),style:u}):null}function Qr(e,t,n){return{startColumnIndex:n?t.columnIndex:e.columnIndex,startRowIndex:n?t.rowIndex:e.rowIndex,endColumnIndex:n?e.columnIndex:t.columnIndex,endRowIndex:n?e.rowIndex:t.rowIndex}}const eo={sortSelection:(e,t)=>Qr(e,t,e.columnIndex>t.columnIndex||e.columnIndex===t.columnIndex&&e.rowIndex>t.rowIndex),getDateFromCollection:(e,t)=>{const n=e;return[Rn(n.columns[t.startColumnIndex].date,n.rows[t.startRowIndex].startTime),Rn(n.columns[t.endColumnIndex].date,n.rows[t.endRowIndex].endTime)]},calculateSelection:function(e,t,n){if(Et(e))return null;const{startColumnIndex:i,endColumnIndex:r,endRowIndex:o,startRowIndex:a}=e;if(!Rr(t,i,r))return null;const s={startRowIndex:a,endRowIndex:o,isSelectingMultipleColumns:i!==r,isStartingColumn:t===i};return i<t&&t<r?(s.startRowIndex=0,s.endRowIndex=n):i!==r&&(i===t?s.endRowIndex=n:r===t&&(s.startRowIndex=0)),s}};const to={sortSelection:(e,t)=>Qr(e,t,e.rowIndex>t.rowIndex||e.rowIndex===t.rowIndex&&e.columnIndex>t.columnIndex),getDateFromCollection:(e,t)=>{const n=e;return[n[t.startRowIndex][t.startColumnIndex],n[t.endRowIndex][t.endColumnIndex]]},calculateSelection:function(e,t,n){if(!(Tt(e)&&Tt(t)&&Tt(n)))return null;const{startRowIndex:i,startColumnIndex:r,endRowIndex:o,endColumnIndex:a}=e;if(!Rr(t,Math.min(i,o),Math.max(i,o)))return null;let s=r,l=a;return i<t&&(s=0),o>t&&(l=n-1),{startCellIndex:s,endCellIndex:l}}};const no={sortSelection:(e,t)=>Qr(e,t,e.columnIndex>t.columnIndex),getDateFromCollection:(e,t)=>{const n=e;return[n[t.startColumnIndex],n[t.endColumnIndex]]},calculateSelection:function(e){return Tt(e)?{startCellIndex:e.startColumnIndex,endCellIndex:e.endColumnIndex}:null}};function io(e){return no.calculateSelection(e.gridSelection.dayGridWeek)}function ro({weekDates:e,narrowWeekend:t}){const n=Ii(io);return Et(n)?null:E(Zr,{type:"allday",gridSelectionData:n,weekDates:e,narrowWeekend:t})}function oo(e,t){for(var n in t)e[n]=t[n];return e}function ao(e,t){for(var n in e)if("__source"!==n&&!(n in t))return!0;for(var i in t)if("__source"!==i&&e[i]!==t[i])return!0;return!1}function so(e){this.props=e}function lo(e,t){function n(e){var n=this.props.ref,i=n==e.ref;return!i&&n&&(n.call?n(null):n.current=null),t?!t(this.props,e)||!i:ao(this.props,e)}function i(t){return this.shouldComponentUpdate=n,E(e,t)}return i.displayName="Memo("+(e.displayName||e.name)+")",i.prototype.isReactComponent=!0,i.__f=!0,i}(so.prototype=new C).isPureReactComponent=!0,so.prototype.shouldComponentUpdate=function(e,t){return ao(this.props,e)||ao(this.state,t)};var co=r.__b;r.__b=function(e){e.type&&e.type.__f&&e.ref&&(e.props.ref=e.ref,e.ref=null),co&&co(e)};var uo="undefined"!=typeof Symbol&&Symbol.for&&Symbol.for("react.forward_ref")||3911;function ho(e){function t(t){var n=oo({},t);return delete n.ref,e(n,t.ref||null)}return t.$$typeof=uo,t.render=t,t.prototype.isReactComponent=t.__f=!0,t.displayName="ForwardRef("+(e.displayName||e.name)+")",t}var po=r.__e;r.__e=function(e,t,n,i){if(e.then)for(var r,o=t;o=o.__;)if((r=o.__c)&&r.__c)return null==t.__e&&(t.__e=n.__e,t.__k=n.__k),r.__c(e,t);po(e,t,n,i)};var fo=r.unmount;function mo(){this.__u=0,this.t=null,this.__b=null}function go(e){var t=e.__.__c;return t&&t.__a&&t.__a(e)}function _o(){this.u=null,this.o=null}r.unmount=function(e){var t=e.__c;t&&t.__R&&t.__R(),t&&!0===e.__h&&(e.type=null),fo&&fo(e)},(mo.prototype=new C).__c=function(e,t){var n=t.__c,i=this;null==i.t&&(i.t=[]),i.t.push(n);var r=go(i.__v),o=!1,a=function(){o||(o=!0,n.__R=null,r?r(s):s())};n.__R=a;var s=function(){if(!--i.__u){if(i.state.__a){var e=i.state.__a;i.__v.__k[0]=function e(t,n,i){return t&&(t.__v=null,t.__k=t.__k&&t.__k.map((function(t){return e(t,n,i)})),t.__c&&t.__c.__P===n&&(t.__e&&i.insertBefore(t.__e,t.__d),t.__c.__e=!0,t.__c.__P=i)),t}(e,e.__c.__P,e.__c.__O)}var t;for(i.setState({__a:i.__b=null});t=i.t.pop();)t.forceUpdate()}},l=!0===t.__h;i.__u++||l||i.setState({__a:i.__b=i.__v.__k[0]}),e.then(a,a)},mo.prototype.componentWillUnmount=function(){this.t=[]},mo.prototype.render=function(e,t){if(this.__b){if(this.__v.__k){var n=document.createElement("div"),i=this.__v.__k[0].__c;this.__v.__k[0]=function e(t,n,i){return t&&(t.__c&&t.__c.__H&&(t.__c.__H.__.forEach((function(e){"function"==typeof e.__c&&e.__c()})),t.__c.__H=null),null!=(t=oo({},t)).__c&&(t.__c.__P===i&&(t.__c.__P=n),t.__c=null),t.__k=t.__k&&t.__k.map((function(t){return e(t,n,i)}))),t}(this.__b,n,i.__O=i.__P)}this.__b=null}var r=t.__a&&E(S,null,e.fallback);return r&&(r.__h=null),[E(S,null,t.__a?null:e.children),r]};var vo=function(e,t,n){if(++n[1]===n[0]&&e.o.delete(t),e.props.revealOrder&&("t"!==e.props.revealOrder[0]||!e.o.size))for(n=e.u;n;){for(;n.length>3;)n.pop()();if(n[1]<n[0])break;e.u=n=n[2]}};function yo(e){return this.getChildContext=function(){return e.context},e.children}function wo(e){var t=this,n=e.i;t.componentWillUnmount=function(){j(null,t.l),t.l=null,t.i=null},t.i&&t.i!==n&&t.componentWillUnmount(),e.__v?(t.l||(t.i=n,t.l={nodeType:1,parentNode:n,childNodes:[],appendChild:function(e){this.childNodes.push(e),t.i.appendChild(e)},insertBefore:function(e,n){this.childNodes.push(e),t.i.appendChild(e)},removeChild:function(e){this.childNodes.splice(this.childNodes.indexOf(e)>>>1,1),t.i.removeChild(e)}}),j(E(yo,{context:t.context},e.__v),t.l)):t.l&&t.componentWillUnmount()}function bo(e,t){var n=E(wo,{__v:e,i:t});return n.containerInfo=t,n}(_o.prototype=new C).__a=function(e){var t=this,n=go(t.__v),i=t.o.get(e);return i[0]++,function(r){var o=function(){t.props.revealOrder?(i.push(r),vo(t,e,i)):r()};n?n(o):o()}},_o.prototype.render=function(e){this.u=null,this.o=new Map;var t=R(e.children);e.revealOrder&&"b"===e.revealOrder[0]&&t.reverse();for(var n=t.length;n--;)this.o.set(t[n],this.u=[1,0,this.u]);return e.children},_o.prototype.componentDidUpdate=_o.prototype.componentDidMount=function(){var e=this;this.o.forEach((function(t,n){vo(e,n,t)}))};var Do="undefined"!=typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103,ko=/^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|shape|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,xo="undefined"!=typeof document,Eo=function(e){return("undefined"!=typeof Symbol&&"symbol"==typeof Symbol()?/fil|che|rad/i:/fil|che|ra/i).test(e)};C.prototype.isReactComponent={},["componentWillMount","componentWillReceiveProps","componentWillUpdate"].forEach((function(e){Object.defineProperty(C.prototype,e,{configurable:!0,get:function(){return this["UNSAFE_"+e]},set:function(t){Object.defineProperty(this,e,{configurable:!0,writable:!0,value:t})}})}));var To=r.event;function So(){}function Co(){return this.cancelBubble}function Mo(){return this.defaultPrevented}r.event=function(e){return To&&(e=To(e)),e.persist=So,e.isPropagationStopped=Co,e.isDefaultPrevented=Mo,e.nativeEvent=e};var Io={configurable:!0,get:function(){return this.class}},No=r.vnode;r.vnode=function(e){var t=e.type,n=e.props,i=n;if("string"==typeof t){var r=-1===t.indexOf("-");for(var o in i={},n){var a=n[o];xo&&"children"===o&&"noscript"===t||"value"===o&&"defaultValue"in n&&null==a||("defaultValue"===o&&"value"in n&&null==n.value?o="value":"download"===o&&!0===a?a="":/ondoubleclick/i.test(o)?o="ondblclick":/^onchange(textarea|input)/i.test(o+t)&&!Eo(n.type)?o="oninput":/^onfocus$/i.test(o)?o="onfocusin":/^onblur$/i.test(o)?o="onfocusout":/^on(Ani|Tra|Tou|BeforeInp|Compo)/.test(o)?o=o.toLowerCase():r&&ko.test(o)?o=o.replace(/[A-Z0-9]/,"-$&").toLowerCase():null===a&&(a=void 0),/^oninput$/i.test(o)&&(o=o.toLowerCase(),i[o]&&(o="oninputCapture")),i[o]=a)}"select"==t&&i.multiple&&Array.isArray(i.value)&&(i.value=R(n.children).forEach((function(e){e.props.selected=-1!=i.value.indexOf(e.props.value)}))),"select"==t&&null!=i.defaultValue&&(i.value=R(n.children).forEach((function(e){e.props.selected=i.multiple?-1!=i.defaultValue.indexOf(e.props.value):i.defaultValue==e.props.value}))),e.props=i,n.class!=n.className&&(Io.enumerable="className"in n,null!=n.className&&(i.class=n.className),Object.defineProperty(i,"className",Io))}e.$$typeof=Do,No&&No(e)};var Ao=r.__r;function Po({index:e,exceedCount:t,isClicked:n,onClickExceedCount:i}){const r={display:n?"none":""};return t&&!n?E("span",{className:Ct("weekday-exceed-in-week"),onClick:()=>i(e),style:r},E(zi,{template:"weekGridFooterExceed",param:t})):null}function Oo({isClicked:e,isClickedIndex:t,onClickCollapseButton:n}){return e&&t?E("span",{className:Ct("weekday-exceed-in-week"),onClick:n},E(zi,{template:"collapseBtnTitle"})):null}function Ro({width:e,left:t,index:n,exceedCount:i,isClicked:r,onClickExceedCount:o,isClickedIndex:a,onClickCollapseButton:s,isLastCell:l}){const{borderRight:c,backgroundColor:u}=dr(pe(e=>e.week.dayGrid,[])),d={width:e,left:t,borderRight:l?"none":c,backgroundColor:u};return E("div",{className:Ct("panel-grid"),style:d},E(Po,{index:n,exceedCount:i,isClicked:r,onClickExceedCount:o}),E(Oo,{isClickedIndex:a,isClicked:r,onClickCollapseButton:s}))}r.__r=function(e){Ao&&Ao(e),e.__c};const Lo=lo((function({uiModels:e,weekDates:t,narrowWeekend:n,height:i,clickedIndex:r,isClickedCount:o,onClickExceedCount:a,onClickCollapseButton:s}){const{widthList:l,leftList:c}=Yr(t,n,100),u=t.length-1;return E(S,null,t.map((t,n)=>{const d=Mt(l[n]),h=Mt(c[n]);var p;const f=Fr(e.filter((p=t,e=>{const t=yn(e.getStarts()),n=yn(e.getEnds());return t<=p&&p<=n})),i,24),m=n===r,g=n===u;return E(Ro,{key:"panel-grid-"+t.getDate(),width:d,left:h,index:n,exceedCount:f,isClicked:o,onClickExceedCount:a,isClickedIndex:m,onClickCollapseButton:s,isLastCell:g})}))}));function Ho({onMouseDown:e}){return E("span",{className:`${Ct("weekday-resize-handle")} ${Ct("handle-y")}`,onMouseDown:e,"data-testid":"horizontal-event-resize-icon"},E("i",{className:`${Ct("icon")} ${Ct("ic-handle-y")}`}))}const Fo=$(null),Yo=Fo.Provider,Wo=()=>{const e=fe(Fo);if(_t(e))throw new Error("LayoutContainerProvider is not found");return e},Bo="panelResizer",zo=(e,t)=>`event/${e}/resize/${t}`,Uo=(e,t)=>`event/${e}/move/${t}`,Go=e=>"gridSelection/"+e;function Vo(e){return Ii(pe(t=>t.calendar.calendars.find(t=>t.id===e),[e]))}function jo(e){var t;const n=Vo(null!=(t=null==e?void 0:e.calendarId)?t:null);return he(()=>({color:null==n?void 0:n.color,borderColor:null==n?void 0:n.borderColor,backgroundColor:null==n?void 0:n.backgroundColor,dragBackgroundColor:null==n?void 0:n.dragBackgroundColor}),[n])}var $o=(e=>(e.ESCAPE="Escape",e))($o||{});const qo={Escape:27};function Xo(e,t){const n=Ni(),i=de(e),r=de(t);ce(()=>{i.current=e,r.current=t},[e,t]),ce(()=>n.subscribe(e=>r.current(e),e=>i.current(e)),[e,n])}function Ko(e,{onInit:t,onDragStart:n,onDrag:i,onMouseUp:r,onPressESCKey:o}={}){const{initDrag:a,setDragging:s,cancelDrag:l,reset:c}=Ai("dnd"),u=de(Ni().getState().dnd);Xo(Yi,e=>{u.current=e});const[d,h]=se(!1),p=de(null),f=de(null),m=de(null),g=pe(n=>{0===n.button&&(n.currentTarget&&(n.currentTarget.ondragstart=function(){return!1}),n.preventDefault(),h(!0),a({draggingItemType:e,initX:n.clientX,initY:n.clientY}),null==t||t(n,u.current))},[t,e,a]),_=pe(t=>{const{initX:r,initY:o,draggingState:a,draggingItemType:l}=u.current;if(l!==e)return h(!1),void c();if(!Tt(r)||!Tt(o)||function(e,t,n,i){return Math.abs(e-n)>=3||Math.abs(t-i)>=3}(r,o,t.clientX,t.clientY)){if(a<=Jn.INIT)return s({x:t.clientX,y:t.clientY}),void(null==n||n(t,u.current));s({x:t.clientX,y:t.clientY}),null==i||i(t,u.current)}},[e,i,n,s,c]),v=pe(e=>{e.stopPropagation(),d&&(null==r||r(e,u.current),h(!1),c())},[d,r,c]),y=pe(e=>{(function(e,t){return e.key?e.key===t:e.keyCode===qo[t]})(e,$o.ESCAPE)&&(h(!1),l(),null==o||o(e,u.current))},[o,l]);return ce(()=>{p.current=_,f.current=v,m.current=y},[y,_,v]),ce(()=>{const e=e=>{var t;return null==(t=p.current)?void 0:t.call(p,e)},t=e=>{var t;return null==(t=f.current)?void 0:t.call(f,e)},n=e=>{var t;return null==(t=m.current)?void 0:t.call(m,e)};return d?(document.addEventListener("mousemove",e),document.addEventListener("mouseup",t),document.addEventListener("keydown",n),()=>{document.removeEventListener("mousemove",e),document.removeEventListener("mouseup",t),document.removeEventListener("keydown",n)}):mi},[d,c]),g}function Jo(e,t){return e?t:void 0}function Zo(e){return{vertical:e?5:2,horizontal:8}}function Qo(e,t){const n=e?0:"2px",i=t?0:"2px";return`${n} ${i} ${i} ${n}`}function ea({model:e}){return`${e.calendarId?e.calendarId+"-":""}${e.id?e.id+"-":""}${e.title}`}const ta={eventBody:Ct("weekday-event"),eventTitle:Ct("weekday-event-title"),eventDot:Ct("weekday-event-dot"),moveEvent:Ct("dragging--move-event"),resizeEvent:Ct("dragging--resize-horizontal-event")};function na({flat:e=!1,uiModel:t,eventHeight:n,headerHeight:i,resizingWidth:r=null,movingLeft:o=null}){const{currentView:a}=Ii(Hi),{useDetailPopup:s,isReadOnly:l}=Ii(Fi),{setDraggingEventUIModel:c}=Ai("dnd"),{showDetailPopup:u}=Ai("popup"),d=Wo(),h=Vi(),p=jo(t.model),[f,m]=se(!1),g=de(null),{isReadOnly:y,id:w,calendarId:b}=t.model,D=!l&&!y&&Et(r)&&Et(o),k=e=>{c(t),null==d||d.classList.add(e)},x=e=>{m(!1),null==d||d.classList.remove(e)};Xo(Yi,({draggingEventUIModel:e,draggingState:n})=>{n===Jn.DRAGGING&&(null==e?void 0:e.cid())===t.cid()&&Et(r)&&Et(o)?m(!0):m(!1)}),ce(()=>{D&&h.fire("afterRenderEvent",t.model.toEventObject())},[]);const T=Ko(zo("dayGrid",""+t.cid()),{onDragStart:()=>k(ta.resizeEvent),onMouseUp:()=>x(ta.resizeEvent),onPressESCKey:()=>x(ta.resizeEvent)}),S=Ko(Uo("dayGrid",""+t.cid()),{onDragStart:()=>{D&&k(ta.moveEvent)},onMouseUp:(n,{draggingState:i})=>{x(ta.moveEvent);const r=i<=Jn.INIT;r&&s&&g.current&&u({event:t.model,eventRect:g.current.getBoundingClientRect()},e),r&&h.fire("clickEvent",{event:t.model.toEventObject(),nativeEvent:n})},onPressESCKey:()=>x(ta.moveEvent)}),C=!f&&"month"===a&&"time"===t.model.category&&kn(t.model.start,t.model.end),M=!D||e||f||t.exceedRight,I=function({flat:e,uiModel:t,resizingWidth:n,movingLeft:i,eventHeight:r,headerHeight:o}){const{top:a,left:s,width:l,model:c}=t,u=Zo(e),d=e?{}:{width:n||Mt(l),left:Mt(null!=i?i:s),top:(a-1)*(r+u.vertical)+o,position:"absolute"};return Object.assign(d,c.customStyle)}({uiModel:t,eventHeight:n,headerHeight:i,flat:e,movingLeft:o,resizingWidth:r}),N=function({uiModel:e,flat:t,eventHeight:n,isDraggingTarget:i,calendarColor:r}){const{exceedLeft:o,exceedRight:a}=e,{color:s,backgroundColor:l,dragBackgroundColor:c,borderColor:u}=At(e,r),d={color:s,backgroundColor:i?c:l,borderLeft:o?"none":"3px solid "+u,borderRadius:Qo(o,a),overflow:"hidden",height:n,lineHeight:It(n),opacity:i?.5:1},h=Zo(t);return _(t?{marginTop:h.vertical}:{marginLeft:o?0:h.horizontal,marginRight:a?0:h.horizontal},d)}({uiModel:t,flat:e,eventHeight:n,isDraggingTarget:f,calendarColor:p});return E("div",{className:Ct("weekday-event-block",{"weekday-exceed-left":t.exceedLeft,"weekday-exceed-right":t.exceedRight}),style:I,"data-testid":Jo(D,ea(t)),"data-calendar-id":b,"data-event-id":w,ref:g},E("div",{className:ta.eventBody,style:v(_({},N),{backgroundColor:C?null:N.backgroundColor,borderLeft:C?null:N.borderLeft}),onMouseDown:e=>{e.stopPropagation(),S(e)}},C?E("span",{className:ta.eventDot,style:{backgroundColor:N.backgroundColor}}):null,E("span",{className:ta.eventTitle},E(zi,{template:t.model.category,param:t.model})),M?null:E(Ho,{onMouseDown:e=>{e.stopPropagation(),D&&T(e)}})))}function ia(e,t){const n=de(e);ce(()=>{n.current=e},[e]),ce(()=>{t&&n.current()},[t])}function ra(e){const[t,n]=se(null);Xo(Yi,t=>{if(Tt(t.x)&&Tt(t.y)){const i=e({clientX:t.x,clientY:t.y});i&&n(i)}});return[t,pe(()=>n(null),[])]}function oa(e,t){const[n,i]=se(!1),[r,o]=se(!1),[a,s]=se(null);Xo(Yi,({draggingItemType:n,draggingEventUIModel:r,draggingState:l})=>{const c=((e,t,n)=>{return Et(e)?null:(i=e,new RegExp(`^event/${t}/${n}/\\d+$`).test(i)?on(e.split("/")):null);var i})(n,e,t),u=Number(c)===(null==r?void 0:r.cid()),d=l===Jn.IDLE,h=l===Jn.CANCELED;Et(a)&&u&&s(r),Tt(a)&&(d||h)&&(i(!0),o(h))});return{isDraggingEnd:n,isDraggingCanceled:r,draggingEvent:a,clearDraggingEvent:()=>{s(null),i(!1),o(!1)}}}function aa({rowStyleInfo:e,gridPositionFinder:t}){const{movingEvent:n,movingLeft:i}=function({rowStyleInfo:e,gridPositionFinder:t}){const n=Vi(),{isDraggingEnd:i,isDraggingCanceled:r,draggingEvent:o,clearDraggingEvent:a}=oa("dayGrid","move"),s=de(null),[l,c]=ra(t),{columnIndex:u}=null!=l?l:{},d=he(()=>Et(o)?null:e.findIndex(({left:e})=>e===o.left),[e,o]),h=he(()=>{if(Et(u)||Et(s.current)||Et(d))return null;const t=d+u-s.current;return t<0?-e[-t].left:e[t].left},[u,e,d]);return ce(()=>{Et(s.current)&&Tt(u)&&(s.current=u)},[u]),ia(()=>{if(!r&&Tt(o)&&Tt(u)&&Tt(h)&&u!==s.current&&Tt(s.current)){const e=u-s.current,t=new Zt(o.model.getStarts()),i=new Zt(o.model.getEnds());t.addDate(e),i.addDate(e),n.fire("beforeUpdateEvent",{event:o.model.toEventObject(),changes:{start:t,end:i}})}a(),c(),s.current=null},i),he(()=>({movingEvent:o,movingLeft:h}),[h,o])}({rowStyleInfo:e,gridPositionFinder:t});return Et(n)?null:E(na,{uiModel:n,eventHeight:22,headerHeight:0,movingLeft:i})}function sa({weekDates:e,gridColWidthMap:t,gridPositionFinder:n}){const i=Vi(),{isDraggingEnd:r,isDraggingCanceled:o,draggingEvent:a,clearDraggingEvent:s}=oa("dayGrid","resize"),[l,c]=ra(n),{columnIndex:u}=null!=l?l:{},d=he(()=>{return a?(n=e,{start:Br((t=a).getStarts(),n),end:Br(t.getEnds(),n)}):{start:-1,end:-1};var t,n},[e,a]),h=he(()=>d.start>-1&&Tt(u)?t[d.start][u]:null,[u,t,d.start]);return ia(()=>{if(!o&&Tt(a)&&Tt(u)&&d.start<=u&&d.end!==u){const t=e[u];i.fire("beforeUpdateEvent",{event:a.model.toEventObject(),changes:{end:t}})}c(),s()},r),he(()=>({resizingEvent:a,resizingWidth:h}),[h,a])}function la({weekDates:e,gridColWidthMap:t,gridPositionFinder:n}){const{resizingEvent:i,resizingWidth:r}=sa({weekDates:e,gridColWidthMap:t,gridPositionFinder:n});return Et(i)?null:E(na,{uiModel:i,eventHeight:22,headerHeight:0,resizingWidth:r})}function ca(){const[e,t]=se(null);return[e,pe(e=>{e&&t(e)},[])]}function ua(e,t){const[n,i]=se(0),[r,o]=se(!1),{updateDayGridRowHeight:a}=Ai("weekViewLayout");return{clickedIndex:n,isClickedCount:r,onClickExceedCount:pe(n=>{o(!0),i(n),a({rowName:t,height:22*(e+1)})},[t,e,a]),onClickCollapseButton:pe(()=>{o(!1),a({rowName:t,height:72})},[t,a])}}function da({onClick:e,onDblClick:t,delay:n=300}){const i=de(mi),r=e=>{i.current=e},o=()=>{i.current()};ce(()=>o,[]);return[t=>{o(),function(e,t,n){let i;const r=o=>{i||(i=o);if(o-i>=t)return e(),void n(mi);const a=requestAnimationFrame(r);n(()=>cancelAnimationFrame(a))},o=requestAnimationFrame(r);n(()=>cancelAnimationFrame(o))}(e.bind(null,t),n,r)},e=>{o(),t(e)}]}const ha={dayGridMonth:"month",dayGridWeek:"allday",timeGrid:"time"};function pa({type:e,selectionSorter:t,dateGetter:n,dateCollection:i,gridPositionFinder:r}){const{useFormPopup:o,gridSelection:a}=Ii(Fi),{enableDblClick:s,enableClick:l}=a,{setGridSelection:c,addGridSelection:u,clearAll:d}=Ai("gridSelection"),{hideAllPopup:h,showFormPopup:p}=Ai("popup"),f=Vi(),m=Wo(),[g,_]=se(null),[v,y]=se(null),w=de(!1),b=de(null);Xo(pe(t=>t.gridSelection[e],[e]),e=>{b.current=e}),Xo(Yi,({draggingState:e,draggingItemType:t})=>{w.current=t===D&&e>=Jn.INIT});const D=Go(e),k=n=>{const i=r(n);Tt(v)&&Tt(i)&&c(e,t(v,i))},[x,E]=da({onClick:e=>{l&&T(e,!0)},onDblClick:e=>{s&&T(e,!0)},delay:250}),T=(t,r)=>{var a;if(r&&k(t),Tt(b.current)){const[r,s]=function(e,t){return e<t?[e,t]:[t,e]}(...n(i,b.current));if(o&&Tt(g)){const n={top:(t.clientY+g.y)/2,left:(t.clientX+g.x)/2};p({isCreationPopup:!0,title:"",location:"",start:r,end:s,isAllday:"timeGrid"!==e,isPrivate:!1,popupArrowPointPosition:n,close:d})}const l=`.${Ct(ha[e])}.${Ct("grid-selection")}`,c=Array.from(null!=(a=null==m?void 0:m.querySelectorAll(l))?a:[]);f.fire("selectDateTime",{start:r.toDate(),end:s.toDate(),isAllday:"timeGrid"!==e,nativeEvent:t,gridSelectionElements:c})}},S=pe(()=>{_(null),y(null),c(e,null)},[c,e]),C=Ko(D,{onInit:t=>{o&&(_({x:t.clientX,y:t.clientY}),h());const n=r(t);Tt(n)&&y(n),o||u(e,b.current)},onDragStart:e=>{k(e)},onDrag:e=>{w.current&&k(e)},onMouseUp:(e,{draggingState:t})=>{e.stopPropagation();const n=t<=Jn.INIT;n?(e=>{const t=e.detail<=1;(l||s&&!t)&&(l?t?x(e):E(e):T(e,!0))})(e):T(e,n)},onPressESCKey:S});return ce(()=>S,[S]),C}function fa({events:e,weekDates:t,height:n=72,options:i={},rowStyleInfo:r,gridColWidthMap:o}){const{isReadOnly:a}=Ii(Fi),s=dr(er),[l,c]=ca(),{narrowWeekend:u=!1,startDayOfWeek:d=ln.SUN}=i,h=he(()=>Math.max(0,...e.map(({top:e})=>e)),[e]),p=he(()=>Kr({container:l,rowsCount:1,columnsCount:t.length,narrowWeekend:u,startDayOfWeek:d}),[l,t.length,u,d]),{clickedIndex:f,isClickedCount:m,onClickExceedCount:g,onClickCollapseButton:_}=ua(h,"allday"),v=he(()=>e.filter(Hr(n,24)).map(e=>E(na,{key:"allday-DayEvent-"+e.cid(),uiModel:e,eventHeight:22,headerHeight:0})),[e,n]),y=pa({type:"dayGridWeek",gridPositionFinder:p,dateCollection:t,selectionSorter:no.sortSelection,dateGetter:no.getDateFromCollection});return E(S,null,E("div",{className:Ct("panel-title"),style:s},E(zi,{template:"alldayTitle",param:"alldayTitle"})),E("div",{className:Ct("allday-panel"),ref:c,onMouseDown:e=>{const t=e.target;!a&&t.classList.contains(Ct("panel-grid"))&&y(e)}},E("div",{className:Ct("panel-grid-wrapper")},E(Lo,{uiModels:e,weekDates:t,narrowWeekend:u,height:n,clickedIndex:f,isClickedCount:m,onClickExceedCount:g,onClickCollapseButton:_})),E("div",{className:Ct("panel-allday-events")},v),E(la,{weekDates:t,gridPositionFinder:p,gridColWidthMap:o}),E(aa,{rowStyleInfo:r,gridPositionFinder:p}),E(ro,{weekDates:t,narrowWeekend:u})))}function ma({events:e,weekDates:t,category:n,height:i=72,options:r={}}){const o=dr(er),a=he(()=>Math.max(0,...e.map(({top:e})=>e)),[e]),{narrowWeekend:s=!1}=r,l=n+"Title",{clickedIndex:c,isClickedCount:u,onClickExceedCount:d,onClickCollapseButton:h}=ua(a,n),p=he(()=>e.filter(Hr(i,24)).map(e=>E(na,{key:`${n}-DayEvent-${e.cid()}`,uiModel:e,eventHeight:22,headerHeight:0})),[n,e,i]);return E(S,null,E("div",{className:Ct("panel-title"),style:o},E(zi,{template:l,param:n})),E("div",{className:Ct("allday-panel")},E("div",{className:Ct("panel-grid-wrapper")},E(Lo,{uiModels:e,weekDates:t,narrowWeekend:s,height:i,clickedIndex:c,isClickedCount:u,onClickExceedCount:d,onClickCollapseButton:h})),E("div",{className:Ct(`panel-${n}-events`)},p)))}const ga={detailItem:Ct("detail-item"),detailItemIndent:Ct("detail-item","detail-item-indent"),detailItemSeparate:Ct("detail-item","detail-item-separate"),sectionDetail:Ct("popup-section","section-detail"),content:Ct("content"),locationIcon:Ct("icon","ic-location-b"),repeatIcon:Ct("icon","ic-repeat-b"),userIcon:Ct("icon","ic-user-b"),stateIcon:Ct("icon","ic-state-b"),calendarDotIcon:Ct("icon","calendar-dot")};function _a({event:e}){var t,n;const{location:i,recurrenceRule:r,attendees:o,state:a,calendarId:s,body:l}=e,c=Vo(s);return E("div",{className:ga.sectionDetail},i&&E("div",{className:ga.detailItem},E("span",{className:ga.locationIcon}),E("span",{className:ga.content},E(zi,{template:"popupDetailLocation",param:e,as:"span"}))),r&&E("div",{className:ga.detailItem},E("span",{className:ga.repeatIcon}),E("span",{className:ga.content},E(zi,{template:"popupDetailRecurrenceRule",param:e,as:"span"}))),o&&E("div",{className:ga.detailItemIndent},E("span",{className:ga.userIcon}),E("span",{className:ga.content},E(zi,{template:"popupDetailAttendees",param:e,as:"span"}))),a&&E("div",{className:ga.detailItem},E("span",{className:ga.stateIcon}),E("span",{className:ga.content},E(zi,{template:"popupDetailState",param:e,as:"span"}))),c&&E("div",{className:ga.detailItem},E("span",{className:ga.calendarDotIcon,style:{backgroundColor:null!=(t=null==c?void 0:c.backgroundColor)?t:""}}),E("span",{className:ga.content},null!=(n=null==c?void 0:c.name)?n:"")),l&&E("div",{className:ga.detailItemSeparate},E("span",{className:ga.content},E(zi,{template:"popupDetailBody",param:e,as:"span"}))))}const va={sectionHeader:Ct("popup-section","section-header"),content:Ct("content"),eventTitle:Ct("event-title")};function ya({event:e}){return E("div",{className:va.sectionHeader},E("div",{className:va.eventTitle},E(zi,{template:"popupDetailTitle",param:e,as:"span"})),E("div",{className:va.content},E(zi,{template:"popupDetailDate",param:e,as:"span"})))}const wa=Ct("see-more-popup-slot"),ba=Ct("event-form-popup-slot"),Da=Ct("event-detail-popup-slot"),ka=["isPrivate","isAllday","isPending","isFocused","isVisible","isReadOnly"];var xa=(e=>(e.right="right",e.left="left",e))(xa||{}),Ea=(e=>(e.top="top",e.bottom="bottom",e))(Ea||{});const Ta=$(null);function Sa({children:e}){const[t,n]=ca(),[i,r]=ca(),[o,a]=ca(),[s,l]=ca(),c={container:t,seeMorePopupSlot:i,formPopupSlot:o,detailPopupSlot:s};return E(Ta.Provider,{value:c},e,E("div",{ref:n,className:Ct("floating-layer")},E("div",{ref:r,className:wa}),E("div",{ref:a,className:ba}),E("div",{ref:l,className:Da})))}const Ca=e=>{var t;const n=fe(Ta);if(_t(n))throw new Error("FloatingLayerProvider is not found");return null!=(t=null==n?void 0:n[e])?t:null};function Ma(e,t,n){return e+n.height>t.top+t.height}function Ia(e,t,n){return e+n.width>t.left+t.width}const Na=e=>e.popup[pi.Form],Aa=e=>e.popup[pi.Detail],Pa=e=>e.popup[pi.SeeMore],Oa={popupContainer:Ct("popup-container"),detailContainer:Ct("detail-container"),topLine:Ct("popup-top-line"),border:Ct("popup-arrow-border"),fill:Ct("popup-arrow-fill"),sectionButton:Ct("popup-section","section-button"),content:Ct("content"),editIcon:Ct("icon","ic-edit"),deleteIcon:Ct("icon","ic-delete"),editButton:Ct("edit-button"),deleteButton:Ct("delete-button"),verticalLine:Ct("vertical-line")};function Ra(){const{useFormPopup:e}=Ii(Fi),t=Ii(Aa),{event:n,eventRect:i}=null!=t?t:{},{showFormPopup:r,hideDetailPopup:o}=Ai("popup"),a=jo(n),s=Wo(),l=Ca("detailPopupSlot"),c=Vi(),u=de(null),[d,h]=se({}),[p,f]=se(0),[m,g]=se(xa.left),_=he(()=>Ct("popup-arrow",{right:m===xa.right,left:m===xa.left}),[m]);if(ue(()=>{if(u.current&&i&&s){const e=s.getBoundingClientRect(),t=u.current.getBoundingClientRect(),[n,r]=function(e,t,n){let i=e.top+e.height/2-n.height/2,r=e.left+e.width;return Ma(i,t,n)&&(i=t.top+t.height-n.height),Ia(r,t,n)&&(r=e.left-n.width),[Math.max(i,t.top)+window.scrollY,Math.max(r,t.left)+window.scrollX]}(i,e,t),{top:o,direction:a}=function(e,t,n){return{top:e.top+e.height/2+window.scrollY,direction:e.left+e.width+n.width>t.left+t.width?xa.right:xa.left}}(i,e,t);h({top:n,left:r}),f(o-n-8),g(a)}},[i,s]),Et(n)||Et(i)||Et(l))return null;const{title:v="",isAllday:y=!1,start:w=new Zt,end:b=new Zt,location:D,state:k,isReadOnly:x,isPrivate:T}=n,S={top:i.top+i.height/2,left:i.left+i.width/2};return bo(E("div",{role:"dialog",className:Oa.popupContainer,ref:u,style:d},E("div",{className:Oa.detailContainer},E(ya,{event:n}),E(_a,{event:n}),!x&&E("div",{className:Oa.sectionButton},E("button",{type:"button",className:Oa.editButton,onClick:()=>{e?r({isCreationPopup:!1,event:n,title:v,location:D,start:w,end:b,isAllday:y,isPrivate:T,eventState:k,popupArrowPointPosition:S}):c.fire("beforeUpdateEvent",{event:n.toEventObject(),changes:{}})}},E("span",{className:Oa.editIcon}),E("span",{className:Oa.content},E(zi,{template:"popupEdit",as:"span"}))),E("div",{className:Oa.verticalLine}),E("button",{type:"button",className:Oa.deleteButton,onClick:()=>{c.fire("beforeDeleteEvent",n.toEventObject()),o()}},E("span",{className:Oa.deleteIcon}),E("span",{className:Oa.content},E(zi,{template:"popupDelete",as:"span"}))))),E("div",{className:Oa.topLine,style:{backgroundColor:a.backgroundColor}}),E("div",{className:_},E("div",{className:Oa.border,style:{top:p}},E("div",{className:Oa.fill})))),l)}const La={dropdownMenu:Ct("dropdown-menu"),dropdownMenuItem:Ct("dropdown-menu-item"),dotIcon:Ct("icon","dot"),content:Ct("content")};function Ha({index:e,name:t,backgroundColor:n,onClick:i}){return E("li",{className:La.dropdownMenuItem,onClick:t=>i(t,e)},E("span",{className:La.dotIcon,style:{backgroundColor:n}}),E("span",{className:La.content},t))}function Fa({calendars:e,setOpened:t,onChangeIndex:n}){const i=(e,i)=>{e.stopPropagation(),t(!1),n(i)};return E("ul",{className:La.dropdownMenu},e.map(({name:e,backgroundColor:t="000"},n)=>E(Ha,{key:`dropdown-${e}-${n}`,index:n,name:e,backgroundColor:t,onClick:i})))}function Ya({children:e,classNames:t=[],onClick:n=mi}){return E("div",{className:Ct("popup-section",...t),onClick:n},e)}function Wa(){const[e,t]=se(!1);return{isOpened:e,setOpened:t,toggleDropdown:()=>t(e=>!e)}}var Ba=(e=>(e.init="init",e.setCalendarId="setCalendarId",e.setTitle="setTitle",e.setLocation="setLocation",e.setPrivate="setPrivate",e.setAllday="setAllday",e.setState="setState",e.reset="reset",e))(Ba||{});const za={title:"",location:"",isAllday:!1,isPrivate:!1,state:"Busy"};function Ua(e,t){switch(t.type){case"init":return _(_({},za),t.event);case"setCalendarId":return v(_({},e),{calendarId:t.calendarId});case"setTitle":return v(_({},e),{title:t.title});case"setLocation":return v(_({},e),{location:t.location});case"setPrivate":return v(_({},e),{isPrivate:t.isPrivate});case"setAllday":return v(_({},e),{isAllday:t.isAllday});case"setState":return v(_({},e),{state:t.state});case"reset":return _(_({},e),za);default:return e}}const Ga={popupSection:["dropdown-section","calendar-section"],popupSectionItem:Ct("popup-section-item","popup-button"),dotIcon:Ct("icon","dot"),content:Ct("content","event-calendar")};function Va({calendars:e,selectedCalendarId:t,formStateDispatch:n}){const{isOpened:i,setOpened:r,toggleDropdown:o}=Wa(),a=e.find(e=>e.id===t),{backgroundColor:s="",name:l=""}=null!=a?a:{};return E(Ya,{onClick:o,classNames:Ga.popupSection},E("button",{type:"button",className:Ga.popupSectionItem},E("span",{className:Ga.dotIcon,style:{backgroundColor:s}}),E("span",{className:Ga.content},l),E("span",{className:Ct("icon","ic-dropdown-arrow",{open:i})})),i&&E(Fa,{calendars:e,setOpened:r,onChangeIndex:t=>n({type:Ba.setCalendarId,calendarId:e[t].id})}))}const ja={closeButton:Ct("popup-button","popup-close"),closeIcon:Ct("icon","ic-close")};function $a({type:e,close:t}){const{hideAllPopup:n}=Ai("popup");return E("button",{type:"button",className:ja.closeButton,onClick:()=>{n(),St(t)&&t()}},"moreEvents"===e?E(zi,{template:"monthMoreClose"}):E("i",{className:ja.closeIcon}))}const qa={confirmButton:Ct("popup-button","popup-confirm")};function Xa({children:e}){return E("button",{type:"submit",className:qa.confirmButton},E("span",null,e))}function Ka({template:e,model:t,defaultValue:n=""}){const i=Ii(Li)[e];if(Et(i))return n;let r=i(t);return xt(r)||(r=n),r}const Ja={datePickerContainer:Ct("datepicker-container"),datePicker:Ct("popup-section-item","popup-date-picker"),allday:Ct("popup-section-item","popup-section-allday"),dateIcon:Ct("icon","ic-date"),dateDash:Ct("popup-date-dash"),content:Ct("content")},Za=ho((function({start:e,end:t,isAllday:n=!1,formStateDispatch:i},r){const{usageStatistics:o}=Ii(Fi),a=de(null),s=de(null),l=de(null),u=de(null),d=Ka({template:"startDatePlaceholder",defaultValue:"Start Date"}),h=Ka({template:"endDatePlaceholder",defaultValue:"End Date"});return ce(()=>{if(a.current&&s.current&&l.current&&u.current){const i=new Zt(e),d=new Zt(t);n&&(i.setHours(12,0,0),d.setHours(13,0,0)),r.current=c.createRangePicker({startpicker:{date:i.toDate(),input:s.current,container:a.current},endpicker:{date:d.toDate(),input:u.current,container:l.current},format:n?"yyyy-MM-dd":"yyyy-MM-dd HH:mm",timePicker:!n&&{showMeridiem:!1,usageStatistics:o},usageStatistics:o})}},[e,t,n,o,r]),E(Ya,null,E("div",{className:Ja.datePicker},E("span",{className:Ja.dateIcon}),E("input",{name:"start",className:Ja.content,placeholder:d,ref:s}),E("div",{className:Ja.datePickerContainer,ref:a})),E("span",{className:Ja.dateDash},"-"),E("div",{className:Ja.datePicker},E("span",{className:Ja.dateIcon}),E("input",{name:"end",className:Ja.content,placeholder:h,ref:u}),E("div",{className:Ja.datePickerContainer,ref:l})),E("div",{className:Ja.allday,onClick:()=>i({type:Ba.setAllday,isAllday:!n})},E("span",{className:Ct("icon",{"ic-checkbox-normal":!n,"ic-checkbox-checked":n})}),E("span",{className:Ja.content},E(zi,{template:"popupIsAllday"})),E("input",{name:"isAllday",type:"checkbox",className:Ct("hidden-input"),value:n?"true":"false",checked:n})))})),Qa=["Busy","Free"],es={popupSectionItem:Ct("popup-section-item","dropdown-menu-item"),dropdownMenu:Ct("dropdown-menu"),icon:Ct("icon"),content:Ct("content")};function ts({setOpened:e,setEventState:t}){return E("ul",{className:es.dropdownMenu},Qa.map(n=>E("li",{key:n,className:es.popupSectionItem,onClick:i=>((n,i)=>{n.stopPropagation(),e(!1),t(i)})(i,n)},E("span",{className:es.icon}),E("span",{className:es.content},E(zi,"Busy"===n?{template:"popupStateBusy"}:{template:"popupStateFree"})))))}const ns={popupSection:["dropdown-section","state-section"],popupSectionItem:Ct("popup-section-item","popup-button"),stateIcon:Ct("icon","ic-state"),arrowIcon:Ct("icon","ic-dropdown-arrow"),content:Ct("content","event-state")};function is({eventState:e="Busy",formStateDispatch:t}){const{isOpened:n,setOpened:i,toggleDropdown:r}=Wa();return E(Ya,{onClick:r,classNames:ns.popupSection},E("button",{type:"button",className:ns.popupSectionItem},E("span",{className:ns.stateIcon}),E("span",{className:ns.content},E(zi,"Busy"===e?{template:"popupStateBusy"}:{template:"popupStateFree"})),E("span",{className:ns.arrowIcon})),n&&E(ts,{setOpened:i,setEventState:e=>t({type:Ba.setState,state:e})}))}const rs={popupSectionItem:Ct("popup-section-item","popup-section-location"),locationIcon:Ct("icon","ic-location"),content:Ct("content")};function os({location:e,formStateDispatch:t}){const n=Ka({template:"locationPlaceholder",defaultValue:"Location"});return E(Ya,null,E("div",{className:rs.popupSectionItem},E("span",{className:rs.locationIcon}),E("input",{name:"location",className:rs.content,placeholder:n,value:e,onChange:e=>{t({type:Ba.setLocation,location:e.currentTarget.value})}})))}const as={popupSectionItem:Ct("popup-section-item","popup-section-title"),privateButton:Ct("popup-section-item","popup-section-private","popup-button"),titleIcon:Ct("icon","ic-title"),content:Ct("content")};function ss({title:e,isPrivate:t=!1,formStateDispatch:n}){const i=Ka({template:"titlePlaceholder",defaultValue:"Subject"});return E(Ya,null,E("div",{className:as.popupSectionItem},E("span",{className:as.titleIcon}),E("input",{name:"title",className:as.content,placeholder:i,value:e,onChange:e=>{n({type:Ba.setTitle,title:e.currentTarget.value})},required:!0})),E("button",{type:"button",className:as.privateButton,onClick:()=>n({type:Ba.setPrivate,isPrivate:!t})},E("span",{className:Ct("icon",{"ic-private":t,"ic-public":!t})}),E("input",{name:"isPrivate",type:"checkbox",className:Ct("hidden-input"),value:t?"true":"false",checked:t})))}const ls={popupContainer:Ct("popup-container"),formContainer:Ct("form-container"),popupArrowBorder:Ct("popup-arrow-border"),popupArrowFill:Ct("popup-arrow-fill")};function cs(){var e;const{calendars:t}=Ii(Oi),{hideAllPopup:n}=Ai("popup"),i=Ii(Na),{start:r,end:o,popupArrowPointPosition:a,close:s,isCreationPopup:l,event:c}=null!=i?i:{},u=Vi(),d=Ca("formPopupSlot"),[h,p]=(f=null==(e=t[0])?void 0:e.id,le(Ua,_({calendarId:f},za)));var f;const m=de(null),g=de(null),[v,y]=se({}),[w,b]=se(0),[D,k]=se(Ea.bottom),x=Wo(),T=he(()=>Ct("popup-arrow",{top:D===Ea.top,bottom:D===Ea.bottom}),[D]);if(ue(()=>{if(g.current&&a&&x){const e=x.getBoundingClientRect(),t=g.current.getBoundingClientRect(),{top:n,left:i,direction:r}=function(e,t,n){let i=e.top-n.height-8,r=e.left-n.width/2,o=Ea.bottom;return i<t.top&&(o=Ea.top,i=e.top+8),Ma(i,t,n)&&(i=t.top+t.height-n.height),Ia(r,t,n)&&(r=t.left+t.width-n.width),{top:i+window.scrollY,left:Math.max(r,t.left)+window.scrollX,direction:o}}(a,e,t),o=a.left-i;y({left:i,top:n}),b(o),k(r)}},[x,a]),ce(()=>{Tt(i)&&Tt(c)&&p({type:Ba.init,event:{title:i.title,location:i.location,isAllday:i.isAllday,isPrivate:i.isPrivate,calendarId:c.calendarId,state:i.eventState}})},[t,c,p,i]),ce(()=>{Et(i)&&p({type:Ba.reset})},[p,i]),Et(r)||Et(o)||Et(d))return null;return bo(E("div",{role:"dialog",className:ls.popupContainer,ref:g,style:v},E("form",{onSubmit:e=>{var t,i;e.preventDefault();const r=new FormData(e.target),o=_({},h);if(r.forEach((e,t)=>{o[t]=function(e){return-1!==ka.indexOf(e)}(t)?"true"===e:e}),o.start=new Zt(null==(t=m.current)?void 0:t.getStartDate()),o.end=new Zt(null==(i=m.current)?void 0:i.getEndDate()),l)u.fire("beforeCreateEvent",o);else if(c){const e=function(e,t){return Object.entries(t).reduce((t,[n,i])=>{const r=n;return e[r]instanceof Zt?0!==Dn(e[r],i)&&(t[r]=i):e[r]!==i&&(t[r]=i),t},{})}(c,o);u.fire("beforeUpdateEvent",{event:c.toEventObject(),changes:e})}n()}},E("div",{className:ls.formContainer},(null==t?void 0:t.length)?E(Va,{selectedCalendarId:h.calendarId,calendars:t,formStateDispatch:p}):E(Ya,null),E(ss,{title:h.title,isPrivate:h.isPrivate,formStateDispatch:p}),E(os,{location:h.location,formStateDispatch:p}),E(Za,{start:r,end:o,isAllday:h.isAllday,formStateDispatch:p,ref:m}),E(is,{eventState:h.state,formStateDispatch:p}),E($a,{type:"form",close:s}),E(Ya,null,E(Xa,null,E(zi,l?{template:"popupSave"}:{template:"popupUpdate"})))),E("div",{className:T},E("div",{className:ls.popupArrowBorder,style:{left:w}},E("div",{className:ls.popupArrowFill}))))),d)}function us(e){return Object.values(e.popup).find(e=>Tt(e))}function ds(){const e=Ii(us),{hideAllPopup:t}=Ai("popup"),n=Tt(e);return E("div",{className:Ct("popup-overlay"),style:{display:n?"block":"none"},onClick:n=>{var i;n.stopPropagation(),null==(i=null==e?void 0:e.close)||i.call(e),t()}})}const hs={container:Ct("see-more-container"),seeMore:Ct("see-more"),header:Ct("see-more-header"),list:Ct("month-more-list")};function ps(){const e=Ii(Pa),{date:t,events:n=[],popupPosition:i}=null!=e?e:{},{moreView:r,moreViewTitle:o}=hr(),a=Ca("seeMorePopupSlot"),s=Vi(),l=de(null),c=Et(t)||Et(i)||Et(a);if(ce(()=>{!c&&l.current&&s.fire("clickMoreEventsBtn",{date:t.toDate(),target:l.current})},[t,s,c]),c)return null;const u={height:44,marginBottom:12,padding:"12px 17px 0",backgroundColor:o.backgroundColor},d={ymd:_n(t,"YYYY-MM-DD"),day:t.getDay(),date:t.getDate().toString().padStart(2,"0")},h={height:"calc(100% - 68px)"};return bo(E("div",{role:"dialog",className:hs.container,style:i,ref:l},E("div",{className:hs.seeMore,style:r},E("div",{className:hs.header,style:u},E(zi,{template:"monthMoreTitleDate",param:d}),E($a,{type:"moreEvents"})),E("div",{className:hs.list,style:h},n.map(e=>E(na,{key:"see-more-event-item-"+e.cid(),uiModel:e,eventHeight:24,headerHeight:44,flat:!0}))))),a)}function fs(e,t){const n={height:Mt(100)};return e&&(n.width=e),t&&(n.height=t),n}function ms({children:e,width:t,height:n,className:i="",autoAdjustPanels:r=!1}){const{backgroundColor:o}=dr(Zi),[a,s]=ca(),{setLastPanelType:l,updateLayoutHeight:c}=Ai("weekViewLayout"),u=he(()=>`${Ct("layout")} ${i}`,[i]);return ue(()=>{if(a){const e=()=>c(a.offsetHeight);return e(),window.addEventListener("resize",e),()=>window.removeEventListener("resize",e)}return mi},[a,c]),ue(()=>{if(a&&r){const t=R(e),n=t[t.length-1];xt(n)||Dt(n)||Et(n)||l(n.props.name)}},[e,l,r,a]),E(Yo,{value:a},E("div",{ref:s,className:u,style:v(_({},fs(t,n)),{backgroundColor:o})},a?e:null),E(cs,null),E(Ra,null),E(ps,null),E(ds,null))}function gs({name:e,height:t}){const n=function(e,t){return{height:e,width:"100%",cursor:"row-resize",borderTop:t,borderBottom:t}}(t,dr(pe(e=>e.week.panelResizer.border,[]))),i=v(_({},n),{display:"none",border:"none",backgroundColor:"#999"}),[r,o]=se(i),a=de(null),{updateDayGridRowHeightByDiff:s}=Ai("weekViewLayout"),l=Ko(Bo,{onDragStart:e=>{a.current={left:e.pageX,top:e.pageY}},onDrag:e=>{if(a.current){const t=e.pageY-a.current.top;o(e=>v(_({},e),{top:t,display:null}))}},onMouseUp:t=>{if(a.current){const n=t.pageY-a.current.top;a.current=null,o(i),s({rowName:e,diff:n})}}});return E("div",{style:{position:"relative"}},E("div",{className:Ct("panel-resizer"),style:n,onMouseDown:l}),E("div",{className:Ct("panel-resizer-guide"),style:r}))}function _s(e,t){return t?Math.min(t,e):e}const vs=ho((function({name:e,initialWidth:t=72,initialHeight:n=72,overflowX:i,overflowY:r,maxExpandableWidth:o,maxExpandableHeight:a,minHeight:s,maxHeight:l,minWidth:c,maxWidth:u,resizerWidth:d=3,resizerHeight:h=3,resizable:p,children:f},m){const{updateDayGridRowHeight:g}=Ai("weekViewLayout"),{height:y}=Ii(pe(t=>{var n;return null!=(n=t.weekViewLayout.dayGridRows[e])?n:{}},[e])),w=null!=y?y:n;ue(()=>{g({rowName:e,height:n})},[n,e,g]);const b=function({initialHeight:e,initialWidth:t,overflowX:n,overflowY:i,maxExpandableWidth:r,maxExpandableHeight:o,minHeight:a,maxHeight:s,minWidth:l,maxWidth:c}){const u={};return t&&(u.width=_s(t,r),u.height="100%"),e&&(u.width="100%",u.height=_s(e,o)),n&&(u.overflowX="auto"),i&&(u.overflowY="auto"),v(_({},u),{minHeight:a,maxHeight:s,minWidth:l,maxWidth:c})}({initialWidth:t,initialHeight:w,overflowX:i,overflowY:r,maxExpandableWidth:o,maxExpandableHeight:a,minHeight:s,maxHeight:l,minWidth:c,maxWidth:u}),D=he(()=>Et(p)||bt(p)?!!p:p.includes(e),[p,e]);return E(S,null,E("div",{className:Ct("panel",e),style:b,ref:m},f),D?E(gs,{name:e,width:d,height:h}):null)})),ys=e=>"timegrid-"+e,ws={second:"HH:mm:ss",minute:"HH:mm",hour:"HH:mm",date:"HH:mm",month:"MM.DD",year:"YYYY.MM.DD"},bs={time:Ct("event-time"),content:Ct("event-time-content"),travelTime:Ct("travel-time"),resizeHandleX:Ct("resize-handler-x"),moveEvent:Ct("dragging--move-event"),resizeEvent:Ct("dragging--resize-vertical-event")};function Ds(e,t){return xt(e)?e:e>=0?`calc(${Mt(e)} - ${t}px)`:""}function ks({uiModel:e,isDraggingTarget:t,hasNextStartTime:n,calendarColor:i,minHeight:r}){const{top:o,left:a,height:s,width:l,duplicateLeft:c,duplicateWidth:u,goingDurationHeight:d,modelDurationHeight:h,comingDurationHeight:p,croppedStart:f,croppedEnd:m}=e,g=function(e){const{percent:t,px:n}=Nt(""+e);return e>0||t>0||n>0?2:0}(a),{color:_,backgroundColor:v,borderColor:y,dragBackgroundColor:w}=At(e,i),b={width:Ds(u||l,g),height:`calc(${Mt(Math.max(s,r))} - 2px)`,top:Mt(o),left:c||Mt(a),borderRadius:2,borderLeft:"3px solid "+y,marginLeft:g,color:_,backgroundColor:t?w:v,opacity:t?.5:1,zIndex:n?1:0},D={height:Mt(d),borderBottom:"1px dashed white"},k={height:Mt(h)},x={height:Mt(p),borderTop:"1px dashed white"};return f&&(b.borderTopLeftRadius=0,b.borderTopRightRadius=0),m&&(b.borderBottomLeftRadius=0,b.borderBottomRightRadius=0),{containerStyle:b,goingDurationStyle:D,modelDurationStyle:k,comingDurationStyle:x}}function xs({uiModel:e,nextStartTime:t,isResizingGuide:n=!1,minHeight:i=0}){const{useDetailPopup:r,isReadOnly:o,week:a}=Ii(Fi),s=jo(e.model),{collapseDuplicateEvents:l}=a,c=Wo(),{showDetailPopup:u}=Ai("popup"),{setDraggingEventUIModel:d}=Ai("dnd"),{setSelectedDuplicateEventCid:h}=Ai("weekViewLayout"),p=Vi(),f=de(null),[m,g]=se(!1),{model:y,goingDurationHeight:w,modelDurationHeight:b,comingDurationHeight:D,croppedEnd:k}=e,{id:x,calendarId:T,customStyle:S}=y,C=Tt(t),{containerStyle:M,goingDurationStyle:I,modelDurationStyle:N,comingDurationStyle:A}=ks({uiModel:e,isDraggingTarget:m,hasNextStartTime:C,calendarColor:s,minHeight:i}),P=C||n;Xo(Yi,({draggingEventUIModel:t,draggingState:i})=>{i!==Jn.DRAGGING||(null==t?void 0:t.cid())!==e.cid()||C||n?g(!1):g(!0)}),ce(()=>{n||p.fire("afterRenderEvent",e.model.toEventObject())},[]);const O=t=>{d(e),null==c||c.classList.add(t)},R=e=>{g(!1),null==c||c.classList.remove(e)},L=Ko(Uo("timeGrid",""+e.cid()),{onDragStart:()=>{F&&O(bs.moveEvent)},onMouseUp:(t,{draggingState:n})=>{R(bs.moveEvent);const i=n<=Jn.INIT;if(i&&l){const t=e.duplicateEvents.length>0?e.cid():-1;h(t)}i&&r&&f.current&&u({event:e.model,eventRect:f.current.getBoundingClientRect()},!1),i&&p.fire("clickEvent",{event:e.model.toEventObject(),nativeEvent:t})},onPressESCKey:()=>R(bs.moveEvent)}),H=Ko(zo("timeGrid",""+e.cid()),{onDragStart:()=>O(bs.resizeEvent),onMouseUp:()=>R(bs.resizeEvent),onPressESCKey:()=>R(bs.resizeEvent)}),F=function({uiModel:e,isReadOnlyCalendar:t,isDraggingTarget:n,hasNextStartTime:i}){const{model:r}=e;return!(t||r.isReadOnly||n||i)}({uiModel:e,isReadOnlyCalendar:o,isDraggingTarget:m,hasNextStartTime:C}),Y=F&&!k;return E("div",{"data-testid":`${P?"guide-":""}time-event-${y.title}-${e.cid()}`,"data-calendar-id":T,"data-event-id":x,className:bs.time,style:_(_({},M),S),onMouseDown:e=>{e.stopPropagation(),L(e)},ref:f},w?E("div",{className:bs.travelTime,style:I},E(zi,{template:"goingDuration",param:y})):null,b?E("div",{className:bs.content,style:N},E(zi,{template:"time",param:v(_({},y.toEventObject()),{start:C?t:y.start})})):null,D?E("div",{className:bs.travelTime,style:A},E(zi,{template:"comingDuration",param:y})):null,Y?E("div",{className:bs.resizeHandleX,onMouseDown:e=>{e.stopPropagation(),H(e)}}):null)}function Es({top:e,height:t,text:n}){const{backgroundColor:i,border:r}=dr(pe(e=>e.common.gridSelection,[])),o=dr(pe(e=>e.week.gridSelection.color,[])),a={top:Mt(e),height:Mt(t),backgroundColor:i,border:r};return E("div",{className:Ct("time","grid-selection"),style:a,"data-testid":`time-grid-selection-${e}-${t}`},n.length>0?E("span",{className:Ct("grid-selection-label"),style:{color:o}},n):null)}function Ts({columnIndex:e,timeGridRows:t}){const n=Ii(pe(n=>eo.calculateSelection(n.gridSelection.timeGrid,e,t.length-1),[e,t])),i=he(()=>{if(!n)return null;const{startRowIndex:e,endRowIndex:i,isStartingColumn:r,isSelectingMultipleColumns:o}=n,{top:a,startTime:s}=t[e],{top:l,height:c,endTime:u}=t[i];let d=`${s} - ${u}`;return o&&(d=r?s:""),{top:a,height:l+c-a,text:d}},[n,t]);return Et(i)?null:E(Es,_({},i))}function Ss({gridPositionFinder:e,totalUIModels:t,columnIndex:n,timeGridData:i}){const r=function({gridPositionFinder:e,totalUIModels:t,columnIndex:n,timeGridData:i}){const r=Vi(),{isDraggingEnd:o,isDraggingCanceled:a,draggingEvent:s,clearDraggingEvent:l}=oa("timeGrid","resize"),[c,u]=ra(e),[d,h]=se(null),p=pe(()=>{h(null),l(),u()},[u,l]),f=he(()=>{if(Et(s))return null;const{columns:e,rows:n}=i,r=t.map(e=>e.filter(e=>e.cid()===s.cid())),o=(t,n)=>r=>{const o=Rn(e[n].date,r.startTime),a=Rn(i.columns[n].date,r.endTime);return o<=t&&t<a},a=r.findIndex(e=>e.length>0),l=r[a][0],{goingDuration:c=0}=l.model,u=On(l.getStarts(),-c),d=Math.max(n.findIndex(o(u,a)),0),h=an(r,e=>e.length>0),p=r[h][0],{comingDuration:f=0}=p.model,m=On(p.getStarts(),f);let g=n.findIndex(o(m,h));return g=g>=0?g:n.length-1,{eventStartDateColumnIndex:a,eventStartDateRowIndex:d,eventEndDateColumnIndex:h,eventEndDateRowIndex:g,resizeTargetUIModelColumns:r}},[s,i,t]),m=Tt(f)&&Tt(s)&&Tt(c),g=he(()=>f?i.rows[0].height:0,[f,i.rows]);return ce(()=>{if(m){const{eventStartDateRowIndex:e,eventStartDateColumnIndex:t,eventEndDateColumnIndex:r}=f;if(n===r&&t===r){const t=s.clone(),{height:n,goingDurationHeight:r,comingDurationHeight:o}=t,a=Math.max(g+r*n/100+o*n/100,i.rows[c.rowIndex].top-i.rows[e].top+g),l=r*n/a,u=o*n/a;t.setUIProps({height:a,goingDurationHeight:l,comingDurationHeight:u,modelDurationHeight:100-(l+u)}),h(t)}}},[f,m,n,c,s,i.rows,g]),ce(()=>{if(m){const{resizeTargetUIModelColumns:e,eventStartDateColumnIndex:t,eventEndDateColumnIndex:r}=f;if((n===t||n===r)&&t!==r){let r;n===t?r=e[n][0].clone():(r=s.clone(),r.setUIProps({height:i.rows[c.rowIndex].top+g})),h(r)}}},[f,m,n,c,s,i.rows,g]),ia(()=>{if(!a&&Tt(f)&&Tt(c)&&Tt(s)&&f.eventEndDateColumnIndex===n){const{comingDuration:e=0}=s.model,t=On(Rn(i.columns[n].date,i.rows[c.rowIndex].endTime),-e),o=On(s.getStarts(),30);r.fire("beforeUpdateEvent",{event:s.model.toEventObject(),changes:{end:xn(o,t)}})}p()},o),d}({gridPositionFinder:e,totalUIModels:t,columnIndex:n,timeGridData:i});return Et(r)?null:E(xs,{uiModel:r,isResizingGuide:!0})}const Cs={column:Ct("column"),backgrounds:Ct("background-events"),events:Ct("events")};function Ms({eventUIModels:e,minEventHeight:t}){return E("div",{className:Cs.events,style:{marginRight:8}},e.map(e=>E(xs,{key:`${e.valueOf()}-${e.cid()}`,uiModel:e,minHeight:t})))}function Is(e){return{defaultBackgroundColor:e.week.dayGrid.backgroundColor,todayBackgroundColor:e.week.today.backgroundColor,weekendBackgroundColor:e.week.weekend.backgroundColor}}const Ns=lo((function({columnDate:e,columnWidth:t,columnIndex:n,totalUIModels:i,gridPositionFinder:r,timeGridData:o,isLastColumn:a}){const{rows:s}=o,l=dr(pe(e=>e.week.timeGrid.borderRight,[])),c=dr(Is),[,u]=Ki(),d=u(),h={width:t,backgroundColor:function({today:e,columnDate:t,defaultBackgroundColor:n,todayBackgroundColor:i,weekendBackgroundColor:r}){const o=kn(e,t),a=Cn(t.getDay());return o?i:a?r:n}(_({today:d,columnDate:e},c)),borderRight:a?"none":l},p=i[n],f=s[0].height;return E("div",{className:Cs.column,style:h,"data-testid":"timegrid-column-"+e.getDay()},E(Ms,{eventUIModels:p,minEventHeight:f}),E(Ss,{gridPositionFinder:r,totalUIModels:i,columnIndex:n,timeGridData:o}),E(Ts,{columnIndex:n,timeGridRows:s}))}));function As(e){return{halfHourLineBorder:e.week.timeGridHalfHourLine.borderBottom,hourLineBorder:e.week.timeGridHourLine.borderBottom}}const Ps=lo((function({timeGridRows:e}){const{halfHourLineBorder:t,hourLineBorder:n}=dr(As);return E("div",{className:Ct("gridlines")},e.map((e,i)=>{const r=i%2==0;return E("div",{key:`gridline-${e.startTime}-${e.endTime}`,className:Ct("gridline-half"),style:{top:Mt(e.top),height:Mt(e.height),borderBottom:r?t:n},"data-testid":`gridline-${e.startTime}-${e.endTime}`})}))}));function Os(e,t){const n=e.getHours()-t,i=e.getMinutes();return 2*n+Math.floor(i/30)}const Rs=e=>e.dnd.initX,Ls=e=>e.dnd.initY;function Hs({gridPositionFinder:e,timeGridData:t}){const n=Ii(Rs),i=Ii(Ls),r=Vi(),{isDraggingEnd:o,isDraggingCanceled:a,draggingEvent:s,clearDraggingEvent:l}=oa("timeGrid","move"),[c,u]=ra(e),d=de(null);ce(()=>{Tt(n)&&Tt(i)&&(d.current=e({clientX:n,clientY:i}))},[e,n,i]);const h=he(()=>Et(d.current)||Et(c)?null:{columnDiff:c.columnIndex-d.current.columnIndex,rowDiff:c.rowIndex-d.current.rowIndex},[c]),p=he(()=>Et(s)?null:s.getStarts(),[s]),f=pe(()=>{u(),l(),d.current=null},[u,l]),m=he(()=>Et(h)||Et(p)?null:Pn(p,18e5*h.rowDiff+864e5*h.columnDiff),[h,p]),g=he(()=>{if(Et(s)||Et(c)||Et(h))return null;const e=s.clone(),{top:n,height:i}=function({draggingEvent:e,columnDiff:t,rowDiff:n,timeGridDataRows:i,currentDate:r}){const o=i[0].height,a=o*i.length,s=18e5*n+864e5*t,l=Number(i[0].startTime.split(":")[0]),{goingDuration:c=0,comingDuration:u=0}=e.model,d=On(e.getStarts(),-c),h=On(e.getEnds(),u),p=Pn(d,s),f=Pn(h,s),m=Math.max(Os(p,l),0),g=Math.min(Os(f,l),i.length-1),_=p.getFullYear()<r.getFullYear()||p.getMonth()<r.getMonth()||p.getDate()<r.getDate(),v=f.getFullYear()>r.getFullYear()||f.getMonth()>r.getMonth()||f.getDate()>r.getDate(),y=g-(_?0:m);return{top:_?0:i[m].top,height:v?a:Math.max(y,1)*o}}({draggingEvent:e,columnDiff:h.columnDiff,rowDiff:h.rowDiff,timeGridDataRows:t.rows,currentDate:t.columns[c.columnIndex].date});return e.setUIProps({left:t.columns[c.columnIndex].left,width:t.columns[c.columnIndex].width,top:n,height:i}),e},[c,s,h,t.columns,t.rows]);return ia(()=>{if(!a&&Tt(s)&&Tt(c)&&Tt(h)&&Tt(m)&&(0!==h.rowDiff||0!==h.columnDiff)){const e=s.duration(),t=Pn(m,e);r.fire("beforeUpdateEvent",{event:s.model.toEventObject(),changes:{start:m,end:t}})}f()},o),{movingEvent:g,nextStartTime:m}}function Fs({gridPositionFinder:e,timeGridData:t}){const{movingEvent:n,nextStartTime:i}=Hs({gridPositionFinder:e,timeGridData:t});return Et(n)?null:E(xs,{uiModel:n,nextStartTime:i})}const Ys="timegrid-now-indicator",Ws="timegrid-now-indicator-label",Bs={line:Ct(ys("now-indicator")),left:Ct(ys("now-indicator-left")),marker:Ct(ys("now-indicator-marker")),today:Ct(ys("now-indicator-today")),right:Ct(ys("now-indicator-right"))};function zs(e){return{pastBorder:e.week.nowIndicatorPast.border,todayBorder:e.week.nowIndicatorToday.border,futureBorder:e.week.nowIndicatorFuture.border,bulletBackgroundColor:e.week.nowIndicatorBullet.backgroundColor}}function Us({top:e,columnWidth:t,columnCount:n,columnIndex:i}){const{pastBorder:r,todayBorder:o,futureBorder:a,bulletBackgroundColor:s}=dr(zs),l=Wo(),c=Vi(),u=de(null),d={left:Mt(t*i),width:Mt(t*i)},h={left:Mt(t*(i+1)),width:Mt(t*(n-i+1))};return ce(()=>{const e=e=>{var t;const n=null!=(t=null==l?void 0:l.querySelector(`.${Ct("panel")}.${Ct("time")}`))?t:null;if(n&&u.current){const{offsetHeight:t}=n,{offsetTop:i}=u.current,r=i-t/2;n.scrollTo?n.scrollTo({top:r,behavior:e}):n.scrollTop=r}};return c.on("scrollToNow",e),()=>c.off("scrollToNow",e)},[c,l]),ce(()=>{c.fire("scrollToNow","smooth")},[c]),E("div",{ref:u,className:Bs.line,style:{top:Mt(e)},"data-testid":Ys},E("div",{className:Bs.left,style:{width:d.width,borderTop:r}}),E("div",{className:Bs.marker,style:{left:d.left,backgroundColor:s}}),E("div",{className:Bs.today,style:{left:d.left,width:Mt(t),borderTop:o}}),E("div",{className:Bs.right,style:{left:h.left,borderTop:a}}))}const Gs={now:ys("current-time"),dayDifference:ys("day-difference")};function Vs({unit:e,top:t,now:n,zonedNow:i}){const r=dr(pe(e=>e.week.nowIndicatorLabel.color,[])),o=he(()=>Hn(i,n),[i,n]),a={unit:e,time:i,format:ws[e]};return E("div",{className:Ct(Gs.now),style:{top:Mt(t),color:r},"data-testid":Ws},0!==o&&E("span",{className:Ct(Gs.dayDifference)},`[${o>0?"+":"-"}${Math.abs(o)}]`),E(zi,{template:"timegridNowIndicatorLabel",param:a,as:"span"}))}const js=e=>{var t;return null!=(t=e.options.month.visibleEventCount)?t:6},$s=e=>e.options.week.showNowIndicator,qs=e=>{var t;return null!=(t=e.options.week.showTimezoneCollapseButton)&&t},Xs=e=>{var t;return null!=(t=e.options.week.timezonesCollapsed)&&t},Ks={timeColumn:ys("time-column"),hourRows:ys("hour-rows"),time:ys("time"),timeLabel:ys("time-label"),first:ys("time-first"),last:ys("time-last"),hidden:ys("time-hidden")};function Js(e){return{primaryTimezoneBackgroundColor:e.week.timeGridLeft.backgroundColor,subTimezoneBackgroundColor:e.week.timeGridLeftAdditionalTimezone.backgroundColor}}function Zs(e){return{pastTimeColor:e.week.pastTime.color,futureTimeColor:e.week.futureTime.color}}function Qs({rowsInfo:e,isPrimary:t,borderRight:n,width:i,nowIndicatorState:r}){var o;const a=Ii($s),{primaryTimezoneBackgroundColor:s,subTimezoneBackgroundColor:l}=dr(Js),{pastTimeColor:c,futureTimeColor:u}=dr(Zs),d=Tt(r)?On(r.now,null!=(o=e[0].diffFromPrimaryTimezone)?o:0):null,h=t?s:l;return E("div",{role:"rowgroup",className:Ct(Ks.hourRows),style:{width:Mt(i),borderRight:n,backgroundColor:h}},e.map(({date:e,top:n,className:i})=>{const r=Tt(d)&&e<d?c:u;return E("div",{key:e.getTime(),className:i,style:{top:Mt(n),color:r},role:"row"},E(zi,{template:`timegridDisplay${t?"Primary":""}Time`,param:{time:e},as:"span"}))}),a&&Tt(r)&&Tt(d)&&E(Vs,{unit:"hour",top:r.top,now:r.now,zonedNow:d}))}const el=lo((function({timeGridRows:e,nowIndicatorState:t}){const n=Ii($s),i=Ii(qi),r=Ii(Xs),o=Xi(),{width:a,borderRight:s}=dr(tr),l=he(()=>e.filter((t,n)=>n%2==0||n===e.length-1),[e]),c=pe((e,i,r)=>{const o=0===i,a=i===l.length-1,s=Ct(Ks.time,{[Ks.first]:o,[Ks.last]:a,[Ks.hidden]:(({top:e,height:i})=>{if(!n||Et(t))return!1;const r=t.top;return e-i<=r&&r<=e+i})(e)});let c=Rn(new Zt,a?e.endTime:e.startTime);return Tt(r)&&(c=On(c,r)),{date:c,top:e.top,className:s,diffFromPrimaryTimezone:r}},[l,t,n]),[u,...d]=i,h=d.length>0?100/(d.length+1):100,p=l.map((e,t)=>c(e,t)),f=he(()=>0===d.length?[]:d.reverse().map(e=>{const{timezoneName:t}=e,n=o(u.timezoneName).getTimezoneOffset(),i=o(t).getTimezoneOffset()-n;return l.map((e,t)=>c(e,t,i))}),[c,d,u,l,o]);return E("div",{className:Ct(Ks.timeColumn),style:{width:a},"data-testid":"timegrid-time-column"},!r&&f.map(e=>E(Qs,{key:e[0].diffFromPrimaryTimezone,rowsInfo:e,isPrimary:!1,borderRight:s,width:h,nowIndicatorState:t})),E(Qs,{rowsInfo:p,isPrimary:!0,borderRight:s,width:r?100:h,nowIndicatorState:t}))}));function tl(e,t,n){const i=t.getTime(),r=n.getTime(),o=Pr(e.getTime(),[i],[r])-i;return Pr(Or(r-i,100,o),[0],[100])}function nl(e,t,n,i){const r=tl(e,n,i);return{top:r,height:tl(t,n,i)-r}}function il(e,t){return n=>{const{goingDuration:i=0,comingDuration:r=0}=n.model,o=On(n.getStarts(),-i);return!(On(n.getEnds(),r)<=e||o>=t)}}function rl(e,t){const{startColumnTime:n,endColumnTime:i,baseWidth:r,columnIndex:o,renderStart:a,renderEnd:s}=t,{duplicateEvents:l}=e,{top:c,height:u}=nl(a,s,n,i),d={top:c,left:r*o,width:r,height:Math.max(1,u),duplicateLeft:"",duplicateWidth:""};l.length>0&&(d.duplicateLeft=function(e,t){const{duplicateEvents:n,duplicateEventIndex:i}=e,r=n[i-1];let o=t;if(r){const{percent:e,px:t}=Nt(""+r.duplicateLeft),{percent:n,px:i}=Nt(""+r.duplicateWidth),a=e+n,s=t+i+2;o=0!==a?`calc(${Mt(a)} ${s>0?"+":"-"} ${It(Math.abs(s))})`:It(s)}else o=Mt(o);return o}(e,d.left),d.duplicateWidth=function(e,t){const{collapse:n}=e;return n?"9px":`calc(${Mt(t)} - ${It(11*(e.duplicateEvents.length-1)+2)})`}(e,d.width)),e.setUIProps(d)}function ol({uiModel:e,columnIndex:t,baseWidth:n,startColumnTime:i,endColumnTime:r,isDuplicateEvent:o=!1}){if(!o&&e.duplicateEvents.length>0)return void e.duplicateEvents.forEach(e=>{ol({uiModel:e,columnIndex:t,baseWidth:n,startColumnTime:i,endColumnTime:r,isDuplicateEvent:!0})});const a=function(e,t,n,i,r){const{goingDuration:o=0,comingDuration:a=0}=e.model,s=e.getStarts(),l=e.getEnds(),c=On(s,-o),u=On(l,a);return{baseWidth:n,columnIndex:t,modelStart:s,modelEnd:l,renderStart:xn(c,i),renderEnd:En(u,r),goingStart:c,comingEnd:u,startColumnTime:i,endColumnTime:r,duplicateEvents:e.duplicateEvents}}(e,t,n,i,r);rl(e,a),function(e,t){const{renderStart:n,renderEnd:i,modelStart:r,modelEnd:o}=t,{goingDuration:a=0,comingDuration:s=0}=e.model;let l=100;if(a>0){const{height:t}=nl(n,r,n,i);e.goingDurationHeight=t,l-=t}if(s>0){const{height:t}=nl(o,i,n,i);e.comingDurationHeight=t,l-=t}e.modelDurationHeight=l}(e,a),function(e,t){const{goingStart:n,comingEnd:i,startColumnTime:r,endColumnTime:o}=t;n<r&&(e.croppedStart=!0),i>o&&(e.croppedEnd=!0)}(e,a)}function al(e,t,n,i,r){const o=e.filter(zn).filter(il(t,n)).sort(nn.event.asc);r&&function(e,t,n){const{getDuplicateEvents:i,getMainEvent:r}=t,o=e.map(e=>e.model.toEventObject());e.forEach(t=>{if(t.collapse||t.duplicateEvents.length>0)return;const a=i(t.model.toEventObject(),o);if(a.length<=1)return;const s=r(a),l=a.map(t=>e.find(e=>e.cid()===t.__cid)),c=!!(n>-1&&a.find(e=>e.__cid===n)),u=a.reduce((e,{start:t,goingDuration:n})=>En(e,On(t,-n)),a[0].start),d=a.reduce((e,{end:t,comingDuration:n})=>xn(e,On(t,n)),a[0].end);l.forEach((e,t)=>{const i=e.cid()===s.__cid,r=!(c&&e.cid()===n||!c&&i);e.setUIProps({duplicateEvents:l,duplicateEventIndex:t,collapse:r,isMain:i,duplicateStarts:u,duplicateEnds:d})})})}(o,r,i);const a=o.filter(e=>!e.collapse);return yr(Gn(...a),_r(a,!0),!0).forEach(e=>{const i=Math.max(...e.map(e=>e.length)),r=Math.round(100/i);e.forEach(e=>{e.forEach((e,i)=>{ol({uiModel:e,columnIndex:i,baseWidth:r,startColumnTime:t,endColumnTime:n})})})}),o}const sl={timegrid:Ct("timegrid"),scrollArea:Ct(ys("scroll-area"))};function ll({timeGridData:e,events:t}){const{isReadOnly:n,week:{narrowWeekend:i,startDayOfWeek:r,collapseDuplicateEvents:o}}=Ii(Fi),a=Ii($s),s=Ii(e=>e.weekViewLayout.selectedDuplicateEventCid),[,l]=Ki(),c=function(){const e=de(!0);return ce(()=>()=>{e.current=!1},[]),pe(()=>e.current,[])}(),{width:u}=dr(tr),[d,h]=se(null),{columns:p,rows:f}=e,m=p.length-1,g=he(()=>p.map(({date:e})=>t.filter(il(yn(e),Sn(e))).map(e=>e.clone())).map((e,t)=>al(e,Rn(p[t].date,rn(f).startTime),Rn(p[t].date,on(f).endTime),s,o)),[p,f,t,s,o]),_=he(()=>{const t=l(),n=p.findIndex(e=>kn(e.date,t));if(n<0)return null;return{startTime:Rn(p[n].date,e.rows[0].startTime),endTime:Rn(p[n].date,on(e.rows).endTime),currentDateIndex:n}},[p,l,e.rows]),[v,y]=ca(),w=he(()=>Kr({rowsCount:f.length,columnsCount:p.length,container:v,narrowWeekend:i,startDayOfWeek:r}),[p.length,v,i,f.length,r]),b=pa({type:"timeGrid",gridPositionFinder:w,selectionSorter:eo.sortSelection,dateGetter:eo.getDateFromCollection,dateCollection:e}),D=pe(()=>{if(Tt(_)){const{startTime:e,endTime:t}=_,n=l();e<=n&&n<=t&&h({top:tl(n,e,t),now:n})}},[_,l]);return ue(()=>{var e;c()&&((null!=(e=null==_?void 0:_.currentDateIndex)?e:-1)>=0?D():h(null))},[_,c,D]),function(e,t){const n=de(e);ce(()=>{n.current=e},[e]),ce(()=>{const e=null!=t?t:-1;if(e>0){const t=setInterval(()=>n.current(),e);return()=>clearInterval(t)}},[t])}(D,Tt(_)?mn:null),E("div",{className:sl.timegrid},E("div",{className:sl.scrollArea},E(el,{timeGridRows:f,nowIndicatorState:d}),E("div",{className:Ct("columns"),style:{left:u},ref:y,onMouseDown:Jo(!n,b)},E(Ps,{timeGridRows:f}),E(Fs,{gridPositionFinder:w,timeGridData:e}),p.map((t,n)=>E(Ns,{key:t.date.toString(),timeGridData:e,columnDate:t.date,columnWidth:Mt(t.width),columnIndex:n,totalUIModels:g,gridPositionFinder:w,isLastColumn:n===m})),a&&Tt(_)&&Tt(d)?E(Us,{top:d.top,columnWidth:p[0].width,columnCount:p.length,columnIndex:_.currentDateIndex}):null)))}function cl({isCollapsed:e}){const t=Vi(),n=Ct("icon",{"ic-arrow-right":e,"ic-arrow-left":!e});return E("button",{className:Ct(ys("timezone-collapse-button")),"aria-expanded":!e,onClick:()=>t.fire("clickTimezonesCollapseBtn",e)},E("span",{className:n,role:"img"}))}function ul({label:e,offset:t,tooltip:n,width:i=100,left:r}){return E("div",{title:n,className:Ct(ys("timezone-label")),style:{width:Mt(i),height:Mt(100),left:Mt(r)},role:"gridcell"},E(zi,{template:"timezoneDisplayLabel",param:{displayLabel:e,timezoneOffset:t},as:"span"}))}function dl({top:e}){const t=Ii(qi),{width:n}=dr(tr),i=Xi(),{showTimezoneCollapseButton:r,timezonesCollapsed:o}=function(){const e=Ii(qs),t=Ii(Xs);return he(()=>({showTimezoneCollapseButton:e,timezonesCollapsed:t}),[e,t])}();if(t.length<=1)return null;const a=t.map(({displayLabel:e,timezoneName:t,tooltip:n})=>_t(e)?{label:null,offset:i(t).getTimezoneOffset(),tooltip:null!=n?n:t}:{label:e,offset:null,tooltip:null!=n?n:t}),[s,...l]=a,c=l.reverse(),u=100/(o?1:t.length);return E("div",{style:{top:e,width:n},role:"columnheader",className:Ct("timezone-labels-slot")},!o&&c.map((e,t)=>{var n;return E(ul,_({key:"subTimezone-"+(null!=(n=e.label)?n:e.offset),width:u,left:u*t},e))}),r&&E(cl,{isCollapsed:o}),E(ul,_({width:u,left:u*c.length},s)))}const hl={MONTH:"month",WEEK:"week",DAY:"day"},pl=["milestone","task"],fl=["allday","time"];function ml(e,t){const n=[];return!0===e?n.push(...pl):Array.isArray(e)&&n.push(...e),!0===t?n.push(...fl):Array.isArray(t)&&n.push(...t),n}function gl(e){const t=Ii(ji),n=Xi();return he(()=>{if("Local"===t)return e;const i=jt(new Zt),{timedEvents:r=Gn(),totalEvents:o=Gn()}=e.groupBy(e=>"time"===e.category?"timedEvents":"totalEvents");return r.each(e=>{const r=(a=e,Object.assign(Object.create(Object.getPrototypeOf(a)),a));var a;let s=n(t,r.start),l=n(t,r.end);i?(jt(s)||(s=s.addHours(1)),jt(l)||(l=l.addHours(1))):(jt(s)&&(s=s.addHours(-1)),jt(l)&&(l=l.addHours(-1))),r.start=s,r.end=l,o.add(r)}),o},[e,t,n])}function _l(e,...t){const n=gl(he(()=>e.events.filter(Un.and(...t)),[e.events,t]));return he(()=>v(_({},e),{events:n}),[e,n])}function vl(e,t){Xo(Yi,({y:n,draggingItemType:i,draggingState:r})=>{if(Tt(e)&&function(e){return/^(event|gridSelection)\/timeGrid/.test(null!=e?e:"")}(i)&&r===Jn.DRAGGING&&Tt(n)){const{offsetTop:i,offsetHeight:r,scrollHeight:o}=e,a=Math.floor(o/t),s=i+r;if(n<i+a){const t=n-(i+a);e.scrollTop=Math.max(0,e.scrollTop+t)}else if(n>s-a){const t=n-(s-a);e.scrollTop=Math.min(r,e.scrollTop+t)}}})}function yl(e){var t,n,i;return null==(i=null==(n=null==(t=e.weekViewLayout)?void 0:t.dayGridRows)?void 0:n.time)?void 0:i.height}function wl(e){const t=Ii(yl),[n,i]=se(null);return ue(()=>{Tt(t)&&e&&i(e.offsetTop)},[t,e]),n}function bl(){var e,t;const{calendar:n,options:i,gridRowLayout:r,lastPanelType:o,renderDate:a}=function(){const e=Ii(Oi),t=Ii(Fi),{dayGridRows:n,lastPanelType:i}=Ii(Ri),{renderDate:r}=Ii(Hi);return he(()=>({calendar:e,options:t,gridRowLayout:n,lastPanelType:i,renderDate:r}),[e,t,n,i,r])}(),s=Ii(ji),l=dr(pe(e=>e.week.dayGridLeft.width,[])),[c,u]=ca(),d=i.week,{narrowWeekend:h,startDayOfWeek:p,workweek:f,hourStart:m,hourEnd:g,eventView:_,taskView:v}=d,y=he(()=>[a],[a]),w=oi(y,null!=(t=null==(e=i.week)?void 0:e.dayNames)?t:[]),{rowStyleInfo:b,cellWidthMap:D}=An(y.length,h,p,f),k=_l(n,i.eventFilter),x=he(()=>{const[e,t]="Local"===s?[yn(y[0]),Sn(y[0])]:[yn(Ln(y[0],-1)),Sn(Ln(y[0],1))];return jr(y,k,{narrowWeekend:h,hourStart:m,hourEnd:g,weekStartDate:e,weekEndDate:t})},[k,y,g,m,h,s]),T=he(()=>Xr(y,{hourStart:m,hourEnd:g,narrowWeekend:h}),[y,g,m,h]),S=ml(v,_),C=S.map(e=>{var t,n;if("time"===e)return null;const i=e;return E(vs,{key:i,name:i,resizable:i!==o},"allday"===i?E(fa,{events:x[i],rowStyleInfo:b,gridColWidthMap:D,weekDates:y,height:null==(t=r[i])?void 0:t.height,options:d}):E(ma,{category:i,events:x[i],weekDates:y,height:null==(n=r[i])?void 0:n.height,options:d,gridColWidthMap:D}))});vl(c,T.rows.length);const M=wl(c);return E(ms,{className:Ct("day-view"),autoAdjustPanels:!0},E(vs,{name:"day-view-day-names",initialHeight:43},E(mr,{type:"week",dayNames:w,marginLeft:l,rowStyleInfo:b})),C,S.includes("time")?E(vs,{name:"time",autoSize:1,ref:u},E(ll,{events:x.time,timeGridData:T}),E(dl,{top:M})):null)}function Dl({rowIndex:e,weekDates:t,narrowWeekend:n}){const i=Ii(pe(n=>n.gridSelection.accumulated.dayGridMonth.map(n=>to.calculateSelection(n,e,t.length)),[e,t]));return E("div",{className:Ct("accumulated-grid-selection")},i.map(e=>e?E(Zr,{type:"accumulated",gridSelectionData:e,weekDates:t,narrowWeekend:n}):null))}function kl({type:e,number:t,onClickButton:n,className:i}){const{reset:r}=Ai("dnd");return E("button",{type:"button",onMouseDown:e=>{e.stopPropagation()},onClick:()=>{r(),n()},className:i},E(zi,{template:`monthGrid${e===gr.header?"Header":"Footer"}Exceed`,param:t}))}function xl({date:e,theme:t,renderDate:n,isToday:i}){const r=e.getDay(),o=n.getMonth()===e.getMonth(),{common:{holiday:a,saturday:s,today:l,dayName:c},month:{dayExceptThisMonth:u,holidayExceptThisMonth:d}}=t;return i?l.color:Mn(r)?o?a.color:d.color:In(r)?o?s.color:u.color:o?c.color:u.color}function El(){const e=dr(Zi),t=hr();return he(()=>({common:e,month:t}),[e,t])}function Tl({type:e=gr.header,exceedCount:t=0,date:n,onClickExceedCount:i}){const{renderDate:r}=Ii(Hi),[,o]=Ki(),a=El(),s=a.month.gridCell[e+"Height"],l=_n(n,"YYYYMMDD"),c=_n(o(),"YYYYMMDD"),u=l===c,d={date:_n(n,"YYYY-MM-DD"),day:n.getDay(),hiddenEventCount:t,isOtherMonth:n.getMonth()!==r.getMonth(),isToday:l===c,month:n.getMonth(),ymd:l},h={color:xl({date:n,theme:a,isToday:u,renderDate:r})},p="monthGrid"+ni(e);return Et(s)?null:E("div",{className:Ct("grid-cell-"+e),style:{height:s}},E("span",{className:Ct("grid-cell-date"),style:h},E(zi,{template:p,param:d})),t?E(kl,{type:e,number:t,onClickButton:i,className:Ct("grid-cell-more-events")}):null)}function Sl({layoutContainer:e,cell:t,popupSize:n}){const i=function(e,t,n){const{width:i,height:r,left:o,top:a}=t,{width:s,height:l}=e,c=o+i,u=a+r;let d=n.left+n.width/2-s/2,{top:h}=n;const p=d+s>c,f=h+l>u;return d<o&&(d=o),p&&(d=c-s),h<a&&(h=a),f&&(h=u-l),{top:h+window.scrollY,left:d+window.scrollX}}(n,e.getBoundingClientRect(),t.getBoundingClientRect());return _(_({},n),i)}function Cl(e,t,n){const{width:i,height:r}=dr(nr),[o,a]=ca(),[s,l]=se(null);return ce(()=>{if(n&&t&&o){const a=function({grid:e,offsetWidth:t,eventLength:n,layerSize:i}){const r=yi(e).height+10;let o=t+10;const{width:a,height:s}=i;o=Math.max(o,280);let l=61;return l+=n<=10?26*n:260,a&&(o=a),s&&(l=s),(isNaN(l)||l<r)&&(l=r),{width:o,height:l}}({grid:t,offsetWidth:o.offsetWidth,eventLength:e,layerSize:{width:i,height:r}}),s=Sl({cell:o,layoutContainer:n,popupSize:a});l(s)}},[n,o,e,t,i,r]),{popupPosition:s,containerRefCallback:a}}function Ml(e){return e.month.weekend.backgroundColor}function Il({date:e,events:t=[],style:n,parentContainer:i,contentAreaHeight:r}){const o=Wo(),{showSeeMorePopup:a}=Ai("popup"),s=dr(Ml),{popupPosition:l,containerRefCallback:c}=Cl(t.length,i,o),u=pe(()=>{l&&a({date:e,popupPosition:l,events:t})},[e,t,l,a]),d=Fr(t,r,26);return E("div",{className:Ct("daygrid-cell"),style:v(_({},n),{backgroundColor:Cn(e.getDay())?s:"inherit"}),ref:c},E(Tl,{type:gr.header,exceedCount:d,date:e,onClickExceedCount:u}),E(Tl,{type:gr.footer,exceedCount:d,date:e,onClickExceedCount:u}))}const Nl=lo((function({week:e,rowInfo:t,gridDateEventModelMap:n={},contentAreaHeight:i}){const[r,o]=ca(),a=dr(pe(e=>e.common.border,[]));return E("div",{className:Ct("weekday-grid"),style:{borderTop:a},ref:o},e.map((e,o)=>{const a=e.getDay(),{width:s,left:l}=t[o],c=_n(yn(e),"YYYYMMDD");return E(Il,{key:"daygrid-cell-"+a,date:e,style:{width:Mt(s),left:Mt(l)},parentContainer:r,events:n[c],contentAreaHeight:i})}))}));function Al({weekDates:e,narrowWeekend:t,rowIndex:n}){const i=Ii(pe(t=>to.calculateSelection(t.gridSelection.dayGridMonth,n,e.length),[n,e.length]));return Et(i)?null:E(Zr,{type:"month",gridSelectionData:i,weekDates:e,narrowWeekend:t})}const Pl=lo((function({contentAreaHeight:e,eventHeight:t=22,events:n,name:i,className:r}){const{headerHeight:o}=dr(ir);return E("div",{className:r},n.filter(Hr(e,t+2)).map(e=>E(na,{key:`${i}-DayEvent-${e.cid()}`,uiModel:e,eventHeight:t,headerHeight:null!=o?o:27})))}));function Ol({dateMatrix:e,gridPositionFinder:t,rowInfo:n,rowIndex:i}){const r=function({dateMatrix:e,rowInfo:t,gridPositionFinder:n,rowIndex:i}){const r=Vi(),{isDraggingEnd:o,isDraggingCanceled:a,draggingEvent:s,clearDraggingEvent:l}=oa("dayGrid","move"),[c,u]=ra(n),d=he(()=>{var e,n;let r=null;return s&&(null==c?void 0:c.rowIndex)===i&&(r=s,r.left=t[null!=(e=null==c?void 0:c.columnIndex)?e:0].left,r.width=t[null!=(n=null==c?void 0:c.columnIndex)?n:0].width),r},[s,null==c?void 0:c.rowIndex,null==c?void 0:c.columnIndex,i,t]);return ia(()=>{if(!a&&Tt(d)&&Tt(c)){const t=d.model.getStarts(),n=d.duration(),i=864e5*Hn(e[c.rowIndex][c.columnIndex],t),o=new Zt(t.getTime()+i),a=new Zt(o.getTime()+n);r.fire("beforeUpdateEvent",{event:d.model.toEventObject(),changes:{start:o,end:a}})}l(),u()},o),d}({dateMatrix:e,rowInfo:n,gridPositionFinder:t,rowIndex:i});return Et(r)?null:E(na,{uiModel:r,movingLeft:r.left,eventHeight:22,headerHeight:30})}function Rl(e,t){return{startColumnIndex:Math.max(Br(e.getStarts(),t),0),endColumnIndex:Br(e.getEnds(),t)}}function Ll({dateMatrix:e,cellWidthMap:t,gridPositionFinder:n,renderedUIModels:i,rowIndex:r}){const o=function({dateMatrix:e,gridPositionFinder:t,renderedUIModels:n,cellWidthMap:i,rowIndex:r}){const o=Vi(),{isDraggingEnd:a,isDraggingCanceled:s,draggingEvent:l,clearDraggingEvent:c}=oa("dayGrid","resize"),[u,d]=ra(t),[h,p]=se(null),f=pe(()=>{p(null),d(),c()},[d,c]),m=he(()=>{if(Et(l))return null;const t=n.map(({uiModels:e})=>e.filter(e=>e.cid()===l.cid())),i=t.findIndex(e=>e.length>0),r=an(t,e=>e.length>0),o=Rl(t[i][0],e[i]),a=Rl(t[r][0],e[r]);return{eventStartDateColumnIndex:o.startColumnIndex,eventStartDateRowIndex:i,eventEndDateColumnIndex:a.endColumnIndex,eventEndDateRowIndex:r,resizeTargetUIModelRows:t}},[e,n,l]),g=Tt(m)&&Tt(l)&&Tt(u);return ce(()=>{if(g&&r===m.eventStartDateRowIndex){const{eventStartDateRowIndex:t,eventStartDateColumnIndex:n}=m,o=m.resizeTargetUIModelRows[t][0].clone();let a;t===u.rowIndex?a=i[n][Math.max(n,u.columnIndex)]:t>u.rowIndex?a=i[n][n]:(a=i[n][e[r].length-1],o.setUIProps({exceedRight:!0})),p([o,a])}},[m,g,i,u,e,r]),ce(()=>{if(g&&m.eventStartDateRowIndex<r&&r<u.rowIndex){const e=l.clone();e.setUIProps({left:0,exceedLeft:!0,exceedRight:!0}),p([e,"100%"])}},[m,g,u,l,r]),ce(()=>{if(g&&m.eventStartDateRowIndex<u.rowIndex&&r===u.rowIndex){const e=l.clone();e.setUIProps({left:0,exceedLeft:!0}),p([e,i[0][u.columnIndex]])}},[m,g,i,u,l,r]),ce(()=>{g&&r>m.eventStartDateRowIndex&&r>u.rowIndex&&p(null)},[g,u,m,r]),ia(()=>{if(g){const{eventStartDateColumnIndex:t,eventStartDateRowIndex:n}=m;if(!s&&(u.rowIndex===n&&u.columnIndex>=t||u.rowIndex>n)){const t=e[u.rowIndex][u.columnIndex];o.fire("beforeUpdateEvent",{event:l.model.toEventObject(),changes:{end:t}})}}f()},a),h}({dateMatrix:e,gridPositionFinder:n,cellWidthMap:t,renderedUIModels:i,rowIndex:r});if(Et(o))return null;const[a,s]=o;return E("div",{className:Ct("weekday-events")},E(na,{key:"resizing-event-"+a.cid(),uiModel:a,eventHeight:24,headerHeight:30,resizingWidth:s}))}function Hl({dateMatrix:e=[],rowInfo:t=[],cellWidthMap:n=[]}){const[i,r]=ca(),o=Ii(Oi),{ref:a,cellContentAreaHeight:s}=function(e){const t=Ii(js),{headerHeight:n,footerHeight:i}=dr(ir),r=de(null),[o,a]=se(0);return ce(()=>{if(r.current){const o=yi(r.current).height-(3+(null!=n?n:27))-(null!=i?i:0),s=t*(e+2);a(Math.min(o,s))}},[i,n,e,t]),{ref:r,cellContentAreaHeight:o}}(24),{eventFilter:l,month:c,isReadOnly:u}=Ii(Fi),{narrowWeekend:d,startDayOfWeek:h}=c,p=100/e.length,f=he(()=>Kr({container:i,rowsCount:e.length,columnsCount:e[0].length,narrowWeekend:d,startDayOfWeek:h}),[e,i,d,h]),m=_l(o,l),g=he(()=>e.map(e=>Ur(e,m,d)),[m,e,d]);return E("div",{ref:r,onMouseDown:Jo(!u,pa({type:"dayGridMonth",gridPositionFinder:f,dateCollection:e,dateGetter:to.getDateFromCollection,selectionSorter:to.sortSelection})),className:Ct("month-daygrid")},e.map((i,r)=>{const{uiModels:o,gridDateEventModelMap:l}=g[r];return E("div",{key:"dayGrid-events-"+r,className:Ct("month-week-item"),style:{height:Mt(p)},ref:a},E("div",{className:Ct("weekday")},E(Nl,{gridDateEventModelMap:l,week:i,rowInfo:t,contentAreaHeight:s}),E(Pl,{name:"month",events:o,contentAreaHeight:s,eventHeight:24,className:Ct("weekday-events")}),E(Al,{weekDates:i,narrowWeekend:d,rowIndex:r}),E(Dl,{rowIndex:r,weekDates:i,narrowWeekend:d})),E(Ll,{dateMatrix:e,gridPositionFinder:f,rowIndex:r,cellWidthMap:n,renderedUIModels:g}),E(Ol,{dateMatrix:e,gridPositionFinder:f,rowIndex:r,rowInfo:t}))}))}function Fl(){const e=Ii(Fi),{renderDate:t}=Ii(Hi),n=function(e){const{dayNames:t,startDayOfWeek:n,workweek:i}=e.month;return[...Array(7)].map((e,t)=>(n+t)%7).map(e=>({day:e,label:ni(t[e])})).filter(e=>!i||!Cn(e.day))}(e),i=e.month,{narrowWeekend:r,startDayOfWeek:o,workweek:a}=i,s=he(()=>$r(t,i),[i,t]),{rowStyleInfo:l,cellWidthMap:c}=he(()=>An(n.length,r,o,a),[n.length,r,o,a]),u=l.map((e,t)=>v(_({},e),{date:s[0][t]}));return E(ms,{className:Ct("month")},E(mr,{type:"month",dayNames:n,options:i,rowStyleInfo:l}),E(Hl,{dateMatrix:s,rowInfo:u,cellWidthMap:c}))}function Yl(){var e,t;const{options:n,calendar:i,gridRowLayout:r,lastPanelType:o,renderDate:a}=function(){const e=Ii(Fi),t=Ii(Oi),{dayGridRows:n,lastPanelType:i}=Ii(Ri),{renderDate:r}=Ii(Hi);return he(()=>({options:e,calendar:t,gridRowLayout:n,lastPanelType:i,renderDate:r}),[t,n,i,e,r])}(),s=dr(pe(e=>e.week.dayGridLeft.width,[])),l=Ii(ji),[c,u]=ca(),d=n.week,{narrowWeekend:h,startDayOfWeek:p,workweek:f,hourStart:m,hourEnd:g,eventView:_,taskView:v}=d,y=he(()=>qr(a,d),[a,d]),w=oi(y,null!=(t=null==(e=n.week)?void 0:e.dayNames)?t:[]),{rowStyleInfo:b,cellWidthMap:D}=An(y.length,h,p,f),k=_l(i,n.eventFilter),x=he(()=>{const[e,t]="Local"===l?[yn(rn(y)),Sn(on(y))]:[yn(Ln(rn(y),-1)),Sn(Ln(on(y),1))];return jr(y,k,{narrowWeekend:h,hourStart:m,hourEnd:g,weekStartDate:e,weekEndDate:t})},[k,g,m,h,l,y]),T=he(()=>Xr(y,{hourStart:m,hourEnd:g,narrowWeekend:h}),[g,m,h,y]),S=ml(v,_),C=S.map(e=>{var t,n;if("time"===e)return null;const i=e;return E(vs,{name:i,key:i,resizable:i!==o},"allday"===i?E(fa,{events:x[i],rowStyleInfo:b,gridColWidthMap:D,weekDates:y,height:null==(t=r[i])?void 0:t.height,options:d}):E(ma,{category:i,events:x[i],weekDates:y,height:null==(n=r[i])?void 0:n.height,options:d,gridColWidthMap:D}))}),M=he(()=>S.includes("time"),[S]);vl(c,T.rows.length);const I=wl(c);return E(ms,{className:Ct("week-view"),autoAdjustPanels:!0},E(vs,{name:"week-view-day-names",initialHeight:44},E(mr,{type:"week",dayNames:w,marginLeft:s,options:d,rowStyleInfo:b})),C,M?E(vs,{name:"time",autoSize:1,ref:u},E(ll,{events:x.time,timeGridData:T}),E(dl,{top:I})):null)}const Wl={month:Fl,week:Yl,day:bl};function Bl(){const{currentView:e}=Ii(Hi);return E(he(()=>Wl[e]||(()=>null),[e]),null)}var zl=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i,Ul=/[&<>"]/;function Gl(e){var t=String(e);return Ul.test(t)?t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"):t}var Vl=function(e,t){return String(e).replace(/(\n+)/g,"$1"+(t||"\t"))},jl=function(e,t,n){return String(e).length>(t||40)||!n&&-1!==String(e).indexOf("\n")||-1!==String(e).indexOf("<")},$l={};function ql(e){var t="";for(var n in e){var i=e[n];null!=i&&""!==i&&(t&&(t+=" "),t+="-"==n[0]?n:$l[n]||($l[n]=n.replace(/([A-Z])/g,"-$1").toLowerCase()),t+=": ",t+=i,"number"==typeof i&&!1===zl.test(n)&&(t+="px"),t+=";")}return t||void 0}function Xl(e,t){for(var n in t)e[n]=t[n];return e}function Kl(e,t){return Array.isArray(t)?t.reduce(Kl,e):null!=t&&!1!==t&&e.push(t),e}var Jl={shallow:!0},Zl=[],Ql=/^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/,ec=/[\s\n\\/='"\0<>]/;function tc(){this.__d=!0}ic.render=ic;var nc=[];function ic(e,t,n){t=t||{},n=n||{};var i=r.__s;r.__s=!0;var o=function e(t,n,i,o,a,s){if(null==t||"boolean"==typeof t)return"";if("object"!=typeof t)return Gl(t);var l=i.pretty,c=l&&"string"==typeof l?l:"\t";if(Array.isArray(t)){for(var u="",d=0;d<t.length;d++)l&&d>0&&(u+="\n"),u+=e(t[d],n,i,o,a,s);return u}var h,p=t.type,f=t.props,m=!1;if("function"==typeof p){if(m=!0,!i.shallow||!o&&!1!==i.renderRootComponent){if(p===S){var g=[];return Kl(g,t.props.children),e(g,n,i,!1!==i.shallowHighOrder,a,s)}var _,v=t.__c={__v:t,context:n,props:t.props,setState:tc,forceUpdate:tc,__d:!0,__h:[]};r.__b&&r.__b(t);var y=r.__r;if(p.prototype&&"function"==typeof p.prototype.render){var w=p.contextType,b=w&&n[w.__c],D=null!=w?b?b.props.value:w.__:n;(v=t.__c=new p(f,D)).__v=t,v._dirty=v.__d=!0,v.props=f,null==v.state&&(v.state={}),null==v._nextState&&null==v.__s&&(v._nextState=v.__s=v.state),v.context=D,p.getDerivedStateFromProps?v.state=Xl(Xl({},v.state),p.getDerivedStateFromProps(v.props,v.state)):v.componentWillMount&&(v.componentWillMount(),v.state=v._nextState!==v.state?v._nextState:v.__s!==v.state?v.__s:v.state),y&&y(t),_=v.render(v.props,v.state,v.context)}else for(var k=p.contextType,x=k&&n[k.__c],E=null!=k?x?x.props.value:k.__:n,T=0;v.__d&&T++<25;)v.__d=!1,y&&y(t),_=p.call(t.__c,f,E);return v.getChildContext&&(n=Xl(Xl({},n),v.getChildContext())),r.diffed&&r.diffed(t),e(_,n,i,!1!==i.shallowHighOrder,a,s)}p=(h=p).displayName||h!==Function&&h.name||function(e){var t=(Function.prototype.toString.call(e).match(/^\s*function\s+([^( ]+)/)||"")[1];if(!t){for(var n=-1,i=Zl.length;i--;)if(Zl[i]===e){n=i;break}n<0&&(n=Zl.push(e)-1),t="UnnamedComponent"+n}return t}(h)}var C,M,I="<"+p;if(f){var N=Object.keys(f);i&&!0===i.sortAttributes&&N.sort();for(var A=0;A<N.length;A++){var P=N[A],O=f[P];if("children"!==P){if(!ec.test(P)&&(i&&i.allAttributes||"key"!==P&&"ref"!==P&&"__self"!==P&&"__source"!==P)){if("defaultValue"===P)P="value";else if("defaultChecked"===P)P="checked";else if("defaultSelected"===P)P="selected";else if("className"===P){if(void 0!==f.class)continue;P="class"}else a&&/^xlink:?./.test(P)&&(P=P.toLowerCase().replace(/^xlink:?/,"xlink:"));if("htmlFor"===P){if(f.for)continue;P="for"}"style"===P&&O&&"object"==typeof O&&(O=ql(O)),"a"===P[0]&&"r"===P[1]&&"boolean"==typeof O&&(O=String(O));var R=i.attributeHook&&i.attributeHook(P,O,n,i,m);if(R||""===R)I+=R;else if("dangerouslySetInnerHTML"===P)M=O&&O.__html;else if("textarea"===p&&"value"===P)C=O;else if((O||0===O||""===O)&&"function"!=typeof O){if(!(!0!==O&&""!==O||(O=P,i&&i.xml))){I=I+" "+P;continue}if("value"===P){if("select"===p){s=O;continue}"option"===p&&s==O&&void 0===f.selected&&(I+=" selected")}I=I+" "+P+'="'+Gl(O)+'"'}}}else C=O}}if(l){var L=I.replace(/\n\s*/," ");L===I||~L.indexOf("\n")?l&&~I.indexOf("\n")&&(I+="\n"):I=L}if(I+=">",ec.test(p))throw new Error(p+" is not a valid HTML tag name in "+I);var H,F=Ql.test(p)||i.voidElements&&i.voidElements.test(p),Y=[];if(M)l&&jl(M)&&(M="\n"+c+Vl(M,c)),I+=M;else if(null!=C&&Kl(H=[],C).length){for(var W=l&&~I.indexOf("\n"),B=!1,z=0;z<H.length;z++){var U=H[z];if(null!=U&&!1!==U){var G=e(U,n,i,!0,"svg"===p||"foreignObject"!==p&&a,s);if(l&&!W&&jl(G)&&(W=!0),G)if(l){var V=G.length>0&&"<"!=G[0];B&&V?Y[Y.length-1]+=G:Y.push(G),B=V}else Y.push(G)}}if(l&&W)for(var j=Y.length;j--;)Y[j]="\n"+c+Vl(Y[j],c)}if(Y.length||M)I+=Y.join("");else if(i&&i.xml)return I.substring(0,I.length-1)+" />";return!F||H||M?(l&&~I.indexOf("\n")&&(I+="\n"),I=I+"</"+p+">"):I=I.replace(/>$/," />"),I}(e,t,n);return r.__c&&r.__c(e,nc),nc.length=0,r.__s=i,o}ic.shallowRender=function(e,t){return ic(e,t,Jl)};var rc=function(e,t,n){var i;for(i in n=n||null,e)if(e.hasOwnProperty(i)&&!1===t.call(n,e[i],i,e))break},oc=rc;var ac=_t,sc=function(e,t){var n=document.createElement("img"),i="";return oc(t,(function(e,t){i+="&"+t+"="+e})),i=i.substring(1),n.src=e+"?"+i,n.style.display="none",document.body.appendChild(n),document.body.removeChild(n),n};var lc=function(e,t){var n=location.hostname,i="TOAST UI "+e+" for "+n+": Statistics",r=window.localStorage.getItem(i);(ac(window.tui)||!1!==window.tui.usageStatistics)&&(r&&!function(e){return(new Date).getTime()-e>6048e5}(r)||(window.localStorage.setItem(i,(new Date).getTime()),setTimeout((function(){"interactive"!==document.readyState&&"complete"!==document.readyState||sc("https://www.google-analytics.com/collect",{v:1,t:"event",tid:t,cid:n,dp:n,dh:e,el:e,ec:"use"})}),1e3)))};function cc({theme:e,store:t,eventBus:n,children:i}){return E(Gi,{value:n},E(cr,{store:e},E(Mi,{store:t},E(Sa,null,i))))}var uc=_t,dc=function(e){return null===e};var hc=function(e){return e instanceof Array};var pc=hc,fc=function(e,t,n){var i=0,r=e.length;for(n=n||null;i<r&&!1!==t.call(n,e[i],i,e);i+=1);},mc=rc;var gc=function(e,t){var n,i,r,o,a=Object.prototype.hasOwnProperty;for(r=1,o=arguments.length;r<o;r+=1)for(i in n=arguments[r])a.call(n,i)&&(e[i]=n[i]);return e},_c=function(e){return!uc(e)&&!dc(e)},vc=xt,yc=kt,wc=hc,bc=function(e){return e instanceof Function},Dc=function(e,t,n){pc(e)?fc(e,t,n):mc(e,t,n)},kc=/\s+/g;function xc(){this.events=null,this.contexts=null}xc.mixin=function(e){gc(e.prototype,xc.prototype)},xc.prototype._getHandlerItem=function(e,t){var n={handler:e};return t&&(n.context=t),n},xc.prototype._safeEvent=function(e){var t,n=this.events;return n||(n=this.events={}),e&&((t=n[e])||(t=[],n[e]=t),n=t),n},xc.prototype._safeContext=function(){var e=this.contexts;return e||(e=this.contexts=[]),e},xc.prototype._indexOfContext=function(e){for(var t=this._safeContext(),n=0;t[n];){if(e===t[n][0])return n;n+=1}return-1},xc.prototype._memorizeContext=function(e){var t,n;_c(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1?t[n][1]+=1:t.push([e,1]))},xc.prototype._forgetContext=function(e){var t,n;_c(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1&&(t[n][1]-=1,t[n][1]<=0&&t.splice(n,1)))},xc.prototype._bindEvent=function(e,t,n){var i=this._safeEvent(e);this._memorizeContext(n),i.push(this._getHandlerItem(t,n))},xc.prototype.on=function(e,t,n){var i=this;vc(e)?(e=e.split(kc),Dc(e,(function(e){i._bindEvent(e,t,n)}))):yc(e)&&(n=t,Dc(e,(function(e,t){i.on(t,e,n)})))},xc.prototype.once=function(e,t,n){var i=this;if(yc(e))return n=t,void Dc(e,(function(e,t){i.once(t,e,n)}));this.on(e,(function r(){t.apply(n,arguments),i.off(e,r,n)}),n)},xc.prototype._spliceMatches=function(e,t){var n,i=0;if(wc(e))for(n=e.length;i<n;i+=1)!0===t(e[i])&&(e.splice(i,1),n-=1,i-=1)},xc.prototype._matchHandler=function(e){var t=this;return function(n){var i=e===n.handler;return i&&t._forgetContext(n.context),i}},xc.prototype._matchContext=function(e){var t=this;return function(n){var i=e===n.context;return i&&t._forgetContext(n.context),i}},xc.prototype._matchHandlerAndContext=function(e,t){var n=this;return function(i){var r=e===i.handler,o=t===i.context,a=r&&o;return a&&n._forgetContext(i.context),a}},xc.prototype._offByEventName=function(e,t){var n=this,i=bc(t),r=n._matchHandler(t);e=e.split(kc),Dc(e,(function(e){var t=n._safeEvent(e);i?n._spliceMatches(t,r):(Dc(t,(function(e){n._forgetContext(e.context)})),n.events[e]=[])}))},xc.prototype._offByHandler=function(e){var t=this,n=this._matchHandler(e);Dc(this._safeEvent(),(function(e){t._spliceMatches(e,n)}))},xc.prototype._offByObject=function(e,t){var n,i=this;this._indexOfContext(e)<0?Dc(e,(function(e,t){i.off(t,e)})):vc(t)?(n=this._matchContext(e),i._spliceMatches(this._safeEvent(t),n)):bc(t)?(n=this._matchHandlerAndContext(t,e),Dc(this._safeEvent(),(function(e){i._spliceMatches(e,n)}))):(n=this._matchContext(e),Dc(this._safeEvent(),(function(e){i._spliceMatches(e,n)})))},xc.prototype.off=function(e,t){vc(e)?this._offByEventName(e,t):arguments.length?bc(e)?this._offByHandler(e):yc(e)&&this._offByObject(e,t):(this.events={},this.contexts=[])},xc.prototype.fire=function(e){this.invoke.apply(this,arguments)},xc.prototype.invoke=function(e){var t,n,i,r;if(!this.hasListener(e))return!0;for(t=this._safeEvent(e),n=Array.prototype.slice.call(arguments,1),i=0;t[i];){if(!1===(r=t[i]).handler.apply(r.context,n))return!1;i+=1}return!0},xc.prototype.hasListener=function(e){return this.getListenerLength(e)>0},xc.prototype.getListenerLength=function(e){return this._safeEvent(e).length};var Ec=xc;class Tc extends Ec{on(e,t){return super.on(e,t),this}off(e,t){return super.off(e,t),this}fire(e,...t){return super.fire(e,...t),this}once(e,t){return super.once(e,t),this}}class Sc{constructor(e,t={}){var n;this.container=xt(e)?null!=(n=null==document?void 0:document.querySelector(e))?n:null:e,this.theme=((e={})=>Si(lr(e)))(t.theme),this.eventBus=new Tc,this.store=((e={})=>Si(Ci(e)))(t),this.renderRange=this.calculateRenderRange(yn()),Bi.addHook("beforeSanitizeAttributes",e=>{if("A"===e.tagName){const t=e.getAttribute("target");t?e.setAttribute("data-target-temp",t):e.setAttribute("target","_self")}}),Bi.addHook("afterSanitizeAttributes",e=>{"A"===e.tagName&&e.hasAttribute("data-target-temp")&&(e.setAttribute("target",e.getAttribute("data-target-temp")),e.removeAttribute("data-target-temp"),"_blank"===e.getAttribute("target")&&e.setAttribute("rel","noopener"))}),!0===this.getStoreState().options.usageStatistics&&lc("calendar","UA-129951699-1")}getStoreState(e){const t=this.store.getState();return e?t[e]:t}getStoreDispatchers(e){const t=this.store.getState().dispatch;return e?t[e]:t}destroy(){var e;this.container&&(e=this.container).__k&&j(null,e),this.store.clearListeners(),this.theme.clearListeners(),this.eventBus.off(),Bi.removeAllHooks();for(const e in this)this.hasOwnProperty(e)&&delete this[e]}calculateMonthRenderDate({renderDate:e,offset:t,monthOptions:n}){let i=new Zt(e);const{visibleWeeksCount:r}=n;i=r>0?Ln(i,7*t*r):function(e,t=1){const n=bn(e);if(0!==t){const e=n.getDate(),i=new Zt(n.getTime());i.setMonth(n.getMonth()+t+1,0);if(e>=i.getDate())return i;n.setFullYear(i.getFullYear(),i.getMonth(),e)}return n}(i,t);const o=$r(i,n),[[a]]=o;return{renderDate:i,renderRange:{start:a,end:on(on(o))}}}calculateWeekRenderDate({renderDate:e,offset:t,weekOptions:n}){const i=new Zt(e);i.addDate(7*t);const r=qr(i,n),[o]=r;return{renderDate:i,renderRange:{start:o,end:on(r)}}}calculateDayRenderDate({renderDate:e,offset:t}){const n=new Zt(e);n.addDate(t);return{renderDate:n,renderRange:{start:yn(n),end:Sn(n)}}}move(e){if(Et(e))return;const{currentView:t,renderDate:n}=this.getStoreState().view,{options:i}=this.getStoreState(),{setRenderDate:r}=this.getStoreDispatchers().view,o=new Zt(n);let a={renderDate:o,renderRange:{start:new Zt(o),end:new Zt(o)}};"month"===t?a=this.calculateMonthRenderDate({renderDate:n,offset:e,monthOptions:i.month}):"week"===t?a=this.calculateWeekRenderDate({renderDate:n,offset:e,weekOptions:i.week}):"day"===t&&(a=this.calculateDayRenderDate({renderDate:n,offset:e})),r(a.renderDate),this.renderRange=a.renderRange}createEvents(e){const{createEvents:t}=this.getStoreDispatchers("calendar");t(e)}getEventModel(e,t){const{events:n}=this.getStoreState("calendar");return n.find(({id:n,calendarId:i})=>n===e&&i===t)}getEvent(e,t){var n,i;return null!=(i=null==(n=this.getEventModel(e,t))?void 0:n.toEventObject())?i:null}updateEvent(e,t,n){const{updateEvent:i}=this.getStoreDispatchers("calendar"),r=this.getEventModel(e,t);r&&i({event:r,eventData:n})}deleteEvent(e,t){const{deleteEvent:n}=this.getStoreDispatchers("calendar"),i=this.getEventModel(e,t);i&&n(i)}setCalendarVisibility(e,t){const{setCalendarVisibility:n}=this.getStoreDispatchers("calendar");n(Array.isArray(e)?e:[e],t)}render(){return Tt(this.container)&&j(E(cc,{theme:this.theme,store:this.store,eventBus:this.eventBus},this.getComponent()),this.container),this}renderToString(){return ic(E(cc,{theme:this.theme,store:this.store,eventBus:this.eventBus},this.getComponent()))}clear(){const{clearEvents:e}=this.getStoreDispatchers("calendar");e()}scrollToNow(e="auto"){this.eventBus.fire("scrollToNow",e)}calculateRenderRange(e){const{currentView:t}=this.getStoreState().view,{options:n}=this.getStoreState(),i=new Zt(e);let r={start:new Zt(i),end:new Zt(i)};return"month"===t?r=this.calculateMonthRenderDate({renderDate:e,offset:0,monthOptions:n.month}).renderRange:"week"===t?r=this.calculateWeekRenderDate({renderDate:e,offset:0,weekOptions:n.week}).renderRange:"day"===t&&(r=this.calculateDayRenderDate({renderDate:e,offset:0}).renderRange),r}today(){const{setRenderDate:e}=this.getStoreDispatchers().view,t=new Zt;e(t),this.renderRange=this.calculateRenderRange(t)}setDate(e){const{setRenderDate:t}=this.getStoreDispatchers("view"),n=new Zt(e);t(n),this.renderRange=this.calculateRenderRange(n)}next(){this.move(1)}prev(){this.move(-1)}setCalendarColor(e,t){const{setCalendarColor:n}=this.getStoreDispatchers().calendar;n(e,t)}changeView(e){const{changeView:t}=this.getStoreDispatchers("view");t(e),this.renderRange=this.calculateRenderRange(this.getDate())}getElement(e,t){return this.getEvent(e,t)&&this.container?this.container.querySelector(`[data-event-id="${e}"][data-calendar-id="${t}"]`):null}setTheme(e){const{setTheme:t}=this.theme.getState().dispatch;t(e)}getOptions(){const{options:e,template:t}=this.getStoreState(),n=this.theme.getState(),{dispatch:i}=n,r=y(n,["dispatch"]);return v(_({},e),{template:t,theme:r})}setOptions(e){const t=e,{theme:n,template:i}=t,r=y(t,["theme","template"]),{setTheme:o}=this.theme.getState().dispatch,{options:{setOptions:a},template:{setTemplate:s}}=this.getStoreDispatchers();Tt(n)&&o(n),Tt(i)&&s(i),a(r)}getDate(){const{renderDate:e}=this.getStoreState().view;return e}getDateRangeStart(){return this.renderRange.start}getDateRangeEnd(){return this.renderRange.end}getViewName(){const{currentView:e}=this.getStoreState("view");return e}setCalendars(e){const{setCalendars:t}=this.getStoreDispatchers().calendar;t(e)}openFormPopup(e){const{showFormPopup:t}=this.getStoreDispatchers().popup,n=new Bn(e),{title:i,location:r,start:o,end:a,isAllday:s,isPrivate:l,state:c}=n;t({isCreationPopup:!0,event:n,title:i,location:r,start:o,end:a,isAllday:s,isPrivate:l,eventState:c})}clearGridSelections(){const{clearAll:e}=this.getStoreDispatchers().gridSelection;e()}fire(e,...t){return this.eventBus.fire(e,...t),this}off(e,t){return this.eventBus.off(e,t),this}on(e,t){return this.eventBus.on(e,t),this}once(e,t){return this.eventBus.once(e,t),this}}class Cc extends Sc{constructor(e,t={}){super(e,t);const{defaultView:n="week"}=t;if(i=n,!Object.values(hl).find(e=>e===i))throw new Bt(n);var i;this.render()}getComponent(){return E(Bl,null)}}},A2ba:function(e,t,n){var i;window,i=function(e){return function(e){var t={};function n(i){if(t[i])return t[i].exports;var r=t[i]={i:i,l:!1,exports:{}};return e[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(i,r,function(t){return e[t]}.bind(null,r));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="dist",n(n.s=34)}([function(e,t,n){"use strict";var i=n(35),r=n(7);e.exports=function(e,t){var n;return t||(t=e,e=null),n=t.init||function(){},e&&i(n,e),t.hasOwnProperty("static")&&(r(n,t.static),delete t.static),r(n.prototype,t),n}},function(e,t,n){"use strict";e.exports={TYPE_DATE:"date",TYPE_MONTH:"month",TYPE_YEAR:"year",TYPE_HOUR:"hour",TYPE_MINUTE:"minute",TYPE_MERIDIEM:"meridiem",MIN_DATE:new Date(1900,0,1),MAX_DATE:new Date(2999,11,31),DEFAULT_LANGUAGE_TYPE:"en",CLASS_NAME_SELECTED:"tui-is-selected",CLASS_NAME_PREV_MONTH_BTN:"tui-calendar-btn-prev-month",CLASS_NAME_PREV_YEAR_BTN:"tui-calendar-btn-prev-year",CLASS_NAME_NEXT_YEAR_BTN:"tui-calendar-btn-next-year",CLASS_NAME_NEXT_MONTH_BTN:"tui-calendar-btn-next-month",CLASS_NAME_TITLE_TODAY:"tui-calendar-title-today",DEFAULT_WEEK_START_DAY:"Sun",WEEK_START_DAY_MAP:{sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6}}},function(e,t,n){"use strict";e.exports=function(e,t,n){var i=0,r=e.length;for(n=n||null;i<r&&!1!==t.call(n,e[i],i,e);i+=1);}},function(e,t,n){"use strict";var i=n(6);e.exports=function(e,t,n){var r,o;if(n=n||0,!i(t))return-1;if(Array.prototype.indexOf)return Array.prototype.indexOf.call(t,e,n);for(o=t.length,r=n;n>=0&&r<o;r+=1)if(t[r]===e)return r;return-1}},function(e,t,n){"use strict";var i=n(2),r=n(46),o=n(47),a=0,s={getTarget:function(e){return e.target||e.srcElement},getElement:function(e){return r(e)?e:document.querySelector(e)},getSelector:function(e){var t="";return e.id?t="#"+e.id:e.className&&(t="."+e.className.split(" ")[0]),t},generateId:function(){return a+=1},filter:function(e,t){var n=[];return i(e,(function(e){t(e)&&n.push(e)})),n},sendHostName:function(){o("date-picker","UA-129987462-1")}};e.exports=s},function(e,t,n){"use strict";var i=n(28),r=n(15),o=n(1),a=o.TYPE_DATE,s=o.TYPE_MONTH,l=o.TYPE_YEAR,c={getWeeksCount:function(e,t){var n=c.getFirstDay(e,t),i=c.getLastDayInMonth(e,t);return Math.ceil((n+i)/7)},isValidDate:function(e){return i(e)&&!isNaN(e.getTime())},getFirstDay:function(e,t){return new Date(e,t-1,1).getDay()},getFirstDayTimestamp:function(e,t){return new Date(e,t,1).getTime()},getLastDayInMonth:function(e,t){return new Date(e,t,0).getDate()},prependLeadingZero:function(e){var t="";return e<10&&(t="0"),t+e},getMeridiemHour:function(e){return 0==(e%=12)&&(e=12),e},getSafeNumber:function(e,t){if(isNaN(t)||!r(t))throw Error("The defaultNumber must be a valid number.");return isNaN(e)?t:Number(e)},getDateOfWeek:function(e,t,n,i){var r=new Date(e,t-1).getDay();return new Date(e,t-1,7*n-(r-i-1))},getRangeArr:function(e,t){var n,i=[];if(e>t)for(n=t;n>=e;n-=1)i.push(n);else for(n=e;n<=t;n+=1)i.push(n);return i},cloneWithStartOf:function(e,t){switch(t=t||a,(e=new Date(e)).setHours(0,0,0,0),t){case a:break;case s:e.setDate(1);break;case l:e.setMonth(0,1);break;default:throw Error("Unsupported type: "+t)}return e},cloneWithEndOf:function(e,t){switch(t=t||a,(e=new Date(e)).setHours(23,59,59,999),t){case a:break;case s:e.setMonth(e.getMonth()+1,0);break;case l:e.setMonth(11,31);break;default:throw Error("Unsupported type: "+t)}return e},compare:function(e,t,n){var i,r;return c.isValidDate(e)&&c.isValidDate(t)?(n?(i=c.cloneWithStartOf(e,n).getTime(),r=c.cloneWithStartOf(t,n).getTime()):(i=e.getTime(),r=t.getTime()),i>r?1:i===r?0:-1):NaN},isSame:function(e,t,n){return 0===c.compare(e,t,n)},inRange:function(e,t,n,i){return c.compare(e,n,i)<1&&c.compare(t,n,i)>-1}};e.exports=c},function(e,t,n){"use strict";e.exports=function(e){return e instanceof Array}},function(e,t,n){"use strict";e.exports=function(e,t){var n,i,r,o,a=Object.prototype.hasOwnProperty;for(r=1,o=arguments.length;r<o;r+=1)for(i in n=arguments[r])a.call(n,i)&&(e[i]=n[i]);return e}},function(e,t,n){"use strict";var i=n(7),r=n(37),o=n(13),a=n(22),s=n(6),l=n(39),c=n(9),u=/\s+/g;function d(){this.events=null,this.contexts=null}d.mixin=function(e){i(e.prototype,d.prototype)},d.prototype._getHandlerItem=function(e,t){var n={handler:e};return t&&(n.context=t),n},d.prototype._safeEvent=function(e){var t,n=this.events;return n||(n=this.events={}),e&&((t=n[e])||(t=[],n[e]=t),n=t),n},d.prototype._safeContext=function(){var e=this.contexts;return e||(e=this.contexts=[]),e},d.prototype._indexOfContext=function(e){for(var t=this._safeContext(),n=0;t[n];){if(e===t[n][0])return n;n+=1}return-1},d.prototype._memorizeContext=function(e){var t,n;r(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1?t[n][1]+=1:t.push([e,1]))},d.prototype._forgetContext=function(e){var t,n;r(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1&&(t[n][1]-=1,t[n][1]<=0&&t.splice(n,1)))},d.prototype._bindEvent=function(e,t,n){var i=this._safeEvent(e);this._memorizeContext(n),i.push(this._getHandlerItem(t,n))},d.prototype.on=function(e,t,n){var i=this;o(e)?(e=e.split(u),c(e,(function(e){i._bindEvent(e,t,n)}))):a(e)&&(n=t,c(e,(function(e,t){i.on(t,e,n)})))},d.prototype.once=function(e,t,n){var i=this;if(a(e))return n=t,void c(e,(function(e,t){i.once(t,e,n)}));this.on(e,(function r(){t.apply(n,arguments),i.off(e,r,n)}),n)},d.prototype._spliceMatches=function(e,t){var n,i=0;if(s(e))for(n=e.length;i<n;i+=1)!0===t(e[i])&&(e.splice(i,1),n-=1,i-=1)},d.prototype._matchHandler=function(e){var t=this;return function(n){var i=e===n.handler;return i&&t._forgetContext(n.context),i}},d.prototype._matchContext=function(e){var t=this;return function(n){var i=e===n.context;return i&&t._forgetContext(n.context),i}},d.prototype._matchHandlerAndContext=function(e,t){var n=this;return function(i){var r=e===i.handler,o=t===i.context,a=r&&o;return a&&n._forgetContext(i.context),a}},d.prototype._offByEventName=function(e,t){var n=this,i=l(t),r=n._matchHandler(t);e=e.split(u),c(e,(function(e){var t=n._safeEvent(e);i?n._spliceMatches(t,r):(c(t,(function(e){n._forgetContext(e.context)})),n.events[e]=[])}))},d.prototype._offByHandler=function(e){var t=this,n=this._matchHandler(e);c(this._safeEvent(),(function(e){t._spliceMatches(e,n)}))},d.prototype._offByObject=function(e,t){var n,i=this;this._indexOfContext(e)<0?c(e,(function(e,t){i.off(t,e)})):o(t)?(n=this._matchContext(e),i._spliceMatches(this._safeEvent(t),n)):l(t)?(n=this._matchHandlerAndContext(t,e),c(this._safeEvent(),(function(e){i._spliceMatches(e,n)}))):(n=this._matchContext(e),c(this._safeEvent(),(function(e){i._spliceMatches(e,n)})))},d.prototype.off=function(e,t){o(e)?this._offByEventName(e,t):arguments.length?l(e)?this._offByHandler(e):a(e)&&this._offByObject(e,t):(this.events={},this.contexts=[])},d.prototype.fire=function(e){this.invoke.apply(this,arguments)},d.prototype.invoke=function(e){var t,n,i,r;if(!this.hasListener(e))return!0;for(t=this._safeEvent(e),n=Array.prototype.slice.call(arguments,1),i=0;t[i];){if(!1===(r=t[i]).handler.apply(r.context,n))return!1;i+=1}return!0},d.prototype.hasListener=function(e){return this.getListenerLength(e)>0},d.prototype.getListenerLength=function(e){return this._safeEvent(e).length},e.exports=d},function(e,t,n){"use strict";var i=n(6),r=n(2),o=n(23);e.exports=function(e,t,n){i(e)?r(e,t,n):o(e,t,n)}},function(e,t,n){"use strict";e.exports={en:{titles:{DD:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],D:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MMM:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],MMMM:["January","February","March","April","May","June","July","August","September","October","November","December"]},titleFormat:"MMMM yyyy",todayFormat:"To\\d\\ay: DD, MMMM d, yyyy",time:"Time",date:"Date"},ko:{titles:{DD:["일요일","월요일","화요일","수요일","목요일","금요일","토요일"],D:["일","월","화","수","목","금","토"],MMM:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],MMMM:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]},titleFormat:"yyyy.MM",todayFormat:"오늘: yyyy.MM.dd (D)",date:"날짜",time:"시간"}}},function(e,t,n){"use strict";var i=n(3),r=n(9),o=n(6),a=n(13),s=n(7),l=/{{\s?|\s?}}/g,c=/^[a-zA-Z0-9_@]+\[[a-zA-Z0-9_@"']+\]$/,u=/\[\s?|\s?\]/,d=/^[a-zA-Z_]+\.[a-zA-Z_]+$/,h=/\./,p=/^["']\w+["']$/,f=/"|'/g,m=/^-?\d+\.?\d*$/,g={if:function(e,t,n){var i=function(e,t){var n=[e],i=[],o=0,a=0;return r(t,(function(e,r){0===e.indexOf("if")?o+=1:"/if"===e?o-=1:o||0!==e.indexOf("elseif")&&"else"!==e||(n.push("else"===e?["true"]:e.split(" ").slice(1)),i.push(t.slice(a,r)),a=r+1)})),i.push(t.slice(a)),{exps:n,sourcesInsideIf:i}}(e,t),o=!1,a="";return r(i.exps,(function(e,t){return(o=w(e,n))&&(a=b(i.sourcesInsideIf[t],n)),!o})),a},each:function(e,t,n){var i=w(e,n),a=o(i)?"@index":"@key",l={},c="";return r(i,(function(e,i){l[a]=i,l["@this"]=e,s(n,l),c+=b(t.slice(),n)})),c},with:function(e,t,n){var r=i("as",e),o=e[r+1],a=w(e.slice(0,r),n),l={};return l[o]=a,b(t,s(n,l))||""}},_=3==="a".split(/a/).length?function(e,t){return e.split(t)}:function(e,t){var n,i,r=[],o=0;for(t.global||(t=new RegExp(t,"g")),n=t.exec(e);null!==n;)i=n.index,r.push(e.slice(o,i)),o=i+n[0].length,n=t.exec(e);return r.push(e.slice(o)),r};function v(e,t){var n,i=t[e];return"true"===e?i=!0:"false"===e?i=!1:p.test(e)?i=e.replace(f,""):c.test(e)?i=v((n=e.split(u))[0],t)[v(n[1],t)]:d.test(e)?i=v((n=e.split(h))[0],t)[n[1]]:m.test(e)&&(i=parseFloat(e)),i}function y(e,t,n){for(var i,r,o,s,l=g[e],c=1,u=2,d=t[u];c&&a(d);)0===d.indexOf(e)?c+=1:0===d.indexOf("/"+e)&&(c-=1,i=u),d=t[u+=2];if(c)throw Error(e+" needs {{/"+e+"}} expression.");return t[0]=l(t[0].split(" ").slice(1),(r=0,o=i,(s=t.splice(r+1,o-r)).pop(),s),n),t}function w(e,t){var n=v(e[0],t);return n instanceof Function?function(e,t,n){var i=[];return r(t,(function(e){i.push(v(e,n))})),e.apply(null,i)}(n,e.slice(1),t):n}function b(e,t){for(var n,i,r,o=1,s=e[o];a(s);)i=(n=s.split(" "))[0],g[i]?(r=y(i,e.splice(o,e.length-o),t),e=e.concat(r)):e[o]=w(n,t),s=e[o+=2];return e.join("")}e.exports=function(e,t){return b(_(e,l),t)}},function(e,t,n){"use strict";e.exports=function(e){return void 0===e}},function(e,t,n){"use strict";e.exports=function(e){return"string"==typeof e||e instanceof String}},function(e,t,n){"use strict";e.exports=function(e){e&&e.parentNode&&e.parentNode.removeChild(e)}},function(e,t,n){"use strict";e.exports=function(e){return"number"==typeof e||e instanceof Number}},function(e,t,n){"use strict";var i=n(9),r=n(3),o=n(17),a=n(24);e.exports=function(e){var t,n=Array.prototype.slice.call(arguments,1),s=e.classList,l=[];s?i(n,(function(t){e.classList.add(t)})):((t=o(e))&&(n=[].concat(t.split(/\s+/),n)),i(n,(function(e){r(e,l)<0&&l.push(e)})),a(e,l))}},function(e,t,n){"use strict";var i=n(12);e.exports=function(e){return e&&e.className?i(e.className.baseVal)?e.className:e.className.baseVal:""}},function(e,t,n){"use strict";var i=n(2),r=n(3),o=n(17),a=n(24);e.exports=function(e){var t,n,s=Array.prototype.slice.call(arguments,1),l=e.classList;l?i(s,(function(e){l.remove(e)})):(t=o(e).split(/\s+/),n=[],i(t,(function(e){r(e,s)<0&&n.push(e)})),a(e,n))}},function(e,t,n){"use strict";var i=n(31),r=n(33),o={_isMobile:/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent),_getEventType:function(e){return this._isMobile&&("mousedown"===e?e="touchstart":"click"===e&&(e="touchend")),e},on:function(e,t,n,r){i(e,this._getEventType(t),n,r)},off:function(e,t,n){r(e,this._getEventType(t),n)}};e.exports=o},function(e,t,n){"use strict";var i=n(0),r=n(14),o=n(10),a=n(1).DEFAULT_LANGUAGE_TYPE,s=i({init:function(e){e=e||a,this._element=null,this._localeText=o[e],this._type="base"},_makeContext:function(){l(this.getType(),"_makeContext")},render:function(){l(this.getType(),"render")},getDateElements:function(){l(this.getType(),"getDateElements")},getType:function(){return this._type},changeLanguage:function(e){this._localeText=o[e]},remove:function(){this._element&&r(this._element),this._element=null}});function l(e,t){throw new Error(e+' layer does not have the "'+t+'" method.')}e.exports=s},function(e,t,n){"use strict";var i=n(3),r=n(2),o=n(0),a=n(8),s=n(16),l=n(25),c=n(26),u=n(27),d=n(18),h=n(14),p=n(7),f=n(6),m=n(28),g=n(15),_=n(22),v=n(43),y=n(29),w=n(56),b=n(1),D=n(10),k=n(5),x=n(4),E=n(19),T=n(58),S=n(59),C=b.DEFAULT_WEEK_START_DAY,M=b.DEFAULT_LANGUAGE_TYPE,I=b.TYPE_DATE,N=b.TYPE_MONTH,A=b.TYPE_YEAR,P=b.CLASS_NAME_NEXT_YEAR_BTN,O=b.CLASS_NAME_NEXT_MONTH_BTN,R=b.CLASS_NAME_PREV_YEAR_BTN,L=b.CLASS_NAME_PREV_MONTH_BTN,H=b.CLASS_NAME_SELECTED,F=b.CLASS_NAME_TITLE_TODAY,Y=o({static:{localeTexts:D},init:function(e,t){t=function(e){if((e=p({language:M,calendar:{},input:{element:null,format:null},timePicker:null,date:null,showAlways:!1,type:I,selectableRanges:null,openers:[],autoClose:!0,usageStatistics:!0,weekStartDay:C},e)).selectableRanges=e.selectableRanges||[[b.MIN_DATE,b.MAX_DATE]],!_(e.calendar))throw new Error("Calendar option must be an object");if(!_(e.input))throw new Error("Input option must be an object");if(!f(e.selectableRanges))throw new Error("Selectable-ranges must be a 2d-array");return e.localeText=D[e.language],e.calendar.language=e.language,e.calendar.type=e.type,e.timePicker=e.timePicker||e.timepicker,e}(t),this._language=t.language,this._container=x.getElement(e),this._container.innerHTML=T(p(t,{isTab:t.timePicker&&"tab"===t.timePicker.layoutType})),this._element=this._container.firstChild,this._calendar=new y(this._element.querySelector(".tui-calendar-container"),p(t.calendar,{usageStatistics:t.usageStatistics,weekStartDay:t.weekStartDay})),this._timePicker=null,this._datepickerInput=null,this._date=null,this._rangeModel=null,this._openers=[],this._isEnabled=!0,this._id="tui-datepicker-"+x.generateId(),this._type=t.type,this.showAlways=t.showAlways,this.autoClose=t.autoClose,this._initializeDatePicker(t)},_initializeDatePicker:function(e){this.setRanges(e.selectableRanges),this._setEvents(),this._initTimePicker(e.timePicker,e.usageStatistics),this.setInput(e.input.element),this.setDateFormat(e.input.format),this.setDate(e.date),r(e.openers,this.addOpener,this),this.showAlways||this._hide(),this.getType()===I&&s(this._element.querySelector(".tui-datepicker-body"),"tui-datepicker-type-date")},_setEvents:function(){E.on(this._element,"click",this._onClickHandler,this),this._calendar.on("draw",this._onDrawCalendar,this)},_removeEvents:function(){E.off(this._element,"click",this._onClickHandler,this),this._calendar.off()},_setDocumentEvents:function(){E.on(document,"mousedown",this._onMousedownDocument,this)},_removeDocumentEvents:function(){E.off(document,"mousedown",this._onMousedownDocument)},_setOpenerEvents:function(e){E.on(e,"click",this.toggle,this)},_removeOpenerEvents:function(e){E.off(e,"click",this.toggle)},_initTimePicker:function(e,t){var n;e&&(n=e.layoutType||"",_(e)?e.usageStatistics=t:e={usageStatistics:t},this._timePicker=new v(this._element.querySelector(".tui-timepicker-container"),e),"tab"===n.toLowerCase()&&this._timePicker.hide(),this._timePicker.on("change",(function(e){var t;this._date&&(t=new Date(this._date),this.setDate(t.setHours(e.hour,e.minute)))}),this))},_changePicker:function(e){var t=l(e,".tui-datepicker-selector-button");t.querySelector(".tui-ico-date")?(this._calendar.show(),this._timePicker.hide()):(this._calendar.hide(),this._timePicker.show()),d(this._element.querySelector(".tui-is-checked"),"tui-is-checked"),s(t,"tui-is-checked")},_isOpener:function(e){var t=x.getElement(e);return i(t,this._openers)>-1},_setTodayClassName:function(e){this.getCalendarType()===I&&(Number(c(e,"timestamp"))===(new Date).setHours(0,0,0,0)?s(e,"tui-calendar-today"):d(e,"tui-calendar-today"))},_setSelectableClassName:function(e){var t=new Date(Number(c(e,"timestamp")));this._isSelectableOnCalendar(t)?(s(e,"tui-is-selectable"),d(e,"tui-is-blocked")):(d(e,"tui-is-selectable"),s(e,"tui-is-blocked"))},_setSelectedClassName:function(e){var t=new Date(Number(c(e,"timestamp")));this._isSelectedOnCalendar(t)?s(e,H):d(e,H)},_isSelectableOnCalendar:function(e){var t=this.getCalendarType(),n=k.cloneWithStartOf(e,t).getTime(),i=k.cloneWithEndOf(e,t).getTime();return this._rangeModel.hasOverlap(n,i)},_isSelectedOnCalendar:function(e){var t=this.getDate(),n=this.getCalendarType();return t&&k.isSame(t,e,n)},_show:function(){d(this._element,"tui-hidden")},_hide:function(){s(this._element,"tui-hidden")},_syncToInput:function(){this._date&&this._datepickerInput.setDate(this._date)},_syncFromInput:function(e){var t,n=!1;try{t=this._datepickerInput.getDate(),this.isSelectable(t)?(this._timePicker&&this._timePicker.setTime(t.getHours(),t.getMinutes()),this.setDate(t)):n=!0}catch(e){this.fire("error",{type:"ParsingError",message:e.message}),n=!0}finally{n&&(e?this._syncToInput():this.setNull())}},_onMousedownDocument:function(e){var t=x.getTarget(e),n=x.getSelector(t),r=!!n&&this._element.querySelector(n),o=this._datepickerInput.is(t),a=i(t,this._openers)>-1;!(this.showAlways||o||r||a)&&this.close()},_onClickHandler:function(e){var t=x.getTarget(e);l(t,".tui-is-selectable")?(e.preventDefault(),this._updateDate(t)):l(t,"."+F)?(e.preventDefault(),this._updateDateToToday()):l(t,".tui-calendar-title")?this.drawUpperCalendar(this._date):l(t,".tui-datepicker-selector-button")&&this._changePicker(t)},_updateDateToToday:function(){this.setDate(Date.now()),this.close()},_updateDate:function(e){var t=Number(c(e,"timestamp")),n=new Date(t),i=this._timePicker,r=this._date;this.getCalendarType()!==this.getType()?this.drawLowerCalendar(n):(i?n.setHours(i.getHour(),i.getMinute()):r&&n.setHours(r.getHours(),r.getMinutes()),this.setDate(n),!this.showAlways&&this.autoClose&&this.close())},_onDrawCalendar:function(e){r(e.dateElements,(function(e){this._setTodayClassName(e),this._setSelectableClassName(e),this._setSelectedClassName(e)}),this),this._setDisplayHeadButtons(),this.fire("draw",e)},_setDisplayHeadButtons:function(){var e,t,n,i,r=this._calendar.getNextYearDate(this.getCalendarType()===A?60:null),o=this._calendar.getPrevYearDate(this.getCalendarType()===A?-60:null),a=this._rangeModel.getMaximumValue(),s=this._rangeModel.getMinimumValue(),l=this._element.querySelector("."+P),c=this._element.querySelector("."+R);this.getCalendarType()===I?(e=k.cloneWithStartOf(this._calendar.getNextDate(),N),t=k.cloneWithEndOf(this._calendar.getPrevDate(),N),n=this._element.querySelector("."+O),i=this._element.querySelector("."+L),this._setDisplay(n,e.getTime()<=a),this._setDisplay(i,t.getTime()>=s),o.setDate(1),r.setDate(1)):(o.setMonth(12,0),r.setMonth(0,1)),this._setDisplay(l,r.getTime()<=a),this._setDisplay(c,o.getTime()>=s)},_setDisplay:function(e,t){e&&(t?d(e,"tui-hidden"):s(e,"tui-hidden"))},_onChangeInput:function(){this._syncFromInput(!0)},_isChanged:function(e){var t=this.getDate();return!t||e.getTime()!==t.getTime()},_refreshFromRanges:function(){this.isSelectable(this._date)?this._calendar.draw():this.setNull()},getCalendarType:function(){return this._calendar.getType()},getType:function(){return this._type},isSelectable:function(e){var t,n,i=this.getType();return!!k.isValidDate(e)&&(t=k.cloneWithStartOf(e,i).getTime(),n=k.cloneWithEndOf(e,i).getTime(),this._rangeModel.hasOverlap(t,n))},isSelected:function(e){return k.isValidDate(e)&&k.isSame(this._date,e,this.getType())},setRanges:function(e){var t=[];r(e,(function(e){var n=new Date(e[0]).getTime(),i=new Date(e[1]).getTime();t.push([n,i])})),this._rangeModel=new w(t),this._refreshFromRanges()},setType:function(e){this._type=e},addRange:function(e,t){e=new Date(e).getTime(),t=new Date(t).getTime(),this._rangeModel.add(e,t),this._refreshFromRanges()},removeRange:function(e,t,n){e=new Date(e),t=new Date(t),n&&(e=k.cloneWithStartOf(e,n),t=k.cloneWithEndOf(t,n)),this._rangeModel.exclude(e.getTime(),t.getTime()),this._refreshFromRanges()},addOpener:function(e){e=x.getElement(e),this._isOpener(e)||(this._openers.push(e),this._setOpenerEvents(e))},removeOpener:function(e){var t;e=x.getElement(e),(t=i(e,this._openers))>-1&&(this._removeOpenerEvents(e),this._openers.splice(t,1))},removeAllOpeners:function(){r(this._openers,(function(e){this._removeOpenerEvents(e)}),this),this._openers=[]},open:function(){!this.isOpened()&&this._isEnabled&&(this._calendar.draw({date:this._date,type:this._type}),this._show(),this.showAlways||this._setDocumentEvents(),this.fire("open"))},drawUpperCalendar:function(e){var t=this.getCalendarType();t===I?this._calendar.draw({date:e,type:N}):t===N&&this._calendar.draw({date:e,type:A})},drawLowerCalendar:function(e){var t=this.getCalendarType();t===this.getType()||(t===N?this._calendar.draw({date:e,type:I}):t===A&&this._calendar.draw({date:e,type:N}))},close:function(){this.isOpened()&&(this._removeDocumentEvents(),this._hide(),this.fire("close"))},toggle:function(){this.isOpened()?this.close():this.open()},getDate:function(){return this._date?new Date(this._date):null},setDate:function(e,t){var n,i;null!==e?(n=g(e)||m(e),i=new Date(e),n&&this._isChanged(i)&&this.isSelectable(i)&&(i=new Date(e),this._date=i,this._calendar.draw({date:i}),this._timePicker&&this._timePicker.setTime(i.getHours(),i.getMinutes(),!0),this._syncToInput(),t||this.fire("change"))):this.setNull()},setNull:function(){var e=this._calendar.getDate(),t=null!==this._date;this._date=null,this._datepickerInput&&this._datepickerInput.clearText(),this._timePicker&&this._timePicker.setTime(0,0),this.isSelectable(e)?this._calendar.draw():this._calendar.draw({date:new Date(this._rangeModel.getMinimumValue())}),t&&this.fire("change")},setDateFormat:function(e){this._datepickerInput.setFormat(e),this._syncToInput()},isOpened:function(){return!u(this._element,"tui-hidden")},getTimePicker:function(){return this._timePicker},getCalendar:function(){return this._calendar},getLocaleText:function(){return D[this._language]||D[M]},setInput:function(e,t){var n,i=this._datepickerInput,r=this.getLocaleText();t=t||{},i&&(n=i.getFormat(),i.destroy()),this._datepickerInput=new S(e,{format:t.format||n,id:this._id,localeText:r}),this._datepickerInput.on({change:this._onChangeInput,click:this.open},this),t.syncFromInput?this._syncFromInput():this._syncToInput()},enable:function(){this._isEnabled||(this._isEnabled=!0,this._datepickerInput.enable(),r(this._openers,(function(e){e.removeAttribute("disabled"),this._setOpenerEvents(e)}),this))},disable:function(){this._isEnabled&&(this._isEnabled=!1,this.close(),this._datepickerInput.disable(),r(this._openers,(function(e){e.setAttribute("disabled",!0),this._removeOpenerEvents(e)}),this))},isDisabled:function(){return!this._isEnabled},addCssClass:function(e){s(this._element,e)},removeCssClass:function(e){d(this._element,e)},getDateElements:function(){return this._calendar.getDateElements()},findOverlappedRange:function(e,t){var n=new Date(e).getTime(),i=new Date(t).getTime(),r=this._rangeModel.findOverlappedRange(n,i);return[new Date(r[0]),new Date(r[1])]},changeLanguage:function(e){this._language=e,this._calendar.changeLanguage(this._language),this._datepickerInput.changeLocaleTitles(this.getLocaleText().titles),this.setDateFormat(this._datepickerInput.getFormat()),this._timePicker&&this._timePicker.changeLanguage(this._language)},destroy:function(){this._removeDocumentEvents(),this._calendar.destroy(),this._timePicker&&this._timePicker.destroy(),this._datepickerInput&&this._datepickerInput.destroy(),this._removeEvents(),h(this._element),this.removeAllOpeners(),this._calendar=this._timePicker=this._datepickerInput=this._container=this._element=this._date=this._rangeModel=this._openers=this._isEnabled=this._id=null}});a.mixin(Y),e.exports=Y},function(e,t,n){"use strict";e.exports=function(e){return e===Object(e)}},function(e,t,n){"use strict";e.exports=function(e,t,n){var i;for(i in n=n||null,e)if(e.hasOwnProperty(i)&&!1===t.call(n,e[i],i,e))break}},function(e,t,n){"use strict";var i=n(6),r=n(12);e.exports=function(e,t){t=(t=i(t)?t.join(" "):t).replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),r(e.className.baseVal)?e.className=t:e.className.baseVal=t}},function(e,t,n){"use strict";var i=n(40);e.exports=function(e,t){var n=e.parentNode;if(i(e,t))return e;for(;n&&n!==document;){if(i(n,t))return n;n=n.parentNode}return null}},function(e,t,n){"use strict";var i=n(42);e.exports=function(e,t){return e.dataset?e.dataset[t]:e.getAttribute("data-"+i(t))}},function(e,t,n){"use strict";var i=n(3),r=n(17);e.exports=function(e,t){var n;return e.classList?e.classList.contains(t):(n=r(e).split(/\s+/),i(t,n)>-1)}},function(e,t,n){"use strict";e.exports=function(e){return e instanceof Date}},function(e,t,n){"use strict";var i=n(0),r=n(8),o=n(16),a=n(27),s=n(18),l=n(14),c=n(7),u=n(44),d=n(49),h=n(10),p=n(1),f=n(5),m=n(4),g=p.DEFAULT_WEEK_START_DAY,_=p.DEFAULT_LANGUAGE_TYPE,v=p.TYPE_DATE,y=p.TYPE_MONTH,w=p.TYPE_YEAR,b=p.CLASS_NAME_PREV_MONTH_BTN,D=p.CLASS_NAME_PREV_YEAR_BTN,k=p.CLASS_NAME_NEXT_YEAR_BTN,x=p.CLASS_NAME_NEXT_MONTH_BTN,E=i({static:{localeTexts:h},init:function(e,t){t=c({language:_,showToday:!0,showJumpButtons:!1,date:new Date,type:v,usageStatistics:!0,weekStartDay:g},t),this._container=m.getElement(e),this._container.innerHTML='<div class="tui-calendar">    <div class="tui-calendar-header"></div>    <div class="tui-calendar-body"></div></div>',this._element=this._container.firstChild,this._date=null,this._type=null,this._header=null,this._body=null,this._initHeader(t),this._initBody(t),this.draw({date:t.date,type:t.type}),t.usageStatistics&&m.sendHostName()},_initHeader:function(e){var t=this._element.querySelector(".tui-calendar-header");this._header=new u(t,e),this._header.on("click",(function(e){var t=m.getTarget(e);a(t,b)?this.drawPrev():a(t,D)?this._onClickPrevYear():a(t,x)?this.drawNext():a(t,k)&&this._onClickNextYear()}),this)},_initBody:function(e){var t=this._element.querySelector(".tui-calendar-body");this._body=new d(t,e)},_onClickPrevYear:function(){this.getType()===v?this.draw({date:this._getRelativeDate(-12)}):this.drawPrev()},_onClickNextYear:function(){this.getType()===v?this.draw({date:this._getRelativeDate(12)}):this.drawNext()},_isValidType:function(e){return e===v||e===y||e===w},_shouldUpdate:function(e,t){var n=this._date;if(!f.isValidDate(e))throw new Error("Invalid date");if(!this._isValidType(t))throw new Error("Invalid layer type");return!n||n.getFullYear()!==e.getFullYear()||n.getMonth()!==e.getMonth()||this.getType()!==t},_render:function(){var e=this._date,t=this.getType();switch(this._header.render(e,t),this._body.render(e,t),s(this._element,"tui-calendar-month","tui-calendar-year"),t){case y:o(this._element,"tui-calendar-month");break;case w:o(this._element,"tui-calendar-year")}},_getRelativeDate:function(e){var t=this._date;return new Date(t.getFullYear(),t.getMonth()+e)},draw:function(e){var t,n;t=(e=e||{}).date||this._date,n=(e.type||this.getType()).toLowerCase(),this._shouldUpdate(t,n)&&(this._date=t,this._type=n,this._render()),this.fire("draw",{date:this._date,type:n,dateElements:this._body.getDateElements()})},show:function(){s(this._element,"tui-hidden")},hide:function(){o(this._element,"tui-hidden")},drawNext:function(){this.draw({date:this.getNextDate()})},drawPrev:function(){this.draw({date:this.getPrevDate()})},getNextDate:function(){return this.getType()===v?this._getRelativeDate(1):this.getNextYearDate()},getPrevDate:function(){return this.getType()===v?this._getRelativeDate(-1):this.getPrevYearDate()},getNextYearDate:function(e){if(e)return this._getRelativeDate(e);switch(this.getType()){case v:case y:return this._getRelativeDate(12);case w:return this._getRelativeDate(108);default:throw new Error("Unknown layer type")}},getPrevYearDate:function(e){if(e)return this._getRelativeDate(e);switch(this.getType()){case v:case y:return this._getRelativeDate(-12);case w:return this._getRelativeDate(-108);default:throw new Error("Unknown layer type")}},changeLanguage:function(e){this._header.changeLanguage(e),this._body.changeLanguage(e),this._render()},getDate:function(){return new Date(this._date)},getType:function(){return this._type},getDateElements:function(){return this._body.getDateElements()},addCssClass:function(e){o(this._element,e)},removeCssClass:function(e){s(this._element,e)},destroy:function(){this._header.destroy(),this._body.destroy(),l(this._element),this._type=this._date=this._container=this._element=this._header=this._body=null}});r.mixin(E),e.exports=E},function(e,t,n){"use strict";var i=n(3),r=n(2),o=n(0),a=n(4),s=n(5),l=n(1),c=n(10),u=/\\?(yyyy|yy|mmmm|mmm|mm|m|dd|d|hh|h|a)/gi,d={yyyy:{expression:"(\\d{4}|\\d{2})",type:l.TYPE_YEAR},yy:{expression:"(\\d{4}|\\d{2})",type:l.TYPE_YEAR},y:{expression:"(\\d{4}|\\d{2})",type:l.TYPE_YEAR},M:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},MM:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},MMM:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},MMMM:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},mmm:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},mmmm:{expression:"(1[012]|0[1-9]|[1-9])",type:l.TYPE_MONTH},dd:{expression:"([12]\\d{1}|3[01]|0[1-9]|[1-9])",type:l.TYPE_DATE},d:{expression:"([12]\\d{1}|3[01]|0[1-9]|[1-9])",type:l.TYPE_DATE},D:{expression:"([12]\\d{1}|3[01]|0[1-9]|[1-9])",type:l.TYPE_DATE},DD:{expression:"([12]\\d{1}|3[01]|0[1-9]|[1-9])",type:l.TYPE_DATE},h:{expression:"(d{1}|0\\d{1}|1\\d{1}|2[0123])",type:l.TYPE_HOUR},hh:{expression:"(d{1}|[01]\\d{1}|2[0123])",type:l.TYPE_HOUR},H:{expression:"(d{1}|0\\d{1}|1\\d{1}|2[0123])",type:l.TYPE_HOUR},HH:{expression:"(d{1}|[01]\\d{1}|2[0123])",type:l.TYPE_HOUR},m:{expression:"(d{1}|[012345]\\d{1})",type:l.TYPE_MINUTE},mm:{expression:"(d{1}|[012345]\\d{1})",type:l.TYPE_MINUTE},a:{expression:"([ap]m)",type:l.TYPE_MERIDIEM},A:{expression:"([ap]m)",type:l.TYPE_MERIDIEM}},h=o({init:function(e,t){this._rawStr=e,this._keyOrder=null,this._regExp=null,this._titles=t||c.en.titles,this._parseFormat()},_parseFormat:function(){var e="^",t=this._rawStr.match(u),n=[];t=a.filter(t,(function(e){return"\\"!==e[0]})),r(t,(function(t,i){/m/i.test(t)||(t=t.toLowerCase()),e+=d[t].expression+"[\\D\\s]*",n[i]=d[t].type})),e+="$",this._keyOrder=n,this._regExp=new RegExp(e,"gi")},parse:function(e){var t,n={year:0,month:1,date:1,hour:0,minute:0},i=!1,o=!1;if(this._regExp.lastIndex=0,!(t=this._regExp.exec(e)))throw Error('DateTimeFormatter: Not matched - "'+e+'"');return r(this._keyOrder,(function(e,r){var a=t[r+1];if(e===l.TYPE_MERIDIEM&&/[ap]m/i.test(a))i=!0,o=/pm/i.test(a);else{if(0!==(a=Number(a))&&!a)throw Error("DateTimeFormatter: Unknown value - "+t[r+1]);e===l.TYPE_YEAR&&a<100&&(a+=2e3),n[e]=a}})),i&&(o=o||n.hour>12,n.hour%=12,o&&(n.hour+=12)),new Date(n.year,n.month-1,n.date,n.hour,n.minute)},getRawString:function(){return this._rawStr},format:function(e){var t,n=e.getFullYear(),r=e.getMonth()+1,o=e.getDate(),a=e.getDay(),c=e.getHours(),d=e.getMinutes(),h="a";return i(l.TYPE_MERIDIEM,this._keyOrder)>-1&&(h=c>=12?"pm":"am",c=s.getMeridiemHour(c)),t={yyyy:n,yy:String(n).substr(2,2),M:r,MM:s.prependLeadingZero(r),MMM:this._titles.MMM[r-1],MMMM:this._titles.MMMM[r-1],d:o,dd:s.prependLeadingZero(o),D:this._titles.D[a],DD:this._titles.DD[a],hh:s.prependLeadingZero(c),h:c,mm:s.prependLeadingZero(d),m:d,A:h.toUpperCase(),a:h},this._rawStr.replace(u,(function(e){return"\\"===e[0]?e.substr(1):t[e]||t[e.toLowerCase()]||""}))}});e.exports=h},function(e,t,n){"use strict";var i=n(13),r=n(9),o=n(32);function a(e,t,n,i){function a(t){n.call(i||e,t||window.event)}"addEventListener"in e?e.addEventListener(t,a):"attachEvent"in e&&e.attachEvent("on"+t,a),function(e,t,n,i){var a=o(e,t),s=!1;r(a,(function(e){return e.handler!==n||(s=!0,!1)})),s||a.push({handler:n,wrappedHandler:i})}(e,t,n,a)}e.exports=function(e,t,n,o){i(t)?r(t.split(/\s+/g),(function(t){a(e,t,n,o)})):r(t,(function(t,i){a(e,i,t,n)}))}},function(e,t,n){"use strict";e.exports=function(e,t){var n,i=e._feEventKey;return i||(i=e._feEventKey={}),(n=i[t])||(n=i[t]=[]),n}},function(e,t,n){"use strict";var i=n(13),r=n(9),o=n(32);function a(e,t,n){var i,a=o(e,t);n?(r(a,(function(r,o){return n!==r.handler||(s(e,t,r.wrappedHandler),i=o,!1)})),a.splice(i,1)):(r(a,(function(n){s(e,t,n.wrappedHandler)})),a.splice(0,a.length))}function s(e,t,n){"removeEventListener"in e?e.removeEventListener(t,n):"detachEvent"in e&&e.detachEvent("on"+t,n)}e.exports=function(e,t,n){i(t)?r(t.split(/\s+/g),(function(t){a(e,t,n)})):r(t,(function(t,n){a(e,n,t)}))}},function(e,t,n){"use strict";var i=n(21),r=n(60),o=n(29);n(61),i.createCalendar=function(e,t){return new o(e,t)},i.createRangePicker=function(e){return new r(e)},e.exports=i},function(e,t,n){"use strict";var i=n(36);e.exports=function(e,t){var n=i(t.prototype);n.constructor=e,e.prototype=n}},function(e,t,n){"use strict";e.exports=function(e){function t(){}return t.prototype=e,new t}},function(e,t,n){"use strict";var i=n(12),r=n(38);e.exports=function(e){return!i(e)&&!r(e)}},function(e,t,n){"use strict";e.exports=function(e){return null===e}},function(e,t,n){"use strict";e.exports=function(e){return e instanceof Function}},function(e,t,n){"use strict";var i=n(3),r=n(41),o=Element.prototype,a=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.msMatchesSelector||function(e){var t=this.document||this.ownerDocument;return i(this,r(t.querySelectorAll(e)))>-1};e.exports=function(e,t){return a.call(e,t)}},function(e,t,n){"use strict";var i=n(2);e.exports=function(e){var t;try{t=Array.prototype.slice.call(e)}catch(n){t=[],i(e,(function(e){t.push(e)}))}return t}},function(e,t,n){"use strict";e.exports=function(e){return e.replace(/([A-Z])/g,(function(e){return"-"+e.toLowerCase()}))}},function(t,n){t.exports=e},function(e,t,n){"use strict";var i=n(0),r=n(8),o=n(25),a=n(14),s=n(10),l=n(45),c=n(30),u=n(1),d=n(4),h=n(19),p=u.TYPE_DATE,f=u.TYPE_MONTH,m=u.TYPE_YEAR,g=i({init:function(e,t){this._container=d.getElement(e),this._innerElement=null,this._infoElement=null,this._showToday=t.showToday,this._showJumpButtons=t.showJumpButtons,this._yearMonthTitleFormatter=null,this._yearTitleFormatter=null,this._todayFormatter=null,this._setFormatters(s[t.language]),this._setEvents(t)},_setFormatters:function(e){this._yearMonthTitleFormatter=new c(e.titleFormat,e.titles),this._yearTitleFormatter=new c("yyyy",e.titles),this._todayFormatter=new c(e.todayFormat,e.titles)},_setEvents:function(){h.on(this._container,"click",this._onClickHandler,this)},_removeEvents:function(){this.off(),h.off(this._container,"click",this._onClickHandler)},_onClickHandler:function(e){var t=d.getTarget(e);o(t,".tui-calendar-btn")&&this.fire("click",e)},_getTitleClass:function(e){switch(e){case p:return"tui-calendar-title-month";case f:return"tui-calendar-title-year";case m:return"tui-calendar-title-year-to-year";default:return""}},_getTitleText:function(e,t){var n,i,r;switch(t){case p:return this._yearMonthTitleFormatter.format(e);case f:return this._yearTitleFormatter.format(e);case m:return n=e.getFullYear(),i=new Date(n-4,0,1),r=new Date(n+4,0,1),this._yearTitleFormatter.format(i)+" - "+this._yearTitleFormatter.format(r);default:return""}},changeLanguage:function(e){this._setFormatters(s[e])},render:function(e,t){var n={showToday:this._showToday,showJumpButtons:this._showJumpButtons,todayText:this._todayFormatter.format(new Date),isDateCalendar:t===p,titleClass:this._getTitleClass(t),title:this._getTitleText(e,t)};this._container.innerHTML=l(n).replace(/^\s+|\s+$/g,""),this._innerElement=this._container.querySelector(".tui-calendar-header-inner"),n.showToday&&(this._infoElement=this._container.querySelector(".tui-calendar-header-info"))},destroy:function(){this._removeEvents(),a(this._innerElement),a(this._infoElement),this._container=this._showToday=this._showJumpButtons=this._yearMonthTitleFormatter=this._yearTitleFormatter=this._todayFormatter=this._innerElement=this._infoElement=null}});r.mixin(g),e.exports=g},function(e,t,n){"use strict";var i=n(11);e.exports=function(e){return i('{{if isDateCalendar}}  {{if showJumpButtons}}    <div class="tui-calendar-header-inner tui-calendar-has-btns">      <button class="tui-calendar-btn tui-calendar-btn-prev-year">Prev year</button>      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>      <em class="tui-calendar-title {{titleClass}}">{{title}}</em>      <button class="tui-calendar-btn tui-calendar-btn-next-month">Next month</button>      <button class="tui-calendar-btn tui-calendar-btn-next-year">Next year</button>    </div>  {{else}}    <div class="tui-calendar-header-inner">      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>      <em class="tui-calendar-title {{titleClass}}">{{title}}</em>      <button class="tui-calendar-btn tui-calendar-btn-next-month">Next month</button>    </div>  {{/if}}{{else}}  <div class="tui-calendar-header-inner">    <button class="tui-calendar-btn tui-calendar-btn-prev-year">Prev year</button>    <em class="tui-calendar-title {{titleClass}}">{{title}}</em>    <button class="tui-calendar-btn tui-calendar-btn-next-year">Next year</button>  </div>{{/if}}{{if showToday}}  <div class="tui-calendar-header-info">    <p class="tui-calendar-title-today">{{todayText}}</p>  </div>{{/if}}',e)}},function(e,t,n){"use strict";e.exports=function(e){return"object"==typeof HTMLElement?e&&(e instanceof HTMLElement||!!e.nodeType):!(!e||!e.nodeType)}},function(e,t,n){"use strict";var i=n(12),r=n(48);e.exports=function(e,t){var n=location.hostname,o="TOAST UI "+e+" for "+n+": Statistics",a=window.localStorage.getItem(o);(i(window.tui)||!1!==window.tui.usageStatistics)&&(a&&!function(e){return(new Date).getTime()-e>6048e5}(a)||(window.localStorage.setItem(o,(new Date).getTime()),setTimeout((function(){"interactive"!==document.readyState&&"complete"!==document.readyState||r("https://www.google-analytics.com/collect",{v:1,t:"event",tid:t,cid:n,dp:n,dh:e,el:e,ec:"use"})}),1e3)))}},function(e,t,n){"use strict";var i=n(23);e.exports=function(e,t){var n=document.createElement("img"),r="";return i(t,(function(e,t){r+="&"+t+"="+e})),r=r.substring(1),n.src=e+"?"+r,n.style.display="none",document.body.appendChild(n),document.body.removeChild(n),n}},function(e,t,n){"use strict";var i=n(2),r=n(0),o=n(50),a=n(52),s=n(54),l=n(1),c=l.TYPE_DATE,u=l.TYPE_MONTH,d=l.TYPE_YEAR,h=r({init:function(e,t){var n=t.language,i=t.weekStartDay;this._container=e,this._dateLayer=new o(n,i),this._monthLayer=new a(n),this._yearLayer=new s(n),this._currentLayer=this._dateLayer},_getLayer:function(e){switch(e){case c:return this._dateLayer;case u:return this._monthLayer;case d:return this._yearLayer;default:return this._currentLayer}},_eachLayer:function(e){i([this._dateLayer,this._monthLayer,this._yearLayer],e)},changeLanguage:function(e){this._eachLayer((function(t){t.changeLanguage(e)}))},render:function(e,t){var n=this._getLayer(t);this._currentLayer.remove(),n.render(e,this._container),this._currentLayer=n},getDateElements:function(){return this._currentLayer.getDateElements()},destroy:function(){this._eachLayer((function(e){e.remove()})),this._container=this._currentLayer=this._dateLayer=this._monthLayer=this._yearLayer=null}});e.exports=h},function(e,t,n){"use strict";var i=n(0),r=n(5),o=n(51),a=n(20),s=n(1).TYPE_DATE,l=n(1).WEEK_START_DAY_MAP,c=i(a,{init:function(e,t){a.call(this,e),this.weekStartDay=l[String(t).toLowerCase()]||0},_type:s,_makeContext:function(e){var t,n,i,r,o=this._localeText.titles.D;if(t=(e=e||new Date).getFullYear(),n=e.getMonth()+1,this.weekStartDay){for(i=o.slice(),r=0;r<this.weekStartDay;r+=1)i.push(i.shift());o=i}return{Sun:o[0],Mon:o[1],Tue:o[2],Wed:o[3],Thu:o[4],Fri:o[5],Sat:o[6],year:t,month:n,weeks:this._getWeeks(t,n)}},_getWeeks:function(e,t){for(var n,i,o,a,s,l=0,c=6,u=[];l<c;){for(i=[],o=this.weekStartDay;o<7+this.weekStartDay;o+=1)i.push(r.getDateOfWeek(e,t,l,o));n=this._getWeek(e,t,i),!this.weekStartDay||(a=l,s=n[0].dayInMonth,a||1===s||s>7)||(u.push(this._getFirstWeek(e,t)),c-=1),u.push(n),l+=1}return u},_getWeek:function(e,t,n){for(var i,r,o=new Date(e,t-1,1),a=new Date(e,t,0),s=[],l=0,c=n.length;l<c;l+=1)r="tui-calendar-date",(i=n[l])<o&&(r+=" tui-calendar-prev-month"),i>a&&(r+=" tui-calendar-next-month"),0===i.getDay()?r+=" tui-calendar-sun":6===i.getDay()&&(r+=" tui-calendar-sat"),s.push({dayInMonth:i.getDate(),className:r,timestamp:i.getTime()});return s},render:function(e,t){var n=this._makeContext(e);t.innerHTML=o(n),this._element=t.firstChild},getDateElements:function(){return this._element.querySelectorAll(".tui-calendar-date")},_getFirstWeek:function(e,t){var n,i=[];for(n=this.weekStartDay;n<7+this.weekStartDay;n+=1)i.push(r.getDateOfWeek(e,t,-1,n));return this._getWeek(e,t,i)}});e.exports=c},function(e,t,n){"use strict";var i=n(11);e.exports=function(e){return i('<table class="tui-calendar-body-inner" cellspacing="0" cellpadding="0">  <caption><span>Dates</span></caption>  <thead class="tui-calendar-body-header">    <tr>      <th class="tui-sun" scope="col">{{Sun}}</th>      <th scope="col">{{Mon}}</th>      <th scope="col">{{Tue}}</th>      <th scope="col">{{Wed}}</th>      <th scope="col">{{Thu}}</th>      <th scope="col">{{Fri}}</th>      <th class="tui-sat" scope="col">{{Sat}}</th>    </tr>  </thead>  <tbody>    {{each weeks}}    <tr class="tui-calendar-week">      {{each @this}}      <td class="{{@this["className"]}}" data-timestamp="{{@this["timestamp"]}}">{{@this["dayInMonth"]}}</td>      {{/each}}    </tr>    {{/each}}  </tbody></table>',e)}},function(e,t,n){"use strict";var i=n(0),r=n(53),o=n(20),a=n(1).TYPE_MONTH,s=n(5),l=i(o,{init:function(e){o.call(this,e)},_type:a,_makeContext:function(e){var t=this._localeText.titles.MMM;return{year:e.getFullYear(),Jan:t[0],Feb:t[1],Mar:t[2],Apr:t[3],May:t[4],Jun:t[5],Jul:t[6],Aug:t[7],Sep:t[8],Oct:t[9],Nov:t[10],Dec:t[11],getFirstDayTimestamp:s.getFirstDayTimestamp}},render:function(e,t){var n=this._makeContext(e);t.innerHTML=r(n),this._element=t.firstChild},getDateElements:function(){return this._element.querySelectorAll(".tui-calendar-month")}});e.exports=l},function(e,t,n){"use strict";var i=n(11);e.exports=function(e){return i('<table class="tui-calendar-body-inner">  <caption><span>Months</span></caption>  <tbody>    <tr class="tui-calendar-month-group">      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 0}}>{{Jan}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 1}}>{{Feb}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 2}}>{{Mar}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 3}}>{{Apr}}</td>    </tr>    <tr class="tui-calendar-month-group">      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 4}}>{{May}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 5}}>{{Jun}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 6}}>{{Jul}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 7}}>{{Aug}}</td>    </tr>    <tr class="tui-calendar-month-group">      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 8}}>{{Sep}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 9}}>{{Oct}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 10}}>{{Nov}}</td>      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 11}}>{{Dec}}</td>    </tr>  </tbody></table>',e)}},function(e,t,n){"use strict";var i=n(0),r=n(55),o=n(20),a=n(1).TYPE_YEAR,s=n(5),l=i(o,{init:function(e){o.call(this,e)},_type:a,_makeContext:function(e){var t=e.getFullYear();return{yearGroups:[s.getRangeArr(t-4,t-2),s.getRangeArr(t-1,t+1),s.getRangeArr(t+2,t+4)],getFirstDayTimestamp:s.getFirstDayTimestamp}},render:function(e,t){var n=this._makeContext(e);t.innerHTML=r(n),this._element=t.firstChild},getDateElements:function(){return this._element.querySelectorAll(".tui-calendar-year")}});e.exports=l},function(e,t,n){"use strict";var i=n(11);e.exports=function(e){return i('<table class="tui-calendar-body-inner">  <caption><span>Years</span></caption>  <tbody>    {{each yearGroups}}    <tr class="tui-calendar-year-group">      {{each @this}}      <td class="tui-calendar-year" data-timestamp={{getFirstDayTimestamp @this 0}}>        {{@this}}      </td>      {{/each}}    </tr>    {{/each}}  </tbody></table>',e)}},function(e,t,n){"use strict";var i=n(2),r=n(0),o=n(15),a=n(57),s=n(4),l=r({init:function(e){e=e||[],this._ranges=[],i(e,(function(e){this.add(e[0],e[1])}),this)},contains:function(e,t){for(var n=0,i=this._ranges.length;n<i;n+=1)if(this._ranges[n].contains(e,t))return!0;return!1},hasOverlap:function(e,t){for(var n=0,i=this._ranges.length;n<i;n+=1)if(this._ranges[n].isOverlapped(e,t))return!0;return!1},add:function(e,t){for(var n,i=!1,r=0,o=this._ranges.length;r<o;r+=1){if(i=(n=this._ranges[r]).isOverlapped(e,t)){n.merge(e,t);break}if(e<n.start)break}i||this._ranges.splice(r,0,new a(e,t))},getMinimumValue:function(){return this._ranges[0].start},getMaximumValue:function(){var e=this._ranges.length;return this._ranges[e-1].end},exclude:function(e,t){o(t)||(t=e),i(this._ranges,(function(n){var i;n.isOverlapped(e,t)&&(i=n.end,n.exclude(e,t),t+1<=i&&this.add(t+1,i))}),this),this._ranges=s.filter(this._ranges,(function(e){return!e.isEmpty()}))},findOverlappedRange:function(e,t){for(var n,i=0,r=this._ranges.length;i<r;i+=1)if((n=this._ranges[i]).isOverlapped(e,t))return[n.start,n.end];return null}});e.exports=l},function(e,t,n){"use strict";var i=n(0),r=n(15),o=i({init:function(e,t){this.setRange(e,t)},setRange:function(e,t){r(t)||(t=e),this.start=Math.min(e,t),this.end=Math.max(e,t)},merge:function(e,t){r(e)&&r(t)&&this.isOverlapped(e,t)&&(this.start=Math.min(e,this.start),this.end=Math.max(t,this.end))},isEmpty:function(){return!r(this.start)||!r(this.end)},setEmpty:function(){this.start=this.end=null},contains:function(e,t){return r(t)||(t=e),this.start<=e&&t<=this.end},isOverlapped:function(e,t){return r(t)||(t=e),this.start<=t&&this.end>=e},exclude:function(e,t){e<=this.start&&t>=this.end?this.setEmpty():this.contains(e)?this.setRange(this.start,e-1):this.contains(t)&&this.setRange(t+1,this.end)}});e.exports=o},function(e,t,n){"use strict";var i=n(11);e.exports=function(e){return i('<div class="tui-datepicker">  {{if timePicker}}    {{if isTab}}      <div class="tui-datepicker-selector">        <button type="button" class="tui-datepicker-selector-button tui-is-checked" aria-label="selected">          <span class="tui-ico-date"></span>{{localeText["date"]}}        </button>        <button type="button" class="tui-datepicker-selector-button">          <span class="tui-ico-time"></span>{{localeText["time"]}}        </button>      </div>      <div class="tui-datepicker-body">        <div class="tui-calendar-container"></div>        <div class="tui-timepicker-container"></div>      </div>    {{else}}      <div class="tui-datepicker-body">        <div class="tui-calendar-container"></div>      </div>      <div class="tui-datepicker-footer">        <div class="tui-timepicker-container"></div>      </div>    {{/if}}  {{else}}    <div class="tui-datepicker-body">      <div class="tui-calendar-container"></div>    </div>  {{/if}}</div>',e)}},function(e,t,n){"use strict";var i=n(0),r=n(8),o=n(31),a=n(33),s=n(30),l=n(19),c=n(4),u=i({init:function(e,t){t.format=t.format||"yyyy-MM-dd",this._input=c.getElement(e),this._id=t.id,this._titles=t.localeText.titles,this._formatter=new s(t.format,this._titles),this._setEvents()},changeLocaleTitles:function(e){this._titles=e},_setEvents:function(){this._input&&(o(this._input,"change",this._onChangeHandler,this),l.on(this._input,"click",this._onClickHandler,this))},_removeEvents:function(){this.off(),this._input&&(a(this._input,"change",this._onChangeHandler),l.off(this._input,"click",this._onClickHandler))},_onChangeHandler:function(){this.fire("change")},_onClickHandler:function(){this.fire("click")},is:function(e){return this._input===e},enable:function(){this._input&&this._input.removeAttribute("disabled")},disable:function(){this._input&&this._input.setAttribute("disabled",!0)},getFormat:function(){return this._formatter.getRawString()},setFormat:function(e){e&&(this._formatter=new s(e,this._titles))},clearText:function(){this._input&&(this._input.value="")},setDate:function(e){this._input&&(this._input.value=this._formatter.format(e))},getDate:function(){var e="";return this._input&&(e=this._input.value),this._formatter.parse(e)},destroy:function(){this._removeEvents(),this._input=this._id=this._formatter=null}});r.mixin(u),e.exports=u},function(e,t,n){"use strict";var i=n(2),r=n(0),o=n(8),a=n(16),s=n(26),l=n(18),c=n(7),u=n(21),d=n(5),h=n(1),p=n(4),f=h.CLASS_NAME_SELECTED,m=r({init:function(e){var t,n;if(t=(e=e||{}).startpicker,n=e.endpicker,!t)throw new Error('The "startpicker" option is required.');if(!n)throw new Error('The "endpicker" option is required.');this._startpicker=null,this._endpicker=null,this._isRangeSet=!1,this._preEndPickerDate=(new Date).getDate(),this._initializePickers(e),this._syncRangesToEndpicker()},_initializePickers:function(e){var t=p.getElement(e.startpicker.container),n=p.getElement(e.endpicker.container),i=p.getElement(e.startpicker.input),r=p.getElement(e.endpicker.input),o=c({},e,{input:{element:i,format:e.format},date:e.startpicker.date,weekStartDay:e.startpicker.weekStartDay}),a=c({},e,{input:{element:r,format:e.format},date:e.endpicker.date,weekStartDay:e.endpicker.weekStartDay});this._startpicker=new u(t,o),this._startpicker.addCssClass("tui-rangepicker"),this._startpicker.on("change",this._onChangeStartpicker,this),this._startpicker.on("draw",this._onDrawPicker,this),this._endpicker=new u(n,a),this._endpicker.addCssClass("tui-rangepicker"),this._endpicker.on("change",this._onChangeEndpicker,this),this._endpicker.on("draw",this._onDrawPicker,this)},_onDrawPicker:function(e){var t=e.type,n=this._startpicker.getDate(),r=this._endpicker.getDate();n&&(r||(r=new Date(NaN)),i(e.dateElements,(function(e){var i=new Date(Number(s(e,"timestamp"))),o=d.inRange(n,r,i,t),a=d.isSame(n,i,t)||d.isSame(r,i,t);this._setRangeClass(e,o),this._setSelectedClass(e,a)}),this))},_setRangeClass:function(e,t){t?a(e,"tui-is-selected-range"):l(e,"tui-is-selected-range")},_setSelectedClass:function(e,t){t?a(e,f):l(e,f)},_syncRangesToEndpicker:function(){var e,t=this._startpicker.getDate();t?(e=this._startpicker.findOverlappedRange(d.cloneWithStartOf(t).getTime(),d.cloneWithEndOf(t).getTime()),this._endpicker.enable(),this._endpicker.setRanges([[t.getTime(),e[1].getTime()]]),this._setTimeRangeOnEndPicker()):(this._endpicker.setNull(),this._endpicker.disable())},_onChangeStartpicker:function(){this._syncRangesToEndpicker(),this.fire("change:start")},_onChangeEndpicker:function(){var e,t=this._endpicker.getDate();t?(e=t.getDate(),this._preEndPickerDate!==e&&this._setTimeRangeOnEndPicker(),this._preEndPickerDate=e):this._preEndPickerDate=null,this.fire("change:end")},_isStartAndEndDateSame:function(){return!!this._endpicker.getDate()&&!!this._startpicker.getDate()&&0===d.compare(this._endpicker.getDate(),this._startpicker.getDate(),h.TYPE_DATE)},_setTimeRangeOnEndPicker:function(){var e,t,n,i=this._endpicker._timePicker;i&&(e=this._endpicker.getDate()||this._startpicker.getDate(),t=this._getTimeRangeFromStartPicker(),n=e&&t[e.getDate()],this._isStartAndEndDateSame()&&n?(i.setRange(n),this._isRangeSet=!0):this._isRangeSet&&(i.setRange({hour:0,minute:0}),i.resetMinuteRange(),this._isRangeSet=!1))},_getTimeRangeFromStartPicker:function(){var e=this._startpicker.getDate(),t={};return t[e.getDate()]={hour:e.getHours(),minute:e.getMinutes()},t},getStartpicker:function(){return this._startpicker},getEndpicker:function(){return this._endpicker},setStartDate:function(e){this._startpicker.setDate(e)},getStartDate:function(){return this._startpicker.getDate()},getEndDate:function(){return this._endpicker.getDate()},setEndDate:function(e){this._endpicker.setDate(e)},setRanges:function(e){this._startpicker.setRanges(e),this._syncRangesToEndpicker()},addRange:function(e,t){this._startpicker.addRange(e,t),this._syncRangesToEndpicker()},removeRange:function(e,t,n){this._startpicker.removeRange(e,t,n),this._syncRangesToEndpicker()},changeLanguage:function(e){this._startpicker.changeLanguage(e),this._endpicker.changeLanguage(e)},destroy:function(){this.off(),this._startpicker.destroy(),this._endpicker.destroy(),this._startpicker=this._endpicker=null}});o.mixin(m),e.exports=m},function(e,t,n){}])},e.exports=i(n("TkWi"))},Q9Tg:function(e,t,n){"use strict";n.r(t);var i=n("6SMW");window.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("curriculum-calendar");if(e){var t=new i.a(e,{defaultView:"week",week:{taskView:!1,eventView:["time"],startDayOfWeek:1,hourStart:6,hourEnd:22,dayNames:["អាទិត្យ","ច័ន្ទ","អង្គារ","ពុធ","ព្រហស្បតិ៍","សុក្រ","សៅរ៍"],currentTimeIndicator:!1}});t.render(),initCurriculumCalendar(t)}else console.error("Calendar container not found!")}))},TkWi:function(e,t,n){var i;window,i=function(){return function(e){var t={};function n(i){if(t[i])return t[i].exports;var r=t[i]={i:i,l:!1,exports:{}};return e[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(i,r,function(t){return e[t]}.bind(null,r));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="dist",n(n.s=20)}([function(e,t,n){"use strict";var i=n(3);e.exports=function(e,t,n){var r,o;if(n=n||0,!i(t))return-1;if(Array.prototype.indexOf)return Array.prototype.indexOf.call(t,e,n);for(o=t.length,r=n;n>=0&&r<o;r+=1)if(t[r]===e)return r;return-1}},function(e,t,n){"use strict";e.exports=function(e,t,n){var i=0,r=e.length;for(n=n||null;i<r&&!1!==t.call(n,e[i],i,e);i+=1);}},function(e,t,n){"use strict";e.exports=function(e,t){var n,i,r,o,a=Object.prototype.hasOwnProperty;for(r=1,o=arguments.length;r<o;r+=1)for(i in n=arguments[r])a.call(n,i)&&(e[i]=n[i]);return e}},function(e,t,n){"use strict";e.exports=function(e){return e instanceof Array}},function(e,t,n){"use strict";var i=n(3),r=n(1),o=n(16);e.exports=function(e,t,n){i(e)?r(e,t,n):o(e,t,n)}},function(e,t,n){"use strict";e.exports=function(e){return void 0===e}},function(e,t,n){"use strict";e.exports=function(e){return"string"==typeof e||e instanceof String}},function(e,t,n){"use strict";var i=n(0),r=n(4),o=n(3),a=n(6),s=n(2),l=/{{\s?|\s?}}/g,c=/^[a-zA-Z0-9_@]+\[[a-zA-Z0-9_@"']+\]$/,u=/\[\s?|\s?\]/,d=/^[a-zA-Z_]+\.[a-zA-Z_]+$/,h=/\./,p=/^["']\w+["']$/,f=/"|'/g,m=/^-?\d+\.?\d*$/,g={if:function(e,t,n){var i=function(e,t){var n=[e],i=[],o=0,a=0;return r(t,(function(e,r){0===e.indexOf("if")?o+=1:"/if"===e?o-=1:o||0!==e.indexOf("elseif")&&"else"!==e||(n.push("else"===e?["true"]:e.split(" ").slice(1)),i.push(t.slice(a,r)),a=r+1)})),i.push(t.slice(a)),{exps:n,sourcesInsideIf:i}}(e,t),o=!1,a="";return r(i.exps,(function(e,t){return(o=w(e,n))&&(a=b(i.sourcesInsideIf[t],n)),!o})),a},each:function(e,t,n){var i=w(e,n),a=o(i)?"@index":"@key",l={},c="";return r(i,(function(e,i){l[a]=i,l["@this"]=e,s(n,l),c+=b(t.slice(),n)})),c},with:function(e,t,n){var r=i("as",e),o=e[r+1],a=w(e.slice(0,r),n),l={};return l[o]=a,b(t,s(n,l))||""}},_=3==="a".split(/a/).length?function(e,t){return e.split(t)}:function(e,t){var n,i,r=[],o=0;for(t.global||(t=new RegExp(t,"g")),n=t.exec(e);null!==n;)i=n.index,r.push(e.slice(o,i)),o=i+n[0].length,n=t.exec(e);return r.push(e.slice(o)),r};function v(e,t){var n,i=t[e];return"true"===e?i=!0:"false"===e?i=!1:p.test(e)?i=e.replace(f,""):c.test(e)?i=v((n=e.split(u))[0],t)[v(n[1],t)]:d.test(e)?i=v((n=e.split(h))[0],t)[n[1]]:m.test(e)&&(i=parseFloat(e)),i}function y(e,t,n){for(var i,r,o,s,l=g[e],c=1,u=2,d=t[u];c&&a(d);)0===d.indexOf(e)?c+=1:0===d.indexOf("/"+e)&&(c-=1,i=u),d=t[u+=2];if(c)throw Error(e+" needs {{/"+e+"}} expression.");return t[0]=l(t[0].split(" ").slice(1),(r=0,o=i,(s=t.splice(r+1,o-r)).pop(),s),n),t}function w(e,t){var n=v(e[0],t);return n instanceof Function?function(e,t,n){var i=[];return r(t,(function(e){i.push(v(e,n))})),e.apply(null,i)}(n,e.slice(1),t):n}function b(e,t){for(var n,i,r,o=1,s=e[o];a(s);)i=(n=s.split(" "))[0],g[i]?(r=y(i,e.splice(o,e.length-o),t),e=e.concat(r)):e[o]=w(n,t),s=e[o+=2];return e.join("")}e.exports=function(e,t){return b(_(e,l),t)}},function(e,t,n){"use strict";var i=n(2),r=n(23),o=n(6),a=n(25),s=n(3),l=n(26),c=n(4),u=/\s+/g;function d(){this.events=null,this.contexts=null}d.mixin=function(e){i(e.prototype,d.prototype)},d.prototype._getHandlerItem=function(e,t){var n={handler:e};return t&&(n.context=t),n},d.prototype._safeEvent=function(e){var t,n=this.events;return n||(n=this.events={}),e&&((t=n[e])||(t=[],n[e]=t),n=t),n},d.prototype._safeContext=function(){var e=this.contexts;return e||(e=this.contexts=[]),e},d.prototype._indexOfContext=function(e){for(var t=this._safeContext(),n=0;t[n];){if(e===t[n][0])return n;n+=1}return-1},d.prototype._memorizeContext=function(e){var t,n;r(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1?t[n][1]+=1:t.push([e,1]))},d.prototype._forgetContext=function(e){var t,n;r(e)&&(t=this._safeContext(),(n=this._indexOfContext(e))>-1&&(t[n][1]-=1,t[n][1]<=0&&t.splice(n,1)))},d.prototype._bindEvent=function(e,t,n){var i=this._safeEvent(e);this._memorizeContext(n),i.push(this._getHandlerItem(t,n))},d.prototype.on=function(e,t,n){var i=this;o(e)?(e=e.split(u),c(e,(function(e){i._bindEvent(e,t,n)}))):a(e)&&(n=t,c(e,(function(e,t){i.on(t,e,n)})))},d.prototype.once=function(e,t,n){var i=this;if(a(e))return n=t,void c(e,(function(e,t){i.once(t,e,n)}));this.on(e,(function r(){t.apply(n,arguments),i.off(e,r,n)}),n)},d.prototype._spliceMatches=function(e,t){var n,i=0;if(s(e))for(n=e.length;i<n;i+=1)!0===t(e[i])&&(e.splice(i,1),n-=1,i-=1)},d.prototype._matchHandler=function(e){var t=this;return function(n){var i=e===n.handler;return i&&t._forgetContext(n.context),i}},d.prototype._matchContext=function(e){var t=this;return function(n){var i=e===n.context;return i&&t._forgetContext(n.context),i}},d.prototype._matchHandlerAndContext=function(e,t){var n=this;return function(i){var r=e===i.handler,o=t===i.context,a=r&&o;return a&&n._forgetContext(i.context),a}},d.prototype._offByEventName=function(e,t){var n=this,i=l(t),r=n._matchHandler(t);e=e.split(u),c(e,(function(e){var t=n._safeEvent(e);i?n._spliceMatches(t,r):(c(t,(function(e){n._forgetContext(e.context)})),n.events[e]=[])}))},d.prototype._offByHandler=function(e){var t=this,n=this._matchHandler(e);c(this._safeEvent(),(function(e){t._spliceMatches(e,n)}))},d.prototype._offByObject=function(e,t){var n,i=this;this._indexOfContext(e)<0?c(e,(function(e,t){i.off(t,e)})):o(t)?(n=this._matchContext(e),i._spliceMatches(this._safeEvent(t),n)):l(t)?(n=this._matchHandlerAndContext(t,e),c(this._safeEvent(),(function(e){i._spliceMatches(e,n)}))):(n=this._matchContext(e),c(this._safeEvent(),(function(e){i._spliceMatches(e,n)})))},d.prototype.off=function(e,t){o(e)?this._offByEventName(e,t):arguments.length?l(e)?this._offByHandler(e):a(e)&&this._offByObject(e,t):(this.events={},this.contexts=[])},d.prototype.fire=function(e){this.invoke.apply(this,arguments)},d.prototype.invoke=function(e){var t,n,i,r;if(!this.hasListener(e))return!0;for(t=this._safeEvent(e),n=Array.prototype.slice.call(arguments,1),i=0;t[i];){if(!1===(r=t[i]).handler.apply(r.context,n))return!1;i+=1}return!0},d.prototype.hasListener=function(e){return this.getListenerLength(e)>0},d.prototype.getListenerLength=function(e){return this._safeEvent(e).length},e.exports=d},function(e,t,n){"use strict";var i=n(27),r=n(2);e.exports=function(e,t){var n;return t||(t=e,e=null),n=t.init||function(){},e&&i(n,e),t.hasOwnProperty("static")&&(r(n,t.static),delete t.static),r(n.prototype,t),n}},function(e,t,n){"use strict";var i=n(6),r=n(4),o=n(17);function a(e,t,n,i){function a(t){n.call(i||e,t||window.event)}"addEventListener"in e?e.addEventListener(t,a):"attachEvent"in e&&e.attachEvent("on"+t,a),function(e,t,n,i){var a=o(e,t),s=!1;r(a,(function(e){return e.handler!==n||(s=!0,!1)})),s||a.push({handler:n,wrappedHandler:i})}(e,t,n,a)}e.exports=function(e,t,n,o){i(t)?r(t.split(/\s+/g),(function(t){a(e,t,n,o)})):r(t,(function(t,i){a(e,i,t,n)}))}},function(e,t,n){"use strict";var i=n(6),r=n(4),o=n(17);function a(e,t,n){var i,a=o(e,t);n?(r(a,(function(r,o){return n!==r.handler||(s(e,t,r.wrappedHandler),i=o,!1)})),a.splice(i,1)):(r(a,(function(n){s(e,t,n.wrappedHandler)})),a.splice(0,a.length))}function s(e,t,n){"removeEventListener"in e?e.removeEventListener(t,n):"detachEvent"in e&&e.detachEvent("on"+t,n)}e.exports=function(e,t,n){i(t)?r(t.split(/\s+/g),(function(t){a(e,t,n)})):r(t,(function(t,n){a(e,n,t)}))}},function(e,t,n){"use strict";var i=n(30);e.exports=function(e,t){var n=e.parentNode;if(i(e,t))return e;for(;n&&n!==document;){if(i(n,t))return n;n=n.parentNode}return null}},function(e,t,n){"use strict";e.exports=function(e){e&&e.parentNode&&e.parentNode.removeChild(e)}},function(e,t,n){"use strict";e.exports=function(e){return"object"==typeof HTMLElement?e&&(e instanceof HTMLElement||!!e.nodeType):!(!e||!e.nodeType)}},function(e,t,n){"use strict";var i=n(0),r=n(1),o=n(35),a=0,s={getUniqueId:function(){return a+=1},formatTime:function(e,t){return e=String(e),i(t,["hh","mm"])>=0&&1===e.length?"0"+e:e},getMeridiemHour:function(e){return 0==(e%=12)&&(e=12),e},getRangeArr:function(e,t,n){var i,r=[];if(n=n||1,e>t)for(i=t;i>=e;i-=n)r.push(i);else for(i=e;i<=t;i+=n)r.push(i);return r},fill:function(e,t,n,i){var r,o=i||[],a=Math.min(o.length-1,t);for(r=e;r<=a;r+=1)o[r]=n;for(r=a;r<=t;r+=1)o.push(n);return o},getTarget:function(e){return e.target||e.srcElement},sendHostName:function(){o("time-picker","UA-129987462-1")},getDisabledMinuteArr:function(e,t){var n=this.fill(0,Math.floor(60/t)-2,!1);return r(e,function(e){var i=Math.ceil(e.begin/t),r=Math.floor(e.end/t);n=this.fill(i,r,!0,n)}.bind(this)),n},setDisabled:function(e,t){e.disabled=t}};e.exports=s},function(e,t,n){"use strict";e.exports=function(e,t,n){var i;for(i in n=n||null,e)if(e.hasOwnProperty(i)&&!1===t.call(n,e[i],i,e))break}},function(e,t,n){"use strict";e.exports=function(e,t){var n,i=e._feEventKey;return i||(i=e._feEventKey={}),(n=i[t])||(n=i[t]=[]),n}},function(e,t,n){"use strict";var i=n(5);e.exports=function(e){return e&&e.className?i(e.className.baseVal)?e.className:e.className.baseVal:""}},function(e,t,n){"use strict";var i=n(3),r=n(5);e.exports=function(e,t){t=(t=i(t)?t.join(" "):t).replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),r(e.className.baseVal)?e.className=t:e.className.baseVal=t}},function(e,t,n){"use strict";n(21),e.exports=n(22)},function(e,t,n){},function(e,t,n){"use strict";var i=n(0),r=n(1),o=n(8),a=n(9),s=n(2),l=n(10),c=n(11),u=n(29),d=n(12),h=n(13),p=n(32),f=n(14),m=n(33),g=n(34),_=n(38),v=n(15),y=n(40),w=n(41),b=n(42),D=a({static:{localeTexts:y},init:function(e,t){t=function(e){return s({language:"en",initialHour:0,initialMinute:0,showMeridiem:!0,inputType:"selectbox",hourStep:1,minuteStep:1,meridiemPosition:"right",format:"h:m",disabledHours:[],disabledMinutes:{},usageStatistics:!0},e)}(t),this.id=v.getUniqueId(),this.container=f(e)?e:document.querySelector(e),this.element=null,this.meridiemElement=null,this.amEl=null,this.pmEl=null,this.showMeridiem=t.showMeridiem,this.meridiemPosition=t.meridiemPosition,this.hourInput=null,this.minuteInput=null,this.hour=t.initialHour,this.minute=t.initialMinute,this.hourStep=t.hourStep,this.minuteStep=t.minuteStep,this.disabledHours=t.disabledHours,this.disabledMinutes=t.disabledMinutes,this.inputType=t.inputType,this.localeText=y[t.language],this.format=this.getValidTimeFormat(t.format),this.render(),this.setEvents(),t.usageStatistics&&v.sendHostName()},setEvents:function(){this.hourInput.on("change",this.onChangeTimeInput,this),this.minuteInput.on("change",this.onChangeTimeInput,this),this.showMeridiem&&("selectbox"===this.inputType?l(this.meridiemElement.querySelector("select"),"change",this.onChangeMeridiem,this):"spinbox"===this.inputType&&l(this.meridiemElement,"click",this.onChangeMeridiem,this))},removeEvents:function(){this.off(),this.hourInput.destroy(),this.minuteInput.destroy(),this.showMeridiem&&("selectbox"===this.inputType?c(this.meridiemElement.querySelector("select"),"change",this.onChangeMeridiem,this):"spinbox"===this.inputType&&c(this.meridiemElement,"click",this.onChangeMeridiem,this))},render:function(){var e={showMeridiem:this.showMeridiem,isSpinbox:"spinbox"===this.inputType};this.showMeridiem&&s(e,{meridiemElement:this.makeMeridiemHTML()}),this.element&&h(this.element),this.container.innerHTML=w(e),this.element=this.container.firstChild,this.renderTimeInputs(),this.showMeridiem&&this.setMeridiemElement()},setMeridiemElement:function(){"left"===this.meridiemPosition&&u(this.element,"tui-has-left"),this.meridiemElement=this.element.querySelector(".tui-timepicker-meridiem"),this.amEl=this.meridiemElement.querySelector('[value="AM"]'),this.pmEl=this.meridiemElement.querySelector('[value="PM"]'),this.syncToMeridiemElements()},makeMeridiemHTML:function(){var e=this.localeText;return b({am:e.am,pm:e.pm,radioId:this.id,isSpinbox:"spinbox"===this.inputType})},renderTimeInputs:function(){var e=this.hour,t=this.showMeridiem,n=this.element.querySelector(".tui-timepicker-hour"),i=this.element.querySelector(".tui-timepicker-minute"),r="selectbox"===this.inputType.toLowerCase()?_:g,o=this.format.split(":"),a=this.getHourItems();t&&(e=v.getMeridiemHour(e)),this.hourInput=new r(n,{initialValue:e,items:a,format:o[0],disabledItems:this.makeDisabledStatItems(a)}),this.minuteInput=new r(i,{initialValue:this.minute,items:this.getMinuteItems(),format:o[1]})},makeDisabledStatItems:function(e){var t=[],n=this.disabledHours.slice();return this.showMeridiem&&(n=this.meridiemableTime(n)),r(e,(function(e){t.push(i(e,n)>=0)})),t},meridiemableTime:function(e){var t=0,n=0,i=11,o=[];return this.hour>=12&&(t=12,n=12,i=23),r(e,(function(e){e>=n&&e<=i&&o.push(e-t==0?12:e-t)})),o},getValidTimeFormat:function(e){return e.match(/^[h]{1,2}:[m]{1,2}$/i)?e.toLowerCase():"h:m"},syncToMeridiemElements:function(){var e=this.hour>=12?this.pmEl:this.amEl,t=e===this.pmEl?this.amEl:this.pmEl;e.setAttribute("selected",!0),e.setAttribute("checked",!0),u(e,"tui-timepicker-meridiem-checked"),t.removeAttribute("selected"),t.removeAttribute("checked"),p(t,"tui-timepicker-meridiem-checked")},syncToInputs:function(){var e=this.hour,t=this.minute;this.showMeridiem&&(e=v.getMeridiemHour(e)),this.hourInput.setValue(e,!0),this.minuteInput.setValue(t,!0)},onChangeMeridiem:function(e){var t=this.hour,n=v.getTarget(e);n.value&&d(n,".tui-timepicker-meridiem")&&(t=this.to24Hour("PM"===n.value,t),this.setTime(t,this.minute),this.setDisabledHours(),this.setDisabledMinutes(t))},onChangeTimeInput:function(){var e=this.hourInput.getValue(),t=this.minuteInput.getValue(),n=this.hour>=12;this.showMeridiem&&(e=this.to24Hour(n,e)),this.setTime(e,t),this.setDisabledMinutes(e)},to24Hour:function(e,t){return t%=12,e&&(t+=12),t},setDisabledHours:function(){var e=this.getHourItems(),t=this.makeDisabledStatItems(e);this.hourInput.setDisabledItems(t)},setDisabledMinutes:function(e){var t;t=this.disabledMinutes[e]||[],this.minuteInput.setDisabledItems(t)},getHourItems:function(){var e=this.hourStep;return this.showMeridiem?v.getRangeArr(1,12,e):v.getRangeArr(0,23,e)},getMinuteItems:function(){return v.getRangeArr(0,59,this.minuteStep)},validItems:function(e,t){return!(!m(e)||!m(t))&&(this.showMeridiem&&(e=v.getMeridiemHour(e)),i(e,this.getHourItems())>-1&&i(t,this.getMinuteItems())>-1)},setHourStep:function(e){this.hourStep=e,this.hourInput.fire("changeItems",this.getHourItems())},getHourStep:function(){return this.hourStep},setMinuteStep:function(e){this.minuteStep=e,this.minuteInput.fire("changeItems",this.getMinuteItems())},getMinuteStep:function(){return this.minuteStep},show:function(){p(this.element,"tui-hidden")},hide:function(){u(this.element,"tui-hidden")},setHour:function(e){return this.setTime(e,this.minute)},setMinute:function(e){return this.setTime(this.hour,e)},setTime:function(e,t,n){this.validItems(e,t)&&(this.hour=e,this.minute=t,this.syncToInputs(),this.showMeridiem&&this.syncToMeridiemElements(),n||this.fire("change",{hour:this.hour,minute:this.minute}))},setRange:function(e,t){var n,i,r=e.hour,o=e.minute;this.isValidRange(e,t)&&(t&&(n=t.hour,i=t.minute),this.setRangeHour(r,n),this.setRangeMinute(r,o,n,i),this.applyRange(r,o,n))},setRangeHour:function(e,t){var n=v.getRangeArr(0,e-1);t&&(n=n.concat(v.getRangeArr(t+1,23))),this.disabledHours=n.slice()},setRangeMinute:function(e,t,n,i){var r=[];if(e||t){if(r.push({begin:0,end:t}),n&&i){if(r.push({begin:i,end:59}),e===n)return void(this.disabledMinutes[e]=v.getDisabledMinuteArr(r,this.minuteStep).slice());this.disabledMinutes[n]=v.getDisabledMinuteArr([r[1]],this.minuteStep).slice()}this.disabledMinutes[e]=v.getDisabledMinuteArr([r[0]],this.minuteStep).slice()}},applyRange:function(e,t,n){var i,r=Math.ceil(t/this.minuteStep),o=e,a=r*this.minuteStep;this.isLaterThanSetTime(e,t)&&(this.disabledMinutes[o][r]&&(a=(i=this.disabledMinutes[o].slice(r).findIndex((function(e){return!e}))*this.minuteStep)>=0?a+i:60),(1!==this.hourStep&&e%this.hourStep!=1||a>=60)&&(o=e+e%this.hourStep+1,a=0),this.setTime(o,a)),this.setDisabledHours(),this.setDisabledMinutes(this.hour),this.showMeridiem&&(this.syncToMeridiemElements(),v.setDisabled(this.amEl,e>=12),v.setDisabled(this.pmEl,n<12))},resetMinuteRange:function(){var e;for(this.disabledMinutes={},e=0;e<=23;e+=1)this.setDisabledMinutes(this.hour)},isValidRange:function(e,t){var n,i,r=e.hour,o=e.minute;return!!this.isValidTime(r,o)&&(!t||(n=t.hour,i=t.minute,this.isValidTime(n,i)&&this.compareTimes(e,t)>0))},isValidTime:function(e,t){return e>=0&&e<=23&&t>=0&&t<=59},isLaterThanSetTime:function(e,t){return e>this.hour||e===this.hour&&t>this.minute},compareTimes:function(e,t){var n=new Date(0),i=new Date(0);return n.setHours(e.hour,e.minute),i.setHours(t.hour,t.minute),i.getTime()-n.getTime()},getHour:function(){return this.hour},getMinute:function(){return this.minute},changeLanguage:function(e){this.localeText=y[e],this.render()},destroy:function(){this.removeEvents(),h(this.element),this.container=this.showMeridiem=this.hourInput=this.minuteInput=this.hour=this.minute=this.inputType=this.element=this.meridiemElement=this.amEl=this.pmEl=null}});o.mixin(D),e.exports=D},function(e,t,n){"use strict";var i=n(5),r=n(24);e.exports=function(e){return!i(e)&&!r(e)}},function(e,t,n){"use strict";e.exports=function(e){return null===e}},function(e,t,n){"use strict";e.exports=function(e){return e===Object(e)}},function(e,t,n){"use strict";e.exports=function(e){return e instanceof Function}},function(e,t,n){"use strict";var i=n(28);e.exports=function(e,t){var n=i(t.prototype);n.constructor=e,e.prototype=n}},function(e,t,n){"use strict";e.exports=function(e){function t(){}return t.prototype=e,new t}},function(e,t,n){"use strict";var i=n(4),r=n(0),o=n(18),a=n(19);e.exports=function(e){var t,n=Array.prototype.slice.call(arguments,1),s=e.classList,l=[];s?i(n,(function(t){e.classList.add(t)})):((t=o(e))&&(n=[].concat(t.split(/\s+/),n)),i(n,(function(e){r(e,l)<0&&l.push(e)})),a(e,l))}},function(e,t,n){"use strict";var i=n(0),r=n(31),o=Element.prototype,a=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.msMatchesSelector||function(e){var t=this.document||this.ownerDocument;return i(this,r(t.querySelectorAll(e)))>-1};e.exports=function(e,t){return a.call(e,t)}},function(e,t,n){"use strict";var i=n(1);e.exports=function(e){var t;try{t=Array.prototype.slice.call(e)}catch(n){t=[],i(e,(function(e){t.push(e)}))}return t}},function(e,t,n){"use strict";var i=n(1),r=n(0),o=n(18),a=n(19);e.exports=function(e){var t,n,s=Array.prototype.slice.call(arguments,1),l=e.classList;l?i(s,(function(e){l.remove(e)})):(t=o(e).split(/\s+/),n=[],i(t,(function(e){r(e,s)<0&&n.push(e)})),a(e,n))}},function(e,t,n){"use strict";e.exports=function(e){return"number"==typeof e||e instanceof Number}},function(e,t,n){"use strict";var i=n(0),r=n(1),o=n(8),a=n(9),s=n(2),l=n(10),c=n(11),u=n(12),d=n(13),h=n(14),p=n(15),f=n(37),m=a({init:function(e,t){t=s({items:[]},t),this._container=h(e)?e:document.querySelector(e),this._element=null,this._inputElement=null,this._items=t.items,this._disabledItems=t.disabledItems||[],this._selectedIndex=Math.max(0,i(t.initialValue,this._items)),this._format=t.format,this._render(),this._setEvents()},_render:function(){var e,t=i(this.getValue(),this._items);this._disabledItems[t]&&(this._selectedIndex=this._findEnabledIndex()),e={maxLength:this._getMaxLength(),initialValue:this.getValue(),format:this._format,formatTime:p.formatTime},this._container.innerHTML=f(e),this._element=this._container.firstChild,this._inputElement=this._element.querySelector("input")},_findEnabledIndex:function(){return i(!1,this._disabledItems)},_getMaxLength:function(){var e=[];return r(this._items,(function(t){e.push(String(t).length)})),Math.max.apply(null,e)},setDisabledItems:function(e){this._disabledItems=e,this._changeToInputValue()},_setEvents:function(){l(this._container,"click",this._onClickHandler,this),l(this._inputElement,"keydown",this._onKeydownInputElement,this),l(this._inputElement,"change",this._onChangeHandler,this),this.on("changeItems",(function(e){this._items=e,this._render()}),this)},_removeEvents:function(){this.off(),c(this._container,"click",this._onClickHandler,this),c(this._inputElement,"keydown",this._onKeydownInputElement,this),c(this._inputElement,"change",this._onChangeHandler,this)},_onClickHandler:function(e){var t=p.getTarget(e);u(t,".tui-timepicker-btn-down")?this._setNextValue(!0):u(t,".tui-timepicker-btn-up")&&this._setNextValue(!1)},_setNextValue:function(e){var t=this._selectedIndex;t=e?t?t-1:this._items.length-1:t<this._items.length-1?t+1:0,this._disabledItems[t]?(this._selectedIndex=t,this._setNextValue(e)):this.setValue(this._items[t])},_onKeydownInputElement:function(e){var t,n=e.which||e.keyCode;if(u(p.getTarget(e),"input")){switch(n){case 38:t=!1;break;case 40:t=!0;break;default:return}this._setNextValue(t)}},_onChangeHandler:function(e){u(p.getTarget(e),"input")&&this._changeToInputValue()},_changeToInputValue:function(e){var t=Number(this._inputElement.value),n=i(t,this._items);if(this._disabledItems[n])n=this._findEnabledIndex(),t=this._items[n];else if(n===this._selectedIndex)return;-1===n?this.setValue(this._items[this._selectedIndex],e):(this._selectedIndex=n,e||this.fire("change",{value:t}))},setValue:function(e,t){this._inputElement.value=p.formatTime(e,this._format),this._changeToInputValue(t)},getValue:function(){return this._items[this._selectedIndex]},destroy:function(){this._removeEvents(),d(this._element),this._container=this._element=this._inputElement=this._items=this._selectedIndex=null}});o.mixin(m),e.exports=m},function(e,t,n){"use strict";var i=n(5),r=n(36);e.exports=function(e,t){var n=location.hostname,o="TOAST UI "+e+" for "+n+": Statistics",a=window.localStorage.getItem(o);(i(window.tui)||!1!==window.tui.usageStatistics)&&(a&&!function(e){return(new Date).getTime()-e>6048e5}(a)||(window.localStorage.setItem(o,(new Date).getTime()),setTimeout((function(){"interactive"!==document.readyState&&"complete"!==document.readyState||r("https://www.google-analytics.com/collect",{v:1,t:"event",tid:t,cid:n,dp:n,dh:e,el:e,ec:"use"})}),1e3)))}},function(e,t,n){"use strict";var i=n(16);e.exports=function(e,t){var n=document.createElement("img"),r="";return i(t,(function(e,t){r+="&"+t+"="+e})),r=r.substring(1),n.src=e+"?"+r,n.style.display="none",document.body.appendChild(n),document.body.removeChild(n),n}},function(e,t,n){"use strict";var i=n(7);e.exports=function(e){return i('<div class="tui-timepicker-btn-area">  <input type="text" class="tui-timepicker-spinbox-input"        maxlength="{{maxLength}}"        size="{{maxLength}}"        value="{{formatTime initialValue format}}"        aria-label="TimePicker spinbox value">  <button type="button" class="tui-timepicker-btn tui-timepicker-btn-up">    <span class="tui-ico-t-btn">Increase</span>  </button>  <button type="button" class="tui-timepicker-btn tui-timepicker-btn-down">    <span class="tui-ico-t-btn">Decrease</span>  </button></div>',e)}},function(e,t,n){"use strict";var i=n(0),r=n(8),o=n(9),a=n(2),s=n(10),l=n(11),c=n(12),u=n(13),d=n(14),h=n(15),p=n(39),f=o({init:function(e,t){t=a({items:[]},t),this._container=d(e)?e:document.querySelector(e),this._items=t.items||[],this._disabledItems=t.disabledItems||[],this._selectedIndex=Math.max(0,i(t.initialValue,this._items)),this._format=t.format,this._element=null,this._render(),this._setEvents()},_render:function(){var e;this._changeEnabledIndex(),e={items:this._items,format:this._format,initialValue:this.getValue(),disabledItems:this._disabledItems,formatTime:h.formatTime,equals:function(e,t){return e===t}},this._element&&this._removeElement(),this._container.innerHTML=p(e),this._element=this._container.firstChild,s(this._element,"change",this._onChangeHandler,this)},_changeEnabledIndex:function(){var e=i(this.getValue(),this._items);this._disabledItems[e]&&(this._selectedIndex=i(!1,this._disabledItems))},setDisabledItems:function(e){this._disabledItems=e,this._render()},_setEvents:function(){this.on("changeItems",(function(e){this._items=e,this._render()}),this)},_removeEvents:function(){this.off()},_removeElement:function(){l(this._element,"change",this._onChangeHandler,this),u(this._element)},_onChangeHandler:function(e){c(h.getTarget(e),"select")&&this._setNewValue()},_setNewValue:function(e){var t=Number(this._element.value);this._selectedIndex=i(t,this._items),e||this.fire("change",{value:t})},getValue:function(){return this._items[this._selectedIndex]},setValue:function(e,t){var n=i(e,this._items);n>-1&&n!==this._selectedIndex&&(this._selectedIndex=n,this._element.value=e,this._setNewValue(t))},destroy:function(){this._removeEvents(),this._removeElement(),this._container=this._items=this._selectedIndex=this._element=null}});r.mixin(f),e.exports=f},function(e,t,n){"use strict";var i=n(7);e.exports=function(e){return i('<select class="tui-timepicker-select" aria-label="Time">  {{each items}}    {{if equals initialValue @this}}      <option value="{{@this}}" selected {{if disabledItems[@index]}}disabled{{/if}}>{{formatTime @this format}}</option>    {{else}}      <option value="{{@this}}" {{if disabledItems[@index]}}disabled{{/if}}>{{formatTime @this format}}</option>    {{/if}}  {{/each}}</select>',e)}},function(e,t,n){"use strict";e.exports={en:{am:"AM",pm:"PM"},ko:{am:"오전",pm:"오후"}}},function(e,t,n){"use strict";var i=n(7);e.exports=function(e){return i('<div class="tui-timepicker">  <div class="tui-timepicker-body">    <div class="tui-timepicker-row">      {{if isSpinbox}}        <div class="tui-timepicker-column tui-timepicker-spinbox tui-timepicker-hour"></div>        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>        <div class="tui-timepicker-column tui-timepicker-spinbox tui-timepicker-minute"></div>        {{if showMeridiem}}          {{meridiemElement}}        {{/if}}      {{else}}        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-hour"></div>        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-minute"></div>        {{if showMeridiem}}          {{meridiemElement}}        {{/if}}      {{/if}}    </div>  </div></div>',e)}},function(e,t,n){"use strict";var i=n(7);e.exports=function(e){return i('{{if isSpinbox}}  <div class="tui-timepicker-column tui-timepicker-checkbox tui-timepicker-meridiem">    <div class="tui-timepicker-check-area">      <ul class="tui-timepicker-check-lst">        <li class="tui-timepicker-check">          <div class="tui-timepicker-radio">            <input type="radio"                  name="optionsRadios-{{radioId}}"                  value="AM"                  class="tui-timepicker-radio-am"                  id="tui-timepicker-radio-am-{{radioId}}">            <label for="tui-timepicker-radio-am-{{radioId}}" class="tui-timepicker-radio-label">              <span class="tui-timepicker-input-radio"></span>{{am}}            </label>          </div>        </li>        <li class="tui-timepicker-check">          <div class="tui-timepicker-radio">            <input type="radio"                  name="optionsRadios-{{radioId}}"                  value="PM"                  class="tui-timepicker-radio-pm"                  id="tui-timepicker-radio-pm-{{radioId}}">            <label for="tui-timepicker-radio-pm-{{radioId}}" class="tui-timepicker-radio-label">              <span class="tui-timepicker-input-radio"></span>{{pm}}            </label>          </div>        </li>      </ul>    </div>  </div>{{else}}  <div class="tui-timepicker-column tui-timepicker-selectbox tui-is-add-picker tui-timepicker-meridiem">    <select class="tui-timepicker-select" aria-label="AM/PM">      <option value="AM">{{am}}</option>      <option value="PM">{{pm}}</option>    </select>  </div>{{/if}}',e)}}])},e.exports=i()}},[[4,0]]]);
-//# sourceMappingURL=curriculum-calendar.js.map
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/curriculum-calendar"],{
+
+/***/ "./node_modules/@toast-ui/calendar/dist/toastui-calendar.mjs":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toast-ui/calendar/dist/toastui-calendar.mjs ***!
+  \*******************************************************************/
+/*! exports provided: Day, Month, TZDate, Week, default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Day", function() { return Day; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Month", function() { return Month; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TZDate", function() { return TZDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Week", function() { return Week; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Calendar; });
+/* harmony import */ var tui_date_picker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tui-date-picker */ "./node_modules/tui-date-picker/dist/tui-date-picker.js");
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a2, b2) => {
+  for (var prop in b2 || (b2 = {}))
+    if (__hasOwnProp.call(b2, prop))
+      __defNormalProp(a2, prop, b2[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b2)) {
+      if (__propIsEnum.call(b2, prop))
+        __defNormalProp(a2, prop, b2[prop]);
+    }
+  return a2;
+};
+var __spreadProps = (a2, b2) => __defProps(a2, __getOwnPropDescs(b2));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+/*!
+ * TOAST UI Calendar 2nd Edition
+ * @version 2.1.3 | Tue Aug 16 2022
+ * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
+ * @license MIT
+ */
+
+var n$2, l$3, u$3, t$2, o$3, r$3, f$3 = {}, e$1 = [], c$3 = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+function s$3(n2, l2) {
+  for (var u2 in l2)
+    n2[u2] = l2[u2];
+  return n2;
+}
+function a$3(n2) {
+  var l2 = n2.parentNode;
+  l2 && l2.removeChild(n2);
+}
+function h$3(l2, u2, i2) {
+  var t2, o2, r2, f2 = {};
+  for (r2 in u2)
+    r2 == "key" ? t2 = u2[r2] : r2 == "ref" ? o2 = u2[r2] : f2[r2] = u2[r2];
+  if (arguments.length > 2 && (f2.children = arguments.length > 3 ? n$2.call(arguments, 2) : i2), typeof l2 == "function" && l2.defaultProps != null)
+    for (r2 in l2.defaultProps)
+      f2[r2] === void 0 && (f2[r2] = l2.defaultProps[r2]);
+  return v$3(l2, f2, t2, o2, null);
+}
+function v$3(n2, i2, t2, o2, r2) {
+  var f2 = { type: n2, props: i2, key: t2, ref: o2, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: r2 == null ? ++u$3 : r2 };
+  return r2 == null && l$3.vnode != null && l$3.vnode(f2), f2;
+}
+function p$3(n2) {
+  return n2.children;
+}
+function d$3(n2, l2) {
+  this.props = n2, this.context = l2;
+}
+function _$3(n2, l2) {
+  if (l2 == null)
+    return n2.__ ? _$3(n2.__, n2.__.__k.indexOf(n2) + 1) : null;
+  for (var u2; l2 < n2.__k.length; l2++)
+    if ((u2 = n2.__k[l2]) != null && u2.__e != null)
+      return u2.__e;
+  return typeof n2.type == "function" ? _$3(n2) : null;
+}
+function k$2(n2) {
+  var l2, u2;
+  if ((n2 = n2.__) != null && n2.__c != null) {
+    for (n2.__e = n2.__c.base = null, l2 = 0; l2 < n2.__k.length; l2++)
+      if ((u2 = n2.__k[l2]) != null && u2.__e != null) {
+        n2.__e = n2.__c.base = u2.__e;
+        break;
+      }
+    return k$2(n2);
+  }
+}
+function b$2(n2) {
+  (!n2.__d && (n2.__d = true) && t$2.push(n2) && !g$4.__r++ || o$3 !== l$3.debounceRendering) && ((o$3 = l$3.debounceRendering) || setTimeout)(g$4);
+}
+function g$4() {
+  for (var n2; g$4.__r = t$2.length; )
+    n2 = t$2.sort(function(n3, l2) {
+      return n3.__v.__b - l2.__v.__b;
+    }), t$2 = [], n2.some(function(n3) {
+      var l2, u2, i2, t2, o2, r2;
+      n3.__d && (o2 = (t2 = (l2 = n3).__v).__e, (r2 = l2.__P) && (u2 = [], (i2 = s$3({}, t2)).__v = t2.__v + 1, j$3(r2, t2, i2, l2.__n, r2.ownerSVGElement !== void 0, t2.__h != null ? [o2] : null, u2, o2 == null ? _$3(t2) : o2, t2.__h), z$2(u2, t2), t2.__e != o2 && k$2(t2)));
+    });
+}
+function w$3(n2, l2, u2, i2, t2, o2, r2, c2, s2, a2) {
+  var h2, y2, d2, k2, b2, g2, w2, x2 = i2 && i2.__k || e$1, C2 = x2.length;
+  for (u2.__k = [], h2 = 0; h2 < l2.length; h2++)
+    if ((k2 = u2.__k[h2] = (k2 = l2[h2]) == null || typeof k2 == "boolean" ? null : typeof k2 == "string" || typeof k2 == "number" || typeof k2 == "bigint" ? v$3(null, k2, null, null, k2) : Array.isArray(k2) ? v$3(p$3, { children: k2 }, null, null, null) : k2.__b > 0 ? v$3(k2.type, k2.props, k2.key, null, k2.__v) : k2) != null) {
+      if (k2.__ = u2, k2.__b = u2.__b + 1, (d2 = x2[h2]) === null || d2 && k2.key == d2.key && k2.type === d2.type)
+        x2[h2] = void 0;
+      else
+        for (y2 = 0; y2 < C2; y2++) {
+          if ((d2 = x2[y2]) && k2.key == d2.key && k2.type === d2.type) {
+            x2[y2] = void 0;
+            break;
+          }
+          d2 = null;
+        }
+      j$3(n2, k2, d2 = d2 || f$3, t2, o2, r2, c2, s2, a2), b2 = k2.__e, (y2 = k2.ref) && d2.ref != y2 && (w2 || (w2 = []), d2.ref && w2.push(d2.ref, null, k2), w2.push(y2, k2.__c || b2, k2)), b2 != null ? (g2 == null && (g2 = b2), typeof k2.type == "function" && k2.__k === d2.__k ? k2.__d = s2 = m$2(k2, s2, n2) : s2 = A$2(n2, k2, d2, x2, b2, s2), typeof u2.type == "function" && (u2.__d = s2)) : s2 && d2.__e == s2 && s2.parentNode != n2 && (s2 = _$3(d2));
+    }
+  for (u2.__e = g2, h2 = C2; h2--; )
+    x2[h2] != null && (typeof u2.type == "function" && x2[h2].__e != null && x2[h2].__e == u2.__d && (u2.__d = _$3(i2, h2 + 1)), N(x2[h2], x2[h2]));
+  if (w2)
+    for (h2 = 0; h2 < w2.length; h2++)
+      M$2(w2[h2], w2[++h2], w2[++h2]);
+}
+function m$2(n2, l2, u2) {
+  for (var i2, t2 = n2.__k, o2 = 0; t2 && o2 < t2.length; o2++)
+    (i2 = t2[o2]) && (i2.__ = n2, l2 = typeof i2.type == "function" ? m$2(i2, l2, u2) : A$2(u2, i2, i2, t2, i2.__e, l2));
+  return l2;
+}
+function x$3(n2, l2) {
+  return l2 = l2 || [], n2 == null || typeof n2 == "boolean" || (Array.isArray(n2) ? n2.some(function(n3) {
+    x$3(n3, l2);
+  }) : l2.push(n2)), l2;
+}
+function A$2(n2, l2, u2, i2, t2, o2) {
+  var r2, f2, e2;
+  if (l2.__d !== void 0)
+    r2 = l2.__d, l2.__d = void 0;
+  else if (u2 == null || t2 != o2 || t2.parentNode == null)
+    n:
+      if (o2 == null || o2.parentNode !== n2)
+        n2.appendChild(t2), r2 = null;
+      else {
+        for (f2 = o2, e2 = 0; (f2 = f2.nextSibling) && e2 < i2.length; e2 += 2)
+          if (f2 == t2)
+            break n;
+        n2.insertBefore(t2, o2), r2 = o2;
+      }
+  return r2 !== void 0 ? r2 : t2.nextSibling;
+}
+function C$1(n2, l2, u2, i2, t2) {
+  var o2;
+  for (o2 in u2)
+    o2 === "children" || o2 === "key" || o2 in l2 || H$2(n2, o2, null, u2[o2], i2);
+  for (o2 in l2)
+    t2 && typeof l2[o2] != "function" || o2 === "children" || o2 === "key" || o2 === "value" || o2 === "checked" || u2[o2] === l2[o2] || H$2(n2, o2, l2[o2], u2[o2], i2);
+}
+function $$1(n2, l2, u2) {
+  l2[0] === "-" ? n2.setProperty(l2, u2) : n2[l2] = u2 == null ? "" : typeof u2 != "number" || c$3.test(l2) ? u2 : u2 + "px";
+}
+function H$2(n2, l2, u2, i2, t2) {
+  var o2;
+  n:
+    if (l2 === "style")
+      if (typeof u2 == "string")
+        n2.style.cssText = u2;
+      else {
+        if (typeof i2 == "string" && (n2.style.cssText = i2 = ""), i2)
+          for (l2 in i2)
+            u2 && l2 in u2 || $$1(n2.style, l2, "");
+        if (u2)
+          for (l2 in u2)
+            i2 && u2[l2] === i2[l2] || $$1(n2.style, l2, u2[l2]);
+      }
+    else if (l2[0] === "o" && l2[1] === "n")
+      o2 = l2 !== (l2 = l2.replace(/Capture$/, "")), l2 = l2.toLowerCase() in n2 ? l2.toLowerCase().slice(2) : l2.slice(2), n2.l || (n2.l = {}), n2.l[l2 + o2] = u2, u2 ? i2 || n2.addEventListener(l2, o2 ? T$2 : I$2, o2) : n2.removeEventListener(l2, o2 ? T$2 : I$2, o2);
+    else if (l2 !== "dangerouslySetInnerHTML") {
+      if (t2)
+        l2 = l2.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+      else if (l2 !== "href" && l2 !== "list" && l2 !== "form" && l2 !== "tabIndex" && l2 !== "download" && l2 in n2)
+        try {
+          n2[l2] = u2 == null ? "" : u2;
+          break n;
+        } catch (n3) {
+        }
+      typeof u2 == "function" || (u2 != null && (u2 !== false || l2[0] === "a" && l2[1] === "r") ? n2.setAttribute(l2, u2) : n2.removeAttribute(l2));
+    }
+}
+function I$2(n2) {
+  this.l[n2.type + false](l$3.event ? l$3.event(n2) : n2);
+}
+function T$2(n2) {
+  this.l[n2.type + true](l$3.event ? l$3.event(n2) : n2);
+}
+function j$3(n2, u2, i2, t2, o2, r2, f2, e2, c2) {
+  var a2, h2, v2, y2, _2, k2, b2, g2, m2, x2, A2, C2, $2, H2 = u2.type;
+  if (u2.constructor !== void 0)
+    return null;
+  i2.__h != null && (c2 = i2.__h, e2 = u2.__e = i2.__e, u2.__h = null, r2 = [e2]), (a2 = l$3.__b) && a2(u2);
+  try {
+    n:
+      if (typeof H2 == "function") {
+        if (g2 = u2.props, m2 = (a2 = H2.contextType) && t2[a2.__c], x2 = a2 ? m2 ? m2.props.value : a2.__ : t2, i2.__c ? b2 = (h2 = u2.__c = i2.__c).__ = h2.__E : ("prototype" in H2 && H2.prototype.render ? u2.__c = h2 = new H2(g2, x2) : (u2.__c = h2 = new d$3(g2, x2), h2.constructor = H2, h2.render = O$2), m2 && m2.sub(h2), h2.props = g2, h2.state || (h2.state = {}), h2.context = x2, h2.__n = t2, v2 = h2.__d = true, h2.__h = []), h2.__s == null && (h2.__s = h2.state), H2.getDerivedStateFromProps != null && (h2.__s == h2.state && (h2.__s = s$3({}, h2.__s)), s$3(h2.__s, H2.getDerivedStateFromProps(g2, h2.__s))), y2 = h2.props, _2 = h2.state, v2)
+          H2.getDerivedStateFromProps == null && h2.componentWillMount != null && h2.componentWillMount(), h2.componentDidMount != null && h2.__h.push(h2.componentDidMount);
+        else {
+          if (H2.getDerivedStateFromProps == null && g2 !== y2 && h2.componentWillReceiveProps != null && h2.componentWillReceiveProps(g2, x2), !h2.__e && h2.shouldComponentUpdate != null && h2.shouldComponentUpdate(g2, h2.__s, x2) === false || u2.__v === i2.__v) {
+            h2.props = g2, h2.state = h2.__s, u2.__v !== i2.__v && (h2.__d = false), h2.__v = u2, u2.__e = i2.__e, u2.__k = i2.__k, u2.__k.forEach(function(n3) {
+              n3 && (n3.__ = u2);
+            }), h2.__h.length && f2.push(h2);
+            break n;
+          }
+          h2.componentWillUpdate != null && h2.componentWillUpdate(g2, h2.__s, x2), h2.componentDidUpdate != null && h2.__h.push(function() {
+            h2.componentDidUpdate(y2, _2, k2);
+          });
+        }
+        if (h2.context = x2, h2.props = g2, h2.__v = u2, h2.__P = n2, A2 = l$3.__r, C2 = 0, "prototype" in H2 && H2.prototype.render)
+          h2.state = h2.__s, h2.__d = false, A2 && A2(u2), a2 = h2.render(h2.props, h2.state, h2.context);
+        else
+          do {
+            h2.__d = false, A2 && A2(u2), a2 = h2.render(h2.props, h2.state, h2.context), h2.state = h2.__s;
+          } while (h2.__d && ++C2 < 25);
+        h2.state = h2.__s, h2.getChildContext != null && (t2 = s$3(s$3({}, t2), h2.getChildContext())), v2 || h2.getSnapshotBeforeUpdate == null || (k2 = h2.getSnapshotBeforeUpdate(y2, _2)), $2 = a2 != null && a2.type === p$3 && a2.key == null ? a2.props.children : a2, w$3(n2, Array.isArray($2) ? $2 : [$2], u2, i2, t2, o2, r2, f2, e2, c2), h2.base = u2.__e, u2.__h = null, h2.__h.length && f2.push(h2), b2 && (h2.__E = h2.__ = null), h2.__e = false;
+      } else
+        r2 == null && u2.__v === i2.__v ? (u2.__k = i2.__k, u2.__e = i2.__e) : u2.__e = L$2(i2.__e, u2, i2, t2, o2, r2, f2, c2);
+    (a2 = l$3.diffed) && a2(u2);
+  } catch (n3) {
+    u2.__v = null, (c2 || r2 != null) && (u2.__e = e2, u2.__h = !!c2, r2[r2.indexOf(e2)] = null), l$3.__e(n3, u2, i2);
+  }
+}
+function z$2(n2, u2) {
+  l$3.__c && l$3.__c(u2, n2), n2.some(function(u3) {
+    try {
+      n2 = u3.__h, u3.__h = [], n2.some(function(n3) {
+        n3.call(u3);
+      });
+    } catch (n3) {
+      l$3.__e(n3, u3.__v);
+    }
+  });
+}
+function L$2(l2, u2, i2, t2, o2, r2, e2, c2) {
+  var s2, h2, v2, y2 = i2.props, p2 = u2.props, d2 = u2.type, k2 = 0;
+  if (d2 === "svg" && (o2 = true), r2 != null) {
+    for (; k2 < r2.length; k2++)
+      if ((s2 = r2[k2]) && "setAttribute" in s2 == !!d2 && (d2 ? s2.localName === d2 : s2.nodeType === 3)) {
+        l2 = s2, r2[k2] = null;
+        break;
+      }
+  }
+  if (l2 == null) {
+    if (d2 === null)
+      return document.createTextNode(p2);
+    l2 = o2 ? document.createElementNS("http://www.w3.org/2000/svg", d2) : document.createElement(d2, p2.is && p2), r2 = null, c2 = false;
+  }
+  if (d2 === null)
+    y2 === p2 || c2 && l2.data === p2 || (l2.data = p2);
+  else {
+    if (r2 = r2 && n$2.call(l2.childNodes), h2 = (y2 = i2.props || f$3).dangerouslySetInnerHTML, v2 = p2.dangerouslySetInnerHTML, !c2) {
+      if (r2 != null)
+        for (y2 = {}, k2 = 0; k2 < l2.attributes.length; k2++)
+          y2[l2.attributes[k2].name] = l2.attributes[k2].value;
+      (v2 || h2) && (v2 && (h2 && v2.__html == h2.__html || v2.__html === l2.innerHTML) || (l2.innerHTML = v2 && v2.__html || ""));
+    }
+    if (C$1(l2, p2, y2, o2, c2), v2)
+      u2.__k = [];
+    else if (k2 = u2.props.children, w$3(l2, Array.isArray(k2) ? k2 : [k2], u2, i2, t2, o2 && d2 !== "foreignObject", r2, e2, r2 ? r2[0] : i2.__k && _$3(i2, 0), c2), r2 != null)
+      for (k2 = r2.length; k2--; )
+        r2[k2] != null && a$3(r2[k2]);
+    c2 || ("value" in p2 && (k2 = p2.value) !== void 0 && (k2 !== l2.value || d2 === "progress" && !k2 || d2 === "option" && k2 !== y2.value) && H$2(l2, "value", k2, y2.value, false), "checked" in p2 && (k2 = p2.checked) !== void 0 && k2 !== l2.checked && H$2(l2, "checked", k2, y2.checked, false));
+  }
+  return l2;
+}
+function M$2(n2, u2, i2) {
+  try {
+    typeof n2 == "function" ? n2(u2) : n2.current = u2;
+  } catch (n3) {
+    l$3.__e(n3, i2);
+  }
+}
+function N(n2, u2, i2) {
+  var t2, o2;
+  if (l$3.unmount && l$3.unmount(n2), (t2 = n2.ref) && (t2.current && t2.current !== n2.__e || M$2(t2, null, u2)), (t2 = n2.__c) != null) {
+    if (t2.componentWillUnmount)
+      try {
+        t2.componentWillUnmount();
+      } catch (n3) {
+        l$3.__e(n3, u2);
+      }
+    t2.base = t2.__P = null;
+  }
+  if (t2 = n2.__k)
+    for (o2 = 0; o2 < t2.length; o2++)
+      t2[o2] && N(t2[o2], u2, typeof n2.type != "function");
+  i2 || n2.__e == null || a$3(n2.__e), n2.__e = n2.__d = void 0;
+}
+function O$2(n2, l2, u2) {
+  return this.constructor(n2, u2);
+}
+function P$2(u2, i2, t2) {
+  var o2, r2, e2;
+  l$3.__ && l$3.__(u2, i2), r2 = (o2 = typeof t2 == "function") ? null : t2 && t2.__k || i2.__k, e2 = [], j$3(i2, u2 = (!o2 && t2 || i2).__k = h$3(p$3, null, [u2]), r2 || f$3, f$3, i2.ownerSVGElement !== void 0, !o2 && t2 ? [t2] : r2 ? null : i2.firstChild ? n$2.call(i2.childNodes) : null, e2, !o2 && t2 ? t2 : r2 ? r2.__e : i2.firstChild, o2), z$2(e2, u2);
+}
+function q$3(l2, u2, i2) {
+  var t2, o2, r2, f2 = s$3({}, l2.props);
+  for (r2 in u2)
+    r2 == "key" ? t2 = u2[r2] : r2 == "ref" ? o2 = u2[r2] : f2[r2] = u2[r2];
+  return arguments.length > 2 && (f2.children = arguments.length > 3 ? n$2.call(arguments, 2) : i2), v$3(l2.type, f2, t2 || l2.key, o2 || l2.ref, null);
+}
+function B$1(n2, l2) {
+  var u2 = { __c: l2 = "__cC" + r$3++, __: n2, Consumer: function(n3, l3) {
+    return n3.children(l3);
+  }, Provider: function(n3) {
+    var u3, i2;
+    return this.getChildContext || (u3 = [], (i2 = {})[l2] = this, this.getChildContext = function() {
+      return i2;
+    }, this.shouldComponentUpdate = function(n4) {
+      this.props.value !== n4.value && u3.some(b$2);
+    }, this.sub = function(n4) {
+      u3.push(n4);
+      var l3 = n4.componentWillUnmount;
+      n4.componentWillUnmount = function() {
+        u3.splice(u3.indexOf(n4), 1), l3 && l3.call(n4);
+      };
+    }), n3.children;
+  } };
+  return u2.Provider.__ = u2.Consumer.contextType = u2;
+}
+n$2 = e$1.slice, l$3 = { __e: function(n2, l2, u2, i2) {
+  for (var t2, o2, r2; l2 = l2.__; )
+    if ((t2 = l2.__c) && !t2.__)
+      try {
+        if ((o2 = t2.constructor) && o2.getDerivedStateFromError != null && (t2.setState(o2.getDerivedStateFromError(n2)), r2 = t2.__d), t2.componentDidCatch != null && (t2.componentDidCatch(n2, i2 || {}), r2 = t2.__d), r2)
+          return t2.__E = t2;
+      } catch (l3) {
+        n2 = l3;
+      }
+  throw n2;
+} }, u$3 = 0, d$3.prototype.setState = function(n2, l2) {
+  var u2;
+  u2 = this.__s != null && this.__s !== this.state ? this.__s : this.__s = s$3({}, this.state), typeof n2 == "function" && (n2 = n2(s$3({}, u2), this.props)), n2 && s$3(u2, n2), n2 != null && this.__v && (l2 && this.__h.push(l2), b$2(this));
+}, d$3.prototype.forceUpdate = function(n2) {
+  this.__v && (this.__e = true, n2 && this.__h.push(n2), b$2(this));
+}, d$3.prototype.render = p$3, t$2 = [], g$4.__r = 0, r$3 = 0;
+var t$1, u$2, r$2, o$2, i$2 = 0, c$2 = [], f$2 = [], e = l$3.__b, a$2 = l$3.__r, v$2 = l$3.diffed, l$2 = l$3.__c, m$1 = l$3.unmount;
+function p$2(t2, r2) {
+  l$3.__h && l$3.__h(u$2, t2, i$2 || r2), i$2 = 0;
+  var o2 = u$2.__H || (u$2.__H = { __: [], __h: [] });
+  return t2 >= o2.__.length && o2.__.push({ __V: f$2 }), o2.__[t2];
+}
+function y$1(n2) {
+  return i$2 = 1, d$2(z$1, n2);
+}
+function d$2(n2, r2, o2) {
+  var i2 = p$2(t$1++, 2);
+  return i2.t = n2, i2.__c || (i2.__ = [o2 ? o2(r2) : z$1(void 0, r2), function(n3) {
+    var t2 = i2.t(i2.__[0], n3);
+    i2.__[0] !== t2 && (i2.__ = [t2, i2.__[1]], i2.__c.setState({}));
+  }], i2.__c = u$2), i2.__;
+}
+function _$2(r2, o2) {
+  var i2 = p$2(t$1++, 3);
+  !l$3.__s && w$2(i2.__H, o2) && (i2.__ = r2, i2.u = o2, u$2.__H.__h.push(i2));
+}
+function h$2(r2, o2) {
+  var i2 = p$2(t$1++, 4);
+  !l$3.__s && w$2(i2.__H, o2) && (i2.__ = r2, i2.u = o2, u$2.__h.push(i2));
+}
+function s$2(n2) {
+  return i$2 = 5, F$2(function() {
+    return { current: n2 };
+  }, []);
+}
+function F$2(n2, u2) {
+  var r2 = p$2(t$1++, 7);
+  return w$2(r2.__H, u2) ? (r2.__V = n2(), r2.u = u2, r2.__h = n2, r2.__V) : r2.__;
+}
+function T$1(n2, t2) {
+  return i$2 = 8, F$2(function() {
+    return n2;
+  }, t2);
+}
+function q$2(n2) {
+  var r2 = u$2.context[n2.__c], o2 = p$2(t$1++, 9);
+  return o2.c = n2, r2 ? (o2.__ == null && (o2.__ = true, r2.sub(u$2)), r2.props.value) : n2.__;
+}
+function b$1() {
+  for (var t2; t2 = c$2.shift(); )
+    if (t2.__P)
+      try {
+        t2.__H.__h.forEach(j$2), t2.__H.__h.forEach(k$1), t2.__H.__h = [];
+      } catch (u2) {
+        t2.__H.__h = [], l$3.__e(u2, t2.__v);
+      }
+}
+l$3.__b = function(n2) {
+  u$2 = null, e && e(n2);
+}, l$3.__r = function(n2) {
+  a$2 && a$2(n2), t$1 = 0;
+  var o2 = (u$2 = n2.__c).__H;
+  o2 && (r$2 === u$2 ? (o2.__h = [], u$2.__h = [], o2.__.forEach(function(n3) {
+    n3.__V = f$2, n3.u = void 0;
+  })) : (o2.__h.forEach(j$2), o2.__h.forEach(k$1), o2.__h = [])), r$2 = u$2;
+}, l$3.diffed = function(t2) {
+  v$2 && v$2(t2);
+  var i2 = t2.__c;
+  i2 && i2.__H && (i2.__H.__h.length && (c$2.push(i2) !== 1 && o$2 === l$3.requestAnimationFrame || ((o$2 = l$3.requestAnimationFrame) || function(n2) {
+    var t3, u2 = function() {
+      clearTimeout(r2), g$3 && cancelAnimationFrame(t3), setTimeout(n2);
+    }, r2 = setTimeout(u2, 100);
+    g$3 && (t3 = requestAnimationFrame(u2));
+  })(b$1)), i2.__H.__.forEach(function(n2) {
+    n2.u && (n2.__H = n2.u), n2.__V !== f$2 && (n2.__ = n2.__V), n2.u = void 0, n2.__V = f$2;
+  })), r$2 = u$2 = null;
+}, l$3.__c = function(t2, u2) {
+  u2.some(function(t3) {
+    try {
+      t3.__h.forEach(j$2), t3.__h = t3.__h.filter(function(n2) {
+        return !n2.__ || k$1(n2);
+      });
+    } catch (r2) {
+      u2.some(function(n2) {
+        n2.__h && (n2.__h = []);
+      }), u2 = [], l$3.__e(r2, t3.__v);
+    }
+  }), l$2 && l$2(t2, u2);
+}, l$3.unmount = function(t2) {
+  m$1 && m$1(t2);
+  var u2, r2 = t2.__c;
+  r2 && r2.__H && (r2.__H.__.forEach(function(n2) {
+    try {
+      j$2(n2);
+    } catch (n3) {
+      u2 = n3;
+    }
+  }), u2 && l$3.__e(u2, r2.__v));
+};
+var g$3 = typeof requestAnimationFrame == "function";
+function j$2(n2) {
+  var t2 = u$2, r2 = n2.__c;
+  typeof r2 == "function" && (n2.__c = void 0, r2()), u$2 = t2;
+}
+function k$1(n2) {
+  var t2 = u$2;
+  n2.__c = n2.__(), u$2 = t2;
+}
+function w$2(n2, t2) {
+  return !n2 || n2.length !== t2.length || t2.some(function(t3, u2) {
+    return t3 !== n2[u2];
+  });
+}
+function z$1(n2, t2) {
+  return typeof t2 == "function" ? t2(n2) : t2;
+}
+function n$1(n2) {
+  for (var r2 = arguments.length, t2 = Array(r2 > 1 ? r2 - 1 : 0), e2 = 1; e2 < r2; e2++)
+    t2[e2 - 1] = arguments[e2];
+  throw Error("[Immer] minified error nr: " + n2 + (t2.length ? " " + t2.map(function(n3) {
+    return "'" + n3 + "'";
+  }).join(",") : "") + ". Find the full error at: https://bit.ly/3cXEKWf");
+}
+function r$1(n2) {
+  return !!n2 && !!n2[Q$1];
+}
+function t(n2) {
+  return !!n2 && (function(n3) {
+    if (!n3 || typeof n3 != "object")
+      return false;
+    var r2 = Object.getPrototypeOf(n3);
+    if (r2 === null)
+      return true;
+    var t2 = Object.hasOwnProperty.call(r2, "constructor") && r2.constructor;
+    return t2 === Object || typeof t2 == "function" && Function.toString.call(t2) === Z$1;
+  }(n2) || Array.isArray(n2) || !!n2[L$1] || !!n2.constructor[L$1] || s$1(n2) || v$1(n2));
+}
+function i$1(n2, r2, t2) {
+  t2 === void 0 && (t2 = false), o$1(n2) === 0 ? (t2 ? Object.keys : nn)(n2).forEach(function(e2) {
+    t2 && typeof e2 == "symbol" || r2(e2, n2[e2], n2);
+  }) : n2.forEach(function(t3, e2) {
+    return r2(e2, t3, n2);
+  });
+}
+function o$1(n2) {
+  var r2 = n2[Q$1];
+  return r2 ? r2.i > 3 ? r2.i - 4 : r2.i : Array.isArray(n2) ? 1 : s$1(n2) ? 2 : v$1(n2) ? 3 : 0;
+}
+function u$1(n2, r2) {
+  return o$1(n2) === 2 ? n2.has(r2) : Object.prototype.hasOwnProperty.call(n2, r2);
+}
+function a$1(n2, r2) {
+  return o$1(n2) === 2 ? n2.get(r2) : n2[r2];
+}
+function f$1(n2, r2, t2) {
+  var e2 = o$1(n2);
+  e2 === 2 ? n2.set(r2, t2) : e2 === 3 ? (n2.delete(r2), n2.add(t2)) : n2[r2] = t2;
+}
+function c$1(n2, r2) {
+  return n2 === r2 ? n2 !== 0 || 1 / n2 == 1 / r2 : n2 != n2 && r2 != r2;
+}
+function s$1(n2) {
+  return X && n2 instanceof Map;
+}
+function v$1(n2) {
+  return q$1 && n2 instanceof Set;
+}
+function p$1(n2) {
+  return n2.o || n2.t;
+}
+function l$1(n2) {
+  if (Array.isArray(n2))
+    return Array.prototype.slice.call(n2);
+  var r2 = rn(n2);
+  delete r2[Q$1];
+  for (var t2 = nn(r2), e2 = 0; e2 < t2.length; e2++) {
+    var i2 = t2[e2], o2 = r2[i2];
+    o2.writable === false && (o2.writable = true, o2.configurable = true), (o2.get || o2.set) && (r2[i2] = { configurable: true, writable: true, enumerable: o2.enumerable, value: n2[i2] });
+  }
+  return Object.create(Object.getPrototypeOf(n2), r2);
+}
+function d$1(n2, e2) {
+  return e2 === void 0 && (e2 = false), y(n2) || r$1(n2) || !t(n2) ? n2 : (o$1(n2) > 1 && (n2.set = n2.add = n2.clear = n2.delete = h$1), Object.freeze(n2), e2 && i$1(n2, function(n3, r2) {
+    return d$1(r2, true);
+  }, true), n2);
+}
+function h$1() {
+  n$1(2);
+}
+function y(n2) {
+  return n2 == null || typeof n2 != "object" || Object.isFrozen(n2);
+}
+function b(r2) {
+  var t2 = tn[r2];
+  return t2 || n$1(18, r2), t2;
+}
+function _$1() {
+  return U;
+}
+function j$1(n2, r2) {
+  r2 && (b("Patches"), n2.u = [], n2.s = [], n2.v = r2);
+}
+function O$1(n2) {
+  g$2(n2), n2.p.forEach(S$1), n2.p = null;
+}
+function g$2(n2) {
+  n2 === U && (U = n2.l);
+}
+function w$1(n2) {
+  return U = { p: [], l: U, h: n2, m: true, _: 0 };
+}
+function S$1(n2) {
+  var r2 = n2[Q$1];
+  r2.i === 0 || r2.i === 1 ? r2.j() : r2.O = true;
+}
+function P$1(r2, e2) {
+  e2._ = e2.p.length;
+  var i2 = e2.p[0], o2 = r2 !== void 0 && r2 !== i2;
+  return e2.h.g || b("ES5").S(e2, r2, o2), o2 ? (i2[Q$1].P && (O$1(e2), n$1(4)), t(r2) && (r2 = M$1(e2, r2), e2.l || x$2(e2, r2)), e2.u && b("Patches").M(i2[Q$1].t, r2, e2.u, e2.s)) : r2 = M$1(e2, i2, []), O$1(e2), e2.u && e2.v(e2.u, e2.s), r2 !== H$1 ? r2 : void 0;
+}
+function M$1(n2, r2, t2) {
+  if (y(r2))
+    return r2;
+  var e2 = r2[Q$1];
+  if (!e2)
+    return i$1(r2, function(i2, o3) {
+      return A$1(n2, e2, r2, i2, o3, t2);
+    }, true), r2;
+  if (e2.A !== n2)
+    return r2;
+  if (!e2.P)
+    return x$2(n2, e2.t, true), e2.t;
+  if (!e2.I) {
+    e2.I = true, e2.A._--;
+    var o2 = e2.i === 4 || e2.i === 5 ? e2.o = l$1(e2.k) : e2.o;
+    i$1(e2.i === 3 ? new Set(o2) : o2, function(r3, i2) {
+      return A$1(n2, e2, o2, r3, i2, t2);
+    }), x$2(n2, o2, false), t2 && n2.u && b("Patches").R(e2, t2, n2.u, n2.s);
+  }
+  return e2.o;
+}
+function A$1(e2, i2, o2, a2, c2, s2) {
+  if (r$1(c2)) {
+    var v2 = M$1(e2, c2, s2 && i2 && i2.i !== 3 && !u$1(i2.D, a2) ? s2.concat(a2) : void 0);
+    if (f$1(o2, a2, v2), !r$1(v2))
+      return;
+    e2.m = false;
+  }
+  if (t(c2) && !y(c2)) {
+    if (!e2.h.F && e2._ < 1)
+      return;
+    M$1(e2, c2), i2 && i2.A.l || x$2(e2, c2);
+  }
+}
+function x$2(n2, r2, t2) {
+  t2 === void 0 && (t2 = false), n2.h.F && n2.m && d$1(r2, t2);
+}
+function z(n2, r2) {
+  var t2 = n2[Q$1];
+  return (t2 ? p$1(t2) : n2)[r2];
+}
+function I$1(n2, r2) {
+  if (r2 in n2)
+    for (var t2 = Object.getPrototypeOf(n2); t2; ) {
+      var e2 = Object.getOwnPropertyDescriptor(t2, r2);
+      if (e2)
+        return e2;
+      t2 = Object.getPrototypeOf(t2);
+    }
+}
+function k(n2) {
+  n2.P || (n2.P = true, n2.l && k(n2.l));
+}
+function E$1(n2) {
+  n2.o || (n2.o = l$1(n2.t));
+}
+function R$1(n2, r2, t2) {
+  var e2 = s$1(r2) ? b("MapSet").N(r2, t2) : v$1(r2) ? b("MapSet").T(r2, t2) : n2.g ? function(n3, r3) {
+    var t3 = Array.isArray(n3), e3 = { i: t3 ? 1 : 0, A: r3 ? r3.A : _$1(), P: false, I: false, D: {}, l: r3, t: n3, k: null, o: null, j: null, C: false }, i2 = e3, o2 = en;
+    t3 && (i2 = [e3], o2 = on);
+    var u2 = Proxy.revocable(i2, o2), a2 = u2.revoke, f2 = u2.proxy;
+    return e3.k = f2, e3.j = a2, f2;
+  }(r2, t2) : b("ES5").J(r2, t2);
+  return (t2 ? t2.A : _$1()).p.push(e2), e2;
+}
+function D$1(e2) {
+  return r$1(e2) || n$1(22, e2), function n2(r2) {
+    if (!t(r2))
+      return r2;
+    var e3, u2 = r2[Q$1], c2 = o$1(r2);
+    if (u2) {
+      if (!u2.P && (u2.i < 4 || !b("ES5").K(u2)))
+        return u2.t;
+      u2.I = true, e3 = F$1(r2, c2), u2.I = false;
+    } else
+      e3 = F$1(r2, c2);
+    return i$1(e3, function(r3, t2) {
+      u2 && a$1(u2.t, r3) === t2 || f$1(e3, r3, n2(t2));
+    }), c2 === 3 ? new Set(e3) : e3;
+  }(e2);
+}
+function F$1(n2, r2) {
+  switch (r2) {
+    case 2:
+      return new Map(n2);
+    case 3:
+      return Array.from(n2);
+  }
+  return l$1(n2);
+}
+var G, U, W$1 = typeof Symbol != "undefined" && typeof Symbol("x") == "symbol", X = typeof Map != "undefined", q$1 = typeof Set != "undefined", B = typeof Proxy != "undefined" && Proxy.revocable !== void 0 && typeof Reflect != "undefined", H$1 = W$1 ? Symbol.for("immer-nothing") : ((G = {})["immer-nothing"] = true, G), L$1 = W$1 ? Symbol.for("immer-draftable") : "__$immer_draftable", Q$1 = W$1 ? Symbol.for("immer-state") : "__$immer_state", Z$1 = "" + Object.prototype.constructor, nn = typeof Reflect != "undefined" && Reflect.ownKeys ? Reflect.ownKeys : Object.getOwnPropertySymbols !== void 0 ? function(n2) {
+  return Object.getOwnPropertyNames(n2).concat(Object.getOwnPropertySymbols(n2));
+} : Object.getOwnPropertyNames, rn = Object.getOwnPropertyDescriptors || function(n2) {
+  var r2 = {};
+  return nn(n2).forEach(function(t2) {
+    r2[t2] = Object.getOwnPropertyDescriptor(n2, t2);
+  }), r2;
+}, tn = {}, en = { get: function(n2, r2) {
+  if (r2 === Q$1)
+    return n2;
+  var e2 = p$1(n2);
+  if (!u$1(e2, r2))
+    return function(n3, r3, t2) {
+      var e3, i3 = I$1(r3, t2);
+      return i3 ? "value" in i3 ? i3.value : (e3 = i3.get) === null || e3 === void 0 ? void 0 : e3.call(n3.k) : void 0;
+    }(n2, e2, r2);
+  var i2 = e2[r2];
+  return n2.I || !t(i2) ? i2 : i2 === z(n2.t, r2) ? (E$1(n2), n2.o[r2] = R$1(n2.A.h, i2, n2)) : i2;
+}, has: function(n2, r2) {
+  return r2 in p$1(n2);
+}, ownKeys: function(n2) {
+  return Reflect.ownKeys(p$1(n2));
+}, set: function(n2, r2, t2) {
+  var e2 = I$1(p$1(n2), r2);
+  if (e2 == null ? void 0 : e2.set)
+    return e2.set.call(n2.k, t2), true;
+  if (!n2.P) {
+    var i2 = z(p$1(n2), r2), o2 = i2 == null ? void 0 : i2[Q$1];
+    if (o2 && o2.t === t2)
+      return n2.o[r2] = t2, n2.D[r2] = false, true;
+    if (c$1(t2, i2) && (t2 !== void 0 || u$1(n2.t, r2)))
+      return true;
+    E$1(n2), k(n2);
+  }
+  return n2.o[r2] === t2 && typeof t2 != "number" && (t2 !== void 0 || r2 in n2.o) || (n2.o[r2] = t2, n2.D[r2] = true, true);
+}, deleteProperty: function(n2, r2) {
+  return z(n2.t, r2) !== void 0 || r2 in n2.t ? (n2.D[r2] = false, E$1(n2), k(n2)) : delete n2.D[r2], n2.o && delete n2.o[r2], true;
+}, getOwnPropertyDescriptor: function(n2, r2) {
+  var t2 = p$1(n2), e2 = Reflect.getOwnPropertyDescriptor(t2, r2);
+  return e2 ? { writable: true, configurable: n2.i !== 1 || r2 !== "length", enumerable: e2.enumerable, value: t2[r2] } : e2;
+}, defineProperty: function() {
+  n$1(11);
+}, getPrototypeOf: function(n2) {
+  return Object.getPrototypeOf(n2.t);
+}, setPrototypeOf: function() {
+  n$1(12);
+} }, on = {};
+i$1(en, function(n2, r2) {
+  on[n2] = function() {
+    return arguments[0] = arguments[0][0], r2.apply(this, arguments);
+  };
+}), on.deleteProperty = function(r2, t2) {
+  return on.set.call(this, r2, t2, void 0);
+}, on.set = function(r2, t2, e2) {
+  return en.set.call(this, r2[0], t2, e2, r2[0]);
+};
+var un$1 = function() {
+  function e2(r2) {
+    var e3 = this;
+    this.g = B, this.F = true, this.produce = function(r3, i3, o2) {
+      if (typeof r3 == "function" && typeof i3 != "function") {
+        var u2 = i3;
+        i3 = r3;
+        var a2 = e3;
+        return function(n2) {
+          var r4 = this;
+          n2 === void 0 && (n2 = u2);
+          for (var t2 = arguments.length, e4 = Array(t2 > 1 ? t2 - 1 : 0), o3 = 1; o3 < t2; o3++)
+            e4[o3 - 1] = arguments[o3];
+          return a2.produce(n2, function(n3) {
+            var t3;
+            return (t3 = i3).call.apply(t3, [r4, n3].concat(e4));
+          });
+        };
+      }
+      var f2;
+      if (typeof i3 != "function" && n$1(6), o2 !== void 0 && typeof o2 != "function" && n$1(7), t(r3)) {
+        var c2 = w$1(e3), s2 = R$1(e3, r3, void 0), v2 = true;
+        try {
+          f2 = i3(s2), v2 = false;
+        } finally {
+          v2 ? O$1(c2) : g$2(c2);
+        }
+        return typeof Promise != "undefined" && f2 instanceof Promise ? f2.then(function(n2) {
+          return j$1(c2, o2), P$1(n2, c2);
+        }, function(n2) {
+          throw O$1(c2), n2;
+        }) : (j$1(c2, o2), P$1(f2, c2));
+      }
+      if (!r3 || typeof r3 != "object") {
+        if ((f2 = i3(r3)) === void 0 && (f2 = r3), f2 === H$1 && (f2 = void 0), e3.F && d$1(f2, true), o2) {
+          var p2 = [], l2 = [];
+          b("Patches").M(r3, f2, p2, l2), o2(p2, l2);
+        }
+        return f2;
+      }
+      n$1(21, r3);
+    }, this.produceWithPatches = function(n2, r3) {
+      if (typeof n2 == "function")
+        return function(r4) {
+          for (var t3 = arguments.length, i4 = Array(t3 > 1 ? t3 - 1 : 0), o3 = 1; o3 < t3; o3++)
+            i4[o3 - 1] = arguments[o3];
+          return e3.produceWithPatches(r4, function(r5) {
+            return n2.apply(void 0, [r5].concat(i4));
+          });
+        };
+      var t2, i3, o2 = e3.produce(n2, r3, function(n3, r4) {
+        t2 = n3, i3 = r4;
+      });
+      return typeof Promise != "undefined" && o2 instanceof Promise ? o2.then(function(n3) {
+        return [n3, t2, i3];
+      }) : [o2, t2, i3];
+    }, typeof (r2 == null ? void 0 : r2.useProxies) == "boolean" && this.setUseProxies(r2.useProxies), typeof (r2 == null ? void 0 : r2.autoFreeze) == "boolean" && this.setAutoFreeze(r2.autoFreeze);
+  }
+  var i2 = e2.prototype;
+  return i2.createDraft = function(e3) {
+    t(e3) || n$1(8), r$1(e3) && (e3 = D$1(e3));
+    var i3 = w$1(this), o2 = R$1(this, e3, void 0);
+    return o2[Q$1].C = true, g$2(i3), o2;
+  }, i2.finishDraft = function(r2, t2) {
+    var e3 = r2 && r2[Q$1];
+    var i3 = e3.A;
+    return j$1(i3, t2), P$1(void 0, i3);
+  }, i2.setAutoFreeze = function(n2) {
+    this.F = n2;
+  }, i2.setUseProxies = function(r2) {
+    r2 && !B && n$1(20), this.g = r2;
+  }, i2.applyPatches = function(n2, t2) {
+    var e3;
+    for (e3 = t2.length - 1; e3 >= 0; e3--) {
+      var i3 = t2[e3];
+      if (i3.path.length === 0 && i3.op === "replace") {
+        n2 = i3.value;
+        break;
+      }
+    }
+    e3 > -1 && (t2 = t2.slice(e3 + 1));
+    var o2 = b("Patches").$;
+    return r$1(n2) ? o2(n2, t2) : this.produce(n2, function(n3) {
+      return o2(n3, t2);
+    });
+  }, e2;
+}(), an = new un$1(), fn = an.produce;
+an.produceWithPatches.bind(an);
+an.setAutoFreeze.bind(an);
+an.setUseProxies.bind(an);
+an.applyPatches.bind(an);
+an.createDraft.bind(an);
+an.finishDraft.bind(an);
+var produce = fn;
+var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
+function isUndefined$3(obj) {
+  return obj === void 0;
+}
+var isUndefined_1 = isUndefined$3;
+var isUndefined$2 = isUndefined_1;
+function range(start, stop, step) {
+  var arr = [];
+  var flag;
+  if (isUndefined$2(stop)) {
+    stop = start || 0;
+    start = 0;
+  }
+  step = step || 1;
+  flag = step < 0 ? -1 : 1;
+  stop *= flag;
+  for (; start * flag < stop; start += step) {
+    arr.push(start);
+  }
+  return arr;
+}
+var range_1 = range;
+const DEFAULT_DAY_NAME_MARGIN_LEFT = "0";
+const MONTH_EVENT_HEIGHT = 24;
+const MONTH_EVENT_MARGIN_TOP = 2;
+const MONTH_CELL_PADDING_TOP = 3;
+const MONTH_CELL_BAR_HEIGHT = 27;
+const MONTH_MORE_VIEW_PADDING = 5;
+const MONTH_MORE_VIEW_MIN_WIDTH = 280;
+const MONTH_MORE_VIEW_HEADER_HEIGHT = 44;
+const MONTH_MORE_VIEW_HEADER_MARGIN_BOTTOM = 12;
+const MONTH_MORE_VIEW_HEADER_PADDING_TOP = 12;
+const MONTH_MORE_VIEW_HEADER_PADDING = "12px 17px 0";
+const WEEK_DAY_NAME_HEIGHT = 42;
+const WEEK_DAY_NAME_BORDER = 1;
+const WEEK_EVENT_MARGIN_TOP = 2;
+const DEFAULT_PANEL_HEIGHT = 72;
+const DEFAULT_EVENT_COLORS = {
+  color: "#000",
+  backgroundColor: "#a1b56c",
+  dragBackgroundColor: "#a1b56c",
+  borderColor: "#000"
+};
+const TIME_EVENT_CONTAINER_MARGIN_LEFT = 2;
+const COLLAPSED_DUPLICATE_EVENT_WIDTH_PX = 9;
+function isBoolean(obj) {
+  return typeof obj === "boolean" || obj instanceof Boolean;
+}
+var isBoolean_1 = isBoolean;
+function isNumber(obj) {
+  return typeof obj === "number" || obj instanceof Number;
+}
+var isNumber_1 = isNumber;
+function isObject$1(obj) {
+  return obj === Object(obj);
+}
+var isObject_1 = isObject$1;
+function isString$1(obj) {
+  return typeof obj === "string" || obj instanceof String;
+}
+var isString_1 = isString$1;
+function isNil(value) {
+  return isUndefined_1(value) || value === null;
+}
+function isPresent(value) {
+  return !isNil(value);
+}
+function isFunction$2(value) {
+  return typeof value === "function";
+}
+const CSS_PREFIX = "toastui-calendar-";
+function cls(...args) {
+  const result = [];
+  args.forEach((arg) => {
+    if (!arg) {
+      return;
+    }
+    if (isString_1(arg)) {
+      result.push(arg);
+    } else {
+      Object.keys(arg).forEach((className2) => {
+        if (arg[className2]) {
+          result.push(className2);
+        }
+      });
+    }
+  });
+  return result.map((str) => `${CSS_PREFIX}${str}`).join(" ");
+}
+function toPercent(value) {
+  return `${value}%`;
+}
+function toPx(value) {
+  return `${value}px`;
+}
+function extractPercentPx(value) {
+  const percentRegexp = /(\d+)%/;
+  const percentResult = value.match(percentRegexp);
+  const pxRegexp = /(-?)\s?(\d+)px/;
+  const pxResult = value.match(pxRegexp);
+  return {
+    percent: percentResult ? parseInt(percentResult[1], 10) : 0,
+    px: pxResult ? parseInt(`${pxResult[1]}${pxResult[2]}`, 10) : 0
+  };
+}
+function getEventColors(uiModel, calendarColor) {
+  const eventColors = uiModel.model.getColors();
+  return Object.keys(DEFAULT_EVENT_COLORS).reduce((colors, _key) => {
+    var _a, _b;
+    const key = _key;
+    colors[key] = (_b = (_a = eventColors[key]) != null ? _a : calendarColor[key]) != null ? _b : DEFAULT_EVENT_COLORS[key];
+    return colors;
+  }, {});
+}
+const rISO8601 = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.)?([0-9]+)?([+-]\d\d(?::?\d\d)?|\s*Z)?$/;
+function throwNotSupported() {
+  throw new Error("This operation is not supported.");
+}
+function getDateTime(dateString) {
+  const match = rISO8601.exec(dateString);
+  if (match) {
+    const [, y2, M2, d2, h2, m2, s2, , ms, zoneInfo] = match;
+    return {
+      y: Number(y2),
+      M: Number(M2) - 1,
+      d: Number(d2),
+      h: Number(h2),
+      m: Number(m2),
+      s: Number(s2),
+      ms: Number(ms) || 0,
+      zoneInfo
+    };
+  }
+  return null;
+}
+function createFromDateString(dateString) {
+  const info = getDateTime(dateString);
+  if (info && !info.zoneInfo) {
+    const { y: y2, M: M2, d: d2, h: h2, m: m2, s: s2, ms } = info;
+    return new Date(y2, M2, d2, h2, m2, s2, ms);
+  }
+  return null;
+}
+class LocalDate {
+  constructor(...args) {
+    const [firstArg] = args;
+    if (firstArg instanceof Date) {
+      this.d = new Date(firstArg.getTime());
+    } else if (isString_1(firstArg) && args.length === 1) {
+      this.d = createFromDateString(firstArg);
+    }
+    if (!this.d) {
+      this.d = new Date(...args);
+    }
+  }
+  setTimezoneOffset() {
+    throwNotSupported();
+  }
+  setTimezoneName() {
+    throwNotSupported();
+  }
+  clone() {
+    return new LocalDate(this.d);
+  }
+  toDate() {
+    return new Date(this.d.getTime());
+  }
+  toString() {
+    return this.d.toString();
+  }
+}
+const getterMethods = [
+  "getTime",
+  "getTimezoneOffset",
+  "getFullYear",
+  "getMonth",
+  "getDate",
+  "getHours",
+  "getMinutes",
+  "getSeconds",
+  "getMilliseconds",
+  "getDay"
+];
+const setterMethods = [
+  "setTime",
+  "setFullYear",
+  "setMonth",
+  "setDate",
+  "setHours",
+  "setMinutes",
+  "setSeconds",
+  "setMilliseconds"
+];
+getterMethods.forEach((methodName) => {
+  LocalDate.prototype[methodName] = function(...args) {
+    return this.d[methodName](...args);
+  };
+});
+setterMethods.forEach((methodName) => {
+  LocalDate.prototype[methodName] = function(...args) {
+    return this.d[methodName](...args);
+  };
+});
+class UTCDate extends LocalDate {
+  clone() {
+    return new UTCDate(this.d);
+  }
+  getTimezoneOffset() {
+    return 0;
+  }
+}
+const getterProperties = [
+  "FullYear",
+  "Month",
+  "Date",
+  "Hours",
+  "Minutes",
+  "Seconds",
+  "Milliseconds",
+  "Day"
+];
+const setterProperties = [
+  "FullYear",
+  "Month",
+  "Date",
+  "Hours",
+  "Minutes",
+  "Seconds",
+  "Milliseconds"
+];
+getterProperties.forEach((prop) => {
+  const methodName = `get${prop}`;
+  UTCDate.prototype[methodName] = function(...args) {
+    return this.d[`getUTC${prop}`](...args);
+  };
+});
+setterProperties.forEach((prop) => {
+  const methodName = `set${prop}`;
+  UTCDate.prototype[methodName] = function(...args) {
+    return this.d[`setUTC${prop}`](...args);
+  };
+});
+const INVALID_DATETIME_FORMAT = "Invalid DateTime Format";
+const INVALID_TIMEZONE_NAME = "Invalid IANA Timezone Name";
+const INVALID_VIEW_TYPE = "Invalid View Type";
+const MESSAGE_PREFIX = "@toast-ui/calendar: ";
+class InvalidTimezoneNameError extends Error {
+  constructor(timezoneName) {
+    super(`${MESSAGE_PREFIX}${INVALID_TIMEZONE_NAME} - ${timezoneName}`);
+    this.name = "InvalidTimezoneNameError";
+  }
+}
+class InvalidDateTimeFormatError extends Error {
+  constructor(dateTimeString) {
+    super(`${MESSAGE_PREFIX}${INVALID_DATETIME_FORMAT} - ${dateTimeString}`);
+    this.name = "InvalidDateTimeFormatError";
+  }
+}
+class InvalidViewTypeError extends Error {
+  constructor(viewType) {
+    super(`${MESSAGE_PREFIX}${INVALID_VIEW_TYPE} - ${viewType}`);
+    this.name = "InvalidViewTypeError";
+  }
+}
+const logger = {
+  error: (firstArg, ...restArgs) => {
+    console.error(`${MESSAGE_PREFIX}${firstArg}`, ...restArgs);
+  },
+  warn: (firstArg, ...restArgs) => {
+    console.warn(`${MESSAGE_PREFIX}${firstArg}`, ...restArgs);
+  }
+};
+let Constructor = LocalDate;
+function date(...args) {
+  return new Constructor(...args);
+}
+function getLocalTimezoneOffset() {
+  return -new Date().getTimezoneOffset();
+}
+function calculateTimezoneOffset(timezoneName, targetDate = new TZDate()) {
+  if (!isIntlDateTimeFormatSupported()) {
+    logger.warn("Intl.DateTimeFormat is not fully supported. So It will return the local timezone offset only.\nYou can use a polyfill to fix this issue.");
+    return -targetDate.toDate().getTimezoneOffset();
+  }
+  validateIANATimezoneName(timezoneName);
+  const token = tokenizeTZDate(targetDate, timezoneName);
+  const utcDate = tokenToUtcDate(token);
+  return Math.round((utcDate.getTime() - targetDate.getTime()) / 60 / 1e3);
+}
+function isUsingDST(targetDate, timezoneName) {
+  if (timezoneName) {
+    validateIANATimezoneName(timezoneName);
+  }
+  const jan = new TZDate(targetDate.getFullYear(), 0, 1);
+  const jul = new TZDate(targetDate.getFullYear(), 6, 1);
+  if (timezoneName) {
+    return Math.max(-calculateTimezoneOffset(timezoneName, jan), -calculateTimezoneOffset(timezoneName, jul)) !== -calculateTimezoneOffset(timezoneName, targetDate);
+  }
+  return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset()) !== targetDate.toDate().getTimezoneOffset();
+}
+const dtfCache = {};
+const timezoneNameValidationCache = {};
+function isIntlDateTimeFormatSupported() {
+  var _a, _b;
+  return isFunction$2((_b = (_a = Intl == null ? void 0 : Intl.DateTimeFormat) == null ? void 0 : _a.prototype) == null ? void 0 : _b.formatToParts);
+}
+function validateIANATimezoneName(timezoneName) {
+  if (timezoneNameValidationCache[timezoneName]) {
+    return true;
+  }
+  try {
+    Intl.DateTimeFormat("en-US", { timeZone: timezoneName });
+    timezoneNameValidationCache[timezoneName] = true;
+    return true;
+  } catch (e2) {
+    throw new InvalidTimezoneNameError(timezoneName);
+  }
+}
+function getDateTimeFormat(timezoneName) {
+  if (dtfCache[timezoneName]) {
+    return dtfCache[timezoneName];
+  }
+  const dtf = new Intl.DateTimeFormat("en-US", {
+    timeZone: timezoneName,
+    hourCycle: "h23",
+    hour12: false,
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric"
+  });
+  dtfCache[timezoneName] = dtf;
+  return dtf;
+}
+const typeToPos = {
+  year: 0,
+  month: 1,
+  day: 2,
+  hour: 3,
+  minute: 4,
+  second: 5
+};
+function tokenizeTZDate(tzDate, timezoneName) {
+  const dtf = getDateTimeFormat(timezoneName);
+  const formatted = dtf.formatToParts(tzDate.toDate());
+  return formatted.reduce((result, cur) => {
+    const pos = typeToPos[cur.type];
+    if (isPresent(pos)) {
+      result[pos] = parseInt(cur.value, 10);
+    }
+    return result;
+  }, []);
+}
+function tokenToUtcDate(token) {
+  const [year, monthPlusOne, day, hour, minute, second] = token;
+  const month = monthPlusOne - 1;
+  return new Date(Date.UTC(year, month, day, hour % 24, minute, second));
+}
+function getTZOffsetMSDifference(offset) {
+  return (getLocalTimezoneOffset() - offset) * MS_PER_MINUTES;
+}
+class TZDate {
+  constructor(...args) {
+    this.tzOffset = null;
+    if (args[0] instanceof TZDate) {
+      this.d = date(args[0].getTime());
+    } else {
+      this.d = date(...args);
+    }
+  }
+  toString() {
+    return this.d.toString();
+  }
+  addFullYear(y2) {
+    this.setFullYear(this.getFullYear() + y2);
+    return this;
+  }
+  addMonth(m2) {
+    this.setMonth(this.getMonth() + m2);
+    return this;
+  }
+  addDate(d2) {
+    this.setDate(this.getDate() + d2);
+    return this;
+  }
+  addHours(h2) {
+    this.setHours(this.getHours() + h2);
+    return this;
+  }
+  addMinutes(M2) {
+    this.setMinutes(this.getMinutes() + M2);
+    return this;
+  }
+  addSeconds(s2) {
+    this.setSeconds(this.getSeconds() + s2);
+    return this;
+  }
+  addMilliseconds(ms) {
+    this.setMilliseconds(this.getMilliseconds() + ms);
+    return this;
+  }
+  setWithRaw(y2, m2, d2, h2, M2, s2, ms) {
+    this.setFullYear(y2, m2, d2);
+    this.setHours(h2, M2, s2, ms);
+    return this;
+  }
+  toDate() {
+    return this.d.toDate();
+  }
+  valueOf() {
+    return this.getTime();
+  }
+  getTimezoneOffset() {
+    var _a;
+    return (_a = this.tzOffset) != null ? _a : this.d.getTimezoneOffset();
+  }
+  getTime() {
+    return this.d.getTime();
+  }
+  getFullYear() {
+    return this.d.getFullYear();
+  }
+  getMonth() {
+    return this.d.getMonth();
+  }
+  getDate() {
+    return this.d.getDate();
+  }
+  getHours() {
+    return this.d.getHours();
+  }
+  getMinutes() {
+    return this.d.getMinutes();
+  }
+  getSeconds() {
+    return this.d.getSeconds();
+  }
+  getMilliseconds() {
+    return this.d.getMilliseconds();
+  }
+  getDay() {
+    return this.d.getDay();
+  }
+  setTime(t2) {
+    return this.d.setTime(t2);
+  }
+  setFullYear(y2, m2 = this.getMonth(), d2 = this.getDate()) {
+    return this.d.setFullYear(y2, m2, d2);
+  }
+  setMonth(m2, d2 = this.getDate()) {
+    return this.d.setMonth(m2, d2);
+  }
+  setDate(d2) {
+    return this.d.setDate(d2);
+  }
+  setHours(h2, M2 = this.getMinutes(), s2 = this.getSeconds(), ms = this.getMilliseconds()) {
+    return this.d.setHours(h2, M2, s2, ms);
+  }
+  setMinutes(M2, s2 = this.getSeconds(), ms = this.getMilliseconds()) {
+    return this.d.setMinutes(M2, s2, ms);
+  }
+  setSeconds(s2, ms = this.getMilliseconds()) {
+    return this.d.setSeconds(s2, ms);
+  }
+  setMilliseconds(ms) {
+    return this.d.setMilliseconds(ms);
+  }
+  tz(tzValue) {
+    if (tzValue === "Local") {
+      return new TZDate(this.getTime());
+    }
+    const tzOffset = isString_1(tzValue) ? calculateTimezoneOffset(tzValue, this) : tzValue;
+    const newTZDate = new TZDate(this.getTime() - getTZOffsetMSDifference(tzOffset));
+    newTZDate.tzOffset = tzOffset;
+    return newTZDate;
+  }
+  local(tzValue) {
+    if (isPresent(tzValue)) {
+      const tzOffset = isString_1(tzValue) ? calculateTimezoneOffset(tzValue, this) : tzValue;
+      return new TZDate(this.getTime() + getTZOffsetMSDifference(tzOffset));
+    }
+    return new TZDate(this.getTime() + (isPresent(this.tzOffset) ? getTZOffsetMSDifference(this.tzOffset) : 0));
+  }
+}
+function pick(obj, ...propNames) {
+  return propNames.reduce((acc, key) => {
+    if (obj.hasOwnProperty(key)) {
+      acc[key] = obj[key];
+    }
+    return acc;
+  }, {});
+}
+function clone$1(source) {
+  return Object.assign(Object.create(Object.getPrototypeOf(source)), source);
+}
+function mergeObject(target, source = {}) {
+  if (!isObject_1(source)) {
+    return target;
+  }
+  Object.keys(source).forEach((k2) => {
+    const targetKey = k2;
+    const sourceKey = k2;
+    if (!Array.isArray(source[sourceKey]) && isObject_1(target[targetKey]) && isObject_1(source[sourceKey]) && !(source[sourceKey] instanceof TZDate)) {
+      target[targetKey] = mergeObject(target[targetKey], source[sourceKey]);
+    } else {
+      target[targetKey] = source[sourceKey];
+    }
+  });
+  return target;
+}
+const eventUIPropsKey = [
+  "top",
+  "left",
+  "width",
+  "height",
+  "exceedLeft",
+  "exceedRight",
+  "croppedStart",
+  "croppedEnd",
+  "goingDurationHeight",
+  "modelDurationHeight",
+  "comingDurationHeight",
+  "duplicateEvents",
+  "duplicateEventIndex",
+  "duplicateStarts",
+  "duplicateEnds",
+  "duplicateLeft",
+  "duplicateWidth",
+  "collapse",
+  "isMain"
+];
+class EventUIModel {
+  constructor(event) {
+    this.top = 0;
+    this.left = 0;
+    this.width = 0;
+    this.height = 0;
+    this.exceedLeft = false;
+    this.exceedRight = false;
+    this.croppedStart = false;
+    this.croppedEnd = false;
+    this.goingDurationHeight = 0;
+    this.modelDurationHeight = 100;
+    this.comingDurationHeight = 0;
+    this.duplicateEvents = [];
+    this.duplicateEventIndex = -1;
+    this.duplicateLeft = "";
+    this.duplicateWidth = "";
+    this.collapse = false;
+    this.isMain = false;
+    this.model = event;
+  }
+  getUIProps() {
+    return pick(this, ...eventUIPropsKey);
+  }
+  setUIProps(props) {
+    Object.assign(this, props);
+  }
+  getStarts() {
+    if (this.renderStarts) {
+      return this.renderStarts;
+    }
+    return this.model.getStarts();
+  }
+  getEnds() {
+    if (this.renderEnds) {
+      return this.renderEnds;
+    }
+    return this.model.getEnds();
+  }
+  cid() {
+    return this.model.cid();
+  }
+  valueOf() {
+    return this.model;
+  }
+  duration() {
+    return this.model.duration();
+  }
+  collidesWith(uiModel, usingTravelTime = true) {
+    const infos = [];
+    [this, uiModel].forEach((event) => {
+      const isDuplicateEvent = event instanceof EventUIModel && event.duplicateEvents.length > 0;
+      if (isDuplicateEvent) {
+        infos.push({
+          start: event.duplicateStarts,
+          end: event.duplicateEnds,
+          goingDuration: 0,
+          comingDuration: 0
+        });
+      } else {
+        infos.push({
+          start: event.getStarts(),
+          end: event.getEnds(),
+          goingDuration: event.valueOf().goingDuration,
+          comingDuration: event.valueOf().comingDuration
+        });
+      }
+    });
+    const [thisInfo, targetInfo] = infos;
+    return collidesWith({
+      start: thisInfo.start.getTime(),
+      end: thisInfo.end.getTime(),
+      targetStart: targetInfo.start.getTime(),
+      targetEnd: targetInfo.end.getTime(),
+      goingDuration: thisInfo.goingDuration,
+      comingDuration: thisInfo.comingDuration,
+      targetGoingDuration: targetInfo.goingDuration,
+      targetComingDuration: targetInfo.comingDuration,
+      usingTravelTime
+    });
+  }
+  clone() {
+    const eventUIModelProps = this.getUIProps();
+    const clonedEventUIModel = new EventUIModel(this.model);
+    clonedEventUIModel.setUIProps(eventUIModelProps);
+    if (this.renderStarts) {
+      clonedEventUIModel.renderStarts = new TZDate(this.renderStarts);
+    }
+    if (this.renderEnds) {
+      clonedEventUIModel.renderEnds = new TZDate(this.renderEnds);
+    }
+    return clonedEventUIModel;
+  }
+}
+function compareBooleansASC(a2, b2) {
+  if (a2 !== b2) {
+    return a2 ? -1 : 1;
+  }
+  return 0;
+}
+function compareNumbersASC(a2, b2) {
+  return Number(a2) - Number(b2);
+}
+function compareStringsASC(_a, _b) {
+  const a2 = String(_a);
+  const b2 = String(_b);
+  if (a2 === b2) {
+    return 0;
+  }
+  return a2 > b2 ? 1 : -1;
+}
+function compareEventsASC(a2, b2) {
+  const modelA = a2 instanceof EventUIModel ? a2.model : a2;
+  const modelB = b2 instanceof EventUIModel ? b2.model : b2;
+  const alldayCompare = compareBooleansASC(modelA.isAllday || modelA.hasMultiDates, modelB.isAllday || modelB.hasMultiDates);
+  if (alldayCompare) {
+    return alldayCompare;
+  }
+  const startsCompare = compare(a2.getStarts(), b2.getStarts());
+  if (startsCompare) {
+    return startsCompare;
+  }
+  const durationA = a2.duration();
+  const durationB = b2.duration();
+  if (durationA < durationB) {
+    return 1;
+  }
+  if (durationA > durationB) {
+    return -1;
+  }
+  return modelA.cid() - modelB.cid();
+}
+function bsearch(arr, search, fn2, compareFn) {
+  let minIndex = 0;
+  let maxIndex = arr.length - 1;
+  let currentIndex;
+  let value;
+  let comp;
+  compareFn = compareFn || compareStringsASC;
+  while (minIndex <= maxIndex) {
+    currentIndex = (minIndex + maxIndex) / 2 | 0;
+    value = fn2 ? fn2(arr[currentIndex]) : arr[currentIndex];
+    comp = compareFn(value, search);
+    if (comp < 0) {
+      minIndex = currentIndex + 1;
+    } else if (comp > 0) {
+      maxIndex = currentIndex - 1;
+    } else {
+      return currentIndex;
+    }
+  }
+  return ~maxIndex;
+}
+var array = {
+  bsearch,
+  compare: {
+    event: {
+      asc: compareEventsASC
+    },
+    num: {
+      asc: compareNumbersASC
+    }
+  }
+};
+function first(array2) {
+  return array2[0];
+}
+function last(array2) {
+  return array2[array2.length - 1];
+}
+function findLastIndex(array2, predicate) {
+  for (let i2 = array2.length - 1; i2 >= 0; i2 -= 1) {
+    if (predicate(array2[i2])) {
+      return i2;
+    }
+  }
+  return -1;
+}
+function fill(length, value) {
+  if (length > 0) {
+    return Array.from({ length }, () => {
+      if (Array.isArray(value)) {
+        return value.slice();
+      }
+      return value;
+    });
+  }
+  return [];
+}
+var Day$2 = /* @__PURE__ */ ((Day2) => {
+  Day2[Day2["SUN"] = 0] = "SUN";
+  Day2[Day2["MON"] = 1] = "MON";
+  Day2[Day2["TUE"] = 2] = "TUE";
+  Day2[Day2["WED"] = 3] = "WED";
+  Day2[Day2["THU"] = 4] = "THU";
+  Day2[Day2["FRI"] = 5] = "FRI";
+  Day2[Day2["SAT"] = 6] = "SAT";
+  return Day2;
+})(Day$2 || {});
+const WEEK_DAYS = 7;
+const dateFormatRx = /^(\d{4}[-|/]*\d{2}[-|/]*\d{2})\s?(\d{2}:\d{2}:\d{2})?$/;
+const memo = {
+  millisecondsTo: {},
+  millisecondsFrom: {}
+};
+const convByTimeUnit = [24, 60, 60, 1e3];
+function leadingZero(number, length) {
+  let zero = "";
+  let i2 = 0;
+  if (String(number).length > length) {
+    return String(number);
+  }
+  for (; i2 < length - 1; i2 += 1) {
+    zero += "0";
+  }
+  return (zero + number).slice(length * -1);
+}
+function getHourForMeridiem(date2) {
+  let hour = date2.getHours();
+  if (hour === 0) {
+    hour = 12;
+  }
+  if (hour > 12) {
+    hour = hour % 12;
+  }
+  return hour;
+}
+const tokenFunc = {
+  YYYYMMDD(date2) {
+    return [
+      date2.getFullYear(),
+      leadingZero(date2.getMonth() + 1, 2),
+      leadingZero(date2.getDate(), 2)
+    ].join("");
+  },
+  YYYY(date2) {
+    return String(date2.getFullYear());
+  },
+  MM(date2) {
+    return leadingZero(date2.getMonth() + 1, 2);
+  },
+  DD(date2) {
+    return leadingZero(date2.getDate(), 2);
+  },
+  "HH:mm": function(date2) {
+    const hour = date2.getHours();
+    const minutes = date2.getMinutes();
+    return `${leadingZero(hour, 2)}:${leadingZero(minutes, 2)}`;
+  },
+  "hh:mm": function(date2) {
+    const hour = getHourForMeridiem(date2);
+    const minutes = date2.getMinutes();
+    return `${leadingZero(hour, 2)}:${leadingZero(minutes, 2)}`;
+  },
+  hh(date2) {
+    const hour = getHourForMeridiem(date2);
+    return String(hour);
+  },
+  tt(date2) {
+    const hour = date2.getHours();
+    return hour < 12 ? "am" : "pm";
+  }
+};
+const MS_PER_DAY = 864e5;
+const MS_PER_MINUTES = 6e4;
+const MS_EVENT_MIN_DURATION = 20 * MS_PER_MINUTES;
+const MS_PER_THIRTY_MINUTES = 30 * 60 * 1e3;
+function toFormat(date2, strFormat) {
+  let result = strFormat;
+  Object.entries(tokenFunc).forEach(([token, converter]) => {
+    result = result.replace(token, converter(date2));
+  });
+  return result;
+}
+function convMilliseconds(type, value, iteratee) {
+  const index = {
+    date: 0,
+    hour: 1,
+    minute: 2,
+    second: 3
+  };
+  if (!(type in index) || isNaN(value)) {
+    return 0;
+  }
+  return [value].concat(convByTimeUnit.slice(index[type])).reduce(iteratee);
+}
+function millisecondsFrom(type, value) {
+  const cache = memo.millisecondsFrom;
+  const key = type + value;
+  if (cache[key]) {
+    return cache[key];
+  }
+  const result = convMilliseconds(type, value, (m2, v2) => m2 * v2);
+  if (!result) {
+    return 0;
+  }
+  cache[key] = result;
+  return cache[key];
+}
+function toStartOfDay(date2) {
+  const d2 = date2 ? new TZDate(date2) : new TZDate();
+  d2.setHours(0, 0, 0, 0);
+  return d2;
+}
+function makeDateRange(startDate, endDate, step) {
+  const startTime = startDate.getTime();
+  const endTime = endDate.getTime();
+  const date2 = new TZDate(startDate);
+  const result = [];
+  let cursor = startTime;
+  while (cursor <= endTime && endTime >= date2.getTime()) {
+    result.push(new TZDate(date2));
+    cursor = cursor + step;
+    date2.addMilliseconds(step);
+  }
+  return result;
+}
+function clone(date2) {
+  return new TZDate(date2);
+}
+function compare(d1, d2) {
+  const _d1 = d1.getTime();
+  const _d2 = d2.getTime();
+  if (_d1 < _d2) {
+    return -1;
+  }
+  if (_d1 > _d2) {
+    return 1;
+  }
+  return 0;
+}
+function isSameYear(d1, d2) {
+  return d1.getFullYear() === d2.getFullYear();
+}
+function isSameMonth(d1, d2) {
+  return isSameYear(d1, d2) && d1.getMonth() === d2.getMonth();
+}
+function isSameDate(d1, d2) {
+  return isSameMonth(d1, d2) && d1.getDate() === d2.getDate();
+}
+function max(d1, d2) {
+  return compare(d1, d2) === 1 ? d1 : d2;
+}
+function min(d1, d2) {
+  return compare(d1, d2) === -1 ? d1 : d2;
+}
+function parse(str, fixMonth = -1) {
+  const matches = str.match(dateFormatRx);
+  let separator;
+  let ymd;
+  let hms;
+  if (!matches) {
+    throw new InvalidDateTimeFormatError(str);
+  }
+  if (str.length > 8) {
+    separator = ~str.indexOf("/") ? "/" : "-";
+    const result = matches.splice(1);
+    ymd = result[0].split(separator);
+    hms = result[1] ? result[1].split(":") : [0, 0, 0];
+  } else {
+    const [result] = matches;
+    ymd = [result.substr(0, 4), result.substr(4, 2), result.substr(6, 2)];
+    hms = [0, 0, 0];
+  }
+  return new TZDate().setWithRaw(Number(ymd[0]), Number(ymd[1]) + fixMonth, Number(ymd[2]), Number(hms[0]), Number(hms[1]), Number(hms[2]), 0);
+}
+function toEndOfDay(date2) {
+  const d2 = date2 ? new TZDate(date2) : new TZDate();
+  d2.setHours(23, 59, 59, 999);
+  return d2;
+}
+function isWeekend(day) {
+  return day === 0 || day === 6;
+}
+function isSunday(day) {
+  return day === 0;
+}
+function isSaturday(day) {
+  return day === 6;
+}
+function toStartOfMonth(date2) {
+  const startDate = new TZDate(date2);
+  startDate.setDate(1);
+  startDate.setHours(0, 0, 0, 0);
+  return startDate;
+}
+function toEndOfMonth(date2) {
+  const endDate = toStartOfMonth(date2);
+  endDate.setMonth(endDate.getMonth() + 1);
+  endDate.setDate(endDate.getDate() - 1);
+  endDate.setHours(23, 59, 59, 999);
+  return endDate;
+}
+function getRowStyleInfo(days, narrowWeekend, startDayOfWeek, workweek) {
+  const limitDaysToApplyNarrowWeekend = 5;
+  const uniformWidth = 100 / days;
+  const wideWidth = days > limitDaysToApplyNarrowWeekend ? 100 / (days - 1) : uniformWidth;
+  let accumulatedWidth = 0;
+  const dates = range_1(startDayOfWeek, WEEK_DAYS).concat(range_1(days)).slice(0, WEEK_DAYS);
+  narrowWeekend = workweek ? false : narrowWeekend;
+  const rowStyleInfo = dates.map((day) => {
+    let width = narrowWeekend ? wideWidth : uniformWidth;
+    if (days > limitDaysToApplyNarrowWeekend && narrowWeekend && isWeekend(day)) {
+      width = wideWidth / 2;
+    }
+    const model = {
+      width,
+      left: accumulatedWidth
+    };
+    accumulatedWidth += width;
+    return model;
+  });
+  const { length } = rowStyleInfo;
+  const cellWidthMap = fill(length, fill(length, 0));
+  rowStyleInfo.forEach(({ width }, index) => {
+    for (let i2 = 0; i2 <= index; i2 += 1) {
+      for (let j2 = index; j2 < length; j2 += 1) {
+        cellWidthMap[i2][j2] += width;
+      }
+    }
+  });
+  cellWidthMap[0][length - 1] = 100;
+  return {
+    rowStyleInfo,
+    cellWidthMap: cellWidthMap.map((widthList) => widthList.map(toPercent))
+  };
+}
+function addMilliseconds(d2, step) {
+  const date2 = clone(d2);
+  date2.setMilliseconds(d2.getMilliseconds() + step);
+  return date2;
+}
+function addMinutes(d2, step) {
+  const date2 = clone(d2);
+  date2.setMinutes(d2.getMinutes() + step);
+  return date2;
+}
+function setTimeStrToDate(d2, timeStr) {
+  const date2 = clone(d2);
+  date2.setHours(...timeStr.split(":").map(Number));
+  return date2;
+}
+function addDate(d2, step) {
+  const date2 = clone(d2);
+  date2.setDate(d2.getDate() + step);
+  return date2;
+}
+function subtractDate(d2, steps) {
+  const date2 = clone(d2);
+  date2.setDate(d2.getDate() - steps);
+  return date2;
+}
+function addMonths(d2, step = 1) {
+  const date2 = clone(d2);
+  if (step !== 0) {
+    const dayOfMonth = date2.getDate();
+    const endOfDesiredMonth = new TZDate(date2.getTime());
+    endOfDesiredMonth.setMonth(date2.getMonth() + step + 1, 0);
+    const daysInMonth = endOfDesiredMonth.getDate();
+    if (dayOfMonth >= daysInMonth) {
+      return endOfDesiredMonth;
+    }
+    date2.setFullYear(endOfDesiredMonth.getFullYear(), endOfDesiredMonth.getMonth(), dayOfMonth);
+  }
+  return date2;
+}
+function getDateDifference(d1, d2) {
+  const _d1 = new TZDate(d1.getFullYear(), d1.getMonth(), d1.getDate()).getTime();
+  const _d2 = new TZDate(d2.getFullYear(), d2.getMonth(), d2.getDate()).getTime();
+  return Math.round((_d1 - _d2) / MS_PER_DAY);
+}
+function hasCollision(start, end, targetStart, targetEnd) {
+  return targetStart > start && targetStart < end || targetEnd > start && targetEnd < end || targetStart <= start && targetEnd >= end;
+}
+function collidesWith({
+  start,
+  end,
+  targetStart,
+  targetEnd,
+  goingDuration,
+  comingDuration,
+  targetGoingDuration,
+  targetComingDuration,
+  usingTravelTime
+}) {
+  if (Math.abs(end - start) < MS_EVENT_MIN_DURATION) {
+    end += MS_EVENT_MIN_DURATION;
+  }
+  if (Math.abs(end - start) < MS_EVENT_MIN_DURATION) {
+    end += MS_EVENT_MIN_DURATION;
+  }
+  if (usingTravelTime) {
+    start -= millisecondsFrom("minute", goingDuration);
+    end += millisecondsFrom("minute", comingDuration);
+    targetStart -= millisecondsFrom("minute", targetGoingDuration);
+    targetEnd += millisecondsFrom("minute", targetComingDuration);
+  }
+  return hasCollision(start, end, targetStart, targetEnd);
+}
+function isSameEvent(event, eventId, calendarId) {
+  return event.id === eventId && event.calendarId === calendarId;
+}
+function idGenerator() {
+  let id = 0;
+  return {
+    next() {
+      id += 1;
+      return id;
+    }
+  };
+}
+const getId = function() {
+  const generator = idGenerator();
+  return () => generator.next();
+}();
+function stamp(obj) {
+  if (!obj.__fe_id) {
+    obj.__fe_id = getId();
+  }
+  return obj.__fe_id;
+}
+class EventModel {
+  constructor(event = {}) {
+    this.id = "";
+    this.calendarId = "";
+    this.title = "";
+    this.body = "";
+    this.isAllday = false;
+    this.start = new TZDate();
+    this.end = new TZDate();
+    this.goingDuration = 0;
+    this.comingDuration = 0;
+    this.location = "";
+    this.attendees = [];
+    this.category = "time";
+    this.dueDateClass = "";
+    this.recurrenceRule = "";
+    this.state = "Busy";
+    this.isVisible = true;
+    this.isPending = false;
+    this.isFocused = false;
+    this.isReadOnly = false;
+    this.isPrivate = false;
+    this.customStyle = {};
+    this.raw = null;
+    this.hasMultiDates = false;
+    stamp(this);
+    this.init(event);
+  }
+  init({
+    id = "",
+    calendarId = "",
+    title = "",
+    body = "",
+    isAllday: isAllday2 = false,
+    start = new TZDate(),
+    end = new TZDate(),
+    goingDuration = 0,
+    comingDuration = 0,
+    location: location2 = "",
+    attendees = [],
+    category = "time",
+    dueDateClass = "",
+    recurrenceRule = "",
+    state = "Busy",
+    isVisible = true,
+    isPending = false,
+    isFocused = false,
+    isReadOnly = false,
+    isPrivate = false,
+    color,
+    backgroundColor,
+    dragBackgroundColor,
+    borderColor,
+    customStyle = {},
+    raw = null
+  } = {}) {
+    this.id = id;
+    this.calendarId = calendarId;
+    this.title = title;
+    this.body = body;
+    this.isAllday = category === "allday" ? true : isAllday2;
+    this.goingDuration = goingDuration;
+    this.comingDuration = comingDuration;
+    this.location = location2;
+    this.attendees = attendees;
+    this.category = category;
+    this.dueDateClass = dueDateClass;
+    this.recurrenceRule = recurrenceRule;
+    this.state = state;
+    this.isVisible = isVisible;
+    this.isPending = isPending;
+    this.isFocused = isFocused;
+    this.isReadOnly = isReadOnly;
+    this.isPrivate = isPrivate;
+    this.color = color;
+    this.backgroundColor = backgroundColor;
+    this.dragBackgroundColor = dragBackgroundColor;
+    this.borderColor = borderColor;
+    this.customStyle = customStyle;
+    this.raw = raw;
+    if (this.isAllday) {
+      this.setAlldayPeriod(start, end);
+    } else {
+      this.setTimePeriod(start, end);
+    }
+    if (category === "milestone" || category === "task") {
+      this.start = new TZDate(this.end);
+    }
+  }
+  setAlldayPeriod(start, end) {
+    let startedAt;
+    let endedAt;
+    if (isString_1(start)) {
+      startedAt = parse(start.substring(0, 10));
+    } else {
+      startedAt = new TZDate(start || Date.now());
+    }
+    if (isString_1(end)) {
+      endedAt = parse(end.substring(0, 10));
+    } else {
+      endedAt = new TZDate(end || this.start);
+    }
+    this.start = startedAt;
+    this.start.setHours(0, 0, 0);
+    this.end = endedAt || new TZDate(this.start);
+    this.end.setHours(23, 59, 59);
+  }
+  setTimePeriod(start, end) {
+    this.start = new TZDate(start || Date.now());
+    this.end = new TZDate(end || this.start);
+    if (!end) {
+      this.end.setMinutes(this.end.getMinutes() + 30);
+    }
+    this.hasMultiDates = this.end.getTime() - this.start.getTime() > MS_PER_DAY;
+  }
+  getStarts() {
+    return this.start;
+  }
+  getEnds() {
+    return this.end;
+  }
+  cid() {
+    return stamp(this);
+  }
+  equals(event) {
+    if (this.id !== event.id) {
+      return false;
+    }
+    if (this.title !== event.title) {
+      return false;
+    }
+    if (this.body !== event.body) {
+      return false;
+    }
+    if (this.isAllday !== event.isAllday) {
+      return false;
+    }
+    if (compare(this.getStarts(), event.getStarts()) !== 0) {
+      return false;
+    }
+    if (compare(this.getEnds(), event.getEnds()) !== 0) {
+      return false;
+    }
+    if (this.color !== event.color) {
+      return false;
+    }
+    if (this.backgroundColor !== event.backgroundColor) {
+      return false;
+    }
+    if (this.dragBackgroundColor !== event.dragBackgroundColor) {
+      return false;
+    }
+    if (this.borderColor !== event.borderColor) {
+      return false;
+    }
+    return true;
+  }
+  duration() {
+    const start = Number(this.getStarts());
+    const end = Number(this.getEnds());
+    let duration;
+    if (this.isAllday) {
+      duration = Number(toEndOfDay(end)) - Number(toStartOfDay(start));
+    } else {
+      duration = end - start;
+    }
+    return duration;
+  }
+  valueOf() {
+    return this;
+  }
+  collidesWith(event, usingTravelTime = true) {
+    event = event instanceof EventUIModel ? event.model : event;
+    return collidesWith({
+      start: Number(this.getStarts()),
+      end: Number(this.getEnds()),
+      targetStart: Number(event.getStarts()),
+      targetEnd: Number(event.getEnds()),
+      goingDuration: this.goingDuration,
+      comingDuration: this.comingDuration,
+      targetGoingDuration: event.goingDuration,
+      targetComingDuration: event.comingDuration,
+      usingTravelTime
+    });
+  }
+  toEventObject() {
+    return {
+      id: this.id,
+      calendarId: this.calendarId,
+      __cid: this.cid(),
+      title: this.title,
+      body: this.body,
+      isAllday: this.isAllday,
+      start: this.start,
+      end: this.end,
+      goingDuration: this.goingDuration,
+      comingDuration: this.comingDuration,
+      location: this.location,
+      attendees: this.attendees,
+      category: this.category,
+      dueDateClass: this.dueDateClass,
+      recurrenceRule: this.recurrenceRule,
+      state: this.state,
+      isVisible: this.isVisible,
+      isPending: this.isPending,
+      isFocused: this.isFocused,
+      isReadOnly: this.isReadOnly,
+      isPrivate: this.isPrivate,
+      color: this.color,
+      backgroundColor: this.backgroundColor,
+      dragBackgroundColor: this.dragBackgroundColor,
+      borderColor: this.borderColor,
+      customStyle: this.customStyle,
+      raw: this.raw
+    };
+  }
+  getColors() {
+    return {
+      color: this.color,
+      backgroundColor: this.backgroundColor,
+      dragBackgroundColor: this.dragBackgroundColor,
+      borderColor: this.borderColor
+    };
+  }
+}
+EventModel.schema = {
+  required: ["title"],
+  dateRange: ["start", "end"]
+};
+function isTimeEvent({ model }) {
+  const { category, isAllday: isAllday2, hasMultiDates } = model;
+  return category === "time" && !isAllday2 && !hasMultiDates;
+}
+class Collection {
+  constructor(getItemIDFn) {
+    this.internalMap = /* @__PURE__ */ new Map();
+    if (isFunction$2(getItemIDFn)) {
+      this.getItemID = getItemIDFn;
+    }
+  }
+  static and(...filterFns) {
+    const { length } = filterFns;
+    return (item) => {
+      for (let i2 = 0; i2 < length; i2 += 1) {
+        if (!filterFns[i2].call(null, item)) {
+          return false;
+        }
+      }
+      return true;
+    };
+  }
+  static or(...filterFns) {
+    const { length } = filterFns;
+    if (!length) {
+      return () => false;
+    }
+    return (item) => {
+      let result = filterFns[0].call(null, item);
+      for (let i2 = 1; i2 < length; i2 += 1) {
+        result = result || filterFns[i2].call(null, item);
+      }
+      return result;
+    };
+  }
+  getItemID(item) {
+    var _a;
+    return (_a = item == null ? void 0 : item._id) != null ? _a : "";
+  }
+  getFirstItem() {
+    const iterator = this.internalMap.values();
+    return iterator.next().value;
+  }
+  add(...items) {
+    items.forEach((item) => {
+      const id = this.getItemID(item);
+      this.internalMap.set(id, item);
+    });
+    return this;
+  }
+  remove(...items) {
+    const removeResult = [];
+    items.forEach((item) => {
+      const id = isString_1(item) || isNumber_1(item) ? item : this.getItemID(item);
+      if (!this.internalMap.has(id)) {
+        return;
+      }
+      removeResult.push(this.internalMap.get(id));
+      this.internalMap["delete"](id);
+    });
+    return removeResult.length === 1 ? removeResult[0] : removeResult;
+  }
+  has(item) {
+    const id = isString_1(item) || isNumber_1(item) ? item : this.getItemID(item);
+    return this.internalMap.has(id);
+  }
+  get(item) {
+    var _a;
+    const id = isString_1(item) || isNumber_1(item) ? item : this.getItemID(item);
+    return (_a = this.internalMap.get(id)) != null ? _a : null;
+  }
+  doWhenHas(id, callback) {
+    const item = this.internalMap.get(id);
+    if (isNil(item)) {
+      return;
+    }
+    callback(item);
+  }
+  filter(filterFn) {
+    const result = new Collection();
+    if (this.hasOwnProperty("getItemID")) {
+      result.getItemID = this.getItemID;
+    }
+    this.internalMap.forEach((item) => {
+      if (filterFn(item) === true) {
+        result.add(item);
+      }
+    });
+    return result;
+  }
+  groupBy(groupByFn) {
+    const result = {};
+    this.internalMap.forEach((item) => {
+      var _a;
+      let key = isFunction$2(groupByFn) ? groupByFn(item) : item[groupByFn];
+      if (isFunction$2(key)) {
+        key = key.call(item);
+      }
+      (_a = result[key]) != null ? _a : result[key] = new Collection(this.getItemID);
+      result[key].add(item);
+    });
+    return result;
+  }
+  find(findFn) {
+    let result = null;
+    const items = this.internalMap.values();
+    let next = items.next();
+    while (next.done === false) {
+      if (findFn(next.value)) {
+        result = next.value;
+        break;
+      }
+      next = items.next();
+    }
+    return result;
+  }
+  sort(compareFn) {
+    return this.toArray().sort(compareFn);
+  }
+  each(iteratee) {
+    const entries = this.internalMap.entries();
+    let next = entries.next();
+    while (next.done === false) {
+      const [key, value] = next.value;
+      if (iteratee(value, key) === false) {
+        break;
+      }
+      next = entries.next();
+    }
+  }
+  clear() {
+    this.internalMap.clear();
+  }
+  toArray() {
+    return Array.from(this.internalMap.values());
+  }
+  get size() {
+    return this.internalMap.size;
+  }
+}
+function createEventCollection(...initItems) {
+  const collection = new Collection((event) => event.cid());
+  if (initItems.length) {
+    collection.add(...initItems);
+  }
+  return collection;
+}
+function getDateRange(start, end) {
+  return makeDateRange(toStartOfDay(start), toEndOfDay(end), MS_PER_DAY);
+}
+function isAllday(event) {
+  return event.isAllday || event.category === "time" && Number(event.end) - Number(event.start) > MS_PER_DAY;
+}
+function filterByCategory(uiModel) {
+  const { model } = uiModel;
+  if (isAllday(model)) {
+    return "allday";
+  }
+  return model.category;
+}
+function addToMatrix(idsOfDay, event) {
+  const containDates = getDateRange(event.getStarts(), event.getEnds());
+  containDates.forEach((date2) => {
+    const ymd = toFormat(date2, "YYYYMMDD");
+    const matrix = idsOfDay[ymd] = idsOfDay[ymd] || [];
+    matrix.push(event.cid());
+  });
+}
+function removeFromMatrix(idsOfDay, event) {
+  const modelID = event.cid();
+  Object.values(idsOfDay).forEach((ids) => {
+    const index = ids.indexOf(modelID);
+    if (~index) {
+      ids.splice(index, 1);
+    }
+  });
+}
+function addEvent(calendarData, event) {
+  calendarData.events.add(event);
+  addToMatrix(calendarData.idsOfDay, event);
+  return event;
+}
+function createEvent(calendarData, eventData) {
+  const event = new EventModel(eventData);
+  return addEvent(calendarData, event);
+}
+function createEvents(calendarData, events = []) {
+  return events.map((eventData) => createEvent(calendarData, eventData));
+}
+function updateEvent(calendarData, eventId, calendarId, eventData) {
+  const { idsOfDay } = calendarData;
+  const event = calendarData.events.find((item) => isSameEvent(item, eventId, calendarId));
+  if (!event) {
+    return false;
+  }
+  event.init(__spreadValues(__spreadValues({}, event), eventData));
+  removeFromMatrix(idsOfDay, event);
+  addToMatrix(idsOfDay, event);
+  return true;
+}
+function deleteEvent(calendarData, event) {
+  removeFromMatrix(calendarData.idsOfDay, event);
+  calendarData.events.remove(event);
+  return event;
+}
+function clearEvents(calendarData) {
+  calendarData.idsOfDay = {};
+  calendarData.events.clear();
+}
+function createCalendarSlice(calendars = []) {
+  return {
+    calendar: {
+      calendars,
+      events: createEventCollection(),
+      idsOfDay: {}
+    }
+  };
+}
+function createCalendarDispatchers(set) {
+  return {
+    createEvents: (events) => set(produce((state) => {
+      createEvents(state.calendar, events);
+    })),
+    updateEvent: ({ event, eventData }) => set(produce((state) => {
+      updateEvent(state.calendar, event.id, event.calendarId, eventData);
+    })),
+    deleteEvent: (event) => set(produce((state) => {
+      deleteEvent(state.calendar, event);
+    })),
+    clearEvents: () => set(produce((state) => {
+      clearEvents(state.calendar);
+    })),
+    setCalendars: (calendars) => set(produce((state) => {
+      state.calendar.calendars = calendars;
+    })),
+    setCalendarColor: (calendarId, colorOptions) => set(produce((state) => {
+      const calendars = state.calendar.calendars.map((calendar) => {
+        if (calendar.id === calendarId) {
+          return __spreadValues(__spreadValues({}, calendar), colorOptions);
+        }
+        return calendar;
+      });
+      const events = state.calendar.events.toArray().map((event) => {
+        var _a, _b, _c, _d;
+        if (event.calendarId === calendarId) {
+          event.color = (_a = colorOptions.color) != null ? _a : event.color;
+          event.backgroundColor = (_b = colorOptions.backgroundColor) != null ? _b : event.backgroundColor;
+          event.borderColor = (_c = colorOptions.borderColor) != null ? _c : event.borderColor;
+          event.dragBackgroundColor = (_d = colorOptions.dragBackgroundColor) != null ? _d : event.dragBackgroundColor;
+        }
+        return event;
+      });
+      const collection = createEventCollection(...events);
+      state.calendar.calendars = calendars;
+      state.calendar.events = collection;
+    })),
+    setCalendarVisibility: (calendarIds, isVisible) => set(produce((state) => {
+      const events = state.calendar.events.toArray();
+      state.calendar.events = createEventCollection(...events.map((event) => {
+        if (calendarIds.includes(event.calendarId)) {
+          event.isVisible = isVisible;
+        }
+        return event;
+      }));
+    }))
+  };
+}
+var DraggingState = /* @__PURE__ */ ((DraggingState2) => {
+  DraggingState2[DraggingState2["IDLE"] = 0] = "IDLE";
+  DraggingState2[DraggingState2["INIT"] = 1] = "INIT";
+  DraggingState2[DraggingState2["DRAGGING"] = 2] = "DRAGGING";
+  DraggingState2[DraggingState2["CANCELED"] = 3] = "CANCELED";
+  return DraggingState2;
+})(DraggingState || {});
+function createDndSlice() {
+  return {
+    dnd: {
+      draggingItemType: null,
+      draggingState: 0,
+      initX: null,
+      initY: null,
+      x: null,
+      y: null,
+      draggingEventUIModel: null
+    }
+  };
+}
+function createDndDispatchers(set) {
+  return {
+    initDrag: (initState) => {
+      set(produce((state) => {
+        state.dnd = __spreadProps(__spreadValues(__spreadValues({}, state.dnd), initState), {
+          draggingState: 1
+        });
+      }));
+    },
+    setDragging: (newState) => {
+      set(produce((state) => {
+        state.dnd = __spreadProps(__spreadValues(__spreadValues({}, state.dnd), newState), {
+          draggingState: 2
+        });
+      }));
+    },
+    cancelDrag: () => {
+      set(produce((state) => {
+        state.dnd = createDndSlice().dnd;
+        state.dnd.draggingState = 3;
+      }));
+    },
+    reset: () => {
+      set(produce((state) => {
+        state.dnd = createDndSlice().dnd;
+      }));
+    },
+    setDraggingEventUIModel: (eventUIModel) => {
+      set(produce((state) => {
+        var _a;
+        state.dnd.draggingEventUIModel = (_a = eventUIModel == null ? void 0 : eventUIModel.clone()) != null ? _a : null;
+      }));
+    }
+  };
+}
+function createGridSelectionSlice() {
+  return {
+    gridSelection: {
+      dayGridMonth: null,
+      dayGridWeek: null,
+      timeGrid: null,
+      accumulated: {
+        dayGridMonth: []
+      }
+    }
+  };
+}
+function createGridSelectionDispatchers(set) {
+  return {
+    setGridSelection: (type, gridSelection) => {
+      set(produce((state) => {
+        state.gridSelection[type] = gridSelection;
+      }));
+    },
+    addGridSelection: (type, gridSelection) => {
+      set(produce((state) => {
+        if (type === "dayGridMonth" && gridSelection) {
+          state.gridSelection.accumulated[type] = [
+            ...state.gridSelection.accumulated[type],
+            gridSelection
+          ];
+          state.gridSelection.dayGridMonth = null;
+        }
+      }));
+    },
+    clearAll: () => set(produce((state) => {
+      state.gridSelection = createGridSelectionSlice().gridSelection;
+    }))
+  };
+}
+const DEFAULT_RESIZER_LENGTH = 3;
+const DEFAULT_DUPLICATE_EVENT_CID = -1;
+function getRestPanelHeight(dayGridRowsState, lastPanelType, initHeight) {
+  return Object.keys(dayGridRowsState).reduce((acc, rowName) => {
+    if (rowName === lastPanelType) {
+      return acc;
+    }
+    return acc - dayGridRowsState[rowName].height - DEFAULT_RESIZER_LENGTH;
+  }, initHeight);
+}
+function createWeekViewLayoutSlice() {
+  return {
+    layout: 500,
+    weekViewLayout: {
+      lastPanelType: null,
+      dayGridRows: {},
+      selectedDuplicateEventCid: DEFAULT_DUPLICATE_EVENT_CID
+    }
+  };
+}
+function createWeekViewLayoutDispatchers(set) {
+  return {
+    setLastPanelType: (type) => {
+      set(produce((state) => {
+        state.weekViewLayout.lastPanelType = type;
+        if (type) {
+          state.weekViewLayout.dayGridRows[type].height = getRestPanelHeight(state.weekViewLayout.dayGridRows, type, state.layout);
+        }
+      }));
+    },
+    updateLayoutHeight: (height) => set(produce((state) => {
+      const { lastPanelType } = state.weekViewLayout;
+      state.layout = height;
+      if (lastPanelType) {
+        state.weekViewLayout.dayGridRows[lastPanelType].height = getRestPanelHeight(state.weekViewLayout.dayGridRows, lastPanelType, height);
+      }
+    })),
+    updateDayGridRowHeight: ({ rowName, height }) => set(produce((state) => {
+      const { lastPanelType } = state.weekViewLayout;
+      state.weekViewLayout.dayGridRows[rowName] = { height };
+      if (lastPanelType) {
+        state.weekViewLayout.dayGridRows[lastPanelType].height = getRestPanelHeight(state.weekViewLayout.dayGridRows, lastPanelType, state.layout);
+      }
+    })),
+    updateDayGridRowHeightByDiff: ({ rowName, diff }) => set(produce((state) => {
+      var _a, _b, _c;
+      const { lastPanelType } = state.weekViewLayout;
+      const height = (_c = (_b = (_a = state.weekViewLayout.dayGridRows) == null ? void 0 : _a[rowName]) == null ? void 0 : _b.height) != null ? _c : DEFAULT_PANEL_HEIGHT;
+      state.weekViewLayout.dayGridRows[rowName] = { height: height + diff };
+      if (lastPanelType) {
+        state.weekViewLayout.dayGridRows[lastPanelType].height = getRestPanelHeight(state.weekViewLayout.dayGridRows, lastPanelType, state.layout);
+      }
+    })),
+    setSelectedDuplicateEventCid: (cid) => set(produce((state) => {
+      state.weekViewLayout.selectedDuplicateEventCid = cid != null ? cid : DEFAULT_DUPLICATE_EVENT_CID;
+    }))
+  };
+}
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+const DEFAULT_DAY_NAMES = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+const getDayName = (dayIndex) => {
+  return DEFAULT_DAY_NAMES[dayIndex];
+};
+function getDayNames(days, weekDayNamesOption) {
+  return days.map((day) => {
+    const dayIndex = day.getDay();
+    const dayName = weekDayNamesOption.length > 0 ? weekDayNamesOption[dayIndex] : capitalize(getDayName(dayIndex));
+    return {
+      date: day.getDate(),
+      day: day.getDay(),
+      dayName,
+      isToday: true,
+      renderDate: "date",
+      dateInstance: day
+    };
+  });
+}
+function initializeCollapseDuplicateEvents(options) {
+  if (!options) {
+    return false;
+  }
+  const initialCollapseDuplicateEvents = {
+    getDuplicateEvents: (targetEvent, events) => events.filter((event) => event.title === targetEvent.title && compare(event.start, targetEvent.start) === 0 && compare(event.end, targetEvent.end) === 0).sort((a2, b2) => a2.calendarId > b2.calendarId ? 1 : -1),
+    getMainEvent: (events) => last(events)
+  };
+  if (isBoolean_1(options)) {
+    return initialCollapseDuplicateEvents;
+  }
+  return __spreadValues(__spreadValues({}, initialCollapseDuplicateEvents), options);
+}
+function initializeWeekOptions(weekOptions = {}) {
+  const week = __spreadValues({
+    startDayOfWeek: Day$2.SUN,
+    dayNames: [],
+    narrowWeekend: false,
+    workweek: false,
+    showNowIndicator: true,
+    showTimezoneCollapseButton: false,
+    timezonesCollapsed: false,
+    hourStart: 0,
+    hourEnd: 24,
+    eventView: true,
+    taskView: true,
+    collapseDuplicateEvents: false
+  }, weekOptions);
+  week.collapseDuplicateEvents = initializeCollapseDuplicateEvents(week.collapseDuplicateEvents);
+  return week;
+}
+function initializeTimezoneOptions(timezoneOptions = {}) {
+  return __spreadValues({
+    zones: []
+  }, timezoneOptions);
+}
+function initializeMonthOptions(monthOptions = {}) {
+  const month = __spreadValues({
+    dayNames: [],
+    visibleWeeksCount: 0,
+    workweek: false,
+    narrowWeekend: false,
+    startDayOfWeek: Day$2.SUN,
+    isAlways6Weeks: true,
+    visibleEventCount: 6
+  }, monthOptions);
+  if (month.dayNames.length === 0) {
+    month.dayNames = DEFAULT_DAY_NAMES.slice();
+  }
+  return month;
+}
+function initializeGridSelectionOptions(options) {
+  if (isBoolean_1(options)) {
+    return {
+      enableDblClick: options,
+      enableClick: options
+    };
+  }
+  return __spreadValues({
+    enableDblClick: true,
+    enableClick: true
+  }, options);
+}
+const initialEventFilter = (event) => !!event.isVisible;
+function createOptionsSlice(options = {}) {
+  var _a, _b, _c, _d, _e, _f;
+  return {
+    options: {
+      defaultView: (_a = options.defaultView) != null ? _a : "week",
+      useFormPopup: (_b = options.useFormPopup) != null ? _b : false,
+      useDetailPopup: (_c = options.useDetailPopup) != null ? _c : false,
+      isReadOnly: (_d = options.isReadOnly) != null ? _d : false,
+      week: initializeWeekOptions(options.week),
+      month: initializeMonthOptions(options.month),
+      gridSelection: initializeGridSelectionOptions(options.gridSelection),
+      usageStatistics: (_e = options.usageStatistics) != null ? _e : true,
+      eventFilter: (_f = options.eventFilter) != null ? _f : initialEventFilter,
+      timezone: initializeTimezoneOptions(options.timezone)
+    }
+  };
+}
+function createOptionsDispatchers(set) {
+  return {
+    setOptions: (newOptions = {}) => set(produce((state) => {
+      var _a;
+      if (newOptions.gridSelection) {
+        newOptions.gridSelection = initializeGridSelectionOptions(newOptions.gridSelection);
+      }
+      if ((_a = newOptions.week) == null ? void 0 : _a.collapseDuplicateEvents) {
+        newOptions.week.collapseDuplicateEvents = initializeCollapseDuplicateEvents(newOptions.week.collapseDuplicateEvents);
+      }
+      mergeObject(state.options, newOptions);
+    }))
+  };
+}
+var PopupType = /* @__PURE__ */ ((PopupType2) => {
+  PopupType2["SeeMore"] = "seeMore";
+  PopupType2["Form"] = "form";
+  PopupType2["Detail"] = "detail";
+  return PopupType2;
+})(PopupType || {});
+function createPopupSlice() {
+  return {
+    popup: {
+      ["seeMore"]: null,
+      ["form"]: null,
+      ["detail"]: null
+    }
+  };
+}
+function createPopupDispatchers(set) {
+  return {
+    showSeeMorePopup: (param) => set(produce((state) => {
+      state.popup["seeMore"] = param;
+      state.popup["form"] = null;
+      state.popup["detail"] = null;
+    })),
+    showFormPopup: (param) => set(produce((state) => {
+      state.popup["form"] = param;
+      state.popup["seeMore"] = null;
+      state.popup["detail"] = null;
+    })),
+    showDetailPopup: (param, isOpenedInSeeMorePopup) => set(produce((state) => {
+      state.popup["detail"] = param;
+      state.popup["form"] = null;
+      if (!isOpenedInSeeMorePopup) {
+        state.popup["seeMore"] = null;
+      }
+    })),
+    hideSeeMorePopup: () => set(produce((state) => {
+      state.popup["seeMore"] = null;
+    })),
+    hideFormPopup: () => set(produce((state) => {
+      state.popup["form"] = null;
+    })),
+    hideDetailPopup: () => set(produce((state) => {
+      state.popup["detail"] = null;
+    })),
+    hideAllPopup: () => set(produce((state) => {
+      state.popup["seeMore"] = null;
+      state.popup["form"] = null;
+      state.popup["detail"] = null;
+    }))
+  };
+}
+const noop = () => {
+};
+const CSS_AUTO_REGEX = /^auto$|^$|%/;
+function getStyle(el, style) {
+  let value = el.style[style];
+  if ((!value || value === "auto") && document.defaultView) {
+    const css = document.defaultView.getComputedStyle(el, null);
+    value = css ? css[style] : null;
+  }
+  return value === "auto" ? null : value;
+}
+function invalidateSizeValue(value) {
+  if (isString_1(value)) {
+    return CSS_AUTO_REGEX.test(value);
+  }
+  return value === null;
+}
+function getSize(el) {
+  const w2 = getStyle(el, "width");
+  const h2 = getStyle(el, "height");
+  if ((invalidateSizeValue(w2) || invalidateSizeValue(h2)) && el.getBoundingClientRect) {
+    const { width, height } = el.getBoundingClientRect();
+    return {
+      width: width || el.offsetWidth,
+      height: height || el.offsetHeight
+    };
+  }
+  return {
+    width: parseFloat(w2 != null ? w2 : "0"),
+    height: parseFloat(h2 != null ? h2 : "0")
+  };
+}
+const ElementClass = typeof Element === "undefined" ? noop : Element;
+const elProto = ElementClass.prototype;
+elProto.matches || elProto.webkitMatchesSelector || elProto.msMatchesSelector || function(selector) {
+  return Array.from(document.querySelectorAll(selector)).includes(this);
+};
+function stripTags(str) {
+  return str.replace(/<([^>]+)>/gi, "");
+}
+const SIXTY_MINUTES = 60;
+const templates = {
+  milestone(model) {
+    const classNames2 = cls("icon", "ic-milestone");
+    return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("span", {
+      className: classNames2
+    }), /* @__PURE__ */ h$3("span", {
+      style: {
+        backgroundColor: model.backgroundColor
+      }
+    }, stripTags(model.title)));
+  },
+  milestoneTitle() {
+    return /* @__PURE__ */ h$3("span", {
+      className: cls("left-content")
+    }, "Milestone");
+  },
+  task(model) {
+    return `#${model.title}`;
+  },
+  taskTitle() {
+    return /* @__PURE__ */ h$3("span", {
+      className: cls("left-content")
+    }, "Task");
+  },
+  alldayTitle() {
+    return /* @__PURE__ */ h$3("span", {
+      className: cls("left-content")
+    }, "All Day");
+  },
+  allday(model) {
+    return stripTags(model.title);
+  },
+  time(model) {
+    const { start, title } = model;
+    if (start) {
+      return /* @__PURE__ */ h$3("span", null, /* @__PURE__ */ h$3("strong", null, toFormat(start, "HH:mm")), "\xA0", /* @__PURE__ */ h$3("span", null, stripTags(title)));
+    }
+    return stripTags(title);
+  },
+  goingDuration(model) {
+    const { goingDuration } = model;
+    const hour = Math.floor(goingDuration / SIXTY_MINUTES);
+    const minutes = goingDuration % SIXTY_MINUTES;
+    return `GoingTime ${leadingZero(hour, 2)}:${leadingZero(minutes, 2)}`;
+  },
+  comingDuration(model) {
+    const { comingDuration } = model;
+    const hour = Math.floor(comingDuration / SIXTY_MINUTES);
+    const minutes = comingDuration % SIXTY_MINUTES;
+    return `ComingTime ${leadingZero(hour, 2)}:${leadingZero(minutes, 2)}`;
+  },
+  monthMoreTitleDate(moreTitle) {
+    const { date: date2, day } = moreTitle;
+    const classNameDay = cls("more-title-date");
+    const classNameDayLabel = cls("more-title-day");
+    const dayName = capitalize(getDayName(day));
+    return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("span", {
+      className: classNameDay
+    }, date2), /* @__PURE__ */ h$3("span", {
+      className: classNameDayLabel
+    }, dayName));
+  },
+  monthMoreClose() {
+    return "";
+  },
+  monthGridHeader(model) {
+    const date2 = parseInt(model.date.split("-")[2], 10);
+    const classNames2 = cls("weekday-grid-date", { "weekday-grid-date-decorator": model.isToday });
+    return /* @__PURE__ */ h$3("span", {
+      className: classNames2
+    }, date2);
+  },
+  monthGridHeaderExceed(hiddenEvents) {
+    const className2 = cls("weekday-grid-more-events");
+    return /* @__PURE__ */ h$3("span", {
+      className: className2
+    }, hiddenEvents, " more");
+  },
+  monthGridFooter(_model) {
+    return "";
+  },
+  monthGridFooterExceed(_hiddenEvents) {
+    return "";
+  },
+  monthDayName(model) {
+    return model.label;
+  },
+  weekDayName(model) {
+    const classDate = cls("day-name__date");
+    const className2 = cls("day-name__name");
+    return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("span", {
+      className: classDate
+    }, model.date), "\xA0\xA0", /* @__PURE__ */ h$3("span", {
+      className: className2
+    }, model.dayName));
+  },
+  weekGridFooterExceed(hiddenEvents) {
+    return `+${hiddenEvents}`;
+  },
+  collapseBtnTitle() {
+    const className2 = cls("collapse-btn-icon");
+    return /* @__PURE__ */ h$3("span", {
+      className: className2
+    });
+  },
+  timezoneDisplayLabel({ displayLabel, timezoneOffset }) {
+    if (isNil(displayLabel) && isPresent(timezoneOffset)) {
+      const sign = timezoneOffset < 0 ? "-" : "+";
+      const hours = Math.abs(timezoneOffset / SIXTY_MINUTES);
+      const minutes = Math.abs(timezoneOffset % SIXTY_MINUTES);
+      return `GMT${sign}${leadingZero(hours, 2)}:${leadingZero(minutes, 2)}`;
+    }
+    return displayLabel;
+  },
+  timegridDisplayPrimaryTime(props) {
+    const { time } = props;
+    return toFormat(time, "hh tt");
+  },
+  timegridDisplayTime(props) {
+    const { time } = props;
+    return toFormat(time, "HH:mm");
+  },
+  timegridNowIndicatorLabel(timezone) {
+    const { time, format = "HH:mm" } = timezone;
+    return toFormat(time, format);
+  },
+  popupIsAllday() {
+    return "All day";
+  },
+  popupStateFree() {
+    return "Free";
+  },
+  popupStateBusy() {
+    return "Busy";
+  },
+  titlePlaceholder() {
+    return "Subject";
+  },
+  locationPlaceholder() {
+    return "Location";
+  },
+  startDatePlaceholder() {
+    return "Start date";
+  },
+  endDatePlaceholder() {
+    return "End date";
+  },
+  popupSave() {
+    return "Save";
+  },
+  popupUpdate() {
+    return "Update";
+  },
+  popupEdit() {
+    return "Edit";
+  },
+  popupDelete() {
+    return "Delete";
+  },
+  popupDetailTitle({ title }) {
+    return title;
+  },
+  popupDetailDate({ isAllday: isAllday2, start, end }) {
+    const dayFormat = "YYYY.MM.DD";
+    const timeFormat = "hh:mm tt";
+    const detailFormat = `${dayFormat} ${timeFormat}`;
+    const startDate = toFormat(start, isAllday2 ? dayFormat : timeFormat);
+    const endDateFormat = isSameDate(start, end) ? timeFormat : detailFormat;
+    if (isAllday2) {
+      return `${startDate}${isSameDate(start, end) ? "" : ` - ${toFormat(end, dayFormat)}`}`;
+    }
+    return `${toFormat(start, detailFormat)} - ${toFormat(end, endDateFormat)}`;
+  },
+  popupDetailLocation({ location: location2 }) {
+    return location2;
+  },
+  popupDetailAttendees({ attendees = [] }) {
+    return attendees.join(", ");
+  },
+  popupDetailState({ state }) {
+    return state || "Busy";
+  },
+  popupDetailRecurrenceRule({ recurrenceRule }) {
+    return recurrenceRule;
+  },
+  popupDetailBody({ body }) {
+    return body;
+  }
+};
+function createTemplateSlice(templateConfig = {}) {
+  return {
+    template: __spreadValues(__spreadValues({}, templates), templateConfig)
+  };
+}
+function createTemplateDispatchers(set) {
+  return {
+    setTemplate: (template) => set(produce((state) => {
+      state.template = __spreadValues(__spreadValues({}, state.template), template);
+    }))
+  };
+}
+function createViewSlice(initialView = "week") {
+  const renderDate = new TZDate();
+  renderDate.setHours(0, 0, 0, 0);
+  return {
+    view: {
+      currentView: initialView,
+      renderDate
+    }
+  };
+}
+function createViewDispatchers(set) {
+  return {
+    changeView: (nextView) => set(produce((state) => {
+      state.view.currentView = nextView;
+    })),
+    setRenderDate: (date2) => set(produce((state) => {
+      state.view.renderDate = toStartOfDay(date2);
+    }))
+  };
+}
+const isSSR = isUndefined_1(window) || !window.navigator;
+const useIsomorphicLayoutEffect = isSSR ? _$2 : h$2;
+function createStoreContext() {
+  const StoreContext = B$1(null);
+  function StoreProvider2({
+    children,
+    store
+  }) {
+    return h$3(StoreContext.Provider, { value: store, children });
+  }
+  const useStore2 = (selector, equalityFn = Object.is) => {
+    const storeCtx = q$2(StoreContext);
+    if (isNil(storeCtx)) {
+      throw new Error("StoreProvider is not found");
+    }
+    const [, notify] = d$2((notifyCount) => notifyCount + 1, 0);
+    const state = storeCtx.getState();
+    const stateRef = s$2(state);
+    const selectorRef = s$2(selector);
+    const equalityFnRef = s$2(equalityFn);
+    const hasErrorRef = s$2(false);
+    const currentSliceRef = s$2();
+    if (isUndefined_1(currentSliceRef.current)) {
+      currentSliceRef.current = selector(state);
+    }
+    let newStateSlice;
+    let hasNewStateSlice = false;
+    const shouldGetNewSlice = stateRef.current !== state || selectorRef.current !== selector || equalityFnRef.current !== equalityFn || hasErrorRef.current;
+    if (shouldGetNewSlice) {
+      newStateSlice = selector(state);
+      hasNewStateSlice = !equalityFn(currentSliceRef.current, newStateSlice);
+    }
+    useIsomorphicLayoutEffect(() => {
+      if (hasNewStateSlice) {
+        currentSliceRef.current = newStateSlice;
+      }
+      stateRef.current = state;
+      selectorRef.current = selector;
+      equalityFnRef.current = equalityFn;
+      hasErrorRef.current = false;
+    });
+    const stateBeforeSubscriptionRef = s$2(state);
+    useIsomorphicLayoutEffect(() => {
+      const listener = () => {
+        try {
+          const nextState = storeCtx.getState();
+          const nextStateSlice = selectorRef.current(nextState);
+          const shouldUpdateState = !equalityFnRef.current(currentSliceRef.current, nextStateSlice);
+          if (shouldUpdateState) {
+            stateRef.current = nextState;
+            currentSliceRef.current = newStateSlice;
+            notify();
+          }
+        } catch (e2) {
+          console.error("[toastui-calendar] failed to update state", e2 == null ? void 0 : e2.message);
+          hasErrorRef.current = true;
+          notify();
+        }
+      };
+      const unsubscribe = storeCtx.subscribe(listener);
+      if (storeCtx.getState() !== stateBeforeSubscriptionRef.current) {
+        listener();
+      }
+      return unsubscribe;
+    }, []);
+    return hasNewStateSlice ? newStateSlice : currentSliceRef.current;
+  };
+  const useInternalStore2 = () => {
+    const storeCtx = q$2(StoreContext);
+    if (isNil(storeCtx)) {
+      throw new Error("StoreProvider is not found");
+    }
+    return F$2(() => storeCtx, [storeCtx]);
+  };
+  return {
+    StoreProvider: StoreProvider2,
+    useStore: useStore2,
+    useInternalStore: useInternalStore2
+  };
+}
+function createStore(storeCreator2) {
+  let state;
+  const listeners = /* @__PURE__ */ new Set();
+  const setState = (partialStateCreator) => {
+    const nextState = partialStateCreator(state);
+    if (nextState !== state) {
+      const previousState = state;
+      state = __spreadValues(__spreadValues({}, state), nextState);
+      listeners.forEach((listener) => listener(state, previousState));
+    }
+  };
+  const getState = () => state;
+  const subscribe = (listener, selector, equalityFn) => {
+    let _listener = listener;
+    if (selector) {
+      let currentSlice = selector(state);
+      const _equalityFn = equalityFn != null ? equalityFn : Object.is;
+      _listener = () => {
+        const nextSlice = selector(state);
+        if (!_equalityFn(currentSlice, nextSlice)) {
+          const previousSlice = currentSlice;
+          currentSlice = nextSlice;
+          listener(currentSlice, previousSlice);
+        }
+      };
+    }
+    listeners.add(_listener);
+    return () => listeners.delete(_listener);
+  };
+  const clearListeners = () => listeners.clear();
+  const internal = { setState, getState, subscribe, clearListeners };
+  state = storeCreator2(setState, getState, internal);
+  return internal;
+}
+const storeCreator = (options) => (set) => {
+  return __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, createOptionsSlice(options)), createTemplateSlice(options.template)), createPopupSlice()), createWeekViewLayoutSlice()), createCalendarSlice(options.calendars)), createViewSlice(options.defaultView)), createDndSlice()), createGridSelectionSlice()), {
+    dispatch: {
+      options: createOptionsDispatchers(set),
+      popup: createPopupDispatchers(set),
+      weekViewLayout: createWeekViewLayoutDispatchers(set),
+      calendar: createCalendarDispatchers(set),
+      view: createViewDispatchers(set),
+      dnd: createDndDispatchers(set),
+      gridSelection: createGridSelectionDispatchers(set),
+      template: createTemplateDispatchers(set)
+    }
+  });
+};
+const initCalendarStore = (options = {}) => createStore(storeCreator(options));
+const { StoreProvider, useStore, useInternalStore } = createStoreContext();
+function useDispatch(group) {
+  return useStore(T$1((state) => {
+    if (!group) {
+      return state.dispatch;
+    }
+    return state.dispatch[group];
+  }, [group]));
+}
+function topLevelStateSelector(group) {
+  return (state) => state[group];
+}
+const calendarSelector = topLevelStateSelector("calendar");
+const weekViewLayoutSelector = topLevelStateSelector("weekViewLayout");
+const templateSelector = topLevelStateSelector("template");
+const viewSelector = topLevelStateSelector("view");
+const optionsSelector = topLevelStateSelector("options");
+const dndSelector = topLevelStateSelector("dnd");
+var purify = { exports: {} };
+/*! @license DOMPurify 2.3.8 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.3.8/LICENSE */
+(function(module, exports) {
+  (function(global2, factory) {
+    module.exports = factory();
+  })(commonjsGlobal, function() {
+    function _typeof(obj) {
+      "@babel/helpers - typeof";
+      return _typeof = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(obj2) {
+        return typeof obj2;
+      } : function(obj2) {
+        return obj2 && typeof Symbol == "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      }, _typeof(obj);
+    }
+    function _setPrototypeOf(o2, p2) {
+      _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o3, p3) {
+        o3.__proto__ = p3;
+        return o3;
+      };
+      return _setPrototypeOf(o2, p2);
+    }
+    function _isNativeReflectConstruct() {
+      if (typeof Reflect === "undefined" || !Reflect.construct)
+        return false;
+      if (Reflect.construct.sham)
+        return false;
+      if (typeof Proxy === "function")
+        return true;
+      try {
+        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+        }));
+        return true;
+      } catch (e2) {
+        return false;
+      }
+    }
+    function _construct(Parent, args, Class) {
+      if (_isNativeReflectConstruct()) {
+        _construct = Reflect.construct;
+      } else {
+        _construct = function _construct2(Parent2, args2, Class2) {
+          var a2 = [null];
+          a2.push.apply(a2, args2);
+          var Constructor2 = Function.bind.apply(Parent2, a2);
+          var instance = new Constructor2();
+          if (Class2)
+            _setPrototypeOf(instance, Class2.prototype);
+          return instance;
+        };
+      }
+      return _construct.apply(null, arguments);
+    }
+    function _toConsumableArray(arr) {
+      return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+    }
+    function _arrayWithoutHoles(arr) {
+      if (Array.isArray(arr))
+        return _arrayLikeToArray(arr);
+    }
+    function _iterableToArray(iter) {
+      if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null)
+        return Array.from(iter);
+    }
+    function _unsupportedIterableToArray(o2, minLen) {
+      if (!o2)
+        return;
+      if (typeof o2 === "string")
+        return _arrayLikeToArray(o2, minLen);
+      var n2 = Object.prototype.toString.call(o2).slice(8, -1);
+      if (n2 === "Object" && o2.constructor)
+        n2 = o2.constructor.name;
+      if (n2 === "Map" || n2 === "Set")
+        return Array.from(o2);
+      if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
+        return _arrayLikeToArray(o2, minLen);
+    }
+    function _arrayLikeToArray(arr, len) {
+      if (len == null || len > arr.length)
+        len = arr.length;
+      for (var i2 = 0, arr2 = new Array(len); i2 < len; i2++)
+        arr2[i2] = arr[i2];
+      return arr2;
+    }
+    function _nonIterableSpread() {
+      throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    var hasOwnProperty = Object.hasOwnProperty, setPrototypeOf = Object.setPrototypeOf, isFrozen = Object.isFrozen, getPrototypeOf = Object.getPrototypeOf, getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+    var freeze = Object.freeze, seal = Object.seal, create = Object.create;
+    var _ref = typeof Reflect !== "undefined" && Reflect, apply = _ref.apply, construct = _ref.construct;
+    if (!apply) {
+      apply = function apply2(fun, thisValue, args) {
+        return fun.apply(thisValue, args);
+      };
+    }
+    if (!freeze) {
+      freeze = function freeze2(x2) {
+        return x2;
+      };
+    }
+    if (!seal) {
+      seal = function seal2(x2) {
+        return x2;
+      };
+    }
+    if (!construct) {
+      construct = function construct2(Func, args) {
+        return _construct(Func, _toConsumableArray(args));
+      };
+    }
+    var arrayForEach = unapply(Array.prototype.forEach);
+    var arrayPop = unapply(Array.prototype.pop);
+    var arrayPush = unapply(Array.prototype.push);
+    var stringToLowerCase = unapply(String.prototype.toLowerCase);
+    var stringMatch = unapply(String.prototype.match);
+    var stringReplace = unapply(String.prototype.replace);
+    var stringIndexOf = unapply(String.prototype.indexOf);
+    var stringTrim = unapply(String.prototype.trim);
+    var regExpTest = unapply(RegExp.prototype.test);
+    var typeErrorCreate = unconstruct(TypeError);
+    function unapply(func) {
+      return function(thisArg) {
+        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+        return apply(func, thisArg, args);
+      };
+    }
+    function unconstruct(func) {
+      return function() {
+        for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          args[_key2] = arguments[_key2];
+        }
+        return construct(func, args);
+      };
+    }
+    function addToSet(set, array2) {
+      if (setPrototypeOf) {
+        setPrototypeOf(set, null);
+      }
+      var l2 = array2.length;
+      while (l2--) {
+        var element = array2[l2];
+        if (typeof element === "string") {
+          var lcElement = stringToLowerCase(element);
+          if (lcElement !== element) {
+            if (!isFrozen(array2)) {
+              array2[l2] = lcElement;
+            }
+            element = lcElement;
+          }
+        }
+        set[element] = true;
+      }
+      return set;
+    }
+    function clone2(object) {
+      var newObject = create(null);
+      var property;
+      for (property in object) {
+        if (apply(hasOwnProperty, object, [property])) {
+          newObject[property] = object[property];
+        }
+      }
+      return newObject;
+    }
+    function lookupGetter(object, prop) {
+      while (object !== null) {
+        var desc = getOwnPropertyDescriptor(object, prop);
+        if (desc) {
+          if (desc.get) {
+            return unapply(desc.get);
+          }
+          if (typeof desc.value === "function") {
+            return unapply(desc.value);
+          }
+        }
+        object = getPrototypeOf(object);
+      }
+      function fallbackValue(element) {
+        console.warn("fallback value for", element);
+        return null;
+      }
+      return fallbackValue;
+    }
+    var html$1 = freeze(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "shadow", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]);
+    var svg$1 = freeze(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]);
+    var svgFilters = freeze(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]);
+    var svgDisallowed = freeze(["animate", "color-profile", "cursor", "discard", "fedropshadow", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]);
+    var mathMl$1 = freeze(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover"]);
+    var mathMlDisallowed = freeze(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]);
+    var text = freeze(["#text"]);
+    var html = freeze(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "pattern", "placeholder", "playsinline", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "xmlns", "slot"]);
+    var svg = freeze(["accent-height", "accumulate", "additive", "alignment-baseline", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]);
+    var mathMl = freeze(["accent", "accentunder", "align", "bevelled", "close", "columnsalign", "columnlines", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lspace", "lquote", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]);
+    var xml = freeze(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]);
+    var MUSTACHE_EXPR = seal(/\{\{[\w\W]*|[\w\W]*\}\}/gm);
+    var ERB_EXPR = seal(/<%[\w\W]*|[\w\W]*%>/gm);
+    var DATA_ATTR = seal(/^data-[\-\w.\u00B7-\uFFFF]/);
+    var ARIA_ATTR = seal(/^aria-[\-\w]+$/);
+    var IS_ALLOWED_URI = seal(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i);
+    var IS_SCRIPT_OR_DATA = seal(/^(?:\w+script|data):/i);
+    var ATTR_WHITESPACE = seal(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g);
+    var DOCTYPE_NAME = seal(/^html$/i);
+    var getGlobal = function getGlobal2() {
+      return typeof window === "undefined" ? null : window;
+    };
+    var _createTrustedTypesPolicy = function _createTrustedTypesPolicy2(trustedTypes, document2) {
+      if (_typeof(trustedTypes) !== "object" || typeof trustedTypes.createPolicy !== "function") {
+        return null;
+      }
+      var suffix = null;
+      var ATTR_NAME = "data-tt-policy-suffix";
+      if (document2.currentScript && document2.currentScript.hasAttribute(ATTR_NAME)) {
+        suffix = document2.currentScript.getAttribute(ATTR_NAME);
+      }
+      var policyName = "dompurify" + (suffix ? "#" + suffix : "");
+      try {
+        return trustedTypes.createPolicy(policyName, {
+          createHTML: function createHTML(html2) {
+            return html2;
+          }
+        });
+      } catch (_2) {
+        console.warn("TrustedTypes policy " + policyName + " could not be created.");
+        return null;
+      }
+    };
+    function createDOMPurify() {
+      var window2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : getGlobal();
+      var DOMPurify = function DOMPurify2(root) {
+        return createDOMPurify(root);
+      };
+      DOMPurify.version = "2.3.8";
+      DOMPurify.removed = [];
+      if (!window2 || !window2.document || window2.document.nodeType !== 9) {
+        DOMPurify.isSupported = false;
+        return DOMPurify;
+      }
+      var originalDocument = window2.document;
+      var document2 = window2.document;
+      var DocumentFragment = window2.DocumentFragment, HTMLTemplateElement = window2.HTMLTemplateElement, Node = window2.Node, Element2 = window2.Element, NodeFilter = window2.NodeFilter, _window$NamedNodeMap = window2.NamedNodeMap, NamedNodeMap = _window$NamedNodeMap === void 0 ? window2.NamedNodeMap || window2.MozNamedAttrMap : _window$NamedNodeMap, HTMLFormElement = window2.HTMLFormElement, DOMParser = window2.DOMParser, trustedTypes = window2.trustedTypes;
+      var ElementPrototype = Element2.prototype;
+      var cloneNode = lookupGetter(ElementPrototype, "cloneNode");
+      var getNextSibling = lookupGetter(ElementPrototype, "nextSibling");
+      var getChildNodes = lookupGetter(ElementPrototype, "childNodes");
+      var getParentNode = lookupGetter(ElementPrototype, "parentNode");
+      if (typeof HTMLTemplateElement === "function") {
+        var template = document2.createElement("template");
+        if (template.content && template.content.ownerDocument) {
+          document2 = template.content.ownerDocument;
+        }
+      }
+      var trustedTypesPolicy = _createTrustedTypesPolicy(trustedTypes, originalDocument);
+      var emptyHTML = trustedTypesPolicy ? trustedTypesPolicy.createHTML("") : "";
+      var _document = document2, implementation = _document.implementation, createNodeIterator = _document.createNodeIterator, createDocumentFragment = _document.createDocumentFragment, getElementsByTagName = _document.getElementsByTagName;
+      var importNode = originalDocument.importNode;
+      var documentMode = {};
+      try {
+        documentMode = clone2(document2).documentMode ? document2.documentMode : {};
+      } catch (_2) {
+      }
+      var hooks = {};
+      DOMPurify.isSupported = typeof getParentNode === "function" && implementation && typeof implementation.createHTMLDocument !== "undefined" && documentMode !== 9;
+      var MUSTACHE_EXPR$1 = MUSTACHE_EXPR, ERB_EXPR$1 = ERB_EXPR, DATA_ATTR$1 = DATA_ATTR, ARIA_ATTR$1 = ARIA_ATTR, IS_SCRIPT_OR_DATA$1 = IS_SCRIPT_OR_DATA, ATTR_WHITESPACE$1 = ATTR_WHITESPACE;
+      var IS_ALLOWED_URI$1 = IS_ALLOWED_URI;
+      var ALLOWED_TAGS = null;
+      var DEFAULT_ALLOWED_TAGS = addToSet({}, [].concat(_toConsumableArray(html$1), _toConsumableArray(svg$1), _toConsumableArray(svgFilters), _toConsumableArray(mathMl$1), _toConsumableArray(text)));
+      var ALLOWED_ATTR = null;
+      var DEFAULT_ALLOWED_ATTR = addToSet({}, [].concat(_toConsumableArray(html), _toConsumableArray(svg), _toConsumableArray(mathMl), _toConsumableArray(xml)));
+      var CUSTOM_ELEMENT_HANDLING = Object.seal(Object.create(null, {
+        tagNameCheck: {
+          writable: true,
+          configurable: false,
+          enumerable: true,
+          value: null
+        },
+        attributeNameCheck: {
+          writable: true,
+          configurable: false,
+          enumerable: true,
+          value: null
+        },
+        allowCustomizedBuiltInElements: {
+          writable: true,
+          configurable: false,
+          enumerable: true,
+          value: false
+        }
+      }));
+      var FORBID_TAGS = null;
+      var FORBID_ATTR = null;
+      var ALLOW_ARIA_ATTR = true;
+      var ALLOW_DATA_ATTR = true;
+      var ALLOW_UNKNOWN_PROTOCOLS = false;
+      var SAFE_FOR_TEMPLATES = false;
+      var WHOLE_DOCUMENT = false;
+      var SET_CONFIG = false;
+      var FORCE_BODY = false;
+      var RETURN_DOM = false;
+      var RETURN_DOM_FRAGMENT = false;
+      var RETURN_TRUSTED_TYPE = false;
+      var SANITIZE_DOM = true;
+      var KEEP_CONTENT = true;
+      var IN_PLACE = false;
+      var USE_PROFILES = {};
+      var FORBID_CONTENTS = null;
+      var DEFAULT_FORBID_CONTENTS = addToSet({}, ["annotation-xml", "audio", "colgroup", "desc", "foreignobject", "head", "iframe", "math", "mi", "mn", "mo", "ms", "mtext", "noembed", "noframes", "noscript", "plaintext", "script", "style", "svg", "template", "thead", "title", "video", "xmp"]);
+      var DATA_URI_TAGS = null;
+      var DEFAULT_DATA_URI_TAGS = addToSet({}, ["audio", "video", "img", "source", "image", "track"]);
+      var URI_SAFE_ATTRIBUTES = null;
+      var DEFAULT_URI_SAFE_ATTRIBUTES = addToSet({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]);
+      var MATHML_NAMESPACE = "http://www.w3.org/1998/Math/MathML";
+      var SVG_NAMESPACE = "http://www.w3.org/2000/svg";
+      var HTML_NAMESPACE = "http://www.w3.org/1999/xhtml";
+      var NAMESPACE = HTML_NAMESPACE;
+      var IS_EMPTY_INPUT = false;
+      var PARSER_MEDIA_TYPE;
+      var SUPPORTED_PARSER_MEDIA_TYPES = ["application/xhtml+xml", "text/html"];
+      var DEFAULT_PARSER_MEDIA_TYPE = "text/html";
+      var transformCaseFunc;
+      var CONFIG = null;
+      var formElement = document2.createElement("form");
+      var isRegexOrFunction = function isRegexOrFunction2(testValue) {
+        return testValue instanceof RegExp || testValue instanceof Function;
+      };
+      var _parseConfig = function _parseConfig2(cfg) {
+        if (CONFIG && CONFIG === cfg) {
+          return;
+        }
+        if (!cfg || _typeof(cfg) !== "object") {
+          cfg = {};
+        }
+        cfg = clone2(cfg);
+        ALLOWED_TAGS = "ALLOWED_TAGS" in cfg ? addToSet({}, cfg.ALLOWED_TAGS) : DEFAULT_ALLOWED_TAGS;
+        ALLOWED_ATTR = "ALLOWED_ATTR" in cfg ? addToSet({}, cfg.ALLOWED_ATTR) : DEFAULT_ALLOWED_ATTR;
+        URI_SAFE_ATTRIBUTES = "ADD_URI_SAFE_ATTR" in cfg ? addToSet(clone2(DEFAULT_URI_SAFE_ATTRIBUTES), cfg.ADD_URI_SAFE_ATTR) : DEFAULT_URI_SAFE_ATTRIBUTES;
+        DATA_URI_TAGS = "ADD_DATA_URI_TAGS" in cfg ? addToSet(clone2(DEFAULT_DATA_URI_TAGS), cfg.ADD_DATA_URI_TAGS) : DEFAULT_DATA_URI_TAGS;
+        FORBID_CONTENTS = "FORBID_CONTENTS" in cfg ? addToSet({}, cfg.FORBID_CONTENTS) : DEFAULT_FORBID_CONTENTS;
+        FORBID_TAGS = "FORBID_TAGS" in cfg ? addToSet({}, cfg.FORBID_TAGS) : {};
+        FORBID_ATTR = "FORBID_ATTR" in cfg ? addToSet({}, cfg.FORBID_ATTR) : {};
+        USE_PROFILES = "USE_PROFILES" in cfg ? cfg.USE_PROFILES : false;
+        ALLOW_ARIA_ATTR = cfg.ALLOW_ARIA_ATTR !== false;
+        ALLOW_DATA_ATTR = cfg.ALLOW_DATA_ATTR !== false;
+        ALLOW_UNKNOWN_PROTOCOLS = cfg.ALLOW_UNKNOWN_PROTOCOLS || false;
+        SAFE_FOR_TEMPLATES = cfg.SAFE_FOR_TEMPLATES || false;
+        WHOLE_DOCUMENT = cfg.WHOLE_DOCUMENT || false;
+        RETURN_DOM = cfg.RETURN_DOM || false;
+        RETURN_DOM_FRAGMENT = cfg.RETURN_DOM_FRAGMENT || false;
+        RETURN_TRUSTED_TYPE = cfg.RETURN_TRUSTED_TYPE || false;
+        FORCE_BODY = cfg.FORCE_BODY || false;
+        SANITIZE_DOM = cfg.SANITIZE_DOM !== false;
+        KEEP_CONTENT = cfg.KEEP_CONTENT !== false;
+        IN_PLACE = cfg.IN_PLACE || false;
+        IS_ALLOWED_URI$1 = cfg.ALLOWED_URI_REGEXP || IS_ALLOWED_URI$1;
+        NAMESPACE = cfg.NAMESPACE || HTML_NAMESPACE;
+        if (cfg.CUSTOM_ELEMENT_HANDLING && isRegexOrFunction(cfg.CUSTOM_ELEMENT_HANDLING.tagNameCheck)) {
+          CUSTOM_ELEMENT_HANDLING.tagNameCheck = cfg.CUSTOM_ELEMENT_HANDLING.tagNameCheck;
+        }
+        if (cfg.CUSTOM_ELEMENT_HANDLING && isRegexOrFunction(cfg.CUSTOM_ELEMENT_HANDLING.attributeNameCheck)) {
+          CUSTOM_ELEMENT_HANDLING.attributeNameCheck = cfg.CUSTOM_ELEMENT_HANDLING.attributeNameCheck;
+        }
+        if (cfg.CUSTOM_ELEMENT_HANDLING && typeof cfg.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements === "boolean") {
+          CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements = cfg.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements;
+        }
+        PARSER_MEDIA_TYPE = SUPPORTED_PARSER_MEDIA_TYPES.indexOf(cfg.PARSER_MEDIA_TYPE) === -1 ? PARSER_MEDIA_TYPE = DEFAULT_PARSER_MEDIA_TYPE : PARSER_MEDIA_TYPE = cfg.PARSER_MEDIA_TYPE;
+        transformCaseFunc = PARSER_MEDIA_TYPE === "application/xhtml+xml" ? function(x2) {
+          return x2;
+        } : stringToLowerCase;
+        if (SAFE_FOR_TEMPLATES) {
+          ALLOW_DATA_ATTR = false;
+        }
+        if (RETURN_DOM_FRAGMENT) {
+          RETURN_DOM = true;
+        }
+        if (USE_PROFILES) {
+          ALLOWED_TAGS = addToSet({}, _toConsumableArray(text));
+          ALLOWED_ATTR = [];
+          if (USE_PROFILES.html === true) {
+            addToSet(ALLOWED_TAGS, html$1);
+            addToSet(ALLOWED_ATTR, html);
+          }
+          if (USE_PROFILES.svg === true) {
+            addToSet(ALLOWED_TAGS, svg$1);
+            addToSet(ALLOWED_ATTR, svg);
+            addToSet(ALLOWED_ATTR, xml);
+          }
+          if (USE_PROFILES.svgFilters === true) {
+            addToSet(ALLOWED_TAGS, svgFilters);
+            addToSet(ALLOWED_ATTR, svg);
+            addToSet(ALLOWED_ATTR, xml);
+          }
+          if (USE_PROFILES.mathMl === true) {
+            addToSet(ALLOWED_TAGS, mathMl$1);
+            addToSet(ALLOWED_ATTR, mathMl);
+            addToSet(ALLOWED_ATTR, xml);
+          }
+        }
+        if (cfg.ADD_TAGS) {
+          if (ALLOWED_TAGS === DEFAULT_ALLOWED_TAGS) {
+            ALLOWED_TAGS = clone2(ALLOWED_TAGS);
+          }
+          addToSet(ALLOWED_TAGS, cfg.ADD_TAGS);
+        }
+        if (cfg.ADD_ATTR) {
+          if (ALLOWED_ATTR === DEFAULT_ALLOWED_ATTR) {
+            ALLOWED_ATTR = clone2(ALLOWED_ATTR);
+          }
+          addToSet(ALLOWED_ATTR, cfg.ADD_ATTR);
+        }
+        if (cfg.ADD_URI_SAFE_ATTR) {
+          addToSet(URI_SAFE_ATTRIBUTES, cfg.ADD_URI_SAFE_ATTR);
+        }
+        if (cfg.FORBID_CONTENTS) {
+          if (FORBID_CONTENTS === DEFAULT_FORBID_CONTENTS) {
+            FORBID_CONTENTS = clone2(FORBID_CONTENTS);
+          }
+          addToSet(FORBID_CONTENTS, cfg.FORBID_CONTENTS);
+        }
+        if (KEEP_CONTENT) {
+          ALLOWED_TAGS["#text"] = true;
+        }
+        if (WHOLE_DOCUMENT) {
+          addToSet(ALLOWED_TAGS, ["html", "head", "body"]);
+        }
+        if (ALLOWED_TAGS.table) {
+          addToSet(ALLOWED_TAGS, ["tbody"]);
+          delete FORBID_TAGS.tbody;
+        }
+        if (freeze) {
+          freeze(cfg);
+        }
+        CONFIG = cfg;
+      };
+      var MATHML_TEXT_INTEGRATION_POINTS = addToSet({}, ["mi", "mo", "mn", "ms", "mtext"]);
+      var HTML_INTEGRATION_POINTS = addToSet({}, ["foreignobject", "desc", "title", "annotation-xml"]);
+      var COMMON_SVG_AND_HTML_ELEMENTS = addToSet({}, ["title", "style", "font", "a", "script"]);
+      var ALL_SVG_TAGS = addToSet({}, svg$1);
+      addToSet(ALL_SVG_TAGS, svgFilters);
+      addToSet(ALL_SVG_TAGS, svgDisallowed);
+      var ALL_MATHML_TAGS = addToSet({}, mathMl$1);
+      addToSet(ALL_MATHML_TAGS, mathMlDisallowed);
+      var _checkValidNamespace = function _checkValidNamespace2(element) {
+        var parent = getParentNode(element);
+        if (!parent || !parent.tagName) {
+          parent = {
+            namespaceURI: HTML_NAMESPACE,
+            tagName: "template"
+          };
+        }
+        var tagName = stringToLowerCase(element.tagName);
+        var parentTagName = stringToLowerCase(parent.tagName);
+        if (element.namespaceURI === SVG_NAMESPACE) {
+          if (parent.namespaceURI === HTML_NAMESPACE) {
+            return tagName === "svg";
+          }
+          if (parent.namespaceURI === MATHML_NAMESPACE) {
+            return tagName === "svg" && (parentTagName === "annotation-xml" || MATHML_TEXT_INTEGRATION_POINTS[parentTagName]);
+          }
+          return Boolean(ALL_SVG_TAGS[tagName]);
+        }
+        if (element.namespaceURI === MATHML_NAMESPACE) {
+          if (parent.namespaceURI === HTML_NAMESPACE) {
+            return tagName === "math";
+          }
+          if (parent.namespaceURI === SVG_NAMESPACE) {
+            return tagName === "math" && HTML_INTEGRATION_POINTS[parentTagName];
+          }
+          return Boolean(ALL_MATHML_TAGS[tagName]);
+        }
+        if (element.namespaceURI === HTML_NAMESPACE) {
+          if (parent.namespaceURI === SVG_NAMESPACE && !HTML_INTEGRATION_POINTS[parentTagName]) {
+            return false;
+          }
+          if (parent.namespaceURI === MATHML_NAMESPACE && !MATHML_TEXT_INTEGRATION_POINTS[parentTagName]) {
+            return false;
+          }
+          return !ALL_MATHML_TAGS[tagName] && (COMMON_SVG_AND_HTML_ELEMENTS[tagName] || !ALL_SVG_TAGS[tagName]);
+        }
+        return false;
+      };
+      var _forceRemove = function _forceRemove2(node) {
+        arrayPush(DOMPurify.removed, {
+          element: node
+        });
+        try {
+          node.parentNode.removeChild(node);
+        } catch (_2) {
+          try {
+            node.outerHTML = emptyHTML;
+          } catch (_3) {
+            node.remove();
+          }
+        }
+      };
+      var _removeAttribute = function _removeAttribute2(name, node) {
+        try {
+          arrayPush(DOMPurify.removed, {
+            attribute: node.getAttributeNode(name),
+            from: node
+          });
+        } catch (_2) {
+          arrayPush(DOMPurify.removed, {
+            attribute: null,
+            from: node
+          });
+        }
+        node.removeAttribute(name);
+        if (name === "is" && !ALLOWED_ATTR[name]) {
+          if (RETURN_DOM || RETURN_DOM_FRAGMENT) {
+            try {
+              _forceRemove(node);
+            } catch (_2) {
+            }
+          } else {
+            try {
+              node.setAttribute(name, "");
+            } catch (_2) {
+            }
+          }
+        }
+      };
+      var _initDocument = function _initDocument2(dirty) {
+        var doc;
+        var leadingWhitespace;
+        if (FORCE_BODY) {
+          dirty = "<remove></remove>" + dirty;
+        } else {
+          var matches = stringMatch(dirty, /^[\r\n\t ]+/);
+          leadingWhitespace = matches && matches[0];
+        }
+        if (PARSER_MEDIA_TYPE === "application/xhtml+xml") {
+          dirty = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + dirty + "</body></html>";
+        }
+        var dirtyPayload = trustedTypesPolicy ? trustedTypesPolicy.createHTML(dirty) : dirty;
+        if (NAMESPACE === HTML_NAMESPACE) {
+          try {
+            doc = new DOMParser().parseFromString(dirtyPayload, PARSER_MEDIA_TYPE);
+          } catch (_2) {
+          }
+        }
+        if (!doc || !doc.documentElement) {
+          doc = implementation.createDocument(NAMESPACE, "template", null);
+          try {
+            doc.documentElement.innerHTML = IS_EMPTY_INPUT ? "" : dirtyPayload;
+          } catch (_2) {
+          }
+        }
+        var body = doc.body || doc.documentElement;
+        if (dirty && leadingWhitespace) {
+          body.insertBefore(document2.createTextNode(leadingWhitespace), body.childNodes[0] || null);
+        }
+        if (NAMESPACE === HTML_NAMESPACE) {
+          return getElementsByTagName.call(doc, WHOLE_DOCUMENT ? "html" : "body")[0];
+        }
+        return WHOLE_DOCUMENT ? doc.documentElement : body;
+      };
+      var _createIterator = function _createIterator2(root) {
+        return createNodeIterator.call(root.ownerDocument || root, root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_TEXT, null, false);
+      };
+      var _isClobbered = function _isClobbered2(elm) {
+        return elm instanceof HTMLFormElement && (typeof elm.nodeName !== "string" || typeof elm.textContent !== "string" || typeof elm.removeChild !== "function" || !(elm.attributes instanceof NamedNodeMap) || typeof elm.removeAttribute !== "function" || typeof elm.setAttribute !== "function" || typeof elm.namespaceURI !== "string" || typeof elm.insertBefore !== "function");
+      };
+      var _isNode = function _isNode2(object) {
+        return _typeof(Node) === "object" ? object instanceof Node : object && _typeof(object) === "object" && typeof object.nodeType === "number" && typeof object.nodeName === "string";
+      };
+      var _executeHook = function _executeHook2(entryPoint, currentNode, data) {
+        if (!hooks[entryPoint]) {
+          return;
+        }
+        arrayForEach(hooks[entryPoint], function(hook) {
+          hook.call(DOMPurify, currentNode, data, CONFIG);
+        });
+      };
+      var _sanitizeElements = function _sanitizeElements2(currentNode) {
+        var content;
+        _executeHook("beforeSanitizeElements", currentNode, null);
+        if (_isClobbered(currentNode)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        if (regExpTest(/[\u0080-\uFFFF]/, currentNode.nodeName)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        var tagName = transformCaseFunc(currentNode.nodeName);
+        _executeHook("uponSanitizeElement", currentNode, {
+          tagName,
+          allowedTags: ALLOWED_TAGS
+        });
+        if (currentNode.hasChildNodes() && !_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/<[/\w]/g, currentNode.innerHTML) && regExpTest(/<[/\w]/g, currentNode.textContent)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        if (tagName === "select" && regExpTest(/<template/i, currentNode.innerHTML)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        if (!ALLOWED_TAGS[tagName] || FORBID_TAGS[tagName]) {
+          if (!FORBID_TAGS[tagName] && _basicCustomElementTest(tagName)) {
+            if (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.tagNameCheck, tagName))
+              return false;
+            if (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.tagNameCheck(tagName))
+              return false;
+          }
+          if (KEEP_CONTENT && !FORBID_CONTENTS[tagName]) {
+            var parentNode = getParentNode(currentNode) || currentNode.parentNode;
+            var childNodes = getChildNodes(currentNode) || currentNode.childNodes;
+            if (childNodes && parentNode) {
+              var childCount = childNodes.length;
+              for (var i2 = childCount - 1; i2 >= 0; --i2) {
+                parentNode.insertBefore(cloneNode(childNodes[i2], true), getNextSibling(currentNode));
+              }
+            }
+          }
+          _forceRemove(currentNode);
+          return true;
+        }
+        if (currentNode instanceof Element2 && !_checkValidNamespace(currentNode)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        if ((tagName === "noscript" || tagName === "noembed") && regExpTest(/<\/no(script|embed)/i, currentNode.innerHTML)) {
+          _forceRemove(currentNode);
+          return true;
+        }
+        if (SAFE_FOR_TEMPLATES && currentNode.nodeType === 3) {
+          content = currentNode.textContent;
+          content = stringReplace(content, MUSTACHE_EXPR$1, " ");
+          content = stringReplace(content, ERB_EXPR$1, " ");
+          if (currentNode.textContent !== content) {
+            arrayPush(DOMPurify.removed, {
+              element: currentNode.cloneNode()
+            });
+            currentNode.textContent = content;
+          }
+        }
+        _executeHook("afterSanitizeElements", currentNode, null);
+        return false;
+      };
+      var _isValidAttribute = function _isValidAttribute2(lcTag, lcName, value) {
+        if (SANITIZE_DOM && (lcName === "id" || lcName === "name") && (value in document2 || value in formElement)) {
+          return false;
+        }
+        if (ALLOW_DATA_ATTR && !FORBID_ATTR[lcName] && regExpTest(DATA_ATTR$1, lcName))
+          ;
+        else if (ALLOW_ARIA_ATTR && regExpTest(ARIA_ATTR$1, lcName))
+          ;
+        else if (!ALLOWED_ATTR[lcName] || FORBID_ATTR[lcName]) {
+          if (_basicCustomElementTest(lcTag) && (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.tagNameCheck, lcTag) || CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.tagNameCheck(lcTag)) && (CUSTOM_ELEMENT_HANDLING.attributeNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.attributeNameCheck, lcName) || CUSTOM_ELEMENT_HANDLING.attributeNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.attributeNameCheck(lcName)) || lcName === "is" && CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements && (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.tagNameCheck, value) || CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.tagNameCheck(value)))
+            ;
+          else {
+            return false;
+          }
+        } else if (URI_SAFE_ATTRIBUTES[lcName])
+          ;
+        else if (regExpTest(IS_ALLOWED_URI$1, stringReplace(value, ATTR_WHITESPACE$1, "")))
+          ;
+        else if ((lcName === "src" || lcName === "xlink:href" || lcName === "href") && lcTag !== "script" && stringIndexOf(value, "data:") === 0 && DATA_URI_TAGS[lcTag])
+          ;
+        else if (ALLOW_UNKNOWN_PROTOCOLS && !regExpTest(IS_SCRIPT_OR_DATA$1, stringReplace(value, ATTR_WHITESPACE$1, "")))
+          ;
+        else if (!value)
+          ;
+        else {
+          return false;
+        }
+        return true;
+      };
+      var _basicCustomElementTest = function _basicCustomElementTest2(tagName) {
+        return tagName.indexOf("-") > 0;
+      };
+      var _sanitizeAttributes = function _sanitizeAttributes2(currentNode) {
+        var attr;
+        var value;
+        var lcName;
+        var l2;
+        _executeHook("beforeSanitizeAttributes", currentNode, null);
+        var attributes = currentNode.attributes;
+        if (!attributes) {
+          return;
+        }
+        var hookEvent = {
+          attrName: "",
+          attrValue: "",
+          keepAttr: true,
+          allowedAttributes: ALLOWED_ATTR
+        };
+        l2 = attributes.length;
+        while (l2--) {
+          attr = attributes[l2];
+          var _attr = attr, name = _attr.name, namespaceURI = _attr.namespaceURI;
+          value = name === "value" ? attr.value : stringTrim(attr.value);
+          lcName = transformCaseFunc(name);
+          hookEvent.attrName = lcName;
+          hookEvent.attrValue = value;
+          hookEvent.keepAttr = true;
+          hookEvent.forceKeepAttr = void 0;
+          _executeHook("uponSanitizeAttribute", currentNode, hookEvent);
+          value = hookEvent.attrValue;
+          if (hookEvent.forceKeepAttr) {
+            continue;
+          }
+          _removeAttribute(name, currentNode);
+          if (!hookEvent.keepAttr) {
+            continue;
+          }
+          if (regExpTest(/\/>/i, value)) {
+            _removeAttribute(name, currentNode);
+            continue;
+          }
+          if (SAFE_FOR_TEMPLATES) {
+            value = stringReplace(value, MUSTACHE_EXPR$1, " ");
+            value = stringReplace(value, ERB_EXPR$1, " ");
+          }
+          var lcTag = transformCaseFunc(currentNode.nodeName);
+          if (!_isValidAttribute(lcTag, lcName, value)) {
+            continue;
+          }
+          try {
+            if (namespaceURI) {
+              currentNode.setAttributeNS(namespaceURI, name, value);
+            } else {
+              currentNode.setAttribute(name, value);
+            }
+            arrayPop(DOMPurify.removed);
+          } catch (_2) {
+          }
+        }
+        _executeHook("afterSanitizeAttributes", currentNode, null);
+      };
+      var _sanitizeShadowDOM = function _sanitizeShadowDOM2(fragment) {
+        var shadowNode;
+        var shadowIterator = _createIterator(fragment);
+        _executeHook("beforeSanitizeShadowDOM", fragment, null);
+        while (shadowNode = shadowIterator.nextNode()) {
+          _executeHook("uponSanitizeShadowNode", shadowNode, null);
+          if (_sanitizeElements(shadowNode)) {
+            continue;
+          }
+          if (shadowNode.content instanceof DocumentFragment) {
+            _sanitizeShadowDOM2(shadowNode.content);
+          }
+          _sanitizeAttributes(shadowNode);
+        }
+        _executeHook("afterSanitizeShadowDOM", fragment, null);
+      };
+      DOMPurify.sanitize = function(dirty, cfg) {
+        var body;
+        var importedNode;
+        var currentNode;
+        var oldNode;
+        var returnNode;
+        IS_EMPTY_INPUT = !dirty;
+        if (IS_EMPTY_INPUT) {
+          dirty = "<!-->";
+        }
+        if (typeof dirty !== "string" && !_isNode(dirty)) {
+          if (typeof dirty.toString !== "function") {
+            throw typeErrorCreate("toString is not a function");
+          } else {
+            dirty = dirty.toString();
+            if (typeof dirty !== "string") {
+              throw typeErrorCreate("dirty is not a string, aborting");
+            }
+          }
+        }
+        if (!DOMPurify.isSupported) {
+          if (_typeof(window2.toStaticHTML) === "object" || typeof window2.toStaticHTML === "function") {
+            if (typeof dirty === "string") {
+              return window2.toStaticHTML(dirty);
+            }
+            if (_isNode(dirty)) {
+              return window2.toStaticHTML(dirty.outerHTML);
+            }
+          }
+          return dirty;
+        }
+        if (!SET_CONFIG) {
+          _parseConfig(cfg);
+        }
+        DOMPurify.removed = [];
+        if (typeof dirty === "string") {
+          IN_PLACE = false;
+        }
+        if (IN_PLACE) {
+          if (dirty.nodeName) {
+            var tagName = transformCaseFunc(dirty.nodeName);
+            if (!ALLOWED_TAGS[tagName] || FORBID_TAGS[tagName]) {
+              throw typeErrorCreate("root node is forbidden and cannot be sanitized in-place");
+            }
+          }
+        } else if (dirty instanceof Node) {
+          body = _initDocument("<!---->");
+          importedNode = body.ownerDocument.importNode(dirty, true);
+          if (importedNode.nodeType === 1 && importedNode.nodeName === "BODY") {
+            body = importedNode;
+          } else if (importedNode.nodeName === "HTML") {
+            body = importedNode;
+          } else {
+            body.appendChild(importedNode);
+          }
+        } else {
+          if (!RETURN_DOM && !SAFE_FOR_TEMPLATES && !WHOLE_DOCUMENT && dirty.indexOf("<") === -1) {
+            return trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML(dirty) : dirty;
+          }
+          body = _initDocument(dirty);
+          if (!body) {
+            return RETURN_DOM ? null : RETURN_TRUSTED_TYPE ? emptyHTML : "";
+          }
+        }
+        if (body && FORCE_BODY) {
+          _forceRemove(body.firstChild);
+        }
+        var nodeIterator = _createIterator(IN_PLACE ? dirty : body);
+        while (currentNode = nodeIterator.nextNode()) {
+          if (currentNode.nodeType === 3 && currentNode === oldNode) {
+            continue;
+          }
+          if (_sanitizeElements(currentNode)) {
+            continue;
+          }
+          if (currentNode.content instanceof DocumentFragment) {
+            _sanitizeShadowDOM(currentNode.content);
+          }
+          _sanitizeAttributes(currentNode);
+          oldNode = currentNode;
+        }
+        oldNode = null;
+        if (IN_PLACE) {
+          return dirty;
+        }
+        if (RETURN_DOM) {
+          if (RETURN_DOM_FRAGMENT) {
+            returnNode = createDocumentFragment.call(body.ownerDocument);
+            while (body.firstChild) {
+              returnNode.appendChild(body.firstChild);
+            }
+          } else {
+            returnNode = body;
+          }
+          if (ALLOWED_ATTR.shadowroot) {
+            returnNode = importNode.call(originalDocument, returnNode, true);
+          }
+          return returnNode;
+        }
+        var serializedHTML = WHOLE_DOCUMENT ? body.outerHTML : body.innerHTML;
+        if (WHOLE_DOCUMENT && ALLOWED_TAGS["!doctype"] && body.ownerDocument && body.ownerDocument.doctype && body.ownerDocument.doctype.name && regExpTest(DOCTYPE_NAME, body.ownerDocument.doctype.name)) {
+          serializedHTML = "<!DOCTYPE " + body.ownerDocument.doctype.name + ">\n" + serializedHTML;
+        }
+        if (SAFE_FOR_TEMPLATES) {
+          serializedHTML = stringReplace(serializedHTML, MUSTACHE_EXPR$1, " ");
+          serializedHTML = stringReplace(serializedHTML, ERB_EXPR$1, " ");
+        }
+        return trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML(serializedHTML) : serializedHTML;
+      };
+      DOMPurify.setConfig = function(cfg) {
+        _parseConfig(cfg);
+        SET_CONFIG = true;
+      };
+      DOMPurify.clearConfig = function() {
+        CONFIG = null;
+        SET_CONFIG = false;
+      };
+      DOMPurify.isValidAttribute = function(tag, attr, value) {
+        if (!CONFIG) {
+          _parseConfig({});
+        }
+        var lcTag = transformCaseFunc(tag);
+        var lcName = transformCaseFunc(attr);
+        return _isValidAttribute(lcTag, lcName, value);
+      };
+      DOMPurify.addHook = function(entryPoint, hookFunction) {
+        if (typeof hookFunction !== "function") {
+          return;
+        }
+        hooks[entryPoint] = hooks[entryPoint] || [];
+        arrayPush(hooks[entryPoint], hookFunction);
+      };
+      DOMPurify.removeHook = function(entryPoint) {
+        if (hooks[entryPoint]) {
+          return arrayPop(hooks[entryPoint]);
+        }
+      };
+      DOMPurify.removeHooks = function(entryPoint) {
+        if (hooks[entryPoint]) {
+          hooks[entryPoint] = [];
+        }
+      };
+      DOMPurify.removeAllHooks = function() {
+        hooks = {};
+      };
+      return DOMPurify;
+    }
+    var purify2 = createDOMPurify();
+    return purify2;
+  });
+})(purify);
+var browser = window.DOMPurify || (window.DOMPurify = purify.exports.default || purify.exports);
+const TEMP_TARGET_ATTRIBUTE = "data-target-temp";
+function addAttributeHooks() {
+  browser.addHook("beforeSanitizeAttributes", (node) => {
+    if (node.tagName === "A") {
+      const targetValue = node.getAttribute("target");
+      if (targetValue) {
+        node.setAttribute(TEMP_TARGET_ATTRIBUTE, targetValue);
+      } else {
+        node.setAttribute("target", "_self");
+      }
+    }
+  });
+  browser.addHook("afterSanitizeAttributes", (node) => {
+    if (node.tagName === "A" && node.hasAttribute(TEMP_TARGET_ATTRIBUTE)) {
+      node.setAttribute("target", node.getAttribute(TEMP_TARGET_ATTRIBUTE));
+      node.removeAttribute(TEMP_TARGET_ATTRIBUTE);
+      if (node.getAttribute("target") === "_blank") {
+        node.setAttribute("rel", "noopener");
+      }
+    }
+  });
+}
+function removeAttributeHooks() {
+  browser.removeAllHooks();
+}
+function sanitize(str) {
+  return browser.sanitize(str);
+}
+function Template({ template, param, as: tagName = "div" }) {
+  var _a;
+  const templates2 = useStore(templateSelector);
+  const templateFunc = templates2[template];
+  if (isNil(templateFunc)) {
+    return null;
+  }
+  const htmlOrVnode = templateFunc(param);
+  return isString_1(htmlOrVnode) ? h$3(tagName, {
+    className: cls(`template-${template}`),
+    dangerouslySetInnerHTML: {
+      __html: sanitize(htmlOrVnode)
+    }
+  }) : q$3(htmlOrVnode, {
+    className: `${(_a = htmlOrVnode.props.className) != null ? _a : ""} ${cls(`template-${template}`)}`
+  });
+}
+const EventBusContext = B$1(null);
+const EventBusProvider = EventBusContext.Provider;
+const useEventBus = () => {
+  const eventBus = q$2(EventBusContext);
+  if (!eventBus) {
+    throw new Error("useEventBus must be used within a EventBusProvider");
+  }
+  return eventBus;
+};
+const primaryTimezoneSelector = (state) => {
+  var _a, _b, _c, _d, _e;
+  return (_e = (_d = (_c = (_b = (_a = state.options) == null ? void 0 : _a.timezone) == null ? void 0 : _b.zones) == null ? void 0 : _c[0]) == null ? void 0 : _d.timezoneName) != null ? _e : "Local";
+};
+const customOffsetCalculatorSelector = (state) => {
+  var _a, _b;
+  return (_b = (_a = state.options) == null ? void 0 : _a.timezone) == null ? void 0 : _b.customOffsetCalculator;
+};
+const timezonesSelector = (state) => {
+  var _a;
+  return (_a = state.options.timezone.zones) != null ? _a : [];
+};
+function useTZConverter() {
+  const customOffsetCalculator = useStore(customOffsetCalculatorSelector);
+  const hasCustomOffsetCalculator = isPresent(customOffsetCalculator);
+  return T$1((timezoneName, tzDate = new TZDate()) => tzDate.tz(hasCustomOffsetCalculator ? customOffsetCalculator(timezoneName, tzDate.getTime()) : timezoneName), [customOffsetCalculator, hasCustomOffsetCalculator]);
+}
+function usePrimaryTimezone() {
+  const primaryTimezoneName = useStore(primaryTimezoneSelector);
+  const tzConverter = useTZConverter();
+  const getNow = T$1(() => tzConverter(primaryTimezoneName), [primaryTimezoneName, tzConverter]);
+  return [primaryTimezoneName, getNow];
+}
+function isWeekDayName(type, dayName) {
+  return type === "week";
+}
+function getWeekDayNameColor({
+  dayName,
+  theme,
+  today
+}) {
+  var _a, _b;
+  const { day, dateInstance } = dayName;
+  const isToday = isSameDate(today, dateInstance);
+  const isPastDay = !isToday && dateInstance < today;
+  if (isSunday(day)) {
+    return theme.common.holiday.color;
+  }
+  if (isPastDay) {
+    return (_a = theme.week) == null ? void 0 : _a.pastDay.color;
+  }
+  if (isSaturday(day)) {
+    return theme.common.saturday.color;
+  }
+  if (isToday) {
+    return (_b = theme.week) == null ? void 0 : _b.today.color;
+  }
+  return theme.common.dayName.color;
+}
+function getMonthDayNameColor({
+  dayName,
+  theme
+}) {
+  const { day } = dayName;
+  if (isSunday(day)) {
+    return theme.common.holiday.color;
+  }
+  if (isSaturday(day)) {
+    return theme.common.saturday.color;
+  }
+  return theme.common.dayName.color;
+}
+function DayName({ dayName, style, type, theme }) {
+  const eventBus = useEventBus();
+  const [, getNow] = usePrimaryTimezone();
+  const today = getNow();
+  const { day } = dayName;
+  const color = type === "week" ? getWeekDayNameColor({ dayName, theme, today }) : getMonthDayNameColor({ dayName, theme });
+  const templateType = `${type}DayName`;
+  const handleClick = () => {
+    if (isWeekDayName(type)) {
+      eventBus.fire("clickDayName", { date: toFormat(dayName.dateInstance, "YYYY-MM-DD") });
+    }
+  };
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("day-name-item", type),
+    style
+  }, /* @__PURE__ */ h$3("span", {
+    className: cls({ [`holiday-${getDayName(day)}`]: isWeekend(day) }),
+    style: { color },
+    onClick: handleClick,
+    "data-testid": `dayName-${type}-${getDayName(day)}`
+  }, /* @__PURE__ */ h$3(Template, {
+    template: templateType,
+    param: dayName
+  })));
+}
+const commonThemeSelector = topLevelStateSelector("common");
+const monthThemeSelector = topLevelStateSelector("month");
+const weekDayGridLeftSelector = (theme) => theme.week.dayGridLeft;
+const weekTimeGridLeftSelector = (theme) => theme.week.timeGridLeft;
+const monthMoreViewSelector = (theme) => theme.month.moreView;
+const monthGridCellSelector = (theme) => theme.month.gridCell;
+const DEFAULT_COMMON_THEME = {
+  border: "1px solid #e5e5e5",
+  backgroundColor: "white",
+  holiday: {
+    color: "#ff4040"
+  },
+  saturday: {
+    color: "#333"
+  },
+  dayName: {
+    color: "#333"
+  },
+  today: {
+    color: "#fff"
+  },
+  gridSelection: {
+    backgroundColor: "rgba(81, 92, 230, 0.05)",
+    border: "1px solid #515ce6"
+  }
+};
+const DEFAULT_WEEK_THEME = {
+  dayName: {
+    borderLeft: "none",
+    borderTop: "1px solid #e5e5e5",
+    borderBottom: "1px solid #e5e5e5",
+    backgroundColor: "inherit"
+  },
+  weekend: {
+    backgroundColor: "inherit"
+  },
+  today: {
+    color: "inherit",
+    backgroundColor: "rgba(81, 92, 230, 0.05)"
+  },
+  pastDay: {
+    color: "#bbb"
+  },
+  panelResizer: {
+    border: "1px solid #e5e5e5"
+  },
+  dayGrid: {
+    borderRight: "1px solid #e5e5e5",
+    backgroundColor: "inherit"
+  },
+  dayGridLeft: {
+    borderRight: "1px solid #e5e5e5",
+    backgroundColor: "inherit",
+    width: "72px"
+  },
+  timeGrid: {
+    borderRight: "1px solid #e5e5e5"
+  },
+  timeGridLeft: {
+    backgroundColor: "inherit",
+    borderRight: "1px solid #e5e5e5",
+    width: "72px"
+  },
+  timeGridLeftAdditionalTimezone: {
+    backgroundColor: "white"
+  },
+  timeGridHalfHourLine: {
+    borderBottom: "none"
+  },
+  timeGridHourLine: {
+    borderBottom: "1px solid #e5e5e5"
+  },
+  nowIndicatorLabel: {
+    color: "#515ce6"
+  },
+  nowIndicatorPast: {
+    border: "1px dashed #515ce6"
+  },
+  nowIndicatorBullet: {
+    backgroundColor: "#515ce6"
+  },
+  nowIndicatorToday: {
+    border: "1px solid #515ce6"
+  },
+  nowIndicatorFuture: {
+    border: "none"
+  },
+  pastTime: {
+    color: "#bbb"
+  },
+  futureTime: {
+    color: "#333"
+  },
+  gridSelection: {
+    color: "#515ce6"
+  }
+};
+const DEFAULT_MONTH_THEME = {
+  dayName: {
+    borderLeft: "none",
+    backgroundColor: "inherit"
+  },
+  holidayExceptThisMonth: {
+    color: "rgba(255, 64, 64, 0.4)"
+  },
+  dayExceptThisMonth: {
+    color: "rgba(51, 51, 51, 0.4)"
+  },
+  weekend: {
+    backgroundColor: "inherit"
+  },
+  moreView: {
+    border: "1px solid #d5d5d5",
+    boxShadow: "0 2px 6px 0 rgba(0, 0, 0, 0.1)",
+    backgroundColor: "white",
+    width: null,
+    height: null
+  },
+  gridCell: {
+    headerHeight: 31,
+    footerHeight: null
+  },
+  moreViewTitle: {
+    backgroundColor: "inherit"
+  }
+};
+function createCommonTheme(commonTheme = {}) {
+  return {
+    common: mergeObject(DEFAULT_COMMON_THEME, commonTheme)
+  };
+}
+function createThemeDispatch(set) {
+  return {
+    setTheme: (theme) => {
+      set(produce((state) => {
+        state.common = mergeObject(state.common, theme.common);
+        state.week = mergeObject(state.week, theme.week);
+        state.month = mergeObject(state.month, theme.month);
+      }));
+    },
+    setCommonTheme: (commonTheme) => {
+      set(produce((state) => {
+        state.common = mergeObject(state.common, commonTheme);
+      }));
+    },
+    setWeekTheme: (weekTheme) => {
+      set(produce((state) => {
+        state.week = mergeObject(state.week, weekTheme);
+      }));
+    },
+    setMonthTheme: (monthTheme) => {
+      set(produce((state) => {
+        state.month = mergeObject(state.month, monthTheme);
+      }));
+    }
+  };
+}
+function createMonthTheme(monthTheme = {}) {
+  return {
+    month: mergeObject(DEFAULT_MONTH_THEME, monthTheme)
+  };
+}
+function createWeekTheme(weekTheme = {}) {
+  return {
+    week: mergeObject(DEFAULT_WEEK_THEME, weekTheme)
+  };
+}
+const themeStoreCreator = (themeOptions = {}) => (set) => {
+  return __spreadProps(__spreadValues(__spreadValues(__spreadValues({}, createCommonTheme(themeOptions == null ? void 0 : themeOptions.common)), createWeekTheme(themeOptions == null ? void 0 : themeOptions.week)), createMonthTheme(themeOptions == null ? void 0 : themeOptions.month)), {
+    dispatch: __spreadValues({}, createThemeDispatch(set))
+  });
+};
+const initThemeStore = (themeOptions = {}) => createStore(themeStoreCreator(themeOptions));
+const {
+  StoreProvider: ThemeProvider,
+  useInternalStore: useInternalThemeStore,
+  useStore: useTheme
+} = createStoreContext();
+function useCommonTheme() {
+  return useTheme(commonThemeSelector);
+}
+function useMonthTheme() {
+  return useTheme(monthThemeSelector);
+}
+function weekDayNameSelector(theme) {
+  return {
+    common: {
+      saturday: theme.common.saturday,
+      holiday: theme.common.holiday,
+      today: theme.common.today,
+      dayName: theme.common.dayName
+    },
+    week: {
+      pastDay: theme.week.pastDay,
+      today: theme.week.today,
+      dayName: theme.week.dayName
+    }
+  };
+}
+function monthDayNameSelector(theme) {
+  return {
+    common: {
+      saturday: theme.common.saturday,
+      holiday: theme.common.holiday,
+      today: theme.common.today,
+      dayName: theme.common.dayName
+    },
+    month: {
+      dayName: theme.month.dayName
+    }
+  };
+}
+function GridHeader({
+  dayNames,
+  marginLeft = DEFAULT_DAY_NAME_MARGIN_LEFT,
+  rowStyleInfo,
+  type = "month"
+}) {
+  var _a, _b;
+  const theme = useTheme(type === "month" ? monthDayNameSelector : weekDayNameSelector);
+  const _c = (_b = (_a = theme[type]) == null ? void 0 : _a.dayName) != null ? _b : {}, { backgroundColor = "white", borderLeft = null } = _c, rest = __objRest(_c, ["backgroundColor", "borderLeft"]);
+  const { borderTop = null, borderBottom = null } = rest;
+  return /* @__PURE__ */ h$3("div", {
+    "data-testid": `grid-header-${type}`,
+    className: cls("day-names", type),
+    style: {
+      backgroundColor,
+      borderTop,
+      borderBottom
+    }
+  }, /* @__PURE__ */ h$3("div", {
+    className: cls("day-name-container"),
+    style: { marginLeft }
+  }, dayNames.map((dayName, index) => /* @__PURE__ */ h$3(DayName, {
+    type,
+    key: `dayNames-${dayName.day}`,
+    dayName,
+    style: {
+      width: toPercent(rowStyleInfo[index].width),
+      left: toPercent(rowStyleInfo[index].left),
+      borderLeft
+    },
+    theme
+  }))));
+}
+const DEFAULT_VISIBLE_WEEKS = 6;
+var CellBarType = /* @__PURE__ */ ((CellBarType2) => {
+  CellBarType2["header"] = "header";
+  CellBarType2["footer"] = "footer";
+  return CellBarType2;
+})(CellBarType || {});
+function getCollisionGroup(events, usingTravelTime = true) {
+  const collisionGroups = [];
+  let previousEventList;
+  if (!events.length) {
+    return collisionGroups;
+  }
+  collisionGroups[0] = [events[0].cid()];
+  events.slice(1).forEach((event, index) => {
+    previousEventList = events.slice(0, index + 1).reverse();
+    const found = previousEventList.find((previous) => event.collidesWith(previous, usingTravelTime));
+    if (!found) {
+      collisionGroups.push([event.cid()]);
+    } else {
+      collisionGroups.slice().reverse().some((group) => {
+        if (~group.indexOf(found.cid())) {
+          group.push(event.cid());
+          return true;
+        }
+        return false;
+      });
+    }
+  });
+  return collisionGroups;
+}
+function getLastRowInColumn(matrix, col) {
+  let { length: row } = matrix;
+  while (row > 0) {
+    row -= 1;
+    if (!isUndefined_1(matrix[row][col])) {
+      return row;
+    }
+  }
+  return -1;
+}
+function getMatrices(collection, collisionGroups, usingTravelTime = true) {
+  const result = [];
+  collisionGroups.forEach((group) => {
+    const matrix = [[]];
+    group.forEach((eventID) => {
+      const event = collection.get(eventID);
+      let col = 0;
+      let found = false;
+      let nextRow;
+      let lastRowInColumn;
+      while (!found) {
+        lastRowInColumn = getLastRowInColumn(matrix, col);
+        if (lastRowInColumn === -1) {
+          matrix[0].push(event);
+          found = true;
+        } else if (!event.collidesWith(matrix[lastRowInColumn][col], usingTravelTime)) {
+          nextRow = lastRowInColumn + 1;
+          if (isUndefined_1(matrix[nextRow])) {
+            matrix[nextRow] = [];
+          }
+          matrix[nextRow][col] = event;
+          found = true;
+        }
+        col += 1;
+      }
+    });
+    result.push(matrix);
+  });
+  return result;
+}
+function getEventInDateRangeFilter(start, end) {
+  return (model) => {
+    const ownStarts = model.getStarts();
+    const ownEnds = model.getEnds();
+    return !(ownEnds < start || ownStarts > end);
+  };
+}
+function positionUIModels(start, end, matrices, iteratee) {
+  const ymdListToRender = makeDateRange(start, end, MS_PER_DAY).map((date2) => toFormat(date2, "YYYYMMDD"));
+  matrices.forEach((matrix) => {
+    matrix.forEach((column) => {
+      column.forEach((uiModel, index) => {
+        if (!uiModel) {
+          return;
+        }
+        const ymd = toFormat(uiModel.getStarts(), "YYYYMMDD");
+        const dateLength = makeDateRange(toStartOfDay(uiModel.getStarts()), toEndOfDay(uiModel.getEnds()), MS_PER_DAY).length;
+        uiModel.top = index;
+        uiModel.left = ymdListToRender.indexOf(ymd);
+        uiModel.width = dateLength;
+        iteratee == null ? void 0 : iteratee(uiModel);
+      });
+    });
+  });
+}
+function limit$1(start, end, uiModel) {
+  if (uiModel.getStarts() < start) {
+    uiModel.exceedLeft = true;
+    uiModel.renderStarts = new TZDate(start);
+  }
+  if (uiModel.getEnds() > end) {
+    uiModel.exceedRight = true;
+    uiModel.renderEnds = new TZDate(end);
+  }
+  return uiModel;
+}
+function limitRenderRange(start, end, uiModelColl) {
+  if (uiModelColl instanceof Collection) {
+    uiModelColl.each((uiModel) => {
+      limit$1(start, end, uiModel);
+      return true;
+    });
+    return null;
+  }
+  return limit$1(start, end, uiModelColl);
+}
+function convertToUIModel(eventCollection) {
+  const uiModelColl = new Collection((uiModel) => {
+    return uiModel.cid();
+  });
+  eventCollection.each(function(event) {
+    uiModelColl.add(new EventUIModel(event));
+  });
+  return uiModelColl;
+}
+function _isAllday({ model }) {
+  return model.isAllday || model.hasMultiDates;
+}
+function _isNotAllday(uiModel) {
+  return !_isAllday(uiModel);
+}
+function _weightTopValue(uiModel) {
+  uiModel.top = uiModel.top || 0;
+  uiModel.top += 1;
+}
+function _adjustRenderRange(start, end, uiModelColl) {
+  uiModelColl.each((uiModel) => {
+    if (uiModel.model.isAllday || uiModel.model.hasMultiDates) {
+      limitRenderRange(toStartOfDay(start), toEndOfDay(end), uiModel);
+    }
+  });
+}
+function _getAlldayMaxTopIndexAtYMD(idsOfDay, ymd, uiModelAlldayColl) {
+  const topIndexesInDate = [];
+  idsOfDay[ymd].forEach((cid) => {
+    uiModelAlldayColl.doWhenHas(cid, (uiModel) => {
+      topIndexesInDate.push(uiModel.top);
+    });
+  });
+  if (topIndexesInDate.length > 0) {
+    return Math.max(...topIndexesInDate);
+  }
+  return 0;
+}
+function _adjustTimeTopIndex(idsOfDay, uiModelColl) {
+  const vAlldayColl = uiModelColl.filter(_isAllday);
+  const sortedTimeEvents = uiModelColl.filter(_isNotAllday).sort(array.compare.event.asc);
+  const maxIndexInYMD = {};
+  sortedTimeEvents.forEach((timeUIModel) => {
+    const eventYMD = toFormat(timeUIModel.getStarts(), "YYYYMMDD");
+    let alldayMaxTopInYMD = maxIndexInYMD[eventYMD];
+    if (isUndefined_1(alldayMaxTopInYMD)) {
+      alldayMaxTopInYMD = maxIndexInYMD[eventYMD] = _getAlldayMaxTopIndexAtYMD(idsOfDay, eventYMD, vAlldayColl);
+    }
+    maxIndexInYMD[eventYMD] = timeUIModel.top = alldayMaxTopInYMD + 1;
+  });
+}
+function _stackTimeFromTop(idsOfDay, uiModelColl) {
+  const uiModelAlldayColl = uiModelColl.filter(_isAllday);
+  const sortedTimeEvents = uiModelColl.filter(_isNotAllday).sort(array.compare.event.asc);
+  const indiceInYMD = {};
+  sortedTimeEvents.forEach((timeUIModel) => {
+    const eventYMD = toFormat(timeUIModel.getStarts(), "YYYYMMDD");
+    let topArrayInYMD = indiceInYMD[eventYMD];
+    if (isUndefined_1(topArrayInYMD)) {
+      topArrayInYMD = indiceInYMD[eventYMD] = [];
+      idsOfDay[eventYMD].forEach((cid) => {
+        uiModelAlldayColl.doWhenHas(cid, (uiModel) => {
+          topArrayInYMD.push(uiModel.top);
+        });
+      });
+    }
+    if (topArrayInYMD.indexOf(timeUIModel.top) >= 0) {
+      const maxTopInYMD = Math.max(...topArrayInYMD) + 1;
+      for (let i2 = 1; i2 <= maxTopInYMD; i2 += 1) {
+        timeUIModel.top = i2;
+        if (topArrayInYMD.indexOf(timeUIModel.top) < 0) {
+          break;
+        }
+      }
+    }
+    topArrayInYMD.push(timeUIModel.top);
+  });
+}
+function _addMultiDatesInfo$1(uiModelColl) {
+  uiModelColl.each((uiModel) => {
+    const { model } = uiModel;
+    const start = model.getStarts();
+    const end = model.getEnds();
+    model.hasMultiDates = !isSameDate(start, end);
+    if (!model.isAllday && model.hasMultiDates) {
+      uiModel.renderStarts = toStartOfDay(start);
+      uiModel.renderEnds = toEndOfDay(end);
+    }
+  });
+}
+function findByDateRange$1(calendarData, condition) {
+  const { start, end, andFilters = [], alldayFirstMode = false } = condition;
+  const { events, idsOfDay } = calendarData;
+  const filterFn = Collection.and(...[getEventInDateRangeFilter(start, end)].concat(andFilters));
+  const coll = events.filter(filterFn);
+  const uiModelColl = convertToUIModel(coll);
+  _addMultiDatesInfo$1(uiModelColl);
+  _adjustRenderRange(start, end, uiModelColl);
+  const vList = uiModelColl.sort(array.compare.event.asc);
+  const usingTravelTime = false;
+  const collisionGroup = getCollisionGroup(vList, usingTravelTime);
+  const matrices = getMatrices(uiModelColl, collisionGroup, usingTravelTime);
+  positionUIModels(start, end, matrices, _weightTopValue);
+  if (alldayFirstMode) {
+    _adjustTimeTopIndex(idsOfDay, uiModelColl);
+  } else {
+    _stackTimeFromTop(idsOfDay, uiModelColl);
+  }
+  return matrices;
+}
+function _makeHourRangeFilter(hStart, hEnd) {
+  return (uiModel) => {
+    const ownHourStart = uiModel.getStarts();
+    const ownHourEnd = uiModel.getEnds();
+    const ownHourStartTime = ownHourStart.getTime();
+    const ownHourEndTime = ownHourEnd.getTime();
+    const yyyy = ownHourStart.getFullYear();
+    const mm = ownHourStart.getMonth();
+    const dd = ownHourStart.getDate();
+    const hourStart = new TZDate(yyyy, mm, dd).setHours(hStart);
+    const hourEnd = new TZDate(yyyy, mm, dd).setHours(hEnd);
+    return ownHourStartTime >= hourStart && ownHourStartTime < hourEnd || ownHourEndTime > hourStart && ownHourEndTime <= hourEnd || ownHourStartTime < hourStart && ownHourEndTime > hourStart || ownHourEndTime > hourEnd && ownHourStartTime < hourEnd;
+  };
+}
+function _makeGetUIModelFuncForTimeView(hourStart, hourEnd) {
+  if (hourStart === 0 && hourEnd === 24) {
+    return (uiModelColl) => {
+      return uiModelColl.sort(array.compare.event.asc);
+    };
+  }
+  return (uiModelColl) => {
+    return uiModelColl.filter(_makeHourRangeFilter(hourStart, hourEnd)).sort(array.compare.event.asc);
+  };
+}
+function splitEventByDateRange(idsOfDay, start, end, uiModelColl) {
+  const result = {};
+  const range2 = getDateRange(start, end);
+  range2.forEach((date2) => {
+    const ymd = toFormat(date2, "YYYYMMDD");
+    const ids = idsOfDay[ymd];
+    const collection = result[ymd] = new Collection((event) => {
+      return event.cid();
+    });
+    if (ids && ids.length) {
+      ids.forEach((id) => {
+        uiModelColl.doWhenHas(id, (event) => {
+          collection.add(event);
+        });
+      });
+    }
+  }, {});
+  return result;
+}
+function getUIModelForTimeView(idsOfDay, condition) {
+  const { start, end, uiModelTimeColl, hourStart, hourEnd } = condition;
+  const ymdSplitted = splitEventByDateRange(idsOfDay, start, end, uiModelTimeColl);
+  const result = {};
+  const _getUIModel = _makeGetUIModelFuncForTimeView(hourStart, hourEnd);
+  const usingTravelTime = true;
+  Object.entries(ymdSplitted).forEach(([ymd, uiModelColl]) => {
+    const uiModels = _getUIModel(uiModelColl);
+    const collisionGroups = getCollisionGroup(uiModels, usingTravelTime);
+    const matrices = getMatrices(uiModelColl, collisionGroups, usingTravelTime);
+    result[ymd] = matrices;
+  });
+  return result;
+}
+function _addMultiDatesInfo(uiModelColl) {
+  uiModelColl.each((uiModel) => {
+    const { model } = uiModel;
+    model.hasMultiDates = true;
+    uiModel.renderStarts = toStartOfDay(model.getStarts());
+    uiModel.renderEnds = toEndOfDay(model.getEnds());
+  });
+}
+function getUIModelForAlldayView(start, end, uiModelColl) {
+  if (!uiModelColl || !uiModelColl.size) {
+    return [];
+  }
+  _addMultiDatesInfo(uiModelColl);
+  limitRenderRange(start, end, uiModelColl);
+  const uiModels = uiModelColl.sort(array.compare.event.asc);
+  const usingTravelTime = true;
+  const collisionGroups = getCollisionGroup(uiModels, usingTravelTime);
+  const matrices = getMatrices(uiModelColl, collisionGroups, usingTravelTime);
+  positionUIModels(start, end, matrices);
+  return matrices;
+}
+function findByDateRange(calendarData, condition) {
+  var _a, _b;
+  const { start, end, panels, andFilters = [], options } = condition;
+  const { events, idsOfDay } = calendarData;
+  const hourStart = (_a = options == null ? void 0 : options.hourStart) != null ? _a : 0;
+  const hourEnd = (_b = options == null ? void 0 : options.hourEnd) != null ? _b : 24;
+  const filterFn = Collection.and(...[getEventInDateRangeFilter(start, end)].concat(andFilters));
+  const uiModelColl = convertToUIModel(events.filter(filterFn));
+  const group = uiModelColl.groupBy(filterByCategory);
+  return panels.reduce((acc, cur) => {
+    const { name, type } = cur;
+    if (isNil(group[name])) {
+      return acc;
+    }
+    return __spreadProps(__spreadValues({}, acc), {
+      [name]: type === "daygrid" ? getUIModelForAlldayView(start, end, group[name]) : getUIModelForTimeView(idsOfDay, {
+        start,
+        end,
+        uiModelTimeColl: group[name],
+        hourStart,
+        hourEnd
+      })
+    });
+  }, {
+    milestone: [],
+    task: [],
+    allday: [],
+    time: {}
+  });
+}
+function limit(value, minArr, maxArr) {
+  const v2 = Math.max(value, ...minArr);
+  return Math.min(v2, ...maxArr);
+}
+function ratio(a2, b2, y2) {
+  return b2 * y2 / a2;
+}
+function isBetween$1(value, min2, max2) {
+  return min2 <= value && value <= max2;
+}
+const EVENT_HEIGHT = 22;
+const TOTAL_WIDTH = 100;
+function forEachMatrix3d(matrices, iteratee) {
+  matrices.forEach((matrix) => {
+    matrix.forEach((row) => {
+      row.forEach((value, index) => {
+        iteratee(value, index);
+      });
+    });
+  });
+}
+function isWithinHeight(containerHeight, eventHeight) {
+  return ({ top }) => containerHeight >= top * eventHeight;
+}
+function isExceededHeight(containerHeight, eventHeight) {
+  return ({ top }) => containerHeight < top * eventHeight;
+}
+function getExceedCount(uiModel, containerHeight, eventHeight) {
+  return uiModel.filter(isExceededHeight(containerHeight, eventHeight)).length;
+}
+const getWeekendCount = (row) => row.filter((cell) => isWeekend(cell.getDay())).length;
+function getGridWidthAndLeftPercentValues(row, narrowWeekend, totalWidth) {
+  const weekendCount = getWeekendCount(row);
+  const gridCellCount = row.length;
+  const isAllWeekend = weekendCount === gridCellCount;
+  const widthPerDay = totalWidth / (narrowWeekend && !isAllWeekend ? gridCellCount * 2 - weekendCount : gridCellCount);
+  const widthList = row.map((cell) => {
+    const day = cell.getDay();
+    if (!narrowWeekend || isAllWeekend) {
+      return widthPerDay;
+    }
+    return isWeekend(day) ? widthPerDay : widthPerDay * 2;
+  });
+  const leftList = widthList.reduce((acc, _2, index) => index ? [...acc, acc[index - 1] + widthList[index - 1]] : [0], []);
+  return {
+    widthList,
+    leftList
+  };
+}
+function getWidth(widthList, start, end) {
+  return widthList.reduce((acc, width, index) => {
+    if (start <= index && index <= end) {
+      return acc + width;
+    }
+    return acc;
+  }, 0);
+}
+const isInGrid = (gridDate) => {
+  return (uiModel) => {
+    const eventStart = toStartOfDay(uiModel.getStarts());
+    const eventEnd = toStartOfDay(uiModel.getEnds());
+    return eventStart <= gridDate && gridDate <= eventEnd;
+  };
+};
+function getGridDateIndex(date2, row) {
+  return row.findIndex((cell) => date2 >= toStartOfDay(cell) && date2 <= toEndOfDay(cell));
+}
+const getLeftAndWidth = (startIndex, endIndex, row, narrowWeekend) => {
+  const { widthList } = getGridWidthAndLeftPercentValues(row, narrowWeekend, TOTAL_WIDTH);
+  return {
+    left: !startIndex ? 0 : getWidth(widthList, 0, startIndex - 1),
+    width: getWidth(widthList, startIndex != null ? startIndex : 0, endIndex < 0 ? row.length - 1 : endIndex)
+  };
+};
+const getEventLeftAndWidth = (start, end, row, narrowWeekend) => {
+  const { widthList } = getGridWidthAndLeftPercentValues(row, narrowWeekend, TOTAL_WIDTH);
+  let gridStartIndex = 0;
+  let gridEndIndex = row.length - 1;
+  row.forEach((cell, index) => {
+    if (cell <= start) {
+      gridStartIndex = index;
+    }
+    if (cell <= end) {
+      gridEndIndex = index;
+    }
+  });
+  return {
+    width: getWidth(widthList, gridStartIndex, gridEndIndex),
+    left: !gridStartIndex ? 0 : getWidth(widthList, 0, gridStartIndex - 1)
+  };
+};
+function getEventUIModelWithPosition(uiModel, row, narrowWeekend = false) {
+  const modelStart = uiModel.getStarts();
+  const modelEnd = uiModel.getEnds();
+  const { width, left } = getEventLeftAndWidth(modelStart, modelEnd, row, narrowWeekend);
+  uiModel.width = width;
+  uiModel.left = left;
+  return uiModel;
+}
+function getRenderedEventUIModels(row, calendarData, narrowWeekend) {
+  const { idsOfDay } = calendarData;
+  const eventUIModels = findByDateRange$1(calendarData, {
+    start: row[0],
+    end: toEndOfDay(row[row.length - 1])
+  });
+  const idEventModelMap = [];
+  forEachMatrix3d(eventUIModels, (uiModel) => {
+    const cid = uiModel.model.cid();
+    idEventModelMap[cid] = getEventUIModelWithPosition(uiModel, row, narrowWeekend);
+  });
+  const gridDateEventModelMap = Object.keys(idsOfDay).reduce((acc, ymd) => {
+    const ids = idsOfDay[ymd];
+    acc[ymd] = ids.map((cid) => idEventModelMap[cid]).filter((vm) => !!vm);
+    return acc;
+  }, {});
+  return {
+    uiModels: Object.values(idEventModelMap),
+    gridDateEventModelMap
+  };
+}
+const getDayGridEventModels = (eventModels, row, narrowWeekend = false) => {
+  forEachMatrix3d(eventModels, (uiModel) => {
+    const modelStart = uiModel.getStarts();
+    const modelEnd = uiModel.getEnds();
+    const { width, left } = getEventLeftAndWidth(modelStart, modelEnd, row, narrowWeekend);
+    uiModel.width = width;
+    uiModel.left = left;
+    uiModel.top += 1;
+  });
+  return flattenMatrix3d(eventModels);
+};
+const getModels = (models) => models.filter((model) => !!model);
+function flattenMatrix3d(matrices) {
+  return matrices.flatMap((matrix) => matrix.flatMap((models) => getModels(models)));
+}
+const getTimeGridEventModels = (eventMatrix) => Array.from(new Set(Object.values(eventMatrix).reduce((result, matrix3d) => result.concat(...flattenMatrix3d(matrix3d)), [])));
+const getWeekViewEvents = (row, calendarData, {
+  narrowWeekend,
+  hourStart,
+  hourEnd,
+  weekStartDate,
+  weekEndDate
+}) => {
+  const panels = [
+    {
+      name: "milestone",
+      type: "daygrid",
+      show: true
+    },
+    {
+      name: "task",
+      type: "daygrid",
+      show: true
+    },
+    {
+      name: "allday",
+      type: "daygrid",
+      show: true
+    },
+    {
+      name: "time",
+      type: "timegrid",
+      show: true
+    }
+  ];
+  const eventModels = findByDateRange(calendarData, {
+    start: weekStartDate,
+    end: weekEndDate,
+    panels,
+    andFilters: [],
+    options: {
+      hourStart,
+      hourEnd
+    }
+  });
+  return Object.keys(eventModels).reduce((acc, cur) => {
+    const events = eventModels[cur];
+    return __spreadProps(__spreadValues({}, acc), {
+      [cur]: Array.isArray(events) ? getDayGridEventModels(events, row, narrowWeekend) : getTimeGridEventModels(events)
+    });
+  }, {
+    milestone: [],
+    allday: [],
+    task: [],
+    time: []
+  });
+};
+function createDateMatrixOfMonth(renderTargetDate, {
+  workweek = false,
+  visibleWeeksCount = 0,
+  startDayOfWeek = 0,
+  isAlways6Weeks = true
+}) {
+  const targetDate = new TZDate(renderTargetDate);
+  const shouldApplyVisibleWeeksCount = visibleWeeksCount > 0;
+  const baseDate = shouldApplyVisibleWeeksCount ? targetDate : toStartOfMonth(targetDate);
+  const firstDateOfMatrix = subtractDate(baseDate, baseDate.getDay() - startDayOfWeek + (baseDate.getDay() < startDayOfWeek ? WEEK_DAYS : 0));
+  const dayOfFirstDateOfMatrix = firstDateOfMatrix.getDay();
+  const totalDatesCountOfMonth = toEndOfMonth(targetDate).getDate();
+  const initialDifference = getDateDifference(firstDateOfMatrix, baseDate);
+  const totalDatesOfMatrix = totalDatesCountOfMonth + Math.abs(initialDifference);
+  let totalWeeksOfMatrix = DEFAULT_VISIBLE_WEEKS;
+  if (shouldApplyVisibleWeeksCount) {
+    totalWeeksOfMatrix = visibleWeeksCount;
+  } else if (isAlways6Weeks === false) {
+    totalWeeksOfMatrix = Math.ceil(totalDatesOfMatrix / WEEK_DAYS);
+  }
+  return range_1(0, totalWeeksOfMatrix).map((weekIndex) => range_1(0, WEEK_DAYS).reduce((weekRow, dayOfWeek) => {
+    const steps = weekIndex * WEEK_DAYS + dayOfWeek;
+    const currentDay = (steps + dayOfFirstDateOfMatrix) % WEEK_DAYS;
+    if (!workweek || workweek && !isWeekend(currentDay)) {
+      const date2 = addDate(firstDateOfMatrix, steps);
+      weekRow.push(date2);
+    }
+    return weekRow;
+  }, []));
+}
+function getWeekDates(renderDate, { startDayOfWeek = Day$2.SUN, workweek }) {
+  const now = toStartOfDay(renderDate);
+  const nowDay = now.getDay();
+  const prevDateCount = nowDay - startDayOfWeek;
+  const weekDayList = prevDateCount >= 0 ? range_1(-prevDateCount, WEEK_DAYS - prevDateCount) : range_1(-WEEK_DAYS - prevDateCount, -prevDateCount);
+  return weekDayList.reduce((acc, day) => {
+    const date2 = addDate(now, day);
+    if (workweek && isWeekend(date2.getDay())) {
+      return acc;
+    }
+    acc.push(date2);
+    return acc;
+  }, []);
+}
+function getColumnsData(datesOfWeek, narrowWeekend = false) {
+  const datesCount = datesOfWeek.length;
+  const shouldApplyNarrowWeekend = datesCount > 5 && narrowWeekend;
+  const defaultWidthByColumns = shouldApplyNarrowWeekend ? 100 / (datesCount - 1) : 100 / datesCount;
+  return datesOfWeek.map((date2) => {
+    const width = shouldApplyNarrowWeekend && isWeekend(date2.getDay()) ? defaultWidthByColumns / 2 : defaultWidthByColumns;
+    return {
+      date: date2,
+      width
+    };
+  }).reduce((result, currentDateAndWidth, index) => {
+    const prev = result[index - 1];
+    result.push(__spreadProps(__spreadValues({}, currentDateAndWidth), {
+      left: index === 0 ? 0 : prev.left + prev.width
+    }));
+    return result;
+  }, []);
+}
+function createTimeGridData(datesOfWeek, options) {
+  var _a;
+  const columns = getColumnsData(datesOfWeek, (_a = options.narrowWeekend) != null ? _a : false);
+  const steps = (options.hourEnd - options.hourStart) * 2;
+  const baseHeight = 100 / steps;
+  const rows = range_1(steps).map((step, index) => {
+    const isOdd = index % 2 === 1;
+    const hour = options.hourStart + Math.floor(step / 2);
+    const startTime = `${hour}:${isOdd ? "30" : "00"}`.padStart(5, "0");
+    const endTime = (isOdd ? `${hour + 1}:00` : `${hour}:30`).padStart(5, "0");
+    return {
+      top: baseHeight * index,
+      height: baseHeight,
+      startTime,
+      endTime
+    };
+  });
+  return {
+    columns,
+    rows
+  };
+}
+function getRelativeMousePosition({ clientX, clientY }, { left, top, clientLeft, clientTop }) {
+  return [clientX - left - clientLeft, clientY - top - clientTop];
+}
+function getIndexFromPosition(arrayLength, maxRange, currentPosition) {
+  const calculatedIndex = Math.floor(ratio(maxRange, arrayLength, currentPosition));
+  return limit(calculatedIndex, [0], [arrayLength - 1]);
+}
+function createGridPositionFinder({
+  rowsCount,
+  columnsCount,
+  container,
+  narrowWeekend = false,
+  startDayOfWeek = Day$2.SUN
+}) {
+  if (isNil(container)) {
+    return () => null;
+  }
+  const dayRange = range_1(startDayOfWeek, startDayOfWeek + columnsCount).map((day) => day % WEEK_DAYS);
+  const narrowColumnCount = narrowWeekend ? dayRange.filter((day) => isWeekend(day)).length : 0;
+  return function gridPositionFinder(mousePosition) {
+    const {
+      left: containerLeft,
+      top: containerTop,
+      width: containerWidth,
+      height: containerHeight
+    } = container.getBoundingClientRect();
+    const [left, top] = getRelativeMousePosition(mousePosition, {
+      left: containerLeft,
+      top: containerTop,
+      clientLeft: container.clientLeft,
+      clientTop: container.clientTop
+    });
+    if (left < 0 || top < 0 || left > containerWidth || top > containerHeight) {
+      return null;
+    }
+    const unitWidth = narrowWeekend ? containerWidth / (columnsCount - narrowColumnCount + 1) : containerWidth / columnsCount;
+    const columnWidthList = dayRange.map((dayOfWeek) => narrowWeekend && isWeekend(dayOfWeek) ? unitWidth / 2 : unitWidth);
+    const columnLeftList = [];
+    columnWidthList.forEach((width, index) => {
+      if (index === 0) {
+        columnLeftList.push(0);
+      } else {
+        columnLeftList.push(columnLeftList[index - 1] + columnWidthList[index - 1]);
+      }
+    });
+    const columnIndex = findLastIndex(columnLeftList, (columnLeft) => left >= columnLeft);
+    return {
+      columnIndex,
+      rowIndex: getIndexFromPosition(rowsCount, containerHeight, top)
+    };
+  };
+}
+function commonGridSelectionSelector(theme) {
+  return theme.common.gridSelection;
+}
+function GridSelection$1({ type, gridSelectionData, weekDates, narrowWeekend }) {
+  const { backgroundColor, border } = useTheme(commonGridSelectionSelector);
+  const { startCellIndex, endCellIndex } = gridSelectionData;
+  const { left, width } = getLeftAndWidth(Math.min(startCellIndex, endCellIndex), Math.max(startCellIndex, endCellIndex), weekDates, narrowWeekend);
+  const style = {
+    left: toPercent(left),
+    width: toPercent(width),
+    height: toPercent(100),
+    backgroundColor,
+    border
+  };
+  return width > 0 ? /* @__PURE__ */ h$3("div", {
+    className: cls(type, "grid-selection"),
+    style
+  }) : null;
+}
+function createSortedGridSelection(initPos, currentPos, isReversed) {
+  return {
+    startColumnIndex: isReversed ? currentPos.columnIndex : initPos.columnIndex,
+    startRowIndex: isReversed ? currentPos.rowIndex : initPos.rowIndex,
+    endColumnIndex: isReversed ? initPos.columnIndex : currentPos.columnIndex,
+    endRowIndex: isReversed ? initPos.rowIndex : currentPos.rowIndex
+  };
+}
+function calculateTimeGridSelectionByCurrentIndex(timeGridSelection, columnIndex, maxRowIndex) {
+  if (isNil(timeGridSelection)) {
+    return null;
+  }
+  const { startColumnIndex, endColumnIndex, endRowIndex, startRowIndex } = timeGridSelection;
+  if (!isBetween$1(columnIndex, startColumnIndex, endColumnIndex)) {
+    return null;
+  }
+  const hasMultipleColumns = startColumnIndex !== endColumnIndex;
+  const isStartingColumn = columnIndex === startColumnIndex;
+  const resultGridSelection = {
+    startRowIndex,
+    endRowIndex,
+    isSelectingMultipleColumns: hasMultipleColumns,
+    isStartingColumn
+  };
+  if (startColumnIndex < columnIndex && columnIndex < endColumnIndex) {
+    resultGridSelection.startRowIndex = 0;
+    resultGridSelection.endRowIndex = maxRowIndex;
+  } else if (startColumnIndex !== endColumnIndex) {
+    if (startColumnIndex === columnIndex) {
+      resultGridSelection.endRowIndex = maxRowIndex;
+    } else if (endColumnIndex === columnIndex) {
+      resultGridSelection.startRowIndex = 0;
+    }
+  }
+  return resultGridSelection;
+}
+const timeGridSelectionHelper = {
+  sortSelection: (initPos, currentPos) => {
+    const isReversed = initPos.columnIndex > currentPos.columnIndex || initPos.columnIndex === currentPos.columnIndex && initPos.rowIndex > currentPos.rowIndex;
+    return createSortedGridSelection(initPos, currentPos, isReversed);
+  },
+  getDateFromCollection: (dateCollection, gridSelection) => {
+    const timeGridData = dateCollection;
+    const startDate = setTimeStrToDate(timeGridData.columns[gridSelection.startColumnIndex].date, timeGridData.rows[gridSelection.startRowIndex].startTime);
+    const endDate = setTimeStrToDate(timeGridData.columns[gridSelection.endColumnIndex].date, timeGridData.rows[gridSelection.endRowIndex].endTime);
+    return [startDate, endDate];
+  },
+  calculateSelection: calculateTimeGridSelectionByCurrentIndex
+};
+function calculateDayGridMonthSelectionByCurrentIndex(gridSelection, currentIndex, weekLength) {
+  if (!(isPresent(gridSelection) && isPresent(currentIndex) && isPresent(weekLength))) {
+    return null;
+  }
+  const { startRowIndex, startColumnIndex, endRowIndex, endColumnIndex } = gridSelection;
+  if (!isBetween$1(currentIndex, Math.min(startRowIndex, endRowIndex), Math.max(startRowIndex, endRowIndex))) {
+    return null;
+  }
+  let startCellIndex = startColumnIndex;
+  let endCellIndex = endColumnIndex;
+  if (startRowIndex < currentIndex) {
+    startCellIndex = 0;
+  }
+  if (endRowIndex > currentIndex) {
+    endCellIndex = weekLength - 1;
+  }
+  return { startCellIndex, endCellIndex };
+}
+const dayGridMonthSelectionHelper = {
+  sortSelection: (initPos, currentPos) => {
+    const isReversed = initPos.rowIndex > currentPos.rowIndex || initPos.rowIndex === currentPos.rowIndex && initPos.columnIndex > currentPos.columnIndex;
+    return createSortedGridSelection(initPos, currentPos, isReversed);
+  },
+  getDateFromCollection: (dateCollection, gridSelection) => {
+    const dateMatrix = dateCollection;
+    return [
+      dateMatrix[gridSelection.startRowIndex][gridSelection.startColumnIndex],
+      dateMatrix[gridSelection.endRowIndex][gridSelection.endColumnIndex]
+    ];
+  },
+  calculateSelection: calculateDayGridMonthSelectionByCurrentIndex
+};
+function calculateAlldayGridRowSelectionByCurrentIndex(gridSelection) {
+  return isPresent(gridSelection) ? {
+    startCellIndex: gridSelection.startColumnIndex,
+    endCellIndex: gridSelection.endColumnIndex
+  } : null;
+}
+const alldayGridRowSelectionHelper = {
+  sortSelection: (initPos, currentPos) => {
+    const isReversed = initPos.columnIndex > currentPos.columnIndex;
+    return createSortedGridSelection(initPos, currentPos, isReversed);
+  },
+  getDateFromCollection: (dateCollection, gridSelection) => {
+    const weekDates = dateCollection;
+    return [weekDates[gridSelection.startColumnIndex], weekDates[gridSelection.endColumnIndex]];
+  },
+  calculateSelection: calculateAlldayGridRowSelectionByCurrentIndex
+};
+function dayGridWeekSelectionSelector(state) {
+  return alldayGridRowSelectionHelper.calculateSelection(state.gridSelection.dayGridWeek);
+}
+function AlldayGridSelection({ weekDates, narrowWeekend }) {
+  const calculatedGridSelection = useStore(dayGridWeekSelectionSelector);
+  if (isNil(calculatedGridSelection)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(GridSelection$1, {
+    type: "allday",
+    gridSelectionData: calculatedGridSelection,
+    weekDates,
+    narrowWeekend
+  });
+}
+function S(n2, t2) {
+  for (var e2 in t2)
+    n2[e2] = t2[e2];
+  return n2;
+}
+function C(n2, t2) {
+  for (var e2 in n2)
+    if (e2 !== "__source" && !(e2 in t2))
+      return true;
+  for (var r2 in t2)
+    if (r2 !== "__source" && n2[r2] !== t2[r2])
+      return true;
+  return false;
+}
+function E(n2) {
+  this.props = n2;
+}
+function g$1(n2, t2) {
+  function e2(n3) {
+    var e3 = this.props.ref, r3 = e3 == n3.ref;
+    return !r3 && e3 && (e3.call ? e3(null) : e3.current = null), t2 ? !t2(this.props, n3) || !r3 : C(this.props, n3);
+  }
+  function r2(t3) {
+    return this.shouldComponentUpdate = e2, h$3(n2, t3);
+  }
+  return r2.displayName = "Memo(" + (n2.displayName || n2.name) + ")", r2.prototype.isReactComponent = true, r2.__f = true, r2;
+}
+(E.prototype = new d$3()).isPureReactComponent = true, E.prototype.shouldComponentUpdate = function(n2, t2) {
+  return C(this.props, n2) || C(this.state, t2);
+};
+var w = l$3.__b;
+l$3.__b = function(n2) {
+  n2.type && n2.type.__f && n2.ref && (n2.props.ref = n2.ref, n2.ref = null), w && w(n2);
+};
+var x$1 = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.forward_ref") || 3911;
+function R(n2) {
+  function t2(t3) {
+    var e2 = S({}, t3);
+    return delete e2.ref, n2(e2, t3.ref || null);
+  }
+  return t2.$$typeof = x$1, t2.render = t2, t2.prototype.isReactComponent = t2.__f = true, t2.displayName = "ForwardRef(" + (n2.displayName || n2.name) + ")", t2;
+}
+var A = l$3.__e;
+l$3.__e = function(n2, t2, e2, r2) {
+  if (n2.then) {
+    for (var u2, o2 = t2; o2 = o2.__; )
+      if ((u2 = o2.__c) && u2.__c)
+        return t2.__e == null && (t2.__e = e2.__e, t2.__k = e2.__k), u2.__c(n2, t2);
+  }
+  A(n2, t2, e2, r2);
+};
+var O = l$3.unmount;
+function T() {
+  this.__u = 0, this.t = null, this.__b = null;
+}
+function L(n2) {
+  var t2 = n2.__.__c;
+  return t2 && t2.__a && t2.__a(n2);
+}
+function D() {
+  this.u = null, this.o = null;
+}
+l$3.unmount = function(n2) {
+  var t2 = n2.__c;
+  t2 && t2.__R && t2.__R(), t2 && n2.__h === true && (n2.type = null), O && O(n2);
+}, (T.prototype = new d$3()).__c = function(n2, t2) {
+  var e2 = t2.__c, r2 = this;
+  r2.t == null && (r2.t = []), r2.t.push(e2);
+  var u2 = L(r2.__v), o2 = false, i2 = function() {
+    o2 || (o2 = true, e2.__R = null, u2 ? u2(l2) : l2());
+  };
+  e2.__R = i2;
+  var l2 = function() {
+    if (!--r2.__u) {
+      if (r2.state.__a) {
+        var n3 = r2.state.__a;
+        r2.__v.__k[0] = function n4(t4, e3, r3) {
+          return t4 && (t4.__v = null, t4.__k = t4.__k && t4.__k.map(function(t5) {
+            return n4(t5, e3, r3);
+          }), t4.__c && t4.__c.__P === e3 && (t4.__e && r3.insertBefore(t4.__e, t4.__d), t4.__c.__e = true, t4.__c.__P = r3)), t4;
+        }(n3, n3.__c.__P, n3.__c.__O);
+      }
+      var t3;
+      for (r2.setState({ __a: r2.__b = null }); t3 = r2.t.pop(); )
+        t3.forceUpdate();
+    }
+  }, f2 = t2.__h === true;
+  r2.__u++ || f2 || r2.setState({ __a: r2.__b = r2.__v.__k[0] }), n2.then(i2, i2);
+}, T.prototype.componentWillUnmount = function() {
+  this.t = [];
+}, T.prototype.render = function(n2, t2) {
+  if (this.__b) {
+    if (this.__v.__k) {
+      var e2 = document.createElement("div"), r2 = this.__v.__k[0].__c;
+      this.__v.__k[0] = function n3(t3, e3, r3) {
+        return t3 && (t3.__c && t3.__c.__H && (t3.__c.__H.__.forEach(function(n4) {
+          typeof n4.__c == "function" && n4.__c();
+        }), t3.__c.__H = null), (t3 = S({}, t3)).__c != null && (t3.__c.__P === r3 && (t3.__c.__P = e3), t3.__c = null), t3.__k = t3.__k && t3.__k.map(function(t4) {
+          return n3(t4, e3, r3);
+        })), t3;
+      }(this.__b, e2, r2.__O = r2.__P);
+    }
+    this.__b = null;
+  }
+  var u2 = t2.__a && h$3(p$3, null, n2.fallback);
+  return u2 && (u2.__h = null), [h$3(p$3, null, t2.__a ? null : n2.children), u2];
+};
+var F = function(n2, t2, e2) {
+  if (++e2[1] === e2[0] && n2.o.delete(t2), n2.props.revealOrder && (n2.props.revealOrder[0] !== "t" || !n2.o.size))
+    for (e2 = n2.u; e2; ) {
+      for (; e2.length > 3; )
+        e2.pop()();
+      if (e2[1] < e2[0])
+        break;
+      n2.u = e2 = e2[2];
+    }
+};
+function I(n2) {
+  return this.getChildContext = function() {
+    return n2.context;
+  }, n2.children;
+}
+function M(n2) {
+  var t2 = this, e2 = n2.i;
+  t2.componentWillUnmount = function() {
+    P$2(null, t2.l), t2.l = null, t2.i = null;
+  }, t2.i && t2.i !== e2 && t2.componentWillUnmount(), n2.__v ? (t2.l || (t2.i = e2, t2.l = { nodeType: 1, parentNode: e2, childNodes: [], appendChild: function(n3) {
+    this.childNodes.push(n3), t2.i.appendChild(n3);
+  }, insertBefore: function(n3, e3) {
+    this.childNodes.push(n3), t2.i.appendChild(n3);
+  }, removeChild: function(n3) {
+    this.childNodes.splice(this.childNodes.indexOf(n3) >>> 1, 1), t2.i.removeChild(n3);
+  } }), P$2(h$3(I, { context: t2.context }, n2.__v), t2.l)) : t2.l && t2.componentWillUnmount();
+}
+function V(n2, t2) {
+  var e2 = h$3(M, { __v: n2, i: t2 });
+  return e2.containerInfo = t2, e2;
+}
+(D.prototype = new d$3()).__a = function(n2) {
+  var t2 = this, e2 = L(t2.__v), r2 = t2.o.get(n2);
+  return r2[0]++, function(u2) {
+    var o2 = function() {
+      t2.props.revealOrder ? (r2.push(u2), F(t2, n2, r2)) : u2();
+    };
+    e2 ? e2(o2) : o2();
+  };
+}, D.prototype.render = function(n2) {
+  this.u = null, this.o = /* @__PURE__ */ new Map();
+  var t2 = x$3(n2.children);
+  n2.revealOrder && n2.revealOrder[0] === "b" && t2.reverse();
+  for (var e2 = t2.length; e2--; )
+    this.o.set(t2[e2], this.u = [1, 0, this.u]);
+  return n2.children;
+}, D.prototype.componentDidUpdate = D.prototype.componentDidMount = function() {
+  var n2 = this;
+  this.o.forEach(function(t2, e2) {
+    F(n2, e2, t2);
+  });
+};
+var W = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.element") || 60103, P = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|shape|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/, $ = typeof document != "undefined", j = function(n2) {
+  return (typeof Symbol != "undefined" && typeof Symbol() == "symbol" ? /fil|che|rad/i : /fil|che|ra/i).test(n2);
+};
+d$3.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function(n2) {
+  Object.defineProperty(d$3.prototype, n2, { configurable: true, get: function() {
+    return this["UNSAFE_" + n2];
+  }, set: function(t2) {
+    Object.defineProperty(this, n2, { configurable: true, writable: true, value: t2 });
+  } });
+});
+var H = l$3.event;
+function Z() {
+}
+function Y() {
+  return this.cancelBubble;
+}
+function q() {
+  return this.defaultPrevented;
+}
+l$3.event = function(n2) {
+  return H && (n2 = H(n2)), n2.persist = Z, n2.isPropagationStopped = Y, n2.isDefaultPrevented = q, n2.nativeEvent = n2;
+};
+var J = { configurable: true, get: function() {
+  return this.class;
+} }, K = l$3.vnode;
+l$3.vnode = function(n2) {
+  var t2 = n2.type, e2 = n2.props, r2 = e2;
+  if (typeof t2 == "string") {
+    var u2 = t2.indexOf("-") === -1;
+    for (var o2 in r2 = {}, e2) {
+      var i2 = e2[o2];
+      $ && o2 === "children" && t2 === "noscript" || o2 === "value" && "defaultValue" in e2 && i2 == null || (o2 === "defaultValue" && "value" in e2 && e2.value == null ? o2 = "value" : o2 === "download" && i2 === true ? i2 = "" : /ondoubleclick/i.test(o2) ? o2 = "ondblclick" : /^onchange(textarea|input)/i.test(o2 + t2) && !j(e2.type) ? o2 = "oninput" : /^onfocus$/i.test(o2) ? o2 = "onfocusin" : /^onblur$/i.test(o2) ? o2 = "onfocusout" : /^on(Ani|Tra|Tou|BeforeInp|Compo)/.test(o2) ? o2 = o2.toLowerCase() : u2 && P.test(o2) ? o2 = o2.replace(/[A-Z0-9]/, "-$&").toLowerCase() : i2 === null && (i2 = void 0), /^oninput$/i.test(o2) && (o2 = o2.toLowerCase(), r2[o2] && (o2 = "oninputCapture")), r2[o2] = i2);
+    }
+    t2 == "select" && r2.multiple && Array.isArray(r2.value) && (r2.value = x$3(e2.children).forEach(function(n3) {
+      n3.props.selected = r2.value.indexOf(n3.props.value) != -1;
+    })), t2 == "select" && r2.defaultValue != null && (r2.value = x$3(e2.children).forEach(function(n3) {
+      n3.props.selected = r2.multiple ? r2.defaultValue.indexOf(n3.props.value) != -1 : r2.defaultValue == n3.props.value;
+    })), n2.props = r2, e2.class != e2.className && (J.enumerable = "className" in e2, e2.className != null && (r2.class = e2.className), Object.defineProperty(r2, "className", J));
+  }
+  n2.$$typeof = W, K && K(n2);
+};
+var Q = l$3.__r;
+l$3.__r = function(n2) {
+  Q && Q(n2), n2.__c;
+};
+function un(n2) {
+  return !!n2.__k && (P$2(null, n2), true);
+}
+function ExceedCount({ index, exceedCount, isClicked, onClickExceedCount }) {
+  const clickExceedCount = () => onClickExceedCount(index);
+  const style = { display: isClicked ? "none" : "" };
+  return exceedCount && !isClicked ? /* @__PURE__ */ h$3("span", {
+    className: cls("weekday-exceed-in-week"),
+    onClick: clickExceedCount,
+    style
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "weekGridFooterExceed",
+    param: exceedCount
+  })) : null;
+}
+function CollapseButton({ isClicked, isClickedIndex, onClickCollapseButton }) {
+  return isClicked && isClickedIndex ? /* @__PURE__ */ h$3("span", {
+    className: cls("weekday-exceed-in-week"),
+    onClick: onClickCollapseButton
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "collapseBtnTitle"
+  })) : null;
+}
+function GridCell$1({
+  width,
+  left,
+  index,
+  exceedCount,
+  isClicked,
+  onClickExceedCount,
+  isClickedIndex,
+  onClickCollapseButton,
+  isLastCell
+}) {
+  const { borderRight, backgroundColor } = useTheme(T$1((theme) => theme.week.dayGrid, []));
+  const style = {
+    width,
+    left,
+    borderRight: isLastCell ? "none" : borderRight,
+    backgroundColor
+  };
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("panel-grid"),
+    style
+  }, /* @__PURE__ */ h$3(ExceedCount, {
+    index,
+    exceedCount,
+    isClicked,
+    onClickExceedCount
+  }), /* @__PURE__ */ h$3(CollapseButton, {
+    isClickedIndex,
+    isClicked,
+    onClickCollapseButton
+  }));
+}
+const GridCells = g$1(function GridCells2({
+  uiModels,
+  weekDates,
+  narrowWeekend,
+  height,
+  clickedIndex,
+  isClickedCount,
+  onClickExceedCount,
+  onClickCollapseButton
+}) {
+  const eventTopMargin = 2;
+  const { widthList, leftList } = getGridWidthAndLeftPercentValues(weekDates, narrowWeekend, TOTAL_WIDTH);
+  const lastCellIndex = weekDates.length - 1;
+  return /* @__PURE__ */ h$3(p$3, null, weekDates.map((cell, index) => {
+    const width = toPercent(widthList[index]);
+    const left = toPercent(leftList[index]);
+    const uiModelsInCell = uiModels.filter(isInGrid(cell));
+    const exceedCount = getExceedCount(uiModelsInCell, height, EVENT_HEIGHT + eventTopMargin);
+    const isClickedIndex = index === clickedIndex;
+    const isLastCell = index === lastCellIndex;
+    return /* @__PURE__ */ h$3(GridCell$1, {
+      key: `panel-grid-${cell.getDate()}`,
+      width,
+      left,
+      index,
+      exceedCount,
+      isClicked: isClickedCount,
+      onClickExceedCount,
+      isClickedIndex,
+      onClickCollapseButton,
+      isLastCell
+    });
+  }));
+});
+function HorizontalEventResizeIcon({ onMouseDown }) {
+  return /* @__PURE__ */ h$3("span", {
+    className: `${cls("weekday-resize-handle")} ${cls("handle-y")}`,
+    onMouseDown,
+    "data-testid": "horizontal-event-resize-icon"
+  }, /* @__PURE__ */ h$3("i", {
+    className: `${cls("icon")} ${cls("ic-handle-y")}`
+  }));
+}
+const LayoutContainerContext = B$1(null);
+const LayoutContainerProvider = LayoutContainerContext.Provider;
+const useLayoutContainer = () => {
+  const ref = q$2(LayoutContainerContext);
+  if (isUndefined_1(ref)) {
+    throw new Error("LayoutContainerProvider is not found");
+  }
+  return ref;
+};
+const DRAGGING_TYPE_CONSTANTS = {
+  panelResizer: "panelResizer"
+};
+const DRAGGING_TYPE_CREATORS = {
+  resizeEvent: (area, id) => `event/${area}/resize/${id}`,
+  moveEvent: (area, id) => `event/${area}/move/${id}`,
+  gridSelection: (type) => `gridSelection/${type}`
+};
+function useCalendarById(calendarId) {
+  return useStore(T$1((state) => state.calendar.calendars.find((cal) => cal.id === calendarId), [calendarId]));
+}
+function useCalendarColor(model) {
+  var _a;
+  const calendar = useCalendarById((_a = model == null ? void 0 : model.calendarId) != null ? _a : null);
+  return F$2(() => ({
+    color: calendar == null ? void 0 : calendar.color,
+    borderColor: calendar == null ? void 0 : calendar.borderColor,
+    backgroundColor: calendar == null ? void 0 : calendar.backgroundColor,
+    dragBackgroundColor: calendar == null ? void 0 : calendar.dragBackgroundColor
+  }), [calendar]);
+}
+var KEY = /* @__PURE__ */ ((KEY2) => {
+  KEY2["ESCAPE"] = "Escape";
+  return KEY2;
+})(KEY || {});
+const KEYCODE = {
+  ["Escape"]: 27
+};
+const MINIMUM_DRAG_MOUSE_DISTANCE = 3;
+function useTransientUpdate(selector, subscriber) {
+  const store = useInternalStore();
+  const selectorRef = s$2(selector);
+  const subscriberRef = s$2(subscriber);
+  _$2(() => {
+    selectorRef.current = selector;
+    subscriberRef.current = subscriber;
+  }, [selector, subscriber]);
+  _$2(() => store.subscribe((slice) => subscriberRef.current(slice), (state) => selectorRef.current(state)), [selector, store]);
+}
+function isKeyPressed(e2, key) {
+  return e2.key ? e2.key === key : e2.keyCode === KEYCODE[key];
+}
+function isLeftClick(buttonNum) {
+  return buttonNum === 0;
+}
+function isMouseMoved(initX, initY, x2, y2) {
+  return Math.abs(initX - x2) >= MINIMUM_DRAG_MOUSE_DISTANCE || Math.abs(initY - y2) >= MINIMUM_DRAG_MOUSE_DISTANCE;
+}
+function useDrag(draggingItemType, { onInit, onDragStart, onDrag, onMouseUp, onPressESCKey } = {}) {
+  const { initDrag, setDragging, cancelDrag, reset } = useDispatch("dnd");
+  const store = useInternalStore();
+  const dndSliceRef = s$2(store.getState().dnd);
+  useTransientUpdate(dndSelector, (dndState) => {
+    dndSliceRef.current = dndState;
+  });
+  const [isStarted, setStarted] = y$1(false);
+  const handleMouseMoveRef = s$2(null);
+  const handleMouseUpRef = s$2(null);
+  const handleKeyDownRef = s$2(null);
+  const handleMouseDown = T$1((e2) => {
+    if (!isLeftClick(e2.button)) {
+      return;
+    }
+    if (e2.currentTarget) {
+      e2.currentTarget.ondragstart = function() {
+        return false;
+      };
+    }
+    e2.preventDefault();
+    setStarted(true);
+    initDrag({
+      draggingItemType,
+      initX: e2.clientX,
+      initY: e2.clientY
+    });
+    onInit == null ? void 0 : onInit(e2, dndSliceRef.current);
+  }, [onInit, draggingItemType, initDrag]);
+  const handleMouseMove = T$1((e2) => {
+    const {
+      initX,
+      initY,
+      draggingState,
+      draggingItemType: currentDraggingItemType
+    } = dndSliceRef.current;
+    if (currentDraggingItemType !== draggingItemType) {
+      setStarted(false);
+      reset();
+      return;
+    }
+    if (isPresent(initX) && isPresent(initY) && !isMouseMoved(initX, initY, e2.clientX, e2.clientY)) {
+      return;
+    }
+    if (draggingState <= DraggingState.INIT) {
+      setDragging({ x: e2.clientX, y: e2.clientY });
+      onDragStart == null ? void 0 : onDragStart(e2, dndSliceRef.current);
+      return;
+    }
+    setDragging({ x: e2.clientX, y: e2.clientY });
+    onDrag == null ? void 0 : onDrag(e2, dndSliceRef.current);
+  }, [draggingItemType, onDrag, onDragStart, setDragging, reset]);
+  const handleMouseUp = T$1((e2) => {
+    e2.stopPropagation();
+    if (isStarted) {
+      onMouseUp == null ? void 0 : onMouseUp(e2, dndSliceRef.current);
+      setStarted(false);
+      reset();
+    }
+  }, [isStarted, onMouseUp, reset]);
+  const handleKeyDown = T$1((e2) => {
+    if (isKeyPressed(e2, KEY.ESCAPE)) {
+      setStarted(false);
+      cancelDrag();
+      onPressESCKey == null ? void 0 : onPressESCKey(e2, dndSliceRef.current);
+    }
+  }, [onPressESCKey, cancelDrag]);
+  _$2(() => {
+    handleMouseMoveRef.current = handleMouseMove;
+    handleMouseUpRef.current = handleMouseUp;
+    handleKeyDownRef.current = handleKeyDown;
+  }, [handleKeyDown, handleMouseMove, handleMouseUp]);
+  _$2(() => {
+    const wrappedHandleMouseMove = (e2) => {
+      var _a;
+      return (_a = handleMouseMoveRef.current) == null ? void 0 : _a.call(handleMouseMoveRef, e2);
+    };
+    const wrappedHandleMouseUp = (e2) => {
+      var _a;
+      return (_a = handleMouseUpRef.current) == null ? void 0 : _a.call(handleMouseUpRef, e2);
+    };
+    const wrappedHandleKeyDown = (e2) => {
+      var _a;
+      return (_a = handleKeyDownRef.current) == null ? void 0 : _a.call(handleKeyDownRef, e2);
+    };
+    if (isStarted) {
+      document.addEventListener("mousemove", wrappedHandleMouseMove);
+      document.addEventListener("mouseup", wrappedHandleMouseUp);
+      document.addEventListener("keydown", wrappedHandleKeyDown);
+      return () => {
+        document.removeEventListener("mousemove", wrappedHandleMouseMove);
+        document.removeEventListener("mouseup", wrappedHandleMouseUp);
+        document.removeEventListener("keydown", wrappedHandleKeyDown);
+      };
+    }
+    return noop;
+  }, [isStarted, reset]);
+  return handleMouseDown;
+}
+function passConditionalProp(condition, prop) {
+  return condition ? prop : void 0;
+}
+function getMargins(flat) {
+  return {
+    vertical: flat ? 5 : 2,
+    horizontal: 8
+  };
+}
+function getBorderRadius(exceedLeft, exceedRight) {
+  const leftBorderRadius = exceedLeft ? 0 : "2px";
+  const rightBorderRadius = exceedRight ? 0 : "2px";
+  return `${leftBorderRadius} ${rightBorderRadius} ${rightBorderRadius} ${leftBorderRadius}`;
+}
+function getEventItemStyle({
+  uiModel,
+  flat,
+  eventHeight,
+  isDraggingTarget,
+  calendarColor
+}) {
+  const { exceedLeft, exceedRight } = uiModel;
+  const { color, backgroundColor, dragBackgroundColor, borderColor } = getEventColors(uiModel, calendarColor);
+  const defaultItemStyle = {
+    color,
+    backgroundColor: isDraggingTarget ? dragBackgroundColor : backgroundColor,
+    borderLeft: exceedLeft ? "none" : `3px solid ${borderColor}`,
+    borderRadius: getBorderRadius(exceedLeft, exceedRight),
+    overflow: "hidden",
+    height: eventHeight,
+    lineHeight: toPx(eventHeight),
+    opacity: isDraggingTarget ? 0.5 : 1
+  };
+  const margins = getMargins(flat);
+  return flat ? __spreadValues({
+    marginTop: margins.vertical
+  }, defaultItemStyle) : __spreadValues({
+    marginLeft: exceedLeft ? 0 : margins.horizontal,
+    marginRight: exceedRight ? 0 : margins.horizontal
+  }, defaultItemStyle);
+}
+function getContainerStyle({
+  flat,
+  uiModel,
+  resizingWidth,
+  movingLeft,
+  eventHeight,
+  headerHeight
+}) {
+  const { top, left, width, model } = uiModel;
+  const margins = getMargins(flat);
+  const baseStyle = flat ? {} : {
+    width: resizingWidth || toPercent(width),
+    left: toPercent(movingLeft != null ? movingLeft : left),
+    top: (top - 1) * (eventHeight + margins.vertical) + headerHeight,
+    position: "absolute"
+  };
+  return Object.assign(baseStyle, model.customStyle);
+}
+function getTestId({ model }) {
+  const calendarId = model.calendarId ? `${model.calendarId}-` : "";
+  const id = model.id ? `${model.id}-` : "";
+  return `${calendarId}${id}${model.title}`;
+}
+const classNames$k = {
+  eventBody: cls("weekday-event"),
+  eventTitle: cls("weekday-event-title"),
+  eventDot: cls("weekday-event-dot"),
+  moveEvent: cls("dragging--move-event"),
+  resizeEvent: cls("dragging--resize-horizontal-event")
+};
+function HorizontalEvent({
+  flat = false,
+  uiModel,
+  eventHeight,
+  headerHeight,
+  resizingWidth = null,
+  movingLeft = null
+}) {
+  const { currentView } = useStore(viewSelector);
+  const { useDetailPopup, isReadOnly: isReadOnlyCalendar } = useStore(optionsSelector);
+  const { setDraggingEventUIModel } = useDispatch("dnd");
+  const { showDetailPopup } = useDispatch("popup");
+  const layoutContainer = useLayoutContainer();
+  const eventBus = useEventBus();
+  const calendarColor = useCalendarColor(uiModel.model);
+  const [isDraggingTarget, setIsDraggingTarget] = y$1(false);
+  const eventContainerRef = s$2(null);
+  const { isReadOnly, id, calendarId } = uiModel.model;
+  const isDraggableEvent2 = !isReadOnlyCalendar && !isReadOnly && isNil(resizingWidth) && isNil(movingLeft);
+  const startDragEvent = (className2) => {
+    setDraggingEventUIModel(uiModel);
+    layoutContainer == null ? void 0 : layoutContainer.classList.add(className2);
+  };
+  const endDragEvent = (className2) => {
+    setIsDraggingTarget(false);
+    layoutContainer == null ? void 0 : layoutContainer.classList.remove(className2);
+  };
+  useTransientUpdate(dndSelector, ({ draggingEventUIModel, draggingState }) => {
+    if (draggingState === DraggingState.DRAGGING && (draggingEventUIModel == null ? void 0 : draggingEventUIModel.cid()) === uiModel.cid() && isNil(resizingWidth) && isNil(movingLeft)) {
+      setIsDraggingTarget(true);
+    } else {
+      setIsDraggingTarget(false);
+    }
+  });
+  _$2(() => {
+    if (isDraggableEvent2) {
+      eventBus.fire("afterRenderEvent", uiModel.model.toEventObject());
+    }
+  }, []);
+  const onResizeStart = useDrag(DRAGGING_TYPE_CREATORS.resizeEvent("dayGrid", `${uiModel.cid()}`), {
+    onDragStart: () => startDragEvent(classNames$k.resizeEvent),
+    onMouseUp: () => endDragEvent(classNames$k.resizeEvent),
+    onPressESCKey: () => endDragEvent(classNames$k.resizeEvent)
+  });
+  const onMoveStart = useDrag(DRAGGING_TYPE_CREATORS.moveEvent("dayGrid", `${uiModel.cid()}`), {
+    onDragStart: () => {
+      if (isDraggableEvent2) {
+        startDragEvent(classNames$k.moveEvent);
+      }
+    },
+    onMouseUp: (e2, { draggingState }) => {
+      endDragEvent(classNames$k.moveEvent);
+      const isClick = draggingState <= DraggingState.INIT;
+      if (isClick && useDetailPopup && eventContainerRef.current) {
+        showDetailPopup({
+          event: uiModel.model,
+          eventRect: eventContainerRef.current.getBoundingClientRect()
+        }, flat);
+      }
+      if (isClick) {
+        eventBus.fire("clickEvent", { event: uiModel.model.toEventObject(), nativeEvent: e2 });
+      }
+    },
+    onPressESCKey: () => endDragEvent(classNames$k.moveEvent)
+  });
+  const handleResizeStart = (e2) => {
+    e2.stopPropagation();
+    if (isDraggableEvent2) {
+      onResizeStart(e2);
+    }
+  };
+  const handleMoveStart = (e2) => {
+    e2.stopPropagation();
+    onMoveStart(e2);
+  };
+  const isDotEvent = !isDraggingTarget && currentView === "month" && uiModel.model.category === "time" && isSameDate(uiModel.model.start, uiModel.model.end);
+  const shouldHideResizeHandler = !isDraggableEvent2 || flat || isDraggingTarget || uiModel.exceedRight;
+  const containerStyle = getContainerStyle({
+    uiModel,
+    eventHeight,
+    headerHeight,
+    flat,
+    movingLeft,
+    resizingWidth
+  });
+  const eventItemStyle = getEventItemStyle({
+    uiModel,
+    flat,
+    eventHeight,
+    isDraggingTarget,
+    calendarColor
+  });
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("weekday-event-block", {
+      "weekday-exceed-left": uiModel.exceedLeft,
+      "weekday-exceed-right": uiModel.exceedRight
+    }),
+    style: containerStyle,
+    "data-testid": passConditionalProp(isDraggableEvent2, getTestId(uiModel)),
+    "data-calendar-id": calendarId,
+    "data-event-id": id,
+    ref: eventContainerRef
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$k.eventBody,
+    style: __spreadProps(__spreadValues({}, eventItemStyle), {
+      backgroundColor: isDotEvent ? null : eventItemStyle.backgroundColor,
+      borderLeft: isDotEvent ? null : eventItemStyle.borderLeft
+    }),
+    onMouseDown: handleMoveStart
+  }, isDotEvent ? /* @__PURE__ */ h$3("span", {
+    className: classNames$k.eventDot,
+    style: { backgroundColor: eventItemStyle.backgroundColor }
+  }) : null, /* @__PURE__ */ h$3("span", {
+    className: classNames$k.eventTitle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: uiModel.model.category,
+    param: uiModel.model
+  })), !shouldHideResizeHandler ? /* @__PURE__ */ h$3(HorizontalEventResizeIcon, {
+    onMouseDown: handleResizeStart
+  }) : null));
+}
+function useWhen(callback, condition) {
+  const callbackRef = s$2(callback);
+  _$2(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+  _$2(() => {
+    const invoke = () => callbackRef.current();
+    if (condition) {
+      invoke();
+    }
+  }, [condition]);
+}
+function useCurrentPointerPositionInGrid(gridPositionFinder) {
+  const [currentGridPos, setCurrentGridPos] = y$1(null);
+  useTransientUpdate(dndSelector, (dndState) => {
+    if (isPresent(dndState.x) && isPresent(dndState.y)) {
+      const gridPosition = gridPositionFinder({
+        clientX: dndState.x,
+        clientY: dndState.y
+      });
+      if (gridPosition) {
+        setCurrentGridPos(gridPosition);
+      }
+    }
+  });
+  const clearCurrentGridPos = T$1(() => setCurrentGridPos(null), []);
+  return [currentGridPos, clearCurrentGridPos];
+}
+const getTargetEventId = (itemType, area, behavior) => {
+  function isEventDraggingType(_itemType) {
+    return new RegExp(`^event/${area}/${behavior}/\\d+$`).test(_itemType);
+  }
+  if (isNil(itemType)) {
+    return null;
+  }
+  return isEventDraggingType(itemType) ? last(itemType.split("/")) : null;
+};
+function useDraggingEvent(area, behavior) {
+  const [isDraggingEnd, setIsDraggingEnd] = y$1(false);
+  const [isDraggingCanceled, setIsDraggingCanceled] = y$1(false);
+  const [draggingEvent, setDraggingEvent] = y$1(null);
+  useTransientUpdate(dndSelector, ({ draggingItemType, draggingEventUIModel, draggingState }) => {
+    const targetEventId = getTargetEventId(draggingItemType, area, behavior);
+    const hasMatchingTargetEvent = Number(targetEventId) === (draggingEventUIModel == null ? void 0 : draggingEventUIModel.cid());
+    const isIdle = draggingState === DraggingState.IDLE;
+    const isCanceled = draggingState === DraggingState.CANCELED;
+    if (isNil(draggingEvent) && hasMatchingTargetEvent) {
+      setDraggingEvent(draggingEventUIModel);
+    }
+    if (isPresent(draggingEvent) && (isIdle || isCanceled)) {
+      setIsDraggingEnd(true);
+      setIsDraggingCanceled(isCanceled);
+    }
+  });
+  const clearDraggingEvent = () => {
+    setDraggingEvent(null);
+    setIsDraggingEnd(false);
+    setIsDraggingCanceled(false);
+  };
+  return {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent,
+    clearDraggingEvent
+  };
+}
+function useAlldayGridRowEventMove({ rowStyleInfo, gridPositionFinder }) {
+  const eventBus = useEventBus();
+  const {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent: movingEvent,
+    clearDraggingEvent
+  } = useDraggingEvent("dayGrid", "move");
+  const startGridXRef = s$2(null);
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const { columnIndex } = currentGridPos != null ? currentGridPos : {};
+  const targetEventStartGridX = F$2(() => isNil(movingEvent) ? null : rowStyleInfo.findIndex(({ left }) => left === movingEvent.left), [rowStyleInfo, movingEvent]);
+  const currentMovingLeft = F$2(() => {
+    if (isNil(columnIndex) || isNil(startGridXRef.current) || isNil(targetEventStartGridX)) {
+      return null;
+    }
+    const newColumnIndex = targetEventStartGridX + columnIndex - startGridXRef.current;
+    return newColumnIndex < 0 ? -rowStyleInfo[-newColumnIndex].left : rowStyleInfo[newColumnIndex].left;
+  }, [columnIndex, rowStyleInfo, targetEventStartGridX]);
+  _$2(() => {
+    if (isNil(startGridXRef.current) && isPresent(columnIndex)) {
+      startGridXRef.current = columnIndex;
+    }
+  }, [columnIndex]);
+  useWhen(() => {
+    const shouldUpdate = !isDraggingCanceled && isPresent(movingEvent) && isPresent(columnIndex) && isPresent(currentMovingLeft) && columnIndex !== startGridXRef.current;
+    if (shouldUpdate && isPresent(startGridXRef.current)) {
+      const dateOffset = columnIndex - startGridXRef.current;
+      const newStartDate = new TZDate(movingEvent.model.getStarts());
+      const newEndDate = new TZDate(movingEvent.model.getEnds());
+      newStartDate.addDate(dateOffset);
+      newEndDate.addDate(dateOffset);
+      eventBus.fire("beforeUpdateEvent", {
+        event: movingEvent.model.toEventObject(),
+        changes: {
+          start: newStartDate,
+          end: newEndDate
+        }
+      });
+    }
+    clearDraggingEvent();
+    clearCurrentGridPos();
+    startGridXRef.current = null;
+  }, isDraggingEnd);
+  return F$2(() => ({
+    movingEvent,
+    movingLeft: currentMovingLeft
+  }), [currentMovingLeft, movingEvent]);
+}
+function MovingEventShadow$2({
+  rowStyleInfo,
+  gridPositionFinder
+}) {
+  const { movingEvent, movingLeft } = useAlldayGridRowEventMove({
+    rowStyleInfo,
+    gridPositionFinder
+  });
+  if (isNil(movingEvent)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(HorizontalEvent, {
+    uiModel: movingEvent,
+    eventHeight: EVENT_HEIGHT,
+    headerHeight: 0,
+    movingLeft
+  });
+}
+function getEventColIndex(uiModel, row) {
+  const start = getGridDateIndex(uiModel.getStarts(), row);
+  const end = getGridDateIndex(uiModel.getEnds(), row);
+  return { start, end };
+}
+function useAlldayGridRowEventResize({
+  weekDates,
+  gridColWidthMap,
+  gridPositionFinder
+}) {
+  const eventBus = useEventBus();
+  const {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent: resizingEvent,
+    clearDraggingEvent
+  } = useDraggingEvent("dayGrid", "resize");
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const { columnIndex } = currentGridPos != null ? currentGridPos : {};
+  const targetEventGridIndices = F$2(() => {
+    if (resizingEvent) {
+      return getEventColIndex(resizingEvent, weekDates);
+    }
+    return { start: -1, end: -1 };
+  }, [weekDates, resizingEvent]);
+  const resizingWidth = F$2(() => {
+    if (targetEventGridIndices.start > -1 && isPresent(columnIndex)) {
+      return gridColWidthMap[targetEventGridIndices.start][columnIndex];
+    }
+    return null;
+  }, [columnIndex, gridColWidthMap, targetEventGridIndices.start]);
+  useWhen(() => {
+    const shouldUpdateEvent = !isDraggingCanceled && isPresent(resizingEvent) && isPresent(columnIndex) && targetEventGridIndices.start <= columnIndex && targetEventGridIndices.end !== columnIndex;
+    if (shouldUpdateEvent) {
+      const targetDate = weekDates[columnIndex];
+      eventBus.fire("beforeUpdateEvent", {
+        event: resizingEvent.model.toEventObject(),
+        changes: { end: targetDate }
+      });
+    }
+    clearCurrentGridPos();
+    clearDraggingEvent();
+  }, isDraggingEnd);
+  return F$2(() => ({
+    resizingEvent,
+    resizingWidth
+  }), [resizingWidth, resizingEvent]);
+}
+function ResizingEventShadow({ weekDates, gridColWidthMap, gridPositionFinder }) {
+  const { resizingEvent, resizingWidth } = useAlldayGridRowEventResize({
+    weekDates,
+    gridColWidthMap,
+    gridPositionFinder
+  });
+  if (isNil(resizingEvent)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(HorizontalEvent, {
+    uiModel: resizingEvent,
+    eventHeight: EVENT_HEIGHT,
+    headerHeight: 0,
+    resizingWidth
+  });
+}
+function useDOMNode() {
+  const [node, setNode] = y$1(null);
+  const setNodeRef = T$1((ref) => {
+    if (ref) {
+      setNode(ref);
+    }
+  }, []);
+  return [node, setNodeRef];
+}
+function useGridRowHeightController(maxTop, category) {
+  const [clickedIndex, setClickedIndex] = y$1(0);
+  const [isClickedCount, setClickedCount] = y$1(false);
+  const { updateDayGridRowHeight } = useDispatch("weekViewLayout");
+  const onClickExceedCount = T$1((index) => {
+    setClickedCount(true);
+    setClickedIndex(index);
+    updateDayGridRowHeight({
+      rowName: category,
+      height: (maxTop + 1) * EVENT_HEIGHT
+    });
+  }, [category, maxTop, updateDayGridRowHeight]);
+  const onClickCollapseButton = T$1(() => {
+    setClickedCount(false);
+    updateDayGridRowHeight({
+      rowName: category,
+      height: DEFAULT_PANEL_HEIGHT
+    });
+  }, [category, updateDayGridRowHeight]);
+  return {
+    clickedIndex,
+    isClickedCount,
+    onClickExceedCount,
+    onClickCollapseButton
+  };
+}
+function requestTimeout(fn2, delay, registerCancel) {
+  let start;
+  const loop = (timestamp) => {
+    if (!start) {
+      start = timestamp;
+    }
+    const elapsed = timestamp - start;
+    if (elapsed >= delay) {
+      fn2();
+      registerCancel(noop);
+      return;
+    }
+    const raf2 = requestAnimationFrame(loop);
+    registerCancel(() => cancelAnimationFrame(raf2));
+  };
+  const raf = requestAnimationFrame(loop);
+  registerCancel(() => cancelAnimationFrame(raf));
+}
+function useClickPrevention({
+  onClick,
+  onDblClick,
+  delay = 300
+}) {
+  const cancelCallback = s$2(noop);
+  const registerCancel = (fn2) => {
+    cancelCallback.current = fn2;
+  };
+  const cancelScheduledWork = () => {
+    cancelCallback.current();
+  };
+  _$2(() => cancelScheduledWork, []);
+  const handleClick = (e2) => {
+    cancelScheduledWork();
+    requestTimeout(onClick.bind(null, e2), delay, registerCancel);
+  };
+  const handleDblClick = (e2) => {
+    cancelScheduledWork();
+    onDblClick(e2);
+  };
+  return [handleClick, handleDblClick];
+}
+const GRID_SELECTION_TYPE_MAP = {
+  dayGridMonth: "month",
+  dayGridWeek: "allday",
+  timeGrid: "time"
+};
+function sortDates(a2, b2) {
+  const isIncreased = a2 < b2;
+  return isIncreased ? [a2, b2] : [b2, a2];
+}
+function useGridSelection({
+  type,
+  selectionSorter,
+  dateGetter,
+  dateCollection,
+  gridPositionFinder
+}) {
+  const { useFormPopup, gridSelection: gridSelectionOptions } = useStore(optionsSelector);
+  const { enableDblClick, enableClick } = gridSelectionOptions;
+  const { setGridSelection, addGridSelection, clearAll } = useDispatch("gridSelection");
+  const { hideAllPopup, showFormPopup } = useDispatch("popup");
+  const eventBus = useEventBus();
+  const layoutContainer = useLayoutContainer();
+  const [initMousePosition, setInitMousePosition] = y$1(null);
+  const [initGridPosition, setInitGridPosition] = y$1(null);
+  const isSelectingGridRef = s$2(false);
+  const gridSelectionRef = s$2(null);
+  useTransientUpdate(T$1((state) => state.gridSelection[type], [type]), (gridSelection) => {
+    gridSelectionRef.current = gridSelection;
+  });
+  useTransientUpdate(dndSelector, ({ draggingState, draggingItemType }) => {
+    isSelectingGridRef.current = draggingItemType === currentGridSelectionType && draggingState >= DraggingState.INIT;
+  });
+  const currentGridSelectionType = DRAGGING_TYPE_CREATORS.gridSelection(type);
+  const setGridSelectionByPosition = (e2) => {
+    const gridPosition = gridPositionFinder(e2);
+    if (isPresent(initGridPosition) && isPresent(gridPosition)) {
+      setGridSelection(type, selectionSorter(initGridPosition, gridPosition));
+    }
+  };
+  const [handleClickWithDebounce, handleDblClickPreventingClick] = useClickPrevention({
+    onClick: (e2) => {
+      if (enableClick) {
+        onMouseUp(e2, true);
+      }
+    },
+    onDblClick: (e2) => {
+      if (enableDblClick) {
+        onMouseUp(e2, true);
+      }
+    },
+    delay: 250
+  });
+  const onMouseUpWithClick = (e2) => {
+    const isClick = e2.detail <= 1;
+    if (!enableClick && (!enableDblClick || isClick)) {
+      return;
+    }
+    if (enableClick) {
+      if (isClick) {
+        handleClickWithDebounce(e2);
+      } else {
+        handleDblClickPreventingClick(e2);
+      }
+      return;
+    }
+    onMouseUp(e2, true);
+  };
+  const onMouseUp = (e2, isClickEvent) => {
+    var _a;
+    if (isClickEvent) {
+      setGridSelectionByPosition(e2);
+    }
+    if (isPresent(gridSelectionRef.current)) {
+      const [startDate, endDate] = sortDates(...dateGetter(dateCollection, gridSelectionRef.current));
+      if (useFormPopup && isPresent(initMousePosition)) {
+        const popupArrowPointPosition = {
+          top: (e2.clientY + initMousePosition.y) / 2,
+          left: (e2.clientX + initMousePosition.x) / 2
+        };
+        showFormPopup({
+          isCreationPopup: true,
+          title: "",
+          location: "",
+          start: startDate,
+          end: endDate,
+          isAllday: type !== "timeGrid",
+          isPrivate: false,
+          popupArrowPointPosition,
+          close: clearAll
+        });
+      }
+      const gridSelectionSelector = `.${cls(GRID_SELECTION_TYPE_MAP[type])}.${cls("grid-selection")}`;
+      const gridSelectionElements = Array.from((_a = layoutContainer == null ? void 0 : layoutContainer.querySelectorAll(gridSelectionSelector)) != null ? _a : []);
+      eventBus.fire("selectDateTime", {
+        start: startDate.toDate(),
+        end: endDate.toDate(),
+        isAllday: type !== "timeGrid",
+        nativeEvent: e2,
+        gridSelectionElements
+      });
+    }
+  };
+  const clearGridSelection = T$1(() => {
+    setInitMousePosition(null);
+    setInitGridPosition(null);
+    setGridSelection(type, null);
+  }, [setGridSelection, type]);
+  const onMouseDown = useDrag(currentGridSelectionType, {
+    onInit: (e2) => {
+      if (useFormPopup) {
+        setInitMousePosition({
+          x: e2.clientX,
+          y: e2.clientY
+        });
+        hideAllPopup();
+      }
+      const gridPosition = gridPositionFinder(e2);
+      if (isPresent(gridPosition)) {
+        setInitGridPosition(gridPosition);
+      }
+      if (!useFormPopup) {
+        addGridSelection(type, gridSelectionRef.current);
+      }
+    },
+    onDragStart: (e2) => {
+      setGridSelectionByPosition(e2);
+    },
+    onDrag: (e2) => {
+      if (isSelectingGridRef.current) {
+        setGridSelectionByPosition(e2);
+      }
+    },
+    onMouseUp: (e2, { draggingState }) => {
+      e2.stopPropagation();
+      const isClickEvent = draggingState <= DraggingState.INIT;
+      if (isClickEvent) {
+        onMouseUpWithClick(e2);
+      } else {
+        onMouseUp(e2, isClickEvent);
+      }
+    },
+    onPressESCKey: clearGridSelection
+  });
+  _$2(() => clearGridSelection, [clearGridSelection]);
+  return onMouseDown;
+}
+const rowTitleTemplate = `alldayTitle`;
+function AlldayGridRow({
+  events,
+  weekDates,
+  height = DEFAULT_PANEL_HEIGHT,
+  options = {},
+  rowStyleInfo,
+  gridColWidthMap
+}) {
+  const { isReadOnly } = useStore(optionsSelector);
+  const dayGridLeftTheme = useTheme(weekDayGridLeftSelector);
+  const [panelContainer, setPanelContainerRef] = useDOMNode();
+  const { narrowWeekend = false, startDayOfWeek = Day$2.SUN } = options;
+  const maxTop = F$2(() => Math.max(0, ...events.map(({ top }) => top)), [events]);
+  const gridPositionFinder = F$2(() => createGridPositionFinder({
+    container: panelContainer,
+    rowsCount: 1,
+    columnsCount: weekDates.length,
+    narrowWeekend,
+    startDayOfWeek
+  }), [panelContainer, weekDates.length, narrowWeekend, startDayOfWeek]);
+  const { clickedIndex, isClickedCount, onClickExceedCount, onClickCollapseButton } = useGridRowHeightController(maxTop, "allday");
+  const horizontalEvents = F$2(() => events.filter(isWithinHeight(height, EVENT_HEIGHT + WEEK_EVENT_MARGIN_TOP)).map((uiModel) => /* @__PURE__ */ h$3(HorizontalEvent, {
+    key: `allday-DayEvent-${uiModel.cid()}`,
+    uiModel,
+    eventHeight: EVENT_HEIGHT,
+    headerHeight: 0
+  })), [events, height]);
+  const startGridSelection = useGridSelection({
+    type: "dayGridWeek",
+    gridPositionFinder,
+    dateCollection: weekDates,
+    selectionSorter: alldayGridRowSelectionHelper.sortSelection,
+    dateGetter: alldayGridRowSelectionHelper.getDateFromCollection
+  });
+  const onMouseDown = (e2) => {
+    const target = e2.target;
+    if (isReadOnly || !target.classList.contains(cls("panel-grid"))) {
+      return;
+    }
+    startGridSelection(e2);
+  };
+  return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("div", {
+    className: cls("panel-title"),
+    style: dayGridLeftTheme
+  }, /* @__PURE__ */ h$3(Template, {
+    template: rowTitleTemplate,
+    param: "alldayTitle"
+  })), /* @__PURE__ */ h$3("div", {
+    className: cls("allday-panel"),
+    ref: setPanelContainerRef,
+    onMouseDown
+  }, /* @__PURE__ */ h$3("div", {
+    className: cls("panel-grid-wrapper")
+  }, /* @__PURE__ */ h$3(GridCells, {
+    uiModels: events,
+    weekDates,
+    narrowWeekend,
+    height,
+    clickedIndex,
+    isClickedCount,
+    onClickExceedCount,
+    onClickCollapseButton
+  })), /* @__PURE__ */ h$3("div", {
+    className: cls(`panel-allday-events`)
+  }, horizontalEvents), /* @__PURE__ */ h$3(ResizingEventShadow, {
+    weekDates,
+    gridPositionFinder,
+    gridColWidthMap
+  }), /* @__PURE__ */ h$3(MovingEventShadow$2, {
+    rowStyleInfo,
+    gridPositionFinder
+  }), /* @__PURE__ */ h$3(AlldayGridSelection, {
+    weekDates,
+    narrowWeekend
+  })));
+}
+function OtherGridRow({
+  events,
+  weekDates,
+  category,
+  height = DEFAULT_PANEL_HEIGHT,
+  options = {}
+}) {
+  const dayGridLeftTheme = useTheme(weekDayGridLeftSelector);
+  const maxTop = F$2(() => Math.max(0, ...events.map(({ top }) => top)), [events]);
+  const { narrowWeekend = false } = options;
+  const rowTitleTemplate2 = `${category}Title`;
+  const { clickedIndex, isClickedCount, onClickExceedCount, onClickCollapseButton } = useGridRowHeightController(maxTop, category);
+  const horizontalEvents = F$2(() => events.filter(isWithinHeight(height, EVENT_HEIGHT + WEEK_EVENT_MARGIN_TOP)).map((uiModel) => /* @__PURE__ */ h$3(HorizontalEvent, {
+    key: `${category}-DayEvent-${uiModel.cid()}`,
+    uiModel,
+    eventHeight: EVENT_HEIGHT,
+    headerHeight: 0
+  })), [category, events, height]);
+  return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("div", {
+    className: cls("panel-title"),
+    style: dayGridLeftTheme
+  }, /* @__PURE__ */ h$3(Template, {
+    template: rowTitleTemplate2,
+    param: category
+  })), /* @__PURE__ */ h$3("div", {
+    className: cls("allday-panel")
+  }, /* @__PURE__ */ h$3("div", {
+    className: cls("panel-grid-wrapper")
+  }, /* @__PURE__ */ h$3(GridCells, {
+    uiModels: events,
+    weekDates,
+    narrowWeekend,
+    height,
+    clickedIndex,
+    isClickedCount,
+    onClickExceedCount,
+    onClickCollapseButton
+  })), /* @__PURE__ */ h$3("div", {
+    className: cls(`panel-${category}-events`)
+  }, horizontalEvents)));
+}
+const classNames$j = {
+  detailItem: cls("detail-item"),
+  detailItemIndent: cls("detail-item", "detail-item-indent"),
+  detailItemSeparate: cls("detail-item", "detail-item-separate"),
+  sectionDetail: cls("popup-section", "section-detail"),
+  content: cls("content"),
+  locationIcon: cls("icon", "ic-location-b"),
+  repeatIcon: cls("icon", "ic-repeat-b"),
+  userIcon: cls("icon", "ic-user-b"),
+  stateIcon: cls("icon", "ic-state-b"),
+  calendarDotIcon: cls("icon", "calendar-dot")
+};
+function EventDetailSectionDetail({ event }) {
+  var _a, _b;
+  const { location: location2, recurrenceRule, attendees, state, calendarId, body } = event;
+  const calendar = useCalendarById(calendarId);
+  return /* @__PURE__ */ h$3("div", {
+    className: classNames$j.sectionDetail
+  }, location2 && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.locationIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailLocation",
+    param: event,
+    as: "span"
+  }))), recurrenceRule && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.repeatIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailRecurrenceRule",
+    param: event,
+    as: "span"
+  }))), attendees && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItemIndent
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.userIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailAttendees",
+    param: event,
+    as: "span"
+  }))), state && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.stateIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailState",
+    param: event,
+    as: "span"
+  }))), calendar && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.calendarDotIcon,
+    style: {
+      backgroundColor: (_a = calendar == null ? void 0 : calendar.backgroundColor) != null ? _a : ""
+    }
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, (_b = calendar == null ? void 0 : calendar.name) != null ? _b : "")), body && /* @__PURE__ */ h$3("div", {
+    className: classNames$j.detailItemSeparate
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$j.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailBody",
+    param: event,
+    as: "span"
+  }))));
+}
+const classNames$i = {
+  sectionHeader: cls("popup-section", "section-header"),
+  content: cls("content"),
+  eventTitle: cls("event-title")
+};
+function EventDetailSectionHeader({ event }) {
+  return /* @__PURE__ */ h$3("div", {
+    className: classNames$i.sectionHeader
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$i.eventTitle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailTitle",
+    param: event,
+    as: "span"
+  })), /* @__PURE__ */ h$3("div", {
+    className: classNames$i.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDetailDate",
+    param: event,
+    as: "span"
+  })));
+}
+const SEE_MORE_POPUP_SLOT_CLASS_NAME = cls("see-more-popup-slot");
+const EVENT_FORM_POPUP_SLOT_CLASS_NAME = cls("event-form-popup-slot");
+const EVENT_DETAIL_POPUP_SLOT_CLASS_NAME = cls("event-detail-popup-slot");
+const HALF_OF_POPUP_ARROW_HEIGHT = 8;
+const BOOLEAN_KEYS_OF_EVENT_MODEL_DATA = [
+  "isPrivate",
+  "isAllday",
+  "isPending",
+  "isFocused",
+  "isVisible",
+  "isReadOnly"
+];
+var DetailPopupArrowDirection = /* @__PURE__ */ ((DetailPopupArrowDirection2) => {
+  DetailPopupArrowDirection2["right"] = "right";
+  DetailPopupArrowDirection2["left"] = "left";
+  return DetailPopupArrowDirection2;
+})(DetailPopupArrowDirection || {});
+var FormPopupArrowDirection = /* @__PURE__ */ ((FormPopupArrowDirection2) => {
+  FormPopupArrowDirection2["top"] = "top";
+  FormPopupArrowDirection2["bottom"] = "bottom";
+  return FormPopupArrowDirection2;
+})(FormPopupArrowDirection || {});
+const FloatingLayerContext = B$1(null);
+function FloatingLayerProvider({ children }) {
+  const [containerRef, containerRefCallback] = useDOMNode();
+  const [seeMorePopupSlotRef, seeMorePopupSlotRefCallback] = useDOMNode();
+  const [formPopupSlotRef, formPopupSlotRefCallback] = useDOMNode();
+  const [detailPopupSlotRef, detailPopupSlotRefCallback] = useDOMNode();
+  const floatingLayer = {
+    container: containerRef,
+    seeMorePopupSlot: seeMorePopupSlotRef,
+    formPopupSlot: formPopupSlotRef,
+    detailPopupSlot: detailPopupSlotRef
+  };
+  return /* @__PURE__ */ h$3(FloatingLayerContext.Provider, {
+    value: floatingLayer
+  }, children, /* @__PURE__ */ h$3("div", {
+    ref: containerRefCallback,
+    className: cls("floating-layer")
+  }, /* @__PURE__ */ h$3("div", {
+    ref: seeMorePopupSlotRefCallback,
+    className: SEE_MORE_POPUP_SLOT_CLASS_NAME
+  }), /* @__PURE__ */ h$3("div", {
+    ref: formPopupSlotRefCallback,
+    className: EVENT_FORM_POPUP_SLOT_CLASS_NAME
+  }), /* @__PURE__ */ h$3("div", {
+    ref: detailPopupSlotRefCallback,
+    className: EVENT_DETAIL_POPUP_SLOT_CLASS_NAME
+  })));
+}
+const useFloatingLayer = (floatingLayerType) => {
+  var _a;
+  const floatingLayers = q$2(FloatingLayerContext);
+  if (isUndefined_1(floatingLayers)) {
+    throw new Error("FloatingLayerProvider is not found");
+  }
+  return (_a = floatingLayers == null ? void 0 : floatingLayers[floatingLayerType]) != null ? _a : null;
+};
+function isTopOutOfLayout(top, layoutRect, popupRect) {
+  return top + popupRect.height > layoutRect.top + layoutRect.height;
+}
+function isLeftOutOfLayout(left, layoutRect, popupRect) {
+  return left + popupRect.width > layoutRect.left + layoutRect.width;
+}
+const eventFormPopupParamSelector = (state) => {
+  return state.popup[PopupType.Form];
+};
+const eventDetailPopupParamSelector = (state) => {
+  return state.popup[PopupType.Detail];
+};
+const seeMorePopupParamSelector = (state) => {
+  return state.popup[PopupType.SeeMore];
+};
+const classNames$h = {
+  popupContainer: cls("popup-container"),
+  detailContainer: cls("detail-container"),
+  topLine: cls("popup-top-line"),
+  border: cls("popup-arrow-border"),
+  fill: cls("popup-arrow-fill"),
+  sectionButton: cls("popup-section", "section-button"),
+  content: cls("content"),
+  editIcon: cls("icon", "ic-edit"),
+  deleteIcon: cls("icon", "ic-delete"),
+  editButton: cls("edit-button"),
+  deleteButton: cls("delete-button"),
+  verticalLine: cls("vertical-line")
+};
+function calculatePopupPosition$1(eventRect, layoutRect, popupRect) {
+  let top = eventRect.top + eventRect.height / 2 - popupRect.height / 2;
+  let left = eventRect.left + eventRect.width;
+  if (isTopOutOfLayout(top, layoutRect, popupRect)) {
+    top = layoutRect.top + layoutRect.height - popupRect.height;
+  }
+  if (isLeftOutOfLayout(left, layoutRect, popupRect)) {
+    left = eventRect.left - popupRect.width;
+  }
+  return [
+    Math.max(top, layoutRect.top) + window.scrollY,
+    Math.max(left, layoutRect.left) + window.scrollX
+  ];
+}
+function calculatePopupArrowPosition(eventRect, layoutRect, popupRect) {
+  const top = eventRect.top + eventRect.height / 2 + window.scrollY;
+  const popupLeft = eventRect.left + eventRect.width;
+  const isOutOfLayout = popupLeft + popupRect.width > layoutRect.left + layoutRect.width;
+  const direction = isOutOfLayout ? DetailPopupArrowDirection.right : DetailPopupArrowDirection.left;
+  return { top, direction };
+}
+function EventDetailPopup() {
+  const { useFormPopup } = useStore(optionsSelector);
+  const popupParams = useStore(eventDetailPopupParamSelector);
+  const { event, eventRect } = popupParams != null ? popupParams : {};
+  const { showFormPopup, hideDetailPopup } = useDispatch("popup");
+  const calendarColor = useCalendarColor(event);
+  const layoutContainer = useLayoutContainer();
+  const detailPopupSlot = useFloatingLayer("detailPopupSlot");
+  const eventBus = useEventBus();
+  const popupContainerRef = s$2(null);
+  const [style, setStyle] = y$1({});
+  const [arrowTop, setArrowTop] = y$1(0);
+  const [arrowDirection, setArrowDirection] = y$1(DetailPopupArrowDirection.left);
+  const popupArrowClassName = F$2(() => {
+    const right = arrowDirection === DetailPopupArrowDirection.right;
+    const left = arrowDirection === DetailPopupArrowDirection.left;
+    return cls("popup-arrow", { right, left });
+  }, [arrowDirection]);
+  h$2(() => {
+    if (popupContainerRef.current && eventRect && layoutContainer) {
+      const layoutRect = layoutContainer.getBoundingClientRect();
+      const popupRect = popupContainerRef.current.getBoundingClientRect();
+      const [top, left] = calculatePopupPosition$1(eventRect, layoutRect, popupRect);
+      const { top: arrowTopPosition, direction } = calculatePopupArrowPosition(eventRect, layoutRect, popupRect);
+      setStyle({ top, left });
+      setArrowTop(arrowTopPosition - top - HALF_OF_POPUP_ARROW_HEIGHT);
+      setArrowDirection(direction);
+    }
+  }, [eventRect, layoutContainer]);
+  if (isNil(event) || isNil(eventRect) || isNil(detailPopupSlot)) {
+    return null;
+  }
+  const {
+    title = "",
+    isAllday: isAllday2 = false,
+    start = new TZDate(),
+    end = new TZDate(),
+    location: location2,
+    state,
+    isReadOnly,
+    isPrivate
+  } = event;
+  const popupArrowPointPosition = {
+    top: eventRect.top + eventRect.height / 2,
+    left: eventRect.left + eventRect.width / 2
+  };
+  const onClickEditButton = () => {
+    if (useFormPopup) {
+      showFormPopup({
+        isCreationPopup: false,
+        event,
+        title,
+        location: location2,
+        start,
+        end,
+        isAllday: isAllday2,
+        isPrivate,
+        eventState: state,
+        popupArrowPointPosition
+      });
+    } else {
+      eventBus.fire("beforeUpdateEvent", { event: event.toEventObject(), changes: {} });
+    }
+  };
+  const onClickDeleteButton = () => {
+    eventBus.fire("beforeDeleteEvent", event.toEventObject());
+    hideDetailPopup();
+  };
+  return V(/* @__PURE__ */ h$3("div", {
+    role: "dialog",
+    className: classNames$h.popupContainer,
+    ref: popupContainerRef,
+    style
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$h.detailContainer
+  }, /* @__PURE__ */ h$3(EventDetailSectionHeader, {
+    event
+  }), /* @__PURE__ */ h$3(EventDetailSectionDetail, {
+    event
+  }), !isReadOnly && /* @__PURE__ */ h$3("div", {
+    className: classNames$h.sectionButton
+  }, /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$h.editButton,
+    onClick: onClickEditButton
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$h.editIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$h.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupEdit",
+    as: "span"
+  }))), /* @__PURE__ */ h$3("div", {
+    className: classNames$h.verticalLine
+  }), /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$h.deleteButton,
+    onClick: onClickDeleteButton
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$h.deleteIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$h.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupDelete",
+    as: "span"
+  }))))), /* @__PURE__ */ h$3("div", {
+    className: classNames$h.topLine,
+    style: { backgroundColor: calendarColor.backgroundColor }
+  }), /* @__PURE__ */ h$3("div", {
+    className: popupArrowClassName
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$h.border,
+    style: { top: arrowTop }
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$h.fill
+  })))), detailPopupSlot);
+}
+const classNames$g = {
+  dropdownMenu: cls("dropdown-menu"),
+  dropdownMenuItem: cls("dropdown-menu-item"),
+  dotIcon: cls("icon", "dot"),
+  content: cls("content")
+};
+function DropdownMenuItem({ index, name, backgroundColor, onClick }) {
+  return /* @__PURE__ */ h$3("li", {
+    className: classNames$g.dropdownMenuItem,
+    onClick: (e2) => onClick(e2, index)
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$g.dotIcon,
+    style: { backgroundColor }
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$g.content
+  }, name));
+}
+function CalendarDropdownMenu({ calendars, setOpened, onChangeIndex }) {
+  const handleDropdownMenuItemClick = (e2, index) => {
+    e2.stopPropagation();
+    setOpened(false);
+    onChangeIndex(index);
+  };
+  return /* @__PURE__ */ h$3("ul", {
+    className: classNames$g.dropdownMenu
+  }, calendars.map(({ name, backgroundColor = "000" }, index) => /* @__PURE__ */ h$3(DropdownMenuItem, {
+    key: `dropdown-${name}-${index}`,
+    index,
+    name,
+    backgroundColor,
+    onClick: handleDropdownMenuItemClick
+  })));
+}
+function PopupSection({
+  children,
+  classNames: classNames2 = [],
+  onClick = noop
+}) {
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("popup-section", ...classNames2),
+    onClick
+  }, children);
+}
+function useDropdownState() {
+  const [isOpened, setOpened] = y$1(false);
+  const toggleDropdown = () => setOpened((prev) => !prev);
+  return { isOpened, setOpened, toggleDropdown };
+}
+var FormStateActionType = /* @__PURE__ */ ((FormStateActionType2) => {
+  FormStateActionType2["init"] = "init";
+  FormStateActionType2["setCalendarId"] = "setCalendarId";
+  FormStateActionType2["setTitle"] = "setTitle";
+  FormStateActionType2["setLocation"] = "setLocation";
+  FormStateActionType2["setPrivate"] = "setPrivate";
+  FormStateActionType2["setAllday"] = "setAllday";
+  FormStateActionType2["setState"] = "setState";
+  FormStateActionType2["reset"] = "reset";
+  return FormStateActionType2;
+})(FormStateActionType || {});
+const defaultFormState = {
+  title: "",
+  location: "",
+  isAllday: false,
+  isPrivate: false,
+  state: "Busy"
+};
+function formStateReducer(state, action) {
+  switch (action.type) {
+    case "init":
+      return __spreadValues(__spreadValues({}, defaultFormState), action.event);
+    case "setCalendarId":
+      return __spreadProps(__spreadValues({}, state), { calendarId: action.calendarId });
+    case "setTitle":
+      return __spreadProps(__spreadValues({}, state), { title: action.title });
+    case "setLocation":
+      return __spreadProps(__spreadValues({}, state), { location: action.location });
+    case "setPrivate":
+      return __spreadProps(__spreadValues({}, state), { isPrivate: action.isPrivate });
+    case "setAllday":
+      return __spreadProps(__spreadValues({}, state), { isAllday: action.isAllday });
+    case "setState":
+      return __spreadProps(__spreadValues({}, state), { state: action.state });
+    case "reset":
+      return __spreadValues(__spreadValues({}, state), defaultFormState);
+    default:
+      return state;
+  }
+}
+function useFormState(initCalendarId) {
+  return d$2(formStateReducer, __spreadValues({ calendarId: initCalendarId }, defaultFormState));
+}
+const classNames$f = {
+  popupSection: ["dropdown-section", "calendar-section"],
+  popupSectionItem: cls("popup-section-item", "popup-button"),
+  dotIcon: cls("icon", "dot"),
+  content: cls("content", "event-calendar")
+};
+function CalendarSelector({ calendars, selectedCalendarId, formStateDispatch }) {
+  const { isOpened, setOpened, toggleDropdown } = useDropdownState();
+  const selectedCalendar = calendars.find((calendar) => calendar.id === selectedCalendarId);
+  const { backgroundColor = "", name = "" } = selectedCalendar != null ? selectedCalendar : {};
+  const changeIndex = (index) => formStateDispatch({ type: FormStateActionType.setCalendarId, calendarId: calendars[index].id });
+  return /* @__PURE__ */ h$3(PopupSection, {
+    onClick: toggleDropdown,
+    classNames: classNames$f.popupSection
+  }, /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$f.popupSectionItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$f.dotIcon,
+    style: { backgroundColor }
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$f.content
+  }, name), /* @__PURE__ */ h$3("span", {
+    className: cls("icon", "ic-dropdown-arrow", { open: isOpened })
+  })), isOpened && /* @__PURE__ */ h$3(CalendarDropdownMenu, {
+    calendars,
+    setOpened,
+    onChangeIndex: changeIndex
+  }));
+}
+const classNames$e = {
+  closeButton: cls("popup-button", "popup-close"),
+  closeIcon: cls("icon", "ic-close")
+};
+function ClosePopupButton({ type, close }) {
+  const { hideAllPopup } = useDispatch("popup");
+  const onClickHandler = () => {
+    hideAllPopup();
+    if (isFunction$2(close)) {
+      close();
+    }
+  };
+  return /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$e.closeButton,
+    onClick: onClickHandler
+  }, type === "moreEvents" ? /* @__PURE__ */ h$3(Template, {
+    template: "monthMoreClose"
+  }) : /* @__PURE__ */ h$3("i", {
+    className: classNames$e.closeIcon
+  }));
+}
+const classNames$d = {
+  confirmButton: cls("popup-button", "popup-confirm")
+};
+function ConfirmPopupButton({ children }) {
+  return /* @__PURE__ */ h$3("button", {
+    type: "submit",
+    className: classNames$d.confirmButton
+  }, /* @__PURE__ */ h$3("span", null, children));
+}
+function useStringOnlyTemplate({
+  template,
+  model,
+  defaultValue = ""
+}) {
+  const templates2 = useStore(templateSelector);
+  const templateFunc = templates2[template];
+  if (isNil(templateFunc)) {
+    return defaultValue;
+  }
+  let result = templateFunc(model);
+  if (!isString_1(result)) {
+    result = defaultValue;
+  }
+  return result;
+}
+const classNames$c = {
+  datePickerContainer: cls("datepicker-container"),
+  datePicker: cls("popup-section-item", "popup-date-picker"),
+  allday: cls("popup-section-item", "popup-section-allday"),
+  dateIcon: cls("icon", "ic-date"),
+  dateDash: cls("popup-date-dash"),
+  content: cls("content")
+};
+const DateSelector = R(function DateSelector2({ start, end, isAllday: isAllday2 = false, formStateDispatch }, ref) {
+  const { usageStatistics } = useStore(optionsSelector);
+  const startPickerContainerRef = s$2(null);
+  const startPickerInputRef = s$2(null);
+  const endPickerContainerRef = s$2(null);
+  const endPickerInputRef = s$2(null);
+  const startDatePlaceholder = useStringOnlyTemplate({
+    template: "startDatePlaceholder",
+    defaultValue: "Start Date"
+  });
+  const endDatePlaceholder = useStringOnlyTemplate({
+    template: "endDatePlaceholder",
+    defaultValue: "End Date"
+  });
+  const toggleAllday = () => formStateDispatch({ type: FormStateActionType.setAllday, isAllday: !isAllday2 });
+  _$2(() => {
+    if (startPickerContainerRef.current && startPickerInputRef.current && endPickerContainerRef.current && endPickerInputRef.current) {
+      const startDate = new TZDate(start);
+      const endDate = new TZDate(end);
+      if (isAllday2) {
+        startDate.setHours(12, 0, 0);
+        endDate.setHours(13, 0, 0);
+      }
+      ref.current = tui_date_picker__WEBPACK_IMPORTED_MODULE_0__.createRangePicker({
+        startpicker: {
+          date: startDate.toDate(),
+          input: startPickerInputRef.current,
+          container: startPickerContainerRef.current
+        },
+        endpicker: {
+          date: endDate.toDate(),
+          input: endPickerInputRef.current,
+          container: endPickerContainerRef.current
+        },
+        format: isAllday2 ? "yyyy-MM-dd" : "yyyy-MM-dd HH:mm",
+        timePicker: isAllday2 ? false : {
+          showMeridiem: false,
+          usageStatistics
+        },
+        usageStatistics
+      });
+    }
+  }, [start, end, isAllday2, usageStatistics, ref]);
+  return /* @__PURE__ */ h$3(PopupSection, null, /* @__PURE__ */ h$3("div", {
+    className: classNames$c.datePicker
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$c.dateIcon
+  }), /* @__PURE__ */ h$3("input", {
+    name: "start",
+    className: classNames$c.content,
+    placeholder: startDatePlaceholder,
+    ref: startPickerInputRef
+  }), /* @__PURE__ */ h$3("div", {
+    className: classNames$c.datePickerContainer,
+    ref: startPickerContainerRef
+  })), /* @__PURE__ */ h$3("span", {
+    className: classNames$c.dateDash
+  }, "-"), /* @__PURE__ */ h$3("div", {
+    className: classNames$c.datePicker
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$c.dateIcon
+  }), /* @__PURE__ */ h$3("input", {
+    name: "end",
+    className: classNames$c.content,
+    placeholder: endDatePlaceholder,
+    ref: endPickerInputRef
+  }), /* @__PURE__ */ h$3("div", {
+    className: classNames$c.datePickerContainer,
+    ref: endPickerContainerRef
+  })), /* @__PURE__ */ h$3("div", {
+    className: classNames$c.allday,
+    onClick: toggleAllday
+  }, /* @__PURE__ */ h$3("span", {
+    className: cls("icon", {
+      "ic-checkbox-normal": !isAllday2,
+      "ic-checkbox-checked": isAllday2
+    })
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$c.content
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "popupIsAllday"
+  })), /* @__PURE__ */ h$3("input", {
+    name: "isAllday",
+    type: "checkbox",
+    className: cls("hidden-input"),
+    value: isAllday2 ? "true" : "false",
+    checked: isAllday2
+  })));
+});
+const EVENT_STATES = ["Busy", "Free"];
+const classNames$b = {
+  popupSectionItem: cls("popup-section-item", "dropdown-menu-item"),
+  dropdownMenu: cls("dropdown-menu"),
+  icon: cls("icon"),
+  content: cls("content")
+};
+function StateDropdownMenu({ setOpened, setEventState }) {
+  const onClickDropdown = (e2, state) => {
+    e2.stopPropagation();
+    setOpened(false);
+    setEventState(state);
+  };
+  return /* @__PURE__ */ h$3("ul", {
+    className: classNames$b.dropdownMenu
+  }, EVENT_STATES.map((state) => /* @__PURE__ */ h$3("li", {
+    key: state,
+    className: classNames$b.popupSectionItem,
+    onClick: (e2) => onClickDropdown(e2, state)
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$b.icon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$b.content
+  }, state === "Busy" ? /* @__PURE__ */ h$3(Template, {
+    template: "popupStateBusy"
+  }) : /* @__PURE__ */ h$3(Template, {
+    template: "popupStateFree"
+  })))));
+}
+const classNames$a = {
+  popupSection: ["dropdown-section", "state-section"],
+  popupSectionItem: cls("popup-section-item", "popup-button"),
+  stateIcon: cls("icon", "ic-state"),
+  arrowIcon: cls("icon", "ic-dropdown-arrow"),
+  content: cls("content", "event-state")
+};
+function EventStateSelector({ eventState = "Busy", formStateDispatch }) {
+  const { isOpened, setOpened, toggleDropdown } = useDropdownState();
+  const handleChangeEventState = (state) => formStateDispatch({ type: FormStateActionType.setState, state });
+  return /* @__PURE__ */ h$3(PopupSection, {
+    onClick: toggleDropdown,
+    classNames: classNames$a.popupSection
+  }, /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$a.popupSectionItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$a.stateIcon
+  }), /* @__PURE__ */ h$3("span", {
+    className: classNames$a.content
+  }, eventState === "Busy" ? /* @__PURE__ */ h$3(Template, {
+    template: "popupStateBusy"
+  }) : /* @__PURE__ */ h$3(Template, {
+    template: "popupStateFree"
+  })), /* @__PURE__ */ h$3("span", {
+    className: classNames$a.arrowIcon
+  })), isOpened && /* @__PURE__ */ h$3(StateDropdownMenu, {
+    setOpened,
+    setEventState: handleChangeEventState
+  }));
+}
+const classNames$9 = {
+  popupSectionItem: cls("popup-section-item", "popup-section-location"),
+  locationIcon: cls("icon", "ic-location"),
+  content: cls("content")
+};
+function LocationInputBox({ location: location2, formStateDispatch }) {
+  const locationPlaceholder = useStringOnlyTemplate({
+    template: "locationPlaceholder",
+    defaultValue: "Location"
+  });
+  const handleLocationChange = (e2) => {
+    formStateDispatch({ type: FormStateActionType.setLocation, location: e2.currentTarget.value });
+  };
+  return /* @__PURE__ */ h$3(PopupSection, null, /* @__PURE__ */ h$3("div", {
+    className: classNames$9.popupSectionItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$9.locationIcon
+  }), /* @__PURE__ */ h$3("input", {
+    name: "location",
+    className: classNames$9.content,
+    placeholder: locationPlaceholder,
+    value: location2,
+    onChange: handleLocationChange
+  })));
+}
+const classNames$8 = {
+  popupSectionItem: cls("popup-section-item", "popup-section-title"),
+  privateButton: cls("popup-section-item", "popup-section-private", "popup-button"),
+  titleIcon: cls("icon", "ic-title"),
+  content: cls("content")
+};
+function TitleInputBox({ title, isPrivate = false, formStateDispatch }) {
+  const titlePlaceholder = useStringOnlyTemplate({
+    template: "titlePlaceholder",
+    defaultValue: "Subject"
+  });
+  const togglePrivate = () => formStateDispatch({ type: FormStateActionType.setPrivate, isPrivate: !isPrivate });
+  const handleInputChange = (e2) => {
+    formStateDispatch({ type: FormStateActionType.setTitle, title: e2.currentTarget.value });
+  };
+  return /* @__PURE__ */ h$3(PopupSection, null, /* @__PURE__ */ h$3("div", {
+    className: classNames$8.popupSectionItem
+  }, /* @__PURE__ */ h$3("span", {
+    className: classNames$8.titleIcon
+  }), /* @__PURE__ */ h$3("input", {
+    name: "title",
+    className: classNames$8.content,
+    placeholder: titlePlaceholder,
+    value: title,
+    onChange: handleInputChange,
+    required: true
+  })), /* @__PURE__ */ h$3("button", {
+    type: "button",
+    className: classNames$8.privateButton,
+    onClick: togglePrivate
+  }, /* @__PURE__ */ h$3("span", {
+    className: cls("icon", { "ic-private": isPrivate, "ic-public": !isPrivate })
+  }), /* @__PURE__ */ h$3("input", {
+    name: "isPrivate",
+    type: "checkbox",
+    className: cls("hidden-input"),
+    value: isPrivate ? "true" : "false",
+    checked: isPrivate
+  })));
+}
+const classNames$7 = {
+  popupContainer: cls("popup-container"),
+  formContainer: cls("form-container"),
+  popupArrowBorder: cls("popup-arrow-border"),
+  popupArrowFill: cls("popup-arrow-fill")
+};
+function calculatePopupPosition(popupArrowPointPosition, layoutRect, popupRect) {
+  let top = popupArrowPointPosition.top - popupRect.height - HALF_OF_POPUP_ARROW_HEIGHT;
+  let left = popupArrowPointPosition.left - popupRect.width / 2;
+  let direction = FormPopupArrowDirection.bottom;
+  if (top < layoutRect.top) {
+    direction = FormPopupArrowDirection.top;
+    top = popupArrowPointPosition.top + HALF_OF_POPUP_ARROW_HEIGHT;
+  }
+  if (isTopOutOfLayout(top, layoutRect, popupRect)) {
+    top = layoutRect.top + layoutRect.height - popupRect.height;
+  }
+  if (isLeftOutOfLayout(left, layoutRect, popupRect)) {
+    left = layoutRect.left + layoutRect.width - popupRect.width;
+  }
+  return {
+    top: top + window.scrollY,
+    left: Math.max(left, layoutRect.left) + window.scrollX,
+    direction
+  };
+}
+function isBooleanKey(key) {
+  return BOOLEAN_KEYS_OF_EVENT_MODEL_DATA.indexOf(key) !== -1;
+}
+function getChanges(event, eventObject) {
+  return Object.entries(eventObject).reduce((changes, [key, value]) => {
+    const eventObjectKey = key;
+    if (event[eventObjectKey] instanceof TZDate) {
+      if (compare(event[eventObjectKey], value) !== 0) {
+        changes[eventObjectKey] = value;
+      }
+    } else if (event[eventObjectKey] !== value) {
+      changes[eventObjectKey] = value;
+    }
+    return changes;
+  }, {});
+}
+function EventFormPopup() {
+  var _a;
+  const { calendars } = useStore(calendarSelector);
+  const { hideAllPopup } = useDispatch("popup");
+  const popupParams = useStore(eventFormPopupParamSelector);
+  const { start, end, popupArrowPointPosition, close, isCreationPopup, event } = popupParams != null ? popupParams : {};
+  const eventBus = useEventBus();
+  const formPopupSlot = useFloatingLayer("formPopupSlot");
+  const [formState, formStateDispatch] = useFormState((_a = calendars[0]) == null ? void 0 : _a.id);
+  const datePickerRef = s$2(null);
+  const popupContainerRef = s$2(null);
+  const [style, setStyle] = y$1({});
+  const [arrowLeft, setArrowLeft] = y$1(0);
+  const [arrowDirection, setArrowDirection] = y$1(FormPopupArrowDirection.bottom);
+  const layoutContainer = useLayoutContainer();
+  const popupArrowClassName = F$2(() => {
+    const top = arrowDirection === FormPopupArrowDirection.top;
+    const bottom = arrowDirection === FormPopupArrowDirection.bottom;
+    return cls("popup-arrow", { top, bottom });
+  }, [arrowDirection]);
+  h$2(() => {
+    if (popupContainerRef.current && popupArrowPointPosition && layoutContainer) {
+      const layoutRect = layoutContainer.getBoundingClientRect();
+      const popupRect = popupContainerRef.current.getBoundingClientRect();
+      const { top, left, direction } = calculatePopupPosition(popupArrowPointPosition, layoutRect, popupRect);
+      const arrowLeftPosition = popupArrowPointPosition.left - left;
+      setStyle({ left, top });
+      setArrowLeft(arrowLeftPosition);
+      setArrowDirection(direction);
+    }
+  }, [layoutContainer, popupArrowPointPosition]);
+  _$2(() => {
+    if (isPresent(popupParams) && isPresent(event)) {
+      formStateDispatch({
+        type: FormStateActionType.init,
+        event: {
+          title: popupParams.title,
+          location: popupParams.location,
+          isAllday: popupParams.isAllday,
+          isPrivate: popupParams.isPrivate,
+          calendarId: event.calendarId,
+          state: popupParams.eventState
+        }
+      });
+    }
+  }, [calendars, event, formStateDispatch, popupParams]);
+  _$2(() => {
+    if (isNil(popupParams)) {
+      formStateDispatch({ type: FormStateActionType.reset });
+    }
+  }, [formStateDispatch, popupParams]);
+  if (isNil(start) || isNil(end) || isNil(formPopupSlot)) {
+    return null;
+  }
+  const onSubmit = (e2) => {
+    var _a2, _b;
+    e2.preventDefault();
+    const formData = new FormData(e2.target);
+    const eventData = __spreadValues({}, formState);
+    formData.forEach((data, key) => {
+      eventData[key] = isBooleanKey(key) ? data === "true" : data;
+    });
+    eventData.start = new TZDate((_a2 = datePickerRef.current) == null ? void 0 : _a2.getStartDate());
+    eventData.end = new TZDate((_b = datePickerRef.current) == null ? void 0 : _b.getEndDate());
+    if (isCreationPopup) {
+      eventBus.fire("beforeCreateEvent", eventData);
+    } else if (event) {
+      const changes = getChanges(event, eventData);
+      eventBus.fire("beforeUpdateEvent", { event: event.toEventObject(), changes });
+    }
+    hideAllPopup();
+  };
+  return V(/* @__PURE__ */ h$3("div", {
+    role: "dialog",
+    className: classNames$7.popupContainer,
+    ref: popupContainerRef,
+    style
+  }, /* @__PURE__ */ h$3("form", {
+    onSubmit
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$7.formContainer
+  }, (calendars == null ? void 0 : calendars.length) ? /* @__PURE__ */ h$3(CalendarSelector, {
+    selectedCalendarId: formState.calendarId,
+    calendars,
+    formStateDispatch
+  }) : /* @__PURE__ */ h$3(PopupSection, null), /* @__PURE__ */ h$3(TitleInputBox, {
+    title: formState.title,
+    isPrivate: formState.isPrivate,
+    formStateDispatch
+  }), /* @__PURE__ */ h$3(LocationInputBox, {
+    location: formState.location,
+    formStateDispatch
+  }), /* @__PURE__ */ h$3(DateSelector, {
+    start,
+    end,
+    isAllday: formState.isAllday,
+    formStateDispatch,
+    ref: datePickerRef
+  }), /* @__PURE__ */ h$3(EventStateSelector, {
+    eventState: formState.state,
+    formStateDispatch
+  }), /* @__PURE__ */ h$3(ClosePopupButton, {
+    type: "form",
+    close
+  }), /* @__PURE__ */ h$3(PopupSection, null, /* @__PURE__ */ h$3(ConfirmPopupButton, null, isCreationPopup ? /* @__PURE__ */ h$3(Template, {
+    template: "popupSave"
+  }) : /* @__PURE__ */ h$3(Template, {
+    template: "popupUpdate"
+  })))), /* @__PURE__ */ h$3("div", {
+    className: popupArrowClassName
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$7.popupArrowBorder,
+    style: { left: arrowLeft }
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$7.popupArrowFill
+  }))))), formPopupSlot);
+}
+function shownPopupParamSelector(state) {
+  return Object.values(state.popup).find((popup) => isPresent(popup));
+}
+function PopupOverlay() {
+  const shownPopupParam = useStore(shownPopupParamSelector);
+  const { hideAllPopup } = useDispatch("popup");
+  const isPopupShown = isPresent(shownPopupParam);
+  const onClick = (ev) => {
+    var _a;
+    ev.stopPropagation();
+    (_a = shownPopupParam == null ? void 0 : shownPopupParam.close) == null ? void 0 : _a.call(shownPopupParam);
+    hideAllPopup();
+  };
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("popup-overlay"),
+    style: { display: isPopupShown ? "block" : "none" },
+    onClick
+  });
+}
+const classNames$6 = {
+  container: cls("see-more-container"),
+  seeMore: cls("see-more"),
+  header: cls("see-more-header"),
+  list: cls("month-more-list")
+};
+function SeeMoreEventsPopup() {
+  const popupParams = useStore(seeMorePopupParamSelector);
+  const { date: date2, events = [], popupPosition } = popupParams != null ? popupParams : {};
+  const { moreView, moreViewTitle } = useMonthTheme();
+  const seeMorePopupSlot = useFloatingLayer("seeMorePopupSlot");
+  const eventBus = useEventBus();
+  const moreEventsPopupContainerRef = s$2(null);
+  const isHidden = isNil(date2) || isNil(popupPosition) || isNil(seeMorePopupSlot);
+  _$2(() => {
+    if (!isHidden && moreEventsPopupContainerRef.current) {
+      eventBus.fire("clickMoreEventsBtn", {
+        date: date2.toDate(),
+        target: moreEventsPopupContainerRef.current
+      });
+    }
+  }, [date2, eventBus, isHidden]);
+  if (isHidden) {
+    return null;
+  }
+  const style = {
+    height: MONTH_MORE_VIEW_HEADER_HEIGHT,
+    marginBottom: MONTH_MORE_VIEW_HEADER_MARGIN_BOTTOM,
+    padding: MONTH_MORE_VIEW_HEADER_PADDING,
+    backgroundColor: moreViewTitle.backgroundColor
+  };
+  const moreTitle = {
+    ymd: toFormat(date2, "YYYY-MM-DD"),
+    day: date2.getDay(),
+    date: date2.getDate().toString().padStart(2, "0")
+  };
+  const moreViewListStyle = {
+    height: `calc(100% - ${MONTH_MORE_VIEW_HEADER_HEIGHT + MONTH_MORE_VIEW_HEADER_MARGIN_BOTTOM + MONTH_MORE_VIEW_HEADER_PADDING_TOP}px)`
+  };
+  return V(/* @__PURE__ */ h$3("div", {
+    role: "dialog",
+    className: classNames$6.container,
+    style: popupPosition,
+    ref: moreEventsPopupContainerRef
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$6.seeMore,
+    style: moreView
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$6.header,
+    style
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "monthMoreTitleDate",
+    param: moreTitle
+  }), /* @__PURE__ */ h$3(ClosePopupButton, {
+    type: "moreEvents"
+  })), /* @__PURE__ */ h$3("div", {
+    className: classNames$6.list,
+    style: moreViewListStyle
+  }, events.map((uiModel) => /* @__PURE__ */ h$3(HorizontalEvent, {
+    key: `see-more-event-item-${uiModel.cid()}`,
+    uiModel,
+    eventHeight: MONTH_EVENT_HEIGHT,
+    headerHeight: MONTH_MORE_VIEW_HEADER_HEIGHT,
+    flat: true
+  }))))), seeMorePopupSlot);
+}
+function getLayoutStylesFromInfo(width, height) {
+  const styles = { height: toPercent(100) };
+  if (width) {
+    styles.width = width;
+  }
+  if (height) {
+    styles.height = height;
+  }
+  return styles;
+}
+function Layout({
+  children,
+  width,
+  height,
+  className: className2 = "",
+  autoAdjustPanels = false
+}) {
+  const { backgroundColor } = useTheme(commonThemeSelector);
+  const [container, containerRefCallback] = useDOMNode();
+  const { setLastPanelType, updateLayoutHeight } = useDispatch("weekViewLayout");
+  const layoutClassName = F$2(() => `${cls("layout")} ${className2}`, [className2]);
+  h$2(() => {
+    if (container) {
+      const onResizeWindow = () => updateLayoutHeight(container.offsetHeight);
+      onResizeWindow();
+      window.addEventListener("resize", onResizeWindow);
+      return () => window.removeEventListener("resize", onResizeWindow);
+    }
+    return noop;
+  }, [container, updateLayoutHeight]);
+  h$2(() => {
+    if (container && autoAdjustPanels) {
+      const childArray = x$3(children);
+      const lastChild = childArray[childArray.length - 1];
+      if (!isString_1(lastChild) && !isNumber_1(lastChild) && !isNil(lastChild)) {
+        setLastPanelType(lastChild.props.name);
+      }
+    }
+  }, [children, setLastPanelType, autoAdjustPanels, container]);
+  return /* @__PURE__ */ h$3(LayoutContainerProvider, {
+    value: container
+  }, /* @__PURE__ */ h$3("div", {
+    ref: containerRefCallback,
+    className: layoutClassName,
+    style: __spreadProps(__spreadValues({}, getLayoutStylesFromInfo(width, height)), { backgroundColor })
+  }, container ? children : null), /* @__PURE__ */ h$3(EventFormPopup, null), /* @__PURE__ */ h$3(EventDetailPopup, null), /* @__PURE__ */ h$3(SeeMoreEventsPopup, null), /* @__PURE__ */ h$3(PopupOverlay, null));
+}
+function getDefaultStyle(height, border) {
+  return {
+    height,
+    width: "100%",
+    cursor: "row-resize",
+    borderTop: border,
+    borderBottom: border
+  };
+}
+function PanelResizer({ name, height }) {
+  const border = useTheme(T$1((theme) => theme.week.panelResizer.border, []));
+  const style = getDefaultStyle(height, border);
+  const defaultGuideStyle = __spreadProps(__spreadValues({}, style), {
+    display: "none",
+    border: "none",
+    backgroundColor: "#999"
+  });
+  const [guideStyle, setGuideStyle] = y$1(defaultGuideStyle);
+  const startPos = s$2(null);
+  const { updateDayGridRowHeightByDiff } = useDispatch("weekViewLayout");
+  const onMouseDown = useDrag(DRAGGING_TYPE_CONSTANTS.panelResizer, {
+    onDragStart: (e2) => {
+      startPos.current = { left: e2.pageX, top: e2.pageY };
+    },
+    onDrag: (e2) => {
+      if (startPos.current) {
+        const top = e2.pageY - startPos.current.top;
+        setGuideStyle((prev) => __spreadProps(__spreadValues({}, prev), { top, display: null }));
+      }
+    },
+    onMouseUp: (e2) => {
+      if (startPos.current) {
+        const diff = e2.pageY - startPos.current.top;
+        startPos.current = null;
+        setGuideStyle(defaultGuideStyle);
+        updateDayGridRowHeightByDiff({ rowName: name, diff });
+      }
+    }
+  });
+  return /* @__PURE__ */ h$3("div", {
+    style: { position: "relative" }
+  }, /* @__PURE__ */ h$3("div", {
+    className: cls("panel-resizer"),
+    style,
+    onMouseDown
+  }), /* @__PURE__ */ h$3("div", {
+    className: cls("panel-resizer-guide"),
+    style: guideStyle
+  }));
+}
+function getPanelSide(side, maxExpandableSide) {
+  return maxExpandableSide ? Math.min(maxExpandableSide, side) : side;
+}
+function getPanelStyle({
+  initialHeight,
+  initialWidth,
+  overflowX,
+  overflowY,
+  maxExpandableWidth,
+  maxExpandableHeight,
+  minHeight,
+  maxHeight,
+  minWidth,
+  maxWidth
+}) {
+  const style = {};
+  if (initialWidth) {
+    style.width = getPanelSide(initialWidth, maxExpandableWidth);
+    style.height = "100%";
+  }
+  if (initialHeight) {
+    style.width = "100%";
+    style.height = getPanelSide(initialHeight, maxExpandableHeight);
+  }
+  if (overflowX) {
+    style.overflowX = "auto";
+  }
+  if (overflowY) {
+    style.overflowY = "auto";
+  }
+  return __spreadProps(__spreadValues({}, style), { minHeight, maxHeight, minWidth, maxWidth });
+}
+const Panel = R(function Panel2({
+  name,
+  initialWidth = DEFAULT_PANEL_HEIGHT,
+  initialHeight = DEFAULT_PANEL_HEIGHT,
+  overflowX,
+  overflowY,
+  maxExpandableWidth,
+  maxExpandableHeight,
+  minHeight,
+  maxHeight,
+  minWidth,
+  maxWidth,
+  resizerWidth = DEFAULT_RESIZER_LENGTH,
+  resizerHeight = DEFAULT_RESIZER_LENGTH,
+  resizable,
+  children
+}, ref) {
+  const { updateDayGridRowHeight } = useDispatch("weekViewLayout");
+  const { height: dayGridRowHeight } = useStore(T$1((state) => {
+    var _a;
+    return (_a = state.weekViewLayout.dayGridRows[name]) != null ? _a : {};
+  }, [name]));
+  const height = dayGridRowHeight != null ? dayGridRowHeight : initialHeight;
+  h$2(() => {
+    updateDayGridRowHeight({ rowName: name, height: initialHeight });
+  }, [initialHeight, name, updateDayGridRowHeight]);
+  const styles = getPanelStyle({
+    initialWidth,
+    initialHeight: height,
+    overflowX,
+    overflowY,
+    maxExpandableWidth,
+    maxExpandableHeight,
+    minHeight,
+    maxHeight,
+    minWidth,
+    maxWidth
+  });
+  const isResizable = F$2(() => {
+    if (isNil(resizable) || isBoolean_1(resizable)) {
+      return !!resizable;
+    }
+    return resizable.includes(name);
+  }, [resizable, name]);
+  return /* @__PURE__ */ h$3(p$3, null, /* @__PURE__ */ h$3("div", {
+    className: cls("panel", name),
+    style: styles,
+    ref
+  }, children), isResizable ? /* @__PURE__ */ h$3(PanelResizer, {
+    name,
+    width: resizerWidth,
+    height: resizerHeight
+  }) : null);
+});
+const className = "timegrid";
+const addTimeGridPrefix = (selector) => `${className}-${selector}`;
+const timeFormats = {
+  second: "HH:mm:ss",
+  minute: "HH:mm",
+  hour: "HH:mm",
+  date: "HH:mm",
+  month: "MM.DD",
+  year: "YYYY.MM.DD"
+};
+const classNames$5 = {
+  time: cls("event-time"),
+  content: cls("event-time-content"),
+  travelTime: cls("travel-time"),
+  resizeHandleX: cls("resize-handler-x"),
+  moveEvent: cls("dragging--move-event"),
+  resizeEvent: cls("dragging--resize-vertical-event")
+};
+function getMarginLeft(left) {
+  const { percent, px } = extractPercentPx(`${left}`);
+  return left > 0 || percent > 0 || px > 0 ? TIME_EVENT_CONTAINER_MARGIN_LEFT : 0;
+}
+function getContainerWidth(width, marginLeft) {
+  if (isString_1(width)) {
+    return width;
+  }
+  if (width >= 0) {
+    return `calc(${toPercent(width)} - ${marginLeft}px)`;
+  }
+  return "";
+}
+function getStyles({
+  uiModel,
+  isDraggingTarget,
+  hasNextStartTime,
+  calendarColor,
+  minHeight
+}) {
+  const {
+    top,
+    left,
+    height,
+    width,
+    duplicateLeft,
+    duplicateWidth,
+    goingDurationHeight,
+    modelDurationHeight,
+    comingDurationHeight,
+    croppedStart,
+    croppedEnd
+  } = uiModel;
+  const travelBorderColor = "white";
+  const borderRadius = 2;
+  const defaultMarginBottom = 2;
+  const marginLeft = getMarginLeft(left);
+  const { color, backgroundColor, borderColor, dragBackgroundColor } = getEventColors(uiModel, calendarColor);
+  const containerStyle = {
+    width: getContainerWidth(duplicateWidth || width, marginLeft),
+    height: `calc(${toPercent(Math.max(height, minHeight))} - ${defaultMarginBottom}px)`,
+    top: toPercent(top),
+    left: duplicateLeft || toPercent(left),
+    borderRadius,
+    borderLeft: `3px solid ${borderColor}`,
+    marginLeft,
+    color,
+    backgroundColor: isDraggingTarget ? dragBackgroundColor : backgroundColor,
+    opacity: isDraggingTarget ? 0.5 : 1,
+    zIndex: hasNextStartTime ? 1 : 0
+  };
+  const goingDurationStyle = {
+    height: toPercent(goingDurationHeight),
+    borderBottom: `1px dashed ${travelBorderColor}`
+  };
+  const modelDurationStyle = {
+    height: toPercent(modelDurationHeight)
+  };
+  const comingDurationStyle = {
+    height: toPercent(comingDurationHeight),
+    borderTop: `1px dashed ${travelBorderColor}`
+  };
+  if (croppedStart) {
+    containerStyle.borderTopLeftRadius = 0;
+    containerStyle.borderTopRightRadius = 0;
+  }
+  if (croppedEnd) {
+    containerStyle.borderBottomLeftRadius = 0;
+    containerStyle.borderBottomRightRadius = 0;
+  }
+  return {
+    containerStyle,
+    goingDurationStyle,
+    modelDurationStyle,
+    comingDurationStyle
+  };
+}
+function isDraggableEvent({
+  uiModel,
+  isReadOnlyCalendar,
+  isDraggingTarget,
+  hasNextStartTime
+}) {
+  const { model } = uiModel;
+  return !isReadOnlyCalendar && !model.isReadOnly && !isDraggingTarget && !hasNextStartTime;
+}
+function TimeEvent({
+  uiModel,
+  nextStartTime,
+  isResizingGuide = false,
+  minHeight = 0
+}) {
+  const {
+    useDetailPopup,
+    isReadOnly: isReadOnlyCalendar,
+    week: weekOptions
+  } = useStore(optionsSelector);
+  const calendarColor = useCalendarColor(uiModel.model);
+  const { collapseDuplicateEvents } = weekOptions;
+  const layoutContainer = useLayoutContainer();
+  const { showDetailPopup } = useDispatch("popup");
+  const { setDraggingEventUIModel } = useDispatch("dnd");
+  const { setSelectedDuplicateEventCid } = useDispatch("weekViewLayout");
+  const eventBus = useEventBus();
+  const eventContainerRef = s$2(null);
+  const [isDraggingTarget, setIsDraggingTarget] = y$1(false);
+  const { model, goingDurationHeight, modelDurationHeight, comingDurationHeight, croppedEnd } = uiModel;
+  const { id, calendarId, customStyle } = model;
+  const hasNextStartTime = isPresent(nextStartTime);
+  const { containerStyle, goingDurationStyle, modelDurationStyle, comingDurationStyle } = getStyles({ uiModel, isDraggingTarget, hasNextStartTime, calendarColor, minHeight });
+  const isGuide = hasNextStartTime || isResizingGuide;
+  useTransientUpdate(dndSelector, ({ draggingEventUIModel, draggingState }) => {
+    if (draggingState === DraggingState.DRAGGING && (draggingEventUIModel == null ? void 0 : draggingEventUIModel.cid()) === uiModel.cid() && !hasNextStartTime && !isResizingGuide) {
+      setIsDraggingTarget(true);
+    } else {
+      setIsDraggingTarget(false);
+    }
+  });
+  _$2(() => {
+    if (!isResizingGuide) {
+      eventBus.fire("afterRenderEvent", uiModel.model.toEventObject());
+    }
+  }, []);
+  const startDragEvent = (className2) => {
+    setDraggingEventUIModel(uiModel);
+    layoutContainer == null ? void 0 : layoutContainer.classList.add(className2);
+  };
+  const endDragEvent = (className2) => {
+    setIsDraggingTarget(false);
+    layoutContainer == null ? void 0 : layoutContainer.classList.remove(className2);
+  };
+  const onMoveStart = useDrag(DRAGGING_TYPE_CREATORS.moveEvent("timeGrid", `${uiModel.cid()}`), {
+    onDragStart: () => {
+      if (isDraggable) {
+        startDragEvent(classNames$5.moveEvent);
+      }
+    },
+    onMouseUp: (e2, { draggingState }) => {
+      endDragEvent(classNames$5.moveEvent);
+      const isClick = draggingState <= DraggingState.INIT;
+      if (isClick && collapseDuplicateEvents) {
+        const selectedDuplicateEventCid = uiModel.duplicateEvents.length > 0 ? uiModel.cid() : DEFAULT_DUPLICATE_EVENT_CID;
+        setSelectedDuplicateEventCid(selectedDuplicateEventCid);
+      }
+      if (isClick && useDetailPopup && eventContainerRef.current) {
+        showDetailPopup({
+          event: uiModel.model,
+          eventRect: eventContainerRef.current.getBoundingClientRect()
+        }, false);
+      }
+      if (isClick) {
+        eventBus.fire("clickEvent", { event: uiModel.model.toEventObject(), nativeEvent: e2 });
+      }
+    },
+    onPressESCKey: () => endDragEvent(classNames$5.moveEvent)
+  });
+  const handleMoveStart = (e2) => {
+    e2.stopPropagation();
+    onMoveStart(e2);
+  };
+  const onResizeStart = useDrag(DRAGGING_TYPE_CREATORS.resizeEvent("timeGrid", `${uiModel.cid()}`), {
+    onDragStart: () => startDragEvent(classNames$5.resizeEvent),
+    onMouseUp: () => endDragEvent(classNames$5.resizeEvent),
+    onPressESCKey: () => endDragEvent(classNames$5.resizeEvent)
+  });
+  const handleResizeStart = (e2) => {
+    e2.stopPropagation();
+    onResizeStart(e2);
+  };
+  const isDraggable = isDraggableEvent({
+    uiModel,
+    isReadOnlyCalendar,
+    isDraggingTarget,
+    hasNextStartTime
+  });
+  const shouldShowResizeHandle = isDraggable && !croppedEnd;
+  return /* @__PURE__ */ h$3("div", {
+    "data-testid": `${isGuide ? "guide-" : ""}time-event-${model.title}-${uiModel.cid()}`,
+    "data-calendar-id": calendarId,
+    "data-event-id": id,
+    className: classNames$5.time,
+    style: __spreadValues(__spreadValues({}, containerStyle), customStyle),
+    onMouseDown: handleMoveStart,
+    ref: eventContainerRef
+  }, goingDurationHeight ? /* @__PURE__ */ h$3("div", {
+    className: classNames$5.travelTime,
+    style: goingDurationStyle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "goingDuration",
+    param: model
+  })) : null, modelDurationHeight ? /* @__PURE__ */ h$3("div", {
+    className: classNames$5.content,
+    style: modelDurationStyle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "time",
+    param: __spreadProps(__spreadValues({}, model.toEventObject()), {
+      start: hasNextStartTime ? nextStartTime : model.start
+    })
+  })) : null, comingDurationHeight ? /* @__PURE__ */ h$3("div", {
+    className: classNames$5.travelTime,
+    style: comingDurationStyle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "comingDuration",
+    param: model
+  })) : null, shouldShowResizeHandle ? /* @__PURE__ */ h$3("div", {
+    className: classNames$5.resizeHandleX,
+    onMouseDown: handleResizeStart
+  }) : null);
+}
+function GridSelection({ top, height, text }) {
+  const { backgroundColor, border } = useTheme(T$1((theme) => theme.common.gridSelection, []));
+  const color = useTheme(T$1((theme) => theme.week.gridSelection.color, []));
+  const style = {
+    top: toPercent(top),
+    height: toPercent(height),
+    backgroundColor,
+    border
+  };
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("time", "grid-selection"),
+    style,
+    "data-testid": `time-grid-selection-${top}-${height}`
+  }, text.length > 0 ? /* @__PURE__ */ h$3("span", {
+    className: cls("grid-selection-label"),
+    style: { color }
+  }, text) : null);
+}
+function GridSelectionByColumn({ columnIndex, timeGridRows }) {
+  const gridSelectionData = useStore(T$1((state) => timeGridSelectionHelper.calculateSelection(state.gridSelection.timeGrid, columnIndex, timeGridRows.length - 1), [columnIndex, timeGridRows]));
+  const gridSelectionProps = F$2(() => {
+    if (!gridSelectionData) {
+      return null;
+    }
+    const { startRowIndex, endRowIndex, isStartingColumn, isSelectingMultipleColumns } = gridSelectionData;
+    const { top: startRowTop, startTime: startRowStartTime } = timeGridRows[startRowIndex];
+    const {
+      top: endRowTop,
+      height: endRowHeight,
+      endTime: endRowEndTime
+    } = timeGridRows[endRowIndex];
+    const gridSelectionHeight = endRowTop + endRowHeight - startRowTop;
+    let text = `${startRowStartTime} - ${endRowEndTime}`;
+    if (isSelectingMultipleColumns) {
+      text = isStartingColumn ? startRowStartTime : "";
+    }
+    return {
+      top: startRowTop,
+      height: gridSelectionHeight,
+      text
+    };
+  }, [gridSelectionData, timeGridRows]);
+  if (isNil(gridSelectionProps)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(GridSelection, __spreadValues({}, gridSelectionProps));
+}
+function useTimeGridEventResize({
+  gridPositionFinder,
+  totalUIModels,
+  columnIndex,
+  timeGridData
+}) {
+  const eventBus = useEventBus();
+  const {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent: resizingStartUIModel,
+    clearDraggingEvent
+  } = useDraggingEvent("timeGrid", "resize");
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const [guideUIModel, setGuideUIModel] = y$1(null);
+  const clearStates = T$1(() => {
+    setGuideUIModel(null);
+    clearDraggingEvent();
+    clearCurrentGridPos();
+  }, [clearCurrentGridPos, clearDraggingEvent]);
+  const baseResizingInfo = F$2(() => {
+    if (isNil(resizingStartUIModel)) {
+      return null;
+    }
+    const { columns, rows } = timeGridData;
+    const resizeTargetUIModelColumns = totalUIModels.map((uiModels) => uiModels.filter((uiModel) => uiModel.cid() === resizingStartUIModel.cid()));
+    const findRowIndexOf = (targetDate, targetColumnIndex) => (row) => {
+      const rowStartTZDate = setTimeStrToDate(columns[targetColumnIndex].date, row.startTime);
+      const rowEndTZDate = setTimeStrToDate(timeGridData.columns[targetColumnIndex].date, row.endTime);
+      return rowStartTZDate <= targetDate && targetDate < rowEndTZDate;
+    };
+    const eventStartDateColumnIndex = resizeTargetUIModelColumns.findIndex((row) => row.length > 0);
+    const resizingStartEventUIModel = resizeTargetUIModelColumns[eventStartDateColumnIndex][0];
+    const { goingDuration = 0 } = resizingStartEventUIModel.model;
+    const renderStart = addMinutes(resizingStartEventUIModel.getStarts(), -goingDuration);
+    const eventStartDateRowIndex = Math.max(rows.findIndex(findRowIndexOf(renderStart, eventStartDateColumnIndex)), 0);
+    const eventEndDateColumnIndex = findLastIndex(resizeTargetUIModelColumns, (row) => row.length > 0);
+    const resizingEndEventUIModel = resizeTargetUIModelColumns[eventEndDateColumnIndex][0];
+    const { comingDuration = 0 } = resizingEndEventUIModel.model;
+    const renderEnd = addMinutes(resizingEndEventUIModel.getStarts(), comingDuration);
+    let eventEndDateRowIndex = rows.findIndex(findRowIndexOf(renderEnd, eventEndDateColumnIndex));
+    eventEndDateRowIndex = eventEndDateRowIndex >= 0 ? eventEndDateRowIndex : rows.length - 1;
+    return {
+      eventStartDateColumnIndex,
+      eventStartDateRowIndex,
+      eventEndDateColumnIndex,
+      eventEndDateRowIndex,
+      resizeTargetUIModelColumns
+    };
+  }, [resizingStartUIModel, timeGridData, totalUIModels]);
+  const canCalculateGuideUIModel = isPresent(baseResizingInfo) && isPresent(resizingStartUIModel) && isPresent(currentGridPos);
+  const oneRowHeight = F$2(() => baseResizingInfo ? timeGridData.rows[0].height : 0, [baseResizingInfo, timeGridData.rows]);
+  _$2(() => {
+    if (canCalculateGuideUIModel) {
+      const { eventStartDateRowIndex, eventStartDateColumnIndex, eventEndDateColumnIndex } = baseResizingInfo;
+      if (columnIndex === eventEndDateColumnIndex && eventStartDateColumnIndex === eventEndDateColumnIndex) {
+        const clonedUIModel = resizingStartUIModel.clone();
+        const { height, goingDurationHeight, comingDurationHeight } = clonedUIModel;
+        const newHeight = Math.max(oneRowHeight + goingDurationHeight * height / 100 + comingDurationHeight * height / 100, timeGridData.rows[currentGridPos.rowIndex].top - timeGridData.rows[eventStartDateRowIndex].top + oneRowHeight);
+        const newGoingDurationHeight = goingDurationHeight * height / newHeight;
+        const newComingDurationHeight = comingDurationHeight * height / newHeight;
+        clonedUIModel.setUIProps({
+          height: newHeight,
+          goingDurationHeight: newGoingDurationHeight,
+          comingDurationHeight: newComingDurationHeight,
+          modelDurationHeight: 100 - (newGoingDurationHeight + newComingDurationHeight)
+        });
+        setGuideUIModel(clonedUIModel);
+      }
+    }
+  }, [
+    baseResizingInfo,
+    canCalculateGuideUIModel,
+    columnIndex,
+    currentGridPos,
+    resizingStartUIModel,
+    timeGridData.rows,
+    oneRowHeight
+  ]);
+  _$2(() => {
+    if (canCalculateGuideUIModel) {
+      const { resizeTargetUIModelColumns, eventStartDateColumnIndex, eventEndDateColumnIndex } = baseResizingInfo;
+      if ((columnIndex === eventStartDateColumnIndex || columnIndex === eventEndDateColumnIndex) && eventStartDateColumnIndex !== eventEndDateColumnIndex) {
+        let clonedUIModel;
+        if (columnIndex === eventStartDateColumnIndex) {
+          clonedUIModel = resizeTargetUIModelColumns[columnIndex][0].clone();
+        } else {
+          clonedUIModel = resizingStartUIModel.clone();
+          clonedUIModel.setUIProps({
+            height: timeGridData.rows[currentGridPos.rowIndex].top + oneRowHeight
+          });
+        }
+        setGuideUIModel(clonedUIModel);
+      }
+    }
+  }, [
+    baseResizingInfo,
+    canCalculateGuideUIModel,
+    columnIndex,
+    currentGridPos,
+    resizingStartUIModel,
+    timeGridData.rows,
+    oneRowHeight
+  ]);
+  useWhen(() => {
+    const shouldUpdate = !isDraggingCanceled && isPresent(baseResizingInfo) && isPresent(currentGridPos) && isPresent(resizingStartUIModel) && baseResizingInfo.eventEndDateColumnIndex === columnIndex;
+    if (shouldUpdate) {
+      const { comingDuration = 0 } = resizingStartUIModel.model;
+      const targetEndDate = addMinutes(setTimeStrToDate(timeGridData.columns[columnIndex].date, timeGridData.rows[currentGridPos.rowIndex].endTime), -comingDuration);
+      const minEndDate = addMinutes(resizingStartUIModel.getStarts(), 30);
+      eventBus.fire("beforeUpdateEvent", {
+        event: resizingStartUIModel.model.toEventObject(),
+        changes: {
+          end: max(minEndDate, targetEndDate)
+        }
+      });
+    }
+    clearStates();
+  }, isDraggingEnd);
+  return guideUIModel;
+}
+function ResizingGuideByColumn({
+  gridPositionFinder,
+  totalUIModels,
+  columnIndex,
+  timeGridData
+}) {
+  const guideUIModel = useTimeGridEventResize({
+    gridPositionFinder,
+    totalUIModels,
+    columnIndex,
+    timeGridData
+  });
+  if (isNil(guideUIModel)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(TimeEvent, {
+    uiModel: guideUIModel,
+    isResizingGuide: true
+  });
+}
+const classNames$4 = {
+  column: cls("column"),
+  backgrounds: cls("background-events"),
+  events: cls("events")
+};
+function VerticalEvents({
+  eventUIModels,
+  minEventHeight
+}) {
+  const style = { marginRight: 8 };
+  return /* @__PURE__ */ h$3("div", {
+    className: classNames$4.events,
+    style
+  }, eventUIModels.map((eventUIModel) => /* @__PURE__ */ h$3(TimeEvent, {
+    key: `${eventUIModel.valueOf()}-${eventUIModel.cid()}`,
+    uiModel: eventUIModel,
+    minHeight: minEventHeight
+  })));
+}
+function backgroundColorSelector$1(theme) {
+  return {
+    defaultBackgroundColor: theme.week.dayGrid.backgroundColor,
+    todayBackgroundColor: theme.week.today.backgroundColor,
+    weekendBackgroundColor: theme.week.weekend.backgroundColor
+  };
+}
+function getBackgroundColor({
+  today,
+  columnDate,
+  defaultBackgroundColor,
+  todayBackgroundColor,
+  weekendBackgroundColor
+}) {
+  const isTodayColumn = isSameDate(today, columnDate);
+  const isWeekendColumn = isWeekend(columnDate.getDay());
+  if (isTodayColumn) {
+    return todayBackgroundColor;
+  }
+  if (isWeekendColumn) {
+    return weekendBackgroundColor;
+  }
+  return defaultBackgroundColor;
+}
+const Column = g$1(function Column2({
+  columnDate,
+  columnWidth,
+  columnIndex,
+  totalUIModels,
+  gridPositionFinder,
+  timeGridData,
+  isLastColumn
+}) {
+  const { rows: timeGridRows } = timeGridData;
+  const borderRight = useTheme(T$1((theme) => theme.week.timeGrid.borderRight, []));
+  const backgroundColorTheme = useTheme(backgroundColorSelector$1);
+  const [, getNow] = usePrimaryTimezone();
+  const today = getNow();
+  const backgroundColor = getBackgroundColor(__spreadValues({ today, columnDate }, backgroundColorTheme));
+  const style = {
+    width: columnWidth,
+    backgroundColor,
+    borderRight: isLastColumn ? "none" : borderRight
+  };
+  const uiModelsByColumn = totalUIModels[columnIndex];
+  const minEventHeight = timeGridRows[0].height;
+  return /* @__PURE__ */ h$3("div", {
+    className: classNames$4.column,
+    style,
+    "data-testid": `timegrid-column-${columnDate.getDay()}`
+  }, /* @__PURE__ */ h$3(VerticalEvents, {
+    eventUIModels: uiModelsByColumn,
+    minEventHeight
+  }), /* @__PURE__ */ h$3(ResizingGuideByColumn, {
+    gridPositionFinder,
+    totalUIModels,
+    columnIndex,
+    timeGridData
+  }), /* @__PURE__ */ h$3(GridSelectionByColumn, {
+    columnIndex,
+    timeGridRows
+  }));
+});
+function gridLineBorderSelector(theme) {
+  return {
+    halfHourLineBorder: theme.week.timeGridHalfHourLine.borderBottom,
+    hourLineBorder: theme.week.timeGridHourLine.borderBottom
+  };
+}
+const GridLines = g$1(function GridLines2({
+  timeGridRows
+}) {
+  const { halfHourLineBorder, hourLineBorder } = useTheme(gridLineBorderSelector);
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("gridlines")
+  }, timeGridRows.map((time, index) => {
+    const isUpperLine = index % 2 === 0;
+    return /* @__PURE__ */ h$3("div", {
+      key: `gridline-${time.startTime}-${time.endTime}`,
+      className: cls("gridline-half"),
+      style: {
+        top: toPercent(time.top),
+        height: toPercent(time.height),
+        borderBottom: isUpperLine ? halfHourLineBorder : hourLineBorder
+      },
+      "data-testid": `gridline-${time.startTime}-${time.endTime}`
+    });
+  }));
+});
+const THIRTY_MINUTES = 30;
+function getCurrentIndexByTime(time, hourStart) {
+  const hour = time.getHours() - hourStart;
+  const minutes = time.getMinutes();
+  return hour * 2 + Math.floor(minutes / THIRTY_MINUTES);
+}
+function getMovingEventPosition({
+  draggingEvent,
+  columnDiff,
+  rowDiff,
+  timeGridDataRows,
+  currentDate
+}) {
+  const rowHeight = timeGridDataRows[0].height;
+  const maxHeight = rowHeight * timeGridDataRows.length;
+  const millisecondsDiff = rowDiff * MS_PER_THIRTY_MINUTES + columnDiff * MS_PER_DAY;
+  const hourStart = Number(timeGridDataRows[0].startTime.split(":")[0]);
+  const { goingDuration = 0, comingDuration = 0 } = draggingEvent.model;
+  const goingStart = addMinutes(draggingEvent.getStarts(), -goingDuration);
+  const comingEnd = addMinutes(draggingEvent.getEnds(), comingDuration);
+  const nextStart = addMilliseconds(goingStart, millisecondsDiff);
+  const nextEnd = addMilliseconds(comingEnd, millisecondsDiff);
+  const startIndex = Math.max(getCurrentIndexByTime(nextStart, hourStart), 0);
+  const endIndex = Math.min(getCurrentIndexByTime(nextEnd, hourStart), timeGridDataRows.length - 1);
+  const isStartAtPrevDate = nextStart.getFullYear() < currentDate.getFullYear() || nextStart.getMonth() < currentDate.getMonth() || nextStart.getDate() < currentDate.getDate();
+  const isEndAtNextDate = nextEnd.getFullYear() > currentDate.getFullYear() || nextEnd.getMonth() > currentDate.getMonth() || nextEnd.getDate() > currentDate.getDate();
+  const indexDiff = endIndex - (isStartAtPrevDate ? 0 : startIndex);
+  const top = isStartAtPrevDate ? 0 : timeGridDataRows[startIndex].top;
+  const height = isEndAtNextDate ? maxHeight : Math.max(indexDiff, 1) * rowHeight;
+  return { top, height };
+}
+const initXSelector = (state) => state.dnd.initX;
+const initYSelector = (state) => state.dnd.initY;
+function useTimeGridEventMove({
+  gridPositionFinder,
+  timeGridData
+}) {
+  const initX = useStore(initXSelector);
+  const initY = useStore(initYSelector);
+  const eventBus = useEventBus();
+  const { isDraggingEnd, isDraggingCanceled, draggingEvent, clearDraggingEvent } = useDraggingEvent("timeGrid", "move");
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const initGridPosRef = s$2(null);
+  _$2(() => {
+    if (isPresent(initX) && isPresent(initY)) {
+      initGridPosRef.current = gridPositionFinder({
+        clientX: initX,
+        clientY: initY
+      });
+    }
+  }, [gridPositionFinder, initX, initY]);
+  const gridDiff = F$2(() => {
+    if (isNil(initGridPosRef.current) || isNil(currentGridPos)) {
+      return null;
+    }
+    return {
+      columnDiff: currentGridPos.columnIndex - initGridPosRef.current.columnIndex,
+      rowDiff: currentGridPos.rowIndex - initGridPosRef.current.rowIndex
+    };
+  }, [currentGridPos]);
+  const startDateTime = F$2(() => {
+    if (isNil(draggingEvent)) {
+      return null;
+    }
+    return draggingEvent.getStarts();
+  }, [draggingEvent]);
+  const clearState = T$1(() => {
+    clearCurrentGridPos();
+    clearDraggingEvent();
+    initGridPosRef.current = null;
+  }, [clearCurrentGridPos, clearDraggingEvent]);
+  const nextStartTime = F$2(() => {
+    if (isNil(gridDiff) || isNil(startDateTime)) {
+      return null;
+    }
+    return addMilliseconds(startDateTime, gridDiff.rowDiff * MS_PER_THIRTY_MINUTES + gridDiff.columnDiff * MS_PER_DAY);
+  }, [gridDiff, startDateTime]);
+  const movingEvent = F$2(() => {
+    if (isNil(draggingEvent) || isNil(currentGridPos) || isNil(gridDiff)) {
+      return null;
+    }
+    const clonedEvent = draggingEvent.clone();
+    const { top, height } = getMovingEventPosition({
+      draggingEvent: clonedEvent,
+      columnDiff: gridDiff.columnDiff,
+      rowDiff: gridDiff.rowDiff,
+      timeGridDataRows: timeGridData.rows,
+      currentDate: timeGridData.columns[currentGridPos.columnIndex].date
+    });
+    clonedEvent.setUIProps({
+      left: timeGridData.columns[currentGridPos.columnIndex].left,
+      width: timeGridData.columns[currentGridPos.columnIndex].width,
+      top,
+      height
+    });
+    return clonedEvent;
+  }, [currentGridPos, draggingEvent, gridDiff, timeGridData.columns, timeGridData.rows]);
+  useWhen(() => {
+    const shouldUpdate = !isDraggingCanceled && isPresent(draggingEvent) && isPresent(currentGridPos) && isPresent(gridDiff) && isPresent(nextStartTime) && (gridDiff.rowDiff !== 0 || gridDiff.columnDiff !== 0);
+    if (shouldUpdate) {
+      const duration = draggingEvent.duration();
+      const nextEndTime = addMilliseconds(nextStartTime, duration);
+      eventBus.fire("beforeUpdateEvent", {
+        event: draggingEvent.model.toEventObject(),
+        changes: {
+          start: nextStartTime,
+          end: nextEndTime
+        }
+      });
+    }
+    clearState();
+  }, isDraggingEnd);
+  return {
+    movingEvent,
+    nextStartTime
+  };
+}
+function MovingEventShadow$1({
+  gridPositionFinder,
+  timeGridData
+}) {
+  const { movingEvent, nextStartTime } = useTimeGridEventMove({
+    gridPositionFinder,
+    timeGridData
+  });
+  if (isNil(movingEvent)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(TimeEvent, {
+    uiModel: movingEvent,
+    nextStartTime
+  });
+}
+const TEST_IDS = {
+  NOW_INDICATOR: "timegrid-now-indicator",
+  NOW_INDICATOR_LABEL: "timegrid-now-indicator-label"
+};
+const classNames$3 = {
+  line: cls(addTimeGridPrefix("now-indicator")),
+  left: cls(addTimeGridPrefix("now-indicator-left")),
+  marker: cls(addTimeGridPrefix("now-indicator-marker")),
+  today: cls(addTimeGridPrefix("now-indicator-today")),
+  right: cls(addTimeGridPrefix("now-indicator-right"))
+};
+function nowIndicatorTheme(theme) {
+  return {
+    pastBorder: theme.week.nowIndicatorPast.border,
+    todayBorder: theme.week.nowIndicatorToday.border,
+    futureBorder: theme.week.nowIndicatorFuture.border,
+    bulletBackgroundColor: theme.week.nowIndicatorBullet.backgroundColor
+  };
+}
+function NowIndicator({ top, columnWidth, columnCount, columnIndex }) {
+  const { pastBorder, todayBorder, futureBorder, bulletBackgroundColor } = useTheme(nowIndicatorTheme);
+  const layoutContainer = useLayoutContainer();
+  const eventBus = useEventBus();
+  const indicatorRef = s$2(null);
+  const leftLine = {
+    left: toPercent(columnWidth * columnIndex),
+    width: toPercent(columnWidth * columnIndex)
+  };
+  const rightLine = {
+    left: toPercent(columnWidth * (columnIndex + 1)),
+    width: toPercent(columnWidth * (columnCount - columnIndex + 1))
+  };
+  _$2(() => {
+    const scrollToNow = (behavior) => {
+      var _a;
+      const scrollArea = (_a = layoutContainer == null ? void 0 : layoutContainer.querySelector(`.${cls("panel")}.${cls("time")}`)) != null ? _a : null;
+      if (scrollArea && indicatorRef.current) {
+        const { offsetHeight: scrollAreaOffsetHeight } = scrollArea;
+        const { offsetTop: targetOffsetTop } = indicatorRef.current;
+        const newScrollTop = targetOffsetTop - scrollAreaOffsetHeight / 2;
+        if (scrollArea.scrollTo) {
+          scrollArea.scrollTo({ top: newScrollTop, behavior });
+        } else {
+          scrollArea.scrollTop = newScrollTop;
+        }
+      }
+    };
+    eventBus.on("scrollToNow", scrollToNow);
+    return () => eventBus.off("scrollToNow", scrollToNow);
+  }, [eventBus, layoutContainer]);
+  _$2(() => {
+    eventBus.fire("scrollToNow", "smooth");
+  }, [eventBus]);
+  return /* @__PURE__ */ h$3("div", {
+    ref: indicatorRef,
+    className: classNames$3.line,
+    style: { top: toPercent(top) },
+    "data-testid": TEST_IDS.NOW_INDICATOR
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames$3.left,
+    style: { width: leftLine.width, borderTop: pastBorder }
+  }), /* @__PURE__ */ h$3("div", {
+    className: classNames$3.marker,
+    style: { left: leftLine.left, backgroundColor: bulletBackgroundColor }
+  }), /* @__PURE__ */ h$3("div", {
+    className: classNames$3.today,
+    style: {
+      left: leftLine.left,
+      width: toPercent(columnWidth),
+      borderTop: todayBorder
+    }
+  }), /* @__PURE__ */ h$3("div", {
+    className: classNames$3.right,
+    style: {
+      left: rightLine.left,
+      borderTop: futureBorder
+    }
+  }));
+}
+const classNames$2 = {
+  now: addTimeGridPrefix("current-time"),
+  dayDifference: addTimeGridPrefix("day-difference")
+};
+function NowIndicatorLabel({ unit, top, now, zonedNow }) {
+  const color = useTheme(T$1((theme) => theme.week.nowIndicatorLabel.color, []));
+  const dateDifference = F$2(() => {
+    return getDateDifference(zonedNow, now);
+  }, [zonedNow, now]);
+  const model = {
+    unit,
+    time: zonedNow,
+    format: timeFormats[unit]
+  };
+  return /* @__PURE__ */ h$3("div", {
+    className: cls(classNames$2.now),
+    style: { top: toPercent(top), color },
+    "data-testid": TEST_IDS.NOW_INDICATOR_LABEL
+  }, dateDifference !== 0 && /* @__PURE__ */ h$3("span", {
+    className: cls(classNames$2.dayDifference)
+  }, `[${dateDifference > 0 ? "+" : "-"}${Math.abs(dateDifference)}]`), /* @__PURE__ */ h$3(Template, {
+    template: "timegridNowIndicatorLabel",
+    param: model,
+    as: "span"
+  }));
+}
+const monthVisibleEventCountSelector = (state) => {
+  var _a;
+  return (_a = state.options.month.visibleEventCount) != null ? _a : 6;
+};
+const showNowIndicatorOptionSelector = (state) => state.options.week.showNowIndicator;
+const showTimezoneCollapseButtonOptionSelector = (state) => {
+  var _a;
+  return (_a = state.options.week.showTimezoneCollapseButton) != null ? _a : false;
+};
+const timezonesCollapsedOptionSelector = (state) => {
+  var _a;
+  return (_a = state.options.week.timezonesCollapsed) != null ? _a : false;
+};
+const classNames$1 = {
+  timeColumn: addTimeGridPrefix("time-column"),
+  hourRows: addTimeGridPrefix("hour-rows"),
+  time: addTimeGridPrefix("time"),
+  timeLabel: addTimeGridPrefix("time-label"),
+  first: addTimeGridPrefix("time-first"),
+  last: addTimeGridPrefix("time-last"),
+  hidden: addTimeGridPrefix("time-hidden")
+};
+function backgroundColorSelector(theme) {
+  return {
+    primaryTimezoneBackgroundColor: theme.week.timeGridLeft.backgroundColor,
+    subTimezoneBackgroundColor: theme.week.timeGridLeftAdditionalTimezone.backgroundColor
+  };
+}
+function timeColorSelector(theme) {
+  return {
+    pastTimeColor: theme.week.pastTime.color,
+    futureTimeColor: theme.week.futureTime.color
+  };
+}
+function HourRows({ rowsInfo, isPrimary, borderRight, width, nowIndicatorState }) {
+  var _a;
+  const showNowIndicator = useStore(showNowIndicatorOptionSelector);
+  const { primaryTimezoneBackgroundColor, subTimezoneBackgroundColor } = useTheme(backgroundColorSelector);
+  const { pastTimeColor, futureTimeColor } = useTheme(timeColorSelector);
+  const zonedNow = isPresent(nowIndicatorState) ? addMinutes(nowIndicatorState.now, (_a = rowsInfo[0].diffFromPrimaryTimezone) != null ? _a : 0) : null;
+  const backgroundColor = isPrimary ? primaryTimezoneBackgroundColor : subTimezoneBackgroundColor;
+  return /* @__PURE__ */ h$3("div", {
+    role: "rowgroup",
+    className: cls(classNames$1.hourRows),
+    style: { width: toPercent(width), borderRight, backgroundColor }
+  }, rowsInfo.map(({ date: date2, top, className: className2 }) => {
+    const isPast = isPresent(zonedNow) && date2 < zonedNow;
+    const color = isPast ? pastTimeColor : futureTimeColor;
+    return /* @__PURE__ */ h$3("div", {
+      key: date2.getTime(),
+      className: className2,
+      style: {
+        top: toPercent(top),
+        color
+      },
+      role: "row"
+    }, /* @__PURE__ */ h$3(Template, {
+      template: `timegridDisplay${isPrimary ? "Primary" : ""}Time`,
+      param: { time: date2 },
+      as: "span"
+    }));
+  }), showNowIndicator && isPresent(nowIndicatorState) && isPresent(zonedNow) && /* @__PURE__ */ h$3(NowIndicatorLabel, {
+    unit: "hour",
+    top: nowIndicatorState.top,
+    now: nowIndicatorState.now,
+    zonedNow
+  }));
+}
+const TimeColumn = g$1(function TimeColumn2({ timeGridRows, nowIndicatorState }) {
+  const showNowIndicator = useStore(showNowIndicatorOptionSelector);
+  const timezones = useStore(timezonesSelector);
+  const timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
+  const tzConverter = useTZConverter();
+  const { width, borderRight } = useTheme(weekTimeGridLeftSelector);
+  const rowsByHour = F$2(() => timeGridRows.filter((_2, index) => index % 2 === 0 || index === timeGridRows.length - 1), [timeGridRows]);
+  const hourRowsPropsMapper = T$1((row, index, diffFromPrimaryTimezone) => {
+    const shouldHideRow = ({ top: rowTop, height: rowHeight }) => {
+      if (!showNowIndicator || isNil(nowIndicatorState)) {
+        return false;
+      }
+      const indicatorTop = nowIndicatorState.top;
+      return rowTop - rowHeight <= indicatorTop && indicatorTop <= rowTop + rowHeight;
+    };
+    const isFirst = index === 0;
+    const isLast = index === rowsByHour.length - 1;
+    const className2 = cls(classNames$1.time, {
+      [classNames$1.first]: isFirst,
+      [classNames$1.last]: isLast,
+      [classNames$1.hidden]: shouldHideRow(row)
+    });
+    let date2 = setTimeStrToDate(new TZDate(), isLast ? row.endTime : row.startTime);
+    if (isPresent(diffFromPrimaryTimezone)) {
+      date2 = addMinutes(date2, diffFromPrimaryTimezone);
+    }
+    return {
+      date: date2,
+      top: row.top,
+      className: className2,
+      diffFromPrimaryTimezone
+    };
+  }, [rowsByHour, nowIndicatorState, showNowIndicator]);
+  const [primaryTimezone, ...otherTimezones] = timezones;
+  const hourRowsWidth = otherTimezones.length > 0 ? 100 / (otherTimezones.length + 1) : 100;
+  const primaryTimezoneHourRowsProps = rowsByHour.map((row, index) => hourRowsPropsMapper(row, index));
+  const otherTimezoneHourRowsProps = F$2(() => {
+    if (otherTimezones.length === 0) {
+      return [];
+    }
+    return otherTimezones.reverse().map((timezone) => {
+      const { timezoneName } = timezone;
+      const primaryTimezoneOffset = tzConverter(primaryTimezone.timezoneName).getTimezoneOffset();
+      const currentTimezoneOffset = tzConverter(timezoneName).getTimezoneOffset();
+      const diffFromPrimaryTimezone = currentTimezoneOffset - primaryTimezoneOffset;
+      return rowsByHour.map((row, index) => hourRowsPropsMapper(row, index, diffFromPrimaryTimezone));
+    });
+  }, [hourRowsPropsMapper, otherTimezones, primaryTimezone, rowsByHour, tzConverter]);
+  return /* @__PURE__ */ h$3("div", {
+    className: cls(classNames$1.timeColumn),
+    style: { width },
+    "data-testid": "timegrid-time-column"
+  }, !timezonesCollapsed && otherTimezoneHourRowsProps.map((rowsInfo) => /* @__PURE__ */ h$3(HourRows, {
+    key: rowsInfo[0].diffFromPrimaryTimezone,
+    rowsInfo,
+    isPrimary: false,
+    borderRight,
+    width: hourRowsWidth,
+    nowIndicatorState
+  })), /* @__PURE__ */ h$3(HourRows, {
+    rowsInfo: primaryTimezoneHourRowsProps,
+    isPrimary: true,
+    borderRight,
+    width: timezonesCollapsed ? 100 : hourRowsWidth,
+    nowIndicatorState
+  }));
+});
+function getTopPercentByTime(date2, start, end) {
+  const startTime = start.getTime();
+  const endTime = end.getTime();
+  const time = limit(date2.getTime(), [startTime], [endTime]) - startTime;
+  const max2 = endTime - startTime;
+  const topPercent = ratio(max2, 100, time);
+  return limit(topPercent, [0], [100]);
+}
+function getTopHeightByTime(start, end, minTime, maxTime) {
+  const top = getTopPercentByTime(start, minTime, maxTime);
+  const bottom = getTopPercentByTime(end, minTime, maxTime);
+  const height = bottom - top;
+  return {
+    top,
+    height
+  };
+}
+const MIN_HEIGHT_PERCENT = 1;
+function isBetween(startColumnTime, endColumnTime) {
+  return (uiModel) => {
+    const { goingDuration = 0, comingDuration = 0 } = uiModel.model;
+    const ownStarts = addMinutes(uiModel.getStarts(), -goingDuration);
+    const ownEnds = addMinutes(uiModel.getEnds(), comingDuration);
+    return !(ownEnds <= startColumnTime || ownStarts >= endColumnTime);
+  };
+}
+function setInnerHeights(uiModel, options) {
+  const { renderStart, renderEnd, modelStart, modelEnd } = options;
+  const { goingDuration = 0, comingDuration = 0 } = uiModel.model;
+  let modelDurationHeight = 100;
+  if (goingDuration > 0) {
+    const { height: goingDurationHeight } = getTopHeightByTime(renderStart, modelStart, renderStart, renderEnd);
+    uiModel.goingDurationHeight = goingDurationHeight;
+    modelDurationHeight -= goingDurationHeight;
+  }
+  if (comingDuration > 0) {
+    const { height: comingDurationHeight } = getTopHeightByTime(modelEnd, renderEnd, renderStart, renderEnd);
+    uiModel.comingDurationHeight = comingDurationHeight;
+    modelDurationHeight -= comingDurationHeight;
+  }
+  uiModel.modelDurationHeight = modelDurationHeight;
+}
+function setCroppedEdges(uiModel, options) {
+  const { goingStart, comingEnd, startColumnTime, endColumnTime } = options;
+  if (goingStart < startColumnTime) {
+    uiModel.croppedStart = true;
+  }
+  if (comingEnd > endColumnTime) {
+    uiModel.croppedEnd = true;
+  }
+}
+function getDuplicateLeft(uiModel, baseLeft) {
+  const { duplicateEvents, duplicateEventIndex } = uiModel;
+  const prevEvent = duplicateEvents[duplicateEventIndex - 1];
+  let left = baseLeft;
+  if (prevEvent) {
+    const { percent: leftPercent, px: leftPx } = extractPercentPx(`${prevEvent.duplicateLeft}`);
+    const { percent: widthPercent, px: widthPx } = extractPercentPx(`${prevEvent.duplicateWidth}`);
+    const percent = leftPercent + widthPercent;
+    const px = leftPx + widthPx + TIME_EVENT_CONTAINER_MARGIN_LEFT;
+    if (percent !== 0) {
+      left = `calc(${toPercent(percent)} ${px > 0 ? "+" : "-"} ${toPx(Math.abs(px))})`;
+    } else {
+      left = toPx(px);
+    }
+  } else {
+    left = toPercent(left);
+  }
+  return left;
+}
+function getDuplicateWidth(uiModel, baseWidth) {
+  const { collapse } = uiModel;
+  return collapse ? `${COLLAPSED_DUPLICATE_EVENT_WIDTH_PX}px` : `calc(${toPercent(baseWidth)} - ${toPx((COLLAPSED_DUPLICATE_EVENT_WIDTH_PX + TIME_EVENT_CONTAINER_MARGIN_LEFT) * (uiModel.duplicateEvents.length - 1) + TIME_EVENT_CONTAINER_MARGIN_LEFT)})`;
+}
+function setDimension(uiModel, options) {
+  const { startColumnTime, endColumnTime, baseWidth, columnIndex, renderStart, renderEnd } = options;
+  const { duplicateEvents } = uiModel;
+  const { top, height } = getTopHeightByTime(renderStart, renderEnd, startColumnTime, endColumnTime);
+  const dimension = {
+    top,
+    left: baseWidth * columnIndex,
+    width: baseWidth,
+    height: Math.max(MIN_HEIGHT_PERCENT, height),
+    duplicateLeft: "",
+    duplicateWidth: ""
+  };
+  if (duplicateEvents.length > 0) {
+    dimension.duplicateLeft = getDuplicateLeft(uiModel, dimension.left);
+    dimension.duplicateWidth = getDuplicateWidth(uiModel, dimension.width);
+  }
+  uiModel.setUIProps(dimension);
+}
+function getRenderInfoOptions(uiModel, columnIndex, baseWidth, startColumnTime, endColumnTime) {
+  const { goingDuration = 0, comingDuration = 0 } = uiModel.model;
+  const modelStart = uiModel.getStarts();
+  const modelEnd = uiModel.getEnds();
+  const goingStart = addMinutes(modelStart, -goingDuration);
+  const comingEnd = addMinutes(modelEnd, comingDuration);
+  const renderStart = max(goingStart, startColumnTime);
+  const renderEnd = min(comingEnd, endColumnTime);
+  return {
+    baseWidth,
+    columnIndex,
+    modelStart,
+    modelEnd,
+    renderStart,
+    renderEnd,
+    goingStart,
+    comingEnd,
+    startColumnTime,
+    endColumnTime,
+    duplicateEvents: uiModel.duplicateEvents
+  };
+}
+function setRenderInfo({
+  uiModel,
+  columnIndex,
+  baseWidth,
+  startColumnTime,
+  endColumnTime,
+  isDuplicateEvent = false
+}) {
+  if (!isDuplicateEvent && uiModel.duplicateEvents.length > 0) {
+    uiModel.duplicateEvents.forEach((event) => {
+      setRenderInfo({
+        uiModel: event,
+        columnIndex,
+        baseWidth,
+        startColumnTime,
+        endColumnTime,
+        isDuplicateEvent: true
+      });
+    });
+    return;
+  }
+  const renderInfoOptions = getRenderInfoOptions(uiModel, columnIndex, baseWidth, startColumnTime, endColumnTime);
+  setDimension(uiModel, renderInfoOptions);
+  setInnerHeights(uiModel, renderInfoOptions);
+  setCroppedEdges(uiModel, renderInfoOptions);
+}
+function setDuplicateEvents(uiModels, options, selectedDuplicateEventCid) {
+  const { getDuplicateEvents, getMainEvent } = options;
+  const eventObjects = uiModels.map((uiModel) => uiModel.model.toEventObject());
+  uiModels.forEach((targetUIModel) => {
+    if (targetUIModel.collapse || targetUIModel.duplicateEvents.length > 0) {
+      return;
+    }
+    const duplicateEvents = getDuplicateEvents(targetUIModel.model.toEventObject(), eventObjects);
+    if (duplicateEvents.length <= 1) {
+      return;
+    }
+    const mainEvent = getMainEvent(duplicateEvents);
+    const duplicateEventUIModels = duplicateEvents.map((event) => uiModels.find((uiModel) => uiModel.cid() === event.__cid));
+    const isSelectedGroup = !!(selectedDuplicateEventCid > DEFAULT_DUPLICATE_EVENT_CID && duplicateEvents.find((event) => event.__cid === selectedDuplicateEventCid));
+    const duplicateStarts = duplicateEvents.reduce((acc, { start, goingDuration }) => {
+      const renderStart = addMinutes(start, -goingDuration);
+      return min(acc, renderStart);
+    }, duplicateEvents[0].start);
+    const duplicateEnds = duplicateEvents.reduce((acc, { end, comingDuration }) => {
+      const renderEnd = addMinutes(end, comingDuration);
+      return max(acc, renderEnd);
+    }, duplicateEvents[0].end);
+    duplicateEventUIModels.forEach((event, index) => {
+      const isMain = event.cid() === mainEvent.__cid;
+      const collapse = !(isSelectedGroup && event.cid() === selectedDuplicateEventCid || !isSelectedGroup && isMain);
+      event.setUIProps({
+        duplicateEvents: duplicateEventUIModels,
+        duplicateEventIndex: index,
+        collapse,
+        isMain,
+        duplicateStarts,
+        duplicateEnds
+      });
+    });
+  });
+  return uiModels;
+}
+function setRenderInfoOfUIModels(events, startColumnTime, endColumnTime, selectedDuplicateEventCid, collapseDuplicateEventsOptions) {
+  const uiModels = events.filter(isTimeEvent).filter(isBetween(startColumnTime, endColumnTime)).sort(array.compare.event.asc);
+  if (collapseDuplicateEventsOptions) {
+    setDuplicateEvents(uiModels, collapseDuplicateEventsOptions, selectedDuplicateEventCid);
+  }
+  const expandedEvents = uiModels.filter((uiModel) => !uiModel.collapse);
+  const uiModelColl = createEventCollection(...expandedEvents);
+  const usingTravelTime = true;
+  const collisionGroups = getCollisionGroup(expandedEvents, usingTravelTime);
+  const matrices = getMatrices(uiModelColl, collisionGroups, usingTravelTime);
+  matrices.forEach((matrix) => {
+    const maxRowLength = Math.max(...matrix.map((row) => row.length));
+    const baseWidth = Math.round(100 / maxRowLength);
+    matrix.forEach((row) => {
+      row.forEach((uiModel, columnIndex) => {
+        setRenderInfo({ uiModel, columnIndex, baseWidth, startColumnTime, endColumnTime });
+      });
+    });
+  });
+  return uiModels;
+}
+function useInterval(callback, delay) {
+  const savedCallback = s$2(callback);
+  _$2(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+  _$2(() => {
+    const tick = () => savedCallback.current();
+    const intervalDelay = delay != null ? delay : -1;
+    if (intervalDelay > 0) {
+      const id = setInterval(tick, intervalDelay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+function useIsMounted() {
+  const isMountedRef = s$2(true);
+  _$2(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+  return T$1(() => isMountedRef.current, []);
+}
+const classNames = {
+  timegrid: cls(className),
+  scrollArea: cls(addTimeGridPrefix("scroll-area"))
+};
+function TimeGrid({ timeGridData, events }) {
+  const {
+    isReadOnly,
+    week: { narrowWeekend, startDayOfWeek, collapseDuplicateEvents }
+  } = useStore(optionsSelector);
+  const showNowIndicator = useStore(showNowIndicatorOptionSelector);
+  const selectedDuplicateEventCid = useStore((state) => state.weekViewLayout.selectedDuplicateEventCid);
+  const [, getNow] = usePrimaryTimezone();
+  const isMounted = useIsMounted();
+  const { width: timeGridLeftWidth } = useTheme(weekTimeGridLeftSelector);
+  const [nowIndicatorState, setNowIndicatorState] = y$1(null);
+  const { columns, rows } = timeGridData;
+  const lastColumnIndex = columns.length - 1;
+  const totalUIModels = F$2(() => columns.map(({ date: date2 }) => events.filter(isBetween(toStartOfDay(date2), toEndOfDay(date2))).map((uiModel) => uiModel.clone())).map((uiModelsByColumn, columnIndex) => setRenderInfoOfUIModels(uiModelsByColumn, setTimeStrToDate(columns[columnIndex].date, first(rows).startTime), setTimeStrToDate(columns[columnIndex].date, last(rows).endTime), selectedDuplicateEventCid, collapseDuplicateEvents)), [columns, rows, events, selectedDuplicateEventCid, collapseDuplicateEvents]);
+  const currentDateData = F$2(() => {
+    const now = getNow();
+    const currentDateIndexInColumns = columns.findIndex((column) => isSameDate(column.date, now));
+    if (currentDateIndexInColumns < 0) {
+      return null;
+    }
+    const startTime = setTimeStrToDate(columns[currentDateIndexInColumns].date, timeGridData.rows[0].startTime);
+    const endTime = setTimeStrToDate(columns[currentDateIndexInColumns].date, last(timeGridData.rows).endTime);
+    return {
+      startTime,
+      endTime,
+      currentDateIndex: currentDateIndexInColumns
+    };
+  }, [columns, getNow, timeGridData.rows]);
+  const [columnsContainer, setColumnsContainer] = useDOMNode();
+  const gridPositionFinder = F$2(() => createGridPositionFinder({
+    rowsCount: rows.length,
+    columnsCount: columns.length,
+    container: columnsContainer,
+    narrowWeekend,
+    startDayOfWeek
+  }), [columns.length, columnsContainer, narrowWeekend, rows.length, startDayOfWeek]);
+  const onMouseDown = useGridSelection({
+    type: "timeGrid",
+    gridPositionFinder,
+    selectionSorter: timeGridSelectionHelper.sortSelection,
+    dateGetter: timeGridSelectionHelper.getDateFromCollection,
+    dateCollection: timeGridData
+  });
+  const updateTimeGridIndicator = T$1(() => {
+    if (isPresent(currentDateData)) {
+      const { startTime, endTime } = currentDateData;
+      const now = getNow();
+      if (startTime <= now && now <= endTime) {
+        setNowIndicatorState({
+          top: getTopPercentByTime(now, startTime, endTime),
+          now
+        });
+      }
+    }
+  }, [currentDateData, getNow]);
+  h$2(() => {
+    var _a;
+    if (isMounted()) {
+      if (((_a = currentDateData == null ? void 0 : currentDateData.currentDateIndex) != null ? _a : -1) >= 0) {
+        updateTimeGridIndicator();
+      } else {
+        setNowIndicatorState(null);
+      }
+    }
+  }, [currentDateData, isMounted, updateTimeGridIndicator]);
+  useInterval(updateTimeGridIndicator, isPresent(currentDateData) ? MS_PER_MINUTES : null);
+  return /* @__PURE__ */ h$3("div", {
+    className: classNames.timegrid
+  }, /* @__PURE__ */ h$3("div", {
+    className: classNames.scrollArea
+  }, /* @__PURE__ */ h$3(TimeColumn, {
+    timeGridRows: rows,
+    nowIndicatorState
+  }), /* @__PURE__ */ h$3("div", {
+    className: cls("columns"),
+    style: { left: timeGridLeftWidth },
+    ref: setColumnsContainer,
+    onMouseDown: passConditionalProp(!isReadOnly, onMouseDown)
+  }, /* @__PURE__ */ h$3(GridLines, {
+    timeGridRows: rows
+  }), /* @__PURE__ */ h$3(MovingEventShadow$1, {
+    gridPositionFinder,
+    timeGridData
+  }), columns.map((column, index) => /* @__PURE__ */ h$3(Column, {
+    key: column.date.toString(),
+    timeGridData,
+    columnDate: column.date,
+    columnWidth: toPercent(column.width),
+    columnIndex: index,
+    totalUIModels,
+    gridPositionFinder,
+    isLastColumn: index === lastColumnIndex
+  })), showNowIndicator && isPresent(currentDateData) && isPresent(nowIndicatorState) ? /* @__PURE__ */ h$3(NowIndicator, {
+    top: nowIndicatorState.top,
+    columnWidth: columns[0].width,
+    columnCount: columns.length,
+    columnIndex: currentDateData.currentDateIndex
+  }) : null)));
+}
+function TimezoneCollapseButton({ isCollapsed }) {
+  const eventBus = useEventBus();
+  const iconClassName = cls("icon", {
+    "ic-arrow-right": isCollapsed,
+    "ic-arrow-left": !isCollapsed
+  });
+  return /* @__PURE__ */ h$3("button", {
+    className: cls(addTimeGridPrefix("timezone-collapse-button")),
+    "aria-expanded": !isCollapsed,
+    onClick: () => eventBus.fire("clickTimezonesCollapseBtn", isCollapsed)
+  }, /* @__PURE__ */ h$3("span", {
+    className: iconClassName,
+    role: "img"
+  }));
+}
+function TimezoneLabel({ label, offset, tooltip, width = 100, left }) {
+  return /* @__PURE__ */ h$3("div", {
+    title: tooltip,
+    className: cls(addTimeGridPrefix("timezone-label")),
+    style: {
+      width: toPercent(width),
+      height: toPercent(100),
+      left: toPercent(left)
+    },
+    role: "gridcell"
+  }, /* @__PURE__ */ h$3(Template, {
+    template: "timezoneDisplayLabel",
+    param: { displayLabel: label, timezoneOffset: offset },
+    as: "span"
+  }));
+}
+function useTimezoneCollapseOptions() {
+  const showTimezoneCollapseButton = useStore(showTimezoneCollapseButtonOptionSelector);
+  const timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
+  return F$2(() => {
+    return {
+      showTimezoneCollapseButton,
+      timezonesCollapsed
+    };
+  }, [showTimezoneCollapseButton, timezonesCollapsed]);
+}
+function TimezoneLabels({ top }) {
+  const timezones = useStore(timezonesSelector);
+  const { width } = useTheme(weekTimeGridLeftSelector);
+  const tzConverter = useTZConverter();
+  const { showTimezoneCollapseButton, timezonesCollapsed } = useTimezoneCollapseOptions();
+  if (timezones.length <= 1) {
+    return null;
+  }
+  const timezoneLabelProps = timezones.map(({ displayLabel, timezoneName, tooltip }) => {
+    return !isUndefined_1(displayLabel) ? { label: displayLabel, offset: null, tooltip: tooltip != null ? tooltip : timezoneName } : {
+      label: null,
+      offset: tzConverter(timezoneName).getTimezoneOffset(),
+      tooltip: tooltip != null ? tooltip : timezoneName
+    };
+  });
+  const [primaryTimezone, ...restTimezones] = timezoneLabelProps;
+  const subTimezones = restTimezones.reverse();
+  const timezonesCount = timezonesCollapsed ? 1 : timezones.length;
+  const timezoneLabelWidth = 100 / timezonesCount;
+  return /* @__PURE__ */ h$3("div", {
+    style: {
+      top,
+      width
+    },
+    role: "columnheader",
+    className: cls("timezone-labels-slot")
+  }, !timezonesCollapsed && subTimezones.map((subTimezone, index) => {
+    var _a;
+    return /* @__PURE__ */ h$3(TimezoneLabel, __spreadValues({
+      key: `subTimezone-${(_a = subTimezone.label) != null ? _a : subTimezone.offset}`,
+      width: timezoneLabelWidth,
+      left: timezoneLabelWidth * index
+    }, subTimezone));
+  }), showTimezoneCollapseButton && /* @__PURE__ */ h$3(TimezoneCollapseButton, {
+    isCollapsed: timezonesCollapsed
+  }), /* @__PURE__ */ h$3(TimezoneLabel, __spreadValues({
+    width: timezoneLabelWidth,
+    left: timezoneLabelWidth * subTimezones.length
+  }, primaryTimezone)));
+}
+const VIEW_TYPE = {
+  MONTH: "month",
+  WEEK: "week",
+  DAY: "day"
+};
+const DEFAULT_TASK_PANEL = ["milestone", "task"];
+const DEFAULT_EVENT_PANEL = ["allday", "time"];
+function getActivePanels(taskView, eventView) {
+  const activePanels = [];
+  if (taskView === true) {
+    activePanels.push(...DEFAULT_TASK_PANEL);
+  } else if (Array.isArray(taskView)) {
+    activePanels.push(...taskView);
+  }
+  if (eventView === true) {
+    activePanels.push(...DEFAULT_EVENT_PANEL);
+  } else if (Array.isArray(eventView)) {
+    activePanels.push(...eventView);
+  }
+  return activePanels;
+}
+function useEventsWithTimezone(events) {
+  const primaryTimezoneName = useStore(primaryTimezoneSelector);
+  const tzConverter = useTZConverter();
+  return F$2(() => {
+    if (primaryTimezoneName === "Local") {
+      return events;
+    }
+    const isSystemUsingDST = isUsingDST(new TZDate());
+    const {
+      timedEvents = createEventCollection(),
+      totalEvents = createEventCollection()
+    } = events.groupBy((eventModel) => eventModel.category === "time" ? "timedEvents" : "totalEvents");
+    timedEvents.each((eventModel) => {
+      const clonedEventModel = clone$1(eventModel);
+      let zonedStart = tzConverter(primaryTimezoneName, clonedEventModel.start);
+      let zonedEnd = tzConverter(primaryTimezoneName, clonedEventModel.end);
+      if (isSystemUsingDST) {
+        if (!isUsingDST(zonedStart)) {
+          zonedStart = zonedStart.addHours(1);
+        }
+        if (!isUsingDST(zonedEnd)) {
+          zonedEnd = zonedEnd.addHours(1);
+        }
+      } else {
+        if (isUsingDST(zonedStart)) {
+          zonedStart = zonedStart.addHours(-1);
+        }
+        if (isUsingDST(zonedEnd)) {
+          zonedEnd = zonedEnd.addHours(-1);
+        }
+      }
+      clonedEventModel.start = zonedStart;
+      clonedEventModel.end = zonedEnd;
+      totalEvents.add(clonedEventModel);
+    });
+    return totalEvents;
+  }, [events, primaryTimezoneName, tzConverter]);
+}
+function useCalendarData(calendar, ...filters) {
+  const filteredEvents = F$2(() => calendar.events.filter(Collection.and(...filters)), [calendar.events, filters]);
+  const filteredEventsWithTimezone = useEventsWithTimezone(filteredEvents);
+  return F$2(() => __spreadProps(__spreadValues({}, calendar), {
+    events: filteredEventsWithTimezone
+  }), [calendar, filteredEventsWithTimezone]);
+}
+function isTimeGridDraggingType(draggingItemType) {
+  return /^(event|gridSelection)\/timeGrid/.test(draggingItemType != null ? draggingItemType : "");
+}
+function useTimeGridScrollSync(scrollArea, rowCount) {
+  useTransientUpdate(dndSelector, ({ y: y2, draggingItemType, draggingState }) => {
+    if (isPresent(scrollArea) && isTimeGridDraggingType(draggingItemType) && draggingState === DraggingState.DRAGGING && isPresent(y2)) {
+      const { offsetTop, offsetHeight, scrollHeight } = scrollArea;
+      const scrollBoundary = Math.floor(scrollHeight / rowCount);
+      const layoutHeight = offsetTop + offsetHeight;
+      if (y2 < offsetTop + scrollBoundary) {
+        const scrollDiff = y2 - (offsetTop + scrollBoundary);
+        scrollArea.scrollTop = Math.max(0, scrollArea.scrollTop + scrollDiff);
+      } else if (y2 > layoutHeight - scrollBoundary) {
+        const scrollDiff = y2 - (layoutHeight - scrollBoundary);
+        scrollArea.scrollTop = Math.min(offsetHeight, scrollArea.scrollTop + scrollDiff);
+      }
+    }
+  });
+}
+function timegridHeightSelector(state) {
+  var _a, _b, _c;
+  return (_c = (_b = (_a = state.weekViewLayout) == null ? void 0 : _a.dayGridRows) == null ? void 0 : _b.time) == null ? void 0 : _c.height;
+}
+function useTimezoneLabelsTop(timePanel) {
+  const timeGridPanelHeight = useStore(timegridHeightSelector);
+  const [stickyTop, setStickyTop] = y$1(null);
+  h$2(() => {
+    if (isPresent(timeGridPanelHeight) && timePanel) {
+      setStickyTop(timePanel.offsetTop);
+    }
+  }, [timeGridPanelHeight, timePanel]);
+  return stickyTop;
+}
+function useDayViewState() {
+  const calendar = useStore(calendarSelector);
+  const options = useStore(optionsSelector);
+  const { dayGridRows: gridRowLayout, lastPanelType } = useStore(weekViewLayoutSelector);
+  const { renderDate } = useStore(viewSelector);
+  return F$2(() => ({
+    calendar,
+    options,
+    gridRowLayout,
+    lastPanelType,
+    renderDate
+  }), [calendar, options, gridRowLayout, lastPanelType, renderDate]);
+}
+function Day$1() {
+  var _a, _b;
+  const { calendar, options, gridRowLayout, lastPanelType, renderDate } = useDayViewState();
+  const primaryTimezoneName = useStore(primaryTimezoneSelector);
+  const gridHeaderMarginLeft = useTheme(T$1((theme) => theme.week.dayGridLeft.width, []));
+  const [timePanel, setTimePanelRef] = useDOMNode();
+  const weekOptions = options.week;
+  const { narrowWeekend, startDayOfWeek, workweek, hourStart, hourEnd, eventView, taskView } = weekOptions;
+  const days = F$2(() => [renderDate], [renderDate]);
+  const dayNames = getDayNames(days, (_b = (_a = options.week) == null ? void 0 : _a.dayNames) != null ? _b : []);
+  const { rowStyleInfo, cellWidthMap } = getRowStyleInfo(days.length, narrowWeekend, startDayOfWeek, workweek);
+  const calendarData = useCalendarData(calendar, options.eventFilter);
+  const dayGridEvents = F$2(() => {
+    const getFilterRange = () => {
+      if (primaryTimezoneName === "Local") {
+        return [toStartOfDay(days[0]), toEndOfDay(days[0])];
+      }
+      return [toStartOfDay(addDate(days[0], -1)), toEndOfDay(addDate(days[0], 1))];
+    };
+    const [weekStartDate, weekEndDate] = getFilterRange();
+    return getWeekViewEvents(days, calendarData, {
+      narrowWeekend,
+      hourStart,
+      hourEnd,
+      weekStartDate,
+      weekEndDate
+    });
+  }, [calendarData, days, hourEnd, hourStart, narrowWeekend, primaryTimezoneName]);
+  const timeGridData = F$2(() => createTimeGridData(days, {
+    hourStart,
+    hourEnd,
+    narrowWeekend
+  }), [days, hourEnd, hourStart, narrowWeekend]);
+  const activePanels = getActivePanels(taskView, eventView);
+  const gridRows = activePanels.map((key) => {
+    var _a2, _b2;
+    if (key === "time") {
+      return null;
+    }
+    const rowType = key;
+    return /* @__PURE__ */ h$3(Panel, {
+      key: rowType,
+      name: rowType,
+      resizable: rowType !== lastPanelType
+    }, rowType === "allday" ? /* @__PURE__ */ h$3(AlldayGridRow, {
+      events: dayGridEvents[rowType],
+      rowStyleInfo,
+      gridColWidthMap: cellWidthMap,
+      weekDates: days,
+      height: (_a2 = gridRowLayout[rowType]) == null ? void 0 : _a2.height,
+      options: weekOptions
+    }) : /* @__PURE__ */ h$3(OtherGridRow, {
+      category: rowType,
+      events: dayGridEvents[rowType],
+      weekDates: days,
+      height: (_b2 = gridRowLayout[rowType]) == null ? void 0 : _b2.height,
+      options: weekOptions,
+      gridColWidthMap: cellWidthMap
+    }));
+  });
+  useTimeGridScrollSync(timePanel, timeGridData.rows.length);
+  const stickyTop = useTimezoneLabelsTop(timePanel);
+  return /* @__PURE__ */ h$3(Layout, {
+    className: cls("day-view"),
+    autoAdjustPanels: true
+  }, /* @__PURE__ */ h$3(Panel, {
+    name: "day-view-day-names",
+    initialHeight: WEEK_DAY_NAME_HEIGHT + WEEK_DAY_NAME_BORDER
+  }, /* @__PURE__ */ h$3(GridHeader, {
+    type: "week",
+    dayNames,
+    marginLeft: gridHeaderMarginLeft,
+    rowStyleInfo
+  })), gridRows, activePanels.includes("time") ? /* @__PURE__ */ h$3(Panel, {
+    name: "time",
+    autoSize: 1,
+    ref: setTimePanelRef
+  }, /* @__PURE__ */ h$3(TimeGrid, {
+    events: dayGridEvents.time,
+    timeGridData
+  }), /* @__PURE__ */ h$3(TimezoneLabels, {
+    top: stickyTop
+  })) : null);
+}
+function AccumulatedGridSelection({ rowIndex, weekDates, narrowWeekend }) {
+  const gridSelectionDataByRow = useStore(T$1((state) => state.gridSelection.accumulated.dayGridMonth.map((gridSelection) => dayGridMonthSelectionHelper.calculateSelection(gridSelection, rowIndex, weekDates.length)), [rowIndex, weekDates]));
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("accumulated-grid-selection")
+  }, gridSelectionDataByRow.map((gridSelectionData) => gridSelectionData ? /* @__PURE__ */ h$3(GridSelection$1, {
+    type: "accumulated",
+    gridSelectionData,
+    weekDates,
+    narrowWeekend
+  }) : null));
+}
+function MoreEventsButton({ type, number, onClickButton, className: className2 }) {
+  const { reset } = useDispatch("dnd");
+  const handleMouseDown = (e2) => {
+    e2.stopPropagation();
+  };
+  const handleClick = () => {
+    reset();
+    onClickButton();
+  };
+  const exceedButtonTemplate = `monthGrid${type === CellBarType.header ? "Header" : "Footer"}Exceed`;
+  return /* @__PURE__ */ h$3("button", {
+    type: "button",
+    onMouseDown: handleMouseDown,
+    onClick: handleClick,
+    className: className2
+  }, /* @__PURE__ */ h$3(Template, {
+    template: exceedButtonTemplate,
+    param: number
+  }));
+}
+function getDateColor({
+  date: date2,
+  theme,
+  renderDate,
+  isToday
+}) {
+  const dayIndex = date2.getDay();
+  const thisMonth = renderDate.getMonth();
+  const isSameMonth2 = thisMonth === date2.getMonth();
+  const {
+    common: { holiday, saturday, today, dayName },
+    month: { dayExceptThisMonth, holidayExceptThisMonth }
+  } = theme;
+  if (isToday) {
+    return today.color;
+  }
+  if (isSunday(dayIndex)) {
+    return isSameMonth2 ? holiday.color : holidayExceptThisMonth.color;
+  }
+  if (isSaturday(dayIndex)) {
+    return isSameMonth2 ? saturday.color : dayExceptThisMonth.color;
+  }
+  if (!isSameMonth2) {
+    return dayExceptThisMonth.color;
+  }
+  return dayName.color;
+}
+function useCellHeaderTheme() {
+  const common = useCommonTheme();
+  const month = useMonthTheme();
+  return F$2(() => ({ common, month }), [common, month]);
+}
+function CellHeader({
+  type = CellBarType.header,
+  exceedCount = 0,
+  date: date2,
+  onClickExceedCount
+}) {
+  const { renderDate } = useStore(viewSelector);
+  const [, getNow] = usePrimaryTimezone();
+  const theme = useCellHeaderTheme();
+  const height = theme.month.gridCell[`${type}Height`];
+  const ymd = toFormat(date2, "YYYYMMDD");
+  const todayYmd = toFormat(getNow(), "YYYYMMDD");
+  const isToday = ymd === todayYmd;
+  const templateParam = {
+    date: toFormat(date2, "YYYY-MM-DD"),
+    day: date2.getDay(),
+    hiddenEventCount: exceedCount,
+    isOtherMonth: date2.getMonth() !== renderDate.getMonth(),
+    isToday: ymd === todayYmd,
+    month: date2.getMonth(),
+    ymd
+  };
+  const gridCellDateStyle = { color: getDateColor({ date: date2, theme, isToday, renderDate }) };
+  const monthGridTemplate = `monthGrid${capitalize(type)}`;
+  if (isNil(height)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3("div", {
+    className: cls(`grid-cell-${type}`),
+    style: { height }
+  }, /* @__PURE__ */ h$3("span", {
+    className: cls("grid-cell-date"),
+    style: gridCellDateStyle
+  }, /* @__PURE__ */ h$3(Template, {
+    template: monthGridTemplate,
+    param: templateParam
+  })), exceedCount ? /* @__PURE__ */ h$3(MoreEventsButton, {
+    type,
+    number: exceedCount,
+    onClickButton: onClickExceedCount,
+    className: cls("grid-cell-more-events")
+  }) : null);
+}
+function getSeeMorePopupSize({
+  grid,
+  offsetWidth,
+  eventLength,
+  layerSize
+}) {
+  const minHeight = getSize(grid).height + MONTH_MORE_VIEW_PADDING * 2;
+  let width = offsetWidth + MONTH_MORE_VIEW_PADDING * 2;
+  const { width: moreViewWidth, height: moreViewHeight } = layerSize;
+  const MAX_DISPLAY_EVENT_COUNT = 10;
+  width = Math.max(width, MONTH_MORE_VIEW_MIN_WIDTH);
+  let height = MONTH_MORE_VIEW_HEADER_HEIGHT + MONTH_MORE_VIEW_HEADER_MARGIN_BOTTOM + MONTH_MORE_VIEW_PADDING;
+  const eventHeight = MONTH_EVENT_HEIGHT + MONTH_EVENT_MARGIN_TOP;
+  if (eventLength <= MAX_DISPLAY_EVENT_COUNT) {
+    height += eventHeight * eventLength;
+  } else {
+    height += eventHeight * MAX_DISPLAY_EVENT_COUNT;
+  }
+  if (moreViewWidth) {
+    width = moreViewWidth;
+  }
+  if (moreViewHeight) {
+    height = moreViewHeight;
+  }
+  if (isNaN(height) || height < minHeight) {
+    height = minHeight;
+  }
+  return { width, height };
+}
+function getSeeMorePopupPosition(popupSize, appContainerSize, cellRect) {
+  const {
+    width: containerWidth,
+    height: containerHeight,
+    left: containerLeft,
+    top: containerTop
+  } = appContainerSize;
+  const { width: popupWidth, height: popupHeight } = popupSize;
+  const containerRight = containerLeft + containerWidth;
+  const containerBottom = containerTop + containerHeight;
+  let left = cellRect.left + cellRect.width / 2 - popupWidth / 2;
+  let { top } = cellRect;
+  const isLeftOutOfContainer = left < containerLeft;
+  const isRightOutOfContainer = left + popupWidth > containerRight;
+  const isUpperOutOfContainer = top < containerTop;
+  const isLowerOutOfContainer = top + popupHeight > containerBottom;
+  if (isLeftOutOfContainer) {
+    left = containerLeft;
+  }
+  if (isRightOutOfContainer) {
+    left = containerRight - popupWidth;
+  }
+  if (isUpperOutOfContainer) {
+    top = containerTop;
+  }
+  if (isLowerOutOfContainer) {
+    top = containerBottom - popupHeight;
+  }
+  return { top: top + window.scrollY, left: left + window.scrollX };
+}
+function getSeeMorePopupRect({
+  layoutContainer,
+  cell,
+  popupSize
+}) {
+  const containerRect = layoutContainer.getBoundingClientRect();
+  const cellRect = cell.getBoundingClientRect();
+  const popupPosition = getSeeMorePopupPosition(popupSize, containerRect, cellRect);
+  return __spreadValues(__spreadValues({}, popupSize), popupPosition);
+}
+function usePopupPosition(eventLength, parentContainer, layoutContainer) {
+  const { width: moreViewWidth, height: moreViewHeight } = useTheme(monthMoreViewSelector);
+  const [container, containerRefCallback] = useDOMNode();
+  const [popupPosition, setPopupPosition] = y$1(null);
+  _$2(() => {
+    if (layoutContainer && parentContainer && container) {
+      const popupSize = getSeeMorePopupSize({
+        grid: parentContainer,
+        offsetWidth: container.offsetWidth,
+        eventLength,
+        layerSize: {
+          width: moreViewWidth,
+          height: moreViewHeight
+        }
+      });
+      const rect = getSeeMorePopupRect({
+        cell: container,
+        layoutContainer,
+        popupSize
+      });
+      setPopupPosition(rect);
+    }
+  }, [layoutContainer, container, eventLength, parentContainer, moreViewWidth, moreViewHeight]);
+  return { popupPosition, containerRefCallback };
+}
+function weekendBackgroundColorSelector(theme) {
+  return theme.month.weekend.backgroundColor;
+}
+function GridCell({ date: date2, events = [], style, parentContainer, contentAreaHeight }) {
+  const layoutContainer = useLayoutContainer();
+  const { showSeeMorePopup } = useDispatch("popup");
+  const backgroundColor = useTheme(weekendBackgroundColorSelector);
+  const { popupPosition, containerRefCallback } = usePopupPosition(events.length, parentContainer, layoutContainer);
+  const onOpenSeeMorePopup = T$1(() => {
+    if (popupPosition) {
+      showSeeMorePopup({
+        date: date2,
+        popupPosition,
+        events
+      });
+    }
+  }, [date2, events, popupPosition, showSeeMorePopup]);
+  const exceedCount = getExceedCount(events, contentAreaHeight, MONTH_EVENT_HEIGHT + MONTH_EVENT_MARGIN_TOP);
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("daygrid-cell"),
+    style: __spreadProps(__spreadValues({}, style), { backgroundColor: isWeekend(date2.getDay()) ? backgroundColor : "inherit" }),
+    ref: containerRefCallback
+  }, /* @__PURE__ */ h$3(CellHeader, {
+    type: CellBarType.header,
+    exceedCount,
+    date: date2,
+    onClickExceedCount: onOpenSeeMorePopup
+  }), /* @__PURE__ */ h$3(CellHeader, {
+    type: CellBarType.footer,
+    exceedCount,
+    date: date2,
+    onClickExceedCount: onOpenSeeMorePopup
+  }));
+}
+const GridRow = g$1(function GridRow2({
+  week,
+  rowInfo,
+  gridDateEventModelMap = {},
+  contentAreaHeight
+}) {
+  const [container, containerRefCallback] = useDOMNode();
+  const border = useTheme(T$1((theme) => theme.common.border, []));
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("weekday-grid"),
+    style: { borderTop: border },
+    ref: containerRefCallback
+  }, week.map((date2, columnIndex) => {
+    const dayIndex = date2.getDay();
+    const { width, left } = rowInfo[columnIndex];
+    const ymd = toFormat(toStartOfDay(date2), "YYYYMMDD");
+    return /* @__PURE__ */ h$3(GridCell, {
+      key: `daygrid-cell-${dayIndex}`,
+      date: date2,
+      style: {
+        width: toPercent(width),
+        left: toPercent(left)
+      },
+      parentContainer: container,
+      events: gridDateEventModelMap[ymd],
+      contentAreaHeight
+    });
+  }));
+});
+function GridSelectionByRow({ weekDates, narrowWeekend, rowIndex }) {
+  const gridSelectionDataByRow = useStore(T$1((state) => dayGridMonthSelectionHelper.calculateSelection(state.gridSelection.dayGridMonth, rowIndex, weekDates.length), [rowIndex, weekDates.length]));
+  if (isNil(gridSelectionDataByRow)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(GridSelection$1, {
+    type: "month",
+    gridSelectionData: gridSelectionDataByRow,
+    weekDates,
+    narrowWeekend
+  });
+}
+const MonthEvents = g$1(function MonthEvents2({
+  contentAreaHeight,
+  eventHeight = EVENT_HEIGHT,
+  events,
+  name,
+  className: className2
+}) {
+  const { headerHeight } = useTheme(monthGridCellSelector);
+  const dayEvents = events.filter(isWithinHeight(contentAreaHeight, eventHeight + MONTH_EVENT_MARGIN_TOP)).map((uiModel) => /* @__PURE__ */ h$3(HorizontalEvent, {
+    key: `${name}-DayEvent-${uiModel.cid()}`,
+    uiModel,
+    eventHeight,
+    headerHeight: headerHeight != null ? headerHeight : MONTH_CELL_BAR_HEIGHT
+  }));
+  return /* @__PURE__ */ h$3("div", {
+    className: className2
+  }, dayEvents);
+});
+function useDayGridMonthEventMove({
+  dateMatrix,
+  rowInfo,
+  gridPositionFinder,
+  rowIndex
+}) {
+  const eventBus = useEventBus();
+  const {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent: movingEvent,
+    clearDraggingEvent
+  } = useDraggingEvent("dayGrid", "move");
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const movingEventUIModel = F$2(() => {
+    var _a, _b;
+    let shadowEventUIModel = null;
+    if (movingEvent && (currentGridPos == null ? void 0 : currentGridPos.rowIndex) === rowIndex) {
+      shadowEventUIModel = movingEvent;
+      shadowEventUIModel.left = rowInfo[(_a = currentGridPos == null ? void 0 : currentGridPos.columnIndex) != null ? _a : 0].left;
+      shadowEventUIModel.width = rowInfo[(_b = currentGridPos == null ? void 0 : currentGridPos.columnIndex) != null ? _b : 0].width;
+    }
+    return shadowEventUIModel;
+  }, [movingEvent, currentGridPos == null ? void 0 : currentGridPos.rowIndex, currentGridPos == null ? void 0 : currentGridPos.columnIndex, rowIndex, rowInfo]);
+  useWhen(() => {
+    const shouldUpdate = !isDraggingCanceled && isPresent(movingEventUIModel) && isPresent(currentGridPos);
+    if (shouldUpdate) {
+      const preStartDate = movingEventUIModel.model.getStarts();
+      const eventDuration = movingEventUIModel.duration();
+      const currentDate = dateMatrix[currentGridPos.rowIndex][currentGridPos.columnIndex];
+      const timeOffsetPerDay = getDateDifference(currentDate, preStartDate) * MS_PER_DAY;
+      const newStartDate = new TZDate(preStartDate.getTime() + timeOffsetPerDay);
+      const newEndDate = new TZDate(newStartDate.getTime() + eventDuration);
+      eventBus.fire("beforeUpdateEvent", {
+        event: movingEventUIModel.model.toEventObject(),
+        changes: {
+          start: newStartDate,
+          end: newEndDate
+        }
+      });
+    }
+    clearDraggingEvent();
+    clearCurrentGridPos();
+  }, isDraggingEnd);
+  return movingEventUIModel;
+}
+function MovingEventShadow({ dateMatrix, gridPositionFinder, rowInfo, rowIndex }) {
+  const movingEvent = useDayGridMonthEventMove({
+    dateMatrix,
+    rowInfo,
+    gridPositionFinder,
+    rowIndex
+  });
+  if (isNil(movingEvent)) {
+    return null;
+  }
+  return /* @__PURE__ */ h$3(HorizontalEvent, {
+    uiModel: movingEvent,
+    movingLeft: movingEvent.left,
+    eventHeight: EVENT_HEIGHT,
+    headerHeight: MONTH_CELL_PADDING_TOP + MONTH_CELL_BAR_HEIGHT
+  });
+}
+function getRowPosOfUIModel(uiModel, dateRow) {
+  const startColumnIndex = Math.max(getGridDateIndex(uiModel.getStarts(), dateRow), 0);
+  const endColumnIndex = getGridDateIndex(uiModel.getEnds(), dateRow);
+  return {
+    startColumnIndex,
+    endColumnIndex
+  };
+}
+function useDayGridMonthEventResize({
+  dateMatrix,
+  gridPositionFinder,
+  renderedUIModels,
+  cellWidthMap,
+  rowIndex
+}) {
+  const eventBus = useEventBus();
+  const {
+    isDraggingEnd,
+    isDraggingCanceled,
+    draggingEvent: resizingStartUIModel,
+    clearDraggingEvent
+  } = useDraggingEvent("dayGrid", "resize");
+  const [currentGridPos, clearCurrentGridPos] = useCurrentPointerPositionInGrid(gridPositionFinder);
+  const [guideProps, setGuideProps] = y$1(null);
+  const clearStates = T$1(() => {
+    setGuideProps(null);
+    clearCurrentGridPos();
+    clearDraggingEvent();
+  }, [clearCurrentGridPos, clearDraggingEvent]);
+  const baseResizingInfo = F$2(() => {
+    if (isNil(resizingStartUIModel)) {
+      return null;
+    }
+    const resizeTargetUIModelRows = renderedUIModels.map(({ uiModels }) => uiModels.filter((uiModel) => uiModel.cid() === resizingStartUIModel.cid()));
+    const eventStartDateRowIndex = resizeTargetUIModelRows.findIndex((row) => row.length > 0);
+    const eventEndDateRowIndex = findLastIndex(resizeTargetUIModelRows, (row) => row.length > 0);
+    const eventStartUIModelPos = getRowPosOfUIModel(resizeTargetUIModelRows[eventStartDateRowIndex][0], dateMatrix[eventStartDateRowIndex]);
+    const eventEndUIModelPos = getRowPosOfUIModel(resizeTargetUIModelRows[eventEndDateRowIndex][0], dateMatrix[eventEndDateRowIndex]);
+    return {
+      eventStartDateColumnIndex: eventStartUIModelPos.startColumnIndex,
+      eventStartDateRowIndex,
+      eventEndDateColumnIndex: eventEndUIModelPos.endColumnIndex,
+      eventEndDateRowIndex,
+      resizeTargetUIModelRows
+    };
+  }, [dateMatrix, renderedUIModels, resizingStartUIModel]);
+  const canCalculateProps = isPresent(baseResizingInfo) && isPresent(resizingStartUIModel) && isPresent(currentGridPos);
+  _$2(() => {
+    if (canCalculateProps && rowIndex === baseResizingInfo.eventStartDateRowIndex) {
+      const { eventStartDateRowIndex, eventStartDateColumnIndex } = baseResizingInfo;
+      const clonedUIModel = baseResizingInfo.resizeTargetUIModelRows[eventStartDateRowIndex][0].clone();
+      let height;
+      if (eventStartDateRowIndex === currentGridPos.rowIndex) {
+        height = cellWidthMap[eventStartDateColumnIndex][Math.max(eventStartDateColumnIndex, currentGridPos.columnIndex)];
+      } else if (eventStartDateRowIndex > currentGridPos.rowIndex) {
+        height = cellWidthMap[eventStartDateColumnIndex][eventStartDateColumnIndex];
+      } else {
+        height = cellWidthMap[eventStartDateColumnIndex][dateMatrix[rowIndex].length - 1];
+        clonedUIModel.setUIProps({ exceedRight: true });
+      }
+      setGuideProps([clonedUIModel, height]);
+    }
+  }, [baseResizingInfo, canCalculateProps, cellWidthMap, currentGridPos, dateMatrix, rowIndex]);
+  _$2(() => {
+    if (canCalculateProps && baseResizingInfo.eventStartDateRowIndex < rowIndex && rowIndex < currentGridPos.rowIndex) {
+      const clonedUIModel = resizingStartUIModel.clone();
+      clonedUIModel.setUIProps({ left: 0, exceedLeft: true, exceedRight: true });
+      setGuideProps([clonedUIModel, "100%"]);
+    }
+  }, [baseResizingInfo, canCalculateProps, currentGridPos, resizingStartUIModel, rowIndex]);
+  _$2(() => {
+    if (canCalculateProps && baseResizingInfo.eventStartDateRowIndex < currentGridPos.rowIndex && rowIndex === currentGridPos.rowIndex) {
+      const clonedUIModel = resizingStartUIModel.clone();
+      clonedUIModel.setUIProps({ left: 0, exceedLeft: true });
+      setGuideProps([clonedUIModel, cellWidthMap[0][currentGridPos.columnIndex]]);
+    }
+  }, [
+    baseResizingInfo,
+    canCalculateProps,
+    cellWidthMap,
+    currentGridPos,
+    resizingStartUIModel,
+    rowIndex
+  ]);
+  _$2(() => {
+    if (canCalculateProps && rowIndex > baseResizingInfo.eventStartDateRowIndex && rowIndex > currentGridPos.rowIndex) {
+      setGuideProps(null);
+    }
+  }, [canCalculateProps, currentGridPos, baseResizingInfo, rowIndex]);
+  useWhen(() => {
+    if (canCalculateProps) {
+      const { eventStartDateColumnIndex, eventStartDateRowIndex } = baseResizingInfo;
+      const shouldUpdate = !isDraggingCanceled && (currentGridPos.rowIndex === eventStartDateRowIndex && currentGridPos.columnIndex >= eventStartDateColumnIndex || currentGridPos.rowIndex > eventStartDateRowIndex);
+      if (shouldUpdate) {
+        const targetEndDate = dateMatrix[currentGridPos.rowIndex][currentGridPos.columnIndex];
+        eventBus.fire("beforeUpdateEvent", {
+          event: resizingStartUIModel.model.toEventObject(),
+          changes: {
+            end: targetEndDate
+          }
+        });
+      }
+    }
+    clearStates();
+  }, isDraggingEnd);
+  return guideProps;
+}
+function ResizingGuideByRow({
+  dateMatrix,
+  cellWidthMap,
+  gridPositionFinder,
+  renderedUIModels,
+  rowIndex
+}) {
+  const resizingGuideProps = useDayGridMonthEventResize({
+    dateMatrix,
+    gridPositionFinder,
+    cellWidthMap,
+    renderedUIModels,
+    rowIndex
+  });
+  if (isNil(resizingGuideProps)) {
+    return null;
+  }
+  const [uiModel, resizingWidth] = resizingGuideProps;
+  return /* @__PURE__ */ h$3("div", {
+    className: cls("weekday-events")
+  }, /* @__PURE__ */ h$3(HorizontalEvent, {
+    key: `resizing-event-${uiModel.cid()}`,
+    uiModel,
+    eventHeight: MONTH_EVENT_HEIGHT,
+    headerHeight: MONTH_CELL_PADDING_TOP + MONTH_CELL_BAR_HEIGHT,
+    resizingWidth
+  }));
+}
+const TOTAL_PERCENT_HEIGHT = 100;
+function useCellContentAreaHeight(eventHeight) {
+  const visibleEventCount = useStore(monthVisibleEventCountSelector);
+  const { headerHeight: themeHeaderHeight, footerHeight: themeFooterHeight } = useTheme(monthGridCellSelector);
+  const ref = s$2(null);
+  const [cellContentAreaHeight, setCellContentAreaHeight] = y$1(0);
+  _$2(() => {
+    if (ref.current) {
+      const rowHeight = getSize(ref.current).height;
+      const headerHeight = MONTH_CELL_PADDING_TOP + (themeHeaderHeight != null ? themeHeaderHeight : MONTH_CELL_BAR_HEIGHT);
+      const footerHeight = themeFooterHeight != null ? themeFooterHeight : 0;
+      const baseContentAreaHeight = rowHeight - headerHeight - footerHeight;
+      const visibleEventCountHeight = visibleEventCount * (eventHeight + MONTH_EVENT_MARGIN_TOP);
+      setCellContentAreaHeight(Math.min(baseContentAreaHeight, visibleEventCountHeight));
+    }
+  }, [themeFooterHeight, themeHeaderHeight, eventHeight, visibleEventCount]);
+  return { ref, cellContentAreaHeight };
+}
+function DayGridMonth({ dateMatrix = [], rowInfo = [], cellWidthMap = [] }) {
+  const [gridContainer, setGridContainerRef] = useDOMNode();
+  const calendar = useStore(calendarSelector);
+  const { ref, cellContentAreaHeight } = useCellContentAreaHeight(MONTH_EVENT_HEIGHT);
+  const { eventFilter, month: monthOptions, isReadOnly } = useStore(optionsSelector);
+  const { narrowWeekend, startDayOfWeek } = monthOptions;
+  const rowHeight = TOTAL_PERCENT_HEIGHT / dateMatrix.length;
+  const gridPositionFinder = F$2(() => createGridPositionFinder({
+    container: gridContainer,
+    rowsCount: dateMatrix.length,
+    columnsCount: dateMatrix[0].length,
+    narrowWeekend,
+    startDayOfWeek
+  }), [dateMatrix, gridContainer, narrowWeekend, startDayOfWeek]);
+  const calendarData = useCalendarData(calendar, eventFilter);
+  const renderedEventUIModels = F$2(() => dateMatrix.map((week) => getRenderedEventUIModels(week, calendarData, narrowWeekend)), [calendarData, dateMatrix, narrowWeekend]);
+  const onMouseDown = useGridSelection({
+    type: "dayGridMonth",
+    gridPositionFinder,
+    dateCollection: dateMatrix,
+    dateGetter: dayGridMonthSelectionHelper.getDateFromCollection,
+    selectionSorter: dayGridMonthSelectionHelper.sortSelection
+  });
+  return /* @__PURE__ */ h$3("div", {
+    ref: setGridContainerRef,
+    onMouseDown: passConditionalProp(!isReadOnly, onMouseDown),
+    className: cls("month-daygrid")
+  }, dateMatrix.map((week, rowIndex) => {
+    const { uiModels, gridDateEventModelMap } = renderedEventUIModels[rowIndex];
+    return /* @__PURE__ */ h$3("div", {
+      key: `dayGrid-events-${rowIndex}`,
+      className: cls("month-week-item"),
+      style: { height: toPercent(rowHeight) },
+      ref
+    }, /* @__PURE__ */ h$3("div", {
+      className: cls("weekday")
+    }, /* @__PURE__ */ h$3(GridRow, {
+      gridDateEventModelMap,
+      week,
+      rowInfo,
+      contentAreaHeight: cellContentAreaHeight
+    }), /* @__PURE__ */ h$3(MonthEvents, {
+      name: "month",
+      events: uiModels,
+      contentAreaHeight: cellContentAreaHeight,
+      eventHeight: MONTH_EVENT_HEIGHT,
+      className: cls("weekday-events")
+    }), /* @__PURE__ */ h$3(GridSelectionByRow, {
+      weekDates: week,
+      narrowWeekend,
+      rowIndex
+    }), /* @__PURE__ */ h$3(AccumulatedGridSelection, {
+      rowIndex,
+      weekDates: week,
+      narrowWeekend
+    })), /* @__PURE__ */ h$3(ResizingGuideByRow, {
+      dateMatrix,
+      gridPositionFinder,
+      rowIndex,
+      cellWidthMap,
+      renderedUIModels: renderedEventUIModels
+    }), /* @__PURE__ */ h$3(MovingEventShadow, {
+      dateMatrix,
+      gridPositionFinder,
+      rowIndex,
+      rowInfo
+    }));
+  }));
+}
+function getMonthDayNames(options) {
+  const { dayNames, startDayOfWeek, workweek } = options.month;
+  const dayIndices = [...Array(7)].map((_2, i2) => (startDayOfWeek + i2) % 7);
+  const monthDayNames = dayIndices.map((i2) => ({
+    day: i2,
+    label: capitalize(dayNames[i2])
+  }));
+  return monthDayNames.filter((dayNameInfo) => workweek ? !isWeekend(dayNameInfo.day) : true);
+}
+function Month$1() {
+  const options = useStore(optionsSelector);
+  const { renderDate } = useStore(viewSelector);
+  const dayNames = getMonthDayNames(options);
+  const monthOptions = options.month;
+  const { narrowWeekend, startDayOfWeek, workweek } = monthOptions;
+  const dateMatrix = F$2(() => createDateMatrixOfMonth(renderDate, monthOptions), [monthOptions, renderDate]);
+  const { rowStyleInfo, cellWidthMap } = F$2(() => getRowStyleInfo(dayNames.length, narrowWeekend, startDayOfWeek, workweek), [dayNames.length, narrowWeekend, startDayOfWeek, workweek]);
+  const rowInfo = rowStyleInfo.map((cellStyleInfo, index) => __spreadProps(__spreadValues({}, cellStyleInfo), {
+    date: dateMatrix[0][index]
+  }));
+  return /* @__PURE__ */ h$3(Layout, {
+    className: cls("month")
+  }, /* @__PURE__ */ h$3(GridHeader, {
+    type: "month",
+    dayNames,
+    options: monthOptions,
+    rowStyleInfo
+  }), /* @__PURE__ */ h$3(DayGridMonth, {
+    dateMatrix,
+    rowInfo,
+    cellWidthMap
+  }));
+}
+function useWeekViewState() {
+  const options = useStore(optionsSelector);
+  const calendar = useStore(calendarSelector);
+  const { dayGridRows: gridRowLayout, lastPanelType } = useStore(weekViewLayoutSelector);
+  const { renderDate } = useStore(viewSelector);
+  return F$2(() => ({
+    options,
+    calendar,
+    gridRowLayout,
+    lastPanelType,
+    renderDate
+  }), [calendar, gridRowLayout, lastPanelType, options, renderDate]);
+}
+function Week$1() {
+  var _a, _b;
+  const { options, calendar, gridRowLayout, lastPanelType, renderDate } = useWeekViewState();
+  const gridHeaderMarginLeft = useTheme(T$1((theme) => theme.week.dayGridLeft.width, []));
+  const primaryTimezoneName = useStore(primaryTimezoneSelector);
+  const [timePanel, setTimePanelRef] = useDOMNode();
+  const weekOptions = options.week;
+  const { narrowWeekend, startDayOfWeek, workweek, hourStart, hourEnd, eventView, taskView } = weekOptions;
+  const weekDates = F$2(() => getWeekDates(renderDate, weekOptions), [renderDate, weekOptions]);
+  const dayNames = getDayNames(weekDates, (_b = (_a = options.week) == null ? void 0 : _a.dayNames) != null ? _b : []);
+  const { rowStyleInfo, cellWidthMap } = getRowStyleInfo(weekDates.length, narrowWeekend, startDayOfWeek, workweek);
+  const calendarData = useCalendarData(calendar, options.eventFilter);
+  const eventByPanel = F$2(() => {
+    const getFilterRange = () => {
+      if (primaryTimezoneName === "Local") {
+        return [toStartOfDay(first(weekDates)), toEndOfDay(last(weekDates))];
+      }
+      return [toStartOfDay(addDate(first(weekDates), -1)), toEndOfDay(addDate(last(weekDates), 1))];
+    };
+    const [weekStartDate, weekEndDate] = getFilterRange();
+    return getWeekViewEvents(weekDates, calendarData, {
+      narrowWeekend,
+      hourStart,
+      hourEnd,
+      weekStartDate,
+      weekEndDate
+    });
+  }, [calendarData, hourEnd, hourStart, narrowWeekend, primaryTimezoneName, weekDates]);
+  const timeGridData = F$2(() => createTimeGridData(weekDates, {
+    hourStart,
+    hourEnd,
+    narrowWeekend
+  }), [hourEnd, hourStart, narrowWeekend, weekDates]);
+  const activePanels = getActivePanels(taskView, eventView);
+  const dayGridRows = activePanels.map((key) => {
+    var _a2, _b2;
+    if (key === "time") {
+      return null;
+    }
+    const rowType = key;
+    return /* @__PURE__ */ h$3(Panel, {
+      name: rowType,
+      key: rowType,
+      resizable: rowType !== lastPanelType
+    }, rowType === "allday" ? /* @__PURE__ */ h$3(AlldayGridRow, {
+      events: eventByPanel[rowType],
+      rowStyleInfo,
+      gridColWidthMap: cellWidthMap,
+      weekDates,
+      height: (_a2 = gridRowLayout[rowType]) == null ? void 0 : _a2.height,
+      options: weekOptions
+    }) : /* @__PURE__ */ h$3(OtherGridRow, {
+      category: rowType,
+      events: eventByPanel[rowType],
+      weekDates,
+      height: (_b2 = gridRowLayout[rowType]) == null ? void 0 : _b2.height,
+      options: weekOptions,
+      gridColWidthMap: cellWidthMap
+    }));
+  });
+  const hasTimePanel = F$2(() => activePanels.includes("time"), [activePanels]);
+  useTimeGridScrollSync(timePanel, timeGridData.rows.length);
+  const stickyTop = useTimezoneLabelsTop(timePanel);
+  return /* @__PURE__ */ h$3(Layout, {
+    className: cls("week-view"),
+    autoAdjustPanels: true
+  }, /* @__PURE__ */ h$3(Panel, {
+    name: "week-view-day-names",
+    initialHeight: WEEK_DAY_NAME_HEIGHT + WEEK_DAY_NAME_BORDER * 2
+  }, /* @__PURE__ */ h$3(GridHeader, {
+    type: "week",
+    dayNames,
+    marginLeft: gridHeaderMarginLeft,
+    options: weekOptions,
+    rowStyleInfo
+  })), dayGridRows, hasTimePanel ? /* @__PURE__ */ h$3(Panel, {
+    name: "time",
+    autoSize: 1,
+    ref: setTimePanelRef
+  }, /* @__PURE__ */ h$3(TimeGrid, {
+    events: eventByPanel.time,
+    timeGridData
+  }), /* @__PURE__ */ h$3(TimezoneLabels, {
+    top: stickyTop
+  })) : null);
+}
+const views = {
+  month: Month$1,
+  week: Week$1,
+  day: Day$1
+};
+function Main() {
+  const { currentView } = useStore(viewSelector);
+  const CurrentViewComponent = F$2(() => views[currentView] || (() => null), [currentView]);
+  return /* @__PURE__ */ h$3(CurrentViewComponent, null);
+}
+var r = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i, n = /[&<>"]/;
+function o(e2) {
+  var t2 = String(e2);
+  return n.test(t2) ? t2.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;") : t2;
+}
+var a = function(e2, t2) {
+  return String(e2).replace(/(\n+)/g, "$1" + (t2 || "	"));
+}, i = function(e2, t2, r2) {
+  return String(e2).length > (t2 || 40) || !r2 && String(e2).indexOf("\n") !== -1 || String(e2).indexOf("<") !== -1;
+}, l = {};
+function s(e2) {
+  var t2 = "";
+  for (var n2 in e2) {
+    var o2 = e2[n2];
+    o2 != null && o2 !== "" && (t2 && (t2 += " "), t2 += n2[0] == "-" ? n2 : l[n2] || (l[n2] = n2.replace(/([A-Z])/g, "-$1").toLowerCase()), t2 += ": ", t2 += o2, typeof o2 == "number" && r.test(n2) === false && (t2 += "px"), t2 += ";");
+  }
+  return t2 || void 0;
+}
+function f(e2, t2) {
+  for (var r2 in t2)
+    e2[r2] = t2[r2];
+  return e2;
+}
+function u(e2, t2) {
+  return Array.isArray(t2) ? t2.reduce(u, e2) : t2 != null && t2 !== false && e2.push(t2), e2;
+}
+var c = { shallow: true }, p = [], _ = /^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/, d = /[\s\n\\/='"\0<>]/;
+function v() {
+  this.__d = true;
+}
+m.render = m;
+var g = function(e2, t2) {
+  return m(e2, t2, c);
+}, h = [];
+function m(t2, r2, n2) {
+  r2 = r2 || {}, n2 = n2 || {};
+  var o2 = l$3.__s;
+  l$3.__s = true;
+  var a2 = x(t2, r2, n2);
+  return l$3.__c && l$3.__c(t2, h), h.length = 0, l$3.__s = o2, a2;
+}
+function x(r2, n2, l2, c2, g2, h2) {
+  if (r2 == null || typeof r2 == "boolean")
+    return "";
+  if (typeof r2 != "object")
+    return o(r2);
+  var m2 = l2.pretty, y2 = m2 && typeof m2 == "string" ? m2 : "	";
+  if (Array.isArray(r2)) {
+    for (var b2 = "", S2 = 0; S2 < r2.length; S2++)
+      m2 && S2 > 0 && (b2 += "\n"), b2 += x(r2[S2], n2, l2, c2, g2, h2);
+    return b2;
+  }
+  var k2, w2 = r2.type, O2 = r2.props, C2 = false;
+  if (typeof w2 == "function") {
+    if (C2 = true, !l2.shallow || !c2 && l2.renderRootComponent !== false) {
+      if (w2 === p$3) {
+        var A2 = [];
+        return u(A2, r2.props.children), x(A2, n2, l2, l2.shallowHighOrder !== false, g2, h2);
+      }
+      var H2, j2 = r2.__c = { __v: r2, context: n2, props: r2.props, setState: v, forceUpdate: v, __d: true, __h: [] };
+      l$3.__b && l$3.__b(r2);
+      var F2 = l$3.__r;
+      if (w2.prototype && typeof w2.prototype.render == "function") {
+        var M2 = w2.contextType, T2 = M2 && n2[M2.__c], $2 = M2 != null ? T2 ? T2.props.value : M2.__ : n2;
+        (j2 = r2.__c = new w2(O2, $2)).__v = r2, j2._dirty = j2.__d = true, j2.props = O2, j2.state == null && (j2.state = {}), j2._nextState == null && j2.__s == null && (j2._nextState = j2.__s = j2.state), j2.context = $2, w2.getDerivedStateFromProps ? j2.state = f(f({}, j2.state), w2.getDerivedStateFromProps(j2.props, j2.state)) : j2.componentWillMount && (j2.componentWillMount(), j2.state = j2._nextState !== j2.state ? j2._nextState : j2.__s !== j2.state ? j2.__s : j2.state), F2 && F2(r2), H2 = j2.render(j2.props, j2.state, j2.context);
+      } else
+        for (var L2 = w2.contextType, E2 = L2 && n2[L2.__c], D2 = L2 != null ? E2 ? E2.props.value : L2.__ : n2, N2 = 0; j2.__d && N2++ < 25; )
+          j2.__d = false, F2 && F2(r2), H2 = w2.call(r2.__c, O2, D2);
+      return j2.getChildContext && (n2 = f(f({}, n2), j2.getChildContext())), l$3.diffed && l$3.diffed(r2), x(H2, n2, l2, l2.shallowHighOrder !== false, g2, h2);
+    }
+    w2 = (k2 = w2).displayName || k2 !== Function && k2.name || function(e2) {
+      var t2 = (Function.prototype.toString.call(e2).match(/^\s*function\s+([^( ]+)/) || "")[1];
+      if (!t2) {
+        for (var r3 = -1, n3 = p.length; n3--; )
+          if (p[n3] === e2) {
+            r3 = n3;
+            break;
+          }
+        r3 < 0 && (r3 = p.push(e2) - 1), t2 = "UnnamedComponent" + r3;
+      }
+      return t2;
+    }(k2);
+  }
+  var P2, R2, U2 = "<" + w2;
+  if (O2) {
+    var W2 = Object.keys(O2);
+    l2 && l2.sortAttributes === true && W2.sort();
+    for (var q2 = 0; q2 < W2.length; q2++) {
+      var z2 = W2[q2], I2 = O2[z2];
+      if (z2 !== "children") {
+        if (!d.test(z2) && (l2 && l2.allAttributes || z2 !== "key" && z2 !== "ref" && z2 !== "__self" && z2 !== "__source")) {
+          if (z2 === "defaultValue")
+            z2 = "value";
+          else if (z2 === "defaultChecked")
+            z2 = "checked";
+          else if (z2 === "defaultSelected")
+            z2 = "selected";
+          else if (z2 === "className") {
+            if (O2.class !== void 0)
+              continue;
+            z2 = "class";
+          } else
+            g2 && /^xlink:?./.test(z2) && (z2 = z2.toLowerCase().replace(/^xlink:?/, "xlink:"));
+          if (z2 === "htmlFor") {
+            if (O2.for)
+              continue;
+            z2 = "for";
+          }
+          z2 === "style" && I2 && typeof I2 == "object" && (I2 = s(I2)), z2[0] === "a" && z2[1] === "r" && typeof I2 == "boolean" && (I2 = String(I2));
+          var V2 = l2.attributeHook && l2.attributeHook(z2, I2, n2, l2, C2);
+          if (V2 || V2 === "")
+            U2 += V2;
+          else if (z2 === "dangerouslySetInnerHTML")
+            R2 = I2 && I2.__html;
+          else if (w2 === "textarea" && z2 === "value")
+            P2 = I2;
+          else if ((I2 || I2 === 0 || I2 === "") && typeof I2 != "function") {
+            if (!(I2 !== true && I2 !== "" || (I2 = z2, l2 && l2.xml))) {
+              U2 = U2 + " " + z2;
+              continue;
+            }
+            if (z2 === "value") {
+              if (w2 === "select") {
+                h2 = I2;
+                continue;
+              }
+              w2 === "option" && h2 == I2 && O2.selected === void 0 && (U2 += " selected");
+            }
+            U2 = U2 + " " + z2 + '="' + o(I2) + '"';
+          }
+        }
+      } else
+        P2 = I2;
+    }
+  }
+  if (m2) {
+    var Z2 = U2.replace(/\n\s*/, " ");
+    Z2 === U2 || ~Z2.indexOf("\n") ? m2 && ~U2.indexOf("\n") && (U2 += "\n") : U2 = Z2;
+  }
+  if (U2 += ">", d.test(w2))
+    throw new Error(w2 + " is not a valid HTML tag name in " + U2);
+  var B2, G2 = _.test(w2) || l2.voidElements && l2.voidElements.test(w2), J2 = [];
+  if (R2)
+    m2 && i(R2) && (R2 = "\n" + y2 + a(R2, y2)), U2 += R2;
+  else if (P2 != null && u(B2 = [], P2).length) {
+    for (var K2 = m2 && ~U2.indexOf("\n"), Q2 = false, X2 = 0; X2 < B2.length; X2++) {
+      var Y2 = B2[X2];
+      if (Y2 != null && Y2 !== false) {
+        var ee = x(Y2, n2, l2, true, w2 === "svg" || w2 !== "foreignObject" && g2, h2);
+        if (m2 && !K2 && i(ee) && (K2 = true), ee)
+          if (m2) {
+            var te = ee.length > 0 && ee[0] != "<";
+            Q2 && te ? J2[J2.length - 1] += ee : J2.push(ee), Q2 = te;
+          } else
+            J2.push(ee);
+      }
+    }
+    if (m2 && K2)
+      for (var re = J2.length; re--; )
+        J2[re] = "\n" + y2 + a(J2[re], y2);
+  }
+  if (J2.length || R2)
+    U2 += J2.join("");
+  else if (l2 && l2.xml)
+    return U2.substring(0, U2.length - 1) + " />";
+  return !G2 || B2 || R2 ? (m2 && ~U2.indexOf("\n") && (U2 += "\n"), U2 = U2 + "</" + w2 + ">") : U2 = U2.replace(/>$/, " />"), U2;
+}
+m.shallowRender = g;
+function forEachOwnProperties$2(obj, iteratee, context) {
+  var key;
+  context = context || null;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (iteratee.call(context, obj[key], key, obj) === false) {
+        break;
+      }
+    }
+  }
+}
+var forEachOwnProperties_1 = forEachOwnProperties$2;
+var forEachOwnProperties$1 = forEachOwnProperties_1;
+function imagePing$1(url, trackingInfo) {
+  var trackingElement = document.createElement("img");
+  var queryString = "";
+  forEachOwnProperties$1(trackingInfo, function(value, key) {
+    queryString += "&" + key + "=" + value;
+  });
+  queryString = queryString.substring(1);
+  trackingElement.src = url + "?" + queryString;
+  trackingElement.style.display = "none";
+  document.body.appendChild(trackingElement);
+  document.body.removeChild(trackingElement);
+  return trackingElement;
+}
+var imagePing_1 = imagePing$1;
+var isUndefined$1 = isUndefined_1;
+var imagePing = imagePing_1;
+var ms7days = 7 * 24 * 60 * 60 * 1e3;
+function isExpired(date2) {
+  var now = new Date().getTime();
+  return now - date2 > ms7days;
+}
+function sendHostname(appName, trackingId) {
+  var url = "https://www.google-analytics.com/collect";
+  var hostname = location.hostname;
+  var hitType = "event";
+  var eventCategory = "use";
+  var applicationKeyForStorage = "TOAST UI " + appName + " for " + hostname + ": Statistics";
+  var date2 = window.localStorage.getItem(applicationKeyForStorage);
+  if (!isUndefined$1(window.tui) && window.tui.usageStatistics === false) {
+    return;
+  }
+  if (date2 && !isExpired(date2)) {
+    return;
+  }
+  window.localStorage.setItem(applicationKeyForStorage, new Date().getTime());
+  setTimeout(function() {
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      imagePing(url, {
+        v: 1,
+        t: hitType,
+        tid: trackingId,
+        cid: hostname,
+        dp: hostname,
+        dh: appName,
+        el: appName,
+        ec: eventCategory
+      });
+    }
+  }, 1e3);
+}
+var sendHostname_1 = sendHostname;
+function CalendarContainer({ theme, store, eventBus, children }) {
+  return /* @__PURE__ */ h$3(EventBusProvider, {
+    value: eventBus
+  }, /* @__PURE__ */ h$3(ThemeProvider, {
+    store: theme
+  }, /* @__PURE__ */ h$3(StoreProvider, {
+    store
+  }, /* @__PURE__ */ h$3(FloatingLayerProvider, null, children))));
+}
+const GA_TRACKING_ID = "UA-129951699-1";
+function extend$1(target, objects) {
+  var hasOwnProp = Object.prototype.hasOwnProperty;
+  var source, prop, i2, len;
+  for (i2 = 1, len = arguments.length; i2 < len; i2 += 1) {
+    source = arguments[i2];
+    for (prop in source) {
+      if (hasOwnProp.call(source, prop)) {
+        target[prop] = source[prop];
+      }
+    }
+  }
+  return target;
+}
+var extend_1 = extend$1;
+function isNull$1(obj) {
+  return obj === null;
+}
+var isNull_1 = isNull$1;
+var isUndefined = isUndefined_1;
+var isNull = isNull_1;
+function isExisty$1(param) {
+  return !isUndefined(param) && !isNull(param);
+}
+var isExisty_1 = isExisty$1;
+function isArray$2(obj) {
+  return obj instanceof Array;
+}
+var isArray_1 = isArray$2;
+function isFunction$1(obj) {
+  return obj instanceof Function;
+}
+var isFunction_1 = isFunction$1;
+function forEachArray$1(arr, iteratee, context) {
+  var index = 0;
+  var len = arr.length;
+  context = context || null;
+  for (; index < len; index += 1) {
+    if (iteratee.call(context, arr[index], index, arr) === false) {
+      break;
+    }
+  }
+}
+var forEachArray_1 = forEachArray$1;
+var isArray$1 = isArray_1;
+var forEachArray = forEachArray_1;
+var forEachOwnProperties = forEachOwnProperties_1;
+function forEach$1(obj, iteratee, context) {
+  if (isArray$1(obj)) {
+    forEachArray(obj, iteratee, context);
+  } else {
+    forEachOwnProperties(obj, iteratee, context);
+  }
+}
+var forEach_1 = forEach$1;
+var extend = extend_1;
+var isExisty = isExisty_1;
+var isString = isString_1;
+var isObject = isObject_1;
+var isArray = isArray_1;
+var isFunction = isFunction_1;
+var forEach = forEach_1;
+var R_EVENTNAME_SPLIT = /\s+/g;
+function CustomEvents() {
+  this.events = null;
+  this.contexts = null;
+}
+CustomEvents.mixin = function(func) {
+  extend(func.prototype, CustomEvents.prototype);
+};
+CustomEvents.prototype._getHandlerItem = function(handler, context) {
+  var item = { handler };
+  if (context) {
+    item.context = context;
+  }
+  return item;
+};
+CustomEvents.prototype._safeEvent = function(eventName) {
+  var events = this.events;
+  var byName;
+  if (!events) {
+    events = this.events = {};
+  }
+  if (eventName) {
+    byName = events[eventName];
+    if (!byName) {
+      byName = [];
+      events[eventName] = byName;
+    }
+    events = byName;
+  }
+  return events;
+};
+CustomEvents.prototype._safeContext = function() {
+  var context = this.contexts;
+  if (!context) {
+    context = this.contexts = [];
+  }
+  return context;
+};
+CustomEvents.prototype._indexOfContext = function(ctx) {
+  var context = this._safeContext();
+  var index = 0;
+  while (context[index]) {
+    if (ctx === context[index][0]) {
+      return index;
+    }
+    index += 1;
+  }
+  return -1;
+};
+CustomEvents.prototype._memorizeContext = function(ctx) {
+  var context, index;
+  if (!isExisty(ctx)) {
+    return;
+  }
+  context = this._safeContext();
+  index = this._indexOfContext(ctx);
+  if (index > -1) {
+    context[index][1] += 1;
+  } else {
+    context.push([ctx, 1]);
+  }
+};
+CustomEvents.prototype._forgetContext = function(ctx) {
+  var context, contextIndex;
+  if (!isExisty(ctx)) {
+    return;
+  }
+  context = this._safeContext();
+  contextIndex = this._indexOfContext(ctx);
+  if (contextIndex > -1) {
+    context[contextIndex][1] -= 1;
+    if (context[contextIndex][1] <= 0) {
+      context.splice(contextIndex, 1);
+    }
+  }
+};
+CustomEvents.prototype._bindEvent = function(eventName, handler, context) {
+  var events = this._safeEvent(eventName);
+  this._memorizeContext(context);
+  events.push(this._getHandlerItem(handler, context));
+};
+CustomEvents.prototype.on = function(eventName, handler, context) {
+  var self2 = this;
+  if (isString(eventName)) {
+    eventName = eventName.split(R_EVENTNAME_SPLIT);
+    forEach(eventName, function(name) {
+      self2._bindEvent(name, handler, context);
+    });
+  } else if (isObject(eventName)) {
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self2.on(name, func, context);
+    });
+  }
+};
+CustomEvents.prototype.once = function(eventName, handler, context) {
+  var self2 = this;
+  if (isObject(eventName)) {
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self2.once(name, func, context);
+    });
+    return;
+  }
+  function onceHandler() {
+    handler.apply(context, arguments);
+    self2.off(eventName, onceHandler, context);
+  }
+  this.on(eventName, onceHandler, context);
+};
+CustomEvents.prototype._spliceMatches = function(arr, predicate) {
+  var i2 = 0;
+  var len;
+  if (!isArray(arr)) {
+    return;
+  }
+  for (len = arr.length; i2 < len; i2 += 1) {
+    if (predicate(arr[i2]) === true) {
+      arr.splice(i2, 1);
+      len -= 1;
+      i2 -= 1;
+    }
+  }
+};
+CustomEvents.prototype._matchHandler = function(handler) {
+  var self2 = this;
+  return function(item) {
+    var needRemove = handler === item.handler;
+    if (needRemove) {
+      self2._forgetContext(item.context);
+    }
+    return needRemove;
+  };
+};
+CustomEvents.prototype._matchContext = function(context) {
+  var self2 = this;
+  return function(item) {
+    var needRemove = context === item.context;
+    if (needRemove) {
+      self2._forgetContext(item.context);
+    }
+    return needRemove;
+  };
+};
+CustomEvents.prototype._matchHandlerAndContext = function(handler, context) {
+  var self2 = this;
+  return function(item) {
+    var matchHandler = handler === item.handler;
+    var matchContext = context === item.context;
+    var needRemove = matchHandler && matchContext;
+    if (needRemove) {
+      self2._forgetContext(item.context);
+    }
+    return needRemove;
+  };
+};
+CustomEvents.prototype._offByEventName = function(eventName, handler) {
+  var self2 = this;
+  var andByHandler = isFunction(handler);
+  var matchHandler = self2._matchHandler(handler);
+  eventName = eventName.split(R_EVENTNAME_SPLIT);
+  forEach(eventName, function(name) {
+    var handlerItems = self2._safeEvent(name);
+    if (andByHandler) {
+      self2._spliceMatches(handlerItems, matchHandler);
+    } else {
+      forEach(handlerItems, function(item) {
+        self2._forgetContext(item.context);
+      });
+      self2.events[name] = [];
+    }
+  });
+};
+CustomEvents.prototype._offByHandler = function(handler) {
+  var self2 = this;
+  var matchHandler = this._matchHandler(handler);
+  forEach(this._safeEvent(), function(handlerItems) {
+    self2._spliceMatches(handlerItems, matchHandler);
+  });
+};
+CustomEvents.prototype._offByObject = function(obj, handler) {
+  var self2 = this;
+  var matchFunc;
+  if (this._indexOfContext(obj) < 0) {
+    forEach(obj, function(func, name) {
+      self2.off(name, func);
+    });
+  } else if (isString(handler)) {
+    matchFunc = this._matchContext(obj);
+    self2._spliceMatches(this._safeEvent(handler), matchFunc);
+  } else if (isFunction(handler)) {
+    matchFunc = this._matchHandlerAndContext(handler, obj);
+    forEach(this._safeEvent(), function(handlerItems) {
+      self2._spliceMatches(handlerItems, matchFunc);
+    });
+  } else {
+    matchFunc = this._matchContext(obj);
+    forEach(this._safeEvent(), function(handlerItems) {
+      self2._spliceMatches(handlerItems, matchFunc);
+    });
+  }
+};
+CustomEvents.prototype.off = function(eventName, handler) {
+  if (isString(eventName)) {
+    this._offByEventName(eventName, handler);
+  } else if (!arguments.length) {
+    this.events = {};
+    this.contexts = [];
+  } else if (isFunction(eventName)) {
+    this._offByHandler(eventName);
+  } else if (isObject(eventName)) {
+    this._offByObject(eventName, handler);
+  }
+};
+CustomEvents.prototype.fire = function(eventName) {
+  this.invoke.apply(this, arguments);
+};
+CustomEvents.prototype.invoke = function(eventName) {
+  var events, args, index, item;
+  if (!this.hasListener(eventName)) {
+    return true;
+  }
+  events = this._safeEvent(eventName);
+  args = Array.prototype.slice.call(arguments, 1);
+  index = 0;
+  while (events[index]) {
+    item = events[index];
+    if (item.handler.apply(item.context, args) === false) {
+      return false;
+    }
+    index += 1;
+  }
+  return true;
+};
+CustomEvents.prototype.hasListener = function(eventName) {
+  return this.getListenerLength(eventName) > 0;
+};
+CustomEvents.prototype.getListenerLength = function(eventName) {
+  var events = this._safeEvent(eventName);
+  return events.length;
+};
+var customEvents = CustomEvents;
+class EventBusImpl extends customEvents {
+  on(eventName, handler) {
+    super.on(eventName, handler);
+    return this;
+  }
+  off(eventName, handler) {
+    super.off(eventName, handler);
+    return this;
+  }
+  fire(eventName, ...args) {
+    super.fire(eventName, ...args);
+    return this;
+  }
+  once(eventName, handler) {
+    super.once(eventName, handler);
+    return this;
+  }
+}
+class CalendarCore {
+  constructor(container, options = {}) {
+    var _a;
+    this.container = isString_1(container) ? (_a = document == null ? void 0 : document.querySelector(container)) != null ? _a : null : container;
+    this.theme = initThemeStore(options.theme);
+    this.eventBus = new EventBusImpl();
+    this.store = initCalendarStore(options);
+    this.renderRange = this.calculateRenderRange(toStartOfDay());
+    addAttributeHooks();
+    if (this.getStoreState().options.usageStatistics === true) {
+      sendHostname_1("calendar", GA_TRACKING_ID);
+    }
+  }
+  getStoreState(group) {
+    const state = this.store.getState();
+    return group ? state[group] : state;
+  }
+  getStoreDispatchers(group) {
+    const dispatchers = this.store.getState().dispatch;
+    return group ? dispatchers[group] : dispatchers;
+  }
+  destroy() {
+    if (this.container) {
+      un(this.container);
+    }
+    this.store.clearListeners();
+    this.theme.clearListeners();
+    this.eventBus.off();
+    removeAttributeHooks();
+    for (const key in this) {
+      if (this.hasOwnProperty(key)) {
+        delete this[key];
+      }
+    }
+  }
+  calculateMonthRenderDate({
+    renderDate,
+    offset,
+    monthOptions
+  }) {
+    let newRenderDate = new TZDate(renderDate);
+    const { visibleWeeksCount } = monthOptions;
+    if (visibleWeeksCount > 0) {
+      newRenderDate = addDate(newRenderDate, offset * 7 * visibleWeeksCount);
+    } else {
+      newRenderDate = addMonths(newRenderDate, offset);
+    }
+    const dateMatrix = createDateMatrixOfMonth(newRenderDate, monthOptions);
+    const [[start]] = dateMatrix;
+    const end = last(last(dateMatrix));
+    return {
+      renderDate: newRenderDate,
+      renderRange: { start, end }
+    };
+  }
+  calculateWeekRenderDate({
+    renderDate,
+    offset,
+    weekOptions
+  }) {
+    const newRenderDate = new TZDate(renderDate);
+    newRenderDate.addDate(offset * 7);
+    const weekDates = getWeekDates(newRenderDate, weekOptions);
+    const [start] = weekDates;
+    const end = last(weekDates);
+    return {
+      renderDate: newRenderDate,
+      renderRange: { start, end }
+    };
+  }
+  calculateDayRenderDate({ renderDate, offset }) {
+    const newRenderDate = new TZDate(renderDate);
+    newRenderDate.addDate(offset);
+    const start = toStartOfDay(newRenderDate);
+    const end = toEndOfDay(newRenderDate);
+    return {
+      renderDate: newRenderDate,
+      renderRange: { start, end }
+    };
+  }
+  move(offset) {
+    if (isNil(offset)) {
+      return;
+    }
+    const { currentView, renderDate } = this.getStoreState().view;
+    const { options } = this.getStoreState();
+    const { setRenderDate } = this.getStoreDispatchers().view;
+    const newRenderDate = new TZDate(renderDate);
+    let calculatedRenderDate = {
+      renderDate: newRenderDate,
+      renderRange: { start: new TZDate(newRenderDate), end: new TZDate(newRenderDate) }
+    };
+    if (currentView === "month") {
+      calculatedRenderDate = this.calculateMonthRenderDate({
+        renderDate,
+        offset,
+        monthOptions: options.month
+      });
+    } else if (currentView === "week") {
+      calculatedRenderDate = this.calculateWeekRenderDate({
+        renderDate,
+        offset,
+        weekOptions: options.week
+      });
+    } else if (currentView === "day") {
+      calculatedRenderDate = this.calculateDayRenderDate({ renderDate, offset });
+    }
+    setRenderDate(calculatedRenderDate.renderDate);
+    this.renderRange = calculatedRenderDate.renderRange;
+  }
+  createEvents(events) {
+    const { createEvents: createEvents2 } = this.getStoreDispatchers("calendar");
+    createEvents2(events);
+  }
+  getEventModel(eventId, calendarId) {
+    const { events } = this.getStoreState("calendar");
+    return events.find(({ id, calendarId: eventCalendarId }) => id === eventId && eventCalendarId === calendarId);
+  }
+  getEvent(eventId, calendarId) {
+    var _a, _b;
+    return (_b = (_a = this.getEventModel(eventId, calendarId)) == null ? void 0 : _a.toEventObject()) != null ? _b : null;
+  }
+  updateEvent(eventId, calendarId, changes) {
+    const { updateEvent: updateEvent2 } = this.getStoreDispatchers("calendar");
+    const event = this.getEventModel(eventId, calendarId);
+    if (event) {
+      updateEvent2({ event, eventData: changes });
+    }
+  }
+  deleteEvent(eventId, calendarId) {
+    const { deleteEvent: deleteEvent2 } = this.getStoreDispatchers("calendar");
+    const event = this.getEventModel(eventId, calendarId);
+    if (event) {
+      deleteEvent2(event);
+    }
+  }
+  setCalendarVisibility(calendarId, isVisible) {
+    const { setCalendarVisibility } = this.getStoreDispatchers("calendar");
+    const calendarIds = Array.isArray(calendarId) ? calendarId : [calendarId];
+    setCalendarVisibility(calendarIds, isVisible);
+  }
+  render() {
+    if (isPresent(this.container)) {
+      P$2(/* @__PURE__ */ h$3(CalendarContainer, {
+        theme: this.theme,
+        store: this.store,
+        eventBus: this.eventBus
+      }, this.getComponent()), this.container);
+    }
+    return this;
+  }
+  renderToString() {
+    return m(/* @__PURE__ */ h$3(CalendarContainer, {
+      theme: this.theme,
+      store: this.store,
+      eventBus: this.eventBus
+    }, this.getComponent()));
+  }
+  clear() {
+    const { clearEvents: clearEvents2 } = this.getStoreDispatchers("calendar");
+    clearEvents2();
+  }
+  scrollToNow(scrollBehavior = "auto") {
+    this.eventBus.fire("scrollToNow", scrollBehavior);
+  }
+  calculateRenderRange(renderDate) {
+    const { currentView } = this.getStoreState().view;
+    const { options } = this.getStoreState();
+    const newRenderDate = new TZDate(renderDate);
+    let newRenderRange = { start: new TZDate(newRenderDate), end: new TZDate(newRenderDate) };
+    if (currentView === "month") {
+      newRenderRange = this.calculateMonthRenderDate({
+        renderDate,
+        offset: 0,
+        monthOptions: options.month
+      }).renderRange;
+    } else if (currentView === "week") {
+      newRenderRange = this.calculateWeekRenderDate({
+        renderDate,
+        offset: 0,
+        weekOptions: options.week
+      }).renderRange;
+    } else if (currentView === "day") {
+      newRenderRange = this.calculateDayRenderDate({ renderDate, offset: 0 }).renderRange;
+    }
+    return newRenderRange;
+  }
+  today() {
+    const { setRenderDate } = this.getStoreDispatchers().view;
+    const today = new TZDate();
+    setRenderDate(today);
+    this.renderRange = this.calculateRenderRange(today);
+  }
+  setDate(date2) {
+    const { setRenderDate } = this.getStoreDispatchers("view");
+    const dateToChange = new TZDate(date2);
+    setRenderDate(dateToChange);
+    this.renderRange = this.calculateRenderRange(dateToChange);
+  }
+  next() {
+    this.move(1);
+  }
+  prev() {
+    this.move(-1);
+  }
+  setCalendarColor(calendarId, colorOptions) {
+    const { setCalendarColor } = this.getStoreDispatchers().calendar;
+    setCalendarColor(calendarId, colorOptions);
+  }
+  changeView(viewName) {
+    const { changeView } = this.getStoreDispatchers("view");
+    changeView(viewName);
+    this.renderRange = this.calculateRenderRange(this.getDate());
+  }
+  getElement(eventId, calendarId) {
+    const event = this.getEvent(eventId, calendarId);
+    if (event && this.container) {
+      return this.container.querySelector(`[data-event-id="${eventId}"][data-calendar-id="${calendarId}"]`);
+    }
+    return null;
+  }
+  setTheme(theme) {
+    const { setTheme } = this.theme.getState().dispatch;
+    setTheme(theme);
+  }
+  getOptions() {
+    const { options, template } = this.getStoreState();
+    const _a = this.theme.getState(), { dispatch } = _a, theme = __objRest(_a, ["dispatch"]);
+    return __spreadProps(__spreadValues({}, options), {
+      template,
+      theme
+    });
+  }
+  setOptions(options) {
+    const _a = options, { theme, template } = _a, restOptions = __objRest(_a, ["theme", "template"]);
+    const { setTheme } = this.theme.getState().dispatch;
+    const {
+      options: { setOptions },
+      template: { setTemplate }
+    } = this.getStoreDispatchers();
+    if (isPresent(theme)) {
+      setTheme(theme);
+    }
+    if (isPresent(template)) {
+      setTemplate(template);
+    }
+    setOptions(restOptions);
+  }
+  getDate() {
+    const { renderDate } = this.getStoreState().view;
+    return renderDate;
+  }
+  getDateRangeStart() {
+    return this.renderRange.start;
+  }
+  getDateRangeEnd() {
+    return this.renderRange.end;
+  }
+  getViewName() {
+    const { currentView } = this.getStoreState("view");
+    return currentView;
+  }
+  setCalendars(calendars) {
+    const { setCalendars } = this.getStoreDispatchers().calendar;
+    setCalendars(calendars);
+  }
+  openFormPopup(event) {
+    const { showFormPopup } = this.getStoreDispatchers().popup;
+    const eventModel = new EventModel(event);
+    const { title, location: location2, start, end, isAllday: isAllday2, isPrivate, state: eventState } = eventModel;
+    showFormPopup({
+      isCreationPopup: true,
+      event: eventModel,
+      title,
+      location: location2,
+      start,
+      end,
+      isAllday: isAllday2,
+      isPrivate,
+      eventState
+    });
+  }
+  clearGridSelections() {
+    const { clearAll } = this.getStoreDispatchers().gridSelection;
+    clearAll();
+  }
+  fire(eventName, ...args) {
+    this.eventBus.fire(eventName, ...args);
+    return this;
+  }
+  off(eventName, handler) {
+    this.eventBus.off(eventName, handler);
+    return this;
+  }
+  on(eventName, handler) {
+    this.eventBus.on(eventName, handler);
+    return this;
+  }
+  once(eventName, handler) {
+    this.eventBus.once(eventName, handler);
+    return this;
+  }
+}
+function isValidViewType(viewType) {
+  return !!Object.values(VIEW_TYPE).find((type) => type === viewType);
+}
+class Calendar extends CalendarCore {
+  constructor(container, options = {}) {
+    super(container, options);
+    const { defaultView = "week" } = options;
+    if (!isValidViewType(defaultView)) {
+      throw new InvalidViewTypeError(defaultView);
+    }
+    this.render();
+  }
+  getComponent() {
+    return /* @__PURE__ */ h$3(Main, null);
+  }
+}
+class Day extends CalendarCore {
+  constructor(container, options = {}) {
+    super(container, options);
+    this.render();
+  }
+  getComponent() {
+    return /* @__PURE__ */ h$3(Day$1, null);
+  }
+}
+class Month extends CalendarCore {
+  constructor(container, options = {}) {
+    super(container, options);
+    this.render();
+  }
+  getComponent() {
+    return /* @__PURE__ */ h$3(Month$1, null);
+  }
+  hideMoreView() {
+    const { hideSeeMorePopup } = this.getStoreDispatchers().popup;
+    hideSeeMorePopup();
+  }
+}
+class Week extends CalendarCore {
+  constructor(container, options = {}) {
+    super(container, options);
+    this.render();
+  }
+  getComponent() {
+    return /* @__PURE__ */ h$3(Week$1, null);
+  }
+}
+
+
+
+/***/ }),
+
+/***/ "./node_modules/tui-date-picker/dist/tui-date-picker.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/tui-date-picker/dist/tui-date-picker.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * TOAST UI Date Picker
+ * @version 4.3.3
+ * @author NHN Cloud. FE Development Lab <dl_javascript@nhn.com>
+ * @license MIT
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! tui-time-picker */ "./node_modules/tui-time-picker/dist/tui-time-picker.js"));
+	else {}
+})(window, function(__WEBPACK_EXTERNAL_MODULE__43__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "dist";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview
+ * This module provides a function to make a constructor
+ * that can inherit from the other constructors like the CLASS easily.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inherit = __webpack_require__(35);
+var extend = __webpack_require__(7);
+
+/**
+ * @module defineClass
+ */
+
+/**
+ * Help a constructor to be defined and to inherit from the other constructors
+ * @param {*} [parent] Parent constructor
+ * @param {Object} props Members of constructor
+ *  @param {Function} props.init Initialization method
+ *  @param {Object} [props.static] Static members of constructor
+ * @returns {*} Constructor
+ * @memberof module:defineClass
+ * @example
+ * var defineClass = require('tui-code-snippet/defineClass/defineClass'); // node, commonjs
+ *
+ * //-- #2. Use property --//
+ * var Parent = defineClass({
+ *     init: function() { // constuructor
+ *         this.name = 'made by def';
+ *     },
+ *     method: function() {
+ *         // ...
+ *     },
+ *     static: {
+ *         staticMethod: function() {
+ *              // ...
+ *         }
+ *     }
+ * });
+ *
+ * var Child = defineClass(Parent, {
+ *     childMethod: function() {}
+ * });
+ *
+ * Parent.staticMethod();
+ *
+ * var parentInstance = new Parent();
+ * console.log(parentInstance.name); //made by def
+ * parentInstance.staticMethod(); // Error
+ *
+ * var childInstance = new Child();
+ * childInstance.method();
+ * childInstance.childMethod();
+ */
+function defineClass(parent, props) {
+  var obj;
+
+  if (!props) {
+    props = parent;
+    parent = null;
+  }
+
+  obj = props.init || function() {};
+
+  if (parent) {
+    inherit(obj, parent);
+  }
+
+  if (props.hasOwnProperty('static')) {
+    extend(obj, props['static']);
+    delete props['static'];
+  }
+
+  extend(obj.prototype, props);
+
+  return obj;
+}
+
+module.exports = defineClass;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Constants of date-picker
+ */
+
+
+
+module.exports = {
+  TYPE_DATE: 'date',
+  TYPE_MONTH: 'month',
+  TYPE_YEAR: 'year',
+  TYPE_HOUR: 'hour',
+  TYPE_MINUTE: 'minute',
+  TYPE_MERIDIEM: 'meridiem',
+  MIN_DATE: new Date(1900, 0, 1),
+  MAX_DATE: new Date(2999, 11, 31),
+
+  DEFAULT_LANGUAGE_TYPE: 'en',
+
+  CLASS_NAME_SELECTED: 'tui-is-selected',
+
+  CLASS_NAME_PREV_MONTH_BTN: 'tui-calendar-btn-prev-month',
+  CLASS_NAME_PREV_YEAR_BTN: 'tui-calendar-btn-prev-year',
+  CLASS_NAME_NEXT_YEAR_BTN: 'tui-calendar-btn-next-year',
+  CLASS_NAME_NEXT_MONTH_BTN: 'tui-calendar-btn-next-month',
+  CLASS_NAME_TITLE_TODAY: 'tui-calendar-title-today',
+
+  DEFAULT_WEEK_START_DAY: 'Sun',
+  WEEK_START_DAY_MAP: {
+    sun: 0,
+    mon: 1,
+    tue: 2,
+    wed: 3,
+    thu: 4,
+    fri: 5,
+    sat: 6
+  }
+};
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each element present in the array(or Array-like object) in ascending order.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Execute the provided callback once for each element present
+ * in the array(or Array-like object) in ascending order.
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the element
+ *  2) The index of the element
+ *  3) The array(or Array-like object) being traversed
+ * @param {Array|Arguments|NodeList} arr The array(or Array-like object) that will be traversed
+ * @param {function} iteratee Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEachArray = require('tui-code-snippet/collection/forEachArray'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEachArray([1,2,3], function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ */
+function forEachArray(arr, iteratee, context) {
+  var index = 0;
+  var len = arr.length;
+
+  context = context || null;
+
+  for (; index < len; index += 1) {
+    if (iteratee.call(context, arr[index], index, arr) === false) {
+      break;
+    }
+  }
+}
+
+module.exports = forEachArray;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-disable complexity */
+/**
+ * @fileoverview Returns the first index at which a given element can be found in the array.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(6);
+
+/**
+ * @module array
+ */
+
+/**
+ * Returns the first index at which a given element can be found in the array
+ * from start index(default 0), or -1 if it is not present.
+ * It compares searchElement to elements of the Array using strict equality
+ * (the same method used by the ===, or triple-equals, operator).
+ * @param {*} searchElement Element to locate in the array
+ * @param {Array} array Array that will be traversed.
+ * @param {number} startIndex Start index in array for searching (default 0)
+ * @returns {number} the First index at which a given element, or -1 if it is not present
+ * @memberof module:array
+ * @example
+ * var inArray = require('tui-code-snippet/array/inArray'); // node, commonjs
+ *
+ * var arr = ['one', 'two', 'three', 'four'];
+ * var idx1 = inArray('one', arr, 3); // -1
+ * var idx2 = inArray('one', arr); // 0
+ */
+function inArray(searchElement, array, startIndex) {
+  var i;
+  var length;
+  startIndex = startIndex || 0;
+
+  if (!isArray(array)) {
+    return -1;
+  }
+
+  if (Array.prototype.indexOf) {
+    return Array.prototype.indexOf.call(array, searchElement, startIndex);
+  }
+
+  length = array.length;
+  for (i = startIndex; startIndex >= 0 && i < length; i += 1) {
+    if (array[i] === searchElement) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+module.exports = inArray;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Utils for Datepicker component
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+var isHTMLNode = __webpack_require__(46);
+var sendHostname = __webpack_require__(47);
+
+var currentId = 0;
+
+var utils = {
+  /**
+   * Get a target element
+   * @param {Event} ev Event object
+   * @returns {HTMLElement} An event target element
+   */
+  getTarget: function(ev) {
+    return ev.target || ev.srcElement;
+  },
+
+  /**
+   * Return the same element with an element or a matched element searched by a selector.
+   * @param {HTMLElement|string} param HTMLElement or selector
+   * @returns {HTMLElement} A matched element
+   */
+  getElement: function(param) {
+    return isHTMLNode(param) ? param : document.querySelector(param);
+  },
+
+  /**
+   * Get a selector of the element.
+   * @param {HTMLElement} elem An element
+   * @returns {string}
+   */
+  getSelector: function(elem) {
+    var selector = '';
+    if (elem.id) {
+      selector = '#' + elem.id;
+    } else if (elem.className) {
+      selector = '.' + elem.className.split(' ')[0];
+    }
+
+    return selector;
+  },
+
+  /**
+   * Create an unique id.
+   * @returns {number}
+   */
+  generateId: function() {
+    currentId += 1;
+
+    return currentId;
+  },
+
+  /**
+   * Create a new array with all elements that pass the test implemented by the provided function.
+   * @param {Array} arr - Array that will be traversed
+   * @param {function} iteratee - iteratee callback function
+   * @returns {Array}
+   */
+  filter: function(arr, iteratee) {
+    var result = [];
+
+    forEachArray(arr, function(item) {
+      if (iteratee(item)) {
+        result.push(item);
+      }
+    });
+
+    return result;
+  },
+
+  /**
+   * Send hostname for GA
+   * @ignore
+   */
+  sendHostName: function() {
+    sendHostname('date-picker', 'UA-129987462-1');
+  }
+};
+
+module.exports = utils;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Utils for DatePicker component
+ */
+
+
+
+var isDate = __webpack_require__(28);
+var isNumber = __webpack_require__(15);
+
+var constants = __webpack_require__(1);
+
+var TYPE_DATE = constants.TYPE_DATE;
+var TYPE_MONTH = constants.TYPE_MONTH;
+var TYPE_YEAR = constants.TYPE_YEAR;
+
+/**
+ * Utils of calendar
+ * @namespace dateUtil
+ * @ignore
+ */
+var utils = {
+  /**
+   * Get weeks count by paramenter
+   * @param {number} year A year
+   * @param {number} month A month
+   * @returns {number} Weeks count (4~6)
+   **/
+  getWeeksCount: function(year, month) {
+    var firstDay = utils.getFirstDay(year, month),
+      lastDate = utils.getLastDayInMonth(year, month);
+
+    return Math.ceil((firstDay + lastDate) / 7);
+  },
+
+  /**
+   * @param {Date} date - Date instance
+   * @returns {boolean}
+   */
+  isValidDate: function(date) {
+    return isDate(date) && !isNaN(date.getTime());
+  },
+
+  /**
+   * Get which day is first by parameters that include year and month information.
+   * @param {number} year A year
+   * @param {number} month A month
+   * @returns {number} (0~6)
+   */
+  getFirstDay: function(year, month) {
+    return new Date(year, month - 1, 1).getDay();
+  },
+
+  /**
+   * Get timestamp of the first day.
+   * @param {number} year A year
+   * @param {number} month A month
+   * @returns {number} timestamp
+   */
+  getFirstDayTimestamp: function(year, month) {
+    return new Date(year, month, 1).getTime();
+  },
+
+  /**
+   * Get last date by parameters that include year and month information.
+   * @param {number} year A year
+   * @param {number} month A month
+   * @returns {number} (1~31)
+   */
+  getLastDayInMonth: function(year, month) {
+    return new Date(year, month, 0).getDate();
+  },
+
+  /**
+   * Chagne number 0~9 to '00~09'
+   * @param {number} number number
+   * @returns {string}
+   * @example
+   *  dateUtil.prependLeadingZero(0); //  '00'
+   *  dateUtil.prependLeadingZero(9); //  '09'
+   *  dateUtil.prependLeadingZero(12); //  '12'
+   */
+  prependLeadingZero: function(number) {
+    var prefix = '';
+
+    if (number < 10) {
+      prefix = '0';
+    }
+
+    return prefix + number;
+  },
+
+  /**
+   * Get meridiem hour
+   * @param {number} hour - Original hour
+   * @returns {number} Converted meridiem hour
+   */
+  getMeridiemHour: function(hour) {
+    hour %= 12;
+
+    if (hour === 0) {
+      hour = 12;
+    }
+
+    return hour;
+  },
+
+  /**
+   * Returns number or default
+   * @param {*} any - Any value
+   * @param {number} defaultNumber - Default number
+   * @throws Will throw an error if the defaultNumber is invalid.
+   * @returns {number}
+   */
+  getSafeNumber: function(any, defaultNumber) {
+    if (isNaN(defaultNumber) || !isNumber(defaultNumber)) {
+      throw Error('The defaultNumber must be a valid number.');
+    }
+    if (isNaN(any)) {
+      return defaultNumber;
+    }
+
+    return Number(any);
+  },
+
+  /**
+   * Return date of the week
+   * @param {number} year - Year
+   * @param {number} month - Month
+   * @param {number} weekNumber - Week number (0~5)
+   * @param {number} dayNumber - Day number (0: sunday, 1: monday, ....)
+   * @returns {number}
+   */
+  getDateOfWeek: function(year, month, weekNumber, dayNumber) {
+    var firstDayOfMonth = new Date(year, month - 1).getDay();
+    var dateOffset = firstDayOfMonth - dayNumber - 1;
+
+    return new Date(year, month - 1, weekNumber * 7 - dateOffset);
+  },
+
+  /**
+   * Returns range arr
+   * @param {number} start - Start value
+   * @param {number} end - End value
+   * @returns {Array}
+   */
+  getRangeArr: function(start, end) {
+    var arr = [];
+    var i;
+
+    if (start > end) {
+      for (i = end; i >= start; i -= 1) {
+        arr.push(i);
+      }
+    } else {
+      for (i = start; i <= end; i += 1) {
+        arr.push(i);
+      }
+    }
+
+    return arr;
+  },
+
+  /**
+   * Returns cloned date with the start of a unit of time
+   * @param {Date|number} date - Original date
+   * @param {string} [type = TYPE_DATE] - Unit type
+   * @throws {Error}
+   * @returns {Date}
+   */
+  cloneWithStartOf: function(date, type) {
+    type = type || TYPE_DATE;
+    date = new Date(date);
+
+    // Does not consider time-level yet.
+    date.setHours(0, 0, 0, 0);
+
+    switch (type) {
+      case TYPE_DATE:
+        break;
+      case TYPE_MONTH:
+        date.setDate(1);
+        break;
+      case TYPE_YEAR:
+        date.setMonth(0, 1);
+        break;
+      default:
+        throw Error('Unsupported type: ' + type);
+    }
+
+    return date;
+  },
+
+  /**
+   * Returns cloned date with the end of a unit of time
+   * @param {Date|number} date - Original date
+   * @param {string} [type = TYPE_DATE] - Unit type
+   * @throws {Error}
+   * @returns {Date}
+   */
+  cloneWithEndOf: function(date, type) {
+    type = type || TYPE_DATE;
+    date = new Date(date);
+
+    // Does not consider time-level yet.
+    date.setHours(23, 59, 59, 999);
+
+    switch (type) {
+      case TYPE_DATE:
+        break;
+      case TYPE_MONTH:
+        date.setMonth(date.getMonth() + 1, 0);
+        break;
+      case TYPE_YEAR:
+        date.setMonth(11, 31);
+        break;
+      default:
+        throw Error('Unsupported type: ' + type);
+    }
+
+    return date;
+  },
+
+  /**
+   * Compare two dates
+   * @param {Date|number} dateA - Date
+   * @param {Date|number} dateB - Date
+   * @param {string} [cmpLevel] - Comparing level
+   * @returns {number}
+   */
+  compare: function(dateA, dateB, cmpLevel) {
+    var aTimestamp, bTimestamp;
+
+    if (!(utils.isValidDate(dateA) && utils.isValidDate(dateB))) {
+      return NaN;
+    }
+
+    if (!cmpLevel) {
+      aTimestamp = dateA.getTime();
+      bTimestamp = dateB.getTime();
+    } else {
+      aTimestamp = utils.cloneWithStartOf(dateA, cmpLevel).getTime();
+      bTimestamp = utils.cloneWithStartOf(dateB, cmpLevel).getTime();
+    }
+
+    if (aTimestamp > bTimestamp) {
+      return 1;
+    }
+
+    return aTimestamp === bTimestamp ? 0 : -1;
+  },
+
+  /**
+   * Returns whether two dates are same
+   * @param {Date|number} dateA - Date
+   * @param {Date|number} dateB - Date
+   * @param {string} [cmpLevel] - Comparing level
+   * @returns {boolean}
+   */
+  isSame: function(dateA, dateB, cmpLevel) {
+    return utils.compare(dateA, dateB, cmpLevel) === 0;
+  },
+
+  /**
+   * Returns whether the target is in range
+   * @param {Date|number} start - Range start
+   * @param {Date|number} end - Range end
+   * @param {Date|number} target - Target
+   * @param {string} [cmpLevel = TYPE_DATE] - Comparing level
+   * @returns {boolean}
+   */
+  inRange: function(start, end, target, cmpLevel) {
+    return utils.compare(start, target, cmpLevel) < 1 && utils.compare(end, target, cmpLevel) > -1;
+  }
+};
+
+module.exports = utils;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is an instance of Array or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is an instance of Array or not.
+ * If the given variable is an instance of Array, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is array instance?
+ * @memberof module:type
+ */
+function isArray(obj) {
+  return obj instanceof Array;
+}
+
+module.exports = isArray;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Extend the target object from other objects.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * @module object
+ */
+
+/**
+ * Extend the target object from other objects.
+ * @param {object} target - Object that will be extended
+ * @param {...object} objects - Objects as sources
+ * @returns {object} Extended object
+ * @memberof module:object
+ */
+function extend(target, objects) { // eslint-disable-line no-unused-vars
+  var hasOwnProp = Object.prototype.hasOwnProperty;
+  var source, prop, i, len;
+
+  for (i = 1, len = arguments.length; i < len; i += 1) {
+    source = arguments[i];
+    for (prop in source) {
+      if (hasOwnProp.call(source, prop)) {
+        target[prop] = source[prop];
+      }
+    }
+  }
+
+  return target;
+}
+
+module.exports = extend;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview This module provides some functions for custom events. And it is implemented in the observer design pattern.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var extend = __webpack_require__(7);
+var isExisty = __webpack_require__(37);
+var isString = __webpack_require__(13);
+var isObject = __webpack_require__(22);
+var isArray = __webpack_require__(6);
+var isFunction = __webpack_require__(39);
+var forEach = __webpack_require__(9);
+
+var R_EVENTNAME_SPLIT = /\s+/g;
+
+/**
+ * @class
+ * @example
+ * // node, commonjs
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents');
+ */
+function CustomEvents() {
+  /**
+     * @type {HandlerItem[]}
+     */
+  this.events = null;
+
+  /**
+     * only for checking specific context event was binded
+     * @type {object[]}
+     */
+  this.contexts = null;
+}
+
+/**
+ * Mixin custom events feature to specific constructor
+ * @param {function} func - constructor
+ * @example
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * var model;
+ * function Model() {
+ *     this.name = '';
+ * }
+ * CustomEvents.mixin(Model);
+ *
+ * model = new Model();
+ * model.on('change', function() { this.name = 'model'; }, this);
+ * model.fire('change');
+ * alert(model.name); // 'model';
+ */
+CustomEvents.mixin = function(func) {
+  extend(func.prototype, CustomEvents.prototype);
+};
+
+/**
+ * Get HandlerItem object
+ * @param {function} handler - handler function
+ * @param {object} [context] - context for handler
+ * @returns {HandlerItem} HandlerItem object
+ * @private
+ */
+CustomEvents.prototype._getHandlerItem = function(handler, context) {
+  var item = {handler: handler};
+
+  if (context) {
+    item.context = context;
+  }
+
+  return item;
+};
+
+/**
+ * Get event object safely
+ * @param {string} [eventName] - create sub event map if not exist.
+ * @returns {(object|array)} event object. if you supplied `eventName`
+ *  parameter then make new array and return it
+ * @private
+ */
+CustomEvents.prototype._safeEvent = function(eventName) {
+  var events = this.events;
+  var byName;
+
+  if (!events) {
+    events = this.events = {};
+  }
+
+  if (eventName) {
+    byName = events[eventName];
+
+    if (!byName) {
+      byName = [];
+      events[eventName] = byName;
+    }
+
+    events = byName;
+  }
+
+  return events;
+};
+
+/**
+ * Get context array safely
+ * @returns {array} context array
+ * @private
+ */
+CustomEvents.prototype._safeContext = function() {
+  var context = this.contexts;
+
+  if (!context) {
+    context = this.contexts = [];
+  }
+
+  return context;
+};
+
+/**
+ * Get index of context
+ * @param {object} ctx - context that used for bind custom event
+ * @returns {number} index of context
+ * @private
+ */
+CustomEvents.prototype._indexOfContext = function(ctx) {
+  var context = this._safeContext();
+  var index = 0;
+
+  while (context[index]) {
+    if (ctx === context[index][0]) {
+      return index;
+    }
+
+    index += 1;
+  }
+
+  return -1;
+};
+
+/**
+ * Memorize supplied context for recognize supplied object is context or
+ *  name: handler pair object when off()
+ * @param {object} ctx - context object to memorize
+ * @private
+ */
+CustomEvents.prototype._memorizeContext = function(ctx) {
+  var context, index;
+
+  if (!isExisty(ctx)) {
+    return;
+  }
+
+  context = this._safeContext();
+  index = this._indexOfContext(ctx);
+
+  if (index > -1) {
+    context[index][1] += 1;
+  } else {
+    context.push([ctx, 1]);
+  }
+};
+
+/**
+ * Forget supplied context object
+ * @param {object} ctx - context object to forget
+ * @private
+ */
+CustomEvents.prototype._forgetContext = function(ctx) {
+  var context, contextIndex;
+
+  if (!isExisty(ctx)) {
+    return;
+  }
+
+  context = this._safeContext();
+  contextIndex = this._indexOfContext(ctx);
+
+  if (contextIndex > -1) {
+    context[contextIndex][1] -= 1;
+
+    if (context[contextIndex][1] <= 0) {
+      context.splice(contextIndex, 1);
+    }
+  }
+};
+
+/**
+ * Bind event handler
+ * @param {(string|{name:string, handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {(function|object)} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ * @private
+ */
+CustomEvents.prototype._bindEvent = function(eventName, handler, context) {
+  var events = this._safeEvent(eventName);
+  this._memorizeContext(context);
+  events.push(this._getHandlerItem(handler, context));
+};
+
+/**
+ * Bind event handlers
+ * @param {(string|{name:string, handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {(function|object)} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ * //-- #1. Get Module --//
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * //-- #2. Use method --//
+ * // # 2.1 Basic Usage
+ * CustomEvents.on('onload', handler);
+ *
+ * // # 2.2 With context
+ * CustomEvents.on('onload', handler, myObj);
+ *
+ * // # 2.3 Bind by object that name, handler pairs
+ * CustomEvents.on({
+ *     'play': handler,
+ *     'pause': handler2
+ * });
+ *
+ * // # 2.4 Bind by object that name, handler pairs with context object
+ * CustomEvents.on({
+ *     'play': handler
+ * }, myObj);
+ */
+CustomEvents.prototype.on = function(eventName, handler, context) {
+  var self = this;
+
+  if (isString(eventName)) {
+    // [syntax 1, 2]
+    eventName = eventName.split(R_EVENTNAME_SPLIT);
+    forEach(eventName, function(name) {
+      self._bindEvent(name, handler, context);
+    });
+  } else if (isObject(eventName)) {
+    // [syntax 3, 4]
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self.on(name, func, context);
+    });
+  }
+};
+
+/**
+ * Bind one-shot event handlers
+ * @param {(string|{name:string,handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {function|object} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ */
+CustomEvents.prototype.once = function(eventName, handler, context) {
+  var self = this;
+
+  if (isObject(eventName)) {
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self.once(name, func, context);
+    });
+
+    return;
+  }
+
+  function onceHandler() { // eslint-disable-line require-jsdoc
+    handler.apply(context, arguments);
+    self.off(eventName, onceHandler, context);
+  }
+
+  this.on(eventName, onceHandler, context);
+};
+
+/**
+ * Splice supplied array by callback result
+ * @param {array} arr - array to splice
+ * @param {function} predicate - function return boolean
+ * @private
+ */
+CustomEvents.prototype._spliceMatches = function(arr, predicate) {
+  var i = 0;
+  var len;
+
+  if (!isArray(arr)) {
+    return;
+  }
+
+  for (len = arr.length; i < len; i += 1) {
+    if (predicate(arr[i]) === true) {
+      arr.splice(i, 1);
+      len -= 1;
+      i -= 1;
+    }
+  }
+};
+
+/**
+ * Get matcher for unbind specific handler events
+ * @param {function} handler - handler function
+ * @returns {function} handler matcher
+ * @private
+ */
+CustomEvents.prototype._matchHandler = function(handler) {
+  var self = this;
+
+  return function(item) {
+    var needRemove = handler === item.handler;
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Get matcher for unbind specific context events
+ * @param {object} context - context
+ * @returns {function} object matcher
+ * @private
+ */
+CustomEvents.prototype._matchContext = function(context) {
+  var self = this;
+
+  return function(item) {
+    var needRemove = context === item.context;
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Get matcher for unbind specific hander, context pair events
+ * @param {function} handler - handler function
+ * @param {object} context - context
+ * @returns {function} handler, context matcher
+ * @private
+ */
+CustomEvents.prototype._matchHandlerAndContext = function(handler, context) {
+  var self = this;
+
+  return function(item) {
+    var matchHandler = (handler === item.handler);
+    var matchContext = (context === item.context);
+    var needRemove = (matchHandler && matchContext);
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Unbind event by event name
+ * @param {string} eventName - custom event name to unbind
+ * @param {function} [handler] - handler function
+ * @private
+ */
+CustomEvents.prototype._offByEventName = function(eventName, handler) {
+  var self = this;
+  var andByHandler = isFunction(handler);
+  var matchHandler = self._matchHandler(handler);
+
+  eventName = eventName.split(R_EVENTNAME_SPLIT);
+
+  forEach(eventName, function(name) {
+    var handlerItems = self._safeEvent(name);
+
+    if (andByHandler) {
+      self._spliceMatches(handlerItems, matchHandler);
+    } else {
+      forEach(handlerItems, function(item) {
+        self._forgetContext(item.context);
+      });
+
+      self.events[name] = [];
+    }
+  });
+};
+
+/**
+ * Unbind event by handler function
+ * @param {function} handler - handler function
+ * @private
+ */
+CustomEvents.prototype._offByHandler = function(handler) {
+  var self = this;
+  var matchHandler = this._matchHandler(handler);
+
+  forEach(this._safeEvent(), function(handlerItems) {
+    self._spliceMatches(handlerItems, matchHandler);
+  });
+};
+
+/**
+ * Unbind event by object(name: handler pair object or context object)
+ * @param {object} obj - context or {name: handler} pair object
+ * @param {function} handler - handler function
+ * @private
+ */
+CustomEvents.prototype._offByObject = function(obj, handler) {
+  var self = this;
+  var matchFunc;
+
+  if (this._indexOfContext(obj) < 0) {
+    forEach(obj, function(func, name) {
+      self.off(name, func);
+    });
+  } else if (isString(handler)) {
+    matchFunc = this._matchContext(obj);
+
+    self._spliceMatches(this._safeEvent(handler), matchFunc);
+  } else if (isFunction(handler)) {
+    matchFunc = this._matchHandlerAndContext(handler, obj);
+
+    forEach(this._safeEvent(), function(handlerItems) {
+      self._spliceMatches(handlerItems, matchFunc);
+    });
+  } else {
+    matchFunc = this._matchContext(obj);
+
+    forEach(this._safeEvent(), function(handlerItems) {
+      self._spliceMatches(handlerItems, matchFunc);
+    });
+  }
+};
+
+/**
+ * Unbind custom events
+ * @param {(string|object|function)} eventName - event name or context or
+ *  {name: handler} pair object or handler function
+ * @param {(function)} handler - handler function
+ * @example
+ * //-- #1. Get Module --//
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * //-- #2. Use method --//
+ * // # 2.1 off by event name
+ * CustomEvents.off('onload');
+ *
+ * // # 2.2 off by event name and handler
+ * CustomEvents.off('play', handler);
+ *
+ * // # 2.3 off by handler
+ * CustomEvents.off(handler);
+ *
+ * // # 2.4 off by context
+ * CustomEvents.off(myObj);
+ *
+ * // # 2.5 off by context and handler
+ * CustomEvents.off(myObj, handler);
+ *
+ * // # 2.6 off by context and event name
+ * CustomEvents.off(myObj, 'onload');
+ *
+ * // # 2.7 off by an Object.<string, function> that is {eventName: handler}
+ * CustomEvents.off({
+ *   'play': handler,
+ *   'pause': handler2
+ * });
+ *
+ * // # 2.8 off the all events
+ * CustomEvents.off();
+ */
+CustomEvents.prototype.off = function(eventName, handler) {
+  if (isString(eventName)) {
+    // [syntax 1, 2]
+    this._offByEventName(eventName, handler);
+  } else if (!arguments.length) {
+    // [syntax 8]
+    this.events = {};
+    this.contexts = [];
+  } else if (isFunction(eventName)) {
+    // [syntax 3]
+    this._offByHandler(eventName);
+  } else if (isObject(eventName)) {
+    // [syntax 4, 5, 6]
+    this._offByObject(eventName, handler);
+  }
+};
+
+/**
+ * Fire custom event
+ * @param {string} eventName - name of custom event
+ */
+CustomEvents.prototype.fire = function(eventName) {  // eslint-disable-line
+  this.invoke.apply(this, arguments);
+};
+
+/**
+ * Fire a event and returns the result of operation 'boolean AND' with all
+ *  listener's results.
+ *
+ * So, It is different from {@link CustomEvents#fire}.
+ *
+ * In service code, use this as a before event in component level usually
+ *  for notifying that the event is cancelable.
+ * @param {string} eventName - Custom event name
+ * @param {...*} data - Data for event
+ * @returns {boolean} The result of operation 'boolean AND'
+ * @example
+ * var map = new Map();
+ * map.on({
+ *     'beforeZoom': function() {
+ *         // It should cancel the 'zoom' event by some conditions.
+ *         if (that.disabled && this.getState()) {
+ *             return false;
+ *         }
+ *         return true;
+ *     }
+ * });
+ *
+ * if (this.invoke('beforeZoom')) {    // check the result of 'beforeZoom'
+ *     // if true,
+ *     // doSomething
+ * }
+ */
+CustomEvents.prototype.invoke = function(eventName) {
+  var events, args, index, item;
+
+  if (!this.hasListener(eventName)) {
+    return true;
+  }
+
+  events = this._safeEvent(eventName);
+  args = Array.prototype.slice.call(arguments, 1);
+  index = 0;
+
+  while (events[index]) {
+    item = events[index];
+
+    if (item.handler.apply(item.context, args) === false) {
+      return false;
+    }
+
+    index += 1;
+  }
+
+  return true;
+};
+
+/**
+ * Return whether at least one of the handlers is registered in the given
+ *  event name.
+ * @param {string} eventName - Custom event name
+ * @returns {boolean} Is there at least one handler in event name?
+ */
+CustomEvents.prototype.hasListener = function(eventName) {
+  return this.getListenerLength(eventName) > 0;
+};
+
+/**
+ * Return a count of events registered.
+ * @param {string} eventName - Custom event name
+ * @returns {number} number of event
+ */
+CustomEvents.prototype.getListenerLength = function(eventName) {
+  var events = this._safeEvent(eventName);
+
+  return events.length;
+};
+
+module.exports = CustomEvents;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each property of object(or element of array) which actually exist.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(6);
+var forEachArray = __webpack_require__(2);
+var forEachOwnProperties = __webpack_require__(23);
+
+/**
+ * @module collection
+ */
+
+/**
+ * Execute the provided callback once for each property of object(or element of array) which actually exist.
+ * If the object is Array-like object(ex-arguments object), It needs to transform to Array.(see 'ex2' of example).
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the property(or The value of the element)
+ *  2) The name of the property(or The index of the element)
+ *  3) The object being traversed
+ * @param {Object} obj The object that will be traversed
+ * @param {function} iteratee Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEach = require('tui-code-snippet/collection/forEach'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEach([1,2,3], function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ *
+ * // In case of Array-like object
+ * var array = Array.prototype.slice.call(arrayLike); // change to array
+ * forEach(array, function(value){
+ *     sum += value;
+ * });
+ */
+function forEach(obj, iteratee, context) {
+  if (isArray(obj)) {
+    forEachArray(obj, iteratee, context);
+  } else {
+    forEachOwnProperties(obj, iteratee, context);
+  }
+}
+
+module.exports = forEach;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Default locale texts
+ */
+
+
+
+module.exports = {
+  en: {
+    titles: {
+      DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      D: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      MMM: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      MMMM: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ]
+    },
+    titleFormat: 'MMMM yyyy',
+    todayFormat: 'To\\d\\ay: DD, MMMM d, yyyy',
+    time: 'Time',
+    date: 'Date'
+  },
+  ko: {
+    titles: {
+      DD: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+      D: ['일', '월', '화', '수', '목', '금', '토'],
+      MMM: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      MMMM: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+    },
+    titleFormat: 'yyyy.MM',
+    todayFormat: '오늘: yyyy.MM.dd (D)',
+    date: '날짜',
+    time: '시간'
+  }
+};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Convert text by binding expressions with context.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inArray = __webpack_require__(3);
+var forEach = __webpack_require__(9);
+var isArray = __webpack_require__(6);
+var isString = __webpack_require__(13);
+var extend = __webpack_require__(7);
+
+// IE8 does not support capture groups.
+var EXPRESSION_REGEXP = /{{\s?|\s?}}/g;
+var BRACKET_NOTATION_REGEXP = /^[a-zA-Z0-9_@]+\[[a-zA-Z0-9_@"']+\]$/;
+var BRACKET_REGEXP = /\[\s?|\s?\]/;
+var DOT_NOTATION_REGEXP = /^[a-zA-Z_]+\.[a-zA-Z_]+$/;
+var DOT_REGEXP = /\./;
+var STRING_NOTATION_REGEXP = /^["']\w+["']$/;
+var STRING_REGEXP = /"|'/g;
+var NUMBER_REGEXP = /^-?\d+\.?\d*$/;
+
+var EXPRESSION_INTERVAL = 2;
+
+var BLOCK_HELPERS = {
+  'if': handleIf,
+  'each': handleEach,
+  'with': handleWith
+};
+
+var isValidSplit = 'a'.split(/a/).length === 3;
+
+/**
+ * Split by RegExp. (Polyfill for IE8)
+ * @param {string} text - text to be splitted\
+ * @param {RegExp} regexp - regular expression
+ * @returns {Array.<string>}
+ */
+var splitByRegExp = (function() {
+  if (isValidSplit) {
+    return function(text, regexp) {
+      return text.split(regexp);
+    };
+  }
+
+  return function(text, regexp) {
+    var result = [];
+    var prevIndex = 0;
+    var match, index;
+
+    if (!regexp.global) {
+      regexp = new RegExp(regexp, 'g');
+    }
+
+    match = regexp.exec(text);
+    while (match !== null) {
+      index = match.index;
+      result.push(text.slice(prevIndex, index));
+
+      prevIndex = index + match[0].length;
+      match = regexp.exec(text);
+    }
+    result.push(text.slice(prevIndex));
+
+    return result;
+  };
+})();
+
+/**
+ * Find value in the context by an expression.
+ * @param {string} exp - an expression
+ * @param {object} context - context
+ * @returns {*}
+ * @private
+ */
+// eslint-disable-next-line complexity
+function getValueFromContext(exp, context) {
+  var splitedExps;
+  var value = context[exp];
+
+  if (exp === 'true') {
+    value = true;
+  } else if (exp === 'false') {
+    value = false;
+  } else if (STRING_NOTATION_REGEXP.test(exp)) {
+    value = exp.replace(STRING_REGEXP, '');
+  } else if (BRACKET_NOTATION_REGEXP.test(exp)) {
+    splitedExps = exp.split(BRACKET_REGEXP);
+    value = getValueFromContext(splitedExps[0], context)[getValueFromContext(splitedExps[1], context)];
+  } else if (DOT_NOTATION_REGEXP.test(exp)) {
+    splitedExps = exp.split(DOT_REGEXP);
+    value = getValueFromContext(splitedExps[0], context)[splitedExps[1]];
+  } else if (NUMBER_REGEXP.test(exp)) {
+    value = parseFloat(exp);
+  }
+
+  return value;
+}
+
+/**
+ * Extract elseif and else expressions.
+ * @param {Array.<string>} ifExps - args of if expression
+ * @param {Array.<string>} sourcesInsideBlock - sources inside if block
+ * @returns {object} - exps: expressions of if, elseif, and else / sourcesInsideIf: sources inside if, elseif, and else block.
+ * @private
+ */
+function extractElseif(ifExps, sourcesInsideBlock) {
+  var exps = [ifExps];
+  var sourcesInsideIf = [];
+  var otherIfCount = 0;
+  var start = 0;
+
+  // eslint-disable-next-line complexity
+  forEach(sourcesInsideBlock, function(source, index) {
+    if (source.indexOf('if') === 0) {
+      otherIfCount += 1;
+    } else if (source === '/if') {
+      otherIfCount -= 1;
+    } else if (!otherIfCount && (source.indexOf('elseif') === 0 || source === 'else')) {
+      exps.push(source === 'else' ? ['true'] : source.split(' ').slice(1));
+      sourcesInsideIf.push(sourcesInsideBlock.slice(start, index));
+      start = index + 1;
+    }
+  });
+
+  sourcesInsideIf.push(sourcesInsideBlock.slice(start));
+
+  return {
+    exps: exps,
+    sourcesInsideIf: sourcesInsideIf
+  };
+}
+
+/**
+ * Helper function for "if". 
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the if block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleIf(exps, sourcesInsideBlock, context) {
+  var analyzed = extractElseif(exps, sourcesInsideBlock);
+  var result = false;
+  var compiledSource = '';
+
+  forEach(analyzed.exps, function(exp, index) {
+    result = handleExpression(exp, context);
+    if (result) {
+      compiledSource = compile(analyzed.sourcesInsideIf[index], context);
+    }
+
+    return !result;
+  });
+
+  return compiledSource;
+}
+
+/**
+ * Helper function for "each".
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the each block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleEach(exps, sourcesInsideBlock, context) {
+  var collection = handleExpression(exps, context);
+  var additionalKey = isArray(collection) ? '@index' : '@key';
+  var additionalContext = {};
+  var result = '';
+
+  forEach(collection, function(item, key) {
+    additionalContext[additionalKey] = key;
+    additionalContext['@this'] = item;
+    extend(context, additionalContext);
+
+    result += compile(sourcesInsideBlock.slice(), context);
+  });
+
+  return result;
+}
+
+/**
+ * Helper function for "with ... as"
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the with block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleWith(exps, sourcesInsideBlock, context) {
+  var asIndex = inArray('as', exps);
+  var alias = exps[asIndex + 1];
+  var result = handleExpression(exps.slice(0, asIndex), context);
+
+  var additionalContext = {};
+  additionalContext[alias] = result;
+
+  return compile(sourcesInsideBlock, extend(context, additionalContext)) || '';
+}
+
+/**
+ * Extract sources inside block in place.
+ * @param {Array.<string>} sources - array of sources
+ * @param {number} start - index of start block
+ * @param {number} end - index of end block
+ * @returns {Array.<string>}
+ * @private
+ */
+function extractSourcesInsideBlock(sources, start, end) {
+  var sourcesInsideBlock = sources.splice(start + 1, end - start);
+  sourcesInsideBlock.pop();
+
+  return sourcesInsideBlock;
+}
+
+/**
+ * Handle block helper function
+ * @param {string} helperKeyword - helper keyword (ex. if, each, with)
+ * @param {Array.<string>} sourcesToEnd - array of sources after the starting block
+ * @param {object} context - context
+ * @returns {Array.<string>}
+ * @private
+ */
+function handleBlockHelper(helperKeyword, sourcesToEnd, context) {
+  var executeBlockHelper = BLOCK_HELPERS[helperKeyword];
+  var helperCount = 1;
+  var startBlockIndex = 0;
+  var endBlockIndex;
+  var index = startBlockIndex + EXPRESSION_INTERVAL;
+  var expression = sourcesToEnd[index];
+
+  while (helperCount && isString(expression)) {
+    if (expression.indexOf(helperKeyword) === 0) {
+      helperCount += 1;
+    } else if (expression.indexOf('/' + helperKeyword) === 0) {
+      helperCount -= 1;
+      endBlockIndex = index;
+    }
+
+    index += EXPRESSION_INTERVAL;
+    expression = sourcesToEnd[index];
+  }
+
+  if (helperCount) {
+    throw Error(helperKeyword + ' needs {{/' + helperKeyword + '}} expression.');
+  }
+
+  sourcesToEnd[startBlockIndex] = executeBlockHelper(
+    sourcesToEnd[startBlockIndex].split(' ').slice(1),
+    extractSourcesInsideBlock(sourcesToEnd, startBlockIndex, endBlockIndex),
+    context
+  );
+
+  return sourcesToEnd;
+}
+
+/**
+ * Helper function for "custom helper".
+ * If helper is not a function, return helper itself.
+ * @param {Array.<string>} exps - array of expressions split by spaces (first element: helper)
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleExpression(exps, context) {
+  var result = getValueFromContext(exps[0], context);
+
+  if (result instanceof Function) {
+    return executeFunction(result, exps.slice(1), context);
+  }
+
+  return result;
+}
+
+/**
+ * Execute a helper function.
+ * @param {Function} helper - helper function
+ * @param {Array.<string>} argExps - expressions of arguments
+ * @param {object} context - context
+ * @returns {string} - result of executing the function with arguments
+ * @private
+ */
+function executeFunction(helper, argExps, context) {
+  var args = [];
+  forEach(argExps, function(exp) {
+    args.push(getValueFromContext(exp, context));
+  });
+
+  return helper.apply(null, args);
+}
+
+/**
+ * Get a result of compiling an expression with the context.
+ * @param {Array.<string>} sources - array of sources split by regexp of expression.
+ * @param {object} context - context
+ * @returns {Array.<string>} - array of sources that bind with its context
+ * @private
+ */
+function compile(sources, context) {
+  var index = 1;
+  var expression = sources[index];
+  var exps, firstExp, result;
+
+  while (isString(expression)) {
+    exps = expression.split(' ');
+    firstExp = exps[0];
+
+    if (BLOCK_HELPERS[firstExp]) {
+      result = handleBlockHelper(firstExp, sources.splice(index, sources.length - index), context);
+      sources = sources.concat(result);
+    } else {
+      sources[index] = handleExpression(exps, context);
+    }
+
+    index += EXPRESSION_INTERVAL;
+    expression = sources[index];
+  }
+
+  return sources.join('');
+}
+
+/**
+ * Convert text by binding expressions with context.
+ * <br>
+ * If expression exists in the context, it will be replaced.
+ * ex) '{{title}}' with context {title: 'Hello!'} is converted to 'Hello!'.
+ * An array or object can be accessed using bracket and dot notation.
+ * ex) '{{odds\[2\]}}' with context {odds: \[1, 3, 5\]} is converted to '5'.
+ * ex) '{{evens\[first\]}}' with context {evens: \[2, 4\], first: 0} is converted to '2'.
+ * ex) '{{project\["name"\]}}' and '{{project.name}}' with context {project: {name: 'CodeSnippet'}} is converted to 'CodeSnippet'.
+ * <br>
+ * If replaced expression is a function, next expressions will be arguments of the function.
+ * ex) '{{add 1 2}}' with context {add: function(a, b) {return a + b;}} is converted to '3'.
+ * <br>
+ * It has 3 predefined block helpers '{{helper ...}} ... {{/helper}}': 'if', 'each', 'with ... as ...'.
+ * 1) 'if' evaluates conditional statements. It can use with 'elseif' and 'else'.
+ * 2) 'each' iterates an array or object. It provides '@index'(array), '@key'(object), and '@this'(current element).
+ * 3) 'with ... as ...' provides an alias.
+ * @param {string} text - text with expressions
+ * @param {object} context - context
+ * @returns {string} - text that bind with its context
+ * @memberof module:domUtil
+ * @example
+ * var template = require('tui-code-snippet/domUtil/template');
+ * 
+ * var source = 
+ *     '<h1>'
+ *   +   '{{if isValidNumber title}}'
+ *   +     '{{title}}th'
+ *   +   '{{elseif isValidDate title}}'
+ *   +     'Date: {{title}}'
+ *   +   '{{/if}}'
+ *   + '</h1>'
+ *   + '{{each list}}'
+ *   +   '{{with addOne @index as idx}}'
+ *   +     '<p>{{idx}}: {{@this}}</p>'
+ *   +   '{{/with}}'
+ *   + '{{/each}}';
+ * 
+ * var context = {
+ *   isValidDate: function(text) {
+ *     return /^\d{4}-(0|1)\d-(0|1|2|3)\d$/.test(text);
+ *   },
+ *   isValidNumber: function(text) {
+ *     return /^\d+$/.test(text);
+ *   }
+ *   title: '2019-11-25',
+ *   list: ['Clean the room', 'Wash the dishes'],
+ *   addOne: function(num) {
+ *     return num + 1;
+ *   }
+ * };
+ * 
+ * var result = template(source, context);
+ * console.log(result); // <h1>Date: 2019-11-25</h1><p>1: Clean the room</p><p>2: Wash the dishes</p>
+ */
+function template(text, context) {
+  return compile(splitByRegExp(text, EXPRESSION_REGEXP), context);
+}
+
+module.exports = template;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is undefined or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is undefined or not.
+ * If the given variable is undefined, returns true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is undefined?
+ * @memberof module:type
+ */
+function isUndefined(obj) {
+  return obj === undefined; // eslint-disable-line no-undefined
+}
+
+module.exports = isUndefined;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a string or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a string or not.
+ * If the given variable is a string, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is string?
+ * @memberof module:type
+ */
+function isString(obj) {
+  return typeof obj === 'string' || obj instanceof String;
+}
+
+module.exports = isString;
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Remove element from parent node.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Remove element from parent node.
+ * @param {HTMLElement} element - element to remove.
+ * @memberof module:domUtil
+ */
+function removeElement(element) {
+  if (element && element.parentNode) {
+    element.parentNode.removeChild(element);
+  }
+}
+
+module.exports = removeElement;
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a number or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a number or not.
+ * If the given variable is a number, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is number?
+ * @memberof module:type
+ */
+function isNumber(obj) {
+  return typeof obj === 'number' || obj instanceof Number;
+}
+
+module.exports = isNumber;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Add css class to element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEach = __webpack_require__(9);
+var inArray = __webpack_require__(3);
+var getClass = __webpack_require__(17);
+var setClassName = __webpack_require__(24);
+
+/**
+ * domUtil module
+ * @module domUtil
+ */
+
+/**
+ * Add css class to element
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {...string} cssClass - css classes to add
+ * @memberof module:domUtil
+ */
+function addClass(element) {
+  var cssClass = Array.prototype.slice.call(arguments, 1);
+  var classList = element.classList;
+  var newClass = [];
+  var origin;
+
+  if (classList) {
+    forEach(cssClass, function(name) {
+      element.classList.add(name);
+    });
+
+    return;
+  }
+
+  origin = getClass(element);
+
+  if (origin) {
+    cssClass = [].concat(origin.split(/\s+/), cssClass);
+  }
+
+  forEach(cssClass, function(cls) {
+    if (inArray(cls, newClass) < 0) {
+      newClass.push(cls);
+    }
+  });
+
+  setClassName(element, newClass);
+}
+
+module.exports = addClass;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Get HTML element's design classes.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(12);
+
+/**
+ * Get HTML element's design classes.
+ * @param {(HTMLElement|SVGElement)} element target element
+ * @returns {string} element css class name
+ * @memberof module:domUtil
+ */
+function getClass(element) {
+  if (!element || !element.className) {
+    return '';
+  }
+
+  if (isUndefined(element.className.baseVal)) {
+    return element.className;
+  }
+
+  return element.className.baseVal;
+}
+
+module.exports = getClass;
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Remove css class from element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+var inArray = __webpack_require__(3);
+var getClass = __webpack_require__(17);
+var setClassName = __webpack_require__(24);
+
+/**
+ * Remove css class from element
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {...string} cssClass - css classes to remove
+ * @memberof module:domUtil
+ */
+function removeClass(element) {
+  var cssClass = Array.prototype.slice.call(arguments, 1);
+  var classList = element.classList;
+  var origin, newClass;
+
+  if (classList) {
+    forEachArray(cssClass, function(name) {
+      classList.remove(name);
+    });
+
+    return;
+  }
+
+  origin = getClass(element).split(/\s+/);
+  newClass = [];
+  forEachArray(origin, function(name) {
+    if (inArray(name, cssClass) < 0) {
+      newClass.push(name);
+    }
+  });
+
+  setClassName(element, newClass);
+}
+
+module.exports = removeClass;
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Set mouse-touch event
+ */
+
+
+
+var on = __webpack_require__(31);
+var off = __webpack_require__(33);
+
+var mouseTouchEvent = {
+  /**
+   * Detect mobile browser
+   * @type {boolean} Whether using Mobile browser
+   * @private
+   */
+  _isMobile: (function() {
+    return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+      navigator.userAgent
+    );
+  })(),
+
+  /**
+   * Return a matched event type by a mouse event type
+   * @param {string} type A mouse event type - mousedown, click
+   * @returns {string}
+   * @private
+   */
+  _getEventType: function(type) {
+    if (this._isMobile) {
+      if (type === 'mousedown') {
+        type = 'touchstart';
+      } else if (type === 'click') {
+        type = 'touchend';
+      }
+    }
+
+    return type;
+  },
+
+  /**
+   * Bind touch or mouse events
+   * @param {HTMLElement} element An element to bind
+   * @param {string} type A mouse event type - mousedown, click
+   * @param {Function} handler A handler function
+   * @param {object} [context] A context for handler.
+   */
+  on: function(element, type, handler, context) {
+    on(element, this._getEventType(type), handler, context);
+  },
+
+  /**
+   * Unbind touch or mouse events
+   * @param {HTMLElement} element - Target element
+   * @param {string} type A mouse event type - mousedown, click
+   * @param {Function} handler - Handler
+   */
+  off: function(element, type, handler) {
+    off(element, this._getEventType(type), handler);
+  }
+};
+
+module.exports = mouseTouchEvent;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Layer base
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+var removeElement = __webpack_require__(14);
+
+var localeText = __webpack_require__(10);
+var DEFAULT_LANGUAGE_TYPE = __webpack_require__(1).DEFAULT_LANGUAGE_TYPE;
+
+/**
+ * @abstract
+ * @class
+ * @ignore
+ * @param {string} language - Initial language
+ * Layer base
+ */
+var LayerBase = defineClass(
+  /** @lends LayerBase.prototype */ {
+    init: function(language) {
+      language = language || DEFAULT_LANGUAGE_TYPE;
+
+      /**
+       * Layer element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._element = null;
+
+      /**
+       * Language type
+       * @type {string}
+       * @private
+       */
+      this._localeText = localeText[language];
+
+      /**
+       * Layer type
+       * @type {string}
+       * @private
+       */
+      this._type = 'base';
+    },
+
+    /**
+     * Make context
+     * @abstract
+     * @throws {Error}
+     * @returns {object}
+     * @private
+     */
+    _makeContext: function() {
+      throwOverrideError(this.getType(), '_makeContext');
+    },
+
+    /**
+     * Render the layer element
+     * @abstract
+     * @throws {Error}
+     */
+    render: function() {
+      throwOverrideError(this.getType(), 'render');
+    },
+
+    /**
+     * Returns date elements
+     * @abstract
+     * @throws {Error}
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      throwOverrideError(this.getType(), 'getDateElements');
+    },
+
+    /**
+     * Returns layer type
+     * @returns {string}
+     */
+    getType: function() {
+      return this._type;
+    },
+
+    /**
+     * Set language
+     * @param {string} language - Language name
+     */
+    changeLanguage: function(language) {
+      this._localeText = localeText[language];
+    },
+
+    /**
+     * Remove elements
+     */
+    remove: function() {
+      if (this._element) {
+        removeElement(this._element);
+      }
+      this._element = null;
+    }
+  }
+);
+
+/**
+ * Throw - method override error
+ * @ignore
+ * @param {string} layerType - Layer type
+ * @param {string} methodName - Method name
+ * @throws {Error}
+ */
+function throwOverrideError(layerType, methodName) {
+  throw new Error(layerType + ' layer does not have the "' + methodName + '" method.');
+}
+
+module.exports = LayerBase;
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview DatePicker component
+ */
+
+
+
+var inArray = __webpack_require__(3);
+var forEachArray = __webpack_require__(2);
+var defineClass = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var addClass = __webpack_require__(16);
+var closest = __webpack_require__(25);
+var getData = __webpack_require__(26);
+var hasClass = __webpack_require__(27);
+var removeClass = __webpack_require__(18);
+var removeElement = __webpack_require__(14);
+var extend = __webpack_require__(7);
+var isArray = __webpack_require__(6);
+var isDate = __webpack_require__(28);
+var isNumber = __webpack_require__(15);
+var isObject = __webpack_require__(22);
+
+var TimePicker = __webpack_require__(43);
+
+var Calendar = __webpack_require__(29);
+var RangeModel = __webpack_require__(56);
+var constants = __webpack_require__(1);
+var localeTexts = __webpack_require__(10);
+var dateUtil = __webpack_require__(5);
+var util = __webpack_require__(4);
+var mouseTouchEvent = __webpack_require__(19);
+var tmpl = __webpack_require__(58);
+var DatePickerInput = __webpack_require__(59);
+
+var DEFAULT_WEEK_START_DAY = constants.DEFAULT_WEEK_START_DAY;
+var DEFAULT_LANGUAGE_TYPE = constants.DEFAULT_LANGUAGE_TYPE;
+var TYPE_DATE = constants.TYPE_DATE;
+var TYPE_MONTH = constants.TYPE_MONTH;
+var TYPE_YEAR = constants.TYPE_YEAR;
+var CLASS_NAME_NEXT_YEAR_BTN = constants.CLASS_NAME_NEXT_YEAR_BTN;
+var CLASS_NAME_NEXT_MONTH_BTN = constants.CLASS_NAME_NEXT_MONTH_BTN;
+var CLASS_NAME_PREV_YEAR_BTN = constants.CLASS_NAME_PREV_YEAR_BTN;
+var CLASS_NAME_PREV_MONTH_BTN = constants.CLASS_NAME_PREV_MONTH_BTN;
+var CLASS_NAME_SELECTED = constants.CLASS_NAME_SELECTED;
+var CLASS_NAME_TITLE_TODAY = constants.CLASS_NAME_TITLE_TODAY;
+
+var CLASS_NAME_SELECTABLE = 'tui-is-selectable';
+var CLASS_NAME_BLOCKED = 'tui-is-blocked';
+var CLASS_NAME_CHECKED = 'tui-is-checked';
+var CLASS_NAME_SELECTOR_BUTTON = 'tui-datepicker-selector-button';
+var CLASS_NAME_TODAY = 'tui-calendar-today';
+var CLASS_NAME_HIDDEN = 'tui-hidden';
+
+var SELECTOR_BODY = '.tui-datepicker-body';
+var SELECTOR_DATE_ICO = '.tui-ico-date';
+var SELECTOR_CALENDAR_TITLE = '.tui-calendar-title';
+var SELECTOR_CALENDAR_CONTAINER = '.tui-calendar-container';
+var SELECTOR_TIMEPICKER_CONTAINER = '.tui-timepicker-container';
+
+/**
+ * Merge default option
+ * @ignore
+ * @param {object} option - DatePicker option
+ * @returns {object}
+ */
+var mergeDefaultOption = function(option) {
+  option = extend(
+    {
+      language: DEFAULT_LANGUAGE_TYPE,
+      calendar: {},
+      input: {
+        element: null,
+        format: null
+      },
+      timePicker: null,
+      date: null,
+      showAlways: false,
+      type: TYPE_DATE,
+      selectableRanges: null,
+      openers: [],
+      autoClose: true,
+      usageStatistics: true,
+      weekStartDay: DEFAULT_WEEK_START_DAY
+    },
+    option
+  );
+
+  option.selectableRanges = option.selectableRanges || [[constants.MIN_DATE, constants.MAX_DATE]];
+
+  if (!isObject(option.calendar)) {
+    throw new Error('Calendar option must be an object');
+  }
+  if (!isObject(option.input)) {
+    throw new Error('Input option must be an object');
+  }
+  if (!isArray(option.selectableRanges)) {
+    throw new Error('Selectable-ranges must be a 2d-array');
+  }
+
+  option.localeText = localeTexts[option.language];
+
+  // override calendar option
+  option.calendar.language = option.language;
+  option.calendar.type = option.type;
+
+  // @TODO: after v5.0.0, remove option.timepicker
+  option.timePicker = option.timePicker || option.timepicker;
+
+  return option;
+};
+
+/**
+ * @class
+ * @description
+ * Create a date picker.
+ * @see {@link /tutorial-example01-basic DatePicker example}
+ * @param {HTMLElement|string} container - Container element or selector of DatePicker
+ * @param {Object} [options] - Options
+ *      @param {Date|number} [options.date = null] - Initial date. Set by a Date instance or a number(timestamp). (default: no initial date)
+ *      @param {('date'|'month'|'year')} [options.type = 'date'] - DatePicker type. Determine whether to choose a date, month, or year.
+ *      @param {string} [options.language='en'] - Language code. English('en') and Korean('ko') are provided as default. To set to the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+ *      @param {object|boolean} [options.timePicker] - [TimePicker](https://nhn.github.io/tui.time-picker/latest) options. Refer to the [TimePicker instance's options](https://nhn.github.io/tui.time-picker/latest/TimePicker). To create the TimePicker without customization, set to true.
+ *      @param {object} [options.calendar] - {@link Calendar} options. Refer to the {@link Calendar Calendar instance's options}.
+ *      @param {object} [options.input] - Input option
+ *      @param {HTMLElement|string} [options.input.element] - Input element or selector
+ *      @param {string} [options.input.format = 'yyyy-mm-dd'] - Format of the Date string
+ *      @param {Array.<Array.<Date|number>>} [options.selectableRanges = 1900/1/1 ~ 2999/12/31]
+ *        - Ranges of selectable date. Set by Date instances or numbers(timestamp).
+ *      @param {Array<HTMLElement|string>} [options.openers = []] - List of the openers to open the DatePicker (example - icon, button, etc.)
+ *      @param {boolean} [options.showAlways = false] - Show the DatePicker always
+ *      @param {boolean} [options.autoClose = true] - Close the DatePicker after clicking the date
+ *      @param {boolean} [options.usageStatistics = true] - Send a hostname to Google Analytics (default: true)
+ *      @param {string} [options.weekStartDay = 'Sun'] - Start of the week. 'Sun', 'Mon', ..., 'Sat'(default: 'Sun'(start on Sunday))
+ * @example
+ * // ES6
+ * import DatePicker from 'tui-date-picker'
+ *
+ * // CommonJS
+ * const DatePicker = require('tui-date-picker');
+ *
+ * // Browser
+ * const DatePicker = tui.DatePicker;
+ *
+ * const range1 = [new Date(2015, 2, 1), new Date(2015, 3, 1)];
+ * const range2 = [1465570800000, 1481266182155]; // timestamps
+ *
+ * const picker1 = new DatePicker('#datepicker-container1', {
+ *     showAlways: true
+ * });
+ *
+ * const picker2 = new DatePicker('#datepicker-container2', {
+ *    showAlways: true,
+ *    timePicker: true
+ * });
+ *
+ * const picker3 = new DatePicker('#datepicker-container3', {
+ *     language: 'ko',
+ *     calendar: {
+ *         showToday: true
+ *     },
+ *     timePicker: {
+ *         showMeridiem: true,
+ *         defaultHour: 13,
+ *         defaultMinute: 24
+ *     },
+ *     input: {
+ *         element: '#datepicker-input',
+ *         format: 'yyyy년 MM월 dd일 hh:mm A'
+ *     }
+ *     type: 'date',
+ *     date: new Date(2015, 0, 1)
+ *     selectableRanges: [range1, range2],
+ *     openers: ['#opener'],
+ *     weekStartDay: 'Mon',
+ * });
+ */
+var DatePicker = defineClass(
+  /** @lends DatePicker.prototype */ {
+    static: {
+      /**
+       * Locale text data. English('en') and Korean('ko') are provided as default.
+       * @type {object}
+       * @memberof DatePicker
+       * @static
+       * @example
+       * DatePicker.localeTexts['customKey'] = {
+       *     titles: {
+       *         // days
+       *         DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+       *         // daysShort
+       *         D: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+       *         // months
+       *         MMMM: [
+       *             'January', 'February', 'March', 'April', 'May', 'June',
+       *             'July', 'August', 'September', 'October', 'November', 'December'
+       *         ],
+       *         // monthsShort
+       *         MMM: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+       *     },
+       *     titleFormat: 'MMM yyyy',
+       *     todayFormat: 'D, MMMM dd, yyyy',
+       *     date: 'Date',
+       *     time: 'Time'
+       * };
+       *
+       * const datepicker = new DatePicker('#datepicker-container', {
+       *     language: 'customKey'
+       * });
+       */
+      localeTexts: localeTexts
+    },
+    init: function(container, options) {
+      options = mergeDefaultOption(options);
+
+      /**
+       * Language type
+       * @type {string}
+       * @private
+       */
+      this._language = options.language;
+
+      /**
+       * DatePicker container
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = util.getElement(container);
+      this._container.innerHTML = tmpl(
+        extend(options, {
+          isTab: options.timePicker && options.timePicker.layoutType === 'tab'
+        })
+      );
+
+      /**
+       * DatePicker element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._element = this._container.firstChild;
+
+      /**
+       * Calendar instance
+       * @type {Calendar}
+       * @private
+       */
+      this._calendar = new Calendar(
+        this._element.querySelector(SELECTOR_CALENDAR_CONTAINER),
+        extend(options.calendar, {
+          usageStatistics: options.usageStatistics,
+          weekStartDay: options.weekStartDay
+        })
+      );
+
+      /**
+       * TimePicker instance
+       * @type {TimePicker}
+       * @private
+       */
+      this._timePicker = null;
+
+      /**
+       * DatePicker input
+       * @type {DatePickerInput}
+       * @private
+       */
+      this._datepickerInput = null;
+
+      /**
+       * Object having date values
+       * @type {Date}
+       * @private
+       */
+      this._date = null;
+
+      /**
+       * Selectable date-ranges model
+       * @type {RangeModel}
+       * @private
+       */
+      this._rangeModel = null;
+
+      /**
+       * openers - opener list
+       * @type {Array}
+       * @private
+       */
+      this._openers = [];
+
+      /**
+       * State of picker enable
+       * @type {boolean}
+       * @private
+       */
+      this._isEnabled = true;
+
+      /**
+       * ID of instance
+       * @type {number}
+       * @private
+       */
+      this._id = 'tui-datepicker-' + util.generateId();
+
+      /**
+       * DatePicker type
+       * @type {TYPE_DATE|TYPE_MONTH|TYPE_YEAR}
+       * @private
+       */
+      this._type = options.type;
+
+      /**
+       * Show always or not
+       * @type {boolean}
+       */
+      this.showAlways = options.showAlways;
+
+      /**
+       * Close after select a date
+       * @type {boolean}
+       */
+      this.autoClose = options.autoClose;
+
+      this._initializeDatePicker(options);
+    },
+
+    /**
+     * Initialize method
+     * @param {Object} option - user option
+     * @private
+     */
+    _initializeDatePicker: function(option) {
+      this.setRanges(option.selectableRanges);
+      this._setEvents();
+      this._initTimePicker(option.timePicker, option.usageStatistics);
+      this.setInput(option.input.element);
+      this.setDateFormat(option.input.format);
+      this.setDate(option.date);
+
+      forEachArray(option.openers, this.addOpener, this);
+      if (!this.showAlways) {
+        this._hide();
+      }
+
+      if (this.getType() === TYPE_DATE) {
+        addClass(this._element.querySelector(SELECTOR_BODY), 'tui-datepicker-type-date');
+      }
+    },
+
+    /**
+     * Set events on the date picker's element
+     * @param {object} option - Constructor option
+     * @private
+     */
+    _setEvents: function() {
+      mouseTouchEvent.on(this._element, 'click', this._onClickHandler, this);
+      this._calendar.on('draw', this._onDrawCalendar, this);
+    },
+
+    /**
+     * Remove events on the date picker's element
+     * @private
+     */
+    _removeEvents: function() {
+      mouseTouchEvent.off(this._element, 'click', this._onClickHandler, this);
+      this._calendar.off();
+    },
+
+    /**
+     * Set events on the document
+     * @private
+     */
+    _setDocumentEvents: function() {
+      mouseTouchEvent.on(document, 'mousedown', this._onMousedownDocument, this);
+    },
+
+    /**
+     * Remove events on the document
+     * @private
+     */
+    _removeDocumentEvents: function() {
+      mouseTouchEvent.off(document, 'mousedown', this._onMousedownDocument);
+    },
+
+    /**
+     * Set events on the opener
+     * @param {HTMLElement} opener An opener to bind the events
+     * @private
+     */
+    _setOpenerEvents: function(opener) {
+      mouseTouchEvent.on(opener, 'click', this.toggle, this);
+    },
+
+    /**
+     * Remove events on the opener
+     * @param {HTMLElement} opener An opener to unbind the events
+     * @private
+     */
+    _removeOpenerEvents: function(opener) {
+      mouseTouchEvent.off(opener, 'click', this.toggle);
+    },
+
+    /**
+     * Set TimePicker instance
+     * @param {object|boolean} opTimePicker - TimePicker instance options
+     * @param {boolean} usageStatistics - GA tracking options
+     * @private
+     */
+    _initTimePicker: function(opTimePicker, usageStatistics) {
+      var layoutType;
+      if (!opTimePicker) {
+        return;
+      }
+
+      layoutType = opTimePicker.layoutType || '';
+
+      if (isObject(opTimePicker)) {
+        opTimePicker.usageStatistics = usageStatistics;
+      } else {
+        opTimePicker = {
+          usageStatistics: usageStatistics
+        };
+      }
+
+      this._timePicker = new TimePicker(
+        this._element.querySelector(SELECTOR_TIMEPICKER_CONTAINER),
+        opTimePicker
+      );
+
+      if (layoutType.toLowerCase() === 'tab') {
+        this._timePicker.hide();
+      }
+
+      this._timePicker.on(
+        'change',
+        function(ev) {
+          var prevDate;
+          if (this._date) {
+            prevDate = new Date(this._date);
+            this.setDate(prevDate.setHours(ev.hour, ev.minute));
+          }
+        },
+        this
+      );
+    },
+
+    /**
+     * Change picker's type by a selector button.
+     * @param {HTMLElement} target A target element
+     * @private
+     */
+    _changePicker: function(target) {
+      var btnSelector = '.' + CLASS_NAME_SELECTOR_BUTTON;
+      var selectedBtn = closest(target, btnSelector);
+      var isDateElement = !!selectedBtn.querySelector(SELECTOR_DATE_ICO);
+
+      if (isDateElement) {
+        this._calendar.show();
+        this._timePicker.hide();
+      } else {
+        this._calendar.hide();
+        this._timePicker.show();
+      }
+      removeClass(this._element.querySelector('.' + CLASS_NAME_CHECKED), CLASS_NAME_CHECKED);
+      addClass(selectedBtn, CLASS_NAME_CHECKED);
+    },
+
+    /**
+     * Returns whether the element is opener
+     * @param {string|HTMLElement} element - Element or selector
+     * @returns {boolean}
+     * @private
+     */
+    _isOpener: function(element) {
+      var el = util.getElement(element);
+
+      return inArray(el, this._openers) > -1;
+    },
+
+    /**
+     * add/remove today-class-name to date element
+     * @param {HTMLElement} el - date element
+     * @private
+     */
+    _setTodayClassName: function(el) {
+      var timestamp, isToday;
+
+      if (this.getCalendarType() !== TYPE_DATE) {
+        return;
+      }
+
+      timestamp = Number(getData(el, 'timestamp'));
+      isToday = timestamp === new Date().setHours(0, 0, 0, 0);
+
+      if (isToday) {
+        addClass(el, CLASS_NAME_TODAY);
+      } else {
+        removeClass(el, CLASS_NAME_TODAY);
+      }
+    },
+
+    /**
+     * add/remove selectable-class-name to date element
+     * @param {HTMLElement} el - date element
+     * @private
+     */
+    _setSelectableClassName: function(el) {
+      var elDate = new Date(Number(getData(el, 'timestamp')));
+
+      if (this._isSelectableOnCalendar(elDate)) {
+        addClass(el, CLASS_NAME_SELECTABLE);
+        removeClass(el, CLASS_NAME_BLOCKED);
+      } else {
+        removeClass(el, CLASS_NAME_SELECTABLE);
+        addClass(el, CLASS_NAME_BLOCKED);
+      }
+    },
+
+    /**
+     * add/remove selected-class-name to date element
+     * @param {HTMLElement} el - date element
+     * @private
+     */
+    _setSelectedClassName: function(el) {
+      var elDate = new Date(Number(getData(el, 'timestamp')));
+
+      if (this._isSelectedOnCalendar(elDate)) {
+        addClass(el, CLASS_NAME_SELECTED);
+      } else {
+        removeClass(el, CLASS_NAME_SELECTED);
+      }
+    },
+
+    /**
+     * Returns whether the date is selectable on calendar
+     * @param {Date} date - Date instance
+     * @returns {boolean}
+     * @private
+     */
+    _isSelectableOnCalendar: function(date) {
+      var type = this.getCalendarType();
+      var start = dateUtil.cloneWithStartOf(date, type).getTime();
+      var end = dateUtil.cloneWithEndOf(date, type).getTime();
+
+      return this._rangeModel.hasOverlap(start, end);
+    },
+
+    /**
+     * Returns whether the date is selected on calendar
+     * @param {Date} date - Date instance
+     * @returns {boolean}
+     * @private
+     */
+    _isSelectedOnCalendar: function(date) {
+      var curDate = this.getDate();
+      var calendarType = this.getCalendarType();
+
+      return curDate && dateUtil.isSame(curDate, date, calendarType);
+    },
+
+    /**
+     * Show the date picker element
+     * @private
+     */
+    _show: function() {
+      removeClass(this._element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Hide the date picker element
+     * @private
+     */
+    _hide: function() {
+      addClass(this._element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Set value a date-string of current this instance to input element
+     * @private
+     */
+    _syncToInput: function() {
+      if (!this._date) {
+        return;
+      }
+
+      this._datepickerInput.setDate(this._date);
+    },
+
+    /**
+     * Set date from input value
+     * @param {boolean} [shouldRollback = false] - Should rollback from unselectable or error
+     * @private
+     */
+    _syncFromInput: function(shouldRollback) {
+      var isFailed = false;
+      var date;
+
+      try {
+        date = this._datepickerInput.getDate();
+
+        if (this.isSelectable(date)) {
+          if (this._timePicker) {
+            this._timePicker.setTime(date.getHours(), date.getMinutes());
+          }
+          this.setDate(date);
+        } else {
+          isFailed = true;
+        }
+      } catch (err) {
+        this.fire('error', {
+          type: 'ParsingError',
+          message: err.message
+        });
+        isFailed = true;
+      } finally {
+        if (isFailed) {
+          if (shouldRollback) {
+            this._syncToInput();
+          } else {
+            this.setNull();
+          }
+        }
+      }
+    },
+
+    /**
+     * Event handler for mousedown of document<br>
+     * - When click the out of layer, close the layer
+     * @param {Event} ev - Event object
+     * @private
+     */
+    _onMousedownDocument: function(ev) {
+      var target = util.getTarget(ev);
+      var selector = util.getSelector(target);
+      var isContain = selector ? this._element.querySelector(selector) : false;
+      var isInput = this._datepickerInput.is(target);
+      var isInOpener = inArray(target, this._openers) > -1;
+      var shouldClose = !(this.showAlways || isInput || isContain || isInOpener);
+
+      if (shouldClose) {
+        this.close();
+      }
+    },
+
+    /**
+     * Event handler for click of calendar
+     * @param {Event} ev An event object
+     * @private
+     */
+    _onClickHandler: function(ev) {
+      var target = util.getTarget(ev);
+
+      if (closest(target, '.' + CLASS_NAME_SELECTABLE)) {
+        ev.preventDefault();
+        this._updateDate(target);
+      } else if (closest(target, '.' + CLASS_NAME_TITLE_TODAY)) {
+        ev.preventDefault();
+        this._updateDateToToday();
+      } else if (closest(target, SELECTOR_CALENDAR_TITLE)) {
+        this.drawUpperCalendar(this._date);
+      } else if (closest(target, '.' + CLASS_NAME_SELECTOR_BUTTON)) {
+        this._changePicker(target);
+      }
+    },
+
+    /**
+     * Update date to today
+     * @private
+     */
+    _updateDateToToday: function() {
+      this.setDate(Date.now());
+      this.close();
+    },
+
+    /**
+     * Update date from event-target
+     * @param {HTMLElement} target An event target element
+     * @private
+     */
+    _updateDate: function(target) {
+      var timestamp = Number(getData(target, 'timestamp'));
+      var newDate = new Date(timestamp);
+      var timePicker = this._timePicker;
+      var prevDate = this._date;
+      var calendarType = this.getCalendarType();
+      var pickerType = this.getType();
+
+      if (calendarType !== pickerType) {
+        this.drawLowerCalendar(newDate);
+      } else {
+        if (timePicker) {
+          newDate.setHours(timePicker.getHour(), timePicker.getMinute());
+        } else if (prevDate) {
+          newDate.setHours(prevDate.getHours(), prevDate.getMinutes());
+        }
+        this.setDate(newDate);
+
+        if (!this.showAlways && this.autoClose) {
+          this.close();
+        }
+      }
+    },
+
+    /**
+     * Event handler for 'draw'-custom event of calendar
+     * @param {Object} eventData - custom event data
+     * @see {@link Calendar#draw}
+     * @private
+     */
+    _onDrawCalendar: function(eventData) {
+      forEachArray(
+        eventData.dateElements,
+        function(el) {
+          this._setTodayClassName(el);
+          this._setSelectableClassName(el);
+          this._setSelectedClassName(el);
+        },
+        this
+      );
+      this._setDisplayHeadButtons();
+
+      /**
+       * Occur after the calendar is drawn.
+       * @event DatePicker#draw
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on datepicker.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off datepicker.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents from tui-code-snippet} for more methods. DatePicker mixes in the methods from CustomEvents.
+       * @property {Date} date - Calendar date
+       * @property {('date'|'month'|'year')} type - Calendar type
+       * @property {HTMLElement[]} dateElements - elements for dates
+       * @example
+       * // bind the 'draw' event
+       * datepicker.on('draw', (event) => {
+       *     console.log(`Draw the ${event.type} calendar and its date is ${event.date}.`);
+       * });
+       *
+       * // unbind the 'draw' event
+       * datepicker.off('draw');
+       */
+      this.fire('draw', eventData);
+    },
+
+    /**
+     * Hide useless buttons (next, next-year, prev, prev-year)
+     * @see Don't save buttons reference. The buttons are rerendered every "calendar.draw".
+     * @private
+     */
+    _setDisplayHeadButtons: function() {
+      var customStep = 60; // 60 months = 5 years = 12 * 5
+      var nextYearDate = this._calendar.getNextYearDate(
+        this.getCalendarType() === TYPE_YEAR ? customStep : null
+      );
+      var prevYearDate = this._calendar.getPrevYearDate(
+        this.getCalendarType() === TYPE_YEAR ? -customStep : null
+      );
+      var maxTimestamp = this._rangeModel.getMaximumValue();
+      var minTimestamp = this._rangeModel.getMinimumValue();
+      var nextYearBtn = this._element.querySelector('.' + CLASS_NAME_NEXT_YEAR_BTN);
+      var prevYearBtn = this._element.querySelector('.' + CLASS_NAME_PREV_YEAR_BTN);
+      var nextMonthDate, prevMonthDate, nextMonBtn, prevMonBtn;
+
+      if (this.getCalendarType() === TYPE_DATE) {
+        nextMonthDate = dateUtil.cloneWithStartOf(this._calendar.getNextDate(), TYPE_MONTH);
+        prevMonthDate = dateUtil.cloneWithEndOf(this._calendar.getPrevDate(), TYPE_MONTH);
+
+        nextMonBtn = this._element.querySelector('.' + CLASS_NAME_NEXT_MONTH_BTN);
+        prevMonBtn = this._element.querySelector('.' + CLASS_NAME_PREV_MONTH_BTN);
+
+        this._setDisplay(nextMonBtn, nextMonthDate.getTime() <= maxTimestamp);
+        this._setDisplay(prevMonBtn, prevMonthDate.getTime() >= minTimestamp);
+
+        prevYearDate.setDate(1);
+        nextYearDate.setDate(1);
+      } else {
+        prevYearDate.setMonth(12, 0);
+        nextYearDate.setMonth(0, 1);
+      }
+
+      this._setDisplay(nextYearBtn, nextYearDate.getTime() <= maxTimestamp);
+      this._setDisplay(prevYearBtn, prevYearDate.getTime() >= minTimestamp);
+    },
+
+    /**
+     * Set display show/hide by condition
+     * @param {HTMLElement} el - An Element
+     * @param {boolean} shouldShow - Condition
+     * @private
+     */
+    _setDisplay: function(el, shouldShow) {
+      if (el) {
+        if (shouldShow) {
+          removeClass(el, CLASS_NAME_HIDDEN);
+        } else {
+          addClass(el, CLASS_NAME_HIDDEN);
+        }
+      }
+    },
+
+    /**
+     * Input change handler
+     * @private
+     * @throws {Error}
+     */
+    _onChangeInput: function() {
+      this._syncFromInput(true);
+    },
+
+    /**
+     * Returns whether the date is changed
+     * @param {Date} date - Date
+     * @returns {boolean}
+     * @private
+     */
+    _isChanged: function(date) {
+      var prevDate = this.getDate();
+
+      return !prevDate || date.getTime() !== prevDate.getTime();
+    },
+
+    /**
+     * Refresh datepicker
+     * @private
+     */
+    _refreshFromRanges: function() {
+      if (!this.isSelectable(this._date)) {
+        this.setNull();
+      } else {
+        this._calendar.draw(); // view update
+      }
+    },
+
+    /**
+     * Return the current calendar's type.
+     * @returns {('date'|'month'|'year')}
+     */
+    getCalendarType: function() {
+      return this._calendar.getType();
+    },
+
+    /**
+     * Return the date picker's type.
+     * @returns {('date'|'month'|'year')}
+     */
+    getType: function() {
+      return this._type;
+    },
+
+    /**
+     * Return whether the date is selectable.
+     * @param {Date} date - Date to check
+     * @returns {boolean}
+     */
+    isSelectable: function(date) {
+      var type = this.getType();
+      var start, end;
+
+      if (!dateUtil.isValidDate(date)) {
+        return false;
+      }
+      start = dateUtil.cloneWithStartOf(date, type).getTime();
+      end = dateUtil.cloneWithEndOf(date, type).getTime();
+
+      return this._rangeModel.hasOverlap(start, end);
+    },
+
+    /**
+     * Return whether the date is selected.
+     * @param {Date} date - Date to check
+     * @returns {boolean}
+     */
+    isSelected: function(date) {
+      return dateUtil.isValidDate(date) && dateUtil.isSame(this._date, date, this.getType());
+    },
+
+    /**
+     * Set selectable ranges. Previous ranges will be removed.
+     * @param {Array.<Array<Date|number>>} ranges - Selectable ranges. Use Date instances or numbers(timestamp).
+     * @example
+     * datepicker.setRanges([
+     *     [new Date(2017, 0, 1), new Date(2018, 0, 2)],
+     *     [new Date(2015, 2, 3), new Date(2016, 4, 2)]
+     * ]);
+     */
+    setRanges: function(ranges) {
+      var result = [];
+      forEachArray(ranges, function(range) {
+        var start = new Date(range[0]).getTime();
+        var end = new Date(range[1]).getTime();
+
+        result.push([start, end]);
+      });
+
+      this._rangeModel = new RangeModel(result);
+      this._refreshFromRanges();
+    },
+
+    /**
+     * Set the calendar's type.
+     * @param {('date'|'month'|'year')} type - Calendar type
+     * @example
+     * datepicker.setType('month');
+     */
+    setType: function(type) {
+      this._type = type;
+    },
+
+    /**
+     * Add a selectable range. Use Date instances or numbers(timestamp).
+     * @param {Date|number} start - the start date
+     * @param {Date|number} end - the end date
+     * @example
+     * const start = new Date(2015, 1, 3);
+     * const end = new Date(2015, 2, 6);
+     *
+     * datepicker.addRange(start, end);
+     */
+    addRange: function(start, end) {
+      start = new Date(start).getTime();
+      end = new Date(end).getTime();
+
+      this._rangeModel.add(start, end);
+      this._refreshFromRanges();
+    },
+
+    /**
+     * Remove a range. Use Date instances or numbers(timestamp).
+     * @param {Date|number} start - the start date
+     * @param {Date|number} end - the end date
+     * @param {null|'date'|'month'|'year'} type - Range type. If falsy, start and end values are considered as timestamp
+     * @example
+     * const start = new Date(2015, 1, 3);
+     * const end = new Date(2015, 2, 6);
+     *
+     * datepicker.removeRange(start, end);
+     */
+    removeRange: function(start, end, type) {
+      start = new Date(start);
+      end = new Date(end);
+
+      if (type) {
+        // @todo Consider time-range on timePicker
+        start = dateUtil.cloneWithStartOf(start, type);
+        end = dateUtil.cloneWithEndOf(end, type);
+      }
+
+      this._rangeModel.exclude(start.getTime(), end.getTime());
+      this._refreshFromRanges();
+    },
+
+    /**
+     * Add an opener.
+     * @param {HTMLElement|string} opener - element or selector of opener
+     */
+    addOpener: function(opener) {
+      opener = util.getElement(opener);
+
+      if (!this._isOpener(opener)) {
+        this._openers.push(opener);
+        this._setOpenerEvents(opener);
+      }
+    },
+
+    /**
+     * Remove an opener.
+     * @param {HTMLElement|string} opener - element or selector of opener
+     */
+    removeOpener: function(opener) {
+      var index;
+
+      opener = util.getElement(opener);
+      index = inArray(opener, this._openers);
+
+      if (index > -1) {
+        this._removeOpenerEvents(opener);
+        this._openers.splice(index, 1);
+      }
+    },
+
+    /**
+     * Remove all openers.
+     */
+    removeAllOpeners: function() {
+      forEachArray(
+        this._openers,
+        function(opener) {
+          this._removeOpenerEvents(opener);
+        },
+        this
+      );
+      this._openers = [];
+    },
+
+    /**
+     * Open the date picker.
+     * @example
+     * datepicker.open();
+     */
+    open: function() {
+      if (this.isOpened() || !this._isEnabled) {
+        return;
+      }
+
+      this._calendar.draw({
+        date: this._date,
+        type: this._type
+      });
+      this._show();
+
+      if (!this.showAlways) {
+        this._setDocumentEvents();
+      }
+
+      /**
+       * Occur after the date picker opens.
+       * @event DatePicker#open
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on datepicker.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off datepicker.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents from tui-code-snippet} for more methods. DatePicker mixes in the methods from CustomEvents.
+       * @example
+       * // bind the 'open' event
+       * datepicker.on('open', () => {
+       *     alert('open');
+       * });
+       *
+       * // unbind the 'open' event
+       * datepicker.off('open');
+       */
+      this.fire('open');
+    },
+
+    /**
+     * Raise the calendar type. (date -> month -> year)
+     * @param {Date} [date] - Date to set
+     */
+    drawUpperCalendar: function(date) {
+      var calendarType = this.getCalendarType();
+
+      if (calendarType === TYPE_DATE) {
+        this._calendar.draw({
+          date: date,
+          type: TYPE_MONTH
+        });
+      } else if (calendarType === TYPE_MONTH) {
+        this._calendar.draw({
+          date: date,
+          type: TYPE_YEAR
+        });
+      }
+    },
+
+    /**
+     * Lower the calendar type. (year -> month -> date)
+     * @param {Date} [date] - Date to set
+     */
+    drawLowerCalendar: function(date) {
+      var calendarType = this.getCalendarType();
+      var pickerType = this.getType();
+      var isLast = calendarType === pickerType;
+
+      if (isLast) {
+        return;
+      }
+
+      if (calendarType === TYPE_MONTH) {
+        this._calendar.draw({
+          date: date,
+          type: TYPE_DATE
+        });
+      } else if (calendarType === TYPE_YEAR) {
+        this._calendar.draw({
+          date: date,
+          type: TYPE_MONTH
+        });
+      }
+    },
+
+    /**
+     * Close the date picker.
+     * @exmaple
+     * datepicker.close();
+     */
+    close: function() {
+      if (!this.isOpened()) {
+        return;
+      }
+      this._removeDocumentEvents();
+      this._hide();
+
+      /**
+       * Occur after the date picker closes.
+       * @event DatePicker#close
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on datepicker.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off datepicker.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents from tui-code-snippet} for more methods. DatePicker mixes in the methods from CustomEvents.
+       * @example
+       * // bind the 'close' event
+       * datepicker.on('close', () => {
+       *     alert('close');
+       * });
+       *
+       * // unbind the 'close' event
+       * datepicker.off('close');
+       */
+      this.fire('close');
+    },
+
+    /**
+     * Toggle the date picker.
+     * @example
+     * datepicker.toggle();
+     */
+    toggle: function() {
+      if (this.isOpened()) {
+        this.close();
+      } else {
+        this.open();
+      }
+    },
+
+    /**
+     * Return the selected date.
+     * @returns {?Date} - selected date
+     * @example
+     * // 2015-04-13
+     * datepicker.getDate(); // new Date(2015, 3, 13)
+     */
+    getDate: function() {
+      if (!this._date) {
+        return null;
+      }
+
+      return new Date(this._date);
+    },
+
+    /**
+     * Select the date.
+     * @param {Date|number} date - Date instance or timestamp to set
+     * @param {boolean} [silent] - Prevents firing 'change' event if it is true.
+     * @example
+     * datepicker.setDate(new Date()); // Set today
+     */
+    // eslint-disable-next-line complexity
+    setDate: function(date, silent) {
+      var isValidInput, newDate, shouldUpdate;
+
+      if (date === null) {
+        this.setNull();
+
+        return;
+      }
+
+      isValidInput = isNumber(date) || isDate(date);
+      newDate = new Date(date);
+      shouldUpdate = isValidInput && this._isChanged(newDate) && this.isSelectable(newDate);
+
+      if (shouldUpdate) {
+        newDate = new Date(date);
+        this._date = newDate;
+        this._calendar.draw({ date: newDate });
+        if (this._timePicker) {
+          this._timePicker.setTime(newDate.getHours(), newDate.getMinutes(), true);
+        }
+        this._syncToInput();
+
+        /**
+         * Occur after the selected date is changed.
+         * @event DatePicker#change
+         * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on datepicker.on()} to bind event handlers.
+         * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off datepicker.off()} to unbind event handlers.
+         * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents from tui-code-snippet} for more methods. DatePicker mixes in the methods from CustomEvents.
+         * @example
+         * // bind the 'change' event
+         * datepicker.on('change', () => {
+         *     console.log(`Selected date: ${datepicker.getDate()}`);
+         * });
+         *
+         * // unbind the 'change' event
+         * datepicker.off('change');
+         */
+        if (!silent) {
+          this.fire('change');
+        }
+      }
+    },
+
+    /**
+     * Set no date to be selected. (Selected date: null)
+     */
+    setNull: function() {
+      var calendarDate = this._calendar.getDate();
+      var isChagned = this._date !== null;
+
+      this._date = null;
+
+      if (this._datepickerInput) {
+        this._datepickerInput.clearText();
+      }
+      if (this._timePicker) {
+        this._timePicker.setTime(0, 0);
+      }
+
+      // View update
+      if (!this.isSelectable(calendarDate)) {
+        this._calendar.draw({
+          date: new Date(this._rangeModel.getMinimumValue())
+        });
+      } else {
+        this._calendar.draw();
+      }
+
+      if (isChagned) {
+        this.fire('change');
+      }
+    },
+
+    /**
+     * Select the date by the date string format.
+     * @param {String} [format] - Date string format
+     * @example
+     * datepicker.setDateFormat('yyyy-MM-dd');
+     * datepicker.setDateFormat('MM-dd, yyyy');
+     * datepicker.setDateFormat('yy/M/d');
+     * datepicker.setDateFormat('yy/MM/dd');
+     */
+    setDateFormat: function(format) {
+      this._datepickerInput.setFormat(format);
+      this._syncToInput();
+    },
+
+    /**
+     * Return whether the datepicker opens or not
+     * @returns {boolean}
+     * @example
+     * datepicker.close();
+     * datepicker.isOpened(); // false
+     *
+     * datepicker.open();
+     * datepicker.isOpened(); // true
+     */
+    isOpened: function() {
+      return !hasClass(this._element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Return the time picker instance
+     * @returns {?TimePicker} - TimePicker instance
+     * @see {@link https://nhn.github.io/tui.time-picker/latest tui-time-picker}
+     * @example
+     * const timePicker = this.getTimePicker();
+     */
+    getTimePicker: function() {
+      return this._timePicker;
+    },
+
+    /**
+     * Return the calendar instance.
+     * @see {@link calendar Calendar}
+     * @returns {Calendar}
+     */
+    getCalendar: function() {
+      return this._calendar;
+    },
+
+    /**
+     * Return the locale text object.
+     * @see {@link DatePicker#localeTexts DatePicker.localeTexts}
+     * @returns {object}
+     */
+    getLocaleText: function() {
+      return localeTexts[this._language] || localeTexts[DEFAULT_LANGUAGE_TYPE];
+    },
+
+    /**
+     * Set the input element
+     * @param {string|HTMLElement} element - Input element or selector
+     * @param {object} [options] - Input option
+     * @param {string} [options.format = prevInput.format] - Format of the Date string in the input
+     * @param {boolean} [options.syncFromInput = false] - Whether set the date from the input
+     */
+    setInput: function(element, options) {
+      var prev = this._datepickerInput;
+      var localeText = this.getLocaleText();
+      var prevFormat;
+      options = options || {};
+
+      if (prev) {
+        prevFormat = prev.getFormat();
+        prev.destroy();
+      }
+
+      this._datepickerInput = new DatePickerInput(element, {
+        format: options.format || prevFormat,
+        id: this._id,
+        localeText: localeText
+      });
+
+      this._datepickerInput.on(
+        {
+          change: this._onChangeInput,
+          click: this.open
+        },
+        this
+      );
+
+      if (options.syncFromInput) {
+        this._syncFromInput();
+      } else {
+        this._syncToInput();
+      }
+    },
+
+    /**
+     * Enable the date picker.
+     */
+    enable: function() {
+      if (this._isEnabled) {
+        return;
+      }
+      this._isEnabled = true;
+      this._datepickerInput.enable();
+
+      forEachArray(
+        this._openers,
+        function(opener) {
+          opener.removeAttribute('disabled');
+          this._setOpenerEvents(opener);
+        },
+        this
+      );
+    },
+
+    /**
+     * Disable the date picker.
+     */
+    disable: function() {
+      if (!this._isEnabled) {
+        return;
+      }
+
+      this._isEnabled = false;
+      this.close();
+      this._datepickerInput.disable();
+
+      forEachArray(
+        this._openers,
+        function(opener) {
+          opener.setAttribute('disabled', true);
+          this._removeOpenerEvents(opener);
+        },
+        this
+      );
+    },
+
+    /**
+     * Return whether the date picker is disabled
+     * @returns {boolean}
+     */
+    isDisabled: function() {
+      // @todo this._isEnabled --> this._isDisabled
+      return !this._isEnabled;
+    },
+
+    /**
+     * Apply a CSS class to the date picker.
+     * @param {string} className - Class name
+     */
+    addCssClass: function(className) {
+      addClass(this._element, className);
+    },
+
+    /**
+     * Remove a CSS class from the date picker.
+     * @param {string} className - Class name
+     */
+    removeCssClass: function(className) {
+      removeClass(this._element, className);
+    },
+
+    /**
+     * Return the date elements on the calendar.
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._calendar.getDateElements();
+    },
+
+    /**
+     * Return the first overlapped range from the point or range.
+     * @param {Date|number} startDate - Start date to find overlapped range
+     * @param {Date|number} endDate - End date to find overlapped range
+     * @returns {Array.<Date>} - \[startDate, endDate]
+     */
+    findOverlappedRange: function(startDate, endDate) {
+      var startTimestamp = new Date(startDate).getTime();
+      var endTimestamp = new Date(endDate).getTime();
+      var overlappedRange = this._rangeModel.findOverlappedRange(startTimestamp, endTimestamp);
+
+      return [new Date(overlappedRange[0]), new Date(overlappedRange[1])];
+    },
+
+    /**
+     * Change language.
+     * @param {string} language - Language code. English('en') and Korean('ko') are provided as default.
+     * @see To set to the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+     */
+    changeLanguage: function(language) {
+      this._language = language;
+      this._calendar.changeLanguage(this._language);
+      this._datepickerInput.changeLocaleTitles(this.getLocaleText().titles);
+      this.setDateFormat(this._datepickerInput.getFormat());
+
+      if (this._timePicker) {
+        this._timePicker.changeLanguage(this._language);
+      }
+    },
+
+    /**
+     * Destroy the date picker.
+     */
+    destroy: function() {
+      this._removeDocumentEvents();
+      this._calendar.destroy();
+      if (this._timePicker) {
+        this._timePicker.destroy();
+      }
+      if (this._datepickerInput) {
+        this._datepickerInput.destroy();
+      }
+      this._removeEvents();
+      removeElement(this._element);
+      this.removeAllOpeners();
+
+      this._calendar = this._timePicker = this._datepickerInput = this._container = this._element = this._date = this._rangeModel = this._openers = this._isEnabled = this._id = null;
+    }
+  }
+);
+
+CustomEvents.mixin(DatePicker);
+module.exports = DatePicker;
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is an object or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is an object or not.
+ * If the given variable is an object, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is object?
+ * @memberof module:type
+ */
+function isObject(obj) {
+  return obj === Object(obj);
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each property of object which actually exist.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Execute the provided callback once for each property of object which actually exist.
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the property
+ *  2) The name of the property
+ *  3) The object being traversed
+ * @param {Object} obj The object that will be traversed
+ * @param {function} iteratee  Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEachOwnProperties = require('tui-code-snippet/collection/forEachOwnProperties'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEachOwnProperties({a:1,b:2,c:3}, function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ */
+function forEachOwnProperties(obj, iteratee, context) {
+  var key;
+
+  context = context || null;
+
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (iteratee.call(context, obj[key], key, obj) === false) {
+        break;
+      }
+    }
+  }
+}
+
+module.exports = forEachOwnProperties;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Set className value
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(6);
+var isUndefined = __webpack_require__(12);
+
+/**
+ * Set className value
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {(string|string[])} cssClass - class names
+ * @private
+ */
+function setClassName(element, cssClass) {
+  cssClass = isArray(cssClass) ? cssClass.join(' ') : cssClass;
+
+  cssClass = cssClass.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+
+  if (isUndefined(element.className.baseVal)) {
+    element.className = cssClass;
+
+    return;
+  }
+
+  element.className.baseVal = cssClass;
+}
+
+module.exports = setClassName;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Find parent element recursively
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var matches = __webpack_require__(40);
+
+/**
+ * Find parent element recursively
+ * @param {HTMLElement} element - base element to start find
+ * @param {string} selector - selector string for find
+ * @returns {HTMLElement} - element finded or null
+ * @memberof module:domUtil
+ */
+function closest(element, selector) {
+  var parent = element.parentNode;
+
+  if (matches(element, selector)) {
+    return element;
+  }
+
+  while (parent && parent !== document) {
+    if (matches(parent, selector)) {
+      return parent;
+    }
+
+    parent = parent.parentNode;
+  }
+
+  return null;
+}
+
+module.exports = closest;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Get data value from data-attribute
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var convertToKebabCase = __webpack_require__(42);
+
+/**
+ * Get data value from data-attribute
+ * @param {HTMLElement} element - target element
+ * @param {string} key - key
+ * @returns {string} value
+ * @memberof module:domUtil
+ */
+function getData(element, key) {
+  if (element.dataset) {
+    return element.dataset[key];
+  }
+
+  return element.getAttribute('data-' + convertToKebabCase(key));
+}
+
+module.exports = getData;
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check element has specific css class
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inArray = __webpack_require__(3);
+var getClass = __webpack_require__(17);
+
+/**
+ * Check element has specific css class
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {string} cssClass - css class
+ * @returns {boolean}
+ * @memberof module:domUtil
+ */
+function hasClass(element, cssClass) {
+  var origin;
+
+  if (element.classList) {
+    return element.classList.contains(cssClass);
+  }
+
+  origin = getClass(element).split(/\s+/);
+
+  return inArray(cssClass, origin) > -1;
+}
+
+module.exports = hasClass;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is an instance of Date or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is an instance of Date or not.
+ * If the given variables is an instance of Date, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is an instance of Date?
+ * @memberof module:type
+ */
+function isDate(obj) {
+  return obj instanceof Date;
+}
+
+module.exports = isDate;
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Calendar component
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var addClass = __webpack_require__(16);
+var hasClass = __webpack_require__(27);
+var removeClass = __webpack_require__(18);
+var removeElement = __webpack_require__(14);
+var extend = __webpack_require__(7);
+
+var Header = __webpack_require__(44);
+var Body = __webpack_require__(49);
+var localeTexts = __webpack_require__(10);
+var constants = __webpack_require__(1);
+var dateUtil = __webpack_require__(5);
+var util = __webpack_require__(4);
+
+var DEFAULT_WEEK_START_DAY = constants.DEFAULT_WEEK_START_DAY;
+var DEFAULT_LANGUAGE_TYPE = constants.DEFAULT_LANGUAGE_TYPE;
+
+var TYPE_DATE = constants.TYPE_DATE;
+var TYPE_MONTH = constants.TYPE_MONTH;
+var TYPE_YEAR = constants.TYPE_YEAR;
+
+var CLASS_NAME_PREV_MONTH_BTN = constants.CLASS_NAME_PREV_MONTH_BTN;
+var CLASS_NAME_PREV_YEAR_BTN = constants.CLASS_NAME_PREV_YEAR_BTN;
+var CLASS_NAME_NEXT_YEAR_BTN = constants.CLASS_NAME_NEXT_YEAR_BTN;
+var CLASS_NAME_NEXT_MONTH_BTN = constants.CLASS_NAME_NEXT_MONTH_BTN;
+
+var CLASS_NAME_CALENDAR_MONTH = 'tui-calendar-month';
+var CLASS_NAME_CALENDAR_YEAR = 'tui-calendar-year';
+var CLASS_NAME_HIDDEN = 'tui-hidden';
+
+var HEADER_SELECTOR = '.tui-calendar-header';
+var BODY_SELECTOR = '.tui-calendar-body';
+
+/**
+ * @class
+ * @description
+ * Create a calendar by {@link DatePicker#createCalendar DatePicker.createCalendar()}.
+ * @see {@link /tutorial-example07-calendar Calendar example}
+ * @param {HTMLElement|string} container - Container or selector of the Calendar
+ * @param {Object} [options] - Calendar options
+ *     @param {Date} [options.date = new Date()] - Initial date (default: today)
+ *     @param {('date'|'month'|'year')} [options.type = 'date'] - Calendar type. Determine whether to show a date, month, or year.
+ *     @param {string} [options.language = 'en'] - Language code. English('en') and Korean('ko') are provided as default. To use the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+ *     @param {boolean} [options.showToday = true] - Show today.
+ *     @param {boolean} [options.showJumpButtons = false] - Show the yearly jump buttons (move to the previous and next year in 'date' Calendar)
+ *     @param {boolean} [options.usageStatistics = true] - Send a hostname to Google Analytics (default: true)
+ *     @param {string} [options.weekStartDay = 'Sun'] - Start of the week. 'Sun', 'Mon', ..., 'Sat'(default: 'Sun'(start on Sunday))
+ * @example
+ * //ES6
+ * import DatePicker from 'tui-date-picker'
+ *
+ * // CommonJS
+ * const DatePicker = require('tui-date-picker');
+ *
+ * // Browser
+ * const DatePicker = tui.DatePicker;
+ *
+ * const calendar = DatePicker.createCalendar('#calendar-wrapper', {
+ *     language: 'en',
+ *     showToday: true,
+ *     showJumpButtons: false,
+ *     date: new Date(),
+ *     type: 'date',
+ *     weekStartDay: 'Mon',
+ * });
+ *
+ * calendar.on('draw', (event) => {
+ *     console.log(event.date);
+ *     console.log(event.type);
+ *     for (let i = 0, len = event.dateElements.length; i < len; i += 1) {
+ *         const el = event.dateElements[i];
+ *         const date = new Date(getData(el, 'timestamp'));
+ *         console.log(date);
+ *     }
+ * });
+ */
+var Calendar = defineClass(
+  /** @lends Calendar.prototype */ {
+    static: {
+      localeTexts: localeTexts
+    },
+    init: function(container, options) {
+      options = extend(
+        {
+          language: DEFAULT_LANGUAGE_TYPE,
+          showToday: true,
+          showJumpButtons: false,
+          date: new Date(),
+          type: TYPE_DATE,
+          usageStatistics: true,
+          weekStartDay: DEFAULT_WEEK_START_DAY
+        },
+        options
+      );
+
+      /**
+       * Container element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = util.getElement(container);
+      this._container.innerHTML =
+        '<div class="tui-calendar">' +
+        '    <div class="tui-calendar-header"></div>' +
+        '    <div class="tui-calendar-body"></div>' +
+        '</div>';
+
+      /**
+       * Wrapper element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._element = this._container.firstChild;
+
+      /**
+       * Date
+       * @type {Date}
+       * @private
+       */
+      this._date = null;
+
+      /**
+       * Layer type
+       * @type {string}
+       * @private
+       */
+      this._type = null;
+
+      /**
+       * Header box
+       * @type {Header}
+       * @private
+       */
+      this._header = null;
+
+      /**
+       * Body box
+       * @type {Body}
+       * @private
+       */
+      this._body = null;
+
+      this._initHeader(options);
+      this._initBody(options);
+      this.draw({
+        date: options.date,
+        type: options.type
+      });
+
+      if (options.usageStatistics) {
+        util.sendHostName();
+      }
+    },
+
+    /**
+     * Initialize header
+     * @param {object} options - Header options
+     * @private
+     */
+    _initHeader: function(options) {
+      var headerContainer = this._element.querySelector(HEADER_SELECTOR);
+
+      this._header = new Header(headerContainer, options);
+      this._header.on(
+        'click',
+        function(ev) {
+          var target = util.getTarget(ev);
+          if (hasClass(target, CLASS_NAME_PREV_MONTH_BTN)) {
+            this.drawPrev();
+          } else if (hasClass(target, CLASS_NAME_PREV_YEAR_BTN)) {
+            this._onClickPrevYear();
+          } else if (hasClass(target, CLASS_NAME_NEXT_MONTH_BTN)) {
+            this.drawNext();
+          } else if (hasClass(target, CLASS_NAME_NEXT_YEAR_BTN)) {
+            this._onClickNextYear();
+          }
+        },
+        this
+      );
+    },
+
+    /**
+     * Initialize body
+     * @param {object} options - Body options
+     * @private
+     */
+    _initBody: function(options) {
+      var bodyContainer = this._element.querySelector(BODY_SELECTOR);
+
+      this._body = new Body(bodyContainer, options);
+    },
+
+    /**
+     * clickHandler - prev year button
+     * @private
+     */
+    _onClickPrevYear: function() {
+      if (this.getType() === TYPE_DATE) {
+        this.draw({
+          date: this._getRelativeDate(-12)
+        });
+      } else {
+        this.drawPrev();
+      }
+    },
+
+    /**
+     * clickHandler - next year button
+     * @private
+     */
+    _onClickNextYear: function() {
+      if (this.getType() === TYPE_DATE) {
+        this.draw({
+          date: this._getRelativeDate(12)
+        });
+      } else {
+        this.drawNext();
+      }
+    },
+
+    /**
+     * Returns whether the layer type is valid
+     * @param {string} type - Layer type to check
+     * @returns {boolean}
+     * @private
+     */
+    _isValidType: function(type) {
+      return type === TYPE_DATE || type === TYPE_MONTH || type === TYPE_YEAR;
+    },
+
+    /**
+     * @param {Date} date - Date to draw
+     * @param {string} type - Layer type to draw
+     * @returns {boolean}
+     * @private
+     */
+    _shouldUpdate: function(date, type) {
+      var prevDate = this._date;
+
+      if (!dateUtil.isValidDate(date)) {
+        throw new Error('Invalid date');
+      }
+
+      if (!this._isValidType(type)) {
+        throw new Error('Invalid layer type');
+      }
+
+      return (
+        !prevDate ||
+        prevDate.getFullYear() !== date.getFullYear() ||
+        prevDate.getMonth() !== date.getMonth() ||
+        this.getType() !== type
+      );
+    },
+
+    /**
+     * Render header & body elements
+     * @private
+     */
+    _render: function() {
+      var date = this._date;
+      var type = this.getType();
+
+      this._header.render(date, type);
+      this._body.render(date, type);
+      removeClass(this._element, CLASS_NAME_CALENDAR_MONTH, CLASS_NAME_CALENDAR_YEAR);
+
+      switch (type) {
+        case TYPE_MONTH:
+          addClass(this._element, CLASS_NAME_CALENDAR_MONTH);
+          break;
+        case TYPE_YEAR:
+          addClass(this._element, CLASS_NAME_CALENDAR_YEAR);
+          break;
+        default:
+          break;
+      }
+    },
+
+    /**
+     * Returns relative date
+     * @param {number} step - Month step
+     * @returns {Date}
+     * @private
+     */
+    _getRelativeDate: function(step) {
+      var prev = this._date;
+
+      return new Date(prev.getFullYear(), prev.getMonth() + step);
+    },
+
+    /**
+     * Draw the calendar.
+     * @param {Object} [options] - Draw options
+     *   @param {Date} [options.date] - Date to set
+     *   @param {('date'|'month'|'year')} [options.type = 'date'] - Calendar type. Determine whether to show a date, month, or year.
+     * @example
+     * calendar.draw();
+     * calendar.draw({
+     *     date: new Date()
+     * });
+     * calendar.draw({
+     *     type: 'month'
+     * });
+     * calendar.draw({
+     *     type: 'month',
+     *     date: new Date()
+     * });
+     */
+    draw: function(options) {
+      var date, type;
+
+      options = options || {};
+      date = options.date || this._date;
+      type = (options.type || this.getType()).toLowerCase();
+
+      if (this._shouldUpdate(date, type)) {
+        this._date = date;
+        this._type = type;
+        this._render();
+      }
+
+      /**
+       * Occur after the calendar draws.
+       * @event Calendar#draw
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on calendar.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off calendar.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents from tui-code-snippet} for more methods. Calendar mixes in the methods from CustomEvents.
+       * @property {Date} date - Calendar date
+       * @property {('date'|'month'|'year')} type - Calendar type
+       * @property {HTMLElement[]} dateElements - elements for dates
+       * @example
+       * // bind the 'draw' event
+       * calendar.on('draw', ({type, date}) => {
+       *     console.log(`Draw the ${type} calendar and its date is ${date}.`);
+       * });
+       *
+       * // unbind the 'draw' event
+       * calendar.off('draw');
+       */
+      this.fire('draw', {
+        date: this._date,
+        type: type,
+        dateElements: this._body.getDateElements()
+      });
+    },
+
+    /**
+     * Show the calendar.
+     */
+    show: function() {
+      removeClass(this._element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Hide the calendar.
+     */
+    hide: function() {
+      addClass(this._element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Draw the next page.
+     */
+    drawNext: function() {
+      this.draw({
+        date: this.getNextDate()
+      });
+    },
+
+    /**
+     * Draw the previous page.
+     */
+    drawPrev: function() {
+      this.draw({
+        date: this.getPrevDate()
+      });
+    },
+
+    /**
+     * Return the next date.
+     * @returns {Date}
+     */
+    getNextDate: function() {
+      if (this.getType() === TYPE_DATE) {
+        return this._getRelativeDate(1);
+      }
+
+      return this.getNextYearDate();
+    },
+
+    /**
+     * Return the previous date.
+     * @returns {Date}
+     */
+    getPrevDate: function() {
+      if (this.getType() === TYPE_DATE) {
+        return this._getRelativeDate(-1);
+      }
+
+      return this.getPrevYearDate();
+    },
+
+    /**
+     * Return the date a year later.
+     * @param {number} [customStep] - custom step for getting relative date
+     * @returns {Date}
+     */
+    getNextYearDate: function(customStep) {
+      if (customStep) {
+        return this._getRelativeDate(customStep);
+      }
+
+      switch (this.getType()) {
+        case TYPE_DATE:
+        case TYPE_MONTH:
+          return this._getRelativeDate(12); // 12 months = 1 year
+        case TYPE_YEAR:
+          return this._getRelativeDate(108); // 108 months = 9 years = 12 * 9
+        default:
+          throw new Error('Unknown layer type');
+      }
+    },
+
+    /**
+     * Return the date a year previously.
+     * @param {number} [customStep] - custom step for getting relative date
+     * @returns {Date}
+     */
+    getPrevYearDate: function(customStep) {
+      if (customStep) {
+        return this._getRelativeDate(customStep);
+      }
+
+      switch (this.getType()) {
+        case TYPE_DATE:
+        case TYPE_MONTH:
+          return this._getRelativeDate(-12); // 12 months = 1 year
+        case TYPE_YEAR:
+          return this._getRelativeDate(-108); // 108 months = 9 years = 12 * 9
+        default:
+          throw new Error('Unknown layer type');
+      }
+    },
+
+    /**
+     * Change language.
+     * @param {string} language - Language code. English('en') and Korean('ko') are provided as default.
+     * @see To set to the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+     */
+    changeLanguage: function(language) {
+      this._header.changeLanguage(language);
+      this._body.changeLanguage(language);
+      this._render();
+    },
+
+    /**
+     * Return the rendered date.
+     * @returns {Date}
+     */
+    getDate: function() {
+      return new Date(this._date);
+    },
+
+    /**
+     * Return the calendar's type.
+     * @returns {('date'|'month'|'year')}
+     */
+    getType: function() {
+      return this._type;
+    },
+
+    /**
+     * Returns HTML elements for dates.
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._body.getDateElements();
+    },
+
+    /**
+     * Apply a CSS class to the calendar.
+     * @param {string} className - Class name
+     */
+    addCssClass: function(className) {
+      addClass(this._element, className);
+    },
+
+    /**
+     * Remove a CSS class from the calendar.
+     * @param {string} className - Class name
+     */
+    removeCssClass: function(className) {
+      removeClass(this._element, className);
+    },
+
+    /**
+     * Destroy the calendar.
+     */
+    destroy: function() {
+      this._header.destroy();
+      this._body.destroy();
+      removeElement(this._element);
+
+      this._type = this._date = this._container = this._element = this._header = this._body = null;
+    }
+  }
+);
+
+CustomEvents.mixin(Calendar);
+module.exports = Calendar;
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Date <-> Text formatting module
+ */
+
+
+
+var inArray = __webpack_require__(3);
+var forEachArray = __webpack_require__(2);
+var defineClass = __webpack_require__(0);
+
+var util = __webpack_require__(4);
+var dateUtil = __webpack_require__(5);
+var constants = __webpack_require__(1);
+var localeTexts = __webpack_require__(10);
+
+var rFormableKeys = /\\?(yyyy|yy|mmmm|mmm|mm|m|dd|d|hh|h|a)/gi;
+var mapForConverting = {
+  yyyy: {
+    expression: '(\\d{4}|\\d{2})',
+    type: constants.TYPE_YEAR
+  },
+  yy: {
+    expression: '(\\d{4}|\\d{2})',
+    type: constants.TYPE_YEAR
+  },
+  y: {
+    expression: '(\\d{4}|\\d{2})',
+    type: constants.TYPE_YEAR
+  },
+  M: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  MM: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  MMM: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  MMMM: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  mmm: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  mmmm: {
+    expression: '(1[012]|0[1-9]|[1-9])',
+    type: constants.TYPE_MONTH
+  },
+  dd: {
+    expression: '([12]\\d{1}|3[01]|0[1-9]|[1-9])',
+    type: constants.TYPE_DATE
+  },
+  d: {
+    expression: '([12]\\d{1}|3[01]|0[1-9]|[1-9])',
+    type: constants.TYPE_DATE
+  },
+  D: {
+    expression: '([12]\\d{1}|3[01]|0[1-9]|[1-9])',
+    type: constants.TYPE_DATE
+  },
+  DD: {
+    expression: '([12]\\d{1}|3[01]|0[1-9]|[1-9])',
+    type: constants.TYPE_DATE
+  },
+  h: {
+    expression: '(d{1}|0\\d{1}|1\\d{1}|2[0123])',
+    type: constants.TYPE_HOUR
+  },
+  hh: {
+    expression: '(d{1}|[01]\\d{1}|2[0123])',
+    type: constants.TYPE_HOUR
+  },
+  H: {
+    expression: '(d{1}|0\\d{1}|1\\d{1}|2[0123])',
+    type: constants.TYPE_HOUR
+  },
+  HH: {
+    expression: '(d{1}|[01]\\d{1}|2[0123])',
+    type: constants.TYPE_HOUR
+  },
+  m: {
+    expression: '(d{1}|[012345]\\d{1})',
+    type: constants.TYPE_MINUTE
+  },
+  mm: {
+    expression: '(d{1}|[012345]\\d{1})',
+    type: constants.TYPE_MINUTE
+  },
+  a: {
+    expression: '([ap]m)',
+    type: constants.TYPE_MERIDIEM
+  },
+  A: {
+    expression: '([ap]m)',
+    type: constants.TYPE_MERIDIEM
+  }
+};
+
+/**
+ * @class
+ * @ignore
+ */
+var DateTimeFormatter = defineClass(
+  /** @lends DateTimeFormatter.prototype */ {
+    init: function(rawStr, titles) {
+      /**
+       * @type {string}
+       * @private
+       */
+      this._rawStr = rawStr;
+
+      /**
+       * @type {Array}
+       * @private
+       * @example
+       *  rawStr = "yyyy-MM-dd" --> keyOrder = ['year', 'month', 'date']
+       *  rawStr = "MM/dd, yyyy" --> keyOrder = ['month', 'date', 'year']
+       */
+      this._keyOrder = null;
+
+      /**
+       * @type {RegExp}
+       * @private
+       */
+      this._regExp = null;
+
+      /**
+       * Titles
+       * @type {object}
+       * @private
+       */
+      this._titles = titles || localeTexts.en.titles;
+
+      this._parseFormat();
+    },
+
+    /**
+     * Parse initial format and make the keyOrder, regExp
+     * @private
+     */
+    _parseFormat: function() {
+      var regExpStr = '^';
+      var matchedKeys = this._rawStr.match(rFormableKeys);
+      var keyOrder = [];
+
+      matchedKeys = util.filter(matchedKeys, function(key) {
+        return key[0] !== '\\';
+      });
+
+      forEachArray(matchedKeys, function(key, index) {
+        if (!/m/i.test(key)) {
+          key = key.toLowerCase();
+        }
+
+        regExpStr += mapForConverting[key].expression + '[\\D\\s]*';
+        keyOrder[index] = mapForConverting[key].type;
+      });
+
+      // This formatter does not allow additional numbers at the end of string.
+      regExpStr += '$';
+
+      this._keyOrder = keyOrder;
+
+      this._regExp = new RegExp(regExpStr, 'gi');
+    },
+
+    /**
+     * Parse string to dateHash
+     * @param {string} str - Date string
+     * @returns {Date}
+     */
+    parse: function(str) {
+      var dateHash = {
+        year: 0,
+        month: 1,
+        date: 1,
+        hour: 0,
+        minute: 0
+      };
+      var hasMeridiem = false;
+      var isPM = false;
+      var matched;
+
+      this._regExp.lastIndex = 0;
+      matched = this._regExp.exec(str);
+
+      if (!matched) {
+        throw Error('DateTimeFormatter: Not matched - "' + str + '"');
+      }
+
+      // eslint-disable-next-line complexity
+      forEachArray(this._keyOrder, function(name, index) {
+        var value = matched[index + 1];
+
+        if (name === constants.TYPE_MERIDIEM && /[ap]m/i.test(value)) {
+          hasMeridiem = true;
+          isPM = /pm/i.test(value);
+        } else {
+          value = Number(value);
+
+          if (value !== 0 && !value) {
+            throw Error('DateTimeFormatter: Unknown value - ' + matched[index + 1]);
+          }
+
+          if (name === constants.TYPE_YEAR && value < 100) {
+            value += 2000;
+          }
+
+          dateHash[name] = value;
+        }
+      });
+
+      if (hasMeridiem) {
+        isPM = isPM || dateHash.hour > 12;
+        dateHash.hour %= 12;
+        if (isPM) {
+          dateHash.hour += 12;
+        }
+      }
+
+      return new Date(
+        dateHash.year,
+        dateHash.month - 1,
+        dateHash.date,
+        dateHash.hour,
+        dateHash.minute
+      );
+    },
+
+    /**
+     * Returns raw string of format
+     * @returns {string}
+     */
+    getRawString: function() {
+      return this._rawStr;
+    },
+
+    /**
+     * Format date to string
+     * @param {Date} dateObj - Date object
+     * @returns {string}
+     */
+    format: function(dateObj) {
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var dayInMonth = dateObj.getDate();
+      var day = dateObj.getDay();
+      var hour = dateObj.getHours();
+      var minute = dateObj.getMinutes();
+      var meridiem = 'a'; // Default value for unusing meridiem format
+      var replaceMap;
+
+      if (inArray(constants.TYPE_MERIDIEM, this._keyOrder) > -1) {
+        meridiem = hour >= 12 ? 'pm' : 'am';
+        hour = dateUtil.getMeridiemHour(hour);
+      }
+
+      replaceMap = {
+        yyyy: year,
+        yy: String(year).substr(2, 2),
+        M: month,
+        MM: dateUtil.prependLeadingZero(month),
+        MMM: this._titles.MMM[month - 1],
+        MMMM: this._titles.MMMM[month - 1],
+        d: dayInMonth,
+        dd: dateUtil.prependLeadingZero(dayInMonth),
+        D: this._titles.D[day],
+        DD: this._titles.DD[day],
+        hh: dateUtil.prependLeadingZero(hour),
+        h: hour,
+        mm: dateUtil.prependLeadingZero(minute),
+        m: minute,
+        A: meridiem.toUpperCase(),
+        a: meridiem
+      };
+
+      return this._rawStr.replace(rFormableKeys, function(key) {
+        if (key[0] === '\\') {
+          return key.substr(1);
+        }
+
+        return replaceMap[key] || replaceMap[key.toLowerCase()] || '';
+      });
+    }
+  }
+);
+
+module.exports = DateTimeFormatter;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Bind DOM events
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isString = __webpack_require__(13);
+var forEach = __webpack_require__(9);
+
+var safeEvent = __webpack_require__(32);
+
+/**
+ * Bind DOM events.
+ * @param {HTMLElement} element - element to bind events
+ * @param {(string|object)} types - Space splitted events names or eventName:handler object
+ * @param {(function|object)} handler - handler function or context for handler method
+ * @param {object} [context] context - context for handler method.
+ * @memberof module:domEvent
+ * @example
+ * var div = document.querySelector('div');
+ * 
+ * // Bind one event to an element.
+ * on(div, 'click', toggle);
+ * 
+ * // Bind multiple events with a same handler to multiple elements at once.
+ * // Use event names splitted by a space.
+ * on(div, 'mouseenter mouseleave', changeColor);
+ * 
+ * // Bind multiple events with different handlers to an element at once.
+ * // Use an object which of key is an event name and value is a handler function.
+ * on(div, {
+ *   keydown: highlight,
+ *   keyup: dehighlight
+ * });
+ * 
+ * // Set a context for handler method.
+ * var name = 'global';
+ * var repository = {name: 'CodeSnippet'};
+ * on(div, 'drag', function() {
+ *  console.log(this.name);
+ * }, repository);
+ * // Result when you drag a div: "CodeSnippet"
+ */
+function on(element, types, handler, context) {
+  if (isString(types)) {
+    forEach(types.split(/\s+/g), function(type) {
+      bindEvent(element, type, handler, context);
+    });
+
+    return;
+  }
+
+  forEach(types, function(func, type) {
+    bindEvent(element, type, func, handler);
+  });
+}
+
+/**
+ * Bind DOM events
+ * @param {HTMLElement} element - element to bind events
+ * @param {string} type - events name
+ * @param {function} handler - handler function or context for handler method
+ * @param {object} [context] context - context for handler method.
+ * @private
+ */
+function bindEvent(element, type, handler, context) {
+  /**
+     * Event handler
+     * @param {Event} e - event object
+     */
+  function eventHandler(e) {
+    handler.call(context || element, e || window.event);
+  }
+
+  if ('addEventListener' in element) {
+    element.addEventListener(type, eventHandler);
+  } else if ('attachEvent' in element) {
+    element.attachEvent('on' + type, eventHandler);
+  }
+  memorizeHandler(element, type, handler, eventHandler);
+}
+
+/**
+ * Memorize DOM event handler for unbinding.
+ * @param {HTMLElement} element - element to bind events
+ * @param {string} type - events name
+ * @param {function} handler - handler function that user passed at on() use
+ * @param {function} wrappedHandler - handler function that wrapped by domevent for implementing some features
+ * @private
+ */
+function memorizeHandler(element, type, handler, wrappedHandler) {
+  var events = safeEvent(element, type);
+  var existInEvents = false;
+
+  forEach(events, function(obj) {
+    if (obj.handler === handler) {
+      existInEvents = true;
+
+      return false;
+    }
+
+    return true;
+  });
+
+  if (!existInEvents) {
+    events.push({
+      handler: handler,
+      wrappedHandler: wrappedHandler
+    });
+  }
+}
+
+module.exports = on;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Get event collection for specific HTML element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var EVENT_KEY = '_feEventKey';
+
+/**
+ * Get event collection for specific HTML element
+ * @param {HTMLElement} element - HTML element
+ * @param {string} type - event type
+ * @returns {array}
+ * @private
+ */
+function safeEvent(element, type) {
+  var events = element[EVENT_KEY];
+  var handlers;
+
+  if (!events) {
+    events = element[EVENT_KEY] = {};
+  }
+
+  handlers = events[type];
+  if (!handlers) {
+    handlers = events[type] = [];
+  }
+
+  return handlers;
+}
+
+module.exports = safeEvent;
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Unbind DOM events
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isString = __webpack_require__(13);
+var forEach = __webpack_require__(9);
+
+var safeEvent = __webpack_require__(32);
+
+/**
+ * Unbind DOM events
+ * If a handler function is not passed, remove all events of that type.
+ * @param {HTMLElement} element - element to unbind events
+ * @param {(string|object)} types - Space splitted events names or eventName:handler object
+ * @param {function} [handler] - handler function
+ * @memberof module:domEvent
+ * @example
+ * // Following the example of domEvent#on
+ * 
+ * // Unbind one event from an element.
+ * off(div, 'click', toggle);
+ * 
+ * // Unbind multiple events with a same handler from multiple elements at once.
+ * // Use event names splitted by a space.
+ * off(element, 'mouseenter mouseleave', changeColor);
+ * 
+ * // Unbind multiple events with different handlers from an element at once.
+ * // Use an object which of key is an event name and value is a handler function.
+ * off(div, {
+ *   keydown: highlight,
+ *   keyup: dehighlight
+ * });
+ * 
+ * // Unbind events without handlers.
+ * off(div, 'drag');
+ */
+function off(element, types, handler) {
+  if (isString(types)) {
+    forEach(types.split(/\s+/g), function(type) {
+      unbindEvent(element, type, handler);
+    });
+
+    return;
+  }
+
+  forEach(types, function(func, type) {
+    unbindEvent(element, type, func);
+  });
+}
+
+/**
+ * Unbind DOM events
+ * If a handler function is not passed, remove all events of that type.
+ * @param {HTMLElement} element - element to unbind events
+ * @param {string} type - events name
+ * @param {function} [handler] - handler function
+ * @private
+ */
+function unbindEvent(element, type, handler) {
+  var events = safeEvent(element, type);
+  var index;
+
+  if (!handler) {
+    forEach(events, function(item) {
+      removeHandler(element, type, item.wrappedHandler);
+    });
+    events.splice(0, events.length);
+  } else {
+    forEach(events, function(item, idx) {
+      if (handler === item.handler) {
+        removeHandler(element, type, item.wrappedHandler);
+        index = idx;
+
+        return false;
+      }
+
+      return true;
+    });
+    events.splice(index, 1);
+  }
+}
+
+/**
+ * Remove an event handler
+ * @param {HTMLElement} element - An element to remove an event
+ * @param {string} type - event type
+ * @param {function} handler - event handler
+ * @private
+ */
+function removeHandler(element, type, handler) {
+  if ('removeEventListener' in element) {
+    element.removeEventListener(type, handler);
+  } else if ('detachEvent' in element) {
+    element.detachEvent('on' + type, handler);
+  }
+}
+
+module.exports = off;
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview The entry file of DatePicker components
+ */
+
+
+
+var DatePicker = __webpack_require__(21);
+var DateRangePicker = __webpack_require__(60);
+var Calendar = __webpack_require__(29);
+
+__webpack_require__(61);
+
+/**
+ * Create a calendar.
+ * @see {@link Calendar}
+ * @see {@link /tutorial-example07-calendar Calendar example}
+ * @static
+ * @param {HTMLElement|string} wrapperElement - Container element or selector of the Calendar
+ * @param {Object} [options] - {@link Calendar} options. Refer to the {@link Calendar Calendar instance's options}.
+ * @returns {Calendar}
+ * @example
+ * const calendar = DatePicker.createCalendar('#calendar-wrapper', {
+ *    language: 'en',
+ *    showToday: true,
+ *    showJumpButtons: false,
+ *    date: new Date(),
+ *    type: 'date'
+ * });
+ */
+DatePicker.createCalendar = function(wrapperElement, options) {
+  return new Calendar(wrapperElement, options);
+};
+
+/**
+ * Create a date-range picker.
+ * @see {@link DateRangePicker}
+ * @see {@link /tutorial-example08-daterangepicker DateRangePicker example}
+ * @static
+ * @param {object} options - {@link DateRangePicker} options. Refer to the {@link DateRangePicker DateRangePicker instance's options}.
+ * @returns {DateRangePicker}
+ * @example
+ * const rangepicker = DatePicker.createRangePicker({
+ *     startpicker: {
+ *         input: '#start-input',
+ *         container: '#start-container'
+ *     },
+ *     endpicker: {
+ *         input: '#end-input',
+ *         container: '#end-container'
+ *     },
+ *     type: 'date',
+ *     format: 'yyyy-MM-dd'
+ *     selectableRanges: [
+ *         [new Date(2017, 3, 1), new Date(2017, 5, 1)],
+ *         [new Date(2017, 6, 3), new Date(2017, 10, 5)]
+ *     ]
+ * });
+ */
+DatePicker.createRangePicker = function(options) {
+  return new DateRangePicker(options);
+};
+
+module.exports = DatePicker;
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Provide a simple inheritance in prototype-oriented.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var createObject = __webpack_require__(36);
+
+/**
+ * Provide a simple inheritance in prototype-oriented.
+ * Caution :
+ *  Don't overwrite the prototype of child constructor.
+ *
+ * @param {function} subType Child constructor
+ * @param {function} superType Parent constructor
+ * @memberof module:inheritance
+ * @example
+ * var inherit = require('tui-code-snippet/inheritance/inherit'); // node, commonjs
+ *
+ * // Parent constructor
+ * function Animal(leg) {
+ *     this.leg = leg;
+ * }
+ * Animal.prototype.growl = function() {
+ *     // ...
+ * };
+ *
+ * // Child constructor
+ * function Person(name) {
+ *     this.name = name;
+ * }
+ *
+ * // Inheritance
+ * inherit(Person, Animal);
+ *
+ * // After this inheritance, please use only the extending of property.
+ * // Do not overwrite prototype.
+ * Person.prototype.walk = function(direction) {
+ *     // ...
+ * };
+ */
+function inherit(subType, superType) {
+  var prototype = createObject(superType.prototype);
+  prototype.constructor = subType;
+  subType.prototype = prototype;
+}
+
+module.exports = inherit;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Create a new object with the specified prototype object and properties.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * @module inheritance
+ */
+
+/**
+ * Create a new object with the specified prototype object and properties.
+ * @param {Object} obj This object will be a prototype of the newly-created object.
+ * @returns {Object}
+ * @memberof module:inheritance
+ */
+function createObject(obj) {
+  function F() {} // eslint-disable-line require-jsdoc
+  F.prototype = obj;
+
+  return new F();
+}
+
+module.exports = createObject;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is existing or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(12);
+var isNull = __webpack_require__(38);
+
+/**
+ * Check whether the given variable is existing or not.
+ * If the given variable is not null and not undefined, returns true.
+ * @param {*} param - Target for checking
+ * @returns {boolean} Is existy?
+ * @memberof module:type
+ * @example
+ * var isExisty = require('tui-code-snippet/type/isExisty'); // node, commonjs
+ *
+ * isExisty(''); //true
+ * isExisty(0); //true
+ * isExisty([]); //true
+ * isExisty({}); //true
+ * isExisty(null); //false
+ * isExisty(undefined); //false
+*/
+function isExisty(param) {
+  return !isUndefined(param) && !isNull(param);
+}
+
+module.exports = isExisty;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is null or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is null or not.
+ * If the given variable(arguments[0]) is null, returns true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is null?
+ * @memberof module:type
+ */
+function isNull(obj) {
+  return obj === null;
+}
+
+module.exports = isNull;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a function or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a function or not.
+ * If the given variable is a function, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is function?
+ * @memberof module:type
+ */
+function isFunction(obj) {
+  return obj instanceof Function;
+}
+
+module.exports = isFunction;
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check element match selector
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inArray = __webpack_require__(3);
+var toArray = __webpack_require__(41);
+
+var elProto = Element.prototype;
+var matchSelector = elProto.matches ||
+    elProto.webkitMatchesSelector ||
+    elProto.mozMatchesSelector ||
+    elProto.msMatchesSelector ||
+    function(selector) {
+      var doc = this.document || this.ownerDocument;
+
+      return inArray(this, toArray(doc.querySelectorAll(selector))) > -1;
+    };
+
+/**
+ * Check element match selector
+ * @param {HTMLElement} element - element to check
+ * @param {string} selector - selector to check
+ * @returns {boolean} is selector matched to element?
+ * @memberof module:domUtil
+ */
+function matches(element, selector) {
+  return matchSelector.call(element, selector);
+}
+
+module.exports = matches;
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Transform the Array-like object to Array.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+
+/**
+ * Transform the Array-like object to Array.
+ * In low IE (below 8), Array.prototype.slice.call is not perfect. So, try-catch statement is used.
+ * @param {*} arrayLike Array-like object
+ * @returns {Array} Array
+ * @memberof module:collection
+ * @example
+ * var toArray = require('tui-code-snippet/collection/toArray'); // node, commonjs
+ *
+ * var arrayLike = {
+ *     0: 'one',
+ *     1: 'two',
+ *     2: 'three',
+ *     3: 'four',
+ *     length: 4
+ * };
+ * var result = toArray(arrayLike);
+ *
+ * alert(result instanceof Array); // true
+ * alert(result); // one,two,three,four
+ */
+function toArray(arrayLike) {
+  var arr;
+  try {
+    arr = Array.prototype.slice.call(arrayLike);
+  } catch (e) {
+    arr = [];
+    forEachArray(arrayLike, function(value) {
+      arr.push(value);
+    });
+  }
+
+  return arr;
+}
+
+module.exports = toArray;
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Convert kebab-case
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Convert kebab-case
+ * @param {string} key - string to be converted to Kebab-case
+ * @private
+ */
+function convertToKebabCase(key) {
+  return key.replace(/([A-Z])/g, function(match) {
+    return '-' + match.toLowerCase();
+  });
+}
+
+module.exports = convertToKebabCase;
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__43__;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Calendar Header
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var closest = __webpack_require__(25);
+var removeElement = __webpack_require__(14);
+
+var localeTexts = __webpack_require__(10);
+var headerTmpl = __webpack_require__(45);
+var DateTimeFormatter = __webpack_require__(30);
+var constants = __webpack_require__(1);
+var util = __webpack_require__(4);
+var mouseTouchEvent = __webpack_require__(19);
+
+var TYPE_DATE = constants.TYPE_DATE;
+var TYPE_MONTH = constants.TYPE_MONTH;
+var TYPE_YEAR = constants.TYPE_YEAR;
+
+var CLASS_NAME_TITLE_MONTH = 'tui-calendar-title-month';
+var CLASS_NAME_TITLE_YEAR = 'tui-calendar-title-year';
+var CLASS_NAME_TITLE_YEAR_TO_YEAR = 'tui-calendar-title-year-to-year';
+
+var SELECTOR_INNER_ELEM = '.tui-calendar-header-inner';
+var SELECTOR_INFO_ELEM = '.tui-calendar-header-info';
+var SELECTOR_BTN = '.tui-calendar-btn';
+
+var YEAR_TITLE_FORMAT = 'yyyy';
+
+/**
+ * @ignore
+ * @class
+ * @param {string|HTMLElement} container - Header container or selector
+ * @param {object} option - Header option
+ * @param {string} option.language - Header language
+ * @param {boolean} option.showToday - Has today box or not.
+ * @param {boolean} option.showJumpButtons - Has jump buttons or not.
+ */
+var Header = defineClass(
+  /** @lends Header.prototype */ {
+    init: function(container, option) {
+      /**
+       * Container element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = util.getElement(container);
+
+      /**
+       * Header inner element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._innerElement = null;
+
+      /**
+       * Header info element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._infoElement = null;
+
+      /**
+       * Render today box or not
+       * @type {boolean}
+       * @private
+       */
+      this._showToday = option.showToday;
+
+      /**
+       * Render jump buttons or not (next,prev year on date calendar)
+       * @type {boolean}
+       * @private
+       */
+      this._showJumpButtons = option.showJumpButtons;
+
+      /**
+       * Year_Month title formatter
+       * @type {DateTimeFormatter}
+       * @private
+       */
+      this._yearMonthTitleFormatter = null;
+
+      /**
+       * Year title formatter
+       * @type {DateTimeFormatter}
+       * @private
+       */
+      this._yearTitleFormatter = null;
+
+      /**
+       * Today formatter
+       * @type {DateTimeFormatter}
+       * @private
+       */
+      this._todayFormatter = null;
+
+      this._setFormatters(localeTexts[option.language]);
+      this._setEvents(option);
+    },
+
+    /**
+     * @param {object} localeText - Locale text
+     * @private
+     */
+    _setFormatters: function(localeText) {
+      this._yearMonthTitleFormatter = new DateTimeFormatter(
+        localeText.titleFormat,
+        localeText.titles
+      );
+      this._yearTitleFormatter = new DateTimeFormatter(YEAR_TITLE_FORMAT, localeText.titles);
+      this._todayFormatter = new DateTimeFormatter(localeText.todayFormat, localeText.titles);
+    },
+
+    /**
+     * @param {object} option - Constructor option
+     * @private
+     */
+    _setEvents: function() {
+      mouseTouchEvent.on(this._container, 'click', this._onClickHandler, this);
+    },
+
+    /**
+     * @private
+     */
+    _removeEvents: function() {
+      this.off();
+      mouseTouchEvent.off(this._container, 'click', this._onClickHandler);
+    },
+
+    /**
+     * Fire customEvents
+     * @param {Event} ev An event object
+     * @private
+     */
+    _onClickHandler: function(ev) {
+      var target = util.getTarget(ev);
+
+      if (closest(target, SELECTOR_BTN)) {
+        this.fire('click', ev);
+      }
+    },
+
+    /**
+     * @param {string} type - Calendar type
+     * @returns {string}
+     * @private
+     */
+    _getTitleClass: function(type) {
+      switch (type) {
+        case TYPE_DATE:
+          return CLASS_NAME_TITLE_MONTH;
+        case TYPE_MONTH:
+          return CLASS_NAME_TITLE_YEAR;
+        case TYPE_YEAR:
+          return CLASS_NAME_TITLE_YEAR_TO_YEAR;
+        default:
+          return '';
+      }
+    },
+
+    /**
+     * @param {Date} date - date
+     * @param {string} type - Calendar type
+     * @returns {string}
+     * @private
+     */
+    _getTitleText: function(date, type) {
+      var currentYear, start, end;
+
+      switch (type) {
+        case TYPE_DATE:
+          return this._yearMonthTitleFormatter.format(date);
+        case TYPE_MONTH:
+          return this._yearTitleFormatter.format(date);
+        case TYPE_YEAR:
+          currentYear = date.getFullYear();
+          start = new Date(currentYear - 4, 0, 1);
+          end = new Date(currentYear + 4, 0, 1);
+
+          return (
+            this._yearTitleFormatter.format(start) + ' - ' + this._yearTitleFormatter.format(end)
+          );
+        default:
+          return '';
+      }
+    },
+
+    /**
+     * Change langauge
+     * @param {string} language - Language
+     */
+    changeLanguage: function(language) {
+      this._setFormatters(localeTexts[language]);
+    },
+
+    /**
+     * Render header
+     * @param {Date} date - date
+     * @param {string} type - Calendar type
+     */
+    render: function(date, type) {
+      var context = {
+        showToday: this._showToday,
+        showJumpButtons: this._showJumpButtons,
+        todayText: this._todayFormatter.format(new Date()),
+        isDateCalendar: type === TYPE_DATE,
+        titleClass: this._getTitleClass(type),
+        title: this._getTitleText(date, type)
+      };
+
+      this._container.innerHTML = headerTmpl(context).replace(/^\s+|\s+$/g, '');
+      this._innerElement = this._container.querySelector(SELECTOR_INNER_ELEM);
+      if (context.showToday) {
+        this._infoElement = this._container.querySelector(SELECTOR_INFO_ELEM);
+      }
+    },
+
+    /**
+     * Destroy header
+     */
+    destroy: function() {
+      this._removeEvents();
+      removeElement(this._innerElement);
+      removeElement(this._infoElement);
+      this._container = this._showToday = this._showJumpButtons = this._yearMonthTitleFormatter = this._yearTitleFormatter = this._todayFormatter = this._innerElement = this._infoElement = null;
+    }
+  }
+);
+
+CustomEvents.mixin(Header);
+module.exports = Header;
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(11);
+
+module.exports = function(context) {
+  var source =
+    '{{if isDateCalendar}}' +
+    '  {{if showJumpButtons}}' +
+    '    <div class="tui-calendar-header-inner tui-calendar-has-btns">' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-prev-year">Prev year</button>' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>' +
+    '      <em class="tui-calendar-title {{titleClass}}">{{title}}</em>' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-next-month">Next month</button>' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-next-year">Next year</button>' +
+    '    </div>' +
+    '  {{else}}' +
+    '    <div class="tui-calendar-header-inner">' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>' +
+    '      <em class="tui-calendar-title {{titleClass}}">{{title}}</em>' +
+    '      <button class="tui-calendar-btn tui-calendar-btn-next-month">Next month</button>' +
+    '    </div>' +
+    '  {{/if}}' +
+    '{{else}}' +
+    '  <div class="tui-calendar-header-inner">' +
+    '    <button class="tui-calendar-btn tui-calendar-btn-prev-year">Prev year</button>' +
+    '    <em class="tui-calendar-title {{titleClass}}">{{title}}</em>' +
+    '    <button class="tui-calendar-btn tui-calendar-btn-next-year">Next year</button>' +
+    '  </div>' +
+    '{{/if}}' +
+    '{{if showToday}}' +
+    '  <div class="tui-calendar-header-info">' +
+    '    <p class="tui-calendar-title-today">{{todayText}}</p>' +
+    '  </div>' +
+    '{{/if}}';
+
+  return template(source, context);
+};
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a instance of HTMLNode or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a instance of HTMLNode or not.
+ * If the given variables is a instance of HTMLNode, return true.
+ * @param {*} html - Target for checking
+ * @returns {boolean} Is HTMLNode ?
+ * @memberof module:type
+ */
+function isHTMLNode(html) {
+  if (typeof HTMLElement === 'object') {
+    return (html && (html instanceof HTMLElement || !!html.nodeType));
+  }
+
+  return !!(html && html.nodeType);
+}
+
+module.exports = isHTMLNode;
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Send hostname on DOMContentLoaded.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(12);
+var imagePing = __webpack_require__(48);
+
+var ms7days = 7 * 24 * 60 * 60 * 1000;
+
+/**
+ * Check if the date has passed 7 days
+ * @param {number} date - milliseconds
+ * @returns {boolean}
+ * @private
+ */
+function isExpired(date) {
+  var now = new Date().getTime();
+
+  return now - date > ms7days;
+}
+
+/**
+ * Send hostname on DOMContentLoaded.
+ * To prevent hostname set tui.usageStatistics to false.
+ * @param {string} appName - application name
+ * @param {string} trackingId - GA tracking ID
+ * @ignore
+ */
+function sendHostname(appName, trackingId) {
+  var url = 'https://www.google-analytics.com/collect';
+  var hostname = location.hostname;
+  var hitType = 'event';
+  var eventCategory = 'use';
+  var applicationKeyForStorage = 'TOAST UI ' + appName + ' for ' + hostname + ': Statistics';
+  var date = window.localStorage.getItem(applicationKeyForStorage);
+
+  // skip if the flag is defined and is set to false explicitly
+  if (!isUndefined(window.tui) && window.tui.usageStatistics === false) {
+    return;
+  }
+
+  // skip if not pass seven days old
+  if (date && !isExpired(date)) {
+    return;
+  }
+
+  window.localStorage.setItem(applicationKeyForStorage, new Date().getTime());
+
+  setTimeout(function() {
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      imagePing(url, {
+        v: 1,
+        t: hitType,
+        tid: trackingId,
+        cid: hostname,
+        dp: hostname,
+        dh: appName,
+        el: appName,
+        ec: eventCategory
+      });
+    }
+  }, 1000);
+}
+
+module.exports = sendHostname;
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Request image ping.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachOwnProperties = __webpack_require__(23);
+
+/**
+ * @module request
+ */
+
+/**
+ * Request image ping.
+ * @param {String} url url for ping request
+ * @param {Object} trackingInfo infos for make query string
+ * @returns {HTMLElement}
+ * @memberof module:request
+ * @example
+ * var imagePing = require('tui-code-snippet/request/imagePing'); // node, commonjs
+ *
+ * imagePing('https://www.google-analytics.com/collect', {
+ *     v: 1,
+ *     t: 'event',
+ *     tid: 'trackingid',
+ *     cid: 'cid',
+ *     dp: 'dp',
+ *     dh: 'dh'
+ * });
+ */
+function imagePing(url, trackingInfo) {
+  var trackingElement = document.createElement('img');
+  var queryString = '';
+  forEachOwnProperties(trackingInfo, function(value, key) {
+    queryString += '&' + key + '=' + value;
+  });
+  queryString = queryString.substring(1);
+
+  trackingElement.src = url + '?' + queryString;
+
+  trackingElement.style.display = 'none';
+  document.body.appendChild(trackingElement);
+  document.body.removeChild(trackingElement);
+
+  return trackingElement;
+}
+
+module.exports = imagePing;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Calendar body
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+var defineClass = __webpack_require__(0);
+
+var DateLayer = __webpack_require__(50);
+var MonthLayer = __webpack_require__(52);
+var YearLayer = __webpack_require__(54);
+var constants = __webpack_require__(1);
+
+var TYPE_DATE = constants.TYPE_DATE;
+var TYPE_MONTH = constants.TYPE_MONTH;
+var TYPE_YEAR = constants.TYPE_YEAR;
+
+/**
+ * @ignore
+ * @class
+ */
+var Body = defineClass(
+  /** @lends Body.prototype */ {
+    init: function(bodyContainer, options) {
+      var language = options.language;
+      var weekStartDay = options.weekStartDay;
+
+      /**
+       * Body container element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = bodyContainer;
+
+      /**
+       * DateLayer
+       * @type {DateLayer}
+       * @private
+       */
+      this._dateLayer = new DateLayer(language, weekStartDay);
+
+      /**
+       * MonthLayer
+       * @type {MonthLayer}
+       * @private
+       */
+      this._monthLayer = new MonthLayer(language);
+
+      /**
+       * YearLayer
+       * @type {YearLayer}
+       * @private
+       */
+      this._yearLayer = new YearLayer(language);
+
+      /**
+       * Current Layer
+       * @type {DateLayer|MonthLayer|YearLayer}
+       * @private
+       */
+      this._currentLayer = this._dateLayer;
+    },
+
+    /**
+     * Returns matched layer
+     * @param {string} type - Layer type
+     * @returns {Base} - Layer
+     * @private
+     */
+    _getLayer: function(type) {
+      switch (type) {
+        case TYPE_DATE:
+          return this._dateLayer;
+        case TYPE_MONTH:
+          return this._monthLayer;
+        case TYPE_YEAR:
+          return this._yearLayer;
+        default:
+          return this._currentLayer;
+      }
+    },
+
+    /**
+     * Iterate each layer
+     * @param {Function} fn - function
+     * @private
+     */
+    _eachLayer: function(fn) {
+      forEachArray([this._dateLayer, this._monthLayer, this._yearLayer], fn);
+    },
+
+    /**
+     * Change language
+     * @param {string} language - Language
+     */
+    changeLanguage: function(language) {
+      this._eachLayer(function(layer) {
+        layer.changeLanguage(language);
+      });
+    },
+
+    /**
+     * Render body
+     * @param {Date} date - date
+     * @param {string} type - Layer type
+     */
+    render: function(date, type) {
+      var nextLayer = this._getLayer(type);
+      var prevLayer = this._currentLayer;
+
+      prevLayer.remove();
+      nextLayer.render(date, this._container);
+
+      this._currentLayer = nextLayer;
+    },
+
+    /**
+     * Returns date elements
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._currentLayer.getDateElements();
+    },
+
+    /**
+     * Destory
+     */
+    destroy: function() {
+      this._eachLayer(function(layer) {
+        layer.remove();
+      });
+
+      this._container = this._currentLayer = this._dateLayer = this._monthLayer = this._yearLayer = null;
+    }
+  }
+);
+
+module.exports = Body;
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Date layer
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+
+var dateUtil = __webpack_require__(5);
+var bodyTmpl = __webpack_require__(51);
+var LayerBase = __webpack_require__(20);
+var TYPE_DATE = __webpack_require__(1).TYPE_DATE;
+var WEEK_START_DAY_MAP = __webpack_require__(1).WEEK_START_DAY_MAP;
+
+var DATE_SELECTOR = '.tui-calendar-date';
+var DAYS_OF_WEEK = 7;
+
+/**
+ * @ignore
+ * @class
+ * @extends LayerBase
+ * @param {string} language - Initial language
+ */
+var DateLayer = defineClass(
+  LayerBase,
+  /** @lends DateLayer.prototype */ {
+    init: function(language, weekStartDay) {
+      LayerBase.call(this, language);
+
+      this.weekStartDay = WEEK_START_DAY_MAP[String(weekStartDay).toLowerCase()] || 0;
+    },
+
+    /**
+     * Layer type
+     * @type {string}
+     * @private
+     */
+    _type: TYPE_DATE,
+
+    /**
+     * @override
+     * @private
+     * @returns {object} Template context
+     */
+    _makeContext: function(date) {
+      var daysShort = this._localeText.titles.D;
+      var year, month, days, i;
+
+      date = date || new Date();
+      year = date.getFullYear();
+      month = date.getMonth() + 1;
+
+      if (this.weekStartDay) {
+        days = daysShort.slice();
+        for (i = 0; i < this.weekStartDay; i += 1) {
+          days.push(days.shift());
+        }
+        daysShort = days;
+      }
+
+      return {
+        Sun: daysShort[0],
+        Mon: daysShort[1],
+        Tue: daysShort[2],
+        Wed: daysShort[3],
+        Thu: daysShort[4],
+        Fri: daysShort[5],
+        Sat: daysShort[6],
+        year: year,
+        month: month,
+        weeks: this._getWeeks(year, month)
+      };
+    },
+
+    /**
+     * weeks (templating) for date-calendar
+     * @param {number} year - Year
+     * @param {number} month - Month
+     * @returns {Array.<Array.<Date>>}
+     * @private
+     */
+    _getWeeks: function(year, month) {
+      var weekNumber = 0;
+      var weeksCount = 6; // Fix for no changing height
+      var weeks = [];
+      var week, dates, i;
+
+      while (weekNumber < weeksCount) {
+        dates = [];
+
+        for (i = this.weekStartDay; i < DAYS_OF_WEEK + this.weekStartDay; i += 1) {
+          dates.push(dateUtil.getDateOfWeek(year, month, weekNumber, i));
+        }
+
+        week = this._getWeek(year, month, dates);
+
+        if (this.weekStartDay && !_isFirstWeek(weekNumber, week[0].dayInMonth)) {
+          weeks.push(this._getFirstWeek(year, month));
+          weeksCount -= 1; // Fix for no changing height
+        }
+
+        weeks.push(week);
+        weekNumber += 1;
+      }
+
+      return weeks;
+    },
+
+    /**
+     * week (templating) for date-calendar
+     * @param {number} currentYear
+     * @param {number} currentMonth
+     * @param {Array.<Date>} dates
+     * @private
+     */
+    _getWeek: function(currentYear, currentMonth, dates) {
+      var firstDateOfCurrentMonth = new Date(currentYear, currentMonth - 1, 1);
+      var lastDateOfCurrentMonth = new Date(currentYear, currentMonth, 0);
+      var contexts = [];
+      var i = 0;
+      var length = dates.length;
+      var date, className;
+
+      for (; i < length; i += 1) {
+        className = 'tui-calendar-date';
+        date = dates[i];
+
+        if (date < firstDateOfCurrentMonth) {
+          className += ' tui-calendar-prev-month';
+        }
+
+        if (date > lastDateOfCurrentMonth) {
+          className += ' tui-calendar-next-month';
+        }
+
+        if (date.getDay() === 0) {
+          className += ' tui-calendar-sun';
+        } else if (date.getDay() === 6) {
+          className += ' tui-calendar-sat';
+        }
+
+        contexts.push({
+          dayInMonth: date.getDate(),
+          className: className,
+          timestamp: date.getTime()
+        });
+      }
+
+      return contexts;
+    },
+
+    /**
+     * Render date-layer
+     * @override
+     * @param {Date} date Date to render
+     * @param {HTMLElement} container A container element for the rendered element
+     */
+    render: function(date, container) {
+      var context = this._makeContext(date);
+
+      container.innerHTML = bodyTmpl(context);
+      this._element = container.firstChild;
+    },
+
+    /**
+     * Return date elements
+     * @override
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._element.querySelectorAll(DATE_SELECTOR);
+    },
+
+    _getFirstWeek: function(year, month) {
+      var firstWeekDates = [];
+      var i;
+
+      for (i = this.weekStartDay; i < DAYS_OF_WEEK + this.weekStartDay; i += 1) {
+        firstWeekDates.push(dateUtil.getDateOfWeek(year, month, -1, i));
+      }
+
+      return this._getWeek(year, month, firstWeekDates);
+    }
+  }
+);
+
+function _isFirstWeek(weekIndex, dayInMonth) {
+  return weekIndex || dayInMonth === 1 || dayInMonth > DAYS_OF_WEEK;
+}
+
+module.exports = DateLayer;
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(11);
+
+module.exports = function(context) {
+  var source =
+    '<table class="tui-calendar-body-inner" cellspacing="0" cellpadding="0">' +
+    '  <caption><span>Dates</span></caption>' +
+    '  <thead class="tui-calendar-body-header">' +
+    '    <tr>' +
+    '      <th class="tui-sun" scope="col">{{Sun}}</th>' +
+    '      <th scope="col">{{Mon}}</th>' +
+    '      <th scope="col">{{Tue}}</th>' +
+    '      <th scope="col">{{Wed}}</th>' +
+    '      <th scope="col">{{Thu}}</th>' +
+    '      <th scope="col">{{Fri}}</th>' +
+    '      <th class="tui-sat" scope="col">{{Sat}}</th>' +
+    '    </tr>' +
+    '  </thead>' +
+    '  <tbody>' +
+    '    {{each weeks}}' +
+    '    <tr class="tui-calendar-week">' +
+    '      {{each @this}}' +
+    '      <td class="{{@this["className"]}}" data-timestamp="{{@this["timestamp"]}}">{{@this["dayInMonth"]}}</td>' +
+    '      {{/each}}' +
+    '    </tr>' +
+    '    {{/each}}' +
+    '  </tbody>' +
+    '</table>';
+
+  return template(source, context);
+};
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Month layer
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+
+var bodyTmpl = __webpack_require__(53);
+var LayerBase = __webpack_require__(20);
+var TYPE_MONTH = __webpack_require__(1).TYPE_MONTH;
+var dateUtil = __webpack_require__(5);
+
+var DATE_SELECTOR = '.tui-calendar-month';
+
+/**
+ * @class
+ * @extends LayerBase
+ * @param {string} language - Initial language
+ * @ignore
+ */
+var MonthLayer = defineClass(
+  LayerBase,
+  /** @lends MonthLayer.prototype */ {
+    init: function(language) {
+      LayerBase.call(this, language);
+    },
+
+    /**
+     * Layer type
+     * @type {string}
+     * @private
+     */
+    _type: TYPE_MONTH,
+
+    /**
+     * @override
+     * @returns {object} Template context
+     * @private
+     */
+    _makeContext: function(date) {
+      var monthsShort = this._localeText.titles.MMM;
+
+      return {
+        year: date.getFullYear(),
+        Jan: monthsShort[0],
+        Feb: monthsShort[1],
+        Mar: monthsShort[2],
+        Apr: monthsShort[3],
+        May: monthsShort[4],
+        Jun: monthsShort[5],
+        Jul: monthsShort[6],
+        Aug: monthsShort[7],
+        Sep: monthsShort[8],
+        Oct: monthsShort[9],
+        Nov: monthsShort[10],
+        Dec: monthsShort[11],
+        getFirstDayTimestamp: dateUtil.getFirstDayTimestamp
+      };
+    },
+
+    /**
+     * Render month-layer element
+     * @override
+     * @param {Date} date Date to render
+     * @param {HTMLElement} container A container element for the rendered element
+     */
+    render: function(date, container) {
+      var context = this._makeContext(date);
+
+      container.innerHTML = bodyTmpl(context);
+      this._element = container.firstChild;
+    },
+
+    /**
+     * Returns month elements
+     * @override
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._element.querySelectorAll(DATE_SELECTOR);
+    }
+  }
+);
+
+module.exports = MonthLayer;
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(11);
+
+module.exports = function(context) {
+  var source =
+    '<table class="tui-calendar-body-inner">' +
+    '  <caption><span>Months</span></caption>' +
+    '  <tbody>' +
+    '    <tr class="tui-calendar-month-group">' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 0}}>{{Jan}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 1}}>{{Feb}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 2}}>{{Mar}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 3}}>{{Apr}}</td>' +
+    '    </tr>' +
+    '    <tr class="tui-calendar-month-group">' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 4}}>{{May}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 5}}>{{Jun}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 6}}>{{Jul}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 7}}>{{Aug}}</td>' +
+    '    </tr>' +
+    '    <tr class="tui-calendar-month-group">' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 8}}>{{Sep}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 9}}>{{Oct}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 10}}>{{Nov}}</td>' +
+    '      <td class="tui-calendar-month" data-timestamp={{getFirstDayTimestamp year 11}}>{{Dec}}</td>' +
+    '    </tr>' +
+    '  </tbody>' +
+    '</table>';
+
+  return template(source, context);
+};
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Year layer
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+
+var bodyTmpl = __webpack_require__(55);
+var LayerBase = __webpack_require__(20);
+var TYPE_YEAR = __webpack_require__(1).TYPE_YEAR;
+var dateUtil = __webpack_require__(5);
+
+var DATE_SELECTOR = '.tui-calendar-year';
+
+/**
+ * @class
+ * @extends LayerBase
+ * @param {string} language - Initial language
+ * @ignore
+ */
+var YearLayer = defineClass(
+  LayerBase,
+  /** @lends YearLayer.prototype */ {
+    init: function(language) {
+      LayerBase.call(this, language);
+    },
+
+    /**
+     * Layer type
+     * @type {string}
+     * @private
+     */
+    _type: TYPE_YEAR,
+
+    /**
+     * @override
+     * @returns {object} Template context
+     * @private
+     */
+    _makeContext: function(date) {
+      var year = date.getFullYear();
+
+      return {
+        yearGroups: [
+          dateUtil.getRangeArr(year - 4, year - 2),
+          dateUtil.getRangeArr(year - 1, year + 1),
+          dateUtil.getRangeArr(year + 2, year + 4)
+        ],
+        getFirstDayTimestamp: dateUtil.getFirstDayTimestamp
+      };
+    },
+
+    /**
+     * Render year-layer element
+     * @override
+     * @param {Date} date Date to render
+     * @param {HTMLElement} container A container element for the rendered element
+     */
+    render: function(date, container) {
+      var context = this._makeContext(date);
+
+      container.innerHTML = bodyTmpl(context);
+      this._element = container.firstChild;
+    },
+
+    /**
+     * Returns year elements
+     * @override
+     * @returns {HTMLElement[]}
+     */
+    getDateElements: function() {
+      return this._element.querySelectorAll(DATE_SELECTOR);
+    }
+  }
+);
+
+module.exports = YearLayer;
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(11);
+
+module.exports = function(context) {
+  var source =
+    '<table class="tui-calendar-body-inner">' +
+    '  <caption><span>Years</span></caption>' +
+    '  <tbody>' +
+    '    {{each yearGroups}}' +
+    '    <tr class="tui-calendar-year-group">' +
+    '      {{each @this}}' +
+    '      <td class="tui-calendar-year" data-timestamp={{getFirstDayTimestamp @this 0}}>' +
+    '        {{@this}}' +
+    '      </td>' +
+    '      {{/each}}' +
+    '    </tr>' +
+    '    {{/each}}' +
+    '  </tbody>' +
+    '</table>';
+
+  return template(source, context);
+};
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview RangeModel
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+var defineClass = __webpack_require__(0);
+var isNumber = __webpack_require__(15);
+
+var Range = __webpack_require__(57);
+var util = __webpack_require__(4);
+
+/**
+ * @class
+ * @ignore
+ * @param {Array.<Array.<number>>} ranges - Ranges
+ */
+var RangeModel = defineClass(
+  /** @lends RangeModel.prototype */ {
+    init: function(ranges) {
+      ranges = ranges || [];
+
+      /**
+       * @type {Array.<Range>}
+       * @private
+       */
+      this._ranges = [];
+
+      forEachArray(
+        ranges,
+        function(range) {
+          this.add(range[0], range[1]);
+        },
+        this
+      );
+    },
+
+    /**
+     * Whether the ranges contain a time or time-range
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     * @returns {boolean}
+     */
+    contains: function(start, end) {
+      var i = 0;
+      var length = this._ranges.length;
+      var range;
+
+      for (; i < length; i += 1) {
+        range = this._ranges[i];
+        if (range.contains(start, end)) {
+          return true;
+        }
+      }
+
+      return false;
+    },
+
+    /**
+     * Whether overlaps with a point or range
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     * @returns {boolean}
+     */
+    hasOverlap: function(start, end) {
+      var i = 0;
+      var length = this._ranges.length;
+      var range;
+
+      for (; i < length; i += 1) {
+        range = this._ranges[i];
+        if (range.isOverlapped(start, end)) {
+          return true;
+        }
+      }
+
+      return false;
+    },
+
+    /**
+     * Add range
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     */
+    add: function(start, end) {
+      var overlapped = false;
+      var i = 0;
+      var len = this._ranges.length;
+      var range;
+
+      for (; i < len; i += 1) {
+        range = this._ranges[i];
+        overlapped = range.isOverlapped(start, end);
+
+        if (overlapped) {
+          range.merge(start, end);
+          break;
+        }
+
+        if (start < range.start) {
+          break;
+        }
+      }
+
+      if (!overlapped) {
+        this._ranges.splice(i, 0, new Range(start, end));
+      }
+    },
+
+    /**
+     * Returns minimum value in ranges
+     * @returns {number}
+     */
+    getMinimumValue: function() {
+      return this._ranges[0].start;
+    },
+
+    /**
+     * Returns maximum value in ranges
+     * @returns {number}
+     */
+    getMaximumValue: function() {
+      var length = this._ranges.length;
+
+      return this._ranges[length - 1].end;
+    },
+
+    /**
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     */
+    exclude: function(start, end) {
+      if (!isNumber(end)) {
+        end = start;
+      }
+
+      forEachArray(
+        this._ranges,
+        function(range) {
+          var rangeEnd;
+
+          if (range.isOverlapped(start, end)) {
+            rangeEnd = range.end; // Save before excluding
+            range.exclude(start, end);
+
+            if (end + 1 <= rangeEnd) {
+              this.add(end + 1, rangeEnd); // Add split range
+            }
+          }
+        },
+        this
+      );
+
+      // Reduce empty ranges
+      this._ranges = util.filter(this._ranges, function(range) {
+        return !range.isEmpty();
+      });
+    },
+
+    /**
+     * Returns the first overlapped range from the point or range
+     * @param {number} start - Start
+     * @param {number} end - End
+     * @returns {Array.<number>} - [start, end]
+     */
+    findOverlappedRange: function(start, end) {
+      var i = 0;
+      var len = this._ranges.length;
+      var range;
+
+      for (; i < len; i += 1) {
+        range = this._ranges[i];
+        if (range.isOverlapped(start, end)) {
+          return [range.start, range.end];
+        }
+      }
+
+      return null;
+    }
+  }
+);
+
+module.exports = RangeModel;
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Range (in RangeModel)
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+var isNumber = __webpack_require__(15);
+
+/**
+ * @class
+ * @ignore
+ * @param {number} start - Start of range
+ * @param {number} [end] - End of range
+ */
+var Range = defineClass(
+  /** @lends Range.prototype */ {
+    init: function(start, end) {
+      this.setRange(start, end);
+    },
+
+    /**
+     * Set range
+     * @param {number} start - Start number
+     * @param {number} [end] - End number
+     */
+    setRange: function(start, end) {
+      if (!isNumber(end)) {
+        end = start;
+      }
+
+      this.start = Math.min(start, end);
+      this.end = Math.max(start, end);
+    },
+
+    /**
+     * Merge range
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     */
+    merge: function(start, end) {
+      if (!isNumber(start) || !isNumber(end) || !this.isOverlapped(start, end)) {
+        return;
+      }
+
+      this.start = Math.min(start, this.start);
+      this.end = Math.max(end, this.end);
+    },
+
+    /**
+     * Whether being empty.
+     * @returns {boolean}
+     */
+    isEmpty: function() {
+      return !isNumber(this.start) || !isNumber(this.end);
+    },
+
+    /**
+     * Set empty
+     */
+    setEmpty: function() {
+      this.start = this.end = null;
+    },
+
+    /**
+     * Whether containing a range.
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     * @returns {boolean}
+     */
+    contains: function(start, end) {
+      if (!isNumber(end)) {
+        end = start;
+      }
+
+      return this.start <= start && end <= this.end;
+    },
+
+    /**
+     * Whether overlaps with a range
+     * @param {number} start - Start
+     * @param {number} [end] - End
+     * @returns {boolean}
+     */
+    isOverlapped: function(start, end) {
+      if (!isNumber(end)) {
+        end = start;
+      }
+
+      return this.start <= end && this.end >= start;
+    },
+
+    /**
+     * Exclude a range
+     * @param {number} start - Start
+     * @param {number} end - End
+     */
+    exclude: function(start, end) {
+      if (start <= this.start && end >= this.end) {
+        // Excluding range contains this
+        this.setEmpty();
+      } else if (this.contains(start)) {
+        this.setRange(this.start, start - 1);
+      } else if (this.contains(end)) {
+        this.setRange(end + 1, this.end);
+      }
+    }
+  }
+);
+
+module.exports = Range;
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(11);
+
+module.exports = function(context) {
+  var source =
+    '<div class="tui-datepicker">' +
+    '  {{if timePicker}}' +
+    '    {{if isTab}}' +
+    '      <div class="tui-datepicker-selector">' +
+    '        <button type="button" class="tui-datepicker-selector-button tui-is-checked" aria-label="selected">' +
+    '          <span class="tui-ico-date"></span>{{localeText["date"]}}' +
+    '        </button>' +
+    '        <button type="button" class="tui-datepicker-selector-button">' +
+    '          <span class="tui-ico-time"></span>{{localeText["time"]}}' +
+    '        </button>' +
+    '      </div>' +
+    '      <div class="tui-datepicker-body">' +
+    '        <div class="tui-calendar-container"></div>' +
+    '        <div class="tui-timepicker-container"></div>' +
+    '      </div>' +
+    '    {{else}}' +
+    '      <div class="tui-datepicker-body">' +
+    '        <div class="tui-calendar-container"></div>' +
+    '      </div>' +
+    '      <div class="tui-datepicker-footer">' +
+    '        <div class="tui-timepicker-container"></div>' +
+    '      </div>' +
+    '    {{/if}}' +
+    '  {{else}}' +
+    '    <div class="tui-datepicker-body">' +
+    '      <div class="tui-calendar-container"></div>' +
+    '    </div>' +
+    '  {{/if}}' +
+    '</div>';
+
+  return template(source, context);
+};
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview DatePicker input(element) component
+ */
+
+
+
+var defineClass = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var on = __webpack_require__(31);
+var off = __webpack_require__(33);
+
+var DateTimeFormatter = __webpack_require__(30);
+var mouseTouchEvent = __webpack_require__(19);
+var util = __webpack_require__(4);
+
+var DEFAULT_FORMAT = 'yyyy-MM-dd';
+
+/**
+ * DatePicker Input
+ * @ignore
+ * @class
+ * @param {string|HTMLElement} inputElement - Input element or selector
+ * @param {object} option - Option
+ * @param {string} option.id - Id
+ * @param {string} option.format - Text format
+ */
+var DatePickerInput = defineClass(
+  /** @lends DatePickerInput.prototype */ {
+    init: function(inputElement, option) {
+      option.format = option.format || DEFAULT_FORMAT;
+
+      /**
+       * Input element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._input = util.getElement(inputElement);
+
+      /**
+       * Id
+       * @type {string}
+       * @private
+       */
+      this._id = option.id;
+
+      /**
+       * LocaleText titles
+       * @type {Object}
+       * @private
+       */
+      this._titles = option.localeText.titles;
+
+      /**
+       * Text<->DateTime Formatter
+       * @type {DateTimeFormatter}
+       * @private
+       */
+      this._formatter = new DateTimeFormatter(option.format, this._titles);
+
+      this._setEvents();
+    },
+
+    /**
+     * Change locale titles
+     * @param {object} titles - locale text in format
+     */
+    changeLocaleTitles: function(titles) {
+      this._titles = titles;
+    },
+
+    /**
+     * Set input 'click', 'change' event
+     * @private
+     */
+    _setEvents: function() {
+      if (this._input) {
+        on(this._input, 'change', this._onChangeHandler, this);
+        mouseTouchEvent.on(this._input, 'click', this._onClickHandler, this);
+      }
+    },
+
+    /**
+     * Remove events
+     * @private
+     */
+    _removeEvents: function() {
+      this.off();
+
+      if (this._input) {
+        off(this._input, 'change', this._onChangeHandler);
+        mouseTouchEvent.off(this._input, 'click', this._onClickHandler);
+      }
+    },
+
+    /**
+     * Onchange handler
+     */
+    _onChangeHandler: function() {
+      this.fire('change');
+    },
+
+    /**
+     * Onclick handler
+     */
+    _onClickHandler: function() {
+      this.fire('click');
+    },
+
+    /**
+     * Check element is same as the input element.
+     * @param {HTMLElement} el - To check matched set of elements
+     * @returns {boolean}
+     */
+    is: function(el) {
+      return this._input === el;
+    },
+
+    /**
+     * Enable input
+     */
+    enable: function() {
+      if (this._input) {
+        this._input.removeAttribute('disabled');
+      }
+    },
+
+    /**
+     * Disable input
+     */
+    disable: function() {
+      if (this._input) {
+        this._input.setAttribute('disabled', true);
+      }
+    },
+
+    /**
+     * Return format
+     * @returns {string}
+     */
+    getFormat: function() {
+      return this._formatter.getRawString();
+    },
+
+    /**
+     * Set format
+     * @param {string} format - Format
+     */
+    setFormat: function(format) {
+      if (!format) {
+        return;
+      }
+
+      this._formatter = new DateTimeFormatter(format, this._titles);
+    },
+
+    /**
+     * Clear text
+     */
+    clearText: function() {
+      if (this._input) {
+        this._input.value = '';
+      }
+    },
+
+    /**
+     * Set value from date
+     * @param {Date} date - Date
+     */
+    setDate: function(date) {
+      if (this._input) {
+        this._input.value = this._formatter.format(date);
+      }
+    },
+
+    /**
+     * Returns date from input-text
+     * @returns {Date}
+     * @throws {Error}
+     */
+    getDate: function() {
+      var value = '';
+
+      if (this._input) {
+        value = this._input.value;
+      }
+
+      return this._formatter.parse(value);
+    },
+
+    /**
+     * Destroy
+     */
+    destroy: function() {
+      this._removeEvents();
+
+      this._input = this._id = this._formatter = null;
+    }
+  }
+);
+
+CustomEvents.mixin(DatePickerInput);
+module.exports = DatePickerInput;
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Date-Range picker
+ */
+
+
+
+var forEachArray = __webpack_require__(2);
+var defineClass = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var addClass = __webpack_require__(16);
+var getData = __webpack_require__(26);
+var removeClass = __webpack_require__(18);
+var extend = __webpack_require__(7);
+
+var DatePicker = __webpack_require__(21);
+var dateUtil = __webpack_require__(5);
+var constants = __webpack_require__(1);
+var util = __webpack_require__(4);
+
+var CLASS_NAME_RANGE_PICKER = 'tui-rangepicker';
+var CLASS_NAME_SELECTED = constants.CLASS_NAME_SELECTED;
+var CLASS_NAME_SELECTED_RANGE = 'tui-is-selected-range';
+
+/**
+ * @class
+ * @description
+ * Create a date-range picker by {@link DatePicker#createRangePicker DatePicker.createRangePicker()}.
+ * @see {@link /tutorial-example08-daterangepicker DateRangePicker example}
+ * @param {object} options - DateRangePicker options
+ *     @param {object} options.startpicker - Startpicker options
+ *         @param {HTMLElement|string} options.startpicker.input - Startpicker input element or selector
+ *         @param {HTMLElement|string} options.startpicker.container - Startpicker container element or selector
+ *         @param {Date|number} [options.startpicker.date] - Initial date of the start picker. Set by a Date instance or a number(timestamp). (default: no initial date)
+ *         @param {string} [options.startpicker.weekStartDay = 'Sun'] - Start of the week. 'Sun', 'Mon', ..., 'Sat'(default: 'Sun'(start on Sunday))
+ *     @param {object} options.endpicker - Endpicker options
+ *         @param {HTMLElement|string} options.endpicker.input - Endpicker input element or selector
+ *         @param {HTMLElement|string} options.endpicker.container - Endpicker container element or selector
+ *         @param {Date|number} [options.endpicker.date] - Initial date of the end picker. Set by a Date instance or a number(timestamp). (default: no initial date)
+ *         @param {string} [options.endpicker.weekStartDay = 'Sun'] - Start of the week. 'Sun', 'Mon', ..., 'Sat'(default: 'Sun'(start on Sunday))
+ *     @param {('date'|'month'|'year')} [options.type = 'date'] - DatePicker type. Determine whether to choose a date, month, or year.
+ *     @param {string} [options.language='en'] - Language code. English('en') and Korean('ko') are provided as default. To use the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+ *     @param {object|boolean} [options.timePicker] - [TimePicker](https://nhn.github.io/tui.time-picker/latest) options. Refer to the [TimePicker instance's options](https://nhn.github.io/tui.time-picker/latest/TimePicker). To create the TimePicker without customization, set to true.
+ *     @param {object} [options.calendar] - {@link Calendar} options. Refer to the {@link Calendar Calendar instance's options}.
+ *     @param {string} [options.format = 'yyyy-mm-dd'] - Format of the Date string
+ *     @param {Array.<Array.<Date|number>>} [options.selectableRanges] - Ranges of selectable date. Set by Date instances or numbers(timestamp).
+ *     @param {boolean} [options.showAlways = false] - Show the DateRangePicker always
+ *     @param {boolean} [options.autoClose = true] - Close the DateRangePicker after clicking the date
+ *     @param {boolean} [options.usageStatistics = true] - Send a hostname to Google Analytics (default: true)
+ * @example
+ * // ES6
+ * import DatePicker from 'tui-date-picker'
+ *
+ * // CommonJS
+ * const DatePicker = require('tui-date-picker');
+ *
+ * // Browser
+ * const DatePicker = tui.DatePicker;
+ *
+ * const rangePicker = DatePicker.createRangePicker({
+ *     startpicker: {
+ *         input: '#start-input',
+ *         container: '#start-container'
+ *         date: new Date(2019, 3, 1),
+ *         weekStartDay: 'Mon',
+ *     },
+ *     endpicker: {
+ *         input: '#end-input',
+ *         container: '#end-container',
+ *         weekStartDay: 'Mon',
+ *     },
+ *     type: 'date',
+ *     format: 'yyyy-MM-dd'
+ *     selectableRanges: [
+ *         [new Date(2017, 3, 1), new Date(2017, 5, 1)],
+ *         [new Date(2017, 6, 3), new Date(2017, 10, 5)]
+ *     ]
+ * });
+ */
+var DateRangePicker = defineClass(
+  /** @lends DateRangePicker.prototype */ {
+    init: function(options) {
+      var startpickerOpt, endpickerOpt;
+
+      options = options || {};
+      startpickerOpt = options.startpicker;
+      endpickerOpt = options.endpicker;
+
+      if (!startpickerOpt) {
+        throw new Error('The "startpicker" option is required.');
+      }
+      if (!endpickerOpt) {
+        throw new Error('The "endpicker" option is required.');
+      }
+
+      /**
+       * Start picker
+       * @type {DatePicker}
+       * @private
+       */
+      this._startpicker = null;
+
+      /**
+       * End picker
+       * @type {DatePicker}
+       * @private
+       */
+      this._endpicker = null;
+
+      this._isRangeSet = false;
+
+      this._preEndPickerDate = new Date().getDate();
+
+      this._initializePickers(options);
+      this._syncRangesToEndpicker();
+    },
+
+    /**
+     * Create picker
+     * @param {Object} options - DatePicker options
+     * @private
+     */
+    _initializePickers: function(options) {
+      var startpickerContainer = util.getElement(options.startpicker.container);
+      var endpickerContainer = util.getElement(options.endpicker.container);
+      var startInput = util.getElement(options.startpicker.input);
+      var endInput = util.getElement(options.endpicker.input);
+
+      var startpickerOpt = extend({}, options, {
+        input: {
+          element: startInput,
+          format: options.format
+        },
+        date: options.startpicker.date,
+        weekStartDay: options.startpicker.weekStartDay
+      });
+      var endpickerOpt = extend({}, options, {
+        input: {
+          element: endInput,
+          format: options.format
+        },
+        date: options.endpicker.date,
+        weekStartDay: options.endpicker.weekStartDay
+      });
+
+      this._startpicker = new DatePicker(startpickerContainer, startpickerOpt);
+      this._startpicker.addCssClass(CLASS_NAME_RANGE_PICKER);
+      this._startpicker.on('change', this._onChangeStartpicker, this);
+      this._startpicker.on('draw', this._onDrawPicker, this);
+
+      this._endpicker = new DatePicker(endpickerContainer, endpickerOpt);
+      this._endpicker.addCssClass(CLASS_NAME_RANGE_PICKER);
+      this._endpicker.on('change', this._onChangeEndpicker, this);
+      this._endpicker.on('draw', this._onDrawPicker, this);
+    },
+
+    /**
+     * Set selection-class to elements after calendar drawing
+     * @param {Object} eventData - Event data {@link DatePicker#event:draw}
+     * @private
+     */
+    _onDrawPicker: function(eventData) {
+      var calendarType = eventData.type;
+      var startDate = this._startpicker.getDate();
+      var endDate = this._endpicker.getDate();
+
+      if (!startDate) {
+        return;
+      }
+
+      if (!endDate) {
+        // Convert null to invaild date.
+        endDate = new Date(NaN);
+      }
+
+      forEachArray(
+        eventData.dateElements,
+        function(el) {
+          var elDate = new Date(Number(getData(el, 'timestamp')));
+          var isInRange = dateUtil.inRange(startDate, endDate, elDate, calendarType);
+          var isSelected =
+            dateUtil.isSame(startDate, elDate, calendarType) ||
+            dateUtil.isSame(endDate, elDate, calendarType);
+
+          this._setRangeClass(el, isInRange);
+          this._setSelectedClass(el, isSelected);
+        },
+        this
+      );
+    },
+
+    /**
+     * Set range class to element
+     * @param {HTMLElement} el - Element
+     * @param {boolean} isInRange - In range
+     * @private
+     */
+    _setRangeClass: function(el, isInRange) {
+      if (isInRange) {
+        addClass(el, CLASS_NAME_SELECTED_RANGE);
+      } else {
+        removeClass(el, CLASS_NAME_SELECTED_RANGE);
+      }
+    },
+
+    /**
+     * Set selected class to element
+     * @param {HTMLElement} el - Element
+     * @param {boolean} isSelected - Is selected
+     * @private
+     */
+    _setSelectedClass: function(el, isSelected) {
+      if (isSelected) {
+        addClass(el, CLASS_NAME_SELECTED);
+      } else {
+        removeClass(el, CLASS_NAME_SELECTED);
+      }
+    },
+
+    /**
+     * Sync ranges to endpicker
+     * @private
+     */
+    _syncRangesToEndpicker: function() {
+      var startDate = this._startpicker.getDate();
+      var overlappedRange;
+
+      if (startDate) {
+        overlappedRange = this._startpicker.findOverlappedRange(
+          dateUtil.cloneWithStartOf(startDate).getTime(),
+          dateUtil.cloneWithEndOf(startDate).getTime()
+        );
+
+        this._endpicker.enable();
+        this._endpicker.setRanges([[startDate.getTime(), overlappedRange[1].getTime()]]);
+
+        this._setTimeRangeOnEndPicker();
+      } else {
+        this._endpicker.setNull();
+        this._endpicker.disable();
+      }
+    },
+
+    /**
+     * After change on start-picker
+     * @private
+     */
+    _onChangeStartpicker: function() {
+      this._syncRangesToEndpicker();
+      /**
+       * Occur after the start date is changed.
+       * @event DateRangePicker#change:start
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on rangePicker.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off rangePicker.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents} for more methods. DateRangePicker mixes in the methods from CustomEvents.
+       * @example
+       * // bind the 'change:start' event
+       * rangePicker.on('change:start', () => {
+       *     console.log(`Start date: ${rangePicker.getStartDate()}`);
+       * });
+       *
+       * // unbind the 'change:start' event
+       * rangePicker.off('change:start');
+       */
+      this.fire('change:start');
+    },
+
+    /**
+     * After change on end-picker
+     * @private
+     */
+    _onChangeEndpicker: function() {
+      /**
+       * Occur after the end date is changed.
+       * @event DateRangePicker#change:end
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#on rangePicker.on()} to bind event handlers.
+       * @see {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents#off rangePicker.off()} to unbind event handlers.
+       * @see Refer to {@link https://nhn.github.io/tui.code-snippet/latest/CustomEvents CustomEvents} for more methods. DateRangePicker mixes in the methods from CustomEvents.
+       * @example
+       * // bind the 'change:end' event
+       * rangePicker.on('change:end', () => {
+       *     console.log(`End date: ${rangePicker.getEndDate()}`);
+       * });
+       *
+       * // unbind the 'change:end' event
+       * rangePicker.off('change:end');
+       */
+
+      var date;
+      var endPickerDate = this._endpicker.getDate();
+
+      if (endPickerDate) {
+        date = endPickerDate.getDate();
+        if (this._preEndPickerDate !== date) {
+          this._setTimeRangeOnEndPicker();
+        }
+
+        this._preEndPickerDate = date;
+      } else {
+        this._preEndPickerDate = null;
+      }
+
+      this.fire('change:end');
+    },
+
+    /*
+     * Get date of start picker and end picker being same
+     * @returns {boolean}
+     * @private
+     */
+    _isStartAndEndDateSame: function() {
+      return (
+        !!this._endpicker.getDate() &&
+        !!this._startpicker.getDate() &&
+        dateUtil.compare(
+          this._endpicker.getDate(),
+          this._startpicker.getDate(),
+          constants.TYPE_DATE
+        ) === 0
+      );
+    },
+
+    /**
+     * Set time range on end picker
+     * @private
+     */
+    _setTimeRangeOnEndPicker: function() {
+      var pickerDate, timeRange, timeRangeToSet;
+      var endTimePicker = this._endpicker._timePicker;
+
+      if (!endTimePicker) {
+        return;
+      }
+
+      pickerDate = this._endpicker.getDate() || this._startpicker.getDate();
+      timeRange = this._getTimeRangeFromStartPicker();
+      timeRangeToSet = pickerDate && timeRange[pickerDate.getDate()];
+
+      if (this._isStartAndEndDateSame() && timeRangeToSet) {
+        endTimePicker.setRange(timeRangeToSet);
+        this._isRangeSet = true;
+      } else if (this._isRangeSet) {
+        endTimePicker.setRange({ hour: 0, minute: 0 });
+        endTimePicker.resetMinuteRange();
+        this._isRangeSet = false;
+      }
+    },
+
+    /**
+     * Return object of time range from start picker.
+     * @returns {object}
+     * @private
+     */
+    _getTimeRangeFromStartPicker: function() {
+      var startDate = this._startpicker.getDate();
+      var timeRange = {};
+
+      timeRange[startDate.getDate()] = {
+        hour: startDate.getHours(),
+        minute: startDate.getMinutes()
+      };
+
+      return timeRange;
+    },
+
+    /**
+     * Return a start-datepicker.
+     * @returns {DatePicker}
+     */
+    getStartpicker: function() {
+      return this._startpicker;
+    },
+
+    /**
+     * Return a end-datepicker.
+     * @returns {DatePicker}
+     */
+    getEndpicker: function() {
+      return this._endpicker;
+    },
+
+    /**
+     * Set the start date.
+     * @param {Date} date - Start date
+     */
+    setStartDate: function(date) {
+      this._startpicker.setDate(date);
+    },
+
+    /**
+     * Return the start date.
+     * @returns {?Date}
+     */
+    getStartDate: function() {
+      return this._startpicker.getDate();
+    },
+
+    /**
+     * Return the end date.
+     * @returns {?Date}
+     */
+    getEndDate: function() {
+      return this._endpicker.getDate();
+    },
+
+    /**
+     * Set the end date.
+     * @param {Date} date - End date
+     */
+    setEndDate: function(date) {
+      this._endpicker.setDate(date);
+    },
+
+    /**
+     * Set selectable ranges.
+     * @param {Array.<Array.<number|Date>>} ranges - Selectable ranges. Use Date instances or numbers(timestamp).
+     */
+    setRanges: function(ranges) {
+      this._startpicker.setRanges(ranges);
+      this._syncRangesToEndpicker();
+    },
+
+    /**
+     * Add a selectable range. Use Date instances or numbers(timestamp).
+     * @param {Date|number} start - the start date
+     * @param {Date|number} end - the end date
+     */
+    addRange: function(start, end) {
+      this._startpicker.addRange(start, end);
+      this._syncRangesToEndpicker();
+    },
+
+    /**
+     * Remove a range. Use Date instances or numbers(timestamp).
+     * @param {Date|number} start - the start date
+     * @param {Date|number} end - the end date
+     * @param {null|'date'|'month'|'year'} type - Range type. If falsy, start and end values are considered as timestamp
+     */
+    removeRange: function(start, end, type) {
+      this._startpicker.removeRange(start, end, type);
+      this._syncRangesToEndpicker();
+    },
+
+    /**
+     * Change language.
+     * @param {string} language - Language code. English('en') and Korean('ko') are provided as default.
+     * @see To set to the other languages, use {@link DatePicker#localeTexts DatePicker.localeTexts}.
+     */
+    changeLanguage: function(language) {
+      this._startpicker.changeLanguage(language);
+      this._endpicker.changeLanguage(language);
+    },
+
+    /**
+     * Destroy the date-range picker.
+     */
+    destroy: function() {
+      this.off();
+      this._startpicker.destroy();
+      this._endpicker.destroy();
+      this._startpicker = this._endpicker = null;
+    }
+  }
+);
+
+CustomEvents.mixin(DateRangePicker);
+module.exports = DateRangePicker;
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
+/***/ "./node_modules/tui-time-picker/dist/tui-time-picker.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/tui-time-picker/dist/tui-time-picker.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * TOAST UI Time Picker
+ * @version 2.1.6
+ * @license MIT
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "dist";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-disable complexity */
+/**
+ * @fileoverview Returns the first index at which a given element can be found in the array.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(3);
+
+/**
+ * @module array
+ */
+
+/**
+ * Returns the first index at which a given element can be found in the array
+ * from start index(default 0), or -1 if it is not present.
+ * It compares searchElement to elements of the Array using strict equality
+ * (the same method used by the ===, or triple-equals, operator).
+ * @param {*} searchElement Element to locate in the array
+ * @param {Array} array Array that will be traversed.
+ * @param {number} startIndex Start index in array for searching (default 0)
+ * @returns {number} the First index at which a given element, or -1 if it is not present
+ * @memberof module:array
+ * @example
+ * var inArray = require('tui-code-snippet/array/inArray'); // node, commonjs
+ *
+ * var arr = ['one', 'two', 'three', 'four'];
+ * var idx1 = inArray('one', arr, 3); // -1
+ * var idx2 = inArray('one', arr); // 0
+ */
+function inArray(searchElement, array, startIndex) {
+  var i;
+  var length;
+  startIndex = startIndex || 0;
+
+  if (!isArray(array)) {
+    return -1;
+  }
+
+  if (Array.prototype.indexOf) {
+    return Array.prototype.indexOf.call(array, searchElement, startIndex);
+  }
+
+  length = array.length;
+  for (i = startIndex; startIndex >= 0 && i < length; i += 1) {
+    if (array[i] === searchElement) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+module.exports = inArray;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each element present in the array(or Array-like object) in ascending order.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Execute the provided callback once for each element present
+ * in the array(or Array-like object) in ascending order.
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the element
+ *  2) The index of the element
+ *  3) The array(or Array-like object) being traversed
+ * @param {Array|Arguments|NodeList} arr The array(or Array-like object) that will be traversed
+ * @param {function} iteratee Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEachArray = require('tui-code-snippet/collection/forEachArray'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEachArray([1,2,3], function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ */
+function forEachArray(arr, iteratee, context) {
+  var index = 0;
+  var len = arr.length;
+
+  context = context || null;
+
+  for (; index < len; index += 1) {
+    if (iteratee.call(context, arr[index], index, arr) === false) {
+      break;
+    }
+  }
+}
+
+module.exports = forEachArray;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Extend the target object from other objects.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * @module object
+ */
+
+/**
+ * Extend the target object from other objects.
+ * @param {object} target - Object that will be extended
+ * @param {...object} objects - Objects as sources
+ * @returns {object} Extended object
+ * @memberof module:object
+ */
+function extend(target, objects) { // eslint-disable-line no-unused-vars
+  var hasOwnProp = Object.prototype.hasOwnProperty;
+  var source, prop, i, len;
+
+  for (i = 1, len = arguments.length; i < len; i += 1) {
+    source = arguments[i];
+    for (prop in source) {
+      if (hasOwnProp.call(source, prop)) {
+        target[prop] = source[prop];
+      }
+    }
+  }
+
+  return target;
+}
+
+module.exports = extend;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is an instance of Array or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is an instance of Array or not.
+ * If the given variable is an instance of Array, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is array instance?
+ * @memberof module:type
+ */
+function isArray(obj) {
+  return obj instanceof Array;
+}
+
+module.exports = isArray;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each property of object(or element of array) which actually exist.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(3);
+var forEachArray = __webpack_require__(1);
+var forEachOwnProperties = __webpack_require__(16);
+
+/**
+ * @module collection
+ */
+
+/**
+ * Execute the provided callback once for each property of object(or element of array) which actually exist.
+ * If the object is Array-like object(ex-arguments object), It needs to transform to Array.(see 'ex2' of example).
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the property(or The value of the element)
+ *  2) The name of the property(or The index of the element)
+ *  3) The object being traversed
+ * @param {Object} obj The object that will be traversed
+ * @param {function} iteratee Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEach = require('tui-code-snippet/collection/forEach'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEach([1,2,3], function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ *
+ * // In case of Array-like object
+ * var array = Array.prototype.slice.call(arrayLike); // change to array
+ * forEach(array, function(value){
+ *     sum += value;
+ * });
+ */
+function forEach(obj, iteratee, context) {
+  if (isArray(obj)) {
+    forEachArray(obj, iteratee, context);
+  } else {
+    forEachOwnProperties(obj, iteratee, context);
+  }
+}
+
+module.exports = forEach;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is undefined or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is undefined or not.
+ * If the given variable is undefined, returns true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is undefined?
+ * @memberof module:type
+ */
+function isUndefined(obj) {
+  return obj === undefined; // eslint-disable-line no-undefined
+}
+
+module.exports = isUndefined;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a string or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a string or not.
+ * If the given variable is a string, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is string?
+ * @memberof module:type
+ */
+function isString(obj) {
+  return typeof obj === 'string' || obj instanceof String;
+}
+
+module.exports = isString;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Convert text by binding expressions with context.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inArray = __webpack_require__(0);
+var forEach = __webpack_require__(4);
+var isArray = __webpack_require__(3);
+var isString = __webpack_require__(6);
+var extend = __webpack_require__(2);
+
+// IE8 does not support capture groups.
+var EXPRESSION_REGEXP = /{{\s?|\s?}}/g;
+var BRACKET_NOTATION_REGEXP = /^[a-zA-Z0-9_@]+\[[a-zA-Z0-9_@"']+\]$/;
+var BRACKET_REGEXP = /\[\s?|\s?\]/;
+var DOT_NOTATION_REGEXP = /^[a-zA-Z_]+\.[a-zA-Z_]+$/;
+var DOT_REGEXP = /\./;
+var STRING_NOTATION_REGEXP = /^["']\w+["']$/;
+var STRING_REGEXP = /"|'/g;
+var NUMBER_REGEXP = /^-?\d+\.?\d*$/;
+
+var EXPRESSION_INTERVAL = 2;
+
+var BLOCK_HELPERS = {
+  'if': handleIf,
+  'each': handleEach,
+  'with': handleWith
+};
+
+var isValidSplit = 'a'.split(/a/).length === 3;
+
+/**
+ * Split by RegExp. (Polyfill for IE8)
+ * @param {string} text - text to be splitted\
+ * @param {RegExp} regexp - regular expression
+ * @returns {Array.<string>}
+ */
+var splitByRegExp = (function() {
+  if (isValidSplit) {
+    return function(text, regexp) {
+      return text.split(regexp);
+    };
+  }
+
+  return function(text, regexp) {
+    var result = [];
+    var prevIndex = 0;
+    var match, index;
+
+    if (!regexp.global) {
+      regexp = new RegExp(regexp, 'g');
+    }
+
+    match = regexp.exec(text);
+    while (match !== null) {
+      index = match.index;
+      result.push(text.slice(prevIndex, index));
+
+      prevIndex = index + match[0].length;
+      match = regexp.exec(text);
+    }
+    result.push(text.slice(prevIndex));
+
+    return result;
+  };
+})();
+
+/**
+ * Find value in the context by an expression.
+ * @param {string} exp - an expression
+ * @param {object} context - context
+ * @returns {*}
+ * @private
+ */
+// eslint-disable-next-line complexity
+function getValueFromContext(exp, context) {
+  var splitedExps;
+  var value = context[exp];
+
+  if (exp === 'true') {
+    value = true;
+  } else if (exp === 'false') {
+    value = false;
+  } else if (STRING_NOTATION_REGEXP.test(exp)) {
+    value = exp.replace(STRING_REGEXP, '');
+  } else if (BRACKET_NOTATION_REGEXP.test(exp)) {
+    splitedExps = exp.split(BRACKET_REGEXP);
+    value = getValueFromContext(splitedExps[0], context)[getValueFromContext(splitedExps[1], context)];
+  } else if (DOT_NOTATION_REGEXP.test(exp)) {
+    splitedExps = exp.split(DOT_REGEXP);
+    value = getValueFromContext(splitedExps[0], context)[splitedExps[1]];
+  } else if (NUMBER_REGEXP.test(exp)) {
+    value = parseFloat(exp);
+  }
+
+  return value;
+}
+
+/**
+ * Extract elseif and else expressions.
+ * @param {Array.<string>} ifExps - args of if expression
+ * @param {Array.<string>} sourcesInsideBlock - sources inside if block
+ * @returns {object} - exps: expressions of if, elseif, and else / sourcesInsideIf: sources inside if, elseif, and else block.
+ * @private
+ */
+function extractElseif(ifExps, sourcesInsideBlock) {
+  var exps = [ifExps];
+  var sourcesInsideIf = [];
+  var otherIfCount = 0;
+  var start = 0;
+
+  // eslint-disable-next-line complexity
+  forEach(sourcesInsideBlock, function(source, index) {
+    if (source.indexOf('if') === 0) {
+      otherIfCount += 1;
+    } else if (source === '/if') {
+      otherIfCount -= 1;
+    } else if (!otherIfCount && (source.indexOf('elseif') === 0 || source === 'else')) {
+      exps.push(source === 'else' ? ['true'] : source.split(' ').slice(1));
+      sourcesInsideIf.push(sourcesInsideBlock.slice(start, index));
+      start = index + 1;
+    }
+  });
+
+  sourcesInsideIf.push(sourcesInsideBlock.slice(start));
+
+  return {
+    exps: exps,
+    sourcesInsideIf: sourcesInsideIf
+  };
+}
+
+/**
+ * Helper function for "if". 
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the if block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleIf(exps, sourcesInsideBlock, context) {
+  var analyzed = extractElseif(exps, sourcesInsideBlock);
+  var result = false;
+  var compiledSource = '';
+
+  forEach(analyzed.exps, function(exp, index) {
+    result = handleExpression(exp, context);
+    if (result) {
+      compiledSource = compile(analyzed.sourcesInsideIf[index], context);
+    }
+
+    return !result;
+  });
+
+  return compiledSource;
+}
+
+/**
+ * Helper function for "each".
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the each block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleEach(exps, sourcesInsideBlock, context) {
+  var collection = handleExpression(exps, context);
+  var additionalKey = isArray(collection) ? '@index' : '@key';
+  var additionalContext = {};
+  var result = '';
+
+  forEach(collection, function(item, key) {
+    additionalContext[additionalKey] = key;
+    additionalContext['@this'] = item;
+    extend(context, additionalContext);
+
+    result += compile(sourcesInsideBlock.slice(), context);
+  });
+
+  return result;
+}
+
+/**
+ * Helper function for "with ... as"
+ * @param {Array.<string>} exps - array of expressions split by spaces
+ * @param {Array.<string>} sourcesInsideBlock - array of sources inside the with block
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleWith(exps, sourcesInsideBlock, context) {
+  var asIndex = inArray('as', exps);
+  var alias = exps[asIndex + 1];
+  var result = handleExpression(exps.slice(0, asIndex), context);
+
+  var additionalContext = {};
+  additionalContext[alias] = result;
+
+  return compile(sourcesInsideBlock, extend(context, additionalContext)) || '';
+}
+
+/**
+ * Extract sources inside block in place.
+ * @param {Array.<string>} sources - array of sources
+ * @param {number} start - index of start block
+ * @param {number} end - index of end block
+ * @returns {Array.<string>}
+ * @private
+ */
+function extractSourcesInsideBlock(sources, start, end) {
+  var sourcesInsideBlock = sources.splice(start + 1, end - start);
+  sourcesInsideBlock.pop();
+
+  return sourcesInsideBlock;
+}
+
+/**
+ * Handle block helper function
+ * @param {string} helperKeyword - helper keyword (ex. if, each, with)
+ * @param {Array.<string>} sourcesToEnd - array of sources after the starting block
+ * @param {object} context - context
+ * @returns {Array.<string>}
+ * @private
+ */
+function handleBlockHelper(helperKeyword, sourcesToEnd, context) {
+  var executeBlockHelper = BLOCK_HELPERS[helperKeyword];
+  var helperCount = 1;
+  var startBlockIndex = 0;
+  var endBlockIndex;
+  var index = startBlockIndex + EXPRESSION_INTERVAL;
+  var expression = sourcesToEnd[index];
+
+  while (helperCount && isString(expression)) {
+    if (expression.indexOf(helperKeyword) === 0) {
+      helperCount += 1;
+    } else if (expression.indexOf('/' + helperKeyword) === 0) {
+      helperCount -= 1;
+      endBlockIndex = index;
+    }
+
+    index += EXPRESSION_INTERVAL;
+    expression = sourcesToEnd[index];
+  }
+
+  if (helperCount) {
+    throw Error(helperKeyword + ' needs {{/' + helperKeyword + '}} expression.');
+  }
+
+  sourcesToEnd[startBlockIndex] = executeBlockHelper(
+    sourcesToEnd[startBlockIndex].split(' ').slice(1),
+    extractSourcesInsideBlock(sourcesToEnd, startBlockIndex, endBlockIndex),
+    context
+  );
+
+  return sourcesToEnd;
+}
+
+/**
+ * Helper function for "custom helper".
+ * If helper is not a function, return helper itself.
+ * @param {Array.<string>} exps - array of expressions split by spaces (first element: helper)
+ * @param {object} context - context
+ * @returns {string}
+ * @private
+ */
+function handleExpression(exps, context) {
+  var result = getValueFromContext(exps[0], context);
+
+  if (result instanceof Function) {
+    return executeFunction(result, exps.slice(1), context);
+  }
+
+  return result;
+}
+
+/**
+ * Execute a helper function.
+ * @param {Function} helper - helper function
+ * @param {Array.<string>} argExps - expressions of arguments
+ * @param {object} context - context
+ * @returns {string} - result of executing the function with arguments
+ * @private
+ */
+function executeFunction(helper, argExps, context) {
+  var args = [];
+  forEach(argExps, function(exp) {
+    args.push(getValueFromContext(exp, context));
+  });
+
+  return helper.apply(null, args);
+}
+
+/**
+ * Get a result of compiling an expression with the context.
+ * @param {Array.<string>} sources - array of sources split by regexp of expression.
+ * @param {object} context - context
+ * @returns {Array.<string>} - array of sources that bind with its context
+ * @private
+ */
+function compile(sources, context) {
+  var index = 1;
+  var expression = sources[index];
+  var exps, firstExp, result;
+
+  while (isString(expression)) {
+    exps = expression.split(' ');
+    firstExp = exps[0];
+
+    if (BLOCK_HELPERS[firstExp]) {
+      result = handleBlockHelper(firstExp, sources.splice(index, sources.length - index), context);
+      sources = sources.concat(result);
+    } else {
+      sources[index] = handleExpression(exps, context);
+    }
+
+    index += EXPRESSION_INTERVAL;
+    expression = sources[index];
+  }
+
+  return sources.join('');
+}
+
+/**
+ * Convert text by binding expressions with context.
+ * <br>
+ * If expression exists in the context, it will be replaced.
+ * ex) '{{title}}' with context {title: 'Hello!'} is converted to 'Hello!'.
+ * An array or object can be accessed using bracket and dot notation.
+ * ex) '{{odds\[2\]}}' with context {odds: \[1, 3, 5\]} is converted to '5'.
+ * ex) '{{evens\[first\]}}' with context {evens: \[2, 4\], first: 0} is converted to '2'.
+ * ex) '{{project\["name"\]}}' and '{{project.name}}' with context {project: {name: 'CodeSnippet'}} is converted to 'CodeSnippet'.
+ * <br>
+ * If replaced expression is a function, next expressions will be arguments of the function.
+ * ex) '{{add 1 2}}' with context {add: function(a, b) {return a + b;}} is converted to '3'.
+ * <br>
+ * It has 3 predefined block helpers '{{helper ...}} ... {{/helper}}': 'if', 'each', 'with ... as ...'.
+ * 1) 'if' evaluates conditional statements. It can use with 'elseif' and 'else'.
+ * 2) 'each' iterates an array or object. It provides '@index'(array), '@key'(object), and '@this'(current element).
+ * 3) 'with ... as ...' provides an alias.
+ * @param {string} text - text with expressions
+ * @param {object} context - context
+ * @returns {string} - text that bind with its context
+ * @memberof module:domUtil
+ * @example
+ * var template = require('tui-code-snippet/domUtil/template');
+ * 
+ * var source = 
+ *     '<h1>'
+ *   +   '{{if isValidNumber title}}'
+ *   +     '{{title}}th'
+ *   +   '{{elseif isValidDate title}}'
+ *   +     'Date: {{title}}'
+ *   +   '{{/if}}'
+ *   + '</h1>'
+ *   + '{{each list}}'
+ *   +   '{{with addOne @index as idx}}'
+ *   +     '<p>{{idx}}: {{@this}}</p>'
+ *   +   '{{/with}}'
+ *   + '{{/each}}';
+ * 
+ * var context = {
+ *   isValidDate: function(text) {
+ *     return /^\d{4}-(0|1)\d-(0|1|2|3)\d$/.test(text);
+ *   },
+ *   isValidNumber: function(text) {
+ *     return /^\d+$/.test(text);
+ *   }
+ *   title: '2019-11-25',
+ *   list: ['Clean the room', 'Wash the dishes'],
+ *   addOne: function(num) {
+ *     return num + 1;
+ *   }
+ * };
+ * 
+ * var result = template(source, context);
+ * console.log(result); // <h1>Date: 2019-11-25</h1><p>1: Clean the room</p><p>2: Wash the dishes</p>
+ */
+function template(text, context) {
+  return compile(splitByRegExp(text, EXPRESSION_REGEXP), context);
+}
+
+module.exports = template;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview This module provides some functions for custom events. And it is implemented in the observer design pattern.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var extend = __webpack_require__(2);
+var isExisty = __webpack_require__(23);
+var isString = __webpack_require__(6);
+var isObject = __webpack_require__(25);
+var isArray = __webpack_require__(3);
+var isFunction = __webpack_require__(26);
+var forEach = __webpack_require__(4);
+
+var R_EVENTNAME_SPLIT = /\s+/g;
+
+/**
+ * @class
+ * @example
+ * // node, commonjs
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents');
+ */
+function CustomEvents() {
+  /**
+     * @type {HandlerItem[]}
+     */
+  this.events = null;
+
+  /**
+     * only for checking specific context event was binded
+     * @type {object[]}
+     */
+  this.contexts = null;
+}
+
+/**
+ * Mixin custom events feature to specific constructor
+ * @param {function} func - constructor
+ * @example
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * var model;
+ * function Model() {
+ *     this.name = '';
+ * }
+ * CustomEvents.mixin(Model);
+ *
+ * model = new Model();
+ * model.on('change', function() { this.name = 'model'; }, this);
+ * model.fire('change');
+ * alert(model.name); // 'model';
+ */
+CustomEvents.mixin = function(func) {
+  extend(func.prototype, CustomEvents.prototype);
+};
+
+/**
+ * Get HandlerItem object
+ * @param {function} handler - handler function
+ * @param {object} [context] - context for handler
+ * @returns {HandlerItem} HandlerItem object
+ * @private
+ */
+CustomEvents.prototype._getHandlerItem = function(handler, context) {
+  var item = {handler: handler};
+
+  if (context) {
+    item.context = context;
+  }
+
+  return item;
+};
+
+/**
+ * Get event object safely
+ * @param {string} [eventName] - create sub event map if not exist.
+ * @returns {(object|array)} event object. if you supplied `eventName`
+ *  parameter then make new array and return it
+ * @private
+ */
+CustomEvents.prototype._safeEvent = function(eventName) {
+  var events = this.events;
+  var byName;
+
+  if (!events) {
+    events = this.events = {};
+  }
+
+  if (eventName) {
+    byName = events[eventName];
+
+    if (!byName) {
+      byName = [];
+      events[eventName] = byName;
+    }
+
+    events = byName;
+  }
+
+  return events;
+};
+
+/**
+ * Get context array safely
+ * @returns {array} context array
+ * @private
+ */
+CustomEvents.prototype._safeContext = function() {
+  var context = this.contexts;
+
+  if (!context) {
+    context = this.contexts = [];
+  }
+
+  return context;
+};
+
+/**
+ * Get index of context
+ * @param {object} ctx - context that used for bind custom event
+ * @returns {number} index of context
+ * @private
+ */
+CustomEvents.prototype._indexOfContext = function(ctx) {
+  var context = this._safeContext();
+  var index = 0;
+
+  while (context[index]) {
+    if (ctx === context[index][0]) {
+      return index;
+    }
+
+    index += 1;
+  }
+
+  return -1;
+};
+
+/**
+ * Memorize supplied context for recognize supplied object is context or
+ *  name: handler pair object when off()
+ * @param {object} ctx - context object to memorize
+ * @private
+ */
+CustomEvents.prototype._memorizeContext = function(ctx) {
+  var context, index;
+
+  if (!isExisty(ctx)) {
+    return;
+  }
+
+  context = this._safeContext();
+  index = this._indexOfContext(ctx);
+
+  if (index > -1) {
+    context[index][1] += 1;
+  } else {
+    context.push([ctx, 1]);
+  }
+};
+
+/**
+ * Forget supplied context object
+ * @param {object} ctx - context object to forget
+ * @private
+ */
+CustomEvents.prototype._forgetContext = function(ctx) {
+  var context, contextIndex;
+
+  if (!isExisty(ctx)) {
+    return;
+  }
+
+  context = this._safeContext();
+  contextIndex = this._indexOfContext(ctx);
+
+  if (contextIndex > -1) {
+    context[contextIndex][1] -= 1;
+
+    if (context[contextIndex][1] <= 0) {
+      context.splice(contextIndex, 1);
+    }
+  }
+};
+
+/**
+ * Bind event handler
+ * @param {(string|{name:string, handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {(function|object)} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ * @private
+ */
+CustomEvents.prototype._bindEvent = function(eventName, handler, context) {
+  var events = this._safeEvent(eventName);
+  this._memorizeContext(context);
+  events.push(this._getHandlerItem(handler, context));
+};
+
+/**
+ * Bind event handlers
+ * @param {(string|{name:string, handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {(function|object)} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ * //-- #1. Get Module --//
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * //-- #2. Use method --//
+ * // # 2.1 Basic Usage
+ * CustomEvents.on('onload', handler);
+ *
+ * // # 2.2 With context
+ * CustomEvents.on('onload', handler, myObj);
+ *
+ * // # 2.3 Bind by object that name, handler pairs
+ * CustomEvents.on({
+ *     'play': handler,
+ *     'pause': handler2
+ * });
+ *
+ * // # 2.4 Bind by object that name, handler pairs with context object
+ * CustomEvents.on({
+ *     'play': handler
+ * }, myObj);
+ */
+CustomEvents.prototype.on = function(eventName, handler, context) {
+  var self = this;
+
+  if (isString(eventName)) {
+    // [syntax 1, 2]
+    eventName = eventName.split(R_EVENTNAME_SPLIT);
+    forEach(eventName, function(name) {
+      self._bindEvent(name, handler, context);
+    });
+  } else if (isObject(eventName)) {
+    // [syntax 3, 4]
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self.on(name, func, context);
+    });
+  }
+};
+
+/**
+ * Bind one-shot event handlers
+ * @param {(string|{name:string,handler:function})} eventName - custom
+ *  event name or an object {eventName: handler}
+ * @param {function|object} [handler] - handler function or context
+ * @param {object} [context] - context for binding
+ */
+CustomEvents.prototype.once = function(eventName, handler, context) {
+  var self = this;
+
+  if (isObject(eventName)) {
+    context = handler;
+    forEach(eventName, function(func, name) {
+      self.once(name, func, context);
+    });
+
+    return;
+  }
+
+  function onceHandler() { // eslint-disable-line require-jsdoc
+    handler.apply(context, arguments);
+    self.off(eventName, onceHandler, context);
+  }
+
+  this.on(eventName, onceHandler, context);
+};
+
+/**
+ * Splice supplied array by callback result
+ * @param {array} arr - array to splice
+ * @param {function} predicate - function return boolean
+ * @private
+ */
+CustomEvents.prototype._spliceMatches = function(arr, predicate) {
+  var i = 0;
+  var len;
+
+  if (!isArray(arr)) {
+    return;
+  }
+
+  for (len = arr.length; i < len; i += 1) {
+    if (predicate(arr[i]) === true) {
+      arr.splice(i, 1);
+      len -= 1;
+      i -= 1;
+    }
+  }
+};
+
+/**
+ * Get matcher for unbind specific handler events
+ * @param {function} handler - handler function
+ * @returns {function} handler matcher
+ * @private
+ */
+CustomEvents.prototype._matchHandler = function(handler) {
+  var self = this;
+
+  return function(item) {
+    var needRemove = handler === item.handler;
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Get matcher for unbind specific context events
+ * @param {object} context - context
+ * @returns {function} object matcher
+ * @private
+ */
+CustomEvents.prototype._matchContext = function(context) {
+  var self = this;
+
+  return function(item) {
+    var needRemove = context === item.context;
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Get matcher for unbind specific hander, context pair events
+ * @param {function} handler - handler function
+ * @param {object} context - context
+ * @returns {function} handler, context matcher
+ * @private
+ */
+CustomEvents.prototype._matchHandlerAndContext = function(handler, context) {
+  var self = this;
+
+  return function(item) {
+    var matchHandler = (handler === item.handler);
+    var matchContext = (context === item.context);
+    var needRemove = (matchHandler && matchContext);
+
+    if (needRemove) {
+      self._forgetContext(item.context);
+    }
+
+    return needRemove;
+  };
+};
+
+/**
+ * Unbind event by event name
+ * @param {string} eventName - custom event name to unbind
+ * @param {function} [handler] - handler function
+ * @private
+ */
+CustomEvents.prototype._offByEventName = function(eventName, handler) {
+  var self = this;
+  var andByHandler = isFunction(handler);
+  var matchHandler = self._matchHandler(handler);
+
+  eventName = eventName.split(R_EVENTNAME_SPLIT);
+
+  forEach(eventName, function(name) {
+    var handlerItems = self._safeEvent(name);
+
+    if (andByHandler) {
+      self._spliceMatches(handlerItems, matchHandler);
+    } else {
+      forEach(handlerItems, function(item) {
+        self._forgetContext(item.context);
+      });
+
+      self.events[name] = [];
+    }
+  });
+};
+
+/**
+ * Unbind event by handler function
+ * @param {function} handler - handler function
+ * @private
+ */
+CustomEvents.prototype._offByHandler = function(handler) {
+  var self = this;
+  var matchHandler = this._matchHandler(handler);
+
+  forEach(this._safeEvent(), function(handlerItems) {
+    self._spliceMatches(handlerItems, matchHandler);
+  });
+};
+
+/**
+ * Unbind event by object(name: handler pair object or context object)
+ * @param {object} obj - context or {name: handler} pair object
+ * @param {function} handler - handler function
+ * @private
+ */
+CustomEvents.prototype._offByObject = function(obj, handler) {
+  var self = this;
+  var matchFunc;
+
+  if (this._indexOfContext(obj) < 0) {
+    forEach(obj, function(func, name) {
+      self.off(name, func);
+    });
+  } else if (isString(handler)) {
+    matchFunc = this._matchContext(obj);
+
+    self._spliceMatches(this._safeEvent(handler), matchFunc);
+  } else if (isFunction(handler)) {
+    matchFunc = this._matchHandlerAndContext(handler, obj);
+
+    forEach(this._safeEvent(), function(handlerItems) {
+      self._spliceMatches(handlerItems, matchFunc);
+    });
+  } else {
+    matchFunc = this._matchContext(obj);
+
+    forEach(this._safeEvent(), function(handlerItems) {
+      self._spliceMatches(handlerItems, matchFunc);
+    });
+  }
+};
+
+/**
+ * Unbind custom events
+ * @param {(string|object|function)} eventName - event name or context or
+ *  {name: handler} pair object or handler function
+ * @param {(function)} handler - handler function
+ * @example
+ * //-- #1. Get Module --//
+ * var CustomEvents = require('tui-code-snippet/customEvents/customEvents'); // node, commonjs
+ *
+ * //-- #2. Use method --//
+ * // # 2.1 off by event name
+ * CustomEvents.off('onload');
+ *
+ * // # 2.2 off by event name and handler
+ * CustomEvents.off('play', handler);
+ *
+ * // # 2.3 off by handler
+ * CustomEvents.off(handler);
+ *
+ * // # 2.4 off by context
+ * CustomEvents.off(myObj);
+ *
+ * // # 2.5 off by context and handler
+ * CustomEvents.off(myObj, handler);
+ *
+ * // # 2.6 off by context and event name
+ * CustomEvents.off(myObj, 'onload');
+ *
+ * // # 2.7 off by an Object.<string, function> that is {eventName: handler}
+ * CustomEvents.off({
+ *   'play': handler,
+ *   'pause': handler2
+ * });
+ *
+ * // # 2.8 off the all events
+ * CustomEvents.off();
+ */
+CustomEvents.prototype.off = function(eventName, handler) {
+  if (isString(eventName)) {
+    // [syntax 1, 2]
+    this._offByEventName(eventName, handler);
+  } else if (!arguments.length) {
+    // [syntax 8]
+    this.events = {};
+    this.contexts = [];
+  } else if (isFunction(eventName)) {
+    // [syntax 3]
+    this._offByHandler(eventName);
+  } else if (isObject(eventName)) {
+    // [syntax 4, 5, 6]
+    this._offByObject(eventName, handler);
+  }
+};
+
+/**
+ * Fire custom event
+ * @param {string} eventName - name of custom event
+ */
+CustomEvents.prototype.fire = function(eventName) {  // eslint-disable-line
+  this.invoke.apply(this, arguments);
+};
+
+/**
+ * Fire a event and returns the result of operation 'boolean AND' with all
+ *  listener's results.
+ *
+ * So, It is different from {@link CustomEvents#fire}.
+ *
+ * In service code, use this as a before event in component level usually
+ *  for notifying that the event is cancelable.
+ * @param {string} eventName - Custom event name
+ * @param {...*} data - Data for event
+ * @returns {boolean} The result of operation 'boolean AND'
+ * @example
+ * var map = new Map();
+ * map.on({
+ *     'beforeZoom': function() {
+ *         // It should cancel the 'zoom' event by some conditions.
+ *         if (that.disabled && this.getState()) {
+ *             return false;
+ *         }
+ *         return true;
+ *     }
+ * });
+ *
+ * if (this.invoke('beforeZoom')) {    // check the result of 'beforeZoom'
+ *     // if true,
+ *     // doSomething
+ * }
+ */
+CustomEvents.prototype.invoke = function(eventName) {
+  var events, args, index, item;
+
+  if (!this.hasListener(eventName)) {
+    return true;
+  }
+
+  events = this._safeEvent(eventName);
+  args = Array.prototype.slice.call(arguments, 1);
+  index = 0;
+
+  while (events[index]) {
+    item = events[index];
+
+    if (item.handler.apply(item.context, args) === false) {
+      return false;
+    }
+
+    index += 1;
+  }
+
+  return true;
+};
+
+/**
+ * Return whether at least one of the handlers is registered in the given
+ *  event name.
+ * @param {string} eventName - Custom event name
+ * @returns {boolean} Is there at least one handler in event name?
+ */
+CustomEvents.prototype.hasListener = function(eventName) {
+  return this.getListenerLength(eventName) > 0;
+};
+
+/**
+ * Return a count of events registered.
+ * @param {string} eventName - Custom event name
+ * @returns {number} number of event
+ */
+CustomEvents.prototype.getListenerLength = function(eventName) {
+  var events = this._safeEvent(eventName);
+
+  return events.length;
+};
+
+module.exports = CustomEvents;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview
+ * This module provides a function to make a constructor
+ * that can inherit from the other constructors like the CLASS easily.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inherit = __webpack_require__(27);
+var extend = __webpack_require__(2);
+
+/**
+ * @module defineClass
+ */
+
+/**
+ * Help a constructor to be defined and to inherit from the other constructors
+ * @param {*} [parent] Parent constructor
+ * @param {Object} props Members of constructor
+ *  @param {Function} props.init Initialization method
+ *  @param {Object} [props.static] Static members of constructor
+ * @returns {*} Constructor
+ * @memberof module:defineClass
+ * @example
+ * var defineClass = require('tui-code-snippet/defineClass/defineClass'); // node, commonjs
+ *
+ * //-- #2. Use property --//
+ * var Parent = defineClass({
+ *     init: function() { // constuructor
+ *         this.name = 'made by def';
+ *     },
+ *     method: function() {
+ *         // ...
+ *     },
+ *     static: {
+ *         staticMethod: function() {
+ *              // ...
+ *         }
+ *     }
+ * });
+ *
+ * var Child = defineClass(Parent, {
+ *     childMethod: function() {}
+ * });
+ *
+ * Parent.staticMethod();
+ *
+ * var parentInstance = new Parent();
+ * console.log(parentInstance.name); //made by def
+ * parentInstance.staticMethod(); // Error
+ *
+ * var childInstance = new Child();
+ * childInstance.method();
+ * childInstance.childMethod();
+ */
+function defineClass(parent, props) {
+  var obj;
+
+  if (!props) {
+    props = parent;
+    parent = null;
+  }
+
+  obj = props.init || function() {};
+
+  if (parent) {
+    inherit(obj, parent);
+  }
+
+  if (props.hasOwnProperty('static')) {
+    extend(obj, props['static']);
+    delete props['static'];
+  }
+
+  extend(obj.prototype, props);
+
+  return obj;
+}
+
+module.exports = defineClass;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Bind DOM events
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isString = __webpack_require__(6);
+var forEach = __webpack_require__(4);
+
+var safeEvent = __webpack_require__(17);
+
+/**
+ * Bind DOM events.
+ * @param {HTMLElement} element - element to bind events
+ * @param {(string|object)} types - Space splitted events names or eventName:handler object
+ * @param {(function|object)} handler - handler function or context for handler method
+ * @param {object} [context] context - context for handler method.
+ * @memberof module:domEvent
+ * @example
+ * var div = document.querySelector('div');
+ * 
+ * // Bind one event to an element.
+ * on(div, 'click', toggle);
+ * 
+ * // Bind multiple events with a same handler to multiple elements at once.
+ * // Use event names splitted by a space.
+ * on(div, 'mouseenter mouseleave', changeColor);
+ * 
+ * // Bind multiple events with different handlers to an element at once.
+ * // Use an object which of key is an event name and value is a handler function.
+ * on(div, {
+ *   keydown: highlight,
+ *   keyup: dehighlight
+ * });
+ * 
+ * // Set a context for handler method.
+ * var name = 'global';
+ * var repository = {name: 'CodeSnippet'};
+ * on(div, 'drag', function() {
+ *  console.log(this.name);
+ * }, repository);
+ * // Result when you drag a div: "CodeSnippet"
+ */
+function on(element, types, handler, context) {
+  if (isString(types)) {
+    forEach(types.split(/\s+/g), function(type) {
+      bindEvent(element, type, handler, context);
+    });
+
+    return;
+  }
+
+  forEach(types, function(func, type) {
+    bindEvent(element, type, func, handler);
+  });
+}
+
+/**
+ * Bind DOM events
+ * @param {HTMLElement} element - element to bind events
+ * @param {string} type - events name
+ * @param {function} handler - handler function or context for handler method
+ * @param {object} [context] context - context for handler method.
+ * @private
+ */
+function bindEvent(element, type, handler, context) {
+  /**
+     * Event handler
+     * @param {Event} e - event object
+     */
+  function eventHandler(e) {
+    handler.call(context || element, e || window.event);
+  }
+
+  if ('addEventListener' in element) {
+    element.addEventListener(type, eventHandler);
+  } else if ('attachEvent' in element) {
+    element.attachEvent('on' + type, eventHandler);
+  }
+  memorizeHandler(element, type, handler, eventHandler);
+}
+
+/**
+ * Memorize DOM event handler for unbinding.
+ * @param {HTMLElement} element - element to bind events
+ * @param {string} type - events name
+ * @param {function} handler - handler function that user passed at on() use
+ * @param {function} wrappedHandler - handler function that wrapped by domevent for implementing some features
+ * @private
+ */
+function memorizeHandler(element, type, handler, wrappedHandler) {
+  var events = safeEvent(element, type);
+  var existInEvents = false;
+
+  forEach(events, function(obj) {
+    if (obj.handler === handler) {
+      existInEvents = true;
+
+      return false;
+    }
+
+    return true;
+  });
+
+  if (!existInEvents) {
+    events.push({
+      handler: handler,
+      wrappedHandler: wrappedHandler
+    });
+  }
+}
+
+module.exports = on;
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Unbind DOM events
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isString = __webpack_require__(6);
+var forEach = __webpack_require__(4);
+
+var safeEvent = __webpack_require__(17);
+
+/**
+ * Unbind DOM events
+ * If a handler function is not passed, remove all events of that type.
+ * @param {HTMLElement} element - element to unbind events
+ * @param {(string|object)} types - Space splitted events names or eventName:handler object
+ * @param {function} [handler] - handler function
+ * @memberof module:domEvent
+ * @example
+ * // Following the example of domEvent#on
+ * 
+ * // Unbind one event from an element.
+ * off(div, 'click', toggle);
+ * 
+ * // Unbind multiple events with a same handler from multiple elements at once.
+ * // Use event names splitted by a space.
+ * off(element, 'mouseenter mouseleave', changeColor);
+ * 
+ * // Unbind multiple events with different handlers from an element at once.
+ * // Use an object which of key is an event name and value is a handler function.
+ * off(div, {
+ *   keydown: highlight,
+ *   keyup: dehighlight
+ * });
+ * 
+ * // Unbind events without handlers.
+ * off(div, 'drag');
+ */
+function off(element, types, handler) {
+  if (isString(types)) {
+    forEach(types.split(/\s+/g), function(type) {
+      unbindEvent(element, type, handler);
+    });
+
+    return;
+  }
+
+  forEach(types, function(func, type) {
+    unbindEvent(element, type, func);
+  });
+}
+
+/**
+ * Unbind DOM events
+ * If a handler function is not passed, remove all events of that type.
+ * @param {HTMLElement} element - element to unbind events
+ * @param {string} type - events name
+ * @param {function} [handler] - handler function
+ * @private
+ */
+function unbindEvent(element, type, handler) {
+  var events = safeEvent(element, type);
+  var index;
+
+  if (!handler) {
+    forEach(events, function(item) {
+      removeHandler(element, type, item.wrappedHandler);
+    });
+    events.splice(0, events.length);
+  } else {
+    forEach(events, function(item, idx) {
+      if (handler === item.handler) {
+        removeHandler(element, type, item.wrappedHandler);
+        index = idx;
+
+        return false;
+      }
+
+      return true;
+    });
+    events.splice(index, 1);
+  }
+}
+
+/**
+ * Remove an event handler
+ * @param {HTMLElement} element - An element to remove an event
+ * @param {string} type - event type
+ * @param {function} handler - event handler
+ * @private
+ */
+function removeHandler(element, type, handler) {
+  if ('removeEventListener' in element) {
+    element.removeEventListener(type, handler);
+  } else if ('detachEvent' in element) {
+    element.detachEvent('on' + type, handler);
+  }
+}
+
+module.exports = off;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Find parent element recursively
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var matches = __webpack_require__(30);
+
+/**
+ * Find parent element recursively
+ * @param {HTMLElement} element - base element to start find
+ * @param {string} selector - selector string for find
+ * @returns {HTMLElement} - element finded or null
+ * @memberof module:domUtil
+ */
+function closest(element, selector) {
+  var parent = element.parentNode;
+
+  if (matches(element, selector)) {
+    return element;
+  }
+
+  while (parent && parent !== document) {
+    if (matches(parent, selector)) {
+      return parent;
+    }
+
+    parent = parent.parentNode;
+  }
+
+  return null;
+}
+
+module.exports = closest;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Remove element from parent node.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Remove element from parent node.
+ * @param {HTMLElement} element - element to remove.
+ * @memberof module:domUtil
+ */
+function removeElement(element) {
+  if (element && element.parentNode) {
+    element.parentNode.removeChild(element);
+  }
+}
+
+module.exports = removeElement;
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a instance of HTMLNode or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a instance of HTMLNode or not.
+ * If the given variables is a instance of HTMLNode, return true.
+ * @param {*} html - Target for checking
+ * @returns {boolean} Is HTMLNode ?
+ * @memberof module:type
+ */
+function isHTMLNode(html) {
+  if (typeof HTMLElement === 'object') {
+    return (html && (html instanceof HTMLElement || !!html.nodeType));
+  }
+
+  return !!(html && html.nodeType);
+}
+
+module.exports = isHTMLNode;
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var inArray = __webpack_require__(0);
+var forEachArray = __webpack_require__(1);
+var sendHostname = __webpack_require__(35);
+
+var uniqueId = 0;
+
+/**
+ * Utils
+ * @namespace util
+ * @ignore
+ */
+var utils = {
+  /**
+   * Returns unique id
+   * @returns {number}
+   */
+  getUniqueId: function() {
+    uniqueId += 1;
+
+    return uniqueId;
+  },
+
+  /**
+   * Convert a value to meet the format
+   * @param {number|string} value
+   * @param {string} format - ex) hh, h, mm, m
+   * @returns {string}
+   */
+  formatTime: function(value, format) {
+    var PADDING_ZERO_TYPES = ['hh', 'mm'];
+    value = String(value);
+
+    return inArray(format, PADDING_ZERO_TYPES) >= 0 && value.length === 1 ? '0' + value : value;
+  },
+
+  /**
+   * Get meridiem hour
+   * @param {number} hour - Original hour
+   * @returns {number} Converted meridiem hour
+   */
+  getMeridiemHour: function(hour) {
+    hour %= 12;
+
+    if (hour === 0) {
+      hour = 12;
+    }
+
+    return hour;
+  },
+
+  /**
+   * Returns range arr
+   * @param {number} start - Start value
+   * @param {number} end - End value
+   * @param {number} [step] - Step value
+   * @returns {Array}
+   */
+  getRangeArr: function(start, end, step) {
+    var arr = [];
+    var i;
+
+    step = step || 1;
+
+    if (start > end) {
+      for (i = end; i >= start; i -= step) {
+        arr.push(i);
+      }
+    } else {
+      for (i = start; i <= end; i += step) {
+        arr.push(i);
+      }
+    }
+
+    return arr;
+  },
+
+  /**
+   * Returns array filled with selected value
+   * @param {number} start - Start index of array to fill
+   * @param {number} end - End index of array to fill
+   * @param {number} value - Value to be filled
+   * @param {Array} [target] - Array to fill
+   * @returns {Array}
+   */
+  fill: function(start, end, value, target) {
+    var arr = target || [];
+    var replaceEnd = Math.min(arr.length - 1, end);
+    var i;
+
+    for (i = start; i <= replaceEnd; i += 1) {
+      arr[i] = value;
+    }
+
+    for (i = replaceEnd; i <= end; i += 1) {
+      arr.push(value);
+    }
+
+    return arr;
+  },
+
+  /**
+   * Get a target element
+   * @param {Event} ev Event object
+   * @returns {HTMLElement} An event target element
+   */
+
+  getTarget: function(ev) {
+    return ev.target || ev.srcElement;
+  },
+
+  /**
+   * send host name
+   * @ignore
+   */
+  sendHostName: function() {
+    sendHostname('time-picker', 'UA-129987462-1');
+  },
+
+  /**
+   * Get disabled minute array
+   * @param {Array} enableRanges array of object which contains range
+   */
+  getDisabledMinuteArr: function(enableRanges, minuteStep) {
+    var arr = this.fill(0, Math.floor(60 / minuteStep) - 2, false);
+
+    function setDisabled(enableRange) {
+      var beginDisabledMinute = Math.ceil(enableRange.begin / minuteStep);
+      var endDisabledMinute = Math.floor(enableRange.end / minuteStep);
+
+      arr = this.fill(beginDisabledMinute, endDisabledMinute, true, arr);
+    }
+
+    forEachArray(enableRanges, setDisabled.bind(this));
+
+    return arr;
+  },
+
+  /**
+   * Set disabled on target element
+   * @param {HTMLInputElement} el target element
+   * @param {boolean} isDisabled target element
+   */
+  setDisabled: function(el, isDisabled) {
+    el.disabled = isDisabled;
+  }
+};
+
+module.exports = utils;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Execute the provided callback once for each property of object which actually exist.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Execute the provided callback once for each property of object which actually exist.
+ * If the callback function returns false, the loop will be stopped.
+ * Callback function(iteratee) is invoked with three arguments:
+ *  1) The value of the property
+ *  2) The name of the property
+ *  3) The object being traversed
+ * @param {Object} obj The object that will be traversed
+ * @param {function} iteratee  Callback function
+ * @param {Object} [context] Context(this) of callback function
+ * @memberof module:collection
+ * @example
+ * var forEachOwnProperties = require('tui-code-snippet/collection/forEachOwnProperties'); // node, commonjs
+ *
+ * var sum = 0;
+ *
+ * forEachOwnProperties({a:1,b:2,c:3}, function(value){
+ *     sum += value;
+ * });
+ * alert(sum); // 6
+ */
+function forEachOwnProperties(obj, iteratee, context) {
+  var key;
+
+  context = context || null;
+
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (iteratee.call(context, obj[key], key, obj) === false) {
+        break;
+      }
+    }
+  }
+}
+
+module.exports = forEachOwnProperties;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Get event collection for specific HTML element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var EVENT_KEY = '_feEventKey';
+
+/**
+ * Get event collection for specific HTML element
+ * @param {HTMLElement} element - HTML element
+ * @param {string} type - event type
+ * @returns {array}
+ * @private
+ */
+function safeEvent(element, type) {
+  var events = element[EVENT_KEY];
+  var handlers;
+
+  if (!events) {
+    events = element[EVENT_KEY] = {};
+  }
+
+  handlers = events[type];
+  if (!handlers) {
+    handlers = events[type] = [];
+  }
+
+  return handlers;
+}
+
+module.exports = safeEvent;
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Get HTML element's design classes.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(5);
+
+/**
+ * Get HTML element's design classes.
+ * @param {(HTMLElement|SVGElement)} element target element
+ * @returns {string} element css class name
+ * @memberof module:domUtil
+ */
+function getClass(element) {
+  if (!element || !element.className) {
+    return '';
+  }
+
+  if (isUndefined(element.className.baseVal)) {
+    return element.className;
+  }
+
+  return element.className.baseVal;
+}
+
+module.exports = getClass;
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Set className value
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isArray = __webpack_require__(3);
+var isUndefined = __webpack_require__(5);
+
+/**
+ * Set className value
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {(string|string[])} cssClass - class names
+ * @private
+ */
+function setClassName(element, cssClass) {
+  cssClass = isArray(cssClass) ? cssClass.join(' ') : cssClass;
+
+  cssClass = cssClass.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+
+  if (isUndefined(element.className.baseVal)) {
+    element.className = cssClass;
+
+    return;
+  }
+
+  element.className.baseVal = cssClass;
+}
+
+module.exports = setClassName;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(21);
+
+module.exports = __webpack_require__(22);
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var inArray = __webpack_require__(0);
+var forEachArray = __webpack_require__(1);
+var CustomEvents = __webpack_require__(8);
+var defineClass = __webpack_require__(9);
+var extend = __webpack_require__(2);
+var on = __webpack_require__(10);
+var off = __webpack_require__(11);
+var addClass = __webpack_require__(29);
+var closest = __webpack_require__(12);
+var removeElement = __webpack_require__(13);
+var removeClass = __webpack_require__(32);
+var isHTMLNode = __webpack_require__(14);
+var isNumber = __webpack_require__(33);
+
+var Spinbox = __webpack_require__(34);
+var Selectbox = __webpack_require__(38);
+var util = __webpack_require__(15);
+var localeTexts = __webpack_require__(40);
+var tmpl = __webpack_require__(41);
+var meridiemTmpl = __webpack_require__(42);
+
+var SELECTOR_HOUR_ELEMENT = '.tui-timepicker-hour';
+var SELECTOR_MINUTE_ELEMENT = '.tui-timepicker-minute';
+var SELECTOR_MERIDIEM_ELEMENT = '.tui-timepicker-meridiem';
+var CLASS_NAME_LEFT_MERIDIEM = 'tui-has-left';
+var CLASS_NAME_HIDDEN = 'tui-hidden';
+var CLASS_NAME_CHECKED = 'tui-timepicker-meridiem-checked';
+var INPUT_TYPE_SPINBOX = 'spinbox';
+var INPUT_TYPE_SELECTBOX = 'selectbox';
+
+var START_NUMBER_OF_TIME = 0;
+var END_NUMBER_OF_MINUTE = 59;
+var END_NUMBER_OF_HOUR = 23;
+var END_NUMBER_OF_HOUR_WITH_MERIDIEM = 12;
+
+/**
+ * Merge default options
+ * @ignore
+ * @param {object} options - options
+ * @returns {object} Merged options
+ */
+var mergeDefaultOptions = function(options) {
+  return extend(
+    {
+      language: 'en',
+      initialHour: 0,
+      initialMinute: 0,
+      showMeridiem: true,
+      inputType: 'selectbox',
+      hourStep: 1,
+      minuteStep: 1,
+      meridiemPosition: 'right',
+      format: 'h:m',
+      disabledHours: [],
+      disabledMinutes: {},
+      usageStatistics: true
+    },
+    options
+  );
+};
+
+/**
+ * @class
+ * @param {string|HTMLElement} container - Container element or selector
+ * @param {Object} [options] - Options for initialization
+ * @param {number} [options.initialHour = 0] - Initial setting value of hour
+ * @param {number} [options.initialMinute = 0] - Initial setting value of minute
+ * @param {number} [options.hourStep = 1] - Step value of hour
+ * @param {number} [options.minuteStep = 1] - Step value of minute
+ * @param {string} [options.inputType = 'selectbox'] - 'selectbox' or 'spinbox'
+ * @param {string} [options.format = 'h:m'] - hour, minute format for display
+ * @param {boolean} [options.showMeridiem = true] - Show meridiem expression?
+ * @param {Array} [options.disabledHours = []] - Registered Hours is disabled.
+ * @param {Object} [options.disabledMinutes = {}] - Registered Minutes of selected hours is disabled.
+ * @param {Object} [options.disabledMinutes.hour] - Key must be hour(number).
+ *                 Value is array which contains only true or false and must be 60 of length
+ * @param {string} [options.meridiemPosition = 'right'] - Set location of the meridiem element.
+ *                 If this option set 'left', the meridiem element is created in front of the hour element.
+ * @param {string} [options.language = 'en'] Set locale texts
+ * @param {Boolean} [options.usageStatistics=true|false] send hostname to google analytics [default value is true]
+ * @example
+ * // ES6
+ * import TimePicker from 'tui-time-picker';
+ *
+ * // CommonJS
+ * const TimePicker = require('tui-time-picker');
+ *
+ * // Browser
+ * const TimePicker = tui.TimePicker;
+ *
+ * const timepicker = new TimePicker('#timepicker-container', {
+ *     initialHour: 15,
+ *     initialMinute: 13,
+ *     inputType: 'selectbox',
+ *     showMeridiem: false
+ * });
+ */
+var TimePicker = defineClass(
+  /** @lends TimePicker.prototype */ {
+    static: {
+      /**
+       * Locale text data
+       * @type {object}
+       * @memberof TimePicker
+       * @static
+       * @example
+       * TimePicker.localeTexts['customKey'] = {
+       *     am: 'a.m.',
+       *     pm: 'p.m.'
+       * };
+       *
+       * const instance = new TimePicker('#timepicker-container', {
+       *     language: 'customKey',
+       * });
+       */
+      localeTexts: localeTexts
+    },
+    init: function(container, options) {
+      options = mergeDefaultOptions(options);
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this.id = util.getUniqueId();
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this.container = isHTMLNode(container) ? container : document.querySelector(container);
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this.element = null;
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this.meridiemElement = null;
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this.amEl = null;
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this.pmEl = null;
+
+      /**
+       * @type {boolean}
+       * @private
+       */
+      this.showMeridiem = options.showMeridiem;
+
+      /**
+       * Meridiem postion
+       * @type {'left'|'right'}
+       * @private
+       */
+      this.meridiemPosition = options.meridiemPosition;
+
+      /**
+       * @type {Spinbox|Selectbox}
+       * @private
+       */
+      this.hourInput = null;
+
+      /**
+       * @type {Spinbox|Selectbox}
+       * @private
+       */
+      this.minuteInput = null;
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this.hour = options.initialHour;
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this.minute = options.initialMinute;
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this.hourStep = options.hourStep;
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this.minuteStep = options.minuteStep;
+
+      /**
+       * @type {Array}
+       * @private
+       */
+      this.disabledHours = options.disabledHours;
+
+      /**
+       * @type {Object}
+       * @private
+       */
+      this.disabledMinutes = options.disabledMinutes;
+
+      /**
+       * TimePicker inputType
+       * @type {'spinbox'|'selectbox'}
+       * @private
+       */
+      this.inputType = options.inputType;
+
+      /**
+       * Locale text for meridiem
+       * @type {string}
+       * @private
+       */
+      this.localeText = localeTexts[options.language];
+
+      /**
+       * Time format for output
+       * @type {string}
+       * @private
+       */
+      this.format = this.getValidTimeFormat(options.format);
+
+      this.render();
+      this.setEvents();
+
+      if (options.usageStatistics) {
+        util.sendHostName();
+      }
+    },
+
+    /**
+     * Set event handlers to selectors, container
+     * @private
+     */
+    setEvents: function() {
+      this.hourInput.on('change', this.onChangeTimeInput, this);
+      this.minuteInput.on('change', this.onChangeTimeInput, this);
+
+      if (this.showMeridiem) {
+        if (this.inputType === INPUT_TYPE_SELECTBOX) {
+          on(this.meridiemElement.querySelector('select'), 'change', this.onChangeMeridiem, this);
+        } else if (this.inputType === INPUT_TYPE_SPINBOX) {
+          on(this.meridiemElement, 'click', this.onChangeMeridiem, this);
+        }
+      }
+    },
+
+    /**
+     * Remove events
+     * @private
+     */
+    removeEvents: function() {
+      this.off();
+
+      this.hourInput.destroy();
+      this.minuteInput.destroy();
+
+      if (this.showMeridiem) {
+        if (this.inputType === INPUT_TYPE_SELECTBOX) {
+          off(this.meridiemElement.querySelector('select'), 'change', this.onChangeMeridiem, this);
+        } else if (this.inputType === INPUT_TYPE_SPINBOX) {
+          off(this.meridiemElement, 'click', this.onChangeMeridiem, this);
+        }
+      }
+    },
+
+    /**
+     * Render element
+     * @private
+     */
+    render: function() {
+      var context = {
+        showMeridiem: this.showMeridiem,
+        isSpinbox: this.inputType === 'spinbox'
+      };
+
+      if (this.showMeridiem) {
+        extend(context, {
+          meridiemElement: this.makeMeridiemHTML()
+        });
+      }
+
+      if (this.element) {
+        removeElement(this.element);
+      }
+      this.container.innerHTML = tmpl(context);
+      this.element = this.container.firstChild;
+
+      this.renderTimeInputs();
+
+      if (this.showMeridiem) {
+        this.setMeridiemElement();
+      }
+    },
+
+    /**
+     * Set meridiem element on timepicker
+     * @private
+     */
+    setMeridiemElement: function() {
+      if (this.meridiemPosition === 'left') {
+        addClass(this.element, CLASS_NAME_LEFT_MERIDIEM);
+      }
+      this.meridiemElement = this.element.querySelector(SELECTOR_MERIDIEM_ELEMENT);
+      this.amEl = this.meridiemElement.querySelector('[value="AM"]');
+      this.pmEl = this.meridiemElement.querySelector('[value="PM"]');
+      this.syncToMeridiemElements();
+    },
+
+    /**
+     * Make html for meridiem element
+     * @returns {HTMLElement} Meridiem element
+     * @private
+     */
+    makeMeridiemHTML: function() {
+      var localeText = this.localeText;
+
+      return meridiemTmpl({
+        am: localeText.am,
+        pm: localeText.pm,
+        radioId: this.id,
+        isSpinbox: this.inputType === 'spinbox'
+      });
+    },
+
+    /**
+     * Render time selectors
+     * @private
+     */
+    renderTimeInputs: function() {
+      var hour = this.hour;
+      var showMeridiem = this.showMeridiem;
+      var hourElement = this.element.querySelector(SELECTOR_HOUR_ELEMENT);
+      var minuteElement = this.element.querySelector(SELECTOR_MINUTE_ELEMENT);
+      var BoxComponent = this.inputType.toLowerCase() === 'selectbox' ? Selectbox : Spinbox;
+      var formatExplode = this.format.split(':');
+      var hourItems = this.getHourItems();
+
+      if (showMeridiem) {
+        hour = util.getMeridiemHour(hour);
+      }
+
+      this.hourInput = new BoxComponent(hourElement, {
+        initialValue: hour,
+        items: hourItems,
+        format: formatExplode[0],
+        disabledItems: this.makeDisabledStatItems(hourItems)
+      });
+
+      this.minuteInput = new BoxComponent(minuteElement, {
+        initialValue: this.minute,
+        items: this.getMinuteItems(),
+        format: formatExplode[1]
+      });
+    },
+
+    makeDisabledStatItems: function(hourItems) {
+      var result = [];
+      var disabledHours = this.disabledHours.slice();
+
+      if (this.showMeridiem) {
+        disabledHours = this.meridiemableTime(disabledHours);
+      }
+
+      forEachArray(hourItems, function(hour) {
+        result.push(inArray(hour, disabledHours) >= 0);
+      });
+
+      return result;
+    },
+
+    meridiemableTime: function(disabledHours) {
+      var diffHour = 0;
+      var startHour = 0;
+      var endHour = 11;
+      var result = [];
+
+      if (this.hour >= 12) {
+        diffHour = 12;
+        startHour = 12;
+        endHour = 23;
+      }
+
+      forEachArray(disabledHours, function(hour) {
+        if (hour >= startHour && hour <= endHour) {
+          result.push(hour - diffHour === 0 ? 12 : hour - diffHour);
+        }
+      });
+
+      return result;
+    },
+
+    /**
+     * Return formatted format.
+     * @param {string} format - format option
+     * @returns {string}
+     * @private
+     */
+    getValidTimeFormat: function(format) {
+      if (!format.match(/^[h]{1,2}:[m]{1,2}$/i)) {
+        return 'h:m';
+      }
+
+      return format.toLowerCase();
+    },
+
+    /**
+     * Initialize meridiem elements
+     * @private
+     */
+    syncToMeridiemElements: function() {
+      var selectedEl = this.hour >= 12 ? this.pmEl : this.amEl;
+      var notSelectedEl = selectedEl === this.pmEl ? this.amEl : this.pmEl;
+
+      selectedEl.setAttribute('selected', true);
+      selectedEl.setAttribute('checked', true);
+      addClass(selectedEl, CLASS_NAME_CHECKED);
+      notSelectedEl.removeAttribute('selected');
+      notSelectedEl.removeAttribute('checked');
+      removeClass(notSelectedEl, CLASS_NAME_CHECKED);
+    },
+
+    /**
+     * Set values in spinboxes from time
+     * @private
+     */
+    syncToInputs: function() {
+      var hour = this.hour;
+      var minute = this.minute;
+
+      if (this.showMeridiem) {
+        hour = util.getMeridiemHour(hour);
+      }
+
+      this.hourInput.setValue(hour, true);
+      this.minuteInput.setValue(minute, true);
+    },
+
+    /**
+     * DOM event handler
+     * @param {Event} ev - Change event on meridiem element
+     * @private
+     */
+    onChangeMeridiem: function(ev) {
+      var hour = this.hour;
+      var target = util.getTarget(ev);
+
+      if (target.value && closest(target, SELECTOR_MERIDIEM_ELEMENT)) {
+        hour = this.to24Hour(target.value === 'PM', hour);
+        this.setTime(hour, this.minute);
+        this.setDisabledHours();
+        this.setDisabledMinutes(hour);
+      }
+    },
+
+    /**
+     * Time change event handler
+     * @private
+     */
+    onChangeTimeInput: function() {
+      var hour = this.hourInput.getValue();
+      var minute = this.minuteInput.getValue();
+      var isPM = this.hour >= 12;
+
+      if (this.showMeridiem) {
+        hour = this.to24Hour(isPM, hour);
+      }
+      this.setTime(hour, minute);
+      this.setDisabledMinutes(hour);
+    },
+
+    /**
+     * 12Hour-expression to 24Hour-expression
+     * @param {boolean} isPM - Is pm?
+     * @param {number} hour - Hour
+     * @returns {number}
+     * @private
+     */
+    to24Hour: function(isPM, hour) {
+      hour %= 12;
+      if (isPM) {
+        hour += 12;
+      }
+
+      return hour;
+    },
+
+    setDisabledHours: function() {
+      var hourItems = this.getHourItems();
+      var disabledItems = this.makeDisabledStatItems(hourItems);
+
+      this.hourInput.setDisabledItems(disabledItems);
+    },
+
+    setDisabledMinutes: function(hour) {
+      var disabledItems;
+      disabledItems = this.disabledMinutes[hour] || [];
+
+      this.minuteInput.setDisabledItems(disabledItems);
+    },
+
+    /**
+     * Get items of hour
+     * @returns {array} Hour item list
+     * @private
+     */
+    getHourItems: function() {
+      var step = this.hourStep;
+
+      return this.showMeridiem ? util.getRangeArr(1, 12, step) : util.getRangeArr(0, 23, step);
+    },
+
+    /**
+     * Get items of minute
+     * @returns {array} Minute item list
+     * @private
+     */
+    getMinuteItems: function() {
+      return util.getRangeArr(0, 59, this.minuteStep);
+    },
+
+    /**
+     * Whether the hour and minute are in valid items or not
+     * @param {number} hour - Hour value
+     * @param {number} minute - Minute value
+     * @returns {boolean} State
+     * @private
+     */
+    validItems: function(hour, minute) {
+      if (!isNumber(hour) || !isNumber(minute)) {
+        return false;
+      }
+
+      if (this.showMeridiem) {
+        hour = util.getMeridiemHour(hour);
+      }
+
+      return inArray(hour, this.getHourItems()) > -1 && inArray(minute, this.getMinuteItems()) > -1;
+    },
+
+    /**
+     * Set step of hour
+     * @param {array} step - Step to create items of hour
+     */
+    setHourStep: function(step) {
+      this.hourStep = step;
+      this.hourInput.fire('changeItems', this.getHourItems());
+    },
+
+    /**
+     * Get step of hour
+     * @returns {number} Step of hour
+     */
+    getHourStep: function() {
+      return this.hourStep;
+    },
+
+    /**
+     * Set step of minute
+     * @param {number} step - Step to create items of minute
+     */
+    setMinuteStep: function(step) {
+      this.minuteStep = step;
+      this.minuteInput.fire('changeItems', this.getMinuteItems());
+    },
+
+    /**
+     * Get step of minute
+     * @returns {number} Step of minute
+     */
+    getMinuteStep: function() {
+      return this.minuteStep;
+    },
+
+    /**
+     * Show time picker element
+     */
+    show: function() {
+      removeClass(this.element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Hide time picker element
+     */
+    hide: function() {
+      addClass(this.element, CLASS_NAME_HIDDEN);
+    },
+
+    /**
+     * Set hour
+     * @param {number} hour for time picker - (0~23)
+     * @returns {boolean} result of set time
+     */
+    setHour: function(hour) {
+      return this.setTime(hour, this.minute);
+    },
+
+    /**
+     * Set minute
+     * @param {number} minute for time picker
+     * @returns {boolean} result of set time
+     */
+    setMinute: function(minute) {
+      return this.setTime(this.hour, minute);
+    },
+
+    /**
+     * Set time
+     * @param {number} hour for time picker - (0~23)
+     * @param {number} minute for time picker
+     * @param {boolean} [silent] if it set true, 'change' event will not be fired.
+     */
+    setTime: function(hour, minute, silent) {
+      if (!this.validItems(hour, minute)) {
+        return;
+      }
+
+      this.hour = hour;
+      this.minute = minute;
+
+      this.syncToInputs();
+      if (this.showMeridiem) {
+        this.syncToMeridiemElements();
+      }
+
+      /**
+       * Change event - TimePicker
+       * @event TimePicker#change
+       * @type {object} event - Event object
+       * @property {number} hour - changed hour
+       * @property {number} minute - changed minute
+       * @example
+       * timepicker.on('change', (e) => {
+       *   console.log(e.hour, e.minute);
+       * });
+       */
+      if (!silent) {
+        this.fire('change', {
+          hour: this.hour,
+          minute: this.minute
+        });
+      }
+    },
+
+    /**
+     * Set selectable range
+     * @param {Object} begin - Contain begin hour and minute of range
+     * @param {number} begin.hour - begin hour of range
+     * @param {number} begin.minute - begin minute of range
+     * @param {Object} [end] - Contain end hour and minute of range
+     * @param {number} end.hour - end hour of range
+     * @param {number} end.minute - end minute of range
+     */
+    setRange: function(begin, end) {
+      var beginHour = begin.hour;
+      var beginMin = begin.minute;
+      var endHour, endMin;
+
+      if (!this.isValidRange(begin, end)) {
+        return;
+      }
+
+      if (end) {
+        endHour = end.hour;
+        endMin = end.minute;
+      }
+
+      this.setRangeHour(beginHour, endHour);
+      this.setRangeMinute(beginHour, beginMin, endHour, endMin);
+
+      this.applyRange(beginHour, beginMin, endHour);
+    },
+
+    /**
+     * Set selectable range on hour
+     * @param {number} beginHour - begin hour of range
+     * @param {number} [endHour] - end hour of range
+     * @private
+     */
+    setRangeHour: function(beginHour, endHour) {
+      var disabledHours = util.getRangeArr(START_NUMBER_OF_TIME, beginHour - 1);
+
+      if (endHour) {
+        disabledHours = disabledHours.concat(util.getRangeArr(endHour + 1, END_NUMBER_OF_HOUR));
+      }
+
+      this.disabledHours = disabledHours.slice();
+    },
+
+    /**
+     * Set selectable range on minute
+     * @param {number} beginHour - begin hour of range
+     * @param {number} beginMin - begin minute of range
+     * @param {number} [endHour] - end hour of range
+     * @param {number} [endMin] - end minute of range
+     * @private
+     */
+    setRangeMinute: function(beginHour, beginMin, endHour, endMin) {
+      var disabledMinRanges = [];
+
+      if (!beginHour && !beginMin) {
+        return;
+      }
+
+      disabledMinRanges.push({
+        begin: START_NUMBER_OF_TIME,
+        end: beginMin
+      });
+
+      if (endHour && endMin) {
+        disabledMinRanges.push({
+          begin: endMin,
+          end: END_NUMBER_OF_MINUTE
+        });
+
+        if (beginHour === endHour) {
+          this.disabledMinutes[beginHour] = util
+            .getDisabledMinuteArr(disabledMinRanges, this.minuteStep)
+            .slice();
+
+          return;
+        }
+
+        this.disabledMinutes[endHour] = util
+          .getDisabledMinuteArr([disabledMinRanges[1]], this.minuteStep)
+          .slice();
+      }
+
+      this.disabledMinutes[beginHour] = util
+        .getDisabledMinuteArr([disabledMinRanges[0]], this.minuteStep)
+        .slice();
+    },
+
+    /**
+     * Apply range
+     * @param {number} beginHour - begin hour of range
+     * @param {number} beginMin - begin minute of range
+     * @param {number} [endHour] - end hour of range
+     * @private
+     */
+    // eslint-disable-next-line complexity
+    applyRange: function(beginHour, beginMin, endHour) {
+      var targetMinuteIndex = Math.ceil(beginMin / this.minuteStep);
+      var targetHour = beginHour;
+      var targetMinute = targetMinuteIndex * this.minuteStep;
+      var diffFromSelectableMinute;
+
+      if (this.isLaterThanSetTime(beginHour, beginMin)) {
+        if (this.disabledMinutes[targetHour][targetMinuteIndex]) {
+          diffFromSelectableMinute =
+            this.disabledMinutes[targetHour]
+              .slice(targetMinuteIndex)
+              .findIndex(function(isMinuteDisabled) {
+                return !isMinuteDisabled;
+              }) * this.minuteStep;
+
+          targetMinute =
+            diffFromSelectableMinute >= 0 ? targetMinute + diffFromSelectableMinute : 60;
+        }
+
+        if ((this.hourStep !== 1 && beginHour % this.hourStep !== 1) || targetMinute >= 60) {
+          targetHour = beginHour + (beginHour % this.hourStep) + 1;
+          targetMinute = 0;
+        }
+
+        this.setTime(targetHour, targetMinute);
+      }
+
+      this.setDisabledHours();
+      this.setDisabledMinutes(this.hour);
+
+      if (this.showMeridiem) {
+        this.syncToMeridiemElements();
+
+        util.setDisabled(this.amEl, beginHour >= END_NUMBER_OF_HOUR_WITH_MERIDIEM);
+        util.setDisabled(this.pmEl, endHour < END_NUMBER_OF_HOUR_WITH_MERIDIEM);
+      }
+    },
+
+    /**
+     * Reset minute selectable range
+     */
+    resetMinuteRange: function() {
+      var i;
+
+      this.disabledMinutes = {};
+
+      for (i = 0; i <= END_NUMBER_OF_HOUR; i += 1) {
+        this.setDisabledMinutes(this.hour);
+      }
+    },
+
+    /**
+     * Whether the given range a valid range
+     * @param {Object} begin - Contain begin hour and minute of range
+     * @param {number} begin.hour - begin hour of range
+     * @param {number} begin.minute - begin minute of range
+     * @param {Object} [end] - Contain end hour and minute of range
+     * @param {number} end.hour - end hour of range
+     * @param {number} end.minute - end minute of range
+     * @returns {boolean} result of range validation
+     * @private
+     */
+    isValidRange: function(begin, end) {
+      var beginHour = begin.hour;
+      var beginMin = begin.minute;
+      var endHour, endMin;
+
+      if (!this.isValidTime(beginHour, beginMin)) {
+        return false;
+      }
+
+      if (!end) {
+        return true;
+      }
+
+      endHour = end.hour;
+      endMin = end.minute;
+
+      return this.isValidTime(endHour, endMin) && this.compareTimes(begin, end) > 0;
+    },
+
+    /**
+     * Whether the given time a valid time
+     * @param {number} hour - hour for validation
+     * @param {number} minute - minute for validation
+     * @returns {boolean} result of time validation
+     * @private
+     */
+    isValidTime: function(hour, minute) {
+      return (
+        hour >= START_NUMBER_OF_TIME &&
+        hour <= END_NUMBER_OF_HOUR &&
+        minute >= START_NUMBER_OF_TIME &&
+        minute <= END_NUMBER_OF_MINUTE
+      );
+    },
+
+    /**
+     * Compare given time with set time
+     * @param {number} hour - given hour
+     * @param {number} minute - given minute
+     * @returns {boolean} result of compare
+     * @private
+     */
+    isLaterThanSetTime: function(hour, minute) {
+      return hour > this.hour || (hour === this.hour && minute > this.minute);
+    },
+
+    /**
+     * Compare two times
+     * it returns
+     *  0: when begin equals end
+     *  positive: when end later than begin
+     *  negative: when begin later than end
+     * @param {Object} begin - Contain begin hour and minute of range
+     * @param {number} begin.hour - begin hour of range
+     * @param {number} begin.minute - begin minute of range
+     * @param {Object} end - Contain end hour and minute of range
+     * @param {number} end.hour - end hour of range
+     * @param {number} end.minute - end minute of range
+     * @returns {boolean} result of range validation
+     * @private
+     */
+    compareTimes: function(begin, end) {
+      var first = new Date(0);
+      var second = new Date(0);
+
+      first.setHours(begin.hour, begin.minute);
+      second.setHours(end.hour, end.minute);
+
+      return second.getTime() - first.getTime();
+    },
+
+    /**
+     * Get hour
+     * @returns {number} hour - (0~23)
+     */
+    getHour: function() {
+      return this.hour;
+    },
+
+    /**
+     * Get minute
+     * @returns {number} minute
+     */
+    getMinute: function() {
+      return this.minute;
+    },
+
+    /**
+     * Change locale text of meridiem by language code
+     * @param {string} language - Language code
+     */
+    changeLanguage: function(language) {
+      this.localeText = localeTexts[language];
+      this.render();
+    },
+
+    /**
+     * Destroy
+     */
+    destroy: function() {
+      this.removeEvents();
+      removeElement(this.element);
+
+      // eslint-disable-next-line max-len
+      this.container = this.showMeridiem = this.hourInput = this.minuteInput = this.hour = this.minute = this.inputType = this.element = this.meridiemElement = this.amEl = this.pmEl = null;
+    }
+  }
+);
+
+CustomEvents.mixin(TimePicker);
+module.exports = TimePicker;
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is existing or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(5);
+var isNull = __webpack_require__(24);
+
+/**
+ * Check whether the given variable is existing or not.
+ * If the given variable is not null and not undefined, returns true.
+ * @param {*} param - Target for checking
+ * @returns {boolean} Is existy?
+ * @memberof module:type
+ * @example
+ * var isExisty = require('tui-code-snippet/type/isExisty'); // node, commonjs
+ *
+ * isExisty(''); //true
+ * isExisty(0); //true
+ * isExisty([]); //true
+ * isExisty({}); //true
+ * isExisty(null); //false
+ * isExisty(undefined); //false
+*/
+function isExisty(param) {
+  return !isUndefined(param) && !isNull(param);
+}
+
+module.exports = isExisty;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is null or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is null or not.
+ * If the given variable(arguments[0]) is null, returns true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is null?
+ * @memberof module:type
+ */
+function isNull(obj) {
+  return obj === null;
+}
+
+module.exports = isNull;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is an object or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is an object or not.
+ * If the given variable is an object, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is object?
+ * @memberof module:type
+ */
+function isObject(obj) {
+  return obj === Object(obj);
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a function or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a function or not.
+ * If the given variable is a function, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is function?
+ * @memberof module:type
+ */
+function isFunction(obj) {
+  return obj instanceof Function;
+}
+
+module.exports = isFunction;
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Provide a simple inheritance in prototype-oriented.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var createObject = __webpack_require__(28);
+
+/**
+ * Provide a simple inheritance in prototype-oriented.
+ * Caution :
+ *  Don't overwrite the prototype of child constructor.
+ *
+ * @param {function} subType Child constructor
+ * @param {function} superType Parent constructor
+ * @memberof module:inheritance
+ * @example
+ * var inherit = require('tui-code-snippet/inheritance/inherit'); // node, commonjs
+ *
+ * // Parent constructor
+ * function Animal(leg) {
+ *     this.leg = leg;
+ * }
+ * Animal.prototype.growl = function() {
+ *     // ...
+ * };
+ *
+ * // Child constructor
+ * function Person(name) {
+ *     this.name = name;
+ * }
+ *
+ * // Inheritance
+ * inherit(Person, Animal);
+ *
+ * // After this inheritance, please use only the extending of property.
+ * // Do not overwrite prototype.
+ * Person.prototype.walk = function(direction) {
+ *     // ...
+ * };
+ */
+function inherit(subType, superType) {
+  var prototype = createObject(superType.prototype);
+  prototype.constructor = subType;
+  subType.prototype = prototype;
+}
+
+module.exports = inherit;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Create a new object with the specified prototype object and properties.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * @module inheritance
+ */
+
+/**
+ * Create a new object with the specified prototype object and properties.
+ * @param {Object} obj This object will be a prototype of the newly-created object.
+ * @returns {Object}
+ * @memberof module:inheritance
+ */
+function createObject(obj) {
+  function F() {} // eslint-disable-line require-jsdoc
+  F.prototype = obj;
+
+  return new F();
+}
+
+module.exports = createObject;
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Add css class to element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEach = __webpack_require__(4);
+var inArray = __webpack_require__(0);
+var getClass = __webpack_require__(18);
+var setClassName = __webpack_require__(19);
+
+/**
+ * domUtil module
+ * @module domUtil
+ */
+
+/**
+ * Add css class to element
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {...string} cssClass - css classes to add
+ * @memberof module:domUtil
+ */
+function addClass(element) {
+  var cssClass = Array.prototype.slice.call(arguments, 1);
+  var classList = element.classList;
+  var newClass = [];
+  var origin;
+
+  if (classList) {
+    forEach(cssClass, function(name) {
+      element.classList.add(name);
+    });
+
+    return;
+  }
+
+  origin = getClass(element);
+
+  if (origin) {
+    cssClass = [].concat(origin.split(/\s+/), cssClass);
+  }
+
+  forEach(cssClass, function(cls) {
+    if (inArray(cls, newClass) < 0) {
+      newClass.push(cls);
+    }
+  });
+
+  setClassName(element, newClass);
+}
+
+module.exports = addClass;
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check element match selector
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var inArray = __webpack_require__(0);
+var toArray = __webpack_require__(31);
+
+var elProto = Element.prototype;
+var matchSelector = elProto.matches ||
+    elProto.webkitMatchesSelector ||
+    elProto.mozMatchesSelector ||
+    elProto.msMatchesSelector ||
+    function(selector) {
+      var doc = this.document || this.ownerDocument;
+
+      return inArray(this, toArray(doc.querySelectorAll(selector))) > -1;
+    };
+
+/**
+ * Check element match selector
+ * @param {HTMLElement} element - element to check
+ * @param {string} selector - selector to check
+ * @returns {boolean} is selector matched to element?
+ * @memberof module:domUtil
+ */
+function matches(element, selector) {
+  return matchSelector.call(element, selector);
+}
+
+module.exports = matches;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Transform the Array-like object to Array.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachArray = __webpack_require__(1);
+
+/**
+ * Transform the Array-like object to Array.
+ * In low IE (below 8), Array.prototype.slice.call is not perfect. So, try-catch statement is used.
+ * @param {*} arrayLike Array-like object
+ * @returns {Array} Array
+ * @memberof module:collection
+ * @example
+ * var toArray = require('tui-code-snippet/collection/toArray'); // node, commonjs
+ *
+ * var arrayLike = {
+ *     0: 'one',
+ *     1: 'two',
+ *     2: 'three',
+ *     3: 'four',
+ *     length: 4
+ * };
+ * var result = toArray(arrayLike);
+ *
+ * alert(result instanceof Array); // true
+ * alert(result); // one,two,three,four
+ */
+function toArray(arrayLike) {
+  var arr;
+  try {
+    arr = Array.prototype.slice.call(arrayLike);
+  } catch (e) {
+    arr = [];
+    forEachArray(arrayLike, function(value) {
+      arr.push(value);
+    });
+  }
+
+  return arr;
+}
+
+module.exports = toArray;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Remove css class from element
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachArray = __webpack_require__(1);
+var inArray = __webpack_require__(0);
+var getClass = __webpack_require__(18);
+var setClassName = __webpack_require__(19);
+
+/**
+ * Remove css class from element
+ * @param {(HTMLElement|SVGElement)} element - target element
+ * @param {...string} cssClass - css classes to remove
+ * @memberof module:domUtil
+ */
+function removeClass(element) {
+  var cssClass = Array.prototype.slice.call(arguments, 1);
+  var classList = element.classList;
+  var origin, newClass;
+
+  if (classList) {
+    forEachArray(cssClass, function(name) {
+      classList.remove(name);
+    });
+
+    return;
+  }
+
+  origin = getClass(element).split(/\s+/);
+  newClass = [];
+  forEachArray(origin, function(name) {
+    if (inArray(name, cssClass) < 0) {
+      newClass.push(name);
+    }
+  });
+
+  setClassName(element, newClass);
+}
+
+module.exports = removeClass;
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Check whether the given variable is a number or not.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+/**
+ * Check whether the given variable is a number or not.
+ * If the given variable is a number, return true.
+ * @param {*} obj - Target for checking
+ * @returns {boolean} Is number?
+ * @memberof module:type
+ */
+function isNumber(obj) {
+  return typeof obj === 'number' || obj instanceof Number;
+}
+
+module.exports = isNumber;
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var inArray = __webpack_require__(0);
+var forEachArray = __webpack_require__(1);
+var CustomEvents = __webpack_require__(8);
+var defineClass = __webpack_require__(9);
+var extend = __webpack_require__(2);
+var on = __webpack_require__(10);
+var off = __webpack_require__(11);
+var closest = __webpack_require__(12);
+var removeElement = __webpack_require__(13);
+var isHTMLNode = __webpack_require__(14);
+
+var util = __webpack_require__(15);
+var tmpl = __webpack_require__(37);
+
+var SELECTOR_UP_BUTTON = '.tui-timepicker-btn-up';
+var SELECTOR_DOWN_BUTTON = '.tui-timepicker-btn-down';
+
+/**
+ * @class
+ * @ignore
+ * @param {String|HTMLElement} container - Container of spinbox or selector
+ * @param {Object} [options] - Options for initialization
+ * @param {number} [options.initialValue] - initial setting value
+ * @param {Array.<number>} items - Items
+ */
+var Spinbox = defineClass(
+  /** @lends Spinbox.prototype */ {
+    init: function(container, options) {
+      options = extend(
+        {
+          items: []
+        },
+        options
+      );
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = isHTMLNode(container) ? container : document.querySelector(container);
+
+      /**
+       * Spinbox element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._element = null;
+
+      /**
+       * @type {HTMLElement}
+       * @private
+       */
+      this._inputElement = null;
+
+      /**
+       * Spinbox value items
+       * @type {Array.<number>}
+       * @private
+       */
+      this._items = options.items;
+
+      /**
+       * Selectbox disabled items info
+       * @type {Array.<number>}
+       * @private
+       */
+      this._disabledItems = options.disabledItems || [];
+
+      /**
+       * @type {number}
+       * @private
+       */
+      this._selectedIndex = Math.max(0, inArray(options.initialValue, this._items));
+
+      /**
+       * Time format for output
+       * @type {string}
+       * @private
+       */
+      this._format = options.format;
+
+      this._render();
+      this._setEvents();
+    },
+
+    /**
+     * Render spinbox
+     * @private
+     */
+    _render: function() {
+      var index = inArray(this.getValue(), this._items);
+      var context;
+
+      if (this._disabledItems[index]) {
+        this._selectedIndex = this._findEnabledIndex();
+      }
+      context = {
+        maxLength: this._getMaxLength(),
+        initialValue: this.getValue(),
+        format: this._format,
+        formatTime: util.formatTime
+      };
+
+      this._container.innerHTML = tmpl(context);
+      this._element = this._container.firstChild;
+      this._inputElement = this._element.querySelector('input');
+    },
+
+    /**
+     * Find the index of the enabled item
+     * @returns {number} - find selected index
+     * @private
+     */
+    _findEnabledIndex: function() {
+      return inArray(false, this._disabledItems);
+    },
+
+    /**
+     * Returns maxlength of value
+     * @returns {number}
+     * @private
+     */
+    _getMaxLength: function() {
+      var lengths = [];
+
+      forEachArray(this._items, function(item) {
+        lengths.push(String(item).length);
+      });
+
+      return Math.max.apply(null, lengths);
+    },
+
+    /**
+     * Set disabledItems
+     * @param {object} disabledItems - disabled status of items
+     */
+    setDisabledItems: function(disabledItems) {
+      this._disabledItems = disabledItems;
+      this._changeToInputValue();
+    },
+
+    /**
+     * Assign default events to up/down button
+     * @private
+     */
+    _setEvents: function() {
+      on(this._container, 'click', this._onClickHandler, this);
+      on(this._inputElement, 'keydown', this._onKeydownInputElement, this);
+      on(this._inputElement, 'change', this._onChangeHandler, this);
+
+      this.on(
+        'changeItems',
+        function(items) {
+          this._items = items;
+          this._render();
+        },
+        this
+      );
+    },
+
+    /**
+     * Remove events to up/down button
+     * @private
+     */
+    _removeEvents: function() {
+      this.off();
+
+      off(this._container, 'click', this._onClickHandler, this);
+      off(this._inputElement, 'keydown', this._onKeydownInputElement, this);
+      off(this._inputElement, 'change', this._onChangeHandler, this);
+    },
+
+    /**
+     * Click event handler
+     * @param {Event} ev - Change event on up/down buttons.
+     */
+    _onClickHandler: function(ev) {
+      var target = util.getTarget(ev);
+
+      if (closest(target, SELECTOR_DOWN_BUTTON)) {
+        this._setNextValue(true);
+      } else if (closest(target, SELECTOR_UP_BUTTON)) {
+        this._setNextValue(false);
+      }
+    },
+
+    /**
+     * Set input value
+     * @param {boolean} isDown - From down-action?
+     * @private
+     */
+    _setNextValue: function(isDown) {
+      var index = this._selectedIndex;
+
+      if (isDown) {
+        index = index ? index - 1 : this._items.length - 1;
+      } else {
+        index = index < this._items.length - 1 ? index + 1 : 0;
+      }
+
+      if (this._disabledItems[index]) {
+        this._selectedIndex = index;
+        this._setNextValue(isDown);
+      } else {
+        this.setValue(this._items[index]);
+      }
+    },
+
+    /**
+     * DOM(Input element) Keydown Event handler
+     * @param {Event} ev event-object
+     * @private
+     */
+    _onKeydownInputElement: function(ev) {
+      var keyCode = ev.which || ev.keyCode;
+      var isDown;
+
+      if (closest(util.getTarget(ev), 'input')) {
+        switch (keyCode) {
+          case 38:
+            isDown = false;
+            break;
+          case 40:
+            isDown = true;
+            break;
+          default:
+            return;
+        }
+
+        this._setNextValue(isDown);
+      }
+    },
+
+    /**
+     * DOM(Input element) Change Event handler
+     * @param {Event} ev Change event on an input element.
+     * @private
+     */
+    _onChangeHandler: function(ev) {
+      if (closest(util.getTarget(ev), 'input')) {
+        this._changeToInputValue();
+      }
+    },
+
+    /**
+     * Change value to input-box if it is valid.
+     * @private
+     * @param {boolean} silent prevents firing 'change' event if it is true.
+     */
+    _changeToInputValue: function(silent) {
+      var newValue = Number(this._inputElement.value);
+      var newIndex = inArray(newValue, this._items);
+
+      if (this._disabledItems[newIndex]) {
+        newIndex = this._findEnabledIndex();
+        newValue = this._items[newIndex];
+      } else if (newIndex === this._selectedIndex) {
+        return;
+      }
+
+      if (newIndex === -1) {
+        this.setValue(this._items[this._selectedIndex], silent);
+      } else {
+        this._selectedIndex = newIndex;
+
+        if (!silent) {
+          this.fire('change', {
+            value: newValue
+          });
+        }
+      }
+    },
+
+    /**
+     * Set value to input-box.
+     * @param {number} value - Value
+     * @param {boolean} silent - prevents firing 'change' event if it is true.
+     */
+    setValue: function(value, silent) {
+      this._inputElement.value = util.formatTime(value, this._format);
+      this._changeToInputValue(silent);
+    },
+
+    /**
+     * Returns current value
+     * @returns {number}
+     */
+    getValue: function() {
+      return this._items[this._selectedIndex];
+    },
+
+    /**
+     * Destory
+     */
+    destroy: function() {
+      this._removeEvents();
+      removeElement(this._element);
+      this._container = this._element = this._inputElement = this._items = this._selectedIndex = null;
+    }
+  }
+);
+
+CustomEvents.mixin(Spinbox);
+module.exports = Spinbox;
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Send hostname on DOMContentLoaded.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var isUndefined = __webpack_require__(5);
+var imagePing = __webpack_require__(36);
+
+var ms7days = 7 * 24 * 60 * 60 * 1000;
+
+/**
+ * Check if the date has passed 7 days
+ * @param {number} date - milliseconds
+ * @returns {boolean}
+ * @private
+ */
+function isExpired(date) {
+  var now = new Date().getTime();
+
+  return now - date > ms7days;
+}
+
+/**
+ * Send hostname on DOMContentLoaded.
+ * To prevent hostname set tui.usageStatistics to false.
+ * @param {string} appName - application name
+ * @param {string} trackingId - GA tracking ID
+ * @ignore
+ */
+function sendHostname(appName, trackingId) {
+  var url = 'https://www.google-analytics.com/collect';
+  var hostname = location.hostname;
+  var hitType = 'event';
+  var eventCategory = 'use';
+  var applicationKeyForStorage = 'TOAST UI ' + appName + ' for ' + hostname + ': Statistics';
+  var date = window.localStorage.getItem(applicationKeyForStorage);
+
+  // skip if the flag is defined and is set to false explicitly
+  if (!isUndefined(window.tui) && window.tui.usageStatistics === false) {
+    return;
+  }
+
+  // skip if not pass seven days old
+  if (date && !isExpired(date)) {
+    return;
+  }
+
+  window.localStorage.setItem(applicationKeyForStorage, new Date().getTime());
+
+  setTimeout(function() {
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      imagePing(url, {
+        v: 1,
+        t: hitType,
+        tid: trackingId,
+        cid: hostname,
+        dp: hostname,
+        dh: appName,
+        el: appName,
+        ec: eventCategory
+      });
+    }
+  }, 1000);
+}
+
+module.exports = sendHostname;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @fileoverview Request image ping.
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ */
+
+
+
+var forEachOwnProperties = __webpack_require__(16);
+
+/**
+ * @module request
+ */
+
+/**
+ * Request image ping.
+ * @param {String} url url for ping request
+ * @param {Object} trackingInfo infos for make query string
+ * @returns {HTMLElement}
+ * @memberof module:request
+ * @example
+ * var imagePing = require('tui-code-snippet/request/imagePing'); // node, commonjs
+ *
+ * imagePing('https://www.google-analytics.com/collect', {
+ *     v: 1,
+ *     t: 'event',
+ *     tid: 'trackingid',
+ *     cid: 'cid',
+ *     dp: 'dp',
+ *     dh: 'dh'
+ * });
+ */
+function imagePing(url, trackingInfo) {
+  var trackingElement = document.createElement('img');
+  var queryString = '';
+  forEachOwnProperties(trackingInfo, function(value, key) {
+    queryString += '&' + key + '=' + value;
+  });
+  queryString = queryString.substring(1);
+
+  trackingElement.src = url + '?' + queryString;
+
+  trackingElement.style.display = 'none';
+  document.body.appendChild(trackingElement);
+  document.body.removeChild(trackingElement);
+
+  return trackingElement;
+}
+
+module.exports = imagePing;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(7);
+
+module.exports = function(context) {
+  var source =
+      '<div class="tui-timepicker-btn-area">'
+    + '  <input type="text" class="tui-timepicker-spinbox-input"'
+    + '        maxlength="{{maxLength}}"'
+    + '        size="{{maxLength}}"'
+    + '        value="{{formatTime initialValue format}}"'
+    + '        aria-label="TimePicker spinbox value">'
+    + '  <button type="button" class="tui-timepicker-btn tui-timepicker-btn-up">'
+    + '    <span class="tui-ico-t-btn">Increase</span>'
+    + '  </button>'
+    + '  <button type="button" class="tui-timepicker-btn tui-timepicker-btn-down">'
+    + '    <span class="tui-ico-t-btn">Decrease</span>'
+    + '  </button>'
+    + '</div>';
+
+  return template(source, context);
+};
+
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var inArray = __webpack_require__(0);
+var CustomEvents = __webpack_require__(8);
+var defineClass = __webpack_require__(9);
+var extend = __webpack_require__(2);
+var on = __webpack_require__(10);
+var off = __webpack_require__(11);
+var closest = __webpack_require__(12);
+var removeElement = __webpack_require__(13);
+var isHTMLNode = __webpack_require__(14);
+
+var util = __webpack_require__(15);
+var tmpl = __webpack_require__(39);
+
+/**
+ * @class
+ * @ignore
+ * @param {string|HTMLElement} container - Container element or selector
+ * @param {object} options - Options
+ * @param {Array.<number>} options.items - Items
+ * @param {number} options.initialValue - Initial value
+ */
+var Selectbox = defineClass(
+  /** @lends Selectbox.prototype */ {
+    init: function(container, options) {
+      options = extend(
+        {
+          items: []
+        },
+        options
+      );
+
+      /**
+       * Container element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._container = isHTMLNode(container) ? container : document.querySelector(container);
+
+      /**
+       * Selectbox items
+       * @type {Array.<number>}
+       * @private
+       */
+      this._items = options.items || [];
+
+      /**
+       * Selectbox disabled items info
+       * @type {Array.<number>}
+       * @private
+       */
+      this._disabledItems = options.disabledItems || [];
+
+      /**
+       * Selected index
+       * @type {number}
+       * @private
+       */
+      this._selectedIndex = Math.max(0, inArray(options.initialValue, this._items));
+
+      /**
+       * Time format for output
+       * @type {string}
+       * @private
+       */
+      this._format = options.format;
+
+      /**
+       * Select element
+       * @type {HTMLElement}
+       * @private
+       */
+      this._element = null;
+
+      this._render();
+      this._setEvents();
+    },
+
+    /**
+     * Render selectbox
+     * @private
+     */
+    _render: function() {
+      var context;
+
+      this._changeEnabledIndex();
+      context = {
+        items: this._items,
+        format: this._format,
+        initialValue: this.getValue(),
+        disabledItems: this._disabledItems,
+        formatTime: util.formatTime,
+        equals: function(a, b) {
+          return a === b;
+        }
+      };
+
+      if (this._element) {
+        this._removeElement();
+      }
+
+      this._container.innerHTML = tmpl(context);
+      this._element = this._container.firstChild;
+      on(this._element, 'change', this._onChangeHandler, this);
+    },
+
+    /**
+     * Change the index of the enabled item
+     * @private
+     */
+    _changeEnabledIndex: function() {
+      var index = inArray(this.getValue(), this._items);
+      if (this._disabledItems[index]) {
+        this._selectedIndex = inArray(false, this._disabledItems);
+      }
+    },
+
+    /**
+     * Set disabledItems
+     * @param {object} disabledItems - disabled status of items
+     * @private
+     */
+    setDisabledItems: function(disabledItems) {
+      this._disabledItems = disabledItems;
+      this._render();
+    },
+
+    /**
+     * Set events
+     * @private
+     */
+    _setEvents: function() {
+      this.on(
+        'changeItems',
+        function(items) {
+          this._items = items;
+          this._render();
+        },
+        this
+      );
+    },
+
+    /**
+     * Remove events
+     * @private
+     */
+    _removeEvents: function() {
+      this.off();
+    },
+
+    /**
+     * Remove element
+     * @private
+     */
+    _removeElement: function() {
+      off(this._element, 'change', this._onChangeHandler, this);
+      removeElement(this._element);
+    },
+
+    /**
+     * Change event handler
+     * @param {Event} ev Change event on a select element.
+     * @private
+     */
+    _onChangeHandler: function(ev) {
+      if (closest(util.getTarget(ev), 'select')) {
+        this._setNewValue();
+      }
+    },
+
+    /**
+     * Set new value
+     * @private
+     * @param {boolean} silent prevents firing 'change' event if it is true.
+     */
+    _setNewValue: function(silent) {
+      var newValue = Number(this._element.value);
+      this._selectedIndex = inArray(newValue, this._items);
+      if (!silent) {
+        this.fire('change', {
+          value: newValue
+        });
+      }
+    },
+
+    /**
+     * Returns current value
+     * @returns {number}
+     */
+    getValue: function() {
+      return this._items[this._selectedIndex];
+    },
+
+    /**
+     * Set value
+     * @param {number} value - New value
+     * @param {boolean} silent - prevents firing 'change' event if it is true.
+     */
+    setValue: function(value, silent) {
+      var newIndex = inArray(value, this._items);
+
+      if (newIndex > -1 && newIndex !== this._selectedIndex) {
+        this._selectedIndex = newIndex;
+        this._element.value = value;
+        this._setNewValue(silent);
+      }
+    },
+
+    /**
+     * Destory
+     */
+    destroy: function() {
+      this._removeEvents();
+      this._removeElement();
+      this._container = this._items = this._selectedIndex = this._element = null;
+    }
+  }
+);
+
+CustomEvents.mixin(Selectbox);
+module.exports = Selectbox;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(7);
+
+module.exports = function(context) {
+  var source =
+      '<select class="tui-timepicker-select" aria-label="Time">'
+    + '  {{each items}}'
+    + '    {{if equals initialValue @this}}'
+    + '      <option value="{{@this}}" selected {{if disabledItems[@index]}}disabled{{/if}}>{{formatTime @this format}}</option>'
+    + '    {{else}}'
+    + '      <option value="{{@this}}" {{if disabledItems[@index]}}disabled{{/if}}>{{formatTime @this format}}</option>'
+    + '    {{/if}}'
+    + '  {{/each}}'
+    + '</select>';
+
+  return template(source, context);
+};
+
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  en: {
+    am: 'AM',
+    pm: 'PM'
+  },
+  ko: {
+    am: '오전',
+    pm: '오후'
+  }
+};
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(7);
+
+module.exports = function(context) {
+  var source =
+      '<div class="tui-timepicker">'
+    + '  <div class="tui-timepicker-body">'
+    + '    <div class="tui-timepicker-row">'
+    + '      {{if isSpinbox}}'
+    + '        <div class="tui-timepicker-column tui-timepicker-spinbox tui-timepicker-hour"></div>'
+    + '        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>'
+    + '        <div class="tui-timepicker-column tui-timepicker-spinbox tui-timepicker-minute"></div>'
+    + '        {{if showMeridiem}}'
+    + '          {{meridiemElement}}'
+    + '        {{/if}}'
+    + '      {{else}}'
+    + '        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-hour"></div>'
+    + '        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>'
+    + '        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-minute"></div>'
+    + '        {{if showMeridiem}}'
+    + '          {{meridiemElement}}'
+    + '        {{/if}}'
+    + '      {{/if}}'
+    + '    </div>'
+    + '  </div>'
+    + '</div>';
+
+  return template(source, context);
+};
+
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var template = __webpack_require__(7);
+
+module.exports = function(context) {
+  var source =
+      '{{if isSpinbox}}'
+    + '  <div class="tui-timepicker-column tui-timepicker-checkbox tui-timepicker-meridiem">'
+    + '    <div class="tui-timepicker-check-area">'
+    + '      <ul class="tui-timepicker-check-lst">'
+    + '        <li class="tui-timepicker-check">'
+    + '          <div class="tui-timepicker-radio">'
+    + '            <input type="radio"'
+    + '                  name="optionsRadios-{{radioId}}"'
+    + '                  value="AM"'
+    + '                  class="tui-timepicker-radio-am"'
+    + '                  id="tui-timepicker-radio-am-{{radioId}}">'
+    + '            <label for="tui-timepicker-radio-am-{{radioId}}" class="tui-timepicker-radio-label">'
+    + '              <span class="tui-timepicker-input-radio"></span>{{am}}'
+    + '            </label>'
+    + '          </div>'
+    + '        </li>'
+    + '        <li class="tui-timepicker-check">'
+    + '          <div class="tui-timepicker-radio">'
+    + '            <input type="radio"'
+    + '                  name="optionsRadios-{{radioId}}"'
+    + '                  value="PM"'
+    + '                  class="tui-timepicker-radio-pm"'
+    + '                  id="tui-timepicker-radio-pm-{{radioId}}">'
+    + '            <label for="tui-timepicker-radio-pm-{{radioId}}" class="tui-timepicker-radio-label">'
+    + '              <span class="tui-timepicker-input-radio"></span>{{pm}}'
+    + '            </label>'
+    + '          </div>'
+    + '        </li>'
+    + '      </ul>'
+    + '    </div>'
+    + '  </div>'
+    + '{{else}}'
+    + '  <div class="tui-timepicker-column tui-timepicker-selectbox tui-is-add-picker tui-timepicker-meridiem">'
+    + '    <select class="tui-timepicker-select" aria-label="AM/PM">'
+    + '      <option value="AM">{{am}}</option>'
+    + '      <option value="PM">{{pm}}</option>'
+    + '    </select>'
+    + '  </div>'
+    + '{{/if}}';
+
+  return template(source, context);
+};
+
+
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
+/***/ "./resources/assets/backend/js/curriculum-calendar.js":
+/*!************************************************************!*\
+  !*** ./resources/assets/backend/js/curriculum-calendar.js ***!
+  \************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _toast_ui_calendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @toast-ui/calendar */ "./node_modules/@toast-ui/calendar/dist/toastui-calendar.mjs");
+
+window.addEventListener('DOMContentLoaded', function () {
+  var calendarEl = document.getElementById('curriculum-calendar');
+  if (calendarEl) {
+    var calendar = new _toast_ui_calendar__WEBPACK_IMPORTED_MODULE_0__["default"](calendarEl, {
+      defaultView: 'week',
+      week: {
+        taskView: false,
+        eventView: ['time'],
+        startDayOfWeek: 1,
+        hourStart: 6,
+        hourEnd: 22,
+        dayNames: ['អាទិត្យ', 'ច័ន្ទ', 'អង្គារ', 'ពុធ', 'ព្រហស្បតិ៍', 'សុក្រ', 'សៅរ៍'],
+        currentTimeIndicator: false
+      }
+    });
+    calendar.render();
+    initCurriculumCalendar(calendar);
+  } else {
+    console.error('Calendar container not found!');
+  }
+});
+
+/***/ }),
+
+/***/ 4:
+/*!******************************************************************!*\
+  !*** multi ./resources/assets/backend/js/curriculum-calendar.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! D:\Project\HelpDeskV7\resources\assets\backend\js\curriculum-calendar.js */"./resources/assets/backend/js/curriculum-calendar.js");
+
+
+/***/ })
+
+},[[4,"/js/manifest"]]]);
