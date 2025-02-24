@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group has-feedback">
-                                <label for="id_card"> {{ __('ID No.') }} <span class="text-danger">*</span></label>
+                                <label for="id_card"> {{ __('Staff ID') }} <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="id_card" placeholder="id_card"
                                     value="@if ($contact) {{ $contact->id_card }}@else{{ old('id_card') }} @endif"
                                     required minlength="3" maxlength="10">

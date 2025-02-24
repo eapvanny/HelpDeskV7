@@ -276,19 +276,39 @@
                         </div>
                         <div class="col-md-8"> 
                             <div class="ticket-details">
-                                <p><strong>{{__('Department')}}:</strong> <span id="modalDepartment"></span></p>
-                                <p><strong>{{__('Employee Name')}}:</strong> <span id="modalEmployeeName"></span></p>
-                                <p><strong>{{__('Staff ID')}}:</strong> <span id="modalIdCard"></span></p>
-                                <p><strong>{{__('Subject')}}:</strong> <span id="modalSubject"></span></p>
-                                <p><strong>{{__('Description')}}:</strong> <span id="modalDescription"></span></p>
-                                <p><strong>{{__('Status')}}:</strong> <span id="modalStatus"></span></p>
+                                <ul class="list-group list-group-unbordered profile-log">
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa fa-landmark-flag"></i> {{ __('Department') }} :</strong>
+                                        <span id="modalDepartment"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa fa-user"></i> {{__('Employee Name')}}:</strong>
+                                        <span id="modalEmployeeName"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa-solid fa-id-card"></i> {{__('Staff ID')}}:</strong> 
+                                        <span id="modalIdCard"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa icon-subject"></i> {{__('Subject')}}:</strong> 
+                                        <span id="modalSubject"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa-solid fa-paragraph"></i> {{__('Description')}}:</strong> 
+                                        <span id="modalDescription"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa fa-sliders"></i> {{__('Status')}}:</strong> 
+                                        <span id="modalStatus"></span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                {{-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -26,7 +26,7 @@ class TicketController extends Controller
     {
         $query = Ticket::with(['department', 'user']);
         $is_filter = false;
-        if (auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && auth()->user()->role_id !== AppHelper::USER_ADMIN) {
+        if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE) {
             $query->where('user_id', auth()->id());
         }
 
@@ -80,26 +80,26 @@ class TicketController extends Controller
                     return AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
                 })
                 ->addColumn('request_status', function ($data) {
-                    $isNotSuperAdminOrAdmin = auth()->check() && 
+                    $isNotSuperAdminOrAdminSupport = auth()->check() && 
                                               auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && 
-                                              auth()->user()->role_id !== AppHelper::USER_ADMIN;
+                                              auth()->user()->role_id !== AppHelper::USER_ADMIN_SUPPORT;
                     $baseStyle = 'padding: 4px 5px; border-radius: 3px; color: white;';
                     $disabledStyle = $baseStyle . ' cursor: not-allowed;';
                     $clickableStyle = $baseStyle . ' cursor: pointer;';
                 
                     if ($data->request_status === 1) { 
-                        if ($isNotSuperAdminOrAdmin) {
+                        if ($isNotSuperAdminOrAdminSupport) {
                             return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">Accepted</span>';
                         }
                         return '<div class="btn-group" style="gap: 5px;">' .
                             '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">Accepted</span>' .
                             '</div>';
                     } elseif ($data->request_status === 0) {
-                        $style = $isNotSuperAdminOrAdmin ? $disabledStyle : $clickableStyle;
-                        $class = $isNotSuperAdminOrAdmin ? '' : ' class="btn-unreject"';
+                        $style = $isNotSuperAdminOrAdminSupport ? $disabledStyle : $clickableStyle;
+                        $class = $isNotSuperAdminOrAdminSupport ? '' : ' class="btn-unreject"';
                         return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">Rejected</span>';
                     } elseif ($data->request_status === null) { 
-                        if ($isNotSuperAdminOrAdmin) {
+                        if ($isNotSuperAdminOrAdminSupport) {
                             return '<span style="background-color: rgb(211, 211, 211); padding: 4px 5px; border-radius: 3px; color: #666; cursor: not-allowed;">Sent</span>';
                         }
                         return '<div class="btn-group" style="gap: 5px;">' .

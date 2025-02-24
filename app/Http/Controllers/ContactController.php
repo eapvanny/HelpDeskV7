@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\AppHelper;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -45,7 +46,7 @@ class ContactController extends Controller
                     $button .= '<a title="Edit" href="' . route('contact.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                     $actions = true;
                 }
-                if (auth()->user()->can('delete contact')) {
+                if (auth()->user()->role_id == AppHelper::USER_SUPER_ADMIN) {
                     $button .= '<a href="' . route('contact.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                     $actions = true;
                 }

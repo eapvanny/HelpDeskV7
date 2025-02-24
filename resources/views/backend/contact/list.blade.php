@@ -55,7 +55,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th> {{ __('Photo') }} </th>
-                                            <th> {{ __('ID No.') }} </th>
+                                            <th> {{ __('Staff ID') }} </th>
                                             <th> {{ __('Name') }} </th>
                                             <th> {{ __('Name in Latin') }} </th>
                                             <th>{{ __('Phone No.') }}</th>

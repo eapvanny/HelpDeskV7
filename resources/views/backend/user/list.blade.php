@@ -56,9 +56,10 @@
                                         <tr>
                                             <th>{{ __('Photo') }}</th>
                                             <th style="min-width: 65px;">{{ __('Department') }}</th>
-                                            <th>{{ __('Name') }}</th>
+                                            <th>{{ __('Staff ID') }}</th>
+                                            <th>{{ __('Employee Name') }}</th>
+                                            <th>{{ __('Position') }}</th>
                                             <th>{{ __('Username') }}</th>
-                                            <th>{{ __('Email') }}</th>
                                             <th>{{ __('Phone No.') }}</th>
                                             <th>{{ __('Role') }}</th>
                                             <th>{{ __('Gender') }}</th>
@@ -119,17 +120,21 @@
                         data: 'department',
                         name: 'department',
                     },
+                    {   
+                        data: 'staff_id_card',
+                        name: 'staff_id_card',
+                    },
                     {
                         data: 'name',
                         name: 'name',
                     },
                     {
-                        data: 'username',
-                        name: 'username',
+                        data: 'position',
+                        name: 'position',
                     },
                     {
-                        data: 'email',
-                        name: 'email',
+                        data: 'username',
+                        name: 'username',
                     },
                     {
                         data: 'phone_no',

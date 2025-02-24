@@ -54,11 +54,14 @@ class UserController extends Controller
                 ->addColumn('name', function ($data) {
                     return __($data->name);
                 })
+                ->addColumn('position', function ($data) {
+                    return __($data->position) ?? __('N/A') ;
+                })
+                ->addColumn('staff_id_card', function ($data) {
+                    return __($data->staff_id_card) ?? __('N/A') ;
+                })
                 ->addColumn('username', function ($data) {
                     return __($data->username);
-                })
-                ->addColumn('email', function ($data) {
-                    return __($data->email);
                 })
                 ->addColumn('phone_no', function ($data) {
                     return __($data->phone_no);
@@ -198,6 +201,8 @@ class UserController extends Controller
             'phone_no' => 'nullable|max:15',
             'role_id' => 'required',
             'gender' => 'required',
+            'position' => 'required',
+            'staff_id_card' => 'required|min:2|max:15',
 
         ];
 
@@ -212,6 +217,8 @@ class UserController extends Controller
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
+            'position' => $request->position,
+            'staff_id_card' => $request->staff_id_card,
             'password' => bcrypt($request->password),
         ];
 
@@ -271,6 +278,8 @@ class UserController extends Controller
             'phone_no' => 'nullable|max:15',
             'role_id' => 'required',
             'gender' => 'required',
+            'position' => 'required',
+            'staff_id_card' => 'required|min:2|max:15',
         ];
 
         $this->validate($request, $rules);
@@ -283,6 +292,8 @@ class UserController extends Controller
             'email' => $request->email,
             'phone_no' => $request->phone_no,
             'status' => $request->status,
+            'position' => $request->position,
+            'staff_id_card' => $request->staff_id_card,
             'photo' => $user->photo,
         ];
 

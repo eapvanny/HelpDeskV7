@@ -31,7 +31,8 @@ class User extends Authenticatable
         'role_id',
         'user_lang',
         'gender',
-        'id_card'
+        'staff_id_card',
+        'position'
     ];
 
 
