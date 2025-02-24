@@ -299,7 +299,6 @@
 
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             // Set up CSRF token globally
@@ -543,7 +542,6 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    t.ajax.reload();
                                     Swal.fire({
                                         title: 'Accepted!',
                                         text: 'The ticket has been accepted.',
@@ -551,6 +549,7 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
+                                    t.ajax.reload();
                                 }
                             },
                             error: function(xhr) {
@@ -589,7 +588,6 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    t.ajax.reload();
                                     Swal.fire({
                                         title: 'Unaccepted!',
                                         text: 'The ticket has been unaccepted.',
@@ -597,6 +595,7 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
+                                    t.ajax.reload();
                                 }
                             },
                             error: function(xhr) {
@@ -639,7 +638,6 @@
                                     $btnGroup.html(
                                         '<span style="background-color: #dd4b39; padding: 2px 5px; border-radius: 3px; color: white; cursor: pointer;">Rejected</span>'
                                     );
-                                    t.ajax.reload();
                                     Swal.fire({
                                         title: 'Rejected!',
                                         text: 'The ticket has been rejected.',
@@ -647,6 +645,7 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
+                                    t.ajax.reload();
                                 }
                             },
                             error: function(xhr) {
@@ -686,7 +685,6 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    t.ajax.reload();
                                     Swal.fire({
                                         title: 'Unrejected!',
                                         text: 'The ticket rejection has been undone.',
@@ -694,6 +692,7 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
+                                    t.ajax.reload();
                                 }
                             },
                             error: function(xhr) {

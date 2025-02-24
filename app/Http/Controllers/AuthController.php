@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+
 class AuthController extends Controller
 {
     public function login(Request $request)
@@ -25,13 +26,28 @@ class AuthController extends Controller
         }
 
         $credentials = $request->only('username', 'password');
+
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+            if ($user->status == 0) {
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+
+                return back()->withInput()->withErrors([
+                    'username' => 'Your account is inactive. Please contact support.'
+                ]);
+            }
+
             $request->session()->regenerate();
-            return redirect()->route('dashboard.index')->with('success', 'Welcome to AdminPanel.')->with('show_popup', true);
+            return redirect()->route('dashboard.index')
+                ->with('success', 'Welcome to AdminPanel.')
+                ->with('show_popup', true);
         }
 
         return back()->withInput()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'username' => 'The provided credentials do not match our records.',
         ]);
     }
 
@@ -74,7 +90,7 @@ class AuthController extends Controller
             'password' => 'required|string|min:6',
             'password_confirmation' => 'required|same:password',
         ]);
-        
+
 
         $updatePassword = DB::table('password_reset_tokens')
             ->where([
@@ -82,12 +98,12 @@ class AuthController extends Controller
                 'token' => $request->token,
             ])->first();
 
-        if(!$updatePassword) {
-            return redirect()->to(route('reset.password'))->with('error','Invalid');
+        if (!$updatePassword) {
+            return redirect()->to(route('reset.password'))->with('error', 'Invalid');
         }
 
         User::where('email', $request->email)
-            ->update(['password'=> Hash::make($request->password)]);
+            ->update(['password' => Hash::make($request->password)]);
 
         DB::table('password_reset_tokens')
             ->where(['email' => $request->email])

@@ -70,17 +70,30 @@ class UserController extends Controller
                     return AppHelper::GENDER[$data->gender] ?? __('N/A');
                 })
                 ->addColumn('status', function ($data) {
-                    return $data->status == 1 ? __('Active') : __('Inactive');
+                    return $data->status == 1
+                        ? '<span class="status-active">' . __('Active') . '</span>'
+                        : '<span style="color: red;">' . __('Inactive') . '</span>';
                 })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
                     $actions = false;
+
                     if (auth()->user()->can('update user')) {
                         $button .= '<a title="Edit" href="' . route('user.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                         $actions = true;
                     }
-                    if (auth()->user()->can('delete user')) {
-                        $button .= '<a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    // if (auth()->user()->can('delete user')) {
+                    //     $button .= '<a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
+                    //     $actions = true;
+                    // }
+                    // Add disable button only for active users and if user has permission
+                    if (auth()->user()->can('update user') && $data->status == 1) {
+                        $button .= '<a href="javascript:void(0)" class="btn btn-danger btn-sm disable-user" title="Disable" data-id="' . $data->id . '"><i class="fa fa-ban"></i></a>';
+                        $actions = true;
+                    }
+                    // Enable button for inactive users
+                    if (auth()->user()->can('update user') && $data->status == 0) {
+                        $button .= '<a href="javascript:void(0)" class="btn btn-success btn-sm enable-user" title="Enable" data-id="' . $data->id . '"><i class="fa fa-check"></i></a>';
                         $actions = true;
                     }
                     if (!$actions) {
@@ -97,7 +110,74 @@ class UserController extends Controller
         return view('backend.user.list');
     }
 
+    public function disable($id)
+    {
+        try {
+            
+            $user = User::findOrFail($id);
 
+            // Check if user has permission
+            if (!auth()->user()->can('update user')) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Unauthorized action'
+                ], 403);
+            }
+
+            if ($user->status == 0) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User is already disabled'
+                ]);
+            }
+
+            $user->update(['status' => 0]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User disabled successfully'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error disabling user: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function enable($id)
+    {
+        try {
+            $user = User::findOrFail($id);
+
+            // Check if user has permission
+            if (!auth()->user()->can('update user')) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Unauthorized action'
+                ], 403);
+            }
+
+            if ($user->status == 1) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User is already active'
+                ]);
+            }
+
+            $user->update(['status' => 1]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User enabled successfully'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error enabling user: ' . $e->getMessage()
+            ], 500);
+        }
+    }
     public function create()
     {
         $user = null;

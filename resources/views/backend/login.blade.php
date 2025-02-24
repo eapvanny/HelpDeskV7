@@ -78,18 +78,7 @@
 							</a>
 						</div>
 					</div>
-					@if (Session::has('error') || Session::has('warning'))
-						<div class="row">
-							<div class="alert @if (Session::has('success')) alert-success @elseif(Session::has('error')) alert-danger @else alert-warning @endif alert-dismissible">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-								@if(Session::has('error'))
-									<span class="txt2"><i class="icon fa fa-ban"></i>{{ Session::get('error') }}</span>
-								@elseif(Session::has('warning'))
-									<span class="txt2"><i class="icon fa fa-warning"></i>{{ Session::get('warning') }}</span>
-								@endif
-							</div>
-						</div>
-					@endif
+					
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
