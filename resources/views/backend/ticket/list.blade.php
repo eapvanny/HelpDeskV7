@@ -10,23 +10,23 @@
 @section('extraStyle')
     <style>
         /* .modal-fullscreen .modal-dialog {
-                width: 100%;
-                max-width: none;
-                height: 100%;
-                margin: 0;
-            }
+                                                            width: 100%;
+                                                            max-width: none;
+                                                            height: 100%;
+                                                            margin: 0;
+                                                        }
 
-            .modal-fullscreen .modal-content {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
+                                                        .modal-fullscreen .modal-content {
+                                                            height: 100%;
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                        }
 
-            .modal-body {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            } */
+                                                        .modal-body {
+                                                            flex: 1;
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                        } */
 
         .chat-container {
             flex-grow: 1;
@@ -39,6 +39,37 @@
             width: 100%;
             background: white;
             padding: 10px;
+        }
+
+        .photo-detail {
+            width: 900px;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+
+        .photo-detail.img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .modal-body.img-popup {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .ticket-details {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .ticket-details h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
         }
     </style>
 @endsection
@@ -163,13 +194,16 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th> {{ __('Department') }} </th>
-                                            <th> {{ __('ID No.') }} </th>
-                                            <th> {{ __('Employee Name') }} </th>
+                                            <th width="3%"> {{ __('Photo') }} </th>
+                                            <th style="max-width: 150px"> {{ __('Department') }} </th>
+                                            <th width="4%"> {{ __('Staff ID') }} </th>
+                                            <th> {{ __('Staff Name') }} </th>
                                             <th> {{ __('Subject') }} </th>
                                             <th> {{ __('Description') }} </th>
-                                            <th> {{ __('Status') }} </th>
-                                            <th> {{ __('Priority') }} </th>
+                                            <th width="3%"> {{ __('Status') }} </th>
+                                            <th width="3%"> {{ __('Priority') }} </th>
+                                            <th width="10%"> {{ __('Request Status') }} </th>
+                                            <th width="3%"> {{ __('Receiver') }} </th>
                                             <th class="notexport"> {{ __('Action') }} </th>
                                         </tr>
                                     </thead>
@@ -227,20 +261,56 @@
         </div>
     </div>
 
+    <!-- Modal photo -->
+    <div class="modal modal-lg fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoModalLabel">{{ __('Tickets Detail') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose" aria-label="Close"></button>
+                </div>
+                <div class="modal-body img-popup">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="modalPhoto" src="" class="img-fluid photo-detail" alt="Photo Detail">
+                        </div>
+                        <div class="col-md-8"> 
+                            <div class="ticket-details">
+                                <p><strong>{{__('Department')}}:</strong> <span id="modalDepartment"></span></p>
+                                <p><strong>{{__('Employee Name')}}:</strong> <span id="modalEmployeeName"></span></p>
+                                <p><strong>{{__('Staff ID')}}:</strong> <span id="modalIdCard"></span></p>
+                                <p><strong>{{__('Subject')}}:</strong> <span id="modalSubject"></span></p>
+                                <p><strong>{{__('Description')}}:</strong> <span id="modalDescription"></span></p>
+                                <p><strong>{{__('Status')}}:</strong> <span id="modalStatus"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- /.content -->
 @endsection
 <!-- END PAGE CONTENT-->
 
 <!-- BEGIN PAGE JS-->
 @section('extraScript')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            // Set up CSRF token globally
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            t = $('#datatabble').DataTable({
+
+            // Initialize DataTable
+            var t = $('#datatabble').DataTable({
                 processing: false,
                 serverSide: true,
                 ajax: {
@@ -250,6 +320,10 @@
                 columns: [{
                         data: 'id',
                         name: 'id'
+                    },
+                    {
+                        data: 'photo',
+                        name: 'photo'
                     },
                     {
                         data: 'department',
@@ -280,11 +354,19 @@
                         name: 'priority'
                     },
                     {
+                        data: 'request_status',
+                        name: 'request_status'
+                    },
+                    {
+                        data: 'receiver',
+                        name: 'receiver'
+                    },
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: false
                     }
-                ],
+                ]
             });
 
             $(document).on('click', '.show-ticket', function() {
@@ -314,7 +396,7 @@
                                         response.forEach(msg => {
                                             if (msg.id >
                                                 lastMessageId
-                                                ) { // Only append truly new messages
+                                            ) { // Only append truly new messages
                                                 let isCurrentUser = msg
                                                     .user_id ===
                                                     {{ auth()->id() }};
@@ -433,10 +515,222 @@
                 $("#chatMessage").val("");
             });
 
-            $('#close_filter').click(function(){
+            $('#close_filter').click(function() {
                 $("#filters").trigger('click');
             });
 
+            $(document).on('click', '.btn-accept', function() {
+                var ticketId = $(this).data('id');
+                var $btnGroup = $(this).closest('.btn-group');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to accept this ticket?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, accept it!',
+                    cancelButtonText: 'No, cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '{{ route('ticket.update-status', '__ID__') }}'.replace(
+                                '__ID__', ticketId),
+                            method: 'POST',
+                            data: {
+                                request_status: 1
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    t.ajax.reload();
+                                    Swal.fire({
+                                        title: 'Accepted!',
+                                        text: 'The ticket has been accepted.',
+                                        icon: 'success',
+                                        timer: 3000, // Auto-close after 3 seconds
+                                        showConfirmButton: false // Hide OK button
+                                    });
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire(
+                                    'Error!',
+                                    'Error updating status: ' + xhr.responseText,
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Handle Unaccept button click
+            $(document).on('click', '.btn-unaccept', function() {
+                var ticketId = $(this).data('id');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to unaccept this ticket?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, unaccept it!',
+                    cancelButtonText: 'No, cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '{{ route('ticket.update-status', '__ID__') }}'.replace(
+                                '__ID__', ticketId),
+                            method: 'POST',
+                            data: {
+                                request_status: null
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    t.ajax.reload();
+                                    Swal.fire({
+                                        title: 'Unaccepted!',
+                                        text: 'The ticket has been unaccepted.',
+                                        icon: 'success',
+                                        timer: 3000, // Auto-close after 3 seconds
+                                        showConfirmButton: false // Hide OK button
+                                    });
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire(
+                                    'Error!',
+                                    'Error updating status: ' + xhr.responseText,
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Handle Reject button click
+            $(document).on('click', '.btn-reject', function() {
+                var ticketId = $(this).data('id');
+                var $btnGroup = $(this).closest('.btn-group');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to reject this ticket?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, reject it!',
+                    cancelButtonText: 'No, cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '{{ route('ticket.update-status', '__ID__') }}'.replace(
+                                '__ID__', ticketId),
+                            method: 'POST',
+                            data: {
+                                request_status: 0
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    $btnGroup.html(
+                                        '<span style="background-color: #dd4b39; padding: 2px 5px; border-radius: 3px; color: white; cursor: pointer;">Rejected</span>'
+                                    );
+                                    t.ajax.reload();
+                                    Swal.fire({
+                                        title: 'Rejected!',
+                                        text: 'The ticket has been rejected.',
+                                        icon: 'success',
+                                        timer: 3000, // Auto-close after 3 seconds
+                                        showConfirmButton: false // Hide OK button
+                                    });
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire(
+                                    'Error!',
+                                    'Error updating status: ' + xhr.responseText,
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Handle Unreject button click
+            $(document).on('click', '.btn-unreject', function() {
+                var ticketId = $(this).data('id');
+                var $btnGroup = $(this).closest('.btn-group');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to unreject this ticket?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, unreject it!',
+                    cancelButtonText: 'No, cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '{{ route('ticket.update-status', '__ID__') }}'.replace(
+                                '__ID__', ticketId),
+                            method: 'POST',
+                            data: {
+                                request_status: null
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    t.ajax.reload();
+                                    Swal.fire({
+                                        title: 'Unrejected!',
+                                        text: 'The ticket rejection has been undone.',
+                                        icon: 'success',
+                                        timer: 3000, // Auto-close after 3 seconds
+                                        showConfirmButton: false // Hide OK button
+                                    });
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire(
+                                    'Error!',
+                                    'Error updating status: ' + xhr.responseText,
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click', '.img-detail', function() {
+                var ticketId = $(this).data('id');
+                $.ajax({
+                    url: '/ticket/' + ticketId,
+                    method: 'GET',
+                    success: function(response) {
+                        var ticket = response.ticket;
+                        $('#modalPhoto').attr('src', ticket.photo ? '/storage/' + ticket.photo :
+                            '/images/avatar.png');
+                        $('#modalSubject').text(ticket.subject);
+                        $('#modalDepartment').text(ticket.department_name);
+                        $('#modalIdCard').text(ticket.id_card);
+                        $('#modalEmployeeName').text(ticket.employee_name);
+                        $('#modalDescription').text(ticket.description);
+                        $('#modalStatus').text(ticket.status_text);
+                        $('#photoModal').modal('show');
+                    },
+                    error: function(xhr) {
+                        console.log('Error:', xhr);
+                        alert('Failed to load ticket details.');
+                    }
+                });
+            });
             //delete grade_level
             $('#datatabble').delegate('.delete', 'click', function(e) {
                 let action = $(this).attr('href');

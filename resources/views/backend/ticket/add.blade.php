@@ -134,50 +134,53 @@
                             <span class="text-danger">{{ $errors->first('employee_name') }}</span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-xl-4">
-                        <div class="form-group has-feedback">
-                            <label for="status_id"> {{ __('Status') }} <span class="text-danger">*</span></label>
-                            @php
-                                $statusKey = $ticket ? $ticket->status_id : null;
-                            @endphp
-                            {!! Form::select('status_id', 
-                            [
-                                AppHelper::STATUS_OPEN => __(AppHelper::STATUS[AppHelper::STATUS_OPEN]),
-                                AppHelper::STATUS_PENDING => __(AppHelper::STATUS[AppHelper::STATUS_PENDING]),
-                                AppHelper::STATUS_RESOLVED => __(AppHelper::STATUS[AppHelper::STATUS_RESOLVED]),
-                                AppHelper::STATUS_CLOSED => __(AppHelper::STATUS[AppHelper::STATUS_CLOSED]),
-                            ],
-                            old('status',$statusKey), 
-                            [
-                                'class' => 'form-control select2',
-                                'required' => 'true',
-                                'id' => 'status_id',
-                                'name' => 'status_id' 
-                            ]) !!}
+                    @if(auth()->user()->role_id === AppHelper::USER_SUPER_ADMIN || auth()->user()->role_id === AppHelper::USER_ADMIN)
+                        <div class="col-lg-4 col-md-6 col-xl-4">
+                            <div class="form-group has-feedback">
+                                <label for="status_id"> {{ __('Status') }} <span class="text-danger">*</span></label>
+                                @php
+                                    $statusKey = $ticket ? $ticket->status_id : null;
+                                @endphp
+                                {!! Form::select('status_id', 
+                                [
+                                    AppHelper::STATUS_OPEN => __(AppHelper::STATUS[AppHelper::STATUS_OPEN]),
+                                    AppHelper::STATUS_PENDING => __(AppHelper::STATUS[AppHelper::STATUS_PENDING]),
+                                    AppHelper::STATUS_RESOLVED => __(AppHelper::STATUS[AppHelper::STATUS_RESOLVED]),
+                                    AppHelper::STATUS_CLOSED => __(AppHelper::STATUS[AppHelper::STATUS_CLOSED]),
+                                ],
+                                old('status',$statusKey), 
+                                [
+                                    'class' => 'form-control select2',
+                                    'required' => 'true',
+                                    'id' => 'status_id',
+                                    'name' => 'status_id' 
+                                ]) !!}
+                            </div>
+                        </div>                    
+                        <div class="col-lg-4 col-md-6 col-xl-4">
+                            <div class="form-group has-feedback">
+                                <label for="priority_id"> {{ __('Priority') }} <span class="text-danger">*</span></label>
+                                @php
+                                    $priorityKey = $ticket ? $ticket->priority_id : null;
+                                @endphp
+                                {!! Form::select('priority_id', 
+                                [
+                                    AppHelper::PRIORITY_LOW => __(AppHelper::PRIORITY[AppHelper::PRIORITY_LOW]),
+                                    AppHelper::PRIORITY_MEDIUM => __(AppHelper::PRIORITY[AppHelper::PRIORITY_MEDIUM]),
+                                    AppHelper::PRIORITY_HIGH => __(AppHelper::PRIORITY[AppHelper::PRIORITY_HIGH]),
+                                    AppHelper::PRIORITY_URGENT => __(AppHelper::PRIORITY[AppHelper::PRIORITY_URGENT]),
+                                ]
+                                , old('priority', $priorityKey), 
+                                [
+                                    'class' => 'form-control select2',
+                                    'required' => 'true',
+                                    'id' => 'priority_id',
+                                    'name' => 'priority_id'
+                                ]) !!}
+                            </div>
                         </div>
-                    </div>                    
-                    <div class="col-lg-4 col-md-6 col-xl-4">
-                        <div class="form-group has-feedback">
-                            <label for="priority_id"> {{ __('Priority') }} <span class="text-danger">*</span></label>
-                            @php
-                                $priorityKey = $ticket ? $ticket->priority_id : null;
-                            @endphp
-                            {!! Form::select('priority_id', 
-                            [
-                                AppHelper::PRIORITY_LOW => __(AppHelper::PRIORITY[AppHelper::PRIORITY_LOW]),
-                                AppHelper::PRIORITY_MEDIUM => __(AppHelper::PRIORITY[AppHelper::PRIORITY_MEDIUM]),
-                                AppHelper::PRIORITY_HIGH => __(AppHelper::PRIORITY[AppHelper::PRIORITY_HIGH]),
-                                AppHelper::PRIORITY_URGENT => __(AppHelper::PRIORITY[AppHelper::PRIORITY_URGENT]),
-                            ]
-                            , old('priority', $priorityKey), 
-                            [
-                                'class' => 'form-control select2',
-                                'required' => 'true',
-                                'id' => 'priority_id',
-                                'name' => 'priority_id'
-                            ]) !!}
-                        </div>
-                    </div>
+                    @endif
+                    
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-xl-4">
@@ -194,6 +197,31 @@
                             <textarea name="description" class="form-control" placeholder="" rows="1" maxlength="500" required>@if($ticket){{old('description')??$ticket->description}}@else{{old('description')}}@endif</textarea>
                             <span class="fa fa-info form-control-feedback"></span>
                             <span class="text-danger">{{ $errors->first('description') }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group has-feedback">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="photo"> {{ __('Photo') }} <br /><span
+                                            class="text-muted fst-italic">{{ __('(Files: jpeg, jpg, or png, min dimension: 50
+                                                                                                                                            x 50 pixel, 2Mb max size)') }}</span></label>
+                                    <input type="file" class="form-control" accept=".jpeg, .jpg, .png"
+                                        name="photo" placeholder="{{ __('Photo image') }}">
+                                    <span class="glyphicon glyphicon-open-file form-control-feedback"
+                                        style="top:35px;"></span>
+                                    <span class="text-danger">{{ $errors->first('photo') }}</span>
+                                </div>
+                                <div class="col-md-2">
+                                    @if ($ticket && isset($ticket->photo))
+                                        <img src="{{ $ticket->photo ? asset('storage/' . $ticket->photo) : asset('images/avatar.jpg') }}"
+                                            alt="Current Photo" style="max-height: 50px; margin-top: 40px">
+                                        <input type="hidden" name="oldPhoto" value="{{ $ticket->photo }}">
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Helpers\AppHelper;
 use App\Models\ChatMessage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
 
@@ -50,6 +51,12 @@ class TicketController extends Controller
                 ->addColumn('id', function ($data) {
                     return $this->indexof++;
                 })
+                ->addColumn('photo', function ($data) {
+                    return '<img class="img-responsive center img-detail" 
+                                data-id="' . $data->id . '" 
+                                style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%; cursor: pointer;" 
+                                src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '">';
+                })
                 ->addColumn('subject', function ($data) {
                     return $data->subject;
                 })
@@ -72,6 +79,39 @@ class TicketController extends Controller
                 ->addColumn('priority', function ($data) {
                     return AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
                 })
+                ->addColumn('request_status', function ($data) {
+                    $isNotSuperAdminOrAdmin = auth()->check() && 
+                                              auth()->user()->role_id !== AppHelper::USER_SUPER_ADMIN && 
+                                              auth()->user()->role_id !== AppHelper::USER_ADMIN;
+                    $baseStyle = 'padding: 4px 5px; border-radius: 3px; color: white;';
+                    $disabledStyle = $baseStyle . ' cursor: not-allowed;';
+                    $clickableStyle = $baseStyle . ' cursor: pointer;';
+                
+                    if ($data->request_status === 1) { 
+                        if ($isNotSuperAdminOrAdmin) {
+                            return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">Accepted</span>';
+                        }
+                        return '<div class="btn-group" style="gap: 5px;">' .
+                            '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">Accepted</span>' .
+                            '</div>';
+                    } elseif ($data->request_status === 0) {
+                        $style = $isNotSuperAdminOrAdmin ? $disabledStyle : $clickableStyle;
+                        $class = $isNotSuperAdminOrAdmin ? '' : ' class="btn-unreject"';
+                        return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">Rejected</span>';
+                    } elseif ($data->request_status === null) { 
+                        if ($isNotSuperAdminOrAdmin) {
+                            return '<span style="background-color: rgb(211, 211, 211); padding: 4px 5px; border-radius: 3px; color: #666; cursor: not-allowed;">Sent</span>';
+                        }
+                        return '<div class="btn-group" style="gap: 5px;">' .
+                            '<span class="btn-accept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">Accept</span>' .
+                            '<span class="btn-reject" data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $clickableStyle . '">Reject</span>' .
+                            '</div>';
+                    }
+                    return '<span>Unknown Status</span>';
+                })
+                ->addColumn('receiver', function ($data) {
+                    return $data->receiver ?? '';
+                })
                 ->addColumn('action', function ($data) {
                     $button = '<div class="change-action-item">';
                     $actions = false;
@@ -93,15 +133,32 @@ class TicketController extends Controller
                     $button .= '</div>';
                     return $button;
                 })
-                ->rawColumns(['photo', 'status', 'action'])
+                ->rawColumns(['photo', 'status', 'action', 'request_status'])
                 ->make(true);
         }
 
         $departments = Department::pluck('name', 'id')->toArray();
-
         return view('backend.ticket.list', compact('is_filter', 'departments'));
     }
 
+    public function updateStatus(Request $request, $id)
+    {
+        $ticket = Ticket::findOrFail($id);
+        $newStatus = $request->input('request_status');
+
+        $ticket->request_status = $newStatus;
+        if ($newStatus === null) {
+            $ticket->receiver = null;
+        } elseif ($newStatus == 1 || $newStatus == 0) {
+            $ticket->receiver = auth()->user()->name;
+        }
+        $ticket->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Status updated successfully'
+        ]);
+    }
     public function create()
     {
 
@@ -112,11 +169,18 @@ class TicketController extends Controller
 
     public function show($id)
     {
-        $ticket = Ticket::find($id);
+        $ticket = Ticket::with('department')->find($id);
 
         if (!$ticket) {
             return response()->json(['error' => 'Ticket not found'], 404);
         }
+
+        $ticket->status_text = AppHelper::STATUS[$ticket->status_id] ?? 'Unknown';
+
+        $language = session('user_lang', 'kh');
+        $ticket->department_name = $ticket->department
+            ? ($language === 'en' ? $ticket->department->name_in_latin : $ticket->department->name)
+            : 'N/A';
 
         return response()->json(['ticket' => $ticket]);
     }
@@ -162,6 +226,7 @@ class TicketController extends Controller
     {
         $rules = [
             'department_id' => 'required',
+            'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'subject' => 'required|min:2',
             'description' => 'required',
             'id_card' => 'required|min:3',
@@ -169,7 +234,7 @@ class TicketController extends Controller
         ];
         $this->validate($request, $rules);
 
-        Ticket::create([
+        $ticketData = [
             'user_id' => auth()->id(),
             'department_id' => $request->department_id,
             'id_card' => $request->id_card,
@@ -178,7 +243,17 @@ class TicketController extends Controller
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
             'description' => $request->description
-        ]);
+        ];
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
+            $filePath = 'uploads/' . $fileName;
+            Storage::put($filePath, file_get_contents($file));
+            $ticketData['photo'] = $filePath;
+        }
+
+        Ticket::create($ticketData);
 
         return redirect()->route('ticket.index')->with('success', "Tickets has been created!");
     }
@@ -202,6 +277,7 @@ class TicketController extends Controller
         $ticket = Ticket::find($id);
         $rules = [
             'department_id' => 'required',
+            'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'subject' => 'required|min:2',
             'description' => 'required',
             'id_card' => 'required|min:3',
@@ -209,15 +285,29 @@ class TicketController extends Controller
         ];
         $this->validate($request, $rules);
 
-        $ticket->update([
+        $ticketData = [
             'department_id' => $request->department_id,
             'id_card' => $request->id_card,
             'employee_name' => $request->employee_name,
             'subject' => $request->subject,
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
-            'description' => $request->description
-        ]);
+            'description' => $request->description,
+            'photo' => $ticket->photo,
+
+        ];
+        if ($request->hasFile('photo')) {
+            if ($ticket->photo && Storage::exists($ticket->photo)) {
+                Storage::delete($ticket->photo);
+            }
+
+            $file = $request->file('photo');
+            $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
+            $filePath = 'uploads/' . $fileName;
+            Storage::put($filePath, file_get_contents($file));
+
+            $ticketData['photo'] = $filePath;
+        }
         return redirect()->route('ticket.index')->with('success', "Department has been updated!");
     }
     public function destroy($id)

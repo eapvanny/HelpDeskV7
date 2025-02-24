@@ -97,9 +97,9 @@ Route::group(['middleware' => ['auth','isAdmin']], function() {
     // Route::delete('/department/{id}/delete', [DepartmentController::class, 'destroy'])->name('department.delete');
 
     //Ticket
-
+    Route::post('/ticket/update-status/{id}', [TicketController::class, 'updateStatus'])->name('ticket.update-status');
+    Route::get('/ticket/accept', [TicketController::class, 'getTicketAccept'])->name('ticket.accept');
     Route::resource('ticket', TicketController::class);
-
     // Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
     // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
     // Route::get('/ticket/{id}/show', [TicketController::class, 'show'])->name('ticket.show');

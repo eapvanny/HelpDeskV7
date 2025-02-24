@@ -19,6 +19,9 @@ class Ticket extends Model
         'user_id',
         'employee_name',
         'id_card',
+        'request_status',
+        'receiver',
+        'photo'
     ];
 
     public function department()

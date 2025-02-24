@@ -91,5 +91,10 @@
     "Male": "ប្រុស",
     "Female": "ស្រី",
     "Active": "សកម្ម",
-    "Inactive": "អសកម្ម"
+    "Inactive": "អសកម្ម",
+    "Staff ID": "លេខសម្គាល់បុគ្គលិក",
+    "Staff Name": "ឈ្មោះបុគ្គលិក",
+    "Tickets Detail": "ព័ត៌មានលម្អិតអំពីសំបុត្រ",
+    "Request Status": "ស្ថានភាពស្នើសុំ",
+    "Receiver": "អ្នកទទួល"
 }
