@@ -364,19 +364,19 @@ class UserController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
+            if ($user->photo && Storage::exists($user->photo)) {
+                Storage::delete($user->photo);
+            }
+
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
 
-            // Delete the old photo if exists
-            $oldFile = $user->photo;
-            if ($oldFile) {
-                Storage::delete($oldFile);
-            }
+            $userData['photo'] = $filePath;
 
             // Update the user's photo field
-            $update = $user->update(['photo' => $filePath]);
+            $update = $user->update($userData);
             if ($update) {
                 return redirect()->back()->with('success', 'Profile Photo updated!');
             } else {
