@@ -55,10 +55,10 @@ class UserController extends Controller
                     return __($data->name);
                 })
                 ->addColumn('position', function ($data) {
-                    return __($data->position) ?? __('N/A') ;
+                    return __($data->position) ?? __('N/A');
                 })
                 ->addColumn('staff_id_card', function ($data) {
-                    return __($data->staff_id_card) ?? __('N/A') ;
+                    return __($data->staff_id_card) ?? __('N/A');
                 })
                 ->addColumn('username', function ($data) {
                     return __($data->username);
@@ -116,7 +116,7 @@ class UserController extends Controller
     public function disable($id)
     {
         try {
-            
+
             $user = User::findOrFail($id);
 
             // Check if user has permission
@@ -222,13 +222,13 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ];
 
-        if($request->hasFile('photo')) {
+        if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $userData['photo'] = $filePath;
-        }else{
+        } else {
             $userData['photo'] = $request->oldphoto;
         }
 
@@ -364,16 +364,10 @@ class UserController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-
-
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
-            // $urlPath = Storage::url($filePath);
-
-            $user_photo = $filePath;
-
 
             // Delete the old photo if exists
             $oldFile = $user->photo;
@@ -381,15 +375,15 @@ class UserController extends Controller
                 Storage::delete($oldFile);
             }
 
-            // Update the student's photo field
-            $update = $user->update(['photo' => $user_photo]);
+            // Update the user's photo field
+            $update = $user->update(['photo' => $filePath]);
             if ($update) {
                 return redirect()->back()->with('success', 'Profile Photo updated!');
             } else {
                 return redirect()->back()->with('error', 'Failed to update profile photo in the database.')->withInput();
             }
         }
-        return redirect()->back()->with('error', 'Profile Fail updated!');
+        return redirect()->back()->with('error', 'No photo uploaded!');
     }
 
     public function setLanguage($lang)
