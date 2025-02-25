@@ -4,9 +4,9 @@ namespace App\Http\Helpers;
 class AppHelper {
 
     const USER_SUPER_ADMIN = 1;
-    const USER_ADMIN = 2;
-    const USER_EMPLOYEE = 3;
-    const USER_ADMIN_SUPPORT = 4;
+    const USER_ADMIN_SUPPORT = 2;
+    const USER_ADMIN = 3;
+    const USER_EMPLOYEE = 4;
     const GENDER = [
         1 => 'Male',
         2 => 'Female'

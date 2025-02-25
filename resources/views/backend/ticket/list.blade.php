@@ -226,7 +226,8 @@
             </div>
         </div>
     </section>
-    <div class="modal modal-lg fade" id="showTicketModal" tabindex="-1" role="dialog"
+    <!-- Modal sendMessage -->
+    {{-- <div class="modal modal-lg fade" id="showTicketModal" tabindex="-1" role="dialog"
         aria-labelledby="showTicketModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content rounded-0">
@@ -259,7 +260,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Modal photo -->
     <div class="modal modal-lg fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
@@ -306,9 +307,9 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div> --}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btnClose" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
@@ -388,144 +389,144 @@
                 ]
             });
 
-            $(document).on('click', '.show-ticket', function() {
-                var ticketId = $(this).data('id');
+            // $(document).on('click', '.show-ticket', function() {
+            //     var ticketId = $(this).data('id');
 
-                $('#ticket_id').val('');
-                $('#chat-box').html('');
-                $("#chatMessage").val('');
+            //     $('#ticket_id').val('');
+            //     $('#chat-box').html('');
+            //     $("#chatMessage").val('');
 
-                $.ajax({
-                    url: "{!! route('ticket.show', ':id') !!}".replace(':id', ticketId),
-                    method: 'GET',
-                    success: function(response) {
-                        $('#ticket_id').val(ticketId);
+            //     $.ajax({
+            //         url: "{!! route('ticket.show', ':id') !!}".replace(':id', ticketId),
+            //         method: 'GET',
+            //         success: function(response) {
+            //             $('#ticket_id').val(ticketId);
 
-                        let lastMessageId = 0;
+            //             let lastMessageId = 0;
 
-                        function fetchMessages() {
-                            $.ajax({
-                                url: `/chat/messages/${ticketId}`,
-                                method: "GET",
-                                data: {
-                                    lastMessageId: lastMessageId, // Send the last message ID to the server
-                                },
-                                success: function(response) {
-                                    if (response.length > 0) {
-                                        response.forEach(msg => {
-                                            if (msg.id >
-                                                lastMessageId
-                                            ) { // Only append truly new messages
-                                                let isCurrentUser = msg
-                                                    .user_id ===
-                                                    {{ auth()->id() }};
-                                                let alignmentClass =
-                                                    isCurrentUser ?
-                                                    'd-flex justify-content-end' :
-                                                    'd-flex justify-content-start';
-                                                let bgColor =
-                                                    isCurrentUser ?
-                                                    'bg-primary text-white' :
-                                                    'bg-secondary text-white';
+            //             function fetchMessages() {
+            //                 $.ajax({
+            //                     url: `/chat/messages/${ticketId}`,
+            //                     method: "GET",
+            //                     data: {
+            //                         lastMessageId: lastMessageId, // Send the last message ID to the server
+            //                     },
+            //                     success: function(response) {
+            //                         if (response.length > 0) {
+            //                             response.forEach(msg => {
+            //                                 if (msg.id >
+            //                                     lastMessageId
+            //                                 ) { // Only append truly new messages
+            //                                     let isCurrentUser = msg
+            //                                         .user_id ===
+            //                                         {{ auth()->id() }};
+            //                                     let alignmentClass =
+            //                                         isCurrentUser ?
+            //                                         'd-flex justify-content-end' :
+            //                                         'd-flex justify-content-start';
+            //                                     let bgColor =
+            //                                         isCurrentUser ?
+            //                                         'bg-primary text-white' :
+            //                                         'bg-secondary text-white';
 
-                                                // Add user photo only for received messages (bg-secondary)
-                                                let photoHtml = !
-                                                    isCurrentUser ?
-                                                    `<img src="${msg.user_photo_url}" class="rounded-circle" style="width: 20px; height: 20px; margin-right: 10px;">` :
-                                                    '';
+            //                                     // Add user photo only for received messages (bg-secondary)
+            //                                     let photoHtml = !
+            //                                         isCurrentUser ?
+            //                                         `<img src="${msg.user_photo_url}" class="rounded-circle" style="width: 20px; height: 20px; margin-right: 10px;">` :
+            //                                         '';
 
-                                                // Check if chat-box exists, if not create it with proper styling
-                                                if ($("#chat-box")
-                                                    .length === 0) {
-                                                    $("#modal-body").append(
-                                                        `<div id="chat-box" style="height: 50%; overflow-y: auto;"></div>`
-                                                    );
-                                                }
+            //                                     // Check if chat-box exists, if not create it with proper styling
+            //                                     if ($("#chat-box")
+            //                                         .length === 0) {
+            //                                         $("#modal-body").append(
+            //                                             `<div id="chat-box" style="height: 50%; overflow-y: auto;"></div>`
+            //                                         );
+            //                                     }
 
-                                                // Determine if the message is long or short
-                                                let messageLength = msg
-                                                    .message.length;
-                                                let messageStyle = (
-                                                        messageLength > 70 ?
-                                                        'max-width: 50%; word-wrap: break-word;' :
-                                                        '') +
-                                                    (isCurrentUser ?
-                                                        ' margin-left: auto;' :
-                                                        ' margin-right: auto;'
-                                                    );
+            //                                     // Determine if the message is long or short
+            //                                     let messageLength = msg
+            //                                         .message.length;
+            //                                     let messageStyle = (
+            //                                             messageLength > 70 ?
+            //                                             'max-width: 50%; word-wrap: break-word;' :
+            //                                             '') +
+            //                                         (isCurrentUser ?
+            //                                             ' margin-left: auto;' :
+            //                                             ' margin-right: auto;'
+            //                                         );
 
-                                                $("#chat-box").append(`
-                            <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
-                                <div class="d-flex align-items-start">
-                                    ${photoHtml} <!-- Show the photo only for received messages -->
-                                    <div class="p-2 rounded ${bgColor}" style="${messageStyle}">
-                                        ${msg.message}
-                                    </div>
-                                </div>
-                            </div>
-                        `);
-                                                lastMessageId = msg
-                                                    .id; // Update lastMessageId after adding new messages
-                                            }
-                                        });
-                                    }
-                                }
-                            });
-                        }
+            //                                     $("#chat-box").append(`
+            //                 <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
+            //                     <div class="d-flex align-items-start">
+            //                         ${photoHtml} <!-- Show the photo only for received messages -->
+            //                         <div class="p-2 rounded ${bgColor}" style="${messageStyle}">
+            //                             ${msg.message}
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             `);
+            //                                     lastMessageId = msg
+            //                                         .id; // Update lastMessageId after adding new messages
+            //                                 }
+            //                             });
+            //                         }
+            //                     }
+            //                 });
+            //             }
 
 
-                        // Initial fetch of messages
-                        fetchMessages();
-                        // Send a new message
-                        $("#sendMessage").off("click").on("click", function() {
-                            let message = $("#chatMessage").val().trim();
-                            if (message === "") return;
+            //             // Initial fetch of messages
+            //             fetchMessages();
+            //             // Send a new message
+            //             $("#sendMessage").off("click").on("click", function() {
+            //                 let message = $("#chatMessage").val().trim();
+            //                 if (message === "") return;
 
-                            $.ajax({
-                                url: "{{ route('send.message') }}",
-                                method: "POST",
-                                data: {
-                                    ticket_id: ticketId,
-                                    message: message,
-                                    _token: "{{ csrf_token() }}"
-                                },
-                                success: function(response) {
-                                    $("#chatMessage").val(
-                                        ""); // Clear input field
+            //                 $.ajax({
+            //                     url: "{{ route('send.message') }}",
+            //                     method: "POST",
+            //                     data: {
+            //                         ticket_id: ticketId,
+            //                         message: message,
+            //                         _token: "{{ csrf_token() }}"
+            //                     },
+            //                     success: function(response) {
+            //                         $("#chatMessage").val(
+            //                             ""); // Clear input field
 
-                                    // Append message only once after sending
-                                    let isCurrentUser = response.user_id ===
-                                        {{ auth()->id() }};
-                                    let alignmentClass = isCurrentUser ?
-                                        'd-flex justify-content-end' :
-                                        'd-flex justify-content-start';
+            //                         // Append message only once after sending
+            //                         let isCurrentUser = response.user_id ===
+            //                             {{ auth()->id() }};
+            //                         let alignmentClass = isCurrentUser ?
+            //                             'd-flex justify-content-end' :
+            //                             'd-flex justify-content-start';
 
-                                    let bgColor = isCurrentUser ?
-                                        'bg-primary text-white' :
-                                        'bg-secondary text-white';
+            //                         let bgColor = isCurrentUser ?
+            //                             'bg-primary text-white' :
+            //                             'bg-secondary text-white';
 
-                                    $("#chat-box").append(`
-                            <div class="message ${alignmentClass} my-2">
-                                <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
-                                    ${response.message}
-                                </div>
-                            </div>
-                        `);
-                                    lastMessageId = response
-                                        .id; // Ensure lastMessageId is updated immediately
-                                }
-                            });
-                        });
-                        // Refresh chat messages every 3 seconds
-                        setInterval(fetchMessages, 3000);
+            //                         $("#chat-box").append(`
+            //                 <div class="message ${alignmentClass} my-2">
+            //                     <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
+            //                         ${response.message}
+            //                     </div>
+            //                 </div>
+            //             `);
+            //                         lastMessageId = response
+            //                             .id; // Ensure lastMessageId is updated immediately
+            //                     }
+            //                 });
+            //             });
+            //             // Refresh chat messages every 3 seconds
+            //             setInterval(fetchMessages, 3000);
 
-                        $('#showTicketModal').modal('show');
-                    },
-                    error: function() {
-                        alert('Failed to load ticket details.');
-                    }
-                });
-            });
+            //             $('#showTicketModal').modal('show');
+            //         },
+            //         error: function() {
+            //             alert('Failed to load ticket details.');
+            //         }
+            //     });
+            // });
             // Clear modal content on close
             $(document).on('click', '#btn-close, #btnClose', function() {
                 $('#showTicketModal').modal('hide');
@@ -749,6 +750,10 @@
                         alert('Failed to load ticket details.');
                     }
                 });
+            });
+            $(document).on('click', '.btnClose', function() {
+                $('#photoModal').modal('hide');
+                $('.img-popup').val('');
             });
             //delete grade_level
             $('#datatabble').delegate('.delete', 'click', function(e) {
