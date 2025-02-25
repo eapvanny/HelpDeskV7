@@ -250,6 +250,8 @@ class TicketController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $ticketData['photo'] = $filePath;
+        }else{
+            $ticketData['photo'] = $request->oldphoto;
         }
 
         Ticket::create($ticketData);

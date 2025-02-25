@@ -195,7 +195,7 @@ class UserController extends Controller
             'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'name' => 'required|min:2|max:255',
             'department_id' => 'required',
-            'email' => 'email|max:255|unique:users,email',
+            // 'email' => 'email|max:255|unique:users,email',
             'username' => 'required|min:5|max:255|unique:users,username',
             'password' => 'required|min:6|max:50',
             'phone_no' => 'nullable|max:15',
@@ -222,12 +222,14 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ];
 
-        if ($request->hasFile('photo')) {
+        if($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $userData['photo'] = $filePath;
+        }else{
+            $userData['photo'] = $request->oldphoto;
         }
 
         $user = User::create($userData);
@@ -272,7 +274,7 @@ class UserController extends Controller
             'photo' => 'nullable|mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'name' => 'required|min:2|max:255',
             'department_id' => 'required',
-            'email' => 'required|email|max:255|unique:users,email,' . $id,
+            // 'email' => 'required|email|max:255|unique:users,email,' . $id,
             'username' => 'required|min:5|max:255|unique:users,username,' . $id,
             'password' => 'nullable|min:6|max:50',
             'phone_no' => 'nullable|max:15',

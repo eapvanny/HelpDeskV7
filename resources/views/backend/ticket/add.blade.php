@@ -51,12 +51,12 @@
             }
         }
 
-        fieldset {
-            padding: 1em 0.625em 1em;
-            border: 1px solid #ddd;
-            margin: 10px 0;
-            padding: 0.35em 0.625em 0.75em;
-            border-radius: 10px;
+        fieldset>#student-photo {
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+            height: 340px;
+            background-color: #f5f5f5;
         }
 
         fieldset>#student-photo>#btn-upload-photo {
