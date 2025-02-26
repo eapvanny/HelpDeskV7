@@ -29,102 +29,6 @@
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Site Start -->
-                {{-- @if ($frontend_website)
-                    <li class="dropdown site-menu mx-2">
-                        <a target="_blank" title="Site" href="{{ URL::route('home') }}" class="dropdown-toggle"
-                            data-toggle="tooltip" title="" data-placement="bottom"
-                            data-original-title="Visit Site">
-                            <i class="fa fa-globe"></i>
-                        </a>
-                    </li>
-                @endif --}}
-                <!-- Site Close -->
-                <!-- Notifications: style can be found in dropdown.less-->
-                {{-- <li class="dropdown messages-menu mx-2">
-                    <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false"    >
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-danger"><lable class="alert-image notification_badge">0</lable></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header notificaton_header">You have 0 recent notifications</li>
-                        <li>
-                            <ul class="menu notification_top"></ul>
-                        </li>
-                        <li class="footer"><a href="{{route('user.notification_unread')}}">See All Notifications</a></li>
-                    </ul>
-                </li> --}}
-                {{-- @if ($show_language)
-                <li class="dropdown lang-menu mx-2">
-                    <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
-                        <img class="language-img" src="{{ asset('images/lang/'.$locale.'.png') }}">
-                        <span class="label label-warning">2</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header"> Language</li>
-                        @foreach ($languages as $key => $lang)
-                            <li class="language" id="bangla">
-                                <a href="#">
-                                    <div class="pull-left">
-                                        <img src="{{ asset('images/lang/'.$key.'.png') }}">
-                                    </div>
-                                    <h4>
-                                        {{$lang}} @if ($locale == $key) <i class="glyphicon glyphicon-ok green pull-right"></i> @endif
-                                    </h4>
-                                </a>
-                            </li>
-                        @endforeach
-                        <li class="footer"></li>
-                    </ul>
-                </li>
-                @endif
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu mx-2">
-                    <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
-                        <i class="fa fa-user"></i>
-                        <span class="hidden-xs">{{getAuthUser()->username}}</span><i class="caret"></i>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="col-xs-6 text-center">
-                                <a href="{{ URL::route('profile') }}">
-                                    <div><i class="fa fa-briefcase"></i></div>
-                                    Profile
-                                </a>
-                            </div>
-                            <div class="col-xs-6 text-center password">
-                                <a href="{{ URL::route('change_password') }}">
-                                    <div><i class="fa fa-lock"></i></div>
-                                Password
-                                </a>
-                            </div>
-                        </li>
-
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="col-xs-6 text-center">
-                                <a href="{{ URL::route('logout') }}">
-                                    <div><i class="fa fa-power-off"></i></div>
-                                    Log out
-                                </a>
-                            </div>
-                            <div class="col-xs-6 text-center password">
-                                <a href="{{ URL::route('lockscreen') }}">
-                                    <div><i class="fa fa-eye-slash"></i></div>
-                                    Lock Screen
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Control Sidebar Toggle Button -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears mx-2"></i></a>
-                </li>  --}}
-
-
                 {{--    Upgrade Stype NavItems --}}
                 <div class="d-flex align-items-center">
 
@@ -181,25 +85,39 @@
                     <div class="dropdown mx-2">
                         <a data-mdb-dropdown-init class="notifi-icon text-reset dropdown-toggle"
                             id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                            <i class="fa-bell-o fa-regular fa-bell"><small class="notification_badge"></small></i>
+                            <i class="fa-bell-o fa-regular fa-bell">
+                                <small class="notification_badge">
+                                    <?php
+                                    $tickets = App\Models\Ticket::whereNull('request_status')->orderBy('created_at', 'desc')->limit(5)->get();
+                                    $ticketCount = $tickets->count();
+                                    echo $ticketCount > 0 ? $ticketCount : '';
+                                    ?>
+                                </small>
+                            </i>
                         </a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end notifications position-absolute mt-2 p-2 "aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menu-end notifications position-absolute mt-2 p-2"
+                            aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a class="dropdown-item notificaton_header" href="#">
+                                    Notifications
                                 </a>
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <div class="dropdown-item">
-                                    Top Notifications
-                                </div>
-                                <ul class="notification_top"></ul>
+                                <ul class="notification_top">
+                                    <?php
+                                    foreach ($tickets as $ticket) {
+                                        echo '<li class="notification-item" style="color: #777">';
+                                        echo '<div class="notification-subject"><strong>' . htmlspecialchars($ticket->subject) . '</strong> (' . htmlspecialchars(substr($ticket->description, 0, 50)) . ')</div>';
+                                        echo '</li>';
+                                    }
+                                    ?>
+                                </ul>
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a class="dropdown-item text-primary" href="#">
-                                    See All Notifications
+                                <a class="dropdown-item text-primary" href="{{ route('ticket.index') }}">
+                                    See All Tickets
                                 </a>
                             </li>
                         </ul>
@@ -285,17 +203,17 @@
     <script>
         $(document).ready(function() {
             $('#contact-user').on('click', function() {
-                let url = $(this).data('url'); 
+                let url = $(this).data('url');
 
                 $.ajax({
                     url: url,
                     type: 'GET',
                     beforeSend: function() {
                         $('#modal-body-content').html(
-                            '<p>Loading contacts...</p>'); 
+                            '<p>Loading contacts...</p>');
                     },
                     success: function(response) {
-                        $('#modal-body-content').html(response); 
+                        $('#modal-body-content').html(response);
                     },
                     error: function() {
                         $('#modal-body-content').html(

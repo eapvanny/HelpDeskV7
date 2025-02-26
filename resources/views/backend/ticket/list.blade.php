@@ -10,23 +10,23 @@
 @section('extraStyle')
     <style>
         /* .modal-fullscreen .modal-dialog {
-                                                            width: 100%;
-                                                            max-width: none;
-                                                            height: 100%;
-                                                            margin: 0;
-                                                        }
+                                                                width: 100%;
+                                                                max-width: none;
+                                                                height: 100%;
+                                                                margin: 0;
+                                                            }
 
-                                                        .modal-fullscreen .modal-content {
-                                                            height: 100%;
-                                                            display: flex;
-                                                            flex-direction: column;
-                                                        }
+                                                            .modal-fullscreen .modal-content {
+                                                                height: 100%;
+                                                                display: flex;
+                                                                flex-direction: column;
+                                                            }
 
-                                                        .modal-body {
-                                                            flex: 1;
-                                                            display: flex;
-                                                            flex-direction: column;
-                                                        } */
+                                                            .modal-body {
+                                                                flex: 1;
+                                                                display: flex;
+                                                                flex-direction: column;
+                                                            } */
 
         .chat-container {
             flex-grow: 1;
@@ -264,19 +264,21 @@
     </div> --}}
 
     <!-- Modal photo -->
-    <div class="modal modal-lg fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal modal-lg fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content rounded-0">
                 <div class="modal-header">
                     <h5 class="modal-title" id="photoModalLabel">{{ __('Tickets Detail') }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnClose"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body img-popup">
                     <div class="row">
                         <div class="col-md-4">
                             <img id="modalPhoto" src="" class="img-fluid photo-detail" alt="Photo Detail">
                         </div>
-                        <div class="col-md-8"> 
+                        <div class="col-md-8">
                             <div class="ticket-details">
                                 <ul class="list-group list-group-unbordered profile-log">
                                     <li class="list-group-item size">
@@ -284,23 +286,23 @@
                                         <span id="modalDepartment"></span>
                                     </li>
                                     <li class="list-group-item size">
-                                        <strong><i class="fa fa-user"></i> {{__('Employee Name')}}:</strong>
+                                        <strong><i class="fa fa-user"></i> {{ __('Employee Name') }}:</strong>
                                         <span id="modalEmployeeName"></span>
                                     </li>
                                     <li class="list-group-item size">
-                                        <strong><i class="fa-solid fa-id-card"></i> {{__('Staff ID')}}:</strong> 
+                                        <strong><i class="fa-solid fa-id-card"></i> {{ __('Staff ID') }}:</strong>
                                         <span id="modalIdCard"></span>
                                     </li>
                                     <li class="list-group-item size">
-                                        <strong><i class="fa icon-subject"></i> {{__('Subject')}}:</strong> 
+                                        <strong><i class="fa icon-subject"></i> {{ __('Subject') }}:</strong>
                                         <span id="modalSubject"></span>
                                     </li>
                                     <li class="list-group-item size">
-                                        <strong><i class="fa-solid fa-paragraph"></i> {{__('Description')}}:</strong> 
+                                        <strong><i class="fa-solid fa-paragraph"></i> {{ __('Description') }}:</strong>
                                         <span id="modalDescription"></span>
                                     </li>
                                     <li class="list-group-item size">
-                                        <strong><i class="fa fa-sliders"></i> {{__('Status')}}:</strong> 
+                                        <strong><i class="fa fa-sliders"></i> {{ __('Status') }}:</strong>
                                         <span id="modalStatus"></span>
                                     </li>
                                 </ul>
@@ -461,15 +463,15 @@
             //                                         );
 
             //                                     $("#chat-box").append(`
-            //                 <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
-            //                     <div class="d-flex align-items-start">
-            //                         ${photoHtml} <!-- Show the photo only for received messages -->
-            //                         <div class="p-2 rounded ${bgColor}" style="${messageStyle}">
-            //                             ${msg.message}
-            //                         </div>
-            //                     </div>
-            //                 </div>
-            //             `);
+        //                 <div class="message ${alignmentClass} my-2" style="display: flex; justify-content: ${isCurrentUser ? 'flex-end' : 'flex-start'};">
+        //                     <div class="d-flex align-items-start">
+        //                         ${photoHtml} <!-- Show the photo only for received messages -->
+        //                         <div class="p-2 rounded ${bgColor}" style="${messageStyle}">
+        //                             ${msg.message}
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             `);
             //                                     lastMessageId = msg
             //                                         .id; // Update lastMessageId after adding new messages
             //                                 }
@@ -511,12 +513,12 @@
             //                             'bg-secondary text-white';
 
             //                         $("#chat-box").append(`
-            //                 <div class="message ${alignmentClass} my-2">
-            //                     <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
-            //                         ${response.message}
-            //                     </div>
-            //                 </div>
-            //             `);
+        //                 <div class="message ${alignmentClass} my-2">
+        //                     <div class="p-2 rounded ${bgColor}" style="max-width: 60%;">
+        //                         ${response.message}
+        //                     </div>
+        //                 </div>
+        //             `);
             //                         lastMessageId = response
             //                             .id; // Ensure lastMessageId is updated immediately
             //                     }
@@ -572,10 +574,13 @@
                                         title: 'Accepted!',
                                         text: 'The ticket has been accepted.',
                                         icon: 'success',
-                                        timer: 3000, // Auto-close after 3 seconds
+                                        timer: 2000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
-                                    t.ajax.reload();
+                                    // t.ajax.reload();
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 2000);
                                 }
                             },
                             error: function(xhr) {
@@ -621,7 +626,9 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
-                                    t.ajax.reload();
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 2000);
                                 }
                             },
                             error: function(xhr) {
@@ -671,7 +678,9 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
-                                    t.ajax.reload();
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 2000);
                                 }
                             },
                             error: function(xhr) {
@@ -718,7 +727,9 @@
                                         timer: 3000, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
-                                    t.ajax.reload();
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 2000);
                                 }
                             },
                             error: function(xhr) {
