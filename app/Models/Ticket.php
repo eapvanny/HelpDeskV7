@@ -22,7 +22,8 @@ class Ticket extends Model
         'id_card',
         'request_status',
         'receiver',
-        'photo'
+        'photo',
+        'date'
     ];
 
     public function department()

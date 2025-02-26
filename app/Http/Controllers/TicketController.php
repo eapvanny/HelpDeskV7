@@ -7,6 +7,7 @@ use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Helpers\AppHelper;
 use App\Models\ChatMessage;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
@@ -71,6 +72,9 @@ class TicketController extends Controller
                 })
                 ->addColumn('description', function ($data) {
                     return __($data->description);
+                })
+                ->addColumn('date', function ($data) {
+                    return $data->date ? Carbon::parse($data->date)->format('d-M-Y h:i A') : 'N/A';
                 })
                 ->addColumn('status', function ($data) {
                     return AppHelper::STATUS[$data->status_id] ?? 'Unknown';
@@ -241,7 +245,8 @@ class TicketController extends Controller
             'subject' => $request->subject,
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
-            'description' => $request->description
+            'description' => $request->description,
+            'date' => Carbon::now(),
         ];
 
         if ($request->hasFile('photo')) {
@@ -294,6 +299,8 @@ class TicketController extends Controller
             'status_id' => $request->status_id,
             'priority_id' => $request->priority_id,
             'description' => $request->description,
+            'date' => Carbon::now('Asia/Phnom_Penh'),
+
         ];
 
         if ($request->hasFile('photo')) {

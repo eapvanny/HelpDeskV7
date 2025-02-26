@@ -194,16 +194,17 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th width="3%"> {{ __('Photo') }} </th>
-                                            <th style="max-width: 150px"> {{ __('Department') }} </th>
-                                            <th width="4%"> {{ __('Staff ID') }} </th>
+                                            <th> {{ __('Photo') }} </th>
+                                            <th> {{ __('Department') }} </th>
+                                            <th> {{ __('Staff ID') }} </th>
                                             <th> {{ __('Staff Name') }} </th>
                                             <th> {{ __('Subject') }} </th>
                                             <th> {{ __('Description') }} </th>
-                                            <th width="3%"> {{ __('Status') }} </th>
-                                            <th width="3%"> {{ __('Priority') }} </th>
-                                            <th width="10%"> {{ __('Request Status') }} </th>
-                                            <th width="3%"> {{ __('Receiver') }} </th>
+                                            <th> {{ __('Date') }} </th>
+                                            <th> {{ __('Status') }} </th>
+                                            <th> {{ __('Priority') }} </th>
+                                            <th> {{ __('Request Status') }} </th>
+                                            <th> {{ __('Receiver') }} </th>
                                             <th class="notexport"> {{ __('Action') }} </th>
                                         </tr>
                                     </thead>
@@ -364,6 +365,10 @@
                     {
                         data: 'description',
                         name: 'description'
+                    },
+                    {
+                        data: 'date',
+                        name: 'date'
                     },
                     {
                         data: 'status',
