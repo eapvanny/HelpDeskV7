@@ -114,7 +114,9 @@
                                     ?>
                                 </ul>
                             </li>
-                            <li class="dropdown-divider"></li>
+                            @if ($ticketCount != 0)
+                                <li class="dropdown-divider"></li>
+                            @endif
                             <li>
                                 <a class="dropdown-item text-primary" href="{{ route('ticket.index') }}">
                                     See All Tickets
