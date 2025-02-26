@@ -111,15 +111,17 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <ul class="notification_top">
-                                    <?php
-                                    foreach ($tickets as $ticket) {
-                                        echo '<li class="notification-item" style="color: #777">';
-                                        echo '<div class="notification-subject"><strong>' . htmlspecialchars($ticket->subject) . '</strong> (' . htmlspecialchars(substr($ticket->description, 0, 50)) . ')</div>';
-                                        echo '</li>';
-                                    }
-                                    ?>
+                                    <?php foreach ($tickets as $ticket): ?>
+                                        <li class="notification-item" style="color: #777">
+                                            <div class="notification-subject">
+                                                <strong><?= htmlspecialchars($ticket->subject) ?></strong> 
+                                                (<?= htmlspecialchars(mb_substr($ticket->description, 0, 30, 'UTF-8')) . (mb_strlen($ticket->description, 'UTF-8') > 30 ? '...' : '') ?>)
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </li>
+                            
                             @if ($ticketCount != 0)
                                 <li class="dropdown-divider"></li>
                             @endif

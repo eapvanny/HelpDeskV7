@@ -159,7 +159,7 @@
                                                 </div>
                                                 <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="status_id">{{ __('Status') }}</label>
+                                                        <label for="status_id">{{ __('Ticket Status') }}</label>
                                                         {!! Form::select(
                                                             'status_id',
                                                             [
@@ -175,7 +175,7 @@
                                                 </div>
                                                 <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="priority_id">{{ __('Priority') }} </label>
+                                                        <label for="priority_id">{{ __('Ticket Priority') }} </label>
                                                         {!! Form::select(
                                                             'priority_id',
                                                             [
@@ -195,9 +195,9 @@
                                                         {!! Form::select(
                                                             'request_status',
                                                             [
-                                                                1 => 'Accepted',
-                                                                0 => 'Rejected',
-                                                                'null' => 'Not Confirmed'
+                                                                1 => __('Accepted'),
+                                                                0 => __('Rejected'),
+                                                                'null' => __('Not Confirmed')
                                                             ],
                                                             request('request_status'),
                                                             ['class' => 'form-control select2', 'id' => 'request_status', 'placeholder' => __('Select a request status')]
