@@ -45,6 +45,15 @@ class TicketController extends Controller
             $is_filter = true;
             $query->where('priority_id', $request->priority_id);
         }
+        if ($request->has('request_status') && $request->request_status !== '') {
+            $is_filter = true;
+        
+            if ($request->request_status === 'null') {
+                $query->whereNull('request_status');
+            } else {
+                $query->where('request_status', $request->request_status);
+            }
+        }        
         if ($request->ajax()) {
             $tickets = $query->get();
 
@@ -77,10 +86,40 @@ class TicketController extends Controller
                     return $data->date ? Carbon::parse($data->date)->format('d-M-Y h:i A') : 'N/A';
                 })
                 ->addColumn('status', function ($data) {
-                    return AppHelper::STATUS[$data->status_id] ?? 'Unknown';
+                    $statusColors = [
+                        1 => '#3c8dbc', 
+                        2 => '#e5c086', 
+                        3 => '#549f54', 
+                        4 => 'grey',    
+                    ];
+                
+                    $status = AppHelper::STATUS[$data->status_id] ?? 'Unknown';
+                    $color = $statusColors[$data->status_id] ?? '#000000';
+                    
+                    return sprintf(
+                        '<span style="background-color: %s; padding: 2px 5px; color: white; border-radius: 3px">%s</span>',
+                        $color,
+                        $status
+                    );
                 })
                 ->addColumn('priority', function ($data) {
-                    return AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
+                    $priorityColors = [
+                        1 => 'grey',    
+                        2 => '#ffc107',
+                        3 => '#fd7e14', 
+                        4 => '#dc3545', 
+                    ];
+                
+                    $priority = AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
+                    $color = $priorityColors[$data->priority_id] ?? '#000000';
+                    $textColor = $color === '#ffc107' ? 'white' : 'white';
+                    
+                    return sprintf(
+                        '<span style="background-color: %s; padding: 2px 5px; color: %s; border-radius: 3px">%s</span>',
+                        $color,
+                        $textColor,
+                        $priority
+                    );
                 })
                 ->addColumn('request_status', function ($data) {
                     $isNotSuperAdminOrAdminSupport = auth()->check() &&
@@ -126,7 +165,7 @@ class TicketController extends Controller
                         $button .= '<a title="Edit" href="' . route('ticket.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                         $actions = true;
                     }
-                    if (auth()->user()->can('delete ticket')) {
+                    if (auth()->user()->can('delete ticket') && auth()->user()->role_id == AppHelper::USER_SUPER_ADMIN) {
                         $button .= '<a href="' . route('ticket.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                         $actions = true;
                     }
@@ -136,7 +175,7 @@ class TicketController extends Controller
                     $button .= '</div>';
                     return $button;
                 })
-                ->rawColumns(['photo', 'status', 'action', 'request_status'])
+                ->rawColumns(['photo', 'status', 'action', 'request_status','priority'])
                 ->make(true);
         }
 
@@ -173,12 +212,20 @@ class TicketController extends Controller
     public function show($id)
     {
         $ticket = Ticket::with('department')->find($id);
-
         if (!$ticket) {
             return response()->json(['error' => 'Ticket not found'], 404);
         }
 
         $ticket->status_text = AppHelper::STATUS[$ticket->status_id] ?? 'Unknown';
+        $ticket->priority_text = AppHelper::PRIORITY[$ticket->priority_id] ?? 'Unknown';
+
+        if ($ticket->request_status === 1) {
+            $ticket->request_status_text = 'Accepted';
+        } elseif ($ticket->request_status === 0) {
+            $ticket->request_status_text = 'Rejected';
+        } elseif ($ticket->request_status === null){
+            $ticket->request_status_text = 'Unknown';
+        }
 
         $language = session('user_lang', 'kh');
         $ticket->department_name = $ticket->department
@@ -187,6 +234,7 @@ class TicketController extends Controller
 
         return response()->json(['ticket' => $ticket]);
     }
+
 
     // public function getMessages($ticket_id)
     // {
@@ -255,7 +303,7 @@ class TicketController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $ticketData['photo'] = $filePath;
-        }else{
+        } else {
             $ticketData['photo'] = $request->oldphoto;
         }
 
@@ -306,7 +354,7 @@ class TicketController extends Controller
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
-            $filePath = $file->storeAs('uploads', $fileName, 'public'); 
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
 
             if (!empty($ticket->photo) && Storage::disk('public')->exists($ticket->photo)) {
                 Storage::disk('public')->delete($ticket->photo);

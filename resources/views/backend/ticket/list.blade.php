@@ -10,23 +10,23 @@
 @section('extraStyle')
     <style>
         /* .modal-fullscreen .modal-dialog {
-                                                                width: 100%;
-                                                                max-width: none;
-                                                                height: 100%;
-                                                                margin: 0;
-                                                            }
+                                                                    width: 100%;
+                                                                    max-width: none;
+                                                                    height: 100%;
+                                                                    margin: 0;
+                                                                }
 
-                                                            .modal-fullscreen .modal-content {
-                                                                height: 100%;
-                                                                display: flex;
-                                                                flex-direction: column;
-                                                            }
+                                                                .modal-fullscreen .modal-content {
+                                                                    height: 100%;
+                                                                    display: flex;
+                                                                    flex-direction: column;
+                                                                }
 
-                                                            .modal-body {
-                                                                flex: 1;
-                                                                display: flex;
-                                                                flex-direction: column;
-                                                            } */
+                                                                .modal-body {
+                                                                    flex: 1;
+                                                                    display: flex;
+                                                                    flex-direction: column;
+                                                                } */
 
         .chat-container {
             flex-grow: 1;
@@ -70,6 +70,31 @@
             margin-top: 0;
             margin-bottom: 10px;
             color: #333;
+        }
+
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .table td,
+        .table th {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .table th,
+        .table td {
+            min-width: 0;
+            max-width: none;
         }
     </style>
 @endsection
@@ -122,7 +147,7 @@
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                             <div class="row">
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
                                                         <label for="Department">{{ __('Department') }}</label>
                                                         {!! Form::select('department_id', $departments, request('department_id'), [
@@ -132,10 +157,9 @@
                                                         ]) !!}
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="status_id">{{ __('Status') }} <span
-                                                                class="text-danger">*</span></label>
+                                                        <label for="status_id">{{ __('Status') }}</label>
                                                         {!! Form::select(
                                                             'status_id',
                                                             [
@@ -149,10 +173,9 @@
                                                         ) !!}
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="priority_id">{{ __('Priority') }} <span
-                                                                class="text-danger">*</span></label>
+                                                        <label for="priority_id">{{ __('Priority') }} </label>
                                                         {!! Form::select(
                                                             'priority_id',
                                                             [
@@ -163,6 +186,21 @@
                                                             ],
                                                             request('priority_id'),
                                                             ['class' => 'form-control select2', 'id' => 'priority_id', 'placeholder' => __('Select a priority')],
+                                                        ) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="request_status">{{ __('Request Status') }}</label>
+                                                        {!! Form::select(
+                                                            'request_status',
+                                                            [
+                                                                1 => 'Accepted',
+                                                                0 => 'Rejected',
+                                                                'null' => 'Not Confirmed'
+                                                            ],
+                                                            request('request_status'),
+                                                            ['class' => 'form-control select2', 'id' => 'request_status', 'placeholder' => __('Select a request status')]
                                                         ) !!}
                                                     </div>
                                                 </div>
@@ -194,24 +232,21 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th> {{ __('Photo') }} </th>
-                                            <th> {{ __('Department') }} </th>
-                                            <th> {{ __('Staff ID') }} </th>
-                                            <th> {{ __('Staff Name') }} </th>
-                                            <th> {{ __('Subject') }} </th>
-                                            <th> {{ __('Description') }} </th>
-                                            <th> {{ __('Date') }} </th>
-                                            <th> {{ __('Status') }} </th>
-                                            <th> {{ __('Priority') }} </th>
-                                            <th> {{ __('Request Status') }} </th>
-                                            <th> {{ __('Receiver') }} </th>
-                                            <th class="notexport"> {{ __('Action') }} </th>
+                                            <th>{{ __('Photo') }}</th>
+                                            <th>{{ __('Department') }}</th>
+                                            <th>{{ __('Staff ID') }}</th>
+                                            <th>{{ __('Staff Name') }}</th>
+                                            <th>{{ __('Subject') }}</th>
+                                            <th>{{ __('Description') }}</th>
+                                            <th>{{ __('Date') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th>{{ __('Priority') }}</th>
+                                            <th>{{ __('Request Status') }}</th>
+                                            <th>{{ __('Receiver') }}</th>
+                                            <th class="notexport">{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-
-                                    </tbody>
-
+                                    <tbody></tbody>
                                 </table>
                             </div>
                         </div>
@@ -305,6 +340,18 @@
                                         <strong><i class="fa fa-sliders"></i> {{ __('Status') }}:</strong>
                                         <span id="modalStatus"></span>
                                     </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa fa-font-awesome"></i> {{ __('Priority') }}:</strong>
+                                        <span id="modalPriority"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa-solid fa-code-pull-request"></i> {{ __('Request Status') }}:</strong>
+                                        <span id="modalRequestStatus"></span>
+                                    </li>
+                                    <li class="list-group-item size">
+                                        <strong><i class="fa fa-user"></i> {{ __('Receiver') }}:</strong>
+                                        <span id="modalReceiver"></span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -340,6 +387,12 @@
                     url: "{!! route('ticket.index', request()->all()) !!}",
                 },
                 pageLength: 10,
+                responsive: false,
+                /* Disable DataTables' responsive behavior to avoid conflicts */
+                scrollX: true,
+                /* Enable horizontal scrolling */
+                scrollCollapse: true,
+                /* Adjust column width dynamically */
                 columns: [{
                         data: 'id',
                         name: 'id'
@@ -759,6 +812,9 @@
                         $('#modalEmployeeName').text(ticket.employee_name);
                         $('#modalDescription').text(ticket.description);
                         $('#modalStatus').text(ticket.status_text);
+                        $('#modalPriority').text(ticket.priority_text);
+                        $('#modalRequestStatus').text(ticket.request_status_text);
+                        $('#modalReceiver').text(ticket.receiver);
                         $('#photoModal').modal('show');
                     },
                     error: function(xhr) {
