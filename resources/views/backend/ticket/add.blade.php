@@ -182,7 +182,7 @@
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
-                                                <label for="id_card"> {{ __('ID No.') }} <span
+                                                <label for="id_card"> {{ __('Staff ID') }} <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="id_card"
                                                     placeholder="id_card"

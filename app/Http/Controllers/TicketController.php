@@ -77,7 +77,27 @@ class TicketController extends Controller
                     return $data->date ? Carbon::parse($data->date)->format('d-M-Y h:i A') : 'N/A';
                 })
                 ->addColumn('status', function ($data) {
-                    return AppHelper::STATUS[$data->status_id] ?? 'Unknown';
+                    $status = AppHelper::STATUS[$data->status_id] ?? 'Unknown';
+                    $color = '';
+                    
+                    switch($data->status_id) {
+                        case 1:
+                            $color = '#3c8dbc';
+                            break;
+                        case 2:
+                            $color = '#e5c086';
+                            break;
+                        case 3:
+                            $color = '#549f54';
+                            break;
+                        case 4:
+                            $color = 'grey';
+                            break;
+                        default:
+                            $color = '#000000';
+                    }
+                    
+                    return '<span style="background-color: ' . $color . '; padding: 2px 5px; color: white;border-radius:3px">' . $status . '</span>';
                 })
                 ->addColumn('priority', function ($data) {
                     return AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
@@ -126,7 +146,7 @@ class TicketController extends Controller
                         $button .= '<a title="Edit" href="' . route('ticket.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                         $actions = true;
                     }
-                    if (auth()->user()->can('delete ticket')) {
+                    if (auth()->user()->can('delete ticket') && auth()->user()->role_id == AppHelper::USER_SUPER_ADMIN) {
                         $button .= '<a href="' . route('ticket.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
                         $actions = true;
                     }
@@ -173,12 +193,20 @@ class TicketController extends Controller
     public function show($id)
     {
         $ticket = Ticket::with('department')->find($id);
-
         if (!$ticket) {
             return response()->json(['error' => 'Ticket not found'], 404);
         }
 
         $ticket->status_text = AppHelper::STATUS[$ticket->status_id] ?? 'Unknown';
+        $ticket->priority_text = AppHelper::PRIORITY[$ticket->priority_id] ?? 'Unknown';
+
+        if ($ticket->request_status === 1) {
+            $ticket->request_status_text = 'Accepted';
+        } elseif ($ticket->request_status === 0) {
+            $ticket->request_status_text = 'Rejected';
+        } elseif ($ticket->request_status === null){
+            $ticket->request_status_text = 'Unknown';
+        }
 
         $language = session('user_lang', 'kh');
         $ticket->department_name = $ticket->department
@@ -187,6 +215,7 @@ class TicketController extends Controller
 
         return response()->json(['ticket' => $ticket]);
     }
+
 
     // public function getMessages($ticket_id)
     // {
@@ -255,7 +284,7 @@ class TicketController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $ticketData['photo'] = $filePath;
-        }else{
+        } else {
             $ticketData['photo'] = $request->oldphoto;
         }
 
@@ -306,7 +335,7 @@ class TicketController extends Controller
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
-            $filePath = $file->storeAs('uploads', $fileName, 'public'); 
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
 
             if (!empty($ticket->photo) && Storage::disk('public')->exists($ticket->photo)) {
                 Storage::disk('public')->delete($ticket->photo);

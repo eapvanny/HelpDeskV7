@@ -1,6 +1,8 @@
 @php
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Support\Facades\Auth;
+    use App\Http\Helpers\AppHelper;
+    use App\Models\Ticket;
     $authUser = Auth::user();
     $photoPath = $authUser->photo ? asset('storage/' . $authUser->photo) : asset('images/avatar.png');
 @endphp
@@ -88,7 +90,11 @@
                             <i class="fa-bell-o fa-regular fa-bell">
                                 <small class="notification_badge">
                                     <?php
-                                    $tickets = App\Models\Ticket::whereNull('request_status')->orderBy('created_at', 'desc')->limit(5)->get();
+                                    $tickets = Ticket::whereNull('request_status')
+                                        ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
+                                        ->orderBy('created_at', 'desc')
+                                        ->limit(5)
+                                        ->get();
                                     $ticketCount = $tickets->count();
                                     echo $ticketCount > 0 ? $ticketCount : '';
                                     ?>
