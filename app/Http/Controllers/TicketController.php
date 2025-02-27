@@ -131,15 +131,15 @@ class TicketController extends Controller
 
                     if ($data->request_status === 1) {
                         if ($isNotSuperAdminOrAdminSupport) {
-                            return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">'.__('Accepted').'</span>';
+                            return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">' . __('Accepted') . '</span>';
                         }
                         return '<div class="btn-group" style="gap: 5px;">' .
-                            '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">'.__('Accepted').'</span>' .
+                            '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">' . __('Accepted') . '</span>' .
                             '</div>';
                     } elseif ($data->request_status === 0) {
                         $style = $isNotSuperAdminOrAdminSupport ? $disabledStyle : $clickableStyle;
                         $class = $isNotSuperAdminOrAdminSupport ? '' : ' class="btn-unreject"';
-                        return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">'.__('Rejected').'</span>';
+                        return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">' . __('Rejected') . '</span>';
                     } elseif ($data->request_status === null) {
                         if ($isNotSuperAdminOrAdminSupport) {
                             return '<span style="background-color: rgb(211, 211, 211); padding: 4px 5px; border-radius: 3px; color: #666; cursor: not-allowed;">Sent</span>';
@@ -192,11 +192,10 @@ class TicketController extends Controller
         if ($newStatus == null) {
             $ticket->receiver = null;
             $ticket->status_id = AppHelper::STATUS_OPEN;
-
-        } elseif ($newStatus == 1 ) {
+        } elseif ($newStatus == 1) {
             $ticket->receiver = auth()->user()->name;
             $ticket->status_id = AppHelper::STATUS_PENDING;
-        }elseif ($newStatus == 0) {
+        } elseif ($newStatus == 0) {
             $ticket->receiver = auth()->user()->name;
             $ticket->status_id = AppHelper::STATUS_CLOSED;
         }
@@ -303,12 +302,12 @@ class TicketController extends Controller
             'date' => Carbon::now(),
         ];
 
-        if($request->status_id == AppHelper::STATUS_OPEN){
+        if ($request->status_id == AppHelper::STATUS_OPEN) {
             $ticketData['request_status'] = null;
-        }elseif($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED){
+        } elseif ($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED) {
             $ticketData['request_status'] = 1;
             $ticketData['receiver'] = auth()->user()->name;
-        }elseif($request->status_id == AppHelper::STATUS_CLOSED){
+        } elseif ($request->status_id == AppHelper::STATUS_CLOSED) {
             $ticketData['request_status'] = 0;
         }
 
@@ -330,9 +329,23 @@ class TicketController extends Controller
     {
         $ticket = Ticket::find($id);
         $departments = Department::pluck('name', 'id');
+
         if (!$ticket) {
             return redirect()->route('ticket.index');
         }
+
+        // Check if user is EMPLOYEE and ticket is accepted
+        if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE && $ticket->request_status == 1) {
+            return redirect()->route('ticket.index')
+                ->with('error', "This ticket can't be edited because it has already been accepted.");
+        }
+
+        // Optional: Check permission
+        if (!auth()->user()->can('update ticket')) {
+            return redirect()->route('ticket.index')
+                ->with('error', 'You do not have permission to edit tickets.');
+        }
+
         return view(
             'backend.ticket.add',
             compact(
@@ -365,11 +378,11 @@ class TicketController extends Controller
 
         ];
 
-        if($request->status_id == AppHelper::STATUS_OPEN){
+        if ($request->status_id == AppHelper::STATUS_OPEN) {
             $ticketData['request_status'] = null;
-        }elseif($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED){
+        } elseif ($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED) {
             $ticketData['request_status'] = 1;
-        }elseif($request->status_id == AppHelper::STATUS_CLOSED){
+        } elseif ($request->status_id == AppHelper::STATUS_CLOSED) {
             $ticketData['request_status'] = 0;
         }
 

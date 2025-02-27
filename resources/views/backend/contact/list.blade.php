@@ -17,7 +17,9 @@
 @section('bodyCssClass')
 @endsection
 <!-- End block -->
-
+@php
+    use App\Http\Helpers\AppHelper;
+@endphp
 <!-- BEGIN PAGE CONTENT-->
 @section('pageContent')
     <!-- Section header -->
@@ -37,10 +39,12 @@
                         {{ __('Supporter') }}
                         <small> {{ __('List') }} </small>
                     </h1>
-                    <div class="box-tools pull-right">
-                        <a class="btn btn-info text-white" href="{{ URL::route('contact.create') }}"><i
-                                class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
-                    </div>
+                    @if (auth()->user() && auth()->user()->role_id != AppHelper::USER_EMPLOYEE)
+                        <div class="box-tools pull-right">
+                            <a class="btn btn-info text-white" href="{{ URL::route('contact.create') }}"><i
+                                    class="fa fa-plus-circle"></i> {{ __('Add New') }} </a>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="wrap-outter-box">

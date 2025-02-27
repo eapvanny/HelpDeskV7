@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Helpers\AppHelper;
 use App\Models\Contact;
+use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
@@ -66,10 +67,12 @@ class ContactController extends Controller
     public function create()
     {
         $contact = null;
+        $departments = Department::pluck('name', 'id');
         return view(
             'backend.contact.add',
             compact(
-                'contact'
+                'contact',
+                'departments'
             )
         );
     }
@@ -99,6 +102,8 @@ class ContactController extends Controller
             $filePath = 'uploads/' . $fileName;
             Storage::put($filePath, file_get_contents($file));
             $supportData['photo'] = $filePath;
+        } else {
+            $supportData['photo'] = $request->oldphoto;
         }
         
         Contact::create($supportData);
@@ -108,13 +113,15 @@ class ContactController extends Controller
     public function edit($id)
     {
         $contact = Contact::find($id);
+        $departments = Department::pluck('name', 'id');
         if (!$contact) {
             return redirect()->route('contact.index');
         }
         return view(
             'backend.contact.add',
             compact(
-                'contact'
+                'contact',
+                'departments'
             )
         );
     }
@@ -138,17 +145,17 @@ class ContactController extends Controller
             'link_telegram' => $request->link_telegram,
         ];
         if ($request->hasFile('photo')) {
-            // Delete old photo if exists
-            if ($contact->photo && Storage::exists($contact->photo)) {
-                Storage::delete($contact->photo);
-            }
-
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
-            $filePath = 'uploads/' . $fileName;
-            Storage::put($filePath, file_get_contents($file));
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
 
-            $supportData['photo'] = $filePath; // Update with new photo
+            if (!empty($contact->photo) && Storage::disk('public')->exists($contact->photo)) {
+                Storage::disk('public')->delete($contact->photo);
+            }
+
+            $supportData['photo'] = $filePath;
+        } else {
+            $supportData['photo'] = $contact->photo;
         }
 
         $contact->update($supportData);
