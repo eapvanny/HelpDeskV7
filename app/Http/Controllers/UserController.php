@@ -33,7 +33,7 @@ class UserController extends Controller
         if ($request->ajax()) {
             $query = User::with('department', 'role');
 
-            if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN])) {
+            if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN, AppHelper::USER_ADMIN_SUPPORT])) {
                 $query->where('id', auth()->user()->id);
             }
 
