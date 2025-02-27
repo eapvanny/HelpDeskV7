@@ -147,7 +147,7 @@
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                             <div class="row">
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
                                                         <label for="Department">{{ __('Department') }}</label>
                                                         {!! Form::select('department_id', $departments, request('department_id'), [
@@ -157,10 +157,9 @@
                                                         ]) !!}
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="status_id">{{ __('Status') }} <span
-                                                                class="text-danger">*</span></label>
+                                                        <label for="status_id">{{ __('Ticket Status') }}</label>
                                                         {!! Form::select(
                                                             'status_id',
                                                             [
@@ -174,10 +173,9 @@
                                                         ) !!}
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4">
+                                                <div class="col-xl-3">
                                                     <div class="form-group">
-                                                        <label for="priority_id">{{ __('Priority') }} <span
-                                                                class="text-danger">*</span></label>
+                                                        <label for="priority_id">{{ __('Ticket Priority') }} </label>
                                                         {!! Form::select(
                                                             'priority_id',
                                                             [
@@ -188,6 +186,21 @@
                                                             ],
                                                             request('priority_id'),
                                                             ['class' => 'form-control select2', 'id' => 'priority_id', 'placeholder' => __('Select a priority')],
+                                                        ) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="request_status">{{ __('Request Status') }}</label>
+                                                        {!! Form::select(
+                                                            'request_status',
+                                                            [
+                                                                1 => __('Accepted'),
+                                                                0 => __('Rejected'),
+                                                                'null' => __('Not Confirmed')
+                                                            ],
+                                                            request('request_status'),
+                                                            ['class' => 'form-control select2', 'id' => 'request_status', 'placeholder' => __('Select a request status')]
                                                         ) !!}
                                                     </div>
                                                 </div>

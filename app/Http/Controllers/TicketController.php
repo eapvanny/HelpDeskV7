@@ -45,6 +45,15 @@ class TicketController extends Controller
             $is_filter = true;
             $query->where('priority_id', $request->priority_id);
         }
+        if ($request->has('request_status') && $request->request_status !== '') {
+            $is_filter = true;
+
+            if ($request->request_status === 'null') {
+                $query->whereNull('request_status');
+            } else {
+                $query->where('request_status', $request->request_status);
+            }
+        }
         if ($request->ajax()) {
             $tickets = $query->get();
 
@@ -77,30 +86,40 @@ class TicketController extends Controller
                     return $data->date ? Carbon::parse($data->date)->format('d-M-Y h:i A') : 'N/A';
                 })
                 ->addColumn('status', function ($data) {
+                    $statusColors = [
+                        1 => '#3c8dbc',
+                        2 => '#e5c086',
+                        3 => '#549f54',
+                        4 => 'grey',
+                    ];
+
                     $status = AppHelper::STATUS[$data->status_id] ?? 'Unknown';
-                    $color = '';
-                    
-                    switch($data->status_id) {
-                        case 1:
-                            $color = '#3c8dbc';
-                            break;
-                        case 2:
-                            $color = '#e5c086';
-                            break;
-                        case 3:
-                            $color = '#549f54';
-                            break;
-                        case 4:
-                            $color = 'grey';
-                            break;
-                        default:
-                            $color = '#000000';
-                    }
-                    
-                    return '<span style="background-color: ' . $color . '; padding: 2px 5px; color: white;border-radius:3px">' . $status . '</span>';
+                    $color = $statusColors[$data->status_id] ?? '#000000';
+
+                    return sprintf(
+                        '<span style="background-color: %s; padding: 7px 6px; color: white; border-radius: 3px">%s</span>',
+                        $color,
+                        __($status)
+                    );
                 })
                 ->addColumn('priority', function ($data) {
-                    return AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
+                    $priorityColors = [
+                        1 => 'grey',
+                        2 => '#ffc107',
+                        3 => '#fd7e14',
+                        4 => '#dc3545',
+                    ];
+
+                    $priority = AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
+                    $color = $priorityColors[$data->priority_id] ?? '#000000';
+                    $textColor = $color === '#ffc107' ? 'white' : 'white';
+
+                    return sprintf(
+                        '<span style="background-color: %s; padding: 7px 6px; color: %s; border-radius: 3px">%s</span>',
+                        $color,
+                        $textColor,
+                        __($priority)
+                    );
                 })
                 ->addColumn('request_status', function ($data) {
                     $isNotSuperAdminOrAdminSupport = auth()->check() &&
@@ -112,22 +131,22 @@ class TicketController extends Controller
 
                     if ($data->request_status === 1) {
                         if ($isNotSuperAdminOrAdminSupport) {
-                            return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">Accepted</span>';
+                            return '<span style="background-color: #3c8dbc; ' . $disabledStyle . '">'.__('Accepted').'</span>';
                         }
                         return '<div class="btn-group" style="gap: 5px;">' .
-                            '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">Accepted</span>' .
+                            '<span class="btn-unaccept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">'.__('Accepted').'</span>' .
                             '</div>';
                     } elseif ($data->request_status === 0) {
                         $style = $isNotSuperAdminOrAdminSupport ? $disabledStyle : $clickableStyle;
                         $class = $isNotSuperAdminOrAdminSupport ? '' : ' class="btn-unreject"';
-                        return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">Rejected</span>';
+                        return '<span' . $class . ' data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $style . '">'.__('Rejected').'</span>';
                     } elseif ($data->request_status === null) {
                         if ($isNotSuperAdminOrAdminSupport) {
                             return '<span style="background-color: rgb(211, 211, 211); padding: 4px 5px; border-radius: 3px; color: #666; cursor: not-allowed;">Sent</span>';
                         }
                         return '<div class="btn-group" style="gap: 5px;">' .
-                            '<span class="btn-accept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">Accept</span>' .
-                            '<span class="btn-reject" data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $clickableStyle . '">Reject</span>' .
+                            '<span class="btn-accept" data-id="' . $data->id . '" style="background-color: #3c8dbc; ' . $clickableStyle . '">' . __('Accept') . '</span>' .
+                            '<span class="btn-reject" data-id="' . $data->id . '" style="background-color: #dd4b39; ' . $clickableStyle . '">' . __('Reject') . '</span>' .
                             '</div>';
                     }
                     return '<span>Unknown Status</span>';
@@ -156,7 +175,7 @@ class TicketController extends Controller
                     $button .= '</div>';
                     return $button;
                 })
-                ->rawColumns(['photo', 'status', 'action', 'request_status'])
+                ->rawColumns(['photo', 'status', 'action', 'request_status', 'priority'])
                 ->make(true);
         }
 
@@ -170,10 +189,16 @@ class TicketController extends Controller
         $newStatus = $request->input('request_status');
 
         $ticket->request_status = $newStatus;
-        if ($newStatus === null) {
+        if ($newStatus == null) {
             $ticket->receiver = null;
-        } elseif ($newStatus == 1 || $newStatus == 0) {
+            $ticket->status_id = AppHelper::STATUS_OPEN;
+
+        } elseif ($newStatus == 1 ) {
             $ticket->receiver = auth()->user()->name;
+            $ticket->status_id = AppHelper::STATUS_PENDING;
+        }elseif ($newStatus == 0) {
+            $ticket->receiver = auth()->user()->name;
+            $ticket->status_id = AppHelper::STATUS_CLOSED;
         }
         $ticket->save();
 
@@ -204,7 +229,7 @@ class TicketController extends Controller
             $ticket->request_status_text = 'Accepted';
         } elseif ($ticket->request_status === 0) {
             $ticket->request_status_text = 'Rejected';
-        } elseif ($ticket->request_status === null){
+        } elseif ($ticket->request_status === null) {
             $ticket->request_status_text = 'Unknown';
         }
 
@@ -278,6 +303,15 @@ class TicketController extends Controller
             'date' => Carbon::now(),
         ];
 
+        if($request->status_id == AppHelper::STATUS_OPEN){
+            $ticketData['request_status'] = null;
+        }elseif($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED){
+            $ticketData['request_status'] = 1;
+            $ticketData['receiver'] = auth()->user()->name;
+        }elseif($request->status_id == AppHelper::STATUS_CLOSED){
+            $ticketData['request_status'] = 0;
+        }
+
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $fileName = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->extension();
@@ -319,7 +353,6 @@ class TicketController extends Controller
             'employee_name' => 'required',
         ];
         $this->validate($request, $rules);
-
         $ticketData = [
             'department_id' => $request->department_id,
             'id_card' => $request->id_card,
@@ -331,6 +364,15 @@ class TicketController extends Controller
             'date' => Carbon::now('Asia/Phnom_Penh'),
 
         ];
+
+        if($request->status_id == AppHelper::STATUS_OPEN){
+            $ticketData['request_status'] = null;
+        }elseif($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED){
+            $ticketData['request_status'] = 1;
+        }elseif($request->status_id == AppHelper::STATUS_CLOSED){
+            $ticketData['request_status'] = 0;
+        }
+
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');

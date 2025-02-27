@@ -54,13 +54,13 @@
                     </a>
                 </li>
             @endcan
-            @can('view permission')
+            @if (auth()->user() && auth()->user()->role_id == AppHelper::USER_SUPER_ADMIN)
                 <li>
                     <a href="{{ URL::route('permission.index') }}" class="text-decoration-none">
                         <i class="fa fa-snowflake"></i> <span>{{ __('Permission') }}</span>
                     </a>
                 </li>
-            @endcan
+            @endif
 
             <li class="treeview">
                 <a href="#" class="text-decoration-none">
