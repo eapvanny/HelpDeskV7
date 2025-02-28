@@ -84,8 +84,8 @@
 
             div {
                 position: absolute;
-                width: 16px;
-                height: 16px;
+                width: 17px;
+                height: 17px;
                 background: $color;
                 box-shadow: 2px 2px 8px rgba($color, .09);
                 border-radius: 50%;
@@ -266,6 +266,15 @@
                 display: none;
             }
         }
+        .calendar-move-today {
+            background-color: transparent;
+            color: black;
+        }
+
+        .calendar-move-today.active {
+            background-color: #4299e1;
+            color: white;
+        }
     </style>
 @endsection
 
@@ -319,25 +328,25 @@
                     <input class="select2" type="date">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-6 col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Problem Tickets') }}</h5>
                     <h3 id="problem-tickets">{{ __($openTickets) }}</h3>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-6 col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Pending Tickets') }}</h5>
                     <h3 id="pending-tickets">{{ $pendingTickets }}</h3>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-6 col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Resolved Tickets') }}</h5>
                     <h3 id="solved-tickets">{{ $resolvedTickets }}</h3>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-6 col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Closed Tickets') }}</h5>
                     <h3 id="closed-tickets">{{ $closedTickets }}</h3>
@@ -347,7 +356,7 @@
     </section>
     <section>
         <div class="row">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card mt-3">
                     <div class="media  d-flex justify-content-between ">
                         <div class="media-body">
@@ -370,7 +379,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card mt-3 ticket-chat">
                     <div class="chart-container">
                         <span style="font-weight: bold">{{ __('All tickets in this year') }}</span>
