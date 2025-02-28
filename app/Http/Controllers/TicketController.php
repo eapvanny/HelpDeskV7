@@ -325,7 +325,7 @@ class TicketController extends Controller
 
         return redirect()->route('ticket.index')->with('success', "Tickets has been created!");
     }
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $ticket = Ticket::find($id);
         $departments = Department::pluck('name', 'id');
@@ -333,6 +333,8 @@ class TicketController extends Controller
         if (!$ticket) {
             return redirect()->route('ticket.index');
         }
+
+        // dd(auth()->user()->role_id, $ticket->request_status);
 
         // Check if user is EMPLOYEE and ticket is accepted
         if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE && $ticket->request_status == 1) {

@@ -3,11 +3,8 @@
 namespace Database\Seeders;
 
 use App\Http\Helpers\AppHelper;
-use App\Models\Status;
 use App\Models\User;
 use App\Models\UserRole;
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
@@ -20,54 +17,75 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Ensure the role exists before assigning it
-        if (Role::where('name', 'Super Admin')->doesntExist()) {
-            $adminRole = Role::create(['name' => 'Super Admin']);
-        } else {
-            $adminRole = Role::where('name', 'Super Admin')->first();
+        // Create all roles defined in AppHelper
+        $roles = [];
+        foreach (AppHelper::USER as $roleId => $roleName) {
+            $roles[$roleId] = Role::firstOrCreate(['name' => $roleName]);
         }
 
-        if (User::where('email', 'admin@gmail.com')->doesntExist()) {
+        // Ensure the super admin user exists
+        if (User::where('email', 'superadmin@gmail.com')->doesntExist()) {
             $user = User::create([
                 'name' => 'Mr. Admin',
                 'username' => 'superadmin',
                 'email' => 'superadmin@gmail.com',
                 'password' => Hash::make('demo123'),
-                'photo' => '123.jpg',
+                // 'photo' => '123.jpg',
                 'staff_id_card' => '8332',
                 'position' => 'Developer',
-                'gender' => '1',
+                'gender' => AppHelper::GENDER_MALE,
                 'status' => AppHelper::STATUS_OPEN,
-                'role_id' => AppHelper::USER_SUPER_ADMIN,
+                'role_id' => AppHelper::USER_SUPER_ADMIN, // Assign correct role_id
                 'phone_no' => '0987876567',
             ]);
 
-            // Assign role using Spatie
-            $user->syncRoles($adminRole->name);
-            
+            // Assign the Super Admin role using Spatie
+            $user->syncRoles($roles[AppHelper::USER_SUPER_ADMIN]->name);
+
+            // Store user role mapping
             UserRole::create([
                 'user_id' => $user->id,
-                'role_id' => $adminRole->id,
+                'role_id' => $roles[AppHelper::USER_SUPER_ADMIN]->id,
             ]);
         }
-        $permissions = [    
-            'view department', 'create department', 'update department', 'delete department',
-            'create ticket', 'view ticket', 'update ticket', 'delete ticket',
-            'view status', 'view priority',
-            'create user', 'view user', 'update user', 'delete user',
-            'create role', 'view role', 'update role', 'delete role',
-            'create permission', 'view permission', 'update permission', 'delete permission',
-            'update status', 'update priority', 'show ticket','view contact',
-            'create contact','update contact', 'delete contact'
+
+        // Define permissions
+        $permissions = [
+            'view department',
+            'create department',
+            'update department',
+            'delete department',
+            'create ticket',
+            'view ticket',
+            'update ticket',
+            'delete ticket',
+            'view status',
+            'view priority',
+            'create user',
+            'view user',
+            'update user',
+            'delete user',
+            'create role',
+            'view role',
+            'update role',
+            'delete role',
+            'create permission',
+            'view permission',
+            'update permission',
+            'delete permission',
+            'update status',
+            'update priority',
+            'show ticket',
+            'view contact',
+            'create contact',
+            'update contact',
+            'delete contact'
         ];
 
+        // Assign permissions to Super Admin role
         foreach ($permissions as $permission) {
-            // Ensure permission exists
-            $perm = Permission::firstOrCreate(
-                ['name' => $permission, 'guard_name' => 'web']
-            );
-            // Assign permission to role
-            $adminRole->givePermissionTo($perm);
+            $perm = Permission::firstOrCreate(['name' => $permission, 'guard_name' => 'web']);
+            $roles[AppHelper::USER_SUPER_ADMIN]->givePermissionTo($perm);
         }
     }
 }

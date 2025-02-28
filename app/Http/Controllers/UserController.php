@@ -185,7 +185,7 @@ class UserController extends Controller
     {
         $user = null;
         $departments = Department::pluck('name', 'id');
-        $roles = Role::pluck('name', 'id');
+        $roles = Role::orderBy('id', 'asc')->pluck('name', 'id');
         return view('backend.user.add', compact('user', 'roles', 'departments'));
     }
 
@@ -250,7 +250,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        $roles = Role::pluck('name', 'id');
+        $roles = Role::orderBy('id', 'asc')->pluck('name', 'id');
 
         $departments = Department::pluck('name', 'id');
         if (!$user) {

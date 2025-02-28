@@ -232,7 +232,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6 col-md-6 col-xl-6">
+                                        <div class="col-lg-6 col-md-6 col-xl-6 {{ !$isAdmin ? 'd-none' : '' }}">
                                             <div class="form-group has-feedback">
                                                 <label for="priority_id"> {{ __('Priority') }} <span
                                                         class="text-danger">*</span></label>

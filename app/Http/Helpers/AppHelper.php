@@ -6,7 +6,19 @@ class AppHelper {
     const USER_SUPER_ADMIN = 1;
     const USER_ADMIN_SUPPORT = 2;
     const USER_ADMIN = 3;
-    const USER_EMPLOYEE = 4;
+    const USER_MANAGER = 4;
+    const USER_DIRECTOR = 5;    
+    const USER_EMPLOYEE = 6;
+
+    const USER = [
+        self::USER_SUPER_ADMIN => 'Super Admin',
+        self::USER_ADMIN_SUPPORT => 'Admin Support',
+        self::USER_ADMIN => 'Admin',
+        self::USER_DIRECTOR => 'Manager',
+        self::USER_MANAGER => 'Director',
+        self::USER_EMPLOYEE => 'Employee',
+    ];
+
     const GENDER = [
         1 => 'Male',
         2 => 'Female'
