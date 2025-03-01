@@ -40,7 +40,7 @@ Route::post('/forget-password', [AuthController::class, 'forgetPasswordPost'])->
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset.password');
 Route::post('/reset-password', [AuthController::class, 'resetPasswordPost'])->name('reset.password.post');
 
-Route::group(['middleware' => ['auth','isAdmin']], function() {
+Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
     Route::resource('dashboard', DashboardController::class);
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
@@ -81,7 +81,7 @@ Route::group(['middleware' => ['auth','isAdmin']], function() {
 
     //permission
     Route::resource('permission', PermissionController::class);
-    
+
     // Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
     // Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
     // Route::post('/permission/store', [PermissionController::class, 'store'])->name('permission.store');
@@ -99,8 +99,10 @@ Route::group(['middleware' => ['auth','isAdmin']], function() {
     // Route::delete('/department/{id}/delete', [DepartmentController::class, 'destroy'])->name('department.delete');
 
     //Ticket
+    Route::get('/ticket/requests', [TicketController::class, 'getRequestTickets'])->name('ticket.requests');
+    Route::get('/ticket/accepted', [TicketController::class, 'getAcceptedTickets'])->name('ticket.accepted');
+    Route::get('/ticket/rejected', [TicketController::class, 'getRejectedTickets'])->name('ticket.rejected');
     Route::post('/ticket/update-status/{id}', [TicketController::class, 'updateStatus'])->name('ticket.update-status');
-    Route::get('/ticket/accept', [TicketController::class, 'getTicketAccept'])->name('ticket.accept');
     Route::resource('ticket', TicketController::class);
     // Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
     // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
@@ -126,7 +128,7 @@ Route::group(['middleware' => ['auth','isAdmin']], function() {
     Route::resource('priority', PriorityController::class);
     Route::resource('contact', ContactController::class);
 
-    Route::get('support',[DashboardController::class, 'getSupportUser'])->name('get.support');
+    Route::get('support', [DashboardController::class, 'getSupportUser'])->name('get.support');
 
     // Route::get('/priority', [PriorityController::class, 'index'])->name('priority.index');
     // Route::get('/priority/create', [PriorityController::class, 'create'])->name('priority.create');

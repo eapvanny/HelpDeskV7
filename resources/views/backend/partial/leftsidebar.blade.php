@@ -18,13 +18,34 @@
                     </a>
                 </li>
             @endcan
-            @can('view ticket')
-                <li>
-                    <a href="{{ URL::route('ticket.index') }}" class="text-decoration-none">
-                        <i class="fa fa-regular fa-address-card"></i> <span>{{ __('Tickets') }}</span>
-                    </a>
-                </li>
-            @endcan
+            <li class="treeview">
+                <a href="#" class="text-decoration-none">
+                    <i class="fa fa-clipboard-list" style="font-size: 16px"></i> <span>{{ __('Ticket Management') }}</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @can('view ticket')
+                        <li>
+                            <a href="{{ URL::route('ticket.requests') }}" class="text-decoration-none">
+                                <i class="fa-solid fa-calendar"></i> <span>{{ __('Request Tickets') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::route('ticket.accepted') }}" class="text-decoration-none">
+                                <i class="fa-solid fa-calendar-check"></i> <span>{{ __('Accepted Tickets') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::route('ticket.rejected') }}" class="text-decoration-none">
+                                <i class="fa-solid fa-calendar-xmark"></i> <span>{{ __('Rejected Tickets') }}</span>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>   
+            </li>
+
             @can('view status')
                 <li>
                     <a href="{{ URL::route('status.index') }}" class="text-decoration-none">
@@ -59,7 +80,7 @@
                     @can('view role')
                         <li>
                             <a href="{{ URL::route('role.index') }}" class="text-decoration-none">
-                                <i class="fa fa-users"></i> <span>{{ __('Role Permissions') }}</span>
+                                <i class="fa fa-users"></i> <span>{{ __('Role & Permissions') }}</span>
                             </a>
                         </li>
                     @endcan

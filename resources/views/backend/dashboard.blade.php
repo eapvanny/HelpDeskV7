@@ -328,25 +328,25 @@
                     <input class="select2" type="date">
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Problem Tickets') }}</h5>
                     <h3 id="problem-tickets">{{ __($openTickets) }}</h3>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Pending Tickets') }}</h5>
                     <h3 id="pending-tickets">{{ $pendingTickets }}</h3>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Resolved Tickets') }}</h5>
                     <h3 id="solved-tickets">{{ $resolvedTickets }}</h3>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="card" style="color: grey">
                     <h5>{{ __('Closed Tickets') }}</h5>
                     <h3 id="closed-tickets">{{ $closedTickets }}</h3>

@@ -22,38 +22,36 @@ class TicketController extends Controller
         $this->middleware('permission:update ticket', ['only' => ['update', 'edit']]);
         $this->middleware('permission:delete ticket', ['only' => ['destroy']]);
     }
-    public $indexof = 1;
-    public function index(Request $request)
+    private $indexof = 1;
+
+    private function getTicketsByRequestStatus(Request $request, $requestStatus = null)
     {
-        $query = Ticket::with(['department', 'user']);
+        $query = Ticket::with(['department', 'user'])->where('request_status', $requestStatus);
         $is_filter = false;
         if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE) {
             $query->where('user_id', auth()->id());
         }
-
         if ($request->has('department_id') && $request->department_id != '') {
             $is_filter = true;
             $query->where('department_id', $request->department_id);
         }
-
         if ($request->has('status_id') && $request->status_id != '') {
             $is_filter = true;
             $query->where('status_id', $request->status_id);
         }
-
         if ($request->has('priority_id') && $request->priority_id != '') {
             $is_filter = true;
             $query->where('priority_id', $request->priority_id);
         }
-        if ($request->has('request_status') && $request->request_status !== '') {
-            $is_filter = true;
+        // if ($request->has('request_statuses') && $request->request_status !== '') {
+        //     $is_filter = true;
 
-            if ($request->request_status === 'null') {
-                $query->whereNull('request_status');
-            } else {
-                $query->where('request_status', $request->request_status);
-            }
-        }
+        //     if ($request->request_statuses === 'null') {
+        //         $query->whereNull('request_status');
+        //     } else {
+        //         $query->where('request_status', $request->request_statuses);
+        //     }
+        // }
         if ($request->ajax()) {
             $tickets = $query->get();
 
@@ -92,10 +90,8 @@ class TicketController extends Controller
                         3 => '#549f54',
                         4 => 'grey',
                     ];
-
                     $status = AppHelper::STATUS[$data->status_id] ?? 'Unknown';
                     $color = $statusColors[$data->status_id] ?? '#000000';
-
                     return sprintf(
                         '<span style="background-color: %s; padding: 7px 6px; color: white; border-radius: 3px">%s</span>',
                         $color,
@@ -109,11 +105,9 @@ class TicketController extends Controller
                         3 => '#fd7e14',
                         4 => '#dc3545',
                     ];
-
                     $priority = AppHelper::PRIORITY[$data->priority_id] ?? 'Unknown';
                     $color = $priorityColors[$data->priority_id] ?? '#000000';
                     $textColor = $color === '#ffc107' ? 'white' : 'white';
-
                     return sprintf(
                         '<span style="background-color: %s; padding: 7px 6px; color: %s; border-radius: 3px">%s</span>',
                         $color,
@@ -180,9 +174,37 @@ class TicketController extends Controller
         }
 
         $departments = Department::pluck('name', 'id')->toArray();
-        return view('backend.ticket.list', compact('is_filter', 'departments'));
+        $currentFilter = match ($requestStatus) {
+            null => 'requests',
+            1 => 'accepted',
+            0 => 'rejected',
+            default => 'all',
+        };
+
+        return view('backend.ticket.list', compact('is_filter', 'departments', 'currentFilter'));
     }
 
+    // Sidebar-specific methods
+    public function getRequestTickets(Request $request)
+    {
+        return $this->getTicketsByRequestStatus($request, null); // null for "not accepted or rejected"
+    }
+
+    public function getAcceptedTickets(Request $request)
+    {
+        return $this->getTicketsByRequestStatus($request, 1); // 1 for "accepted"
+    }
+
+    public function getRejectedTickets(Request $request)
+    {
+        return $this->getTicketsByRequestStatus($request, 0); // 0 for "rejected"
+    }
+
+    // Default index method
+    public function index(Request $request)
+    {
+        return $this->getTicketsByRequestStatus($request); // No specific request_status filter by default
+    }
     public function updateStatus(Request $request, $id)
     {
         $ticket = Ticket::findOrFail($id);
