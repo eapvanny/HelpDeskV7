@@ -10,23 +10,23 @@
 @section('extraStyle')
     <style>
         /* .modal-fullscreen .modal-dialog {
-                                                                                width: 100%;
-                                                                                max-width: none;
-                                                                                height: 100%;
-                                                                                margin: 0;
-                                                                            }
+                                                                                        width: 100%;
+                                                                                        max-width: none;
+                                                                                        height: 100%;
+                                                                                        margin: 0;
+                                                                                    }
 
-                                                                            .modal-fullscreen .modal-content {
-                                                                                height: 100%;
-                                                                                display: flex;
-                                                                                flex-direction: column;
-                                                                            }
+                                                                                    .modal-fullscreen .modal-content {
+                                                                                        height: 100%;
+                                                                                        display: flex;
+                                                                                        flex-direction: column;
+                                                                                    }
 
-                                                                            .modal-body {
-                                                                                flex: 1;
-                                                                                display: flex;
-                                                                                flex-direction: column;
-                                                                            } */
+                                                                                    .modal-body {
+                                                                                        flex: 1;
+                                                                                        display: flex;
+                                                                                        flex-direction: column;
+                                                                                    } */
 
         .chat-container {
             flex-grow: 1;
@@ -382,6 +382,9 @@
                 }
             });
 
+
+
+
             var currentRoute =
                 '{{ Route::currentRouteName() }}'; // e.g., ticket.requests, ticket.accepted, ticket.rejected
             var ajaxUrl = '';
@@ -512,13 +515,13 @@
                                         title: 'Accepted!',
                                         text: 'The ticket has been accepted.',
                                         icon: 'success',
-                                        timer: 2000, // Auto-close after 3 seconds
+                                        timer: 1850, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
                                     // t.ajax.reload();
                                     setTimeout(function() {
                                         window.location.reload();
-                                    }, 2000);
+                                    }, 1800);
                                 }
                             },
                             error: function(xhr) {
@@ -561,12 +564,12 @@
                                         title: 'Unaccepted!',
                                         text: 'The ticket has been unaccepted.',
                                         icon: 'success',
-                                        timer: 3000, // Auto-close after 3 seconds
+                                        timer: 1850, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
                                         window.location.reload();
-                                    }, 2000);
+                                    }, 1800);
                                 }
                             },
                             error: function(xhr) {
@@ -613,12 +616,12 @@
                                         title: 'Rejected!',
                                         text: 'The ticket has been rejected.',
                                         icon: 'success',
-                                        timer: 3000, // Auto-close after 3 seconds
+                                        timer: 1850, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
                                         window.location.reload();
-                                    }, 2000);
+                                    }, 1850);
                                 }
                             },
                             error: function(xhr) {
@@ -662,12 +665,12 @@
                                         title: 'Unrejected!',
                                         text: 'The ticket rejection has been undone.',
                                         icon: 'success',
-                                        timer: 3000, // Auto-close after 3 seconds
+                                        timer: 1850, // Auto-close after 3 seconds
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
                                         window.location.reload();
-                                    }, 2000);
+                                    }, 1800);
                                 }
                             },
                             error: function(xhr) {

@@ -201,8 +201,104 @@
 @php
     }
 @endphp
-
+<script src="{{asset('js/pusher.js')}}"></script>
+<div id="toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
 <script type="text/javascript">
+
+var loggedInUserId = {{ auth()->id() }};
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('9098d27790a56827c41a', {
+    cluster: 'ap1'
+});
+
+var channel = pusher.subscribe('my-channel');
+channel.bind('my-event', function(data) {
+    if (data.user_id !== loggedInUserId) { 
+        showMDBToast(data.message);
+    }
+});
+
+function showMDBToast(message) {
+    // Create unique toast ID
+    var toastId = "toast-" + Date.now();
+
+    var toastHtml = ` 
+        <div id="${toastId}" style="padding: 8px 10px; width: 22em" class="toast fade bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">New Ticket Alert</strong>
+                <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                ${message}
+            </div>
+        </div>
+    `;
+    
+    var toastContainer = document.getElementById("toast-container");
+    var toastElement = document.createElement("div");
+    toastElement.innerHTML = toastHtml;
+    var toastEl = toastElement.firstElementChild;
+    toastContainer.appendChild(toastEl);
+
+    // Check if MDB is available and initialize toast
+    if (typeof mdb !== 'undefined' && mdb.Toast) {
+        var toast = new mdb.Toast(toastEl);
+        console.log('Toast initialized, showing...');
+        toast.show();
+
+        // Auto-hide after 3 seconds
+        setTimeout(function() {
+            console.log('Attempting to hide toast:', toastId);
+            if (toastEl && toastContainer.contains(toastEl)) {
+                toast.hide();
+                toastEl.addEventListener('hidden.mdb.toast', function() {
+                    console.log('Toast hidden, removing:', toastId);
+                    toastEl.remove();
+                    toast.dispose();
+                }, { once: true });
+            } else {
+                console.log('Toast element not found for hiding:', toastId);
+            }
+        }, 5000);
+    } else {
+        // Fallback if MDB is not loaded
+        console.error('MDB Toast not available, using basic timeout');
+        toastEl.classList.add('show');
+        setTimeout(function() {
+            console.log('Fallback: Removing toast:', toastId);
+            if (toastEl && toastContainer.contains(toastEl)) {
+                toastEl.classList.remove('show');
+                setTimeout(() => toastEl.remove(), 500); // Match fade duration
+            }
+        }, 5000);
+    }
+    incrementNotificationBadge();
+}
+function incrementNotificationBadge() {
+    // Find the notification badge element
+    var badgeElement = document.querySelector('.notification_badge');
+    if (badgeElement) {
+        let currentCount = parseInt(badgeElement.textContent) || 0;
+        
+        // If current count is 5 or more, set to "5+" with small font size
+        if (currentCount >= 5) {
+            badgeElement.textContent = '5+';
+            badgeElement.style.fontSize = '9px'; // Apply small font size for "5+"
+        } else {
+            // Increment the count if less than 5
+            currentCount += 1;
+            badgeElement.textContent = currentCount;
+            badgeElement.style.fontSize = ''; // Reset font size for numeric counts (default size)
+        }
+        
+        // Ensure the badge is visible if the count is greater than 0 or shows "5+"
+        badgeElement.style.display = (currentCount > 0 || badgeElement.textContent === '5+') ? 'inline' : 'none';
+    } else {
+        console.warn('Notification badge element not found');
+    }
+}
+
     var DatatableSignal = function(){
         this.dispatcher = $({});
     };

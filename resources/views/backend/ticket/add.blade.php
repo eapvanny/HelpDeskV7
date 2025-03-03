@@ -142,7 +142,7 @@
                     <div class="row">
                         <div class="form-group has-feedback">
                             <div class="row">
-                                <div class="row-span-6 col-6 mt-4">
+                                <div class="row-span-6 col-md-6 mt-4">
                                     <div class="form-group has-feedback position-relative">
                                         <input type="file" id="photo" name="photo" style="display: none" accept="image/*">
                                         <button type="button" class="btn btn-light text-secondary fs-5 position-absolute d-none m-2 end-0 z-1" id="btn-remove-photo"><i class="fa-solid fa-trash"></i></button>

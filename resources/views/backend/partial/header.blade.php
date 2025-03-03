@@ -85,18 +85,25 @@
                     </div>
                     <!-- Notifications -->
                     <div class="dropdown mx-2">
-                        <a data-mdb-dropdown-init class="notifi-icon text-reset dropdown-toggle"
+                        <a data-mdb-dropdown-init class="notifi-icon text-reset dropdown-toggle show-notification"
                             id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa-bell-o fa-regular fa-bell">
                                 <small class="notification_badge">
                                     <?php
+                                    // Get total count of matching tickets (without limit)
+                                    $totalTickets = Ticket::whereNull('request_status')
+                                        ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
+                                        ->count(); // Count total tickets
+                                    
+                                    // Fetch only the first 5 tickets
                                     $tickets = Ticket::whereNull('request_status')
                                         ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
                                         ->orderBy('created_at', 'desc')
                                         ->limit(5)
                                         ->get();
-                                    $ticketCount = $tickets->count();
-                                    echo $ticketCount > 0 ? $ticketCount : '';
+                                    
+                                    // Show "5+" if more than 5 tickets exist, otherwise show the actual count
+                                    echo $totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : ($totalTickets > 0 ? $totalTickets : '');
                                     ?>
                                 </small>
                             </i>
@@ -112,17 +119,17 @@
                             <li>
                                 <ul class="notification_top">
                                     <?php foreach ($tickets as $ticket): ?>
-                                        <li class="notification-item" style="color: #777">
-                                            <div class="notification-subject">
-                                                <strong><?= htmlspecialchars($ticket->subject) ?></strong> 
-                                                (<?= htmlspecialchars(mb_substr($ticket->description, 0, 30, 'UTF-8')) . (mb_strlen($ticket->description, 'UTF-8') > 30 ? '...' : '') ?>)
-                                            </div>
-                                        </li>
+                                    <li class="notification-item" style="color: #777">
+                                        <div class="notification-subject">
+                                            <strong><?= htmlspecialchars($ticket->subject) ?></strong>
+                                            (<?= htmlspecialchars(mb_substr($ticket->description, 0, 30, 'UTF-8')) . (mb_strlen($ticket->description, 'UTF-8') > 30 ? '...' : '') ?>)
+                                        </div>
+                                    </li>
                                     <?php endforeach; ?>
                                 </ul>
                             </li>
-                            
-                            @if ($ticketCount != 0)
+
+                            @if ($totalTickets != 0)
                                 <li class="dropdown-divider"></li>
                             @endif
                             <li>
@@ -212,6 +219,68 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            let isDataLoaded = false; // Track if data is loaded
+
+    $('.show-notification').one('click', function () { // Fetch only once
+        fetchNotifications();
+    });
+
+    function fetchNotifications() {
+        $.ajax({
+            url: "{{ route('get.notifications') }}",
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                let badge = $('.notification_badge');
+                badge.html(response.totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : (response.totalTickets > 0 ? response.totalTickets : ''));
+
+                let notificationList = $('.notification_top');
+                notificationList.empty(); // Clear old notifications
+                
+                if (response.tickets.length > 0) {
+                    $.each(response.tickets, function (index, ticket) {
+                        notificationList.append(`
+                            <li class="notification-item" style="color: #777">
+                                <div class="notification-subject">
+                                    <strong>${ticket.subject}</strong>
+                                    (${ticket.description.length > 30 ? ticket.description.substring(0, 30) + '...' : ticket.description})
+                                </div>
+                            </li>
+                        `);
+                    });
+
+                    // Append "..." note if there are more than 5 tickets
+                    if (response.totalTickets > 5) {
+                        notificationList.append(`
+                            <span class="notification-item text-muted text-center">...</span>
+                        `);
+                    }
+                } else {
+                    notificationList.append('<li class="notification-item text-muted">No new notifications</li>');
+                }
+
+                isDataLoaded = true;
+            },
+            error: function (xhr) {
+                console.error("Error fetching notifications", xhr);
+            }
+        });
+    }
+
+    // Reset flag when dropdown is closed
+    $('.dropdown').on('hidden.bs.dropdown', function () {
+        isDataLoaded = false;
+        $('.show-notification').one('click', function () {
+            fetchNotifications();
+        });
+    });
+
             $('#contact-user').on('click', function() {
                 let url = $(this).data('url');
 

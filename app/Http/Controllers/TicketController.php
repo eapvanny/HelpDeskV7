@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TicketRequest;
 use App\Models\Department;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class TicketController extends Controller
 
     private function getTicketsByRequestStatus(Request $request, $requestStatus = null)
     {
-        $query = Ticket::with(['department', 'user'])->where('request_status', $requestStatus);
+        $query = Ticket::with(['department', 'user'])->where('request_status', $requestStatus)->orderBy('id', 'desc');
         $is_filter = false;
         if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE) {
             $query->where('user_id', auth()->id());
@@ -345,6 +346,8 @@ class TicketController extends Controller
 
         Ticket::create($ticketData);
 
+        event(new TicketRequest($ticketData));
+
         return redirect()->route('ticket.index')->with('success', "Tickets has been created!");
     }
     public function edit(Request $request, $id)
@@ -435,5 +438,23 @@ class TicketController extends Controller
         $ticket = Ticket::find($id);
         $ticket->delete();
         return redirect()->back()->with('success', "Ticket has been deleted!");
+    }
+
+    public function getNotifications()
+    {
+        $totalTickets = Ticket::whereNull('request_status')
+            ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
+            ->count();
+
+        $tickets = Ticket::whereNull('request_status')
+            ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
+            ->orderBy('created_at', 'desc')
+            ->limit(5)
+            ->get(['id', 'subject', 'description']);
+
+        return response()->json([
+            'totalTickets' => $totalTickets,
+            'tickets' => $tickets
+        ]);
     }
 }
