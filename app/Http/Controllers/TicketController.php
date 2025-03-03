@@ -362,11 +362,15 @@ class TicketController extends Controller
         // dd(auth()->user()->role_id, $ticket->request_status);
 
         // Check if user is EMPLOYEE and ticket is accepted
-        if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE && $ticket->request_status == 1) {
-            return redirect()->route('ticket.index')
-                ->with('error', "This ticket can't be edited because it has already been accepted.");
-        }
-
+        if (auth()->user()->role_id === AppHelper::USER_EMPLOYEE) {
+            if ($ticket->request_status === 1) {
+                return redirect()->route('ticket.index')
+                    ->with('error', "This ticket can't be edited because it has already been accepted.");
+            } elseif ($ticket->request_status === 0) {
+                return redirect()->route('ticket.index')
+                    ->with('error', "This ticket can't be edited because it has already been rejected.");
+            }
+        }        
         // Optional: Check permission
         if (!auth()->user()->can('update ticket')) {
             return redirect()->route('ticket.index')
