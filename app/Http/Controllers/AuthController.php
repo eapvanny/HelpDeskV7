@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -26,8 +27,9 @@ class AuthController extends Controller
         }
 
         $credentials = $request->only('username', 'password');
+        $remember = $request->has('remember'); // Check if "Remember Me" is checked
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remember)) {
             $user = Auth::user();
 
             if ($user->status == 0) {
@@ -38,6 +40,13 @@ class AuthController extends Controller
                 return back()->withInput()->withErrors([
                     'username' => 'Your account is inactive. Please contact support.'
                 ]);
+            }
+
+            // If "Remember Me" is checked, store username and password in cookies
+            if ($remember) {
+                $minutes = 60 * 24 * 30; // Store for 30 days
+                Cookie::queue('remember_username', $request->username, $minutes);
+                Cookie::queue('remember_password', $request->password, $minutes); // Consider encrypting this
             }
 
             $request->session()->regenerate();
