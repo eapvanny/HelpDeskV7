@@ -90,19 +90,10 @@
                             <i class="fa-bell-o fa-regular fa-bell">
                                 <small class="notification_badge">
                                     <?php
-                                    // Get total count of matching tickets (without limit)
                                     $totalTickets = Ticket::whereNull('request_status')
                                         ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
-                                        ->count(); // Count total tickets
-                                    
-                                    // Fetch only the first 5 tickets
-                                    $tickets = Ticket::whereNull('request_status')
-                                        ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
-                                        ->orderBy('created_at', 'desc')
                                         ->limit(5)
-                                        ->get();
-                                    
-                                    // Show "5+" if more than 5 tickets exist, otherwise show the actual count
+                                        ->count();
                                     echo $totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : ($totalTickets > 0 ? $totalTickets : '');
                                     ?>
                                 </small>
@@ -118,14 +109,11 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <ul class="notification_top">
-                                    <?php foreach ($tickets as $ticket): ?>
                                     <li class="notification-item" style="color: #777">
                                         <div class="notification-subject">
-                                            <strong><?= htmlspecialchars($ticket->subject) ?></strong>
-                                            (<?= htmlspecialchars(mb_substr($ticket->description, 0, 30, 'UTF-8')) . (mb_strlen($ticket->description, 'UTF-8') > 30 ? '...' : '') ?>)
+                                           
                                         </div>
                                     </li>
-                                    <?php endforeach; ?>
                                 </ul>
                             </li>
 

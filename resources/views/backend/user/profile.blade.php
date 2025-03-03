@@ -88,11 +88,11 @@
                                                 :</strong>
                                             <span>{{ date('F j,Y', strtotime($user->created_at)) }}</span>
                                         </li>
-                                        <div class="mt-3">
+                                        {{-- <div class="mt-3">
                                             <a href="#"
                                                 class="btn btn-primary text-white btn-block btnUpdate float-end"><b>
                                                     {{ __('Update') }} </b></a>
-                                        </div>
+                                        </div> --}}
                                     </ul>
                                 </div>
                             </div>

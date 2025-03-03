@@ -375,7 +375,6 @@ class UserController extends Controller
 
             $userData['photo'] = $filePath;
 
-            // Update the user's photo field
             $update = $user->update($userData);
             if ($update) {
                 return redirect()->back()->with('success', 'Profile Photo updated!');
@@ -386,25 +385,23 @@ class UserController extends Controller
         return redirect()->back()->with('error', 'No photo uploaded!');
     }
 
-    public function setLanguage($lang)
+    public function setLanguage($lang = 'kh') // Set 'kh' as default parameter value
     {
-        if (in_array($lang, ['kh', 'en'])) {
-            // Update the user's language preference (if logged in)
-            if (auth()->check()) {
-                auth()->user()->update(['user_lang' => $lang]);
-            }
+        $allowedLanguages = ['kh', 'en'];
 
-            // Store language in session
-            session(['user_lang' => $lang]);
-
-            // Set the application's locale
-            app()->setLocale($lang);
-
-            // Redirect back
-            return redirect()->back();
+        if (!in_array($lang, $allowedLanguages)) {
+            $lang = 'kh';
         }
-
-        return redirect()->route('/dashboard');
+        if (auth()->check()) {
+            $user = auth()->user();
+            if (!$user->user_lang) {
+                $user->update(['user_lang' => 'kh']);
+            }
+            $user->update(['user_lang' => $lang]);
+        }
+        session(['user_lang' => $lang]);
+        app()->setLocale($lang);
+        return redirect()->back();
     }
 
     public function showChangePasswordForm()
@@ -412,7 +409,6 @@ class UserController extends Controller
         return view('backend.user.change_password');
     }
 
-    // Handle Change Password Form Submission
     public function changePassword(Request $request)
     {
         $request->validate([
@@ -426,7 +422,6 @@ class UserController extends Controller
             ]);
         }
 
-        // Update the user's password
         $user = Auth::user();
         $user->password = Hash::make($request->password);
         $user->save();

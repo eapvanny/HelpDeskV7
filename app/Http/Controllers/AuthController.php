@@ -48,7 +48,15 @@ class AuthController extends Controller
                 Cookie::queue('remember_username', $request->username, $minutes);
                 Cookie::queue('remember_password', $request->password, $minutes); // Consider encrypting this
             }
-
+            if (!$user->user_lang) {
+                $user->update(['user_lang' => 'kh']);
+                session(['user_lang' => 'kh']);
+                app()->setLocale('kh');
+            } else {
+                // Use existing user language preference
+                session(['user_lang' => $user->user_lang]);
+                app()->setLocale($user->user_lang);
+            }
             $request->session()->regenerate();
             return redirect()->route('dashboard.index')
                 ->with('success', 'Welcome to AdminPanel.')
