@@ -209,31 +209,13 @@ var loggedInUserId = {{ auth()->id() }};
 var roleInUserId = {{ auth()->user()->role_id }};
 Pusher.logToConsole = true;
 
-// Pass PHP AppHelper constants to JavaScript
-var AppHelper = {
-    USER_SUPER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_SUPER_ADMIN }},
-    USER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_ADMIN }},
-    USER_ADMIN_SUPPORT: {{ App\Http\Helpers\AppHelper::USER_ADMIN_SUPPORT }},
-    USER_MANAGER: {{ App\Http\Helpers\AppHelper::USER_MANAGER }},
-    USER_DIRECTOR: {{ App\Http\Helpers\AppHelper::USER_DIRECTOR }},
-    USER_EMPLOYEE: {{ App\Http\Helpers\AppHelper::USER_EMPLOYEE }}
-};
-
 var pusher = new Pusher('9098d27790a56827c41a', {
     cluster: 'ap1'
 });
 
 var channel = pusher.subscribe('my-channel');
 channel.bind('my-event', function(data) {
-    // Define allowed roles using AppHelper constants
-    const allowedRoles = [
-        AppHelper.USER_SUPER_ADMIN,
-        AppHelper.USER_ADMIN,
-        AppHelper.USER_ADMIN_SUPPORT
-    ];
-    
-    // Show notification only if user_id is different AND role is in allowedRoles
-    if (data.user_id !== loggedInUserId && allowedRoles.includes(roleInUserId)) { 
+    if (data.user_id !== loggedInUserId) { 
         showMDBToast(data.message);
     }
 });
@@ -266,7 +248,7 @@ function showMDBToast(message) {
         console.log('Toast initialized, showing...');
         toast.show();
 
-        // Auto-hide after 5 seconds
+        // Auto-hide after 3 seconds
         setTimeout(function() {
             console.log('Attempting to hide toast:', toastId);
             if (toastEl && toastContainer.contains(toastEl)) {
@@ -294,7 +276,6 @@ function showMDBToast(message) {
     }
     incrementNotificationBadge();
 }
-
 function incrementNotificationBadge() {
     // Find the notification badge element
     var badgeElement = document.querySelector('.notification_badge');
@@ -304,12 +285,12 @@ function incrementNotificationBadge() {
         // If current count is 5 or more, set to "5+" with small font size
         if (currentCount >= 5) {
             badgeElement.textContent = '5+';
-            badgeElement.style.fontSize = '9px';
+            badgeElement.style.fontSize = '9px'; // Apply small font size for "5+"
         } else {
             // Increment the count if less than 5
             currentCount += 1;
             badgeElement.textContent = currentCount;
-            badgeElement.style.fontSize = '';
+            badgeElement.style.fontSize = ''; // Reset font size for numeric counts (default size)
         }
         
         // Ensure the badge is visible if the count is greater than 0 or shows "5+"
