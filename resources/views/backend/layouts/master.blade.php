@@ -206,120 +206,20 @@
 <script src="{{asset('js/pusher.js')}}"></script>
 <script type="text/javascript">
 
-    $(document).ready(function(){
-        var loggedInUserId = {{ auth()->id() }};
-var roleInUserId = {{ auth()->user()->role_id }};
-Pusher.logToConsole = true;
+$(document).ready(function() {
+        // Enable Pusher logging for debugging
+        Pusher.logToConsole = true;
 
-// Pass PHP AppHelper constants to JavaScript
-var AppHelper = {
-    USER_SUPER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_SUPER_ADMIN }},
-    USER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_ADMIN }},
-    USER_ADMIN_SUPPORT: {{ App\Http\Helpers\AppHelper::USER_ADMIN_SUPPORT }},
-    USER_MANAGER: {{ App\Http\Helpers\AppHelper::USER_MANAGER }},
-    USER_DIRECTOR: {{ App\Http\Helpers\AppHelper::USER_DIRECTOR }},
-    USER_EMPLOYEE: {{ App\Http\Helpers\AppHelper::USER_EMPLOYEE }}
-};
+        // Initialize Pusher with the correct key from .env
+        var pusher = new Pusher('{{ env('PUSHER_APP_KEY') }}', {
+            cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
+            forceTLS: true
+        });
 
-var pusher = new Pusher('9098d27790a56827c41a', {
-    cluster: 'ap1'
-});
-
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-    // Define allowed roles using AppHelper constants
-    const allowedRoles = [
-        AppHelper.USER_SUPER_ADMIN,
-        AppHelper.USER_ADMIN,
-        AppHelper.USER_ADMIN_SUPPORT
-    ];
-    
-    // Show notification only if user_id is different AND role is in allowedRoles
-    if (data.user_id !== loggedInUserId && allowedRoles.includes(roleInUserId)) { 
-        showMDBToast(data.message);
-    }
-});
-
-function showMDBToast(message) {
-    // Create unique toast ID
-    var toastId = "toast-" + Date.now();
-
-    var toastHtml = ` 
-        <div id="${toastId}" style="padding: 8px 10px; width: 22em" class="toast fade bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-success text-white">
-                <strong class="me-auto">New Ticket Alert</strong>
-                <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                ${message}
-            </div>
-        </div>
-    `;
-    
-    var toastContainer = document.getElementById("toast-container");
-    var toastElement = document.createElement("div");
-    toastElement.innerHTML = toastHtml;
-    var toastEl = toastElement.firstElementChild;
-    toastContainer.appendChild(toastEl);
-
-    // Check if MDB is available and initialize toast
-    if (typeof mdb !== 'undefined' && mdb.Toast) {
-        var toast = new mdb.Toast(toastEl);
-        console.log('Toast initialized, showing...');
-        toast.show();
-
-        // Auto-hide after 5 seconds
-        setTimeout(function() {
-            console.log('Attempting to hide toast:', toastId);
-            if (toastEl && toastContainer.contains(toastEl)) {
-                toast.hide();
-                toastEl.addEventListener('hidden.mdb.toast', function() {
-                    console.log('Toast hidden, removing:', toastId);
-                    toastEl.remove();
-                    toast.dispose();
-                }, { once: true });
-            } else {
-                console.log('Toast element not found for hiding:', toastId);
-            }
-        }, 5000);
-    } else {
-        // Fallback if MDB is not loaded
-        console.error('MDB Toast not available, using basic timeout');
-        toastEl.classList.add('show');
-        setTimeout(function() {
-            console.log('Fallback: Removing toast:', toastId);
-            if (toastEl && toastContainer.contains(toastEl)) {
-                toastEl.classList.remove('show');
-                setTimeout(() => toastEl.remove(), 500); // Match fade duration
-            }
-        }, 5000);
-    }
-    incrementNotificationBadge();
-}
-
-function incrementNotificationBadge() {
-    // Find the notification badge element
-    var badgeElement = document.querySelector('.notification_badge');
-    if (badgeElement) {
-        let currentCount = parseInt(badgeElement.textContent) || 0;
-        
-        // If current count is 5 or more, set to "5+" with small font size
-        if (currentCount >= 5) {
-            badgeElement.textContent = '5+';
-            badgeElement.style.fontSize = '9px';
-        } else {
-            // Increment the count if less than 5
-            currentCount += 1;
-            badgeElement.textContent = currentCount;
-            badgeElement.style.fontSize = '';
-        }
-        
-        // Ensure the badge is visible if the count is greater than 0 or shows "5+"
-        badgeElement.style.display = (currentCount > 0 || badgeElement.textContent === '5+') ? 'inline' : 'none';
-    } else {
-        console.warn('Notification badge element not found');
-    }
-}
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            toastr["info"](data.message, "Ticket Notification");
+        });
     });
 
     var DatatableSignal = function(){

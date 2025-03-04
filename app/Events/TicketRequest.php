@@ -4,30 +4,21 @@ namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class TicketRequest implements ShouldBroadcast
+class TicketRequest implements ShouldBroadcastNow // Use ShouldBroadcastNow for synchronous execution
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * Create a new event instance.
-     */
-    public $ticket;
-    public function __construct($ticket)
+    public $message;
+
+    public function __construct($message)
     {
-        $this->ticket = $ticket;
+        $this->message = $message;
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return array<int, \Illuminate\Broadcasting\Channel>
-     */
     public function broadcastOn(): array
     {
         return [
@@ -43,8 +34,7 @@ class TicketRequest implements ShouldBroadcast
     public function broadcastWith(): array
     {
         return [
-            'user_id' => $this->ticket['user_id'], 
-            'message' => 'A new ticket has been created!',
+            'message' => $this->message,
         ];
     }
 }

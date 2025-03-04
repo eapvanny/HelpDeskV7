@@ -327,7 +327,7 @@ class TicketController extends Controller
 
         if ($request->status_id == AppHelper::STATUS_OPEN) {
             $ticketData['request_status'] = null;
-        } elseif ($request->status_id == AppHelper::STATUS_PENDING || $request->status_id == AppHelper::STATUS_RESOLVED) {
+        } elseif (in_array($request->status_id, [AppHelper::STATUS_PENDING, AppHelper::STATUS_RESOLVED])) {
             $ticketData['request_status'] = 1;
             $ticketData['receiver'] = auth()->user()->name;
         } elseif ($request->status_id == AppHelper::STATUS_CLOSED) {
@@ -344,11 +344,12 @@ class TicketController extends Controller
             $ticketData['photo'] = $request->oldphoto;
         }
 
-        Ticket::create($ticketData);
+        $ticket = Ticket::create($ticketData);
 
-        event(new TicketRequest($ticketData));
+        // Fire the event with a meaningful message
+        event(new TicketRequest("A new ticket has been created by " . auth()->user()->name));
 
-        return redirect()->route('ticket.index')->with('success', "Tickets has been created!");
+        return redirect()->route('ticket.index')->with('success', "Ticket has been created!");
     }
     public function edit(Request $request, $id)
     {
@@ -370,7 +371,7 @@ class TicketController extends Controller
                 return redirect()->route('ticket.index')
                     ->with('error', "This ticket can't be edited because it has already been rejected.");
             }
-        }        
+        }
         // Optional: Check permission
         if (!auth()->user()->can('update ticket')) {
             return redirect()->route('ticket.index')
