@@ -206,10 +206,20 @@
 <script src="{{asset('js/pusher.js')}}"></script>
 <script type="text/javascript">
 
-$(document).ready(function() {
+    $(document).ready(function() {
         // Enable Pusher logging for debugging
+        var loggedInUserId = {{ auth()->id() }};
+        var roleInUserId = {{ auth()->user()->role_id }};
         Pusher.logToConsole = true;
-
+        var AppHelper = {
+            USER_SUPER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_SUPER_ADMIN }},
+            USER_ADMIN: {{ App\Http\Helpers\AppHelper::USER_ADMIN }},
+            USER_ADMIN_SUPPORT: {{ App\Http\Helpers\AppHelper::USER_ADMIN_SUPPORT }},
+            USER_MANAGER: {{ App\Http\Helpers\AppHelper::USER_MANAGER }},
+            USER_DIRECTOR: {{ App\Http\Helpers\AppHelper::USER_DIRECTOR }},
+            USER_EMPLOYEE: {{ App\Http\Helpers\AppHelper::USER_EMPLOYEE }}
+        };
+        
         // Initialize Pusher with the correct key from .env
         var pusher = new Pusher('{{ env('PUSHER_APP_KEY') }}', {
             cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
@@ -218,9 +228,44 @@ $(document).ready(function() {
 
         var channel = pusher.subscribe('my-channel');
         channel.bind('my-event', function(data) {
-            toastr["info"](data.message, "Ticket Notification");
+            var allowedRoles = [
+                AppHelper.USER_SUPER_ADMIN,
+                AppHelper.USER_ADMIN,
+                AppHelper.USER_ADMIN_SUPPORT
+            ];
+            if (allowedRoles.includes(roleInUserId) && loggedInUserId != data.user_id) {
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true,
+                    "timeOut": 9000, // 9 seconds
+                    "extendedTimeOut": 2000,
+                    "positionClass": "toast-top-right"
+                };
+                toastr["info"](data.message, "Ticket Notification");
+                incrementNotificationBadge();
+            }
         });
     });
+
+    function incrementNotificationBadge() {
+        var badgeElement = document.querySelector('.notification_badge');
+        if (badgeElement) {
+            let currentCount = parseInt(badgeElement.textContent) || 0;
+            
+            if (currentCount >= 5) {
+                badgeElement.textContent = '5+';
+                badgeElement.style.fontSize = '9px';
+            } else {
+                currentCount += 1;
+                badgeElement.textContent = currentCount;
+                badgeElement.style.fontSize = '';
+            }
+            
+            badgeElement.style.display = (currentCount > 0 || badgeElement.textContent === '5+') ? 'inline' : 'none';
+        } else {
+            console.warn('Notification badge element not found');
+        }
+    }
 
     var DatatableSignal = function(){
         this.dispatcher = $({});
