@@ -62,6 +62,8 @@
     <img class="loader2" src="{{ asset('/images/loader.svg') }}" alt="">
 </div>
 
+<div id="toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
+
 <!-- Site wrapper -->
 <div class="wrapper">
     <!-- page header -->
@@ -202,10 +204,10 @@
     }
 @endphp
 <script src="{{asset('js/pusher.js')}}"></script>
-<div id="toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
 <script type="text/javascript">
 
-var loggedInUserId = {{ auth()->id() }};
+    $(document).ready(function(){
+        var loggedInUserId = {{ auth()->id() }};
 var roleInUserId = {{ auth()->user()->role_id }};
 Pusher.logToConsole = true;
 
@@ -318,6 +320,7 @@ function incrementNotificationBadge() {
         console.warn('Notification badge element not found');
     }
 }
+    });
 
     var DatatableSignal = function(){
         this.dispatcher = $({});
