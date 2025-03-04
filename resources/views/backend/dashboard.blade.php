@@ -392,7 +392,6 @@
 @endsection
 
 @section('extraScript')
-    <script src="{{ asset('js/chart.js') }}"></script>
     <script>
         $(document).ready(function() {
             @if (session('show_popup'))

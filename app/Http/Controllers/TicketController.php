@@ -346,10 +346,18 @@ class TicketController extends Controller
 
         $ticket = Ticket::create($ticketData);
 
-        // Fire the event with a meaningful message
-        event(new TicketRequest("A new ticket has been created by " . auth()->user()->name));
+        $allowedUserTypes = [
+            AppHelper::USER_SUPER_ADMIN,
+            AppHelper::USER_ADMIN_SUPPORT,
+            AppHelper::USER_ADMIN
+        ];
+    
+        // Check if current user's type is in allowed types before firing event
+        if (!in_array(auth()->user()->role_id, $allowedUserTypes)) {
+            event(new TicketRequest("A new ticket has been created by " . auth()->user()->name));
+        }
 
-        return redirect()->route('ticket.index')->with('success', "Ticket has been created!");
+        return redirect()->route('ticket.requests')->with('success', "Ticket has been created!");
     }
     public function edit(Request $request, $id)
     {

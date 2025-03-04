@@ -22,6 +22,8 @@
     <script src="{{ asset(mix('/js/pace.js')) }}"></script>
     <link href="{{ asset(mix('/css/pace.css')) }}" rel="stylesheet" type="text/css">
     <script src="{{asset('js/swal.js')}}"></script>
+    <script src="{{ asset('js/chart.js') }}"></script>
+
     <!-- vendor libraries CSS -->
     <link href="{{ asset(mix('/css/vendor.css')) }}" rel="stylesheet" type="text/css">
     <!-- theme CSS -->
@@ -233,6 +235,9 @@
                 AppHelper.USER_ADMIN,
                 AppHelper.USER_ADMIN_SUPPORT
             ];
+            // Show notification only if:
+            // 1. Current user's role is in allowedRoles
+            // 2. Current user is NOT the one who created the ticket (loggedInUserId != data.user_id)
             if (allowedRoles.includes(roleInUserId) && loggedInUserId != data.user_id) {
                 toastr.options = {
                     "closeButton": true,

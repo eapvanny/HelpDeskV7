@@ -183,11 +183,10 @@
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
                                                 <label for="id_card"> {{ __('Staff ID') }} <span
-                                                        class="text-danger">*</span></label>
+                                                        class="text-danger">{{__('(You can not changed)')}}*</span></label>
                                                 <input type="text" class="form-control" name="id_card"
                                                     placeholder="id_card"
-                                                    value="@if ($ticket) {{ $ticket->id_card }}@else{{ old('id_card') }} @endif"
-                                                    required minlength="3" maxlength="10">
+                                                    value="{{auth()->user()->staff_id_card}}" readonly>
                                                 <span class="fa fa-info form-control-feedback"></span>
                                                 <span class="text-danger">{{ $errors->first('id_card') }}</span>
                                             </div>
@@ -195,11 +194,10 @@
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
                                                 <label for="employee_name"> {{ __('Employee Name') }} <span
-                                                        class="text-danger">*</span></label>
+                                                        class="text-danger">{{__('(You can not changed)')}}*</span></label>
                                                 <input type="text" class="form-control" name="employee_name"
                                                     placeholder="name"
-                                                    value="@if ($ticket) {{ $ticket->employee_name }}@else{{ old('employee_name') }} @endif"
-                                                    required>
+                                                    value="{{auth()->user()->name}}" readonly>
                                                 <span class="fa fa-info form-control-feedback"></span>
                                                 <span class="text-danger">{{ $errors->first('employee_name') }}</span>
                                             </div>
