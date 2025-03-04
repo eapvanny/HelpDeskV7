@@ -447,19 +447,24 @@ class TicketController extends Controller
 
     public function getNotifications()
     {
-        $totalTickets = Ticket::whereNull('request_status')
-            ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
-            ->count();
-
-        $tickets = Ticket::whereNull('request_status')
-            ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
-            ->orderBy('created_at', 'desc')
-            ->limit(5)
-            ->get(['id', 'subject', 'description']);
-
+        $user = auth()->user();
+        $isAdmin = in_array($user->role_id, [
+            AppHelper::USER_SUPER_ADMIN,
+            AppHelper::USER_ADMIN_SUPPORT,
+            AppHelper::USER_ADMIN
+        ]);
+        $query = Ticket::whereNull('request_status')
+            ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED]);
+            
+        if (!$isAdmin) {
+            $query->where('user_id', $user->id);
+        }
         return response()->json([
-            'totalTickets' => $totalTickets,
-            'tickets' => $tickets
+            'totalTickets' => $query->count(),
+            'tickets' => $query->clone()
+                ->orderByDesc('created_at')
+                ->limit(5)
+                ->get(['id', 'subject', 'description'])
         ]);
     }
 }

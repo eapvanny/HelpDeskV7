@@ -85,17 +85,21 @@
                     </div>
                     <!-- Notifications -->
                     <div class="dropdown mx-2">
+                        <?php
+                            $user = auth()->user();
+                            $isAdmin = in_array($user->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN_SUPPORT, AppHelper::USER_ADMIN]);
+                            $query = Ticket::whereNull('request_status')->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED]);
+                            if (!$isAdmin) {
+                                $query->where('user_id', $user->id);
+                            }
+                            $totalTickets = $query->count();
+                            $badgeText = $totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : ($totalTickets > 0 ? $totalTickets : '');
+                        ?>
                         <a data-mdb-dropdown-init class="notifi-icon text-reset dropdown-toggle show-notification"
                             id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa-bell-o fa-regular fa-bell">
                                 <small class="notification_badge">
-                                    <?php
-                                    $totalTickets = Ticket::whereNull('request_status')
-                                        ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED])
-                                        ->limit(5)
-                                        ->count();
-                                    echo $totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : ($totalTickets > 0 ? $totalTickets : '');
-                                    ?>
+                                    <?= $badgeText ?>
                                 </small>
                             </i>
                         </a>
@@ -111,7 +115,7 @@
                                 <ul class="notification_top">
                                     <li class="notification-item" style="color: #777">
                                         <div class="notification-subject">
-                                           
+                                                        
                                         </div>
                                     </li>
                                 </ul>
@@ -215,25 +219,27 @@
 
             let isDataLoaded = false; // Track if data is loaded
 
-    $('.show-notification').one('click', function () { // Fetch only once
-        fetchNotifications();
-    });
+            $('.show-notification').one('click', function() { // Fetch only once
+                fetchNotifications();
+            });
 
-    function fetchNotifications() {
-        $.ajax({
-            url: "{{ route('get.notifications') }}",
-            type: 'GET',
-            dataType: 'json',
-            success: function (response) {
-                let badge = $('.notification_badge');
-                badge.html(response.totalTickets > 5 ? '<span style="font-size: 9px;">5+</span>' : (response.totalTickets > 0 ? response.totalTickets : ''));
+            function fetchNotifications() {
+                $.ajax({
+                    url: "{{ route('get.notifications') }}",
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        let badge = $('.notification_badge');
+                        badge.html(response.totalTickets > 5 ?
+                            '<span style="font-size: 9px;">5+</span>' : (response.totalTickets > 0 ?
+                                response.totalTickets : ''));
 
-                let notificationList = $('.notification_top');
-                notificationList.empty(); // Clear old notifications
-                
-                if (response.tickets.length > 0) {
-                    $.each(response.tickets, function (index, ticket) {
-                        notificationList.append(`
+                        let notificationList = $('.notification_top');
+                        notificationList.empty(); // Clear old notifications
+
+                        if (response.tickets.length > 0) {
+                            $.each(response.tickets, function(index, ticket) {
+                                notificationList.append(`
                             <li class="notification-item" style="color: #777">
                                 <div class="notification-subject">
                                     <strong>${ticket.subject}</strong>
@@ -241,33 +247,35 @@
                                 </div>
                             </li>
                         `);
-                    });
+                            });
 
-                    // Append "..." note if there are more than 5 tickets
-                    if (response.totalTickets > 5) {
-                        notificationList.append(`
+                            // Append "..." note if there are more than 5 tickets
+                            if (response.totalTickets > 5) {
+                                notificationList.append(`
                             <span class="notification-item text-muted text-center">...</span>
                         `);
+                            }
+                        } else {
+                            notificationList.append(
+                                '<li class="notification-item text-muted">No new notifications</li>'
+                                );
+                        }
+
+                        isDataLoaded = true;
+                    },
+                    error: function(xhr) {
+                        console.error("Error fetching notifications", xhr);
                     }
-                } else {
-                    notificationList.append('<li class="notification-item text-muted">No new notifications</li>');
-                }
-
-                isDataLoaded = true;
-            },
-            error: function (xhr) {
-                console.error("Error fetching notifications", xhr);
+                });
             }
-        });
-    }
 
-    // Reset flag when dropdown is closed
-    $('.dropdown').on('hidden.bs.dropdown', function () {
-        isDataLoaded = false;
-        $('.show-notification').one('click', function () {
-            fetchNotifications();
-        });
-    });
+            // Reset flag when dropdown is closed
+            $('.dropdown').on('hidden.bs.dropdown', function() {
+                isDataLoaded = false;
+                $('.show-notification').one('click', function() {
+                    fetchNotifications();
+                });
+            });
 
             $('#contact-user').on('click', function() {
                 let url = $(this).data('url');
