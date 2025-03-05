@@ -231,10 +231,14 @@ class TicketController extends Controller
     }
     public function create()
     {
-
-        $departments = Department::pluck('name', 'id');
+        $departments = Department::all()->mapWithKeys(function ($department) {
+            return [
+                $department->id => auth()->user()->user_lang === 'en' ? $department->name_in_latin : $department->name
+            ];
+        });
+        $defaultDepartmentId = auth()->check() ? auth()->user()->department_id : null;
         $ticket = null;
-        return view('backend.ticket.add', compact('departments', 'ticket'));
+        return view('backend.ticket.add', compact('departments', 'ticket','defaultDepartmentId'));
     }
 
     public function show($id)
@@ -303,8 +307,8 @@ class TicketController extends Controller
 
     public function store(Request $request)
     {
+        $departmentId = auth()->user()->department_id;
         $rules = [
-            'department_id' => 'required',
             'photo' => 'mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'subject' => 'required|min:2',
             'description' => 'required',
@@ -315,7 +319,7 @@ class TicketController extends Controller
 
         $ticketData = [
             'user_id' => auth()->id(),
-            'department_id' => $request->department_id,
+            'department_id' => $departmentId,
             'id_card' => $request->id_card,
             'employee_name' => $request->employee_name,
             'subject' => $request->subject,
@@ -351,7 +355,7 @@ class TicketController extends Controller
             AppHelper::USER_ADMIN_SUPPORT,
             AppHelper::USER_ADMIN
         ];
-    
+
         // Check if current user's type is in allowed types before firing event
         if (!in_array(auth()->user()->role_id, $allowedUserTypes)) {
             event(new TicketRequest("A new ticket has been created by " . auth()->user()->name));
@@ -398,7 +402,6 @@ class TicketController extends Controller
     {
         $ticket = Ticket::findOrFail($id); // Ensures ticket exists
         $rules = [
-            'department_id' => 'required',
             'photo' => 'nullable|mimes:jpeg,jpg,png|max:2000|dimensions:min_width=50,min_height=50',
             'subject' => 'required|min:2',
             'description' => 'required',
@@ -407,7 +410,7 @@ class TicketController extends Controller
         ];
         $this->validate($request, $rules);
         $ticketData = [
-            'department_id' => $request->department_id,
+            'department_id' => auth()->user()->department_id,
             'id_card' => $request->id_card,
             'employee_name' => $request->employee_name,
             'subject' => $request->subject,
@@ -444,7 +447,7 @@ class TicketController extends Controller
         // Update ticket
         $ticket->update($ticketData);
 
-        return redirect()->route('ticket.index')->with('success', "Ticket has been updated!");
+        return redirect()->route('ticket.requests')->with('success', "Ticket has been updated!");
     }
     public function destroy($id)
     {
@@ -463,7 +466,7 @@ class TicketController extends Controller
         ]);
         $query = Ticket::whereNull('request_status')
             ->whereNotIn('status_id', [AppHelper::STATUS_CLOSED, AppHelper::STATUS_RESOLVED]);
-            
+
         if (!$isAdmin) {
             $query->where('user_id', $user->id);
         }

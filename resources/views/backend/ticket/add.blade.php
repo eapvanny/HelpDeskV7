@@ -165,17 +165,23 @@
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
                                                 <label for="department_id"> {{ __('Department') }} <span
-                                                        class="text-danger">*</span>
+                                                        class="text-danger">{{ __('(You can not changed)') }}*</span>
                                                     <i class="fa fa-question-circle" data-toggle="tooltip"
                                                         data-placement="bottom" title="Select Department"></i>
                                                 </label>
-                                                {!! Form::select('department_id', $departments, old('department_id', optional($ticket)->department_id), [
-                                                    'placeholder' => __('Select a department'),
-                                                    'id' => 'department_id',
-                                                    'name' => 'department_id',
-                                                    'class' => 'form-control select2',
-                                                    'required' => true,
-                                                ]) !!}
+                                                {!! Form::select(
+                                                    'department_id',
+                                                    $departments,
+                                                    old('department_id', $ticket ? $ticket->department_id : $defaultDepartmentId),
+                                                    [
+                                                        'placeholder' => __('Select a department'),
+                                                        'id' => 'department_id',
+                                                        'name' => 'department_id',
+                                                        'class' => 'form-control select2',
+                                                        'required' => true,
+                                                        'disabled' => true,
+                                                    ],
+                                                ) !!}
                                                 <span class="form-control-feedback"></span>
                                                 <span class="text-danger">{{ $errors->first('department_id') }}</span>
                                             </div>
@@ -183,10 +189,10 @@
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
                                                 <label for="id_card"> {{ __('Staff ID') }} <span
-                                                        class="text-danger">{{__('(You can not changed)')}}*</span></label>
+                                                        class="text-danger">{{ __('(You can not changed)') }}*</span></label>
                                                 <input type="text" class="form-control" name="id_card"
-                                                    placeholder="id_card"
-                                                    value="{{auth()->user()->staff_id_card}}" readonly>
+                                                    placeholder="id_card" value="{{ auth()->user()->staff_id_card }}"
+                                                    readonly>
                                                 <span class="fa fa-info form-control-feedback"></span>
                                                 <span class="text-danger">{{ $errors->first('id_card') }}</span>
                                             </div>
@@ -194,10 +200,9 @@
                                         <div class="col-lg-12 col-md-12 col-xl-12">
                                             <div class="form-group has-feedback">
                                                 <label for="employee_name"> {{ __('Employee Name') }} <span
-                                                        class="text-danger">{{__('(You can not changed)')}}*</span></label>
+                                                        class="text-danger">{{ __('(You can not changed)') }}*</span></label>
                                                 <input type="text" class="form-control" name="employee_name"
-                                                    placeholder="name"
-                                                    value="{{auth()->user()->name}}" readonly>
+                                                    placeholder="name" value="{{ auth()->user()->name }}" readonly>
                                                 <span class="fa fa-info form-control-feedback"></span>
                                                 <span class="text-danger">{{ $errors->first('employee_name') }}</span>
                                             </div>
