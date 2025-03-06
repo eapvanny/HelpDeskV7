@@ -29,7 +29,7 @@ class TicketController extends Controller
     {
         $query = Ticket::with(['department', 'user'])->where('request_status', $requestStatus)->orderBy('id', 'desc');
         $is_filter = false;
-        if (auth()->user()->role_id == AppHelper::USER_EMPLOYEE) {
+        if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN, AppHelper::USER_ADMIN_SUPPORT])) {
             $query->where('user_id', auth()->id());
         }
         if ($request->has('department_id') && $request->department_id != '') {
@@ -238,7 +238,7 @@ class TicketController extends Controller
         });
         $defaultDepartmentId = auth()->check() ? auth()->user()->department_id : null;
         $ticket = null;
-        return view('backend.ticket.add', compact('departments', 'ticket','defaultDepartmentId'));
+        return view('backend.ticket.add', compact('departments', 'ticket', 'defaultDepartmentId'));
     }
 
     public function show($id)
@@ -446,6 +446,27 @@ class TicketController extends Controller
 
         // Update ticket
         $ticket->update($ticketData);
+
+        $userRole = auth()->user()->role_id; // Assuming role is stored in the user model
+        $adminRoles = [
+            AppHelper::USER_SUPER_ADMIN,
+            AppHelper::USER_ADMIN_SUPPORT,
+            AppHelper::USER_ADMIN
+        ];
+
+        if (in_array($userRole, $adminRoles)) {
+            switch ($request->status_id) {
+                case AppHelper::STATUS_OPEN: // 1
+                    return redirect()->route('ticket.requests')->with('success', "Ticket has been updated!");
+                case AppHelper::STATUS_PENDING: // 2
+                case AppHelper::STATUS_RESOLVED: // 3
+                    return redirect()->route('ticket.accepted')->with('success', "Ticket has been updated!");
+                case AppHelper::STATUS_CLOSED: // 4
+                    return redirect()->route('ticket.rejected')->with('success', "Ticket has been updated!");
+                default:
+                    return redirect()->route('ticket.requests')->with('success', "Ticket has been updated!");
+            }
+        }
 
         return redirect()->route('ticket.requests')->with('success', "Ticket has been updated!");
     }

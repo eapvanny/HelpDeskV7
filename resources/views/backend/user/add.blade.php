@@ -134,12 +134,12 @@
                 </div>
             </div>
             <div class="wrap-outter-box">
-                <input id="org_detail" type="hidden" name="org_detail" value="">
+                {{-- <input id="org_detail" type="hidden" name="org_detail" value="">
                 <div class="box-header">
                     <div class="callout callout-danger">
                         <p><b> {{ __('Note') }}:</b> {{ __('Create a role before create user if not exist') }} .</p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="box-body">
                     @csrf
                     @if ($user)

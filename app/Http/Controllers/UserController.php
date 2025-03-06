@@ -32,9 +32,17 @@ class UserController extends Controller
     {
         if ($request->ajax()) {
             $query = User::with('department', 'role');
+            $currentUser = auth()->user();
 
-            if (!in_array(auth()->user()->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN, AppHelper::USER_ADMIN_SUPPORT])) {
-                $query->where('id', auth()->user()->id);
+            // Check user role and apply appropriate filtering
+            if (!in_array($currentUser->role_id, [AppHelper::USER_SUPER_ADMIN, AppHelper::USER_ADMIN, AppHelper::USER_ADMIN_SUPPORT])) {
+                // If user is Manager or Director, show users from their department
+                if (in_array($currentUser->role_id, [AppHelper::USER_MANAGER, AppHelper::USER_DIRECTOR])) {
+                    $query->where('department_id', $currentUser->department_id);
+                } else {
+                    // For other roles (like USER_EMPLOYEE), show only their own record
+                    $query->where('id', $currentUser->id);
+                }
             }
 
             $users = $query->get();
@@ -42,7 +50,7 @@ class UserController extends Controller
             return DataTables::of($users)
                 ->addColumn('photo', function ($data) {
                     return '<img class="img-responsive center" style="height: 35px; width: 35px; object-fit: cover; border-radius: 50%;" 
-                src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
+            src="' . ($data->photo ? asset('storage/' . $data->photo) : asset('images/avatar.png')) . '" >';
                 })
                 ->addColumn('department', function ($data) {
                     $language = session('user_lang', 'kh');
@@ -85,16 +93,10 @@ class UserController extends Controller
                         $button .= '<a title="Edit" href="' . route('user.edit', $data->id) . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>';
                         $actions = true;
                     }
-                    // if (auth()->user()->can('delete user')) {
-                    //     $button .= '<a href="' . route('user.destroy', $data->id) . '" class="btn btn-danger btn-sm delete" title="Delete"><i class="fa fa-fw fa-trash"></i></a>';
-                    //     $actions = true;
-                    // }
-                    // Add disable button only for active users and if user has permission
                     if (auth()->user()->can('update user') && $data->status == 1) {
                         $button .= '<a href="javascript:void(0)" class="btn btn-danger btn-sm disable-user" title="Disable" data-id="' . $data->id . '"><i class="fa fa-ban"></i></a>';
                         $actions = true;
                     }
-                    // Enable button for inactive users
                     if (auth()->user()->can('update user') && $data->status == 0) {
                         $button .= '<a href="javascript:void(0)" class="btn btn-success btn-sm enable-user" title="Enable" data-id="' . $data->id . '"><i class="fa fa-check"></i></a>';
                         $actions = true;
@@ -105,7 +107,6 @@ class UserController extends Controller
                     $button .= '</div>';
                     return $button;
                 })
-
                 ->rawColumns(['action', 'photo', 'status'])
                 ->make(true);
         }
@@ -185,7 +186,16 @@ class UserController extends Controller
     {
         $user = null;
         $departments = Department::pluck('name', 'id');
+
         $roles = Role::orderBy('id', 'asc')->pluck('name', 'id');
+        if (auth()->check()) {
+            $currentUserRole = auth()->user()->role_id;
+            if (in_array($currentUserRole, [AppHelper::USER_DIRECTOR, AppHelper::USER_MANAGER])) {
+                $roles = Role::where('id', AppHelper::USER_EMPLOYEE)
+                    ->orderBy('id', 'asc')
+                    ->pluck('name', 'id');
+            }
+        }
         return view('backend.user.add', compact('user', 'roles', 'departments'));
     }
 

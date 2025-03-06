@@ -19,6 +19,26 @@ class AppHelper {
         self::USER_EMPLOYEE => 'Employee',
     ];
 
+
+    const IT_DEPARTMENT = 1;
+    const SALE_DEPARTMENT = 2;
+    const FINANCE_DEPARTMENT = 3;
+    const MARKETING_DEPARTMENT = 4;
+    const PRODUCTION_DEPARTMENT = 5;    
+    const WH_LOGISTIC_DEPARTMENT = 6;
+    const HR_DEPARTMENT = 7;
+
+    const DEPARTMENT = [
+        self::IT_DEPARTMENT => 'IT Department',
+        self::SALE_DEPARTMENT => 'Sale Department',
+        self::FINANCE_DEPARTMENT => 'Finance Department',
+        self::MARKETING_DEPARTMENT => 'Marketing Department',
+        self::PRODUCTION_DEPARTMENT => 'Production Department',
+        self::WH_LOGISTIC_DEPARTMENT => 'WH & Logistic Department',
+        self::HR_DEPARTMENT => 'Human Resource Department',
+    ];
+
+
     const GENDER = [
         1 => 'Male',
         2 => 'Female'

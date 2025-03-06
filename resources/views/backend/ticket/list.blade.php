@@ -520,7 +520,7 @@
                                     });
                                     // t.ajax.reload();
                                     setTimeout(function() {
-                                        window.location.reload();
+                                        window.location.href = '{{ route("ticket.accepted") }}';
                                     }, 1800);
                                 }
                             },
@@ -568,7 +568,7 @@
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
-                                        window.location.reload();
+                                        window.location.href = '{{ route("ticket.requests") }}';
                                     }, 1800);
                                 }
                             },
@@ -620,7 +620,7 @@
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
-                                        window.location.reload();
+                                        window.location.href = '{{ route("ticket.rejected") }}';
                                     }, 1850);
                                 }
                             },
@@ -669,7 +669,7 @@
                                         showConfirmButton: false // Hide OK button
                                     });
                                     setTimeout(function() {
-                                        window.location.reload();
+                                        window.location.href = '{{ route("ticket.requests") }}';
                                     }, 1800);
                                 }
                             },

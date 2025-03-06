@@ -125,7 +125,7 @@
                                 <li class="dropdown-divider"></li>
                             @endif
                             <li>
-                                <a class="dropdown-item text-primary" href="{{ route('ticket.index') }}">
+                                <a class="dropdown-item text-primary" href="{{ route('ticket.requests') }}">
                                     See All Tickets
                                 </a>
                             </li>
