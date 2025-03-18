@@ -107,7 +107,7 @@
                             aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a class="dropdown-item notificaton_header" href="#">
-                                    Notifications
+                                    {{__('Notifications')}}
                                 </a>
                             </li>
                             <li class="dropdown-divider"></li>
@@ -219,7 +219,7 @@
 
             let isDataLoaded = false; // Track if data is loaded
 
-            $('.show-notification').one('click', function() { // Fetch only once
+            $('.show-notification').on('click', function() { // Fetch only once
                 fetchNotifications();
             });
 

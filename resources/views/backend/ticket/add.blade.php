@@ -155,7 +155,7 @@
                                                 </button>
                                             </div>
                                             <label class="position-absolute bottom-0 text-center w-100 mb-2" for="photo">
-                                                {{__('Employee photos only accept jpg, png, jpeg images')}}
+                                                {{__('Photo Attachment only accept jpg, png, jpeg images')}}
                                             </label>
                                         </fieldset>
                                     </div>

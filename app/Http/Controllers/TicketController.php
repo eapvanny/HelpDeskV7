@@ -248,15 +248,15 @@ class TicketController extends Controller
             return response()->json(['error' => 'Ticket not found'], 404);
         }
 
-        $ticket->status_text = AppHelper::STATUS[$ticket->status_id] ?? 'Unknown';
-        $ticket->priority_text = AppHelper::PRIORITY[$ticket->priority_id] ?? 'Unknown';
+        $ticket->status_text = __(AppHelper::STATUS[$ticket->status_id]) ?? __('Unknown');
+        $ticket->priority_text = __(AppHelper::PRIORITY[$ticket->priority_id]) ?? __('Unknown');
 
         if ($ticket->request_status === 1) {
-            $ticket->request_status_text = 'Accepted';
+            $ticket->request_status_text = __('Accepted');
         } elseif ($ticket->request_status === 0) {
-            $ticket->request_status_text = 'Rejected';
+            $ticket->request_status_text = __('Rejected');
         } elseif ($ticket->request_status === null) {
-            $ticket->request_status_text = 'Unknown';
+            $ticket->request_status_text = __('N/A');
         }
 
         $language = session('user_lang', 'kh');
